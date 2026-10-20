@@ -1,0 +1,6 @@
+.lake/
+proof-audit/
+*.olean
+*.ilean
+*.c
+*.trace

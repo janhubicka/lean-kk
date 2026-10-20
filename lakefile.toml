@@ -1,0 +1,11 @@
+name = "lean-kk"
+version = "0.1.0"
+defaultTargets = ["Kk"]
+
+[[require]]
+name = "successor-tree-lean"
+git = "https://github.com/janhubicka/lean-successors"
+rev = "a74c10761303a18649053f2af3a1a1697f032e13"
+
+[[lean_lib]]
+name = "Kk"
