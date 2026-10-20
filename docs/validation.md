@@ -5,6 +5,15 @@ the universal \(K_k\)-free graph. Statements in the present document are
 not claims of completed kernel verification unless the corresponding CI
 job has passed.
 
+## Verified on 20 October 2026
+
+The finite simultaneous-refinement theorem
+`Kk.finite_family_type_respecting_ramsey` compiled in [GitHub Actions run 39346781161](https://github.com/janhubicka/lean-kk/actions/runs/39346781161), against pinned successor library commit `a74c10761303a18649053f2af3a1a1697f032e13`.
+The transitive axiom report is exactly
+`[propext, Classical.choice, Quot.sound]`.
+This establishes the Ramsey-composition step, **not** the labelled carrier,
+occurrence factorisation, or optimality theorem.
+
 ## Imported mathematical theorem
 
 The dependency is pinned to
