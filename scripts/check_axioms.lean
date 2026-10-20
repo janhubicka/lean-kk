@@ -26,3 +26,7 @@ import Kk
 #check @Kk.LabelledGPlusCopy.colour_factors_through_diary
 #print axioms Kk.LabelledGPlusCopy.map_fromPairs
 #print axioms Kk.LabelledGPlusCopy.colour_factors_through_diary
+
+#check @Kk.FiniteRepresentingPair.fromCommonUpper_vertex
+#check @Kk.FiniteRepresentingPair.fromCommonUpperFamily_injective
+#print axioms Kk.FiniteRepresentingPair.fromCommonUpper_vertex
