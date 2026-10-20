@@ -48,8 +48,8 @@ noncomputable def fromCommonUpper
   have hNe : S.1 ≠ U.1 := by
     intro hEq
     have hLev := congrArg (fun N : AdmissibleKptNode family => N.1.1) hEq
-    have hSLev : S.1.1 = X.val.size-1 := rfl
-    have hULev : U.1.1 = U.level := rfl
+    have hSLev : S.1.1.1 = X.val.size-1 := rfl
+    have hULev : U.1.1.1 = U.level := rfl
     rw [hSLev, hULev] at hLev
     omega
   exact ⟨S, U, lt_of_le_of_ne hLe hNe⟩
