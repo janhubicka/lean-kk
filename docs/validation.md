@@ -14,6 +14,25 @@ The transitive axiom report is exactly
 This establishes the Ramsey-composition step, **not** the labelled carrier,
 occurrence factorisation, or optimality theorem.
 
+## Validated labelled-diary transfer (20 October 2026)
+
+[CI run 39371584207](https://github.com/janhubicka/lean-kk/actions/runs/39371584207)
+compiled and checked `Kk.diary_colouring_constant` and
+`Kk.diary_colouring_factors`. Their transitive axiom lists are exactly
+`[propext, Classical.choice, Quot.sound]`.
+
+These results prove that the colour of the transformed selected embeddings
+factors through their labelled successor diaries **provided that**
+(a) each selected embedding has a representation by the finite carrier
+of its diary, and (b) the representation commutes with the induced action.
+Neither hypothesis is concealed as an axiom. Their eventual discharge
+requires the geometric diary construction.
+
+`Kk/RepresentedVertices.lean` is the next geometric interface:
+represented auxiliary vertices, independence of the representing pair,
+and the action on their complete atomic relations. The CI verdict for this
+file is tracked separately from the already verified transfer result.
+
 ## Imported mathematical theorem
 
 The dependency is pinned to
