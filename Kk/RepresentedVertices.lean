@@ -56,8 +56,8 @@ noncomputable def vertex (P : FiniteRepresentingPair A) :
 map. Strictness follows from the *proved* global-extension theorem. -/
 noncomputable def image (P : FiniteRepresentingPair A)
     (h : TypeRespectingEmbedding A) : GPlusRepresentingPair family := by
-  obtain ⟨F, hF⟩ := TypeRespectingEmbedding.exists_extension A h
   refine ⟨h.1 P.lower, h.1 P.upper, ?_⟩
+  obtain ⟨F, hF⟩ := TypeRespectingEmbedding.exists_extension A h
   calc
     h.1 P.lower = F.map P.lower.1 := (hF P.lower).symm
     _ < F.map P.upper.1 := F.map.map_lt_of_lt P.lower_lt_upper
@@ -91,8 +91,10 @@ theorem image_eq_of_extension (P : FiniteRepresentingPair A)
     (hF : ∀ u : TypeProfile A, F.map u.1 = h.1 u) :
     P.image h = P.toPair.image F.map := by
   apply actualPair_ext
-  · exact (hF P.lower).symm
-  · exact (hF P.upper).symm
+  · change h.1 P.lower = F.map P.lower.1
+    exact (hF P.lower).symm
+  · change h.1 P.upper = F.map P.upper.1
+    exact (hF P.upper).symm
 
 /-- Genuine represented vertices agree with the successor library's
 induced G+ action for every extension of the finite map. -/
@@ -126,8 +128,12 @@ theorem image_act (P : FiniteRepresentingPair A)
     P.image (TypeRespectingEmbedding.act A F h) =
       (P.image h).image F.map := by
   apply actualPair_ext
-  · rfl
-  · rfl
+  · change (TypeRespectingEmbedding.act A F h).1 P.lower =
+      F.map (h.1 P.lower)
+    exact TypeRespectingEmbedding.act_apply A F h P.lower
+  · change (TypeRespectingEmbedding.act A F h).1 P.upper =
+      F.map (h.1 P.upper)
+    exact TypeRespectingEmbedding.act_apply A F h P.upper
 
 /-- Equivariance for the actual induced G+ action, not merely a
 formal action on copies. -/
