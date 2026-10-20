@@ -47,7 +47,7 @@ noncomputable def fromCommonUpper
   have hLe : S.1 ≤ U.1 := U.ancestor_le _ hLowerBound
   have hNe : S.1 ≠ U.1 := by
     intro hEq
-    have hLev := congrArg LevelTree.lev hEq
+    have hLev := congrArg (fun N : AdmissibleKptNode family => N.1.1) hEq
     have hSLev : LevelTree.lev S.1 = X.val.size-1 := rfl
     have hULev : LevelTree.lev U.1 = U.level := rfl
     rw [hSLev, hULev] at hLev
@@ -121,7 +121,7 @@ noncomputable def finiteCarrier (top : FiniteGPlusVertex family) :
 /-- The canonical neutral cap itself is an admissible partial type
 over the finite ordinary base it defines. -/
 noncomputable def carrierUpper (top : FiniteGPlusVertex family) :
-    TypeProfile top.finiteCarrier := by
+    TypeProfile (finiteCarrier top) := by
   refine ⟨top.canonicalCap, ?_⟩
   refine ⟨by rfl, ?_⟩
   exact AdmissibleKptNode.prefix_finiteTypeBase_socle (le_refl _)
@@ -131,7 +131,7 @@ upper partial type. All four ordinary atomic tables are retained. -/
 theorem prefix_carrierUpper
     (top X : FiniteGPlusVertex family)
     (hX : X.val.IsPrefix top.val) :
-    X.val.IsPrefix (RawPartialTypeNode.ordinaryCode (top.carrierUpper).1.1) := by
+    X.val.IsPrefix (RawPartialTypeNode.ordinaryCode ((carrierUpper top)).1.1) := by
   change X.val.IsPrefix
     (RawPartialTypeNode.ordinaryCode top.canonicalCap.1)
   rw [top.canonicalCap_ordinaryCode]
@@ -146,8 +146,8 @@ noncomputable def carrierPoints
     (points : Λ → FiniteGPlusVertex family)
     (hPoints : ∀ a, (points a).val.IsPrefix top.val) :
     Λ → FiniteRepresentingPair top.finiteCarrier :=
-  FiniteRepresentingPair.fromCommonUpperFamily top.carrierUpper
-    points (fun a => top.prefix_carrierUpper (points a) (hPoints a))
+  FiniteRepresentingPair.fromCommonUpperFamily (carrierUpper top)
+    points (fun a => (prefix_carrierUpper top) (points a) (hPoints a))
 
 /-- The labelled carrier constructed above represents exactly the
 given vertices, not merely an isomorphic unlabelled family. -/
@@ -156,11 +156,11 @@ theorem carrierPoints_vertex
     (top : FiniteGPlusVertex family)
     (points : Λ → FiniteGPlusVertex family)
     (hPoints : ∀ a, (points a).val.IsPrefix top.val) :
-    ∀ a, (top.carrierPoints points hPoints a).vertex = points a := by
+    ∀ a, ((carrierPoints top) points hPoints a).vertex = points a := by
   intro a
   exact FiniteRepresentingPair.fromCommonUpperFamily_vertices
-    top.carrierUpper points
-    (fun x => top.prefix_carrierUpper (points x) (hPoints x)) a
+    (carrierUpper top) points
+    (fun x => (prefix_carrierUpper top) (points x) (hPoints x)) a
 
 /-- This finite carrier preserves all labels whenever the original
 selected vertices were distinct. -/
@@ -170,10 +170,10 @@ theorem carrierPoints_injective
     (points : Λ → FiniteGPlusVertex family)
     (hPoints : ∀ a, (points a).val.IsPrefix top.val)
     (hInj : Function.Injective points) :
-    Function.Injective (fun a => (top.carrierPoints points hPoints a).vertex) := by
+    Function.Injective (fun a => ((carrierPoints top) points hPoints a).vertex) := by
   intro a b h
   apply hInj
-  simpa only [top.carrierPoints_vertex points hPoints] using h
+  simpa only [(carrierPoints top)_vertex points hPoints] using h
 
 end FiniteGPlusVertex
 
