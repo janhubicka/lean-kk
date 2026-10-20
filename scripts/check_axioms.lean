@@ -19,3 +19,10 @@ import Kk
 #check @Kk.FiniteRepresentingPair.labelled_image_act
 #print axioms Kk.FiniteRepresentingPair.labelled_image_act
 #print axioms Kk.FiniteRepresentingPair.imageVertex_binary
+
+#check @Kk.LabelledGPlusCopy.fromPairs_binary
+#check @Kk.LabelledGPlusCopy.fromPairs_e
+#check @Kk.LabelledGPlusCopy.map_fromPairs
+#check @Kk.LabelledGPlusCopy.colour_factors_through_diary
+#print axioms Kk.LabelledGPlusCopy.map_fromPairs
+#print axioms Kk.LabelledGPlusCopy.colour_factors_through_diary
