@@ -28,10 +28,31 @@ of its diary, and (b) the representation commutes with the induced action.
 Neither hypothesis is concealed as an axiom. Their eventual discharge
 requires the geometric diary construction.
 
-`Kk/RepresentedVertices.lean` is the next geometric interface:
-represented auxiliary vertices, independence of the representing pair,
-and the action on their complete atomic relations. The CI verdict for this
-file is tracked separately from the already verified transfer result.
+## Verified geometric and labelled-action interface
+
+[Full Lean run 39505853734](https://github.com/janhubicka/lean-kk/actions/runs/39505853734)
+passed `lake build`, the named theorem checks, and all axiom checks against
+the pinned successor library. The transitive axioms for the new named
+endpoints are exactly `[propext, Classical.choice, Quot.sound]`.
+
+- `Kk/RepresentedVertices.lean`: actual source type pairs, independence
+  of representation and global extension, induced G+ equivariance, and
+  exact preservation/reflection of binary and auxiliary E records.
+- `Kk/LabelledCopies.lean`: labelled injective genuine G+ copies,
+  `map_fromPairs`, and conditional colour factorisation through diaries.
+- `Kk/CommonCap.lean`: one finite admissible carrier, one upper type,
+  and injective labelled source pairs for any family of G+ codes which
+  are prefixes of a common top code.
+- `Kk.LabelledGPlusCopy.colour_factors_through_diary_of_orbits`:
+  genuine monoid-orbit factorisation implies the type-respecting
+  factorisation needed by the Ramsey-transfer theorem.
+
+**These do not yet prove the K_k-specific geometrical orbit hypothesis.**
+The chosen bounded resolved copy must be identified with codes in one
+numerical H+ prefix chain, and each labelled occurrence of a diary must
+be shown to lie in the genuine induced monoid orbit of its chosen source.
+The global full-closure (B3) age-test projection in the diary/envelope
+comparison remains a separate obligation.
 
 ## Imported mathematical theorem
 
