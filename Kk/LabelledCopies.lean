@@ -54,6 +54,7 @@ noncomputable def fromPairs
   refine ⟨(fun a => (points a).imageVertex h), ?_⟩
   obtain ⟨F, hF⟩ := TypeRespectingEmbedding.exists_extension A h
   intro a b hab
+  change (points a).imageVertex h = (points b).imageVertex h at hab
   rw [FiniteRepresentingPair.imageVertex_eq_of_extension (points a) h F hF,
     FiniteRepresentingPair.imageVertex_eq_of_extension (points b) h F hF] at hab
   exact hinj ((gPlusShapeImage_induced_LPlus F.map).1 hab)
