@@ -110,4 +110,71 @@ theorem fromCommonUpperFamily_injective
 
 end FiniteRepresentingPair
 
+namespace FiniteGPlusVertex
+
+/-- The chosen finite ordinary base under the actual neutral cap
+of a genuine G+ vertex. -/
+noncomputable def finiteCarrier (top : FiniteGPlusVertex family) :
+    FiniteTypeBase family :=
+  top.canonicalCap.finiteTypeBase
+
+/-- The canonical neutral cap itself is an admissible partial type
+over the finite ordinary base it defines. -/
+noncomputable def carrierUpper (top : FiniteGPlusVertex family) :
+    TypeProfile top.finiteCarrier := by
+  refine ⟨top.canonicalCap, ?_⟩
+  refine ⟨by rfl, ?_⟩
+  exact AdmissibleKptNode.prefix_finiteTypeBase_socle (le_refl _)
+
+/-- Every prefix of the top code is a prefix of its genuine carrier
+upper partial type. All four ordinary atomic tables are retained. -/
+theorem prefix_carrierUpper
+    (top X : FiniteGPlusVertex family)
+    (hX : X.val.IsPrefix top.val) :
+    X.val.IsPrefix (RawPartialTypeNode.ordinaryCode (top.carrierUpper).1.1) := by
+  change X.val.IsPrefix
+    (RawPartialTypeNode.ordinaryCode top.canonicalCap.1)
+  rw [top.canonicalCap_ordinaryCode]
+  exact hX
+
+/-- A labelled family in the prefix chain of one maximum code has
+one actual finite admissible carrier, without extra hypotheses on
+a choice of base or ambient cap. -/
+noncomputable def carrierPoints
+    {Λ : Type u}
+    (top : FiniteGPlusVertex family)
+    (points : Λ → FiniteGPlusVertex family)
+    (hPoints : ∀ a, (points a).val.IsPrefix top.val) :
+    Λ → FiniteRepresentingPair top.finiteCarrier :=
+  FiniteRepresentingPair.fromCommonUpperFamily top.carrierUpper
+    points (fun a => top.prefix_carrierUpper (points a) (hPoints a))
+
+/-- The labelled carrier constructed above represents exactly the
+given vertices, not merely an isomorphic unlabelled family. -/
+theorem carrierPoints_vertex
+    {Λ : Type u}
+    (top : FiniteGPlusVertex family)
+    (points : Λ → FiniteGPlusVertex family)
+    (hPoints : ∀ a, (points a).val.IsPrefix top.val) :
+    ∀ a, (top.carrierPoints points hPoints a).vertex = points a := by
+  intro a
+  exact FiniteRepresentingPair.fromCommonUpperFamily_vertices
+    top.carrierUpper points
+    (fun x => top.prefix_carrierUpper (points x) (hPoints x)) a
+
+/-- This finite carrier preserves all labels whenever the original
+selected vertices were distinct. -/
+theorem carrierPoints_injective
+    {Λ : Type u}
+    (top : FiniteGPlusVertex family)
+    (points : Λ → FiniteGPlusVertex family)
+    (hPoints : ∀ a, (points a).val.IsPrefix top.val)
+    (hInj : Function.Injective points) :
+    Function.Injective (fun a => (top.carrierPoints points hPoints a).vertex) := by
+  intro a b h
+  apply hInj
+  simpa only [top.carrierPoints_vertex points hPoints] using h
+
+end FiniteGPlusVertex
+
 end Kk
