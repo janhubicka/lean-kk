@@ -48,8 +48,8 @@ noncomputable def fromCommonUpper
   have hNe : S.1 ≠ U.1 := by
     intro hEq
     have hLev := congrArg (fun N : AdmissibleKptNode family => N.1.1) hEq
-    have hSLev : LevelTree.lev S.1 = X.val.size-1 := rfl
-    have hULev : LevelTree.lev U.1 = U.level := rfl
+    have hSLev : S.1.1 = X.val.size-1 := rfl
+    have hULev : U.1.1 = U.level := rfl
     rw [hSLev, hULev] at hLev
     omega
   exact ⟨S, U, lt_of_le_of_ne hLe hNe⟩
@@ -145,7 +145,7 @@ noncomputable def carrierPoints
     (top : FiniteGPlusVertex family)
     (points : Λ → FiniteGPlusVertex family)
     (hPoints : ∀ a, (points a).val.IsPrefix top.val) :
-    Λ → FiniteRepresentingPair top.finiteCarrier :=
+    Λ → FiniteRepresentingPair (finiteCarrier top) :=
   FiniteRepresentingPair.fromCommonUpperFamily (carrierUpper top)
     points (fun a => (prefix_carrierUpper top) (points a) (hPoints a))
 
@@ -173,7 +173,7 @@ theorem carrierPoints_injective
     Function.Injective (fun a => ((carrierPoints top) points hPoints a).vertex) := by
   intro a b h
   apply hInj
-  simpa only [(carrierPoints top)_vertex points hPoints] using h
+  simpa only [carrierPoints_vertex top points hPoints] using h
 
 end FiniteGPlusVertex
 
