@@ -1,5 +1,6 @@
 import Kk.TypeRespecting
 import Kk.DiaryTransfer
+import Kk.RepresentedVertices
 
 /-!
 The counting project imports the verified successor-tree library.
