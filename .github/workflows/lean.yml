@@ -46,6 +46,7 @@ jobs:
         run: lake build
       - name: Check public theorem and its axioms
         run: |
+          set -euo pipefail
           lake env lean scripts/check_axioms.lean | tee axioms.log
           ! grep -Eq 'sorryAx|unknownConstant|axiom.*Kk\.' axioms.log
       - name: Cache pinned Lake build
