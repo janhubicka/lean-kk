@@ -127,6 +127,39 @@ theorem colour_factors_through_diary
       exact map_fromPairs (points i) (hinj i) F h)
     colour
 
+/-- A stronger, geometric way to discharge labelled occurrence
+factorisation: each occurrence of diary `i` is a genuine monoid image
+of the same fixed *labelled* source copy for `i`.
+
+The global-to-intrinsic step is now a theorem, not an extra axiom.
+Proving the actual orbit property for resolved diaries is the remaining
+K_k-specific envelope task. -/
+theorem colour_factors_through_diary_of_orbits
+    {ι : Type v} {κ : Type w} [Fintype κ] [Nonempty κ]
+    (indices : Finset ι)
+    (base : ι → FiniteTypeBase family)
+    (points : (i : ι) → Λ → FiniteRepresentingPair (base i))
+    (hinj : ∀ i : ι, Function.Injective
+      (fun a => (points i a).vertex))
+    (source : (i : ι) → TypeRespectingEmbedding (base i))
+    (diary : LabelledGPlusCopy family Λ → ι)
+    (selected : Set (LabelledGPlusCopy family Λ))
+    (hIndexed : ∀ e, e ∈ selected → diary e ∈ indices)
+    (hOrbit : ∀ e, e ∈ selected → ∀ i, diary e = i →
+      ∃ F : SuccessorTree.SMTree.MMap (normalizedKptSMTree family),
+        map F (fromPairs (points i) (hinj i) (source i)) = e)
+    (colour : LabelledGPlusCopy family Λ → κ) :
+    ∃ (F : SuccessorTree.SMTree.MMap (normalizedKptSMTree family))
+      (byDiary : ι → κ),
+      ∀ e, e ∈ selected →
+        colour (map F e) = byDiary (diary e) := by
+  apply colour_factors_through_diary indices base points hinj
+    diary selected hIndexed ?_ colour
+  intro e he i hDiary
+  obtain ⟨F, hF⟩ := hOrbit e he i hDiary
+  refine ⟨TypeRespectingEmbedding.act (base i) F (source i), ?_⟩
+  exact (map_fromPairs (points i) (hinj i) F (source i)).symm.trans hF
+
 end LabelledGPlusCopy
 
 end Kk
