@@ -2,9 +2,20 @@ name: Lean
 
 on:
   push:
-    branches: [main, diary-upper-bound]
+    branches: [main]
   pull_request:
+    paths:
+      - 'Kk/**'
+      - 'Kk.lean'
+      - 'scripts/**'
+      - 'lakefile.toml'
+      - 'lean-toolchain'
+      - '.github/workflows/lean.yml'
   workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -37,3 +48,9 @@ jobs:
         run: |
           lake env lean scripts/check_axioms.lean | tee axioms.log
           ! grep -Eq 'sorryAx|unknownConstant|axiom.*Kk\.' axioms.log
+      - name: Cache pinned Lake build
+        if: success()
+        uses: actions/cache/save@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
