@@ -6,3 +6,8 @@ import Kk
 #check @SuccessorTree.V10.TypeRespectingEmbedding.act_comp
 #check @Kk.finite_family_type_respecting_ramsey
 #print axioms Kk.finite_family_type_respecting_ramsey
+
+#check @Kk.diary_colouring_constant
+#check @Kk.diary_colouring_factors
+#print axioms Kk.diary_colouring_constant
+#print axioms Kk.diary_colouring_factors
