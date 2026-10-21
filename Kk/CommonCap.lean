@@ -270,4 +270,51 @@ theorem countable_labelled_carrier_full_atoms
     rw [hPoints a, hPoints b]
     exact C.toGPlus_E family hAvoid (indices a) (indices b)
 
+
+/-- The carrier of a finite labelled selection from a genuine countable
+partial structure works simultaneously for *every global successor map*.
+
+The intrinsic finite approximation is the actual restriction of F to
+the complete profile of A. Hence the same fixed source representing
+pairs give all labelled vertices of the image under the induced G+
+action. No fresh extension, source envelope or diary assumption occurs.
+
+This proves the global-orbit portion of the factorisation interface;
+identifying which copies lie in that orbit is still the separate,
+K_k-specific diary/envelope problem. -/
+theorem countable_labelled_carrier_all_images
+    (C : CountableEnumeratedPartialStructure db du dd)
+    (hAvoid : ∀ bad, bad ∈ family → bad.Avoids C.L)
+    {Λ : Type u}
+    (indices : Λ → Nat)
+    (N : Nat)
+    (hBound : ∀ a, indices a ≤ N)
+    (hInjective : Function.Injective indices) :
+    ∃ (A : FiniteTypeBase family)
+      (points : Λ → FiniteRepresentingPair A),
+      Function.Injective (fun a => (points a).vertex) ∧
+      (∀ a, (points a).vertex =
+        C.toGPlus family hAvoid (indices a)) ∧
+      ∀ F : SuccessorTree.SMTree.MMap (normalizedKptSMTree family),
+        ∃ h : TypeRespectingEmbedding A,
+          ∀ a, (points a).imageVertex h =
+            gPlusShapeImage F.map
+              (C.toGPlus family hAvoid (indices a)) := by
+  obtain ⟨A, points, hInj, hPoints⟩ :=
+    countable_labelled_carrier C hAvoid indices N hBound hInjective
+  refine ⟨A, points, hInj, hPoints, ?_⟩
+  intro F
+  let h : TypeRespectingEmbedding A :=
+    TypeRespectingEmbedding.ofRestriction A
+      ⟨(fun u : TypeProfile A => F.map u.1), ⟨F, rfl⟩⟩
+  refine ⟨h, ?_⟩
+  intro a
+  calc
+    (points a).imageVertex h =
+        gPlusShapeImage F.map (points a).vertex :=
+      (points a).imageVertex_eq_of_extension h F (fun _ => rfl)
+    _ = gPlusShapeImage F.map
+        (C.toGPlus family hAvoid (indices a)) := by
+      rw [hPoints a]
+
 end Kk
