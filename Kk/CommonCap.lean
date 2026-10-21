@@ -1,5 +1,6 @@
 import Kk.RepresentedVertices
 import SuccessorTree.V10.GPlusCommonUpperRepresentation
+import SuccessorTree.V10.GPlusHPrefixCommonUpper
 import Mathlib.Tactic
 
 /-!
@@ -175,6 +176,45 @@ theorem carrierPoints_injective
   apply hInj
   simpa only [carrierPoints_vertex top points hPoints] using h
 
+
 end FiniteGPlusVertex
+
+/-- A finite injectively labelled family of vertices taken from ONE
+countable enumerated forbidden-free L+ structure has a genuine finite
+type-respecting carrier. There is no common-upper or representability
+hypothesis: the index bound and the prefix theorem discharge it.
+
+This is the application to countable coded structures of the finite
+prefix-chain construction above. It does not assert that equal successor
+diaries always lie in one global shape-map orbit. -/
+theorem countable_labelled_carrier
+    (C : CountableEnumeratedPartialStructure db du dd)
+    (hAvoid : ∀ bad, bad ∈ family → bad.Avoids C.L)
+    {Λ : Type u}
+    (indices : Λ → Nat)
+    (N : Nat)
+    (hBound : ∀ a, indices a ≤ N)
+    (hInjective : Function.Injective indices) :
+    ∃ (A : FiniteTypeBase family)
+      (points : Λ → FiniteRepresentingPair A),
+      Function.Injective (fun a => (points a).vertex) ∧
+      ∀ a, (points a).vertex =
+        C.toGPlus family hAvoid (indices a) := by
+  let top : FiniteGPlusVertex family := C.toGPlus family hAvoid N
+  let selected : Λ → FiniteGPlusVertex family :=
+    fun a => C.toGPlus family hAvoid (indices a)
+  have hPrefix : ∀ a, (selected a).val.IsPrefix top.val := by
+    intro a
+    exact C.toGPlus_code_prefix_of_le family hAvoid (hBound a)
+  have hSelectedInjective : Function.Injective selected := by
+    intro a b hab
+    apply hInjective
+    exact C.toGPlus_injective family hAvoid hab
+  refine ⟨FiniteGPlusVertex.finiteCarrier top,
+    FiniteGPlusVertex.carrierPoints top selected hPrefix, ?_, ?_⟩
+  · exact FiniteGPlusVertex.carrierPoints_injective
+      top selected hPrefix hSelectedInjective
+  · intro a
+    exact FiniteGPlusVertex.carrierPoints_vertex top selected hPrefix a
 
 end Kk
