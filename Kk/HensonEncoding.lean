@@ -115,7 +115,7 @@ theorem hensonForbiddenFamily_no_loops
           (normalizedGraphModel E).Realizes loopPattern f := by
         refine ⟨?_, ?_, ?_, ?_, ?_⟩
         · intro a b hab
-          exact (hab (Subsingleton.elim a b)).elim
+          exact ((ne_of_lt hab) (Subsingleton.elim a b)).elim
         · intro a
           simp [normalizedGraphModel, binaryUnaryAgeModel]
         · intro a b hab t
