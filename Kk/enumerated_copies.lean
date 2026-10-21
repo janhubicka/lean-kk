@@ -145,5 +145,60 @@ theorem colour_factors_through_diary
       exact map_fromPairs enum (points i) (hinj i) F h)
     colour
 
+
+/-- If two actual enumerated G+ vertices are strict prefix codes, their
+order is preserved by every induced shape-map action, PROVIDED the
+enumeration is nondecreasing by finite-code size. This does not claim
+that arbitrary (incomparable) G+ vertices retain their numeric order. -/
+theorem map_lt_of_prefix
+    (enum : Nat ≃ FiniteGPlusVertex family)
+    (hSizeMono : Monotone (fun n => (enum n).val.size))
+    (F : SuccessorTree.SMTree.MMap (normalizedKptSMTree family))
+    (e : LabelledGOmegaCopy Λ)
+    (a b : Λ)
+    (hPrefix : (enum (e.1 a)).IsProperPrefix (enum (e.1 b))) :
+    (map enum F e).1 a < (map enum F e).1 b := by
+  have hImagePrefix :
+      (gPlusShapeImage F.map (enum (e.1 a))).IsProperPrefix
+        (gPlusShapeImage F.map (enum (e.1 b))) :=
+    (gPlusShapeImage_properPrefix_iff F.map _ _).2 hPrefix
+  have hSize : (gPlusShapeImage F.map (enum (e.1 a))).val.size <
+      (gPlusShapeImage F.map (enum (e.1 b))).val.size :=
+    hImagePrefix.2
+  have hEnumA : enum ((map enum F e).1 a) =
+      gPlusShapeImage F.map (enum (e.1 a)) := by
+    exact enum.apply_symm_apply _
+  have hEnumB : enum ((map enum F e).1 b) =
+      gPlusShapeImage F.map (enum (e.1 b)) := by
+    exact enum.apply_symm_apply _
+  have hImageSize : (enum ((map enum F e).1 a)).val.size <
+      (enum ((map enum F e).1 b)).val.size := by
+    rw [hEnumA, hEnumB]
+    exact hSize
+  by_contra hNot
+  have hReverse : (map enum F e).1 b ≤ (map enum F e).1 a :=
+    Nat.le_of_not_gt hNot
+  have hContrary := hSizeMono hReverse
+  omega
+
+/-- In the actual exhaustive G-omega enumeration, there is no
+additional size-order hypothesis: lean-successors already constructs
+and verifies the monotone layer enumeration. -/
+theorem map_lt_of_prefix_in_fixed_enumeration
+    (C : CountableEnumeratedPartialStructure db du dd)
+    (hAvoid : ∀ bad, bad ∈ family → bad.Avoids C.L)
+    (F : SuccessorTree.SMTree.MMap (normalizedKptSMTree family))
+    (e : LabelledGOmegaCopy Λ)
+    (a b : Λ)
+    (hPrefix :
+      ((GPlusEnumeration.enumerate C family hAvoid) (e.1 a)).IsProperPrefix
+        ((GPlusEnumeration.enumerate C family hAvoid) (e.1 b))) :
+    (map (GPlusEnumeration.enumerate C family hAvoid) F e).1 a <
+      (map (GPlusEnumeration.enumerate C family hAvoid) F e).1 b := by
+  exact map_lt_of_prefix (GPlusEnumeration.enumerate C family hAvoid)
+    (GPlusEnumeration.enumerate_size_mono C family hAvoid)
+    F e a b hPrefix
+
+
 end LabelledGOmegaCopy
 end Kk
