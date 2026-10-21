@@ -74,3 +74,8 @@ import Kk
 
 #check @Kk.hensonForbiddenFamily_avoids_iff
 #print axioms Kk.hensonForbiddenFamily_avoids_iff
+
+#check @Kk.common_source_pairs_of_equal_labelled_preimages
+#check @Kk.common_labelled_copy_of_equal_endpoint_preimages
+#print axioms Kk.common_source_pairs_of_equal_labelled_preimages
+#print axioms Kk.common_labelled_copy_of_equal_endpoint_preimages
