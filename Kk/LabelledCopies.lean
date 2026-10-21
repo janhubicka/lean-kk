@@ -1,4 +1,5 @@
 import Kk.RepresentedVertices
+import SuccessorTree.V10.GPlusEnvelopePairLift
 
 /-!
 # Labelled finite copies in the actual auxiliary G+ structure
@@ -159,6 +160,50 @@ theorem colour_factors_through_diary_of_orbits
   obtain ⟨F, hF⟩ := hOrbit e he i hDiary
   refine ⟨TypeRespectingEmbedding.act (base i) F (source i), ?_⟩
   exact (map_fromPairs (points i) (hinj i) F (source i)).symm.trans hF
+
+
+/-- A genuine normalized Kpt envelope of the endpoints of a finite
+injectively labelled family of representing pairs yields a simultaneous
+labelled PREIMAGE COPY under the actual induced G+ action.
+
+Unlike an unlabelled envelope statement, the chosen preimages preserve
+all labels. This theorem needs an existing genuine monoid envelope of
+the specified endpoints; it does not construct that envelope or show
+that equal diaries choose the same source family. -/
+theorem labelled_copy_lifts_of_envelope
+    (F : SuccessorTree.SMTree.MMap (normalizedKptSMTree family))
+    (X : Set (AdmissibleKptNode family))
+    (hEnvelope : SuccessorTree.SMTree.Envelope.IsEnvelope F.map X)
+    (e : LabelledGPlusCopy family Λ)
+    (pairs : Λ → GPlusRepresentingPair family)
+    (hPairs : ∀ a, (pairs a).vertex = e.1 a)
+    (hEndpoints : ∀ a, (pairs a).lower ∈ X ∧ (pairs a).upper ∈ X) :
+    ∃ e0 : LabelledGPlusCopy family Λ, map F e0 = e := by
+  classical
+  have hLift : ∀ a, ∃ Q : GPlusRepresentingPair family,
+      Q.image F.map = pairs a := by
+    intro a
+    exact (pairs a).lifts_from_shapeMap_range F.map
+      (hEnvelope (hEndpoints a).1) (hEnvelope (hEndpoints a).2)
+  choose Q hQ using hLift
+  have hQInjective : Function.Injective (fun a => (Q a).vertex) := by
+    intro a b hEq
+    apply e.2
+    rw [← hPairs a, ← hPairs b]
+    have hImg := congrArg (gPlusShapeImage F.map) hEq
+    rw [← (Q a).image_vertex_eq_canonicalShapeImage F.map,
+        ← (Q b).image_vertex_eq_canonicalShapeImage F.map,
+        hQ a, hQ b] at hImg
+    exact hImg
+  let e0 : LabelledGPlusCopy family Λ :=
+    ⟨fun a => (Q a).vertex, hQInjective⟩
+  refine ⟨e0, ?_⟩
+  apply Subtype.ext
+  funext a
+  change gPlusShapeImage F.map ((Q a).vertex) = e.1 a
+  rw [← (Q a).image_vertex_eq_canonicalShapeImage F.map,
+    hQ a, hPairs a]
+
 
 end LabelledGPlusCopy
 
