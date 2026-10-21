@@ -29,6 +29,9 @@ import Kk
 #check @Kk.LabelledGPlusCopy.colour_factors_through_diary_of_orbits
 #print axioms Kk.LabelledGPlusCopy.colour_factors_through_diary_of_orbits
 
+#check @Kk.LabelledGPlusCopy.labelled_copy_lifts_of_envelope
+#print axioms Kk.LabelledGPlusCopy.labelled_copy_lifts_of_envelope
+
 #check @Kk.FiniteRepresentingPair.fromCommonUpper_vertex
 #check @Kk.FiniteRepresentingPair.fromCommonUpperFamily_injective
 #print axioms Kk.FiniteRepresentingPair.fromCommonUpper_vertex
