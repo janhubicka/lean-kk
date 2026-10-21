@@ -131,4 +131,40 @@ theorem hensonForbiddenFamily_no_loops
         simp [hensonForbiddenFamily]
       exact (hAvoid _ hBad) ⟨f, hRealizes⟩
 
+
+/-- The complete symmetric clique is the only remaining irreducible
+obstruction once positive loops and asymmetric pairs have been excluded.
+
+Here clique-freeness is stated on increasing enumerations, exactly as
+the normalized induced forbidden-pattern semantics require. Every
+undirected clique has such an increasing enumeration. -/
+theorem hensonForbiddenFamily_no_cliques
+    (ell : Nat) (hell : 2 ≤ ell)
+    (E : Nat → Nat → Bool)
+    (hAvoid : ∀ bad, bad ∈ hensonForbiddenFamily ell hell →
+      bad.Avoids (normalizedGraphModel E)) :
+    ¬ ∃ f : Fin ell → Nat, StrictMono f ∧
+      (∀ a b : Fin ell, a ≠ b → E (f a) (f b) = true) := by
+  rintro ⟨f, hf, hEdges⟩
+  have hLoops := hensonForbiddenFamily_no_loops ell hell E hAvoid
+  have hRealizes :
+      (normalizedGraphModel E).Realizes (cliquePattern ell) f := by
+    refine ⟨hf, ?_, ?_, ?_, ?_⟩
+    · intro a
+      simp [normalizedGraphModel, binaryUnaryAgeModel]
+    · intro a b hab t
+      change E (f a) (f b) = decide (a ≠ b)
+      simpa [hab] using hEdges a b hab
+    · intro a t
+      exact Fin.elim0 t
+    · intro a t
+      change E (f a) (f a) = false
+      exact hLoops (f a)
+  have hBad :
+      (NormalizedForbidden.nontrivial ell (cliquePattern ell)
+        (by omega) (cliquePattern_irreducible ell)) ∈
+        hensonForbiddenFamily ell hell := by
+    simp [hensonForbiddenFamily]
+  exact (hAvoid _ hBad) ⟨f, hRealizes⟩
+
 end Kk
