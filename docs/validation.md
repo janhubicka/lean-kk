@@ -138,6 +138,35 @@ orbit lemma for the resolved copy remain separate applications.
 G-omega and countable-source interfaces, while leaving the full diary
 carrier and final upper bound pending.
 
+## Verified finite Henson graph-language equivalence (22 October 2026)
+
+[Actions run 39690515113](https://github.com/janhubicka/lean-kk/actions/runs/39690515113)
+at `92ce50e5b04876c830662da1b6168e988262dd4c` passed the complete
+Lean build and the named axiom audit (only
+`[propext, Classical.choice, Quot.sound]`).
+
+The new `Kk/HensonEncoding.lean` module defines the genuine normalized
+signature `AgeTestModel 1 0 1`, together with exactly four kinds of
+`NormalizedForbidden` patterns: the positive-loop singleton, the two
+asymmetric ordered pairs, and the complete symmetric
+`K_ell` (`ell >= 2`). Their required singleton and irreducibility
+hypotheses are kernel-checked.
+
+The theorem `Kk.hensonForbiddenFamily_avoids_iff` proves the exact
+bidirectional statement that avoiding these patterns is equivalent to
+irreflexivity, symmetry, and the absence of an increasing complete
+`K_ell` clique. The latter is ordinary `K_ell`-freeness because
+any clique admits an increasing listing. The directional inequalities
+are real induced ordered copies; the proof does not assume symmetry in
+the generic successor library.
+
+This closes the finite-language/forbidden-age dictionary. The
+identification with the actual Henson *Fraisse limit*, the construction
+and normalization of a bounded resolved copy, and the common
+labelled diary orbit remain separate open mathematical/application
+obligations. The manuscript's green marker now points to this exact
+equivalence and nowhere claims the full upper bound is verified.
+
 ## Imported mathematical theorem
 
 The dependency is pinned to
