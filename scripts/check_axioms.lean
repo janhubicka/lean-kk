@@ -71,3 +71,6 @@ import Kk
 
 #check @Kk.hensonForbiddenFamily_symmetric
 #print axioms Kk.hensonForbiddenFamily_symmetric
+
+#check @Kk.hensonForbiddenFamily_avoids_iff
+#print axioms Kk.hensonForbiddenFamily_avoids_iff
