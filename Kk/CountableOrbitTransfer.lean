@@ -85,9 +85,11 @@ theorem countableSourceCopy_finite_representation
       gPlusShapeImage I.map (points a).vertex :=
     (points a).imageVertex_eq_of_extension h I (fun _ => rfl)
   rw [hImage, hPoints a]
-  simpa only [I] using
-    congrArg enum.symm
-      (gPlusShapeImage_id (C.toGPlus family hAvoid (indices a)))
+  have hIdentity :
+      I.map = SuccessorTree.ShapeMap.id (admissibleKptSTree family) := rfl
+  rw [hIdentity]
+  exact congrArg enum.symm
+    (gPlusShapeImage_id (C.toGPlus family hAvoid (indices a)))
 
 /-- A conditional G-omega diary theorem with only the TRUE geometrical
 orbit hypothesis: countable source carriers and finite full-profile
