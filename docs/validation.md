@@ -57,15 +57,15 @@ comparison remains a separate obligation.
 ## New verified countable-prefix carrier (21 October 2026)
 
 [Actions run 39560836060](https://github.com/janhubicka/lean-kk/actions/runs/39560836060)
-on commit \`8bbf370e33956bb4c8b5d926697c51999221bc00\` passed
+on commit `8bbf370e33956bb4c8b5d926697c51999221bc00` passed
 the complete Lean build and the named axiom audit. The theorem
-\`Kk.countable_labelled_carrier\` uses the actual
-\`CountableEnumeratedPartialStructure.toGPlus\` representation.
+`Kk.countable_labelled_carrier` uses the actual
+`CountableEnumeratedPartialStructure.toGPlus` representation.
 For any finite injectively labelled list of indices and any common index
-bound, it constructs ONE genuine admissible \`FiniteTypeBase\` and one
+bound, it constructs ONE genuine admissible `FiniteTypeBase` and one
 labelled family of representing pairs. Both source injectivity and equality
 with each original G+ vertex are conclusions, not assumptions.
-Its transitive axioms are exactly \`[propext, Classical.choice, Quot.sound]\`.
+Its transitive axioms are exactly `[propext, Classical.choice, Quot.sound]`.
 
 This discharges the abstract common-prefix requirement **once the selected
 vertices have been identified as actual prefix codes of the same source
@@ -74,8 +74,8 @@ Henson copy has this identification, that equal diaries yield the same
 parameter-closed envelope type, or that all their labelled occurrences
 belong to the common monoid orbit. These remain the geometric next steps.
 
-The manuscript uses \`validation.tex\` (the same margin-marker style as
-\`lean-successors\`) to identify checked endpoints without colouring the
+The manuscript uses `validation.tex` (the same margin-marker style as
+`lean-successors`) to identify checked endpoints without colouring the
 full upper-bound or optimality assertions green. References are pinned to
 passed Lean commits and distinguish incomplete implications from the full
 mathematical statements.
