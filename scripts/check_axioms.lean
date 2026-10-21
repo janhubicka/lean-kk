@@ -44,3 +44,9 @@ import Kk
 
 #check @Kk.countable_labelled_carrier_all_images
 #print axioms Kk.countable_labelled_carrier_all_images
+
+#check @Kk.LabelledGOmegaCopy.toGPlus_map
+#check @Kk.LabelledGOmegaCopy.map_fromPairs
+#check @Kk.LabelledGOmegaCopy.colour_factors_through_diary
+#print axioms Kk.LabelledGOmegaCopy.map_fromPairs
+#print axioms Kk.LabelledGOmegaCopy.colour_factors_through_diary
