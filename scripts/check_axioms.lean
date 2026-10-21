@@ -54,3 +54,8 @@ import Kk
 #check @Kk.LabelledGOmegaCopy.map_lt_of_prefix
 #check @Kk.LabelledGOmegaCopy.map_lt_of_prefix_in_fixed_enumeration
 #print axioms Kk.LabelledGOmegaCopy.map_lt_of_prefix_in_fixed_enumeration
+
+#check @Kk.countableSourceCopy_finite_representation
+#check @Kk.countable_source_orbits_colour_factors
+#print axioms Kk.countableSourceCopy_finite_representation
+#print axioms Kk.countable_source_orbits_colour_factors
