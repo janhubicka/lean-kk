@@ -68,3 +68,6 @@ import Kk
 
 #check @Kk.hensonForbiddenFamily_no_cliques
 #print axioms Kk.hensonForbiddenFamily_no_cliques
+
+#check @Kk.hensonForbiddenFamily_symmetric
+#print axioms Kk.hensonForbiddenFamily_symmetric
