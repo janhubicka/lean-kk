@@ -50,3 +50,7 @@ import Kk
 #check @Kk.LabelledGOmegaCopy.colour_factors_through_diary
 #print axioms Kk.LabelledGOmegaCopy.map_fromPairs
 #print axioms Kk.LabelledGOmegaCopy.colour_factors_through_diary
+
+#check @Kk.LabelledGOmegaCopy.map_lt_of_prefix
+#check @Kk.LabelledGOmegaCopy.map_lt_of_prefix_in_fixed_enumeration
+#print axioms Kk.LabelledGOmegaCopy.map_lt_of_prefix_in_fixed_enumeration
