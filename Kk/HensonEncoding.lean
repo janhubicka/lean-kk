@@ -252,7 +252,7 @@ theorem hensonForbiddenFamily_symmetric
     cases hf : E x y with
     | false =>
         cases hb : E y x with
-        | false => exact hf.trans hb.symm
+        | false => rfl
         | true =>
             exfalso
             exact hNoBackward ⟨_,
@@ -263,7 +263,7 @@ theorem hensonForbiddenFamily_symmetric
             exfalso
             exact hNoForward ⟨_,
               forwardAsym_realizes E hLoops x y hxy hf hb⟩
-        | true => exact hf.trans hb.symm
+        | true => rfl
   intro x y
   rcases lt_trichotomy x y with h | h | h
   · exact hOrdered x y h
