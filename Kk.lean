@@ -3,6 +3,7 @@ import Kk.DiaryTransfer
 import Kk.RepresentedVertices
 import Kk.LabelledCopies
 import Kk.CommonCap
+import Kk.enumerated_copies
 
 /-!
 The counting project imports the verified successor-tree library.
