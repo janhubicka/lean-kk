@@ -79,3 +79,8 @@ import Kk
 #check @Kk.common_labelled_copy_of_equal_endpoint_preimages
 #print axioms Kk.common_source_pairs_of_equal_labelled_preimages
 #print axioms Kk.common_labelled_copy_of_equal_endpoint_preimages
+
+#check @Kk.prefixChain_finite_representation
+#check @Kk.prefix_chain_orbits_colour_factors
+#print axioms Kk.prefixChain_finite_representation
+#print axioms Kk.prefix_chain_orbits_colour_factors
