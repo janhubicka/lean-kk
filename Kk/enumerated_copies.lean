@@ -179,8 +179,7 @@ theorem map_lt_of_prefix
   by_contra hNot
   have hReverse : (map enum F e).1 b ≤ (map enum F e).1 a :=
     Nat.le_of_not_gt hNot
-  have hContrary := hSizeMono hReverse
-  omega
+  exact (not_le_of_gt hImageSize) (hSizeMono hReverse)
 
 /-- In the actual exhaustive G-omega enumeration, there is no
 additional size-order hypothesis: lean-successors already constructs
