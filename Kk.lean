@@ -6,6 +6,7 @@ import Kk.CommonCap
 import Kk.enumerated_copies
 import Kk.CountableOrbitTransfer
 import Kk.HensonEncoding
+import Kk.LabelledEnvelopeComparison
 
 /-!
 The counting project imports the verified successor-tree library.
