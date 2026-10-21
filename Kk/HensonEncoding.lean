@@ -167,4 +167,108 @@ theorem hensonForbiddenFamily_no_cliques
     simp [hensonForbiddenFamily]
   exact (hAvoid _ hBad) ⟨f, hRealizes⟩
 
+
+/-- Given an irreflexive directed graph, a positive forward edge
+and an absent reverse edge literally realise the ordered forbidden
+forward-asymmetric pair. -/
+private theorem forwardAsym_realizes
+    (E : Nat → Nat → Bool)
+    (hLoops : ∀ i, E i i = false)
+    (x y : Nat) (hxy : x < y)
+    (hForward : E x y = true)
+    (hBackward : E y x = false) :
+    (normalizedGraphModel E).Realizes forwardAsymPattern
+      (fun z : Fin 2 => if z = 0 then x else y) := by
+  let f : Fin 2 → Nat := fun z => if z = 0 then x else y
+  have hMono : StrictMono f := by
+    intro a b hab
+    fin_cases a <;> fin_cases b <;> simp_all [f]
+  refine ⟨hMono, ?_, ?_, ?_, ?_⟩
+  · intro a
+    simp [normalizedGraphModel, binaryUnaryAgeModel]
+  · intro a b hab t
+    fin_cases a <;> fin_cases b <;>
+      simp_all [normalizedGraphModel, binaryUnaryAgeModel,
+        forwardAsymPattern, f]
+  · intro a t
+    exact Fin.elim0 t
+  · intro a t
+    fin_cases a <;>
+      simp [normalizedGraphModel, binaryUnaryAgeModel,
+        forwardAsymPattern, f, hLoops]
+
+/-- The other orientation is an independently forbidden induced
+two-vertex configuration: ordered embeddings cannot swap its labels. -/
+private theorem backwardAsym_realizes
+    (E : Nat → Nat → Bool)
+    (hLoops : ∀ i, E i i = false)
+    (x y : Nat) (hxy : x < y)
+    (hForward : E x y = false)
+    (hBackward : E y x = true) :
+    (normalizedGraphModel E).Realizes backwardAsymPattern
+      (fun z : Fin 2 => if z = 0 then x else y) := by
+  let f : Fin 2 → Nat := fun z => if z = 0 then x else y
+  have hMono : StrictMono f := by
+    intro a b hab
+    fin_cases a <;> fin_cases b <;> simp_all [f]
+  refine ⟨hMono, ?_, ?_, ?_, ?_⟩
+  · intro a
+    simp [normalizedGraphModel, binaryUnaryAgeModel]
+  · intro a b hab t
+    fin_cases a <;> fin_cases b <;>
+      simp_all [normalizedGraphModel, binaryUnaryAgeModel,
+        backwardAsymPattern, f]
+  · intro a t
+    exact Fin.elim0 t
+  · intro a t
+    fin_cases a <;>
+      simp [normalizedGraphModel, binaryUnaryAgeModel,
+        backwardAsymPattern, f, hLoops]
+
+/-- Avoiding both asymmetric induced ordered pairs forces a genuinely
+symmetric binary relation. Symmetry is a conclusion, not an implicit
+assumption of the general successor library. -/
+theorem hensonForbiddenFamily_symmetric
+    (ell : Nat) (hell : 2 ≤ ell)
+    (E : Nat → Nat → Bool)
+    (hAvoid : ∀ bad, bad ∈ hensonForbiddenFamily ell hell →
+      bad.Avoids (normalizedGraphModel E)) :
+    ∀ x y : Nat, E x y = E y x := by
+  have hLoops := hensonForbiddenFamily_no_loops ell hell E hAvoid
+  have hNoForward :
+      ¬ ∃ f : Fin 2 → Nat,
+        (normalizedGraphModel E).Realizes forwardAsymPattern f := by
+    apply hAvoid (.nontrivial 2 forwardAsymPattern (by omega)
+      forwardAsymPattern_irreducible)
+    simp [hensonForbiddenFamily]
+  have hNoBackward :
+      ¬ ∃ f : Fin 2 → Nat,
+        (normalizedGraphModel E).Realizes backwardAsymPattern f := by
+    apply hAvoid (.nontrivial 2 backwardAsymPattern (by omega)
+      backwardAsymPattern_irreducible)
+    simp [hensonForbiddenFamily]
+  have hOrdered : ∀ x y : Nat, x < y → E x y = E y x := by
+    intro x y hxy
+    cases hf : E x y with
+    | false =>
+        cases hb : E y x with
+        | false => exact hf.trans hb.symm
+        | true =>
+            exfalso
+            exact hNoBackward ⟨_,
+              backwardAsym_realizes E hLoops x y hxy hf hb⟩
+    | true =>
+        cases hb : E y x with
+        | false =>
+            exfalso
+            exact hNoForward ⟨_,
+              forwardAsym_realizes E hLoops x y hxy hf hb⟩
+        | true => exact hf.trans hb.symm
+  intro x y
+  rcases lt_trichotomy x y with h | h | h
+  · exact hOrdered x y h
+  · subst y
+    rfl
+  · exact (hOrdered y x h).symm
+
 end Kk
