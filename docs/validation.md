@@ -167,6 +167,51 @@ labelled diary orbit remain separate open mathematical/application
 obligations. The manuscript's green marker now points to this exact
 equivalence and nowhere claims the full upper bound is verified.
 
+## Exact labelled inverse comparison and finite prefix-chain transfer (22 October 2026)
+
+[Lean CI run 39691376167](https://github.com/janhubicka/lean-kk/actions/runs/39691376167)
+on `443775de355f05f475d07f4197fb71b142ed2481` passed
+`lake build` and named transitive axiom checks for:
+
+- `Kk.common_source_pairs_of_equal_labelled_preimages`: two genuine
+  Kpt envelopes with **equal inverse singleton sets** for every label
+  and both endpoints of their representing pairs have one identical
+  labelled source pair family.
+- `Kk.common_labelled_copy_of_equal_endpoint_preimages`: the pair
+  family produces one genuine labelled G+ source copy whose images
+  under the two monoid maps are exactly the two specified targets.
+  Equal unlabelled envelope embedding types alone do **not** imply
+  the singleton equalities, and this stronger geometric hypothesis
+  remains to be derived from the resolved diary.
+
+[Lean CI run 39691906543](https://github.com/janhubicka/lean-kk/actions/runs/39691906543)
+on `2b0cd69f9452d10d4ca22a85ecbee0c40ac76298`
+passed the full build and axiom audit for:
+
+- `Kk.prefixChain_finite_representation`: any finite injective
+  labelled family of genuine G+ vertices that are prefixes of
+  one top code has one canonical admissible full-profile source.
+  The identity type-respecting map represents it literally in the
+  fixed G-omega enumeration.
+- `Kk.prefix_chain_orbits_colour_factors`: if each diary is
+  assigned such a fixed labelled prefix chain and every selected
+  occurrence is in its genuine monoid orbit, one shape map makes
+  the transformed colouring depend only on the diary.
+
+Each new theorem uses only
+`[propext, Classical.choice, Quot.sound]`.
+
+**Sharper remaining proof target:** construct a *compressed finite
+labelled prefix source* for each successor diary and prove equality of
+the labelled inverse singleton preimages of its two Kpt representing
+endpoints for every occurrence, under actual minimal envelope maps.
+The necessary auxiliary parameter-closed I1–I3/B3 age tests are
+still unverified in this diary-specific application. There is no
+need to extend the compressed source to a separate countable model
+before applying Ramsey. The manuscript's `validation.tex` markers
+now distinguish the checked generic implications from this remaining
+geometric premise.
+
 ## Imported mathematical theorem
 
 The dependency is pinned to
