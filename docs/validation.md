@@ -109,6 +109,35 @@ The manuscript's `validation.tex` markers distinguish these verified
 geometric implications from the currently unverified upper bound
 and optimality corollary.
 
+## Enumerated G-omega and countable-source orbit transfer (21 October 2026)
+
+[Full Lean run 39641050527](https://github.com/janhubicka/lean-kk/actions/runs/39641050527)
+at `80b9336e2e4661b3ff154e12b1cfd8fd9204d8d4` checked the real
+`Kk.LabelledGOmegaCopy.map_fromPairs` and the conditional diary
+colouring theorem after conjugating the genuine G+ action by the fixed
+size-ordered enumeration. It also verified
+`Kk.LabelledGOmegaCopy.map_lt_of_prefix_in_fixed_enumeration`,
+which preserves numerical order **for strict prefix codes**; no global
+monotonicity on arbitrary incomparable G+ vertices is asserted.
+
+[Full Lean run 39686917479](https://github.com/janhubicka/lean-kk/actions/runs/39686917479)
+at `b11e748c381dd14e1c3e059731325a46a520a6d9` additionally checked
+`Kk.countableSourceCopy_finite_representation` and
+`Kk.countable_source_orbits_colour_factors`. These construct one finite
+full-profile carrier and its intrinsic approximation for each given
+countable labelled source; the only remaining geometric assumption in
+the Ramsey transfer is that every selected occurrence of a fixed diary
+is an image of that same labelled countable source under a **genuine
+Kpt monoid map**.
+
+All named endpoints in those runs report exactly
+`[propext, Classical.choice, Quot.sound]` and pass the full build.
+The normalized (K_\ell)-free graph encoding and the common labelled
+orbit lemma for the resolved copy remain separate applications.
+`validation.tex` in the manuscript now links to the verified
+G-omega and countable-source interfaces, while leaving the full diary
+carrier and final upper bound pending.
+
 ## Imported mathematical theorem
 
 The dependency is pinned to
