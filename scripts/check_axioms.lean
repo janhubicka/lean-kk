@@ -35,3 +35,6 @@ import Kk
 
 #check @Kk.countable_labelled_carrier
 #print axioms Kk.countable_labelled_carrier
+
+#check @Kk.countable_labelled_carrier_full_atoms
+#print axioms Kk.countable_labelled_carrier_full_atoms
