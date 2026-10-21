@@ -256,7 +256,10 @@ theorem countable_labelled_carrier_full_atoms
   refine ⟨A, points, hPointsInj, hPoints, ?_, ?_, ?_, ?_⟩
   · intro a b hab t
     rw [hPoints a, hPoints b]
-    exact C.toGPlus_binary family hAvoid (hInjective hab) t
+    have hNe : indices a ≠ indices b := by
+      intro hEq
+      exact hab (hInjective hEq)
+    exact C.toGPlus_binary family hAvoid hNe t
   · intro a t
     rw [hPoints a]
     exact C.toGPlus_unary family hAvoid (indices a) t
