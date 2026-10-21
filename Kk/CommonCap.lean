@@ -217,4 +217,54 @@ theorem countable_labelled_carrier
   · intro a
     exact FiniteGPlusVertex.carrierPoints_vertex top selected hPrefix a
 
+
+/-- Strengthening for the manuscript's labelled copies: the common carrier
+not only represents the labelled vertices, it reproduces ALL original
+finite L+ atomic records of the countable source structure. In particular,
+binary nonedges and the oriented auxiliary E relation are not discarded.
+
+For directed binary atoms the labels must be distinct (the ordinary binary
+table is evaluated on the different vertices of the source graph).
+Unary and diagonal records have no such restriction. -/
+theorem countable_labelled_carrier_full_atoms
+    (C : CountableEnumeratedPartialStructure db du dd)
+    (hAvoid : ∀ bad, bad ∈ family → bad.Avoids C.L)
+    {Λ : Type u}
+    (indices : Λ → Nat)
+    (N : Nat)
+    (hBound : ∀ a, indices a ≤ N)
+    (hInjective : Function.Injective indices) :
+    ∃ (A : FiniteTypeBase family)
+      (points : Λ → FiniteRepresentingPair A),
+      Function.Injective (fun a => (points a).vertex) ∧
+      (∀ a, (points a).vertex =
+         C.toGPlus family hAvoid (indices a)) ∧
+      (∀ a b, a ≠ b → ∀ t : Fin db,
+        finiteGPlusBinary (points a).vertex (points b).vertex t =
+          C.L.binary (indices a) (indices b) t) ∧
+      (∀ a, ∀ t : Fin du,
+        finiteGPlusUnary (points a).vertex t =
+          C.L.unary (indices a) t) ∧
+      (∀ a, ∀ t : Fin dd,
+        finiteGPlusDiagonal (points a).vertex t =
+          C.L.diagonal (indices a) t) ∧
+      (∀ a b,
+        finiteGPlusE (points a).vertex (points b).vertex =
+          C.E (indices a) (indices b)) := by
+  obtain ⟨A, points, hPointsInj, hPoints⟩ :=
+    countable_labelled_carrier C hAvoid indices N hBound hInjective
+  refine ⟨A, points, hPointsInj, hPoints, ?_, ?_, ?_, ?_⟩
+  · intro a b hab t
+    rw [hPoints a, hPoints b]
+    exact C.toGPlus_binary family hAvoid (hInjective hab) t
+  · intro a t
+    rw [hPoints a]
+    exact C.toGPlus_unary family hAvoid (indices a) t
+  · intro a t
+    rw [hPoints a]
+    exact C.toGPlus_diagonal family hAvoid (indices a) t
+  · intro a b
+    rw [hPoints a, hPoints b]
+    exact C.toGPlus_E family hAvoid (indices a) (indices b)
+
 end Kk
