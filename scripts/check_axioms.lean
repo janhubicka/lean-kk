@@ -32,3 +32,6 @@ import Kk
 #check @Kk.FiniteRepresentingPair.fromCommonUpper_vertex
 #check @Kk.FiniteRepresentingPair.fromCommonUpperFamily_injective
 #print axioms Kk.FiniteRepresentingPair.fromCommonUpper_vertex
+
+#check @Kk.countable_labelled_carrier
+#print axioms Kk.countable_labelled_carrier
