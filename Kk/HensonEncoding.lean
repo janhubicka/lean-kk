@@ -271,4 +271,82 @@ theorem hensonForbiddenFamily_symmetric
     rfl
   · exact (hOrdered y x h).symm
 
+
+/-- The complete elementary language dictionary: avoidance of the
+actual normalized irreducible forbidden family is equivalent to being
+an irreflexive symmetric graph with no ordered complete K_ell.
+
+No graph symmetry, looplessness or clique-freeness is tacitly built
+into AgeTestModel; all are recovered from explicit forbidden data. -/
+theorem hensonForbiddenFamily_avoids_iff
+    (ell : Nat) (hell : 2 ≤ ell)
+    (E : Nat → Nat → Bool) :
+    (∀ bad, bad ∈ hensonForbiddenFamily ell hell →
+      bad.Avoids (normalizedGraphModel E)) ↔
+    (∀ i, E i i = false) ∧
+    (∀ x y, E x y = E y x) ∧
+    (¬ ∃ f : Fin ell → Nat, StrictMono f ∧
+      (∀ a b : Fin ell, a ≠ b → E (f a) (f b) = true)) := by
+  constructor
+  · intro hAvoid
+    exact ⟨hensonForbiddenFamily_no_loops ell hell E hAvoid,
+      hensonForbiddenFamily_symmetric ell hell E hAvoid,
+      hensonForbiddenFamily_no_cliques ell hell E hAvoid⟩
+  · rintro ⟨hLoops, hSym, hNoCliques⟩
+    intro bad hBad
+    simp only [hensonForbiddenFamily, List.mem_cons,
+      List.mem_singleton] at hBad
+    rcases hBad with rfl | rfl | rfl | rfl
+    · change ¬ ∃ f : Fin 1 → Nat,
+        (normalizedGraphModel E).Realizes loopPattern f
+      rintro ⟨f, hRealizes⟩
+      have he : E (f 0) (f 0) = true := by
+        have h := hRealizes.2.2.2.2 (0 : Fin 1) (0 : Fin 1)
+        simpa [normalizedGraphModel, binaryUnaryAgeModel,
+          loopPattern] using h
+      rw [hLoops (f 0)] at he
+      cases he
+    · change ¬ ∃ f : Fin 2 → Nat,
+        (normalizedGraphModel E).Realizes forwardAsymPattern f
+      rintro ⟨f, hRealizes⟩
+      have hf : E (f 0) (f 1) = true := by
+        have h := hRealizes.2.2.1
+          (0 : Fin 2) (1 : Fin 2) (by decide) (0 : Fin 1)
+        simpa [normalizedGraphModel, binaryUnaryAgeModel,
+          forwardAsymPattern] using h
+      have hb : E (f 1) (f 0) = false := by
+        have h := hRealizes.2.2.1
+          (1 : Fin 2) (0 : Fin 2) (by decide) (0 : Fin 1)
+        simpa [normalizedGraphModel, binaryUnaryAgeModel,
+          forwardAsymPattern] using h
+      have hs := hSym (f 0) (f 1)
+      rw [hf, hb] at hs
+      cases hs
+    · change ¬ ∃ f : Fin 2 → Nat,
+        (normalizedGraphModel E).Realizes backwardAsymPattern f
+      rintro ⟨f, hRealizes⟩
+      have hf : E (f 0) (f 1) = false := by
+        have h := hRealizes.2.2.1
+          (0 : Fin 2) (1 : Fin 2) (by decide) (0 : Fin 1)
+        simpa [normalizedGraphModel, binaryUnaryAgeModel,
+          backwardAsymPattern] using h
+      have hb : E (f 1) (f 0) = true := by
+        have h := hRealizes.2.2.1
+          (1 : Fin 2) (0 : Fin 2) (by decide) (0 : Fin 1)
+        simpa [normalizedGraphModel, binaryUnaryAgeModel,
+          backwardAsymPattern] using h
+      have hs := hSym (f 0) (f 1)
+      rw [hf, hb] at hs
+      cases hs
+    · change ¬ ∃ f : Fin ell → Nat,
+        (normalizedGraphModel E).Realizes (cliquePattern ell) f
+      rintro ⟨f, hRealizes⟩
+      have hComplete :
+          ∀ a b : Fin ell, a ≠ b → E (f a) (f b) = true := by
+        intro a b hab
+        have h := hRealizes.2.2.1 a b hab (0 : Fin 1)
+        simpa [normalizedGraphModel, binaryUnaryAgeModel,
+          cliquePattern, hab] using h
+      exact hNoCliques ⟨f, hRealizes.1, hComplete⟩
+
 end Kk
