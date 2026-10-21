@@ -65,3 +65,6 @@ import Kk
 #check @Kk.cliquePattern_irreducible
 #check @Kk.hensonForbiddenFamily_no_loops
 #print axioms Kk.hensonForbiddenFamily_no_loops
+
+#check @Kk.hensonForbiddenFamily_no_cliques
+#print axioms Kk.hensonForbiddenFamily_no_cliques
