@@ -80,6 +80,35 @@ full upper-bound or optimality assertions green. References are pinned to
 passed Lean commits and distinguish incomplete implications from the full
 mathematical statements.
 
+## Full atomic and labelled-envelope lifting endpoints (21 October 2026)
+
+[Actions run 39562513338](https://github.com/janhubicka/lean-kk/actions/runs/39562513338)
+passed the full Lean build and named `#print axioms` checks for
+`f430d708ca35e37fcba051db923b84d5eae4587d` (standard axioms only).
+
+- `Kk.countable_labelled_carrier_full_atoms` strengthens the verified
+  carrier to preserve all finite directed binary, unary, diagonal and
+  oriented auxiliary-E facts (including the absence of atoms).
+  The binary theorem explicitly requires distinct labels.
+- `Kk.LabelledGPlusCopy.labelled_copy_lifts_of_envelope` says that if
+  an actual normalized Kpt monoid envelope covers both endpoints of
+  every prescribed representing pair for a labelled G+ copy, then
+  *one and the same monoid map* carries a labelled preimage copy to
+  that target. This is an existence theorem, not an assumed
+  inverse embedding or an unlabelled orbit shortcut.
+
+**Still open:** identify the selected resolved-Henson vertices with their
+source countable prefix codes; show that equal diaries give a common
+*labelled source* under genuine monoid envelopes; ensure the full
+parameter-closed (B3) age tests are covered. Theorem 5.5's choice
+independence is for a fixed selected set and does not supply this
+cross-occurrence comparison. Also instantiate the generic normalized
+binary family faithfully as the symmetric, irreflexive Henson class.
+
+The manuscript's `validation.tex` markers distinguish these verified
+geometric implications from the currently unverified upper bound
+and optimality corollary.
+
 ## Imported mathematical theorem
 
 The dependency is pinned to
