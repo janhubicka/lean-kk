@@ -294,8 +294,7 @@ theorem hensonForbiddenFamily_avoids_iff
       hensonForbiddenFamily_no_cliques ell hell E hAvoid⟩
   · rintro ⟨hLoops, hSym, hNoCliques⟩
     intro bad hBad
-    simp only [hensonForbiddenFamily, List.mem_cons,
-      List.mem_singleton] at hBad
+    simp [hensonForbiddenFamily] at hBad
     rcases hBad with rfl | rfl | rfl | rfl
     · change ¬ ∃ f : Fin 1 → Nat,
         (normalizedGraphModel E).Realizes loopPattern f
