@@ -41,3 +41,6 @@ import Kk
 
 #check @Kk.countable_labelled_carrier_full_atoms
 #print axioms Kk.countable_labelled_carrier_full_atoms
+
+#check @Kk.countable_labelled_carrier_all_images
+#print axioms Kk.countable_labelled_carrier_all_images
