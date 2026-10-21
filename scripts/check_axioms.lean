@@ -59,3 +59,9 @@ import Kk
 #check @Kk.countable_source_orbits_colour_factors
 #print axioms Kk.countableSourceCopy_finite_representation
 #print axioms Kk.countable_source_orbits_colour_factors
+
+#check @Kk.forwardAsymPattern_irreducible
+#check @Kk.backwardAsymPattern_irreducible
+#check @Kk.cliquePattern_irreducible
+#check @Kk.hensonForbiddenFamily_no_loops
+#print axioms Kk.hensonForbiddenFamily_no_loops
