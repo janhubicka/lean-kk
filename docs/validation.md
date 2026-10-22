@@ -5,6 +5,53 @@ the universal \(K_k\)-free graph. Statements in the present document are
 not claims of completed kernel verification unless the corresponding CI
 job has passed.
 
+## 22 October — envelope source and ordered-label reduction
+
+The latest complete Lean checkpoints are:
+
+- [Run 39754299181](https://github.com/janhubicka/lean-kk/actions/runs/39754299181),
+  commit `0d306b31b18416b45520ea2fd9e7164fee2bccda`:
+  `labelled_prefix_preimages_of_range`,
+  `labelled_prefix_sources_of_Kpt_envelope`,
+  `labelled_envelope_produces_intrinsic_source`.
+  A genuine Kpt envelope covering the top and both endpoints of
+  each labelled representing pair automatically has a genuine finite
+  labelled **prefix-chain preimage**, with an actual intrinsic
+  full-profile representation in the fixed G-omega.
+- [Run 39754682204](https://github.com/janhubicka/lean-kk/actions/runs/39754682204),
+  commit `fcd9b3c240faab3655b6312003cffa8311a2670c`:
+  `labelled_prefix_sources_eq_of_unlabelled_range`.
+  Increasing finite enumerations of the same set of G+ prefix
+  codes agree label by label. Arbitrary incomparable same-size
+  G+ vertices are NOT covered by this statement.
+- [Run 39755719215](https://github.com/janhubicka/lean-kk/actions/runs/39755719215),
+  commit `ca349d8040fa71f808ad0f451e8e648f3f2eadd3`:
+  `source_range_eq_inverse_image` and
+  `labelled_prefix_sources_eq_of_inverse_image_sets`.
+  The latter proves the direct paper-facing implication from
+  equality of the **unlabelled selected-vertex inverse-image sets**
+  under two genuine G+ actions to equality of their labelled sources.
+
+All listed jobs passed full `lake build` and the named
+transitive axiom audit; the endpoints use only
+`[propext, Classical.choice, Quot.sound]`. An additional scan
+of the 12 Kk source modules found no active `sorry`, `admit`,
+`axiom`, or `unsafe` declarations outside comments.
+
+**The unresolved diary-specific theorem** is now exactly the
+equality of the marked selected-source inverse-image **sets**
+for different occurrences having the same labelled diary. The
+generic envelope-choice theorem compares two runs for the same
+selected set, not this cross-occurrence relation. Matching the
+whole unmarked auxiliary closure is not enough unless one also
+recovers its distinguished selected subset. The full
+parameter-closed (I1)--(I3) data, especially auxiliary (B3)
+age tests, must still be checked.
+
+The paper's `validation.tex` distinguishes these proved
+generic implications from the unverified exact upper bound and
+published optimality/lower-bound argument.
+
 ## Verified on 20 October 2026
 
 The finite simultaneous-refinement theorem
