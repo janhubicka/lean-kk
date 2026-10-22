@@ -52,6 +52,36 @@ The paper's `validation.tex` distinguishes these proved
 generic implications from the unverified exact upper bound and
 published optimality/lower-bound argument.
 
+## 22 October — independent B3 shadow counterexample and cut rigidity
+
+[Lean run 39805797998](https://github.com/janhubicka/lean-kk/actions/runs/39805797998)
+on commit `7e528b761b94b8e2b6a3e875b5154b6bf98aa446`
+passed `lake build` and the complete named axiom audit. New endpoints:
+
+- `Kk.fullBefore_valid` and `Kk.fullAfter_valid`:
+  exact consistency witnesses for two K3 graph-age functions on
+  selected type x and auxiliary type z, with singleton bounds 1
+  and joint bounds respectively 2 and 1.
+- `Kk.fullAfter_covers_fullBefore` and
+  `Kk.selected_shadow_does_not_detect_cover`:
+  the reduction is a genuine age cover and leaves the selected
+  singleton x unchanged. This demonstrates that the manuscript's
+  old full-(B3)-to-selected-shadow implication does NOT follow
+  from the graph-age axioms alone.
+- `Kk.vertex_eq_of_common_top_and_size` and
+  `Kk.labelled_sources_eq_of_common_top_and_cuts`:
+  for genuine finite L+/E prefix codes a shared source top
+  and equal selected source lengths determine the labelled
+  source copy exactly.
+
+All named theorem dependencies are
+`[propext, Classical.choice, Quot.sound]`. The olive
+boring-level lemma has been repaired to expose its
+additional **auxiliary-witness projection** hypothesis, which
+still requires verification in the specially resolved H copy.
+Neither the genuine counterexample nor the common-top/cuts
+criterion is a completed diary comparison.
+
 ## Verified on 20 October 2026
 
 The finite simultaneous-refinement theorem
