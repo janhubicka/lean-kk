@@ -97,3 +97,8 @@ import Kk
 #check @Kk.labelled_codes_eq_of_same_range
 #check @Kk.labelled_prefix_sources_eq_of_unlabelled_range
 #print axioms Kk.labelled_prefix_sources_eq_of_unlabelled_range
+
+#check @Kk.source_range_eq_inverse_image
+#check @Kk.labelled_prefix_sources_eq_of_inverse_image_sets
+#print axioms Kk.source_range_eq_inverse_image
+#print axioms Kk.labelled_prefix_sources_eq_of_inverse_image_sets
