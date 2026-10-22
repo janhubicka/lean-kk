@@ -110,4 +110,51 @@ theorem labelled_prefix_sources_of_Kpt_envelope
   exact labelled_prefix_preimages_of_range
     F top points hPrefix hInjective hTopRange hPointsRange
 
+
+/-- A genuine endpoint-covering Kpt envelope of a labelled target prefix
+chain has an honest INTRINSIC full-profile preimage in the fixed G-omega.
+
+The existence of a suitable finite source base, all source representing
+pairs, and the intrinsic type-respecting map are conclusions. This
+statement concerns one target occurrence at a time: its source need
+not coincide with that of another occurrence of the same diary. -/
+theorem labelled_envelope_produces_intrinsic_source
+    (enum : Nat ≃ FiniteGPlusVertex family)
+    (F : SuccessorTree.SMTree.MMap (normalizedKptSMTree family))
+    (X : Set (AdmissibleKptNode family))
+    (hEnvelope : SuccessorTree.SMTree.Envelope.IsEnvelope F.map X)
+    (top : FiniteGPlusVertex family)
+    (points : Λ → FiniteGPlusVertex family)
+    (hPrefix : ∀ a, (points a).val.IsPrefix top.val)
+    (hInjective : Function.Injective points)
+    (topPair : GPlusRepresentingPair family)
+    (hTopPair : topPair.vertex = top)
+    (hTopEnds : topPair.lower ∈ X ∧ topPair.upper ∈ X)
+    (pairs : Λ → GPlusRepresentingPair family)
+    (hPairs : ∀ a, (pairs a).vertex = points a)
+    (hEnds : ∀ a, (pairs a).lower ∈ X ∧ (pairs a).upper ∈ X) :
+    ∃ (A : FiniteTypeBase family)
+      (sourcePairs : Λ → FiniteRepresentingPair A)
+      (hinj : Function.Injective (fun a => (sourcePairs a).vertex))
+      (h : TypeRespectingEmbedding A),
+      LabelledGOmegaCopy.map enum F
+        (LabelledGOmegaCopy.fromPairs enum sourcePairs hinj h) =
+      LabelledGOmegaCopy.fromGPlus enum
+        (⟨points, hInjective⟩ : LabelledGPlusCopy family Λ) := by
+  obtain ⟨sourceTop, source, hSourceInj, hSourcePrefix,
+      _hTopSource, hSource⟩ :=
+    labelled_prefix_sources_of_Kpt_envelope F X hEnvelope
+      top points hPrefix hInjective topPair hTopPair hTopEnds
+      pairs hPairs hEnds
+  obtain ⟨A, sourcePairs, hinj, h, hRepr⟩ :=
+    prefixChain_finite_representation enum
+      sourceTop source hSourcePrefix hSourceInj
+  refine ⟨A, sourcePairs, hinj, h, ?_⟩
+  rw [hRepr]
+  apply Subtype.ext
+  funext a
+  change enum.symm (gPlusShapeImage F.map (source a)) =
+    enum.symm (points a)
+  exact congrArg enum.symm (hSource a)
+
 end Kk
