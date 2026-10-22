@@ -112,3 +112,9 @@ import Kk
 #check @Kk.selected_shadow_does_not_detect_cover
 #print axioms Kk.fullAfter_covers_fullBefore
 #print axioms Kk.selected_shadow_does_not_detect_cover
+
+#check @Kk.vertex_eq_of_common_top_and_size
+#check @Kk.labelled_prefix_chains_eq_of_common_top_and_sizes
+#check @Kk.labelled_sources_eq_of_common_top_and_cuts
+#print axioms Kk.vertex_eq_of_common_top_and_size
+#print axioms Kk.labelled_sources_eq_of_common_top_and_cuts
