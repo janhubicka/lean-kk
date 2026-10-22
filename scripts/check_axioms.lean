@@ -89,3 +89,6 @@ import Kk
 #check @Kk.labelled_prefix_sources_of_Kpt_envelope
 #print axioms Kk.labelled_prefix_preimages_of_range
 #print axioms Kk.labelled_prefix_sources_of_Kpt_envelope
+
+#check @Kk.labelled_envelope_produces_intrinsic_source
+#print axioms Kk.labelled_envelope_produces_intrinsic_source
