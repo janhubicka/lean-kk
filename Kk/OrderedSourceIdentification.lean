@@ -165,4 +165,66 @@ theorem labelled_prefix_sources_eq_of_unlabelled_range
   exact labelled_codes_eq_of_same_range sourceF sourceG
     hFSize hGSize hSameSourceSet
 
+
+/-- The source vertices representing ALL members of a target copy
+are precisely the full inverse image of the target vertex set under
+the genuine injective G+ action.
+
+Crucially, the equality includes no hidden source vertices: the
+induced action is injective, so an image lying in the finite target
+set must be the unique prescribed source vertex of some label. -/
+theorem source_range_eq_inverse_image
+    {n : Nat}
+    (F : SuccessorTree.SMTree.MMap (normalizedKptSMTree family))
+    (target source : Fin n → FiniteGPlusVertex family)
+    (hImage : ∀ i, gPlusShapeImage F.map (source i) = target i) :
+    Set.range source =
+      (gPlusShapeImage F.map) ⁻¹' (Set.range target) := by
+  ext x
+  constructor
+  · rintro ⟨i, rfl⟩
+    change gPlusShapeImage F.map (source i) ∈ Set.range target
+    exact ⟨i, (hImage i).symm⟩
+  · intro hx
+    change gPlusShapeImage F.map x ∈ Set.range target at hx
+    obtain ⟨i, hi⟩ := hx
+    have hEq : source i = x :=
+      (gPlusShapeImage_injective F.map) ((hImage i).trans hi)
+    exact ⟨i, hEq⟩
+
+/-- The exact application-facing comparison lemma: equality of the
+UNLABELLED inverse images of two target selected sets, under their
+actual induced Kpt/G+ maps, already forces equality of the labelled
+source prefix chains.
+
+This directly matches the weakened obligation displayed in the
+olive diary-envelope proof. It does not establish the inverse-image
+equality, which remains the K_k-specific parameter-closed age step. -/
+theorem labelled_prefix_sources_eq_of_inverse_image_sets
+    {n : Nat}
+    (F G : SuccessorTree.SMTree.MMap (normalizedKptSMTree family))
+    (targetF targetG : Fin n → FiniteGPlusVertex family)
+    (sourceF sourceG : Fin n → FiniteGPlusVertex family)
+    (hTargetF : ∀ i, gPlusShapeImage F.map (sourceF i) = targetF i)
+    (hTargetG : ∀ i, gPlusShapeImage G.map (sourceG i) = targetG i)
+    (hStrictF : ∀ i j : Fin n, i < j →
+       (targetF i).IsProperPrefix (targetF j))
+    (hStrictG : ∀ i j : Fin n, i < j →
+       (targetG i).IsProperPrefix (targetG j))
+    (hInverse :
+      (gPlusShapeImage F.map) ⁻¹' (Set.range targetF) =
+      (gPlusShapeImage G.map) ⁻¹' (Set.range targetG)) :
+    sourceF = sourceG := by
+  have hRange : Set.range sourceF = Set.range sourceG := by
+    calc
+      Set.range sourceF =
+          (gPlusShapeImage F.map) ⁻¹' (Set.range targetF) :=
+        source_range_eq_inverse_image F targetF sourceF hTargetF
+      _ = (gPlusShapeImage G.map) ⁻¹' (Set.range targetG) := hInverse
+      _ = Set.range sourceG :=
+        (source_range_eq_inverse_image G targetG sourceG hTargetG).symm
+  exact labelled_prefix_sources_eq_of_unlabelled_range
+    F G targetF targetG sourceF sourceG
+    hTargetF hTargetG hStrictF hStrictG hRange
+
 end Kk
