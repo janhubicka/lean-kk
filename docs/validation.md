@@ -82,6 +82,32 @@ still requires verification in the specially resolved H copy.
 Neither the genuine counterexample nor the common-top/cuts
 criterion is a completed diary comparison.
 
+## 22 October — numerical H cross-block nonedges
+
+[Full Lean Actions run 39806546276](https://github.com/janhubicka/lean-kk/actions/runs/39806546276)
+passed build and axiom checks at
+`891dfc7891458e30c195e7cb69e0e275d932dbfe`.
+The new module `Kk/HBlockNonedges.lean` uses the **actual**
+`hNumericBinary`, `finiteNumericHL`, and `infiniteNumericHL`
+from the pinned successor library.
+
+- `numericH_preserves_original_nonedge`
+- `finiteNumericH_preserves_original_nonedge`
+
+prove that for distinct original indices in increasing order,
+an absent original directed binary atom stays absent between
+**every pair of generation copies**, regardless of their
+generation gate, in the countable and finite numerical H
+structures. Standard axioms only.
+
+In the manuscript the reserved originals for different canonical
+cover blocks are chosen mutually nonadjacent. These theorems
+justify the claim that their generated H copies remain
+nonadjacent, provided the original nonedge choices have been
+made. They are relevant genuine structural input to the full
+(B3) projection, but do not settle witnesses inside one block
+or those involving E and parameter-closed auxiliary types.
+
 ## Verified on 20 October 2026
 
 The finite simultaneous-refinement theorem
