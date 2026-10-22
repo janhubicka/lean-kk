@@ -92,3 +92,8 @@ import Kk
 
 #check @Kk.labelled_envelope_produces_intrinsic_source
 #print axioms Kk.labelled_envelope_produces_intrinsic_source
+
+#check @Kk.strictMono_fin_nat_eq_of_same_range
+#check @Kk.labelled_codes_eq_of_same_range
+#check @Kk.labelled_prefix_sources_eq_of_unlabelled_range
+#print axioms Kk.labelled_prefix_sources_eq_of_unlabelled_range
