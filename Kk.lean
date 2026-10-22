@@ -10,6 +10,7 @@ import Kk.LabelledEnvelopeComparison
 import Kk.PrefixChainOrbitTransfer
 import Kk.PrefixEnvelopeLift
 import Kk.OrderedSourceIdentification
+import Kk.GraphAgeShadow
 
 /-!
 The counting project imports the verified successor-tree library.
