@@ -118,3 +118,8 @@ import Kk
 #check @Kk.labelled_sources_eq_of_common_top_and_cuts
 #print axioms Kk.vertex_eq_of_common_top_and_size
 #print axioms Kk.labelled_sources_eq_of_common_top_and_cuts
+
+#check @Kk.numericH_preserves_original_nonedge
+#check @Kk.finiteNumericH_preserves_original_nonedge
+#print axioms Kk.numericH_preserves_original_nonedge
+#print axioms Kk.finiteNumericH_preserves_original_nonedge
