@@ -126,3 +126,8 @@ import Kk
 
 #check @Kk.reserved_H_clique_one_block
 #print axioms Kk.reserved_H_clique_one_block
+
+#check @Kk.reserved_H_aux_selected_clique_support
+#check @Kk.reserved_H_clique_one_block_and_selected_support
+#print axioms Kk.reserved_H_aux_selected_clique_support
+#print axioms Kk.reserved_H_clique_one_block_and_selected_support
