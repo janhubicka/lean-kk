@@ -131,3 +131,9 @@ import Kk
 #check @Kk.reserved_H_clique_one_block_and_selected_support
 #print axioms Kk.reserved_H_aux_selected_clique_support
 #print axioms Kk.reserved_H_clique_one_block_and_selected_support
+
+#check @Kk.hensonForbiddenFamily_patternCard_le
+#check @Kk.henson_failedAmbientB3_lower_generation
+#check @Kk.henson_top_generation_ambientB3
+#print axioms Kk.henson_failedAmbientB3_lower_generation
+#print axioms Kk.henson_top_generation_ambientB3
