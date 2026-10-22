@@ -102,3 +102,6 @@ import Kk
 #check @Kk.labelled_prefix_sources_eq_of_inverse_image_sets
 #print axioms Kk.source_range_eq_inverse_image
 #print axioms Kk.labelled_prefix_sources_eq_of_inverse_image_sets
+
+#check @Kk.common_labelled_source_iff_inverse_image_sets_eq
+#print axioms Kk.common_labelled_source_iff_inverse_image_sets_eq
