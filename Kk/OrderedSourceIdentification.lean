@@ -227,4 +227,41 @@ theorem labelled_prefix_sources_eq_of_inverse_image_sets
     F G targetF targetG sourceF sourceG
     hTargetF hTargetG hStrictF hStrictG hRange
 
+
+/-- Exact equivalence, not merely sufficiency: for two genuine
+target prefix-chain occurrences with given monoid lifts, one
+identical LABELLED source is equivalent to equality of the
+UNLABELLED selected-vertex inverse-image sets.
+
+Thus the remaining diary-geometric comparison is precisely the
+inverse-image equality. No additional label recovery, full finite
+carrier theorem or Ramsey statement is missing at this interface. -/
+theorem common_labelled_source_iff_inverse_image_sets_eq
+    {n : Nat}
+    (F G : SuccessorTree.SMTree.MMap (normalizedKptSMTree family))
+    (targetF targetG : Fin n → FiniteGPlusVertex family)
+    (sourceF sourceG : Fin n → FiniteGPlusVertex family)
+    (hTargetF : ∀ i, gPlusShapeImage F.map (sourceF i) = targetF i)
+    (hTargetG : ∀ i, gPlusShapeImage G.map (sourceG i) = targetG i)
+    (hStrictF : ∀ i j : Fin n, i < j →
+       (targetF i).IsProperPrefix (targetF j))
+    (hStrictG : ∀ i j : Fin n, i < j →
+       (targetG i).IsProperPrefix (targetG j)) :
+    sourceF = sourceG ↔
+      (gPlusShapeImage F.map) ⁻¹' (Set.range targetF) =
+      (gPlusShapeImage G.map) ⁻¹' (Set.range targetG) := by
+  constructor
+  · intro hEq
+    calc
+      (gPlusShapeImage F.map) ⁻¹' (Set.range targetF) =
+          Set.range sourceF :=
+        (source_range_eq_inverse_image F targetF sourceF hTargetF).symm
+      _ = Set.range sourceG := by rw [hEq]
+      _ = (gPlusShapeImage G.map) ⁻¹' (Set.range targetG) :=
+        source_range_eq_inverse_image G targetG sourceG hTargetG
+  · intro hEq
+    exact labelled_prefix_sources_eq_of_inverse_image_sets
+      F G targetF targetG sourceF sourceG
+      hTargetF hTargetG hStrictF hStrictG hEq
+
 end Kk
