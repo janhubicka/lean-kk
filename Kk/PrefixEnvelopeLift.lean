@@ -153,6 +153,8 @@ theorem labelled_envelope_produces_intrinsic_source
   rw [hRepr]
   apply Subtype.ext
   funext a
+  simp only [LabelledGOmegaCopy.map,
+    LabelledGOmegaCopy.toGPlus_fromGPlus]
   change enum.symm (gPlusShapeImage F.map (source a)) =
     enum.symm (points a)
   exact congrArg enum.symm (hSource a)
