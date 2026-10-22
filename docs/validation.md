@@ -108,6 +108,41 @@ made. They are relevant genuine structural input to the full
 (B3) projection, but do not settle witnesses inside one block
 or those involving E and parameter-closed auxiliary types.
 
+## 22 October — actual numerical H clique-block support locality
+
+[Lean run 39808546237](https://github.com/janhubicka/lean-kk/actions/runs/39808546237)
+at `c74426b3a464c0a18d6afb6a95ce7f0b7d5718fb`
+passes the full build and named transitive axiom audit
+(standard `[propext, Classical.choice, Quot.sound]`).
+
+The true `hNumericBinary` relation and the preceding
+nonedge-preservation theorem prove:
+
+- `Kk.reserved_H_clique_one_block`: in a complete directed
+  clique of genuine reserved auxiliary H-generation vertices,
+  the vertices use only one witness-block index whenever
+  distinct blocks were originally chosen mutually nonadjacent.
+- `Kk.reserved_H_aux_selected_clique_support`: if a reserved
+  original has no base edge to selected future originals
+  outside its declared block support, any selected future
+  vertex lying with it in a generated positive clique must
+  belong to that support, at ALL permitted generations.
+- `Kk.reserved_H_clique_one_block_and_selected_support`:
+  the combined conclusion for a clique of reserved
+  auxiliary originals and selected future originals.
+
+These endpoints verify the **real numerical H vertex**
+part of block locality. The critical remaining (B3)
+application is to show arbitrary allowed L-continuation
+witnesses, including auxiliary parameter types, reduce
+to such genuine reserved-generation configurations.
+That implication is not among the checked statements.
+The existing pinned successor theorem
+`numericI3_forbidden_copy_forces_last_lower_rank`
+may help exclude nondesignated generations, once its
+named-original upper-type hypotheses are extracted
+from the full parameter-closed witness data.
+
 ## Verified on 20 October 2026
 
 The finite simultaneous-refinement theorem
