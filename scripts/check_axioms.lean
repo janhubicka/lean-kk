@@ -84,3 +84,8 @@ import Kk
 #check @Kk.prefix_chain_orbits_colour_factors
 #print axioms Kk.prefixChain_finite_representation
 #print axioms Kk.prefix_chain_orbits_colour_factors
+
+#check @Kk.labelled_prefix_preimages_of_range
+#check @Kk.labelled_prefix_sources_of_Kpt_envelope
+#print axioms Kk.labelled_prefix_preimages_of_range
+#print axioms Kk.labelled_prefix_sources_of_Kpt_envelope
