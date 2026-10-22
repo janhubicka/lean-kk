@@ -16,6 +16,7 @@ import Kk.HBlockNonedges
 import Kk.HBlockClique
 import Kk.HBlockSupport
 import Kk.HensonI3Generation
+import Kk.HensonSelectedI3
 
 /-!
 The counting project imports the verified successor-tree library.
