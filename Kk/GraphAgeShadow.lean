@@ -45,8 +45,37 @@ def fullBefore (s : Fin 3) : Nat :=
 /-- A mixed two-vertex clique is no longer permitted. -/
 def fullAfter (_s : Fin 3) : Nat := 1
 
-theorem fullBefore_valid : IsTwoSortTriangleAge fullBefore := by decide
-theorem fullAfter_valid : IsTwoSortTriangleAge fullAfter := by decide
+theorem fullBefore_valid : IsTwoSortTriangleAge fullBefore := by
+  constructor
+  · intro s
+    fin_cases s <;> decide
+  · intro s
+    fin_cases s
+    · refine ⟨(fun i : Fin 2 => if i = 0 then (1 : Fin 3) else 0), by decide, ?_⟩
+      intro t
+      fin_cases t <;> decide
+    · refine ⟨(fun i : Fin 2 => if i = 1 then (1 : Fin 3) else 0), by decide, ?_⟩
+      intro t
+      fin_cases t <;> decide
+    · refine ⟨(fun _ : Fin 2 => (1 : Fin 3)), by decide, ?_⟩
+      intro t
+      fin_cases t <;> decide
+
+theorem fullAfter_valid : IsTwoSortTriangleAge fullAfter := by
+  constructor
+  · intro s
+    fin_cases s <;> decide
+  · intro s
+    fin_cases s
+    · refine ⟨(fun i : Fin 2 => if i = 0 then (1 : Fin 3) else 0), by decide, ?_⟩
+      intro t
+      fin_cases t <;> decide
+    · refine ⟨(fun i : Fin 2 => if i = 1 then (1 : Fin 3) else 0), by decide, ?_⟩
+      intro t
+      fin_cases t <;> decide
+    · refine ⟨(fun i : Fin 2 => if i = 0 then (1 : Fin 3) else 0), by decide, ?_⟩
+      intro t
+      fin_cases t <;> decide
 
 /-- Restriction to the selected type x is exactly unchanged. -/
 theorem selected_shadow_unchanged :
