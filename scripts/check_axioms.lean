@@ -123,3 +123,6 @@ import Kk
 #check @Kk.finiteNumericH_preserves_original_nonedge
 #print axioms Kk.numericH_preserves_original_nonedge
 #print axioms Kk.finiteNumericH_preserves_original_nonedge
+
+#check @Kk.reserved_H_clique_one_block
+#print axioms Kk.reserved_H_clique_one_block
