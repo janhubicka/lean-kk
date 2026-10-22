@@ -12,6 +12,7 @@ import Kk.PrefixEnvelopeLift
 import Kk.OrderedSourceIdentification
 import Kk.GraphAgeShadow
 import Kk.PrefixCutRigidity
+import Kk.HBlockNonedges
 
 /-!
 The counting project imports the verified successor-tree library.
