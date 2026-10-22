@@ -76,7 +76,7 @@ theorem reserved_H_clique_one_block
         (hOriginal hgt) (hGeneration b) (hGeneration a)
         (fun t => by
           fin_cases t
-          exact hNonedge (origin b) (origin a) hgt hDifferent.symm)
+          exact hNonedge (origin b) (origin a) hgt (Ne.symm hDifferent))
         (0 : Fin 1)
     have hEdge := hClique b a hab.symm
     rw [hMissing] at hEdge
