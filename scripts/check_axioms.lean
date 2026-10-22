@@ -105,3 +105,10 @@ import Kk
 
 #check @Kk.common_labelled_source_iff_inverse_image_sets_eq
 #print axioms Kk.common_labelled_source_iff_inverse_image_sets_eq
+
+#check @Kk.fullBefore_valid
+#check @Kk.fullAfter_valid
+#check @Kk.fullAfter_covers_fullBefore
+#check @Kk.selected_shadow_does_not_detect_cover
+#print axioms Kk.fullAfter_covers_fullBefore
+#print axioms Kk.selected_shadow_does_not_detect_cover
