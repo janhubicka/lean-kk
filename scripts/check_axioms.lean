@@ -137,3 +137,8 @@ import Kk
 #check @Kk.henson_top_generation_ambientB3
 #print axioms Kk.henson_failedAmbientB3_lower_generation
 #print axioms Kk.henson_top_generation_ambientB3
+
+#check @Kk.henson_failedSelectedB3_has_higher_original
+#check @Kk.henson_selectedB3_of_no_higher_original
+#print axioms Kk.henson_failedSelectedB3_has_higher_original
+#print axioms Kk.henson_selectedB3_of_no_higher_original
