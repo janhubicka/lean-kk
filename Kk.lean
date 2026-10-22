@@ -8,6 +8,7 @@ import Kk.CountableOrbitTransfer
 import Kk.HensonEncoding
 import Kk.LabelledEnvelopeComparison
 import Kk.PrefixChainOrbitTransfer
+import Kk.PrefixEnvelopeLift
 
 /-!
 The counting project imports the verified successor-tree library.
