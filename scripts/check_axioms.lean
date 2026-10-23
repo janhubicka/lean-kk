@@ -145,3 +145,6 @@ import Kk
 
 #check @Kk.henson_selected_top_generation_B3
 #print axioms Kk.henson_selected_top_generation_B3
+
+#check @Kk.henson_represented_top_I3_correctedB3
+#print axioms Kk.henson_represented_top_I3_correctedB3
