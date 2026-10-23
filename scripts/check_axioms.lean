@@ -148,3 +148,6 @@ import Kk
 
 #check @Kk.henson_represented_top_I3_correctedB3
 #print axioms Kk.henson_represented_top_I3_correctedB3
+
+#check @Kk.henson_algorithm_top_generation_no_I3
+#print axioms Kk.henson_algorithm_top_generation_no_I3
