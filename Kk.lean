@@ -1,4 +1,26 @@
 import Kk.TypeRespecting
+import Kk.DiaryTransfer
+import Kk.RepresentedVertices
+import Kk.LabelledCopies
+import Kk.CommonCap
+import Kk.enumerated_copies
+import Kk.CountableOrbitTransfer
+import Kk.HensonEncoding
+import Kk.LabelledEnvelopeComparison
+import Kk.PrefixChainOrbitTransfer
+import Kk.PrefixEnvelopeLift
+import Kk.OrderedSourceIdentification
+import Kk.GraphAgeShadow
+import Kk.PrefixCutRigidity
+import Kk.HBlockNonedges
+import Kk.HBlockClique
+import Kk.HBlockSupport
+import Kk.HensonI3Generation
+import Kk.HensonSelectedI3
+import Kk.HensonTopI3
+import Kk.HensonI3ClosureBridge
+import Kk.HensonAlgorithmTopI3
+import Kk.HensonAlgorithmRunTop
 
 /-!
 The counting project imports the verified successor-tree library.

@@ -1,0 +1,320 @@
+import Kk.RepresentedVertices
+import SuccessorTree.V10.GPlusCommonUpperRepresentation
+import SuccessorTree.V10.GPlusHPrefixCommonUpper
+import Mathlib.Tactic
+
+/-!
+# A common finite carrier for a chain of genuine G+ vertices
+
+The finite labelled carrier in the diary upper bound has two logically
+different parts.
+
+* Any finite chain of G+ vertices which are prefixes of the ordinary
+  code of one admissible partial type has actual representing pairs in
+  the same finite source partial structure.
+* Showing that a fixed such chain represents **all** occurrences of one
+  labelled successor diary still requires the diary/envelope comparison.
+
+Only the first, elementary geometrical assertion is treated in this
+module. Its construction uses the genuine admissible Kpt ancestors and
+the proved common-upper representation theorem of lean-successors.
+-/
+
+namespace Kk
+
+open SuccessorTree.V10
+
+universe u
+
+variable {db du dd : Nat}
+variable {family : List (NormalizedForbidden db du dd)}
+
+namespace FiniteRepresentingPair
+
+variable {A : FiniteTypeBase family}
+
+/-- An actual G+ vertex which is an ordinary-code prefix of a common
+upper partial type has two source partial types in the same finite
+admissible domain. -/
+noncomputable def fromCommonUpper
+    (U : TypeProfile A)
+    (X : FiniteGPlusVertex family)
+    (hX : X.val.IsPrefix (RawPartialTypeNode.ordinaryCode U.1.1)) :
+    FiniteRepresentingPair A := by
+  have hPos : 0 < X.val.size := finiteGPlusVertex_size_pos X
+  have hBound : X.val.size ≤ U.level := hX.1
+  have hLowerBound : X.val.size-1 ≤ U.level := by omega
+  let S : TypeProfile A := U.ancestor (X.val.size-1) hLowerBound
+  have hLe : S.1 ≤ U.1 := U.ancestor_le _ hLowerBound
+  have hNe : S.1 ≠ U.1 := by
+    intro hEq
+    have hLev := congrArg (fun N : AdmissibleKptNode family => N.1.1) hEq
+    have hSLev : S.1.1.1 = X.val.size-1 := rfl
+    have hULev : U.1.1.1 = U.level := rfl
+    rw [hSLev, hULev] at hLev
+    omega
+  exact ⟨S, U, lt_of_le_of_ne hLe hNe⟩
+
+/-- The source pair does not merely have the right size: it represents
+precisely the prescribed genuine G+ vertex, including every L+ atom. -/
+theorem fromCommonUpper_vertex
+    (U : TypeProfile A)
+    (X : FiniteGPlusVertex family)
+    (hX : X.val.IsPrefix (RawPartialTypeNode.ordinaryCode U.1.1)) :
+    (fromCommonUpper U X hX).vertex = X := by
+  have hPair :
+      (fromCommonUpper U X hX).toPair =
+        GPlusRepresentingPair.fromUpper U.1 X.val.size
+          (finiteGPlusVertex_size_pos X) hX.1 := by
+    rfl
+  change (fromCommonUpper U X hX).toPair.vertex = X
+  rw [hPair]
+  exact GPlusRepresentingPair.fromUpper_vertex_eq_of_prefix U.1 X hX
+
+/-- An arbitrarily labelled family of prefixes uses ONE finite source
+partial structure and ONE upper partial type. -/
+noncomputable def fromCommonUpperFamily
+    {Λ : Type u}
+    (U : TypeProfile A)
+    (points : Λ → FiniteGPlusVertex family)
+    (hPoints : ∀ a, (points a).val.IsPrefix
+      (RawPartialTypeNode.ordinaryCode U.1.1)) :
+    Λ → FiniteRepresentingPair A :=
+  fun a => fromCommonUpper U (points a) (hPoints a)
+
+/-- The labelled points represented by that one finite carrier are
+exactly the original points, without reindexing or losing labels. -/
+theorem fromCommonUpperFamily_vertices
+    {Λ : Type u}
+    (U : TypeProfile A)
+    (points : Λ → FiniteGPlusVertex family)
+    (hPoints : ∀ a, (points a).val.IsPrefix
+      (RawPartialTypeNode.ordinaryCode U.1.1)) :
+    ∀ a, (fromCommonUpperFamily U points hPoints a).vertex = points a := by
+  intro a
+  exact fromCommonUpper_vertex U (points a) (hPoints a)
+
+/-- Injectivity of the original labelled vertices is preserved by
+their common-upper representation. -/
+theorem fromCommonUpperFamily_injective
+    {Λ : Type u}
+    (U : TypeProfile A)
+    (points : Λ → FiniteGPlusVertex family)
+    (hPoints : ∀ a, (points a).val.IsPrefix
+      (RawPartialTypeNode.ordinaryCode U.1.1))
+    (hInjective : Function.Injective points) :
+    Function.Injective
+      (fun a => (fromCommonUpperFamily U points hPoints a).vertex) := by
+  intro a b hab
+  apply hInjective
+  simpa only [fromCommonUpperFamily_vertices U points hPoints] using hab
+
+end FiniteRepresentingPair
+
+namespace FiniteGPlusVertex
+
+/-- The chosen finite ordinary base under the actual neutral cap
+of a genuine G+ vertex. -/
+noncomputable def finiteCarrier (top : FiniteGPlusVertex family) :
+    FiniteTypeBase family :=
+  top.canonicalCap.finiteTypeBase
+
+/-- The canonical neutral cap itself is an admissible partial type
+over the finite ordinary base it defines. -/
+noncomputable def carrierUpper (top : FiniteGPlusVertex family) :
+    TypeProfile (finiteCarrier top) := by
+  refine ⟨top.canonicalCap, ?_⟩
+  refine ⟨by rfl, ?_⟩
+  exact AdmissibleKptNode.prefix_finiteTypeBase_socle (le_refl _)
+
+/-- Every prefix of the top code is a prefix of its genuine carrier
+upper partial type. All four ordinary atomic tables are retained. -/
+theorem prefix_carrierUpper
+    (top X : FiniteGPlusVertex family)
+    (hX : X.val.IsPrefix top.val) :
+    X.val.IsPrefix (RawPartialTypeNode.ordinaryCode ((carrierUpper top)).1.1) := by
+  change X.val.IsPrefix
+    (RawPartialTypeNode.ordinaryCode top.canonicalCap.1)
+  rw [top.canonicalCap_ordinaryCode]
+  exact hX
+
+/-- A labelled family in the prefix chain of one maximum code has
+one actual finite admissible carrier, without extra hypotheses on
+a choice of base or ambient cap. -/
+noncomputable def carrierPoints
+    {Λ : Type u}
+    (top : FiniteGPlusVertex family)
+    (points : Λ → FiniteGPlusVertex family)
+    (hPoints : ∀ a, (points a).val.IsPrefix top.val) :
+    Λ → FiniteRepresentingPair (finiteCarrier top) :=
+  FiniteRepresentingPair.fromCommonUpperFamily (carrierUpper top)
+    points (fun a => (prefix_carrierUpper top) (points a) (hPoints a))
+
+/-- The labelled carrier constructed above represents exactly the
+given vertices, not merely an isomorphic unlabelled family. -/
+theorem carrierPoints_vertex
+    {Λ : Type u}
+    (top : FiniteGPlusVertex family)
+    (points : Λ → FiniteGPlusVertex family)
+    (hPoints : ∀ a, (points a).val.IsPrefix top.val) :
+    ∀ a, ((carrierPoints top) points hPoints a).vertex = points a := by
+  intro a
+  exact FiniteRepresentingPair.fromCommonUpperFamily_vertices
+    (carrierUpper top) points
+    (fun x => (prefix_carrierUpper top) (points x) (hPoints x)) a
+
+/-- This finite carrier preserves all labels whenever the original
+selected vertices were distinct. -/
+theorem carrierPoints_injective
+    {Λ : Type u}
+    (top : FiniteGPlusVertex family)
+    (points : Λ → FiniteGPlusVertex family)
+    (hPoints : ∀ a, (points a).val.IsPrefix top.val)
+    (hInj : Function.Injective points) :
+    Function.Injective (fun a => ((carrierPoints top) points hPoints a).vertex) := by
+  intro a b h
+  apply hInj
+  simpa only [carrierPoints_vertex top points hPoints] using h
+
+
+end FiniteGPlusVertex
+
+/-- A finite injectively labelled family of vertices taken from ONE
+countable enumerated forbidden-free L+ structure has a genuine finite
+type-respecting carrier. There is no common-upper or representability
+hypothesis: the index bound and the prefix theorem discharge it.
+
+This is the application to countable coded structures of the finite
+prefix-chain construction above. It does not assert that equal successor
+diaries always lie in one global shape-map orbit. -/
+theorem countable_labelled_carrier
+    (C : CountableEnumeratedPartialStructure db du dd)
+    (hAvoid : ∀ bad, bad ∈ family → bad.Avoids C.L)
+    {Λ : Type u}
+    (indices : Λ → Nat)
+    (N : Nat)
+    (hBound : ∀ a, indices a ≤ N)
+    (hInjective : Function.Injective indices) :
+    ∃ (A : FiniteTypeBase family)
+      (points : Λ → FiniteRepresentingPair A),
+      Function.Injective (fun a => (points a).vertex) ∧
+      ∀ a, (points a).vertex =
+        C.toGPlus family hAvoid (indices a) := by
+  let top : FiniteGPlusVertex family := C.toGPlus family hAvoid N
+  let selected : Λ → FiniteGPlusVertex family :=
+    fun a => C.toGPlus family hAvoid (indices a)
+  have hPrefix : ∀ a, (selected a).val.IsPrefix top.val := by
+    intro a
+    exact C.toGPlus_code_prefix_of_le family hAvoid (hBound a)
+  have hSelectedInjective : Function.Injective selected := by
+    intro a b hab
+    apply hInjective
+    exact C.toGPlus_injective family hAvoid hab
+  refine ⟨FiniteGPlusVertex.finiteCarrier top,
+    FiniteGPlusVertex.carrierPoints top selected hPrefix, ?_, ?_⟩
+  · exact FiniteGPlusVertex.carrierPoints_injective
+      top selected hPrefix hSelectedInjective
+  · intro a
+    exact FiniteGPlusVertex.carrierPoints_vertex top selected hPrefix a
+
+
+/-- Strengthening for the manuscript's labelled copies: the common carrier
+not only represents the labelled vertices, it reproduces ALL original
+finite L+ atomic records of the countable source structure. In particular,
+binary nonedges and the oriented auxiliary E relation are not discarded.
+
+For directed binary atoms the labels must be distinct (the ordinary binary
+table is evaluated on the different vertices of the source graph).
+Unary and diagonal records have no such restriction. -/
+theorem countable_labelled_carrier_full_atoms
+    (C : CountableEnumeratedPartialStructure db du dd)
+    (hAvoid : ∀ bad, bad ∈ family → bad.Avoids C.L)
+    {Λ : Type u}
+    (indices : Λ → Nat)
+    (N : Nat)
+    (hBound : ∀ a, indices a ≤ N)
+    (hInjective : Function.Injective indices) :
+    ∃ (A : FiniteTypeBase family)
+      (points : Λ → FiniteRepresentingPair A),
+      Function.Injective (fun a => (points a).vertex) ∧
+      (∀ a, (points a).vertex =
+         C.toGPlus family hAvoid (indices a)) ∧
+      (∀ a b, a ≠ b → ∀ t : Fin db,
+        finiteGPlusBinary (points a).vertex (points b).vertex t =
+          C.L.binary (indices a) (indices b) t) ∧
+      (∀ a, ∀ t : Fin du,
+        finiteGPlusUnary (points a).vertex t =
+          C.L.unary (indices a) t) ∧
+      (∀ a, ∀ t : Fin dd,
+        finiteGPlusDiagonal (points a).vertex t =
+          C.L.diagonal (indices a) t) ∧
+      (∀ a b,
+        finiteGPlusE (points a).vertex (points b).vertex =
+          C.E (indices a) (indices b)) := by
+  obtain ⟨A, points, hPointsInj, hPoints⟩ :=
+    countable_labelled_carrier C hAvoid indices N hBound hInjective
+  refine ⟨A, points, hPointsInj, hPoints, ?_, ?_, ?_, ?_⟩
+  · intro a b hab t
+    rw [hPoints a, hPoints b]
+    have hNe : indices a ≠ indices b := by
+      intro hEq
+      exact hab (hInjective hEq)
+    exact C.toGPlus_binary family hAvoid hNe t
+  · intro a t
+    rw [hPoints a]
+    exact C.toGPlus_unary family hAvoid (indices a) t
+  · intro a t
+    rw [hPoints a]
+    exact C.toGPlus_diagonal family hAvoid (indices a) t
+  · intro a b
+    rw [hPoints a, hPoints b]
+    exact C.toGPlus_E family hAvoid (indices a) (indices b)
+
+
+/-- The carrier of a finite labelled selection from a genuine countable
+partial structure works simultaneously for *every global successor map*.
+
+The intrinsic finite approximation is the actual restriction of F to
+the complete profile of A. Hence the same fixed source representing
+pairs give all labelled vertices of the image under the induced G+
+action. No fresh extension, source envelope or diary assumption occurs.
+
+This proves the global-orbit portion of the factorisation interface;
+identifying which copies lie in that orbit is still the separate,
+K_k-specific diary/envelope problem. -/
+theorem countable_labelled_carrier_all_images
+    (C : CountableEnumeratedPartialStructure db du dd)
+    (hAvoid : ∀ bad, bad ∈ family → bad.Avoids C.L)
+    {Λ : Type u}
+    (indices : Λ → Nat)
+    (N : Nat)
+    (hBound : ∀ a, indices a ≤ N)
+    (hInjective : Function.Injective indices) :
+    ∃ (A : FiniteTypeBase family)
+      (points : Λ → FiniteRepresentingPair A),
+      Function.Injective (fun a => (points a).vertex) ∧
+      (∀ a, (points a).vertex =
+        C.toGPlus family hAvoid (indices a)) ∧
+      ∀ F : SuccessorTree.SMTree.MMap (normalizedKptSMTree family),
+        ∃ h : TypeRespectingEmbedding A,
+          ∀ a, (points a).imageVertex h =
+            gPlusShapeImage F.map
+              (C.toGPlus family hAvoid (indices a)) := by
+  obtain ⟨A, points, hInj, hPoints⟩ :=
+    countable_labelled_carrier C hAvoid indices N hBound hInjective
+  refine ⟨A, points, hInj, hPoints, ?_⟩
+  intro F
+  let h : TypeRespectingEmbedding A :=
+    TypeRespectingEmbedding.ofRestriction A
+      ⟨(fun u : TypeProfile A => F.map u.1), ⟨F, rfl⟩⟩
+  refine ⟨h, ?_⟩
+  intro a
+  calc
+    (points a).imageVertex h =
+        gPlusShapeImage F.map (points a).vertex :=
+      (points a).imageVertex_eq_of_extension h F (fun _ => rfl)
+    _ = gPlusShapeImage F.map
+        (C.toGPlus family hAvoid (indices a)) := by
+      rw [hPoints a]
+
+end Kk
