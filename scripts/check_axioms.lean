@@ -151,3 +151,6 @@ import Kk
 
 #check @Kk.henson_algorithm_top_generation_no_I3
 #print axioms Kk.henson_algorithm_top_generation_no_I3
+
+#check @Kk.henson_algorithmRun_top_generation_no_I3
+#print axioms Kk.henson_algorithmRun_top_generation_no_I3
