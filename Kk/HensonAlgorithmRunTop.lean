@@ -26,6 +26,7 @@ special resolved-copy diary comparison at lower generations.
 
 namespace Kk
 
+open SuccessorTree
 open SuccessorTree.V10
 
 /-- For the genuine Henson Algorithm 5.4 run on a finite numerical
