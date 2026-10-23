@@ -142,3 +142,6 @@ import Kk
 #check @Kk.henson_selectedB3_of_no_higher_original
 #print axioms Kk.henson_failedSelectedB3_has_higher_original
 #print axioms Kk.henson_selectedB3_of_no_higher_original
+
+#check @Kk.henson_selected_top_generation_B3
+#print axioms Kk.henson_selected_top_generation_B3
