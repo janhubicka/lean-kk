@@ -19,6 +19,7 @@ import Kk.HensonI3Generation
 import Kk.HensonSelectedI3
 import Kk.HensonTopI3
 import Kk.HensonI3ClosureBridge
+import Kk.HensonAlgorithmTopI3
 
 /-!
 The counting project imports the verified successor-tree library.
