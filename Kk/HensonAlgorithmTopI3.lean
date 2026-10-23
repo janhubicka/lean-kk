@@ -29,6 +29,7 @@ generation (B3) failures and diary orbit comparison remain open.
 
 namespace Kk
 
+open SuccessorTree
 open SuccessorTree.V10
 
 /-- Genuine normalized Henson finite numerical-H base: a top H
