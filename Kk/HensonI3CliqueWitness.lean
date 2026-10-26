@@ -82,6 +82,15 @@ theorem henson_positive_generation_B3_has_clique_witness
         (finiteNumericHL (normalizedGraphModel E) k N) cut ∧
       (∀ bad, bad ∈ hensonForbiddenFamily ell hell →
         bad.Avoids (W.withoutVertex cut)) ∧
+      (∀ x, x ∈ W.carrier → cut < x →
+        ∃ v : Fin M,
+          Selected v ∧
+          cut+1 ≤ (finiteNumericH (normalizedGraphModel E) k N).freeLevel
+            (original v).val ∧
+          RelationalPrefixType.ofAgeModel W (cut+1) x =
+            RelationalPrefixType.ofAgeModel
+              (finiteNumericHL (normalizedGraphModel E) k N)
+              (cut+1) (original v).val) ∧
       ¬ (NormalizedForbidden.nontrivial ell
         (cliquePattern ell) (by omega)
         (cliquePattern_irreducible ell)).Avoids W := by
@@ -148,6 +157,73 @@ theorem henson_positive_generation_B3_has_clique_witness
     change ¬ (family.get i).Avoids W at hBad
     rw [hBadClique] at hBad
     exact hBad
-  exact ⟨W,hFinite,hSocleH,hDelete,hViolation⟩
+  exact ⟨W,hFinite,hSocleH,hDelete,hUpper,hViolation⟩
+
+
+/-- The forbidden-clique continuation can also be recorded as an
+ACTUAL original-labelled I3 signature for the one-element
+forbidden family consisting only of the clique pattern.
+
+This proves the missing connection between the verified
+positive-generation clique witness and the general fixed-pattern
+signature-count theorem, without asserting that original names are
+already restricted to the strictly higher-generation subpool. -/
+theorem henson_positive_generation_B3_has_clique_signature
+    (ell : Nat) (hell : 2 ≤ ell)
+    (k : Nat) (hK : ell ≤ k+1)
+    (E : Nat → Nat → Bool)
+    (hLoops : ∀ i, E i i = false)
+    (hSym : ∀ x y, E x y = E y x)
+    (hClique : ¬ ∃ f : Fin ell → Nat, StrictMono f ∧
+      (∀ a b : Fin ell, a ≠ b → E (f a) (f b) = true))
+    (N cut g idx M : Nat)
+    (hPositive : 0 < g) (hg : g < k)
+    (hCut : cut < N)
+    (hGeneration : cut = hPosition k idx g)
+    (original : Fin M → Fin N)
+    (Selected : Fin M → Prop)
+    (hFailure :
+      ¬ (selectedStagePoolPrescribedData
+        (finiteNumericH (normalizedGraphModel E) k N)
+        cut original Selected).CorrectedB3
+          (hensonForbiddenFamily ell hell)) :
+    Nonempty (I3OriginalSignatureWitness
+      (fun _ : Fin 1 => ell)
+      (fun _ : Fin 1 => cliquePattern ell)
+      (finiteNumericHL (normalizedGraphModel E) k N)
+      (fun v : Fin M => (original v).val) cut) := by
+  classical
+  obtain ⟨W,hFinite,hSocle,hDelete,hUpper,hBad⟩ :=
+    henson_positive_generation_B3_has_clique_witness
+      ell hell k hK E hLoops hSym hClique
+      N cut g idx M hPositive hg hCut hGeneration
+      original Selected hFailure
+  let bad : NormalizedForbidden 1 0 1 :=
+    .nontrivial ell (cliquePattern ell) (by omega)
+      (cliquePattern_irreducible ell)
+  have hMember : bad ∈ hensonForbiddenFamily ell hell := by
+    simp [bad,hensonForbiddenFamily]
+  obtain ⟨e,hCopy⟩ :=
+    bad.signaturePattern_copy_of_violation W hBad
+  have hDeletePattern :
+      ¬ ∃ f : Fin ell → Nat,
+        (W.withoutVertex cut).Realizes (cliquePattern ell) f := by
+    exact (bad.signaturePattern_avoids_iff
+      (W.withoutVertex cut)).1 (hDelete bad hMember)
+  refine ⟨{
+    familyIndex := 0
+    W := W
+    e := e
+    finite := hFinite
+    copy := hCopy
+    socle := hSocle
+    deleteAvoids := hDeletePattern
+    upperNames := ?_
+  }⟩
+  intro a hAbove
+  obtain ⟨v,_hSelected,_hFree,hType⟩ :=
+    hUpper (e a) (hCopy.2.1 a) hAbove
+  exact ⟨v,hType⟩
+
 
 end Kk
