@@ -175,3 +175,6 @@ import Kk
 #check @Kk.henson_positive_generation_B3_has_clique_witness
 #print axioms Kk.henson_forbidden_pattern_large_is_clique
 #print axioms Kk.henson_positive_generation_B3_has_clique_witness
+
+#check @Kk.henson_algorithmRun_positive_I3_has_clique_witness
+#print axioms Kk.henson_algorithmRun_positive_I3_has_clique_witness
