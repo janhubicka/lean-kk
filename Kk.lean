@@ -24,6 +24,7 @@ import Kk.HensonAlgorithmRunTop
 import Kk.HensonAlgorithmRunLowerI3
 import Kk.HensonAlgorithmRunHigherCapacity
 import Kk.HensonI3PatternSize
+import Kk.HensonAlgorithmRunGenerationCutoff
 
 /-!
 The counting project imports the verified successor-tree library.
