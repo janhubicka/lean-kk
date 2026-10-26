@@ -1,5 +1,52 @@
 # Verification plan
 
+## 26 October — positive-generation forbidden cliques and restricted signatures
+
+[Full Lean CI run 40400450373](https://github.com/janhubicka/lean-kk/actions/runs/40400450373)
+at `1c2ed2ceaf186bcf8cafc30069994936ea76e548`
+passed `lake build` and the named transitive axiom audit.
+Each named endpoint uses only `[propext, Classical.choice, Quot.sound]`.
+
+- `Kk.henson_forbidden_pattern_large_is_clique`: among the four
+  normalized Henson forbidden patterns (loop, two asymmetries,
+  symmetric clique), only the clique has cardinal at least 3.
+- `Kk.henson_positive_generation_B3_has_clique_witness`: a
+  failed corrected B3 test at **positive numerical-H generation**
+  in the genuine selected-original pool has a finite forbidden
+  L-continuation witnessing failure of the clique, not merely
+  one of the other normalized directed patterns.
+- `Kk.henson_algorithmRun_positive_I3_has_clique_witness`:
+  the same conclusion for a true nonstructural I3 level of the
+  full parameter-closed Algorithm 5.4 run. The closure-to-original
+  witness mapping is constructed from the actual run.
+- `Kk.i3Levels_card_le_fixedPattern_capacity`: an exact
+  general I3 signature collision bound for witnesses whose
+  forbidden-family index is fixed, namely
+  `levels.card <= (M+1)^(patternCard)`. No independently
+  assumed signature injectivity is added.
+
+The already verified `g+2 <= ell` generation-size bound and
+these results justify the mathematical refinement: for
+`g>=1`, all responsible forbidden signatures belong to
+the `K_ell` index. The general fixed-index counting theorem
+provides the expected `(M_g+1)^ell` target.
+
+**Not yet connected in Lean:** the single-clique-index witness
+must be constructed with only the **strictly higher-generation
+selected-original names**, simultaneously for every level of
+the actual run. Until this adapter is formalized, the sharper
+bound remains a mathematical deduction in the olive manuscript,
+not a kernel-checked composite theorem.
+
+**Also unresolved:** generation `g=0` may a priori have
+asymmetric-pair forbidden witnesses. Excluding them requires
+a genuine crossing-symmetry argument for the full finite L-only
+age-test continuation, not just symmetry of the ambient H
+socle. Most importantly, even the strengthened I3 signatures
+do NOT prove the diary's common labelled source or exact upper
+bound: the full auxiliary-to-selected age projection remains open.
+
+
 This project checks the manuscript proof of optimal big Ramsey degrees of
 the universal \(K_k\)-free graph. Statements in the present document are
 not claims of completed kernel verification unless the corresponding CI
