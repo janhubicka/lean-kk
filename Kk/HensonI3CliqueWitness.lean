@@ -145,6 +145,7 @@ theorem henson_positive_generation_B3_has_clique_witness
       ¬ (NormalizedForbidden.nontrivial ell
         (cliquePattern ell) (by omega)
         (cliquePattern_irreducible ell)).Avoids W := by
+    change ¬ (family.get i).Avoids W at hBad
     rw [hBadClique] at hBad
     exact hBad
   exact ⟨W,hFinite,hSocleH,hDelete,hViolation⟩
