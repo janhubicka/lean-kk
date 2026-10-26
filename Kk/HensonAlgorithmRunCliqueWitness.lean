@@ -126,11 +126,13 @@ theorem henson_algorithmRun_positive_I3_has_clique_witness
     algorithmI3_failsCorrectedB3
       family A hAvoidH original Z hPool cut hPos
       hNoI1 hNoI2 hInteresting
-  exact henson_positive_generation_B3_has_clique_witness
-    ell hell k hK E hLoops hSym hClique
-    N cut g idx V.card hGenPos hGen hCut hCutGen
-    original
-    (closureSelectedOriginal family A hAvoidH original Z cut)
-    hFailure
+  obtain ⟨W,hFinite,hSocle,hDelete,_hUpper,hBad⟩ :=
+    henson_positive_generation_B3_has_clique_witness
+      ell hell k hK E hLoops hSym hClique
+      N cut g idx V.card hGenPos hGen hCut hCutGen
+      original
+      (closureSelectedOriginal family A hAvoidH original Z cut)
+      hFailure
+  exact ⟨W,hFinite,hSocle,hDelete,hBad⟩
 
 end Kk
