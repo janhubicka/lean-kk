@@ -159,3 +159,6 @@ import Kk
 #check @Kk.henson_algorithmRun_lower_I3_requires_higher_selected_original
 #print axioms Kk.henson_failedSelectedB3_higher_original_anyK
 #print axioms Kk.henson_algorithmRun_lower_I3_requires_higher_selected_original
+
+#check @Kk.henson_algorithmRun_lower_I3_levels_card_le_higher_capacity
+#print axioms Kk.henson_algorithmRun_lower_I3_levels_card_le_higher_capacity
