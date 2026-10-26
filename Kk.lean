@@ -22,6 +22,7 @@ import Kk.HensonI3ClosureBridge
 import Kk.HensonAlgorithmTopI3
 import Kk.HensonAlgorithmRunTop
 import Kk.HensonAlgorithmRunLowerI3
+import Kk.HensonAlgorithmRunHigherCapacity
 
 /-!
 The counting project imports the verified successor-tree library.
