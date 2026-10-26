@@ -162,3 +162,8 @@ import Kk
 
 #check @Kk.henson_algorithmRun_lower_I3_levels_card_le_higher_capacity
 #print axioms Kk.henson_algorithmRun_lower_I3_levels_card_le_higher_capacity
+
+#check @Kk.henson_failedSelectedB3_generation_below_clique_margin
+#check @Kk.henson_selectedB3_of_generation_ge_clique_margin
+#print axioms Kk.henson_failedSelectedB3_generation_below_clique_margin
+#print axioms Kk.henson_selectedB3_of_generation_ge_clique_margin
