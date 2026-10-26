@@ -28,6 +28,7 @@ import Kk.HensonAlgorithmRunGenerationCutoff
 import Kk.HensonI3CliqueWitness
 import Kk.HensonAlgorithmRunCliqueWitness
 import Kk.I3FixedPatternCapacity
+import Kk.HensonAlgorithmRunCliqueCapacity
 
 /-!
 The counting project imports the verified successor-tree library.
