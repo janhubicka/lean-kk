@@ -154,3 +154,8 @@ import Kk
 
 #check @Kk.henson_algorithmRun_top_generation_no_I3
 #print axioms Kk.henson_algorithmRun_top_generation_no_I3
+
+#check @Kk.henson_failedSelectedB3_higher_original_anyK
+#check @Kk.henson_algorithmRun_lower_I3_requires_higher_selected_original
+#print axioms Kk.henson_failedSelectedB3_higher_original_anyK
+#print axioms Kk.henson_algorithmRun_lower_I3_requires_higher_selected_original
