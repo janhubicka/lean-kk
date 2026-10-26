@@ -170,3 +170,8 @@ import Kk
 
 #check @Kk.henson_algorithmRun_lower_I3_generation_below_clique_margin
 #print axioms Kk.henson_algorithmRun_lower_I3_generation_below_clique_margin
+
+#check @Kk.henson_forbidden_pattern_large_is_clique
+#check @Kk.henson_positive_generation_B3_has_clique_witness
+#print axioms Kk.henson_forbidden_pattern_large_is_clique
+#print axioms Kk.henson_positive_generation_B3_has_clique_witness
