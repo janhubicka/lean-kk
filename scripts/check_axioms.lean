@@ -178,3 +178,6 @@ import Kk
 
 #check @Kk.henson_algorithmRun_positive_I3_has_clique_witness
 #print axioms Kk.henson_algorithmRun_positive_I3_has_clique_witness
+
+#check @Kk.i3Levels_card_le_fixedPattern_capacity
+#print axioms Kk.i3Levels_card_le_fixedPattern_capacity
