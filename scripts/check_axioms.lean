@@ -181,3 +181,6 @@ import Kk
 
 #check @Kk.i3Levels_card_le_fixedPattern_capacity
 #print axioms Kk.i3Levels_card_le_fixedPattern_capacity
+
+#check @Kk.henson_positive_generation_B3_has_clique_signature
+#print axioms Kk.henson_positive_generation_B3_has_clique_signature
