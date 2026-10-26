@@ -141,7 +141,12 @@ theorem henson_positive_generation_B3_has_clique_witness
   have hBadClique :=
     henson_forbidden_pattern_large_is_clique
       ell hell (family.get i) hMember hLarge
-  refine ⟨W,hFinite,hSocleH,hDelete,?_⟩
-  simpa only [hBadClique] using hBad
+  have hViolation :
+      ¬ (NormalizedForbidden.nontrivial ell
+        (cliquePattern ell) (by omega)
+        (cliquePattern_irreducible ell)).Avoids W := by
+    rw [hBadClique] at hBad
+    exact hBad
+  exact ⟨W,hFinite,hSocleH,hDelete,hViolation⟩
 
 end Kk
