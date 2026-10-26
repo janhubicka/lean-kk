@@ -29,6 +29,17 @@ namespace Kk
 open SuccessorTree
 open SuccessorTree.V10
 
+/-- The exact set of original names in an arbitrary finite pool whose
+numeric H generation lies strictly above g. Noncomputability is only
+the classical decision of membership in a finite set. -/
+noncomputable def higherGenerationStageNames
+    {M N : Nat} (original : Fin M → Fin N)
+    (k g : Nat) : Finset (Fin M) := by
+  classical
+  exact Finset.univ.filter (fun v =>
+    ∃ idx m : Nat, g < m ∧ m ≤ k ∧
+      (original v).val = hPosition k idx m)
+
 /-- For a true numerical-H AlgorithmRun, the number of positive
 nonstructural I3 levels in any fixed generation g<k is at most
 the I3 signature capacity of the ORIGINALS at strictly HIGHER
@@ -84,9 +95,7 @@ theorem henson_algorithmRun_lower_I3_levels_card_le_higher_capacity
     let original : Fin V.card → Fin N :=
       fun j => (V.equivFin.symm j).1
     let higher : Finset (Fin V.card) :=
-      Finset.univ.filter (fun v =>
-        ∃ idx m : Nat, g < m ∧ m ≤ k ∧
-          (original v).val = hPosition k idx m)
+      higherGenerationStageNames original k g
     levels.card ≤
       ageSignatureCapacity
         (fun j : Fin (hensonForbiddenFamily ell hell).length =>
@@ -148,9 +157,7 @@ theorem henson_algorithmRun_lower_I3_levels_card_le_higher_capacity
       family A hAvoidH original (Z cut) hPool cut hPos
       (hNoI1 cut hMem) (hNoI2 cut hMem) hInteresting
   let higherNames : Finset (Fin V.card) :=
-    Finset.univ.filter (fun v =>
-      ∃ idx m : Nat, g < m ∧ m ≤ k ∧
-        (original v).val = hPosition k idx m)
+    higherGenerationStageNames original k g
   let higher : Fin higherNames.card → Fin V.card :=
     fun j => (higherNames.equivFin.symm j).1
   have hCover : ∀ v : Fin V.card,
@@ -159,7 +166,8 @@ theorem henson_algorithmRun_lower_I3_levels_card_le_higher_capacity
       ∃ j : Fin higherNames.card, higher j = v := by
     intro v hv
     have hMember : v ∈ higherNames := by
-      exact Finset.mem_filter.mpr ⟨Finset.mem_univ _,hv⟩
+      simpa only [higherNames, higherGenerationStageNames,
+        Finset.mem_filter, Finset.mem_univ, true_and] using hv
     refine ⟨higherNames.equivFin ⟨v,hMember⟩,?_⟩
     simp [higher]
   exact numericH_selectedB3_generation_levels_card_le_higher_budget
