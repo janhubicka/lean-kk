@@ -193,3 +193,9 @@ import Kk
 
 #check @Kk.henson_algorithmRun_positive_I3_levels_card_le_higher_clique_capacity
 #print axioms Kk.henson_algorithmRun_positive_I3_levels_card_le_higher_clique_capacity
+
+#check @Kk.two_point_B3_cross_symmetric
+#check @Kk.B3_no_new_asym_pair
+#check @Kk.B3_avoids_both_asym_patterns
+#print axioms Kk.two_point_B3_cross_symmetric
+#print axioms Kk.B3_avoids_both_asym_patterns
