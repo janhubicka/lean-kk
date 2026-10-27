@@ -107,7 +107,9 @@ theorem henson_positive_generation_B3_has_clique_higher_signature
       hUpper (e b) (hCopy.2.1 b) hAbove
     have hAddress : A.freeLevel (original v).val ≤
         (original v).val := A.freeLevel_le (original v).val
-    exact ⟨v,⟨hSelected,hFree⟩,by omega,hType⟩
+    have hAfter : cut < (original v).val :=
+      lt_of_lt_of_le (Nat.lt_succ_self cut) (hFree.trans hAddress)
+    exact ⟨v,⟨hSelected,hFree⟩,hAfter,hType⟩
   have hUpperNamed : ∀ b : Fin ell, r ≤ b.val →
       ∃ address : Nat, cut < address ∧
         RelationalPrefixType.ofAgeModel W (cut+1) (e b) =
