@@ -1,5 +1,46 @@
 # Verification plan
 
+## 27 October — sharp positive-generation fixed-clique I3 bound
+
+[Full Lean run 40518293067](https://github.com/janhubicka/lean-kk/actions/runs/40518293067)
+at commit `b704e3ca5b828a9d2c972e453e6a69cbe006b4e1` passed
+`lake build`, named `#check` and transitive `#print axioms`
+for both new endpoints. Their only axioms are
+`[propext, Classical.choice, Quot.sound]`.
+
+- `Kk.henson_positive_generation_B3_has_clique_higher_signature`
+  chooses **one actual finite L-only K_ell forbidden continuation**
+  witnessing failure of corrected B3 at a selected-original stage
+  of positive numerical-H generation g. It uses the exact I3
+  relocation and chosen-original theorem to establish that
+  every upper name of that SAME witness has generation m>g,
+  while retaining one fixed clique-pattern family index.
+- `Kk.henson_algorithmRun_positive_I3_levels_card_le_higher_clique_capacity`
+  constructs the actual complete parameter-closed AlgorithmRun
+  selected stage and one SAME finite final-stage original pool
+  for all tested levels, restricts witness names to its strictly
+  higher-generation subpool, and applies the kernel-checked
+  fixed-pattern signature collision bound. Its conclusion is
+
+  `|I3_g| ≤ (M_g + 1)^ell` for `0 < g < k`,
+
+  where `M_g` is the cardinality of the exact subpool of
+  final-stage original names at generations strictly above g.
+
+This closes the earlier **quantitative combination gap** between
+the previously checked full-family higher-generation capacity and
+the whole-pool clique-only capacity. It does not classify the
+g=0 forbidden signatures, which can still include normalized
+asymmetry patterns. The selected-original versus active diary
+branch projection, the common labelled diary source, and
+optimality remain separate, unverified obligations.
+
+The manuscript `kk.tex` now states and cites the final bound
+with a green pinned validation marker, while retaining the
+unresolved full auxiliary (B3)-to-selected diary comparison
+as an explicit TODO.
+
+
 ## 26 October — positive-generation forbidden cliques and restricted signatures
 
 [Full Lean CI run 40400450373](https://github.com/janhubicka/lean-kk/actions/runs/40400450373)
