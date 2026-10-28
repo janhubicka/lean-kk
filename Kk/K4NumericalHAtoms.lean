@@ -38,7 +38,15 @@ theorem k4FourOriginalEdge_symmetric (i j : Nat) :
       ((j = 1 ∧ i = 2) ∨ (j = 2 ∧ i = 1) ∨
         (j = 3 ∧ i < 3) ∨ (i = 3 ∧ j < 3)) := by
     tauto
-  exact congrArg decide (propext hP)
+  by_cases hp : ((i = 1 ∧ j = 2) ∨ (i = 2 ∧ j = 1) ∨
+      (i = 3 ∧ j < 3) ∨ (j = 3 ∧ i < 3))
+  · have hq := hP.mp hp
+    simp [hp,hq]
+  · have hq : ¬ ((j = 1 ∧ i = 2) ∨ (j = 2 ∧ i = 1) ∨
+        (j = 3 ∧ i < 3) ∨ (i = 3 ∧ j < 3)) := by
+      intro h
+      exact hp (hP.mpr h)
+    simp [hp,hq]
 
 theorem k4FourOriginalEdge_irreflexive (i : Nat) :
     k4FourOriginalEdge i i = false := by
@@ -169,7 +177,11 @@ theorem k4H_upper_edge_true_iff
       change k4FourOriginalEdge i 3 = true
       simp [k4FourOriginalEdge]
       omega
-    refine ⟨i,3,q,4,hi,hq,by omega,Or.inl (by omega),
+    have hGate : q < 4 ∨ (q = 4 ∧ 4 = 4) := by
+      by_cases hq4 : q = 4
+      · exact Or.inr ⟨hq4,rfl⟩
+      · exact Or.inl (by omega)
+    refine ⟨i,3,q,4,hi,hq,by omega,hGate,
       Or.inl ⟨hPositionEq,by decide,hBase⟩⟩
 
 theorem k4H_upper_edge_eq
