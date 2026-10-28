@@ -242,3 +242,13 @@ import Kk
 #print axioms Kk.kpt_closure_contains_positive_parameter_of_seed
 #check @Kk.numericH_first_gadget_second_original_in_closure
 #print axioms Kk.numericH_first_gadget_second_original_in_closure
+
+#check @Kk.beforeK4_valid
+#check @Kk.afterK4_valid
+#check @Kk.afterK4_lt_beforeK4
+#check @Kk.afterK4_covers_beforeK4
+#check @Kk.selected_K4_shadow_does_not_detect_cover
+#print axioms Kk.beforeK4_valid
+#print axioms Kk.afterK4_valid
+#print axioms Kk.afterK4_covers_beforeK4
+#print axioms Kk.selected_K4_shadow_does_not_detect_cover
