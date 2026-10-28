@@ -87,12 +87,16 @@ theorem k4Cut22_upper_types :
         | none => rfl
         | some j =>
           have hj : j.val ≤ 22 := by omega
-          simp [k4Cut22Upper, k4Cut22Continuation, hj]
+          change k4Cut22Continuation.binary 24 j.val (0 : Fin 1) =
+            k4Cut22Continuation.binary 23 j.val (0 : Fin 1)
+          simp [k4Cut22Continuation, hj]
       | some i =>
         cases b with
         | none =>
           have hi : i.val ≤ 22 := by omega
-          simp [k4Cut22Upper, k4Cut22Continuation, hi]
+          change k4Cut22Continuation.binary i.val 24 (0 : Fin 1) =
+            k4Cut22Continuation.binary i.val 23 (0 : Fin 1)
+          simp [k4Cut22Continuation, hi]
         | some j => rfl
     · intro a t
       exact Fin.elim0 t
@@ -107,7 +111,9 @@ theorem k4Cut22_symmetric (x y : Nat) :
   · have hPair :
         ((x = 10 ∧ y = 22) ∨ (x = 22 ∧ y = 10)) ↔
           ((y = 10 ∧ x = 22) ∨ (y = 22 ∧ x = 10)) := by tauto
-    simp [k4Cut22Continuation, hx, hy, hPair]
+    change decide ((x = 10 ∧ y = 22) ∨ (x = 22 ∧ y = 10)) =
+      decide ((y = 10 ∧ x = 22) ∨ (y = 22 ∧ x = 10))
+    exact congrArg decide (propext hPair)
   · simp [k4Cut22Continuation, hx, hy]
   · simp [k4Cut22Continuation, hx, hy]
   · simp [k4Cut22Continuation, hx, hy, eq_comm]
@@ -135,8 +141,9 @@ theorem k4Cut22_deleted_noK4 :
   have hf0 : f 0 < 22 := by omega
   have hEdge : k4Cut22Continuation.binary (f 0) (f 1) (0 : Fin 1) =
       true := by
-    simpa [cliquePattern] using
-      (hCopy.2.2.1 (0 : Fin 4) (1 : Fin 4) (by decide) (0 : Fin 1))
+    have he := hCopy.2.2.1 (0 : Fin 4) (1 : Fin 4) (by decide) (0 : Fin 1)
+    change k4Cut22Continuation.binary (f 0) (f 1) (0 : Fin 1) = true at he
+    exact he
   have hNoEdge : k4Cut22Continuation.binary (f 0) (f 1) (0 : Fin 1) =
       false := by
     simp [k4Cut22Continuation, show f 0 ≤ 22 by omega,
@@ -192,7 +199,7 @@ theorem k4Cut22_realizesK4 :
   refine ⟨k4Cut22Embedding, ?_, ?_, ?_, ?_, ?_⟩
   · decide
   · intro a
-    fin_cases a <;> decide
+    fin_cases a <;> simp [k4Cut22Embedding, k4Cut22Continuation]
   · intro a b hab t
     fin_cases a <;> fin_cases b <;> fin_cases t <;>
       simp_all [k4Cut22Embedding, k4Cut22Continuation, cliquePattern]
