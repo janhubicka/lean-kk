@@ -259,6 +259,10 @@ import Kk
 #print axioms Kk.correctedB3_of_genuine_kpt_gap_Lprofile
 #check @Kk.correctedB3_of_genuine_kpt_gap_subprofile
 #print axioms Kk.correctedB3_of_genuine_kpt_gap_subprofile
+#check @Kk.genuine_gap_boundary_one_target_B3
+#print axioms Kk.genuine_gap_boundary_one_target_B3
+#check @Kk.genuine_gap_crossing_one_target_B3
+#print axioms Kk.genuine_gap_crossing_one_target_B3
 
 #check @Kk.uniformBefore_valid
 #check @Kk.uniformAfter_valid
