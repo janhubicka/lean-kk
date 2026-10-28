@@ -111,9 +111,8 @@ theorem k4Cut22_symmetric (x y : Nat) :
   · have hPair :
         ((x = 10 ∧ y = 22) ∨ (x = 22 ∧ y = 10)) ↔
           ((y = 10 ∧ x = 22) ∨ (y = 22 ∧ x = 10)) := by tauto
-    change decide ((x = 10 ∧ y = 22) ∨ (x = 22 ∧ y = 10)) =
-      decide ((y = 10 ∧ x = 22) ∨ (y = 22 ∧ x = 10))
-    exact congrArg decide (propext hPair)
+    simpa [k4Cut22Continuation, hx, hy] using
+      (congrArg decide (propext hPair))
   · simp [k4Cut22Continuation, hx, hy]
   · simp [k4Cut22Continuation, hx, hy]
   · simp [k4Cut22Continuation, hx, hy, eq_comm]
