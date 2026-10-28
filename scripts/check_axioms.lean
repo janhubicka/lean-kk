@@ -280,3 +280,11 @@ import Kk
 #print axioms Kk.bad_single_upper_precludes_onegap_crossing
 #check @Kk.bad_single_upper_forces_actual_interesting
 #print axioms Kk.bad_single_upper_forces_actual_interesting
+#check @Kk.k4Cut22_finite
+#check @Kk.k4Cut22_sameSocle
+#check @Kk.k4Cut22_upper_types
+#check @Kk.k4Cut22_deleted_avoids
+#check @Kk.k4Cut22_realizesK4
+#check @Kk.k4Cut22_singleUpper_B3_fails
+#print axioms Kk.k4Cut22_deleted_avoids
+#print axioms Kk.k4Cut22_singleUpper_B3_fails
