@@ -311,3 +311,13 @@ import Kk
 #print axioms Kk.k4H_old_binary_eq
 #print axioms Kk.k4H_upper_edge_eq
 #print axioms Kk.k4H_upper_edge_reverse_eq
+
+#check @Kk.k4H_all_diagonals_false
+#check @Kk.k4H_top_binary_loop_false
+#check @Kk.k4H_full_old_L_socle
+#check @Kk.k4H_full_upper_L_type
+#check @Kk.k4H_cut22_prescribed_socle
+#check @Kk.k4H_actual_cut22_singleUpper_B3_failure
+#print axioms Kk.k4H_full_old_L_socle
+#print axioms Kk.k4H_full_upper_L_type
+#print axioms Kk.k4H_actual_cut22_singleUpper_B3_failure
