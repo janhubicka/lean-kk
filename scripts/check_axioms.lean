@@ -298,3 +298,5 @@ import Kk
 #check @Kk.k4Cut22_singleUpper_B3_fails
 #print axioms Kk.k4Cut22_deleted_avoids
 #print axioms Kk.k4Cut22_singleUpper_B3_fails
+#check @Kk.algorithmRun_selects_actual_failed_single_upper_B3
+#print axioms Kk.algorithmRun_selects_actual_failed_single_upper_B3
