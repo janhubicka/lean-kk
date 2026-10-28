@@ -91,4 +91,37 @@ theorem finiteNumericH_next_original_is_freeCut_eligible
       (finiteNumericH K k N).freeLevel (hPosition k (j+1) 1) := by
   rw [finiteNumericH_next_generation_one_freeLevel K k N j hk hVertex]
 
+
+/-- The first reserved original need not be immediately before the
+second in the original enumeration. For ANY two increasing original
+block indices i<j, the generation-one copy of j has its free cut
+strictly beyond the generation-zero copy of i. Thus no choice of
+intervening unused original indices can exclude that upper name
+by the ordinary E free-cut eligibility test alone. -/
+theorem finiteNumericH_later_generation_one_is_freeCut_eligible
+    {db du dd : Nat}
+    (K : AgeTestModel db du dd)
+    (k N i j : Nat)
+    (hk : 1 < k)
+    (hij : i < j)
+    (hVertex : hPosition k j 1 < N) :
+    hPosition k i 0 + 1 ≤
+      (finiteNumericH K k N).freeLevel (hPosition k j 1) := by
+  have hPred : j - 1 + 1 = j := by omega
+  have hNext :=
+    finiteNumericH_next_generation_one_freeLevel
+      K k N (j-1) hk (by simpa only [hPred] using hVertex)
+  have hFree :
+      (finiteNumericH K k N).freeLevel (hPosition k j 1) =
+        hPosition k (j-1) 0 + 1 := by
+    simpa only [hPred] using hNext
+  rw [hFree]
+  have hi : i ≤ j-1 := by omega
+  have hPos : hPosition k i 0 ≤ hPosition k (j-1) 0 := by
+    rcases lt_or_eq_of_le hi with hlt | heq
+    · exact Nat.le_of_lt
+        (hPosition_lt_of_block_lt k i (j-1) 0 0 (Nat.zero_le _) hlt)
+    · exact le_of_eq (congrArg (fun t => hPosition k t 0) heq)
+  omega
+
 end Kk
