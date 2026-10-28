@@ -273,3 +273,12 @@ import Kk
 #print axioms Kk.uniformAfter_valid
 #print axioms Kk.uniformAfter_covers_before
 #print axioms Kk.uniform_auxiliary_shadow_cover
+
+#check @Kk.fourCliqueCore_finite
+#check @Kk.fourCliqueCore_sameSocle
+#check @Kk.fourCliqueCore_upper_types
+#check @Kk.fourCliqueCore_deleted_avoids
+#check @Kk.fourCliqueCore_realizesK4
+#check @Kk.fourCliqueCore_singleUpper_B3_fails
+#print axioms Kk.fourCliqueCore_deleted_avoids
+#print axioms Kk.fourCliqueCore_singleUpper_B3_fails
