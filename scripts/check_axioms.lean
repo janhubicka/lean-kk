@@ -199,3 +199,10 @@ import Kk
 #check @Kk.B3_avoids_both_asym_patterns
 #print axioms Kk.two_point_B3_cross_symmetric
 #print axioms Kk.B3_avoids_both_asym_patterns
+
+#check @Kk.hNumericBinary_symmetric_of_base
+#check @Kk.henson_finiteNumericH_binary_symmetric
+#check @Kk.henson_selectedB3_failure_has_clique_witness
+#print axioms Kk.hNumericBinary_symmetric_of_base
+#print axioms Kk.henson_finiteNumericH_binary_symmetric
+#print axioms Kk.henson_selectedB3_failure_has_clique_witness
