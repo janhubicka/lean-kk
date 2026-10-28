@@ -218,3 +218,8 @@ import Kk
 #print axioms Kk.failed_markedB3_of_Lprofile_dominance
 #check @Kk.correctedB3_iff_of_equal_Lprofiles
 #print axioms Kk.correctedB3_iff_of_equal_Lprofiles
+
+#check @Kk.normalized_avoid_without_of_future_restriction
+#print axioms Kk.normalized_avoid_without_of_future_restriction
+#check @Kk.henson_selectedB3_failure_has_small_clique_core
+#print axioms Kk.henson_selectedB3_failure_has_small_clique_core
