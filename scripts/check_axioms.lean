@@ -223,3 +223,10 @@ import Kk
 #print axioms Kk.normalized_avoid_without_of_future_restriction
 #check @Kk.henson_selectedB3_failure_has_small_clique_core
 #print axioms Kk.henson_selectedB3_failure_has_small_clique_core
+
+#check @Kk.clique_core_upper_name_adjacent_to_cut
+#print axioms Kk.clique_core_upper_name_adjacent_to_cut
+#check @Kk.clique_core_upper_names_local_of_cut_nonedges
+#print axioms Kk.clique_core_upper_names_local_of_cut_nonedges
+#check @Kk.henson_failed_selectedB3_has_cut_local_small_core
+#print axioms Kk.henson_failed_selectedB3_has_cut_local_small_core
