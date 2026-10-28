@@ -230,3 +230,8 @@ import Kk
 #print axioms Kk.clique_core_upper_names_local_of_cut_nonedges
 #check @Kk.henson_failed_selectedB3_has_cut_local_small_core
 #print axioms Kk.henson_failed_selectedB3_has_cut_local_small_core
+
+#check @Kk.finiteNumericH_next_generation_one_freeLevel
+#print axioms Kk.finiteNumericH_next_generation_one_freeLevel
+#check @Kk.finiteNumericH_next_original_is_freeCut_eligible
+#print axioms Kk.finiteNumericH_next_original_is_freeCut_eligible
