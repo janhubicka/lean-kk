@@ -238,6 +238,11 @@ import Kk
 #check @Kk.finiteNumericH_later_generation_one_is_freeCut_eligible
 #print axioms Kk.finiteNumericH_later_generation_one_is_freeCut_eligible
 
+#check @Kk.kpt_closure_contains_positive_parameter_of_seed
+#print axioms Kk.kpt_closure_contains_positive_parameter_of_seed
+#check @Kk.numericH_first_gadget_second_original_in_closure
+#print axioms Kk.numericH_first_gadget_second_original_in_closure
+
 #check @Kk.beforeK4_valid
 #check @Kk.afterK4_valid
 #check @Kk.afterK4_lt_beforeK4
