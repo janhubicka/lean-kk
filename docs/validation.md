@@ -1,5 +1,68 @@
 # Verification plan
 
+## 28 October — ordinary L-profile, bounded forbidden cores and cut-star localization
+
+Three new stacked PRs have passed complete full Lean builds and the
+named transitive-axiom audit, all using only
+`[propext, Classical.choice, Quot.sound]`.
+
+- [PR #5](https://github.com/janhubicka/lean-kk/pull/5),
+  [run 40696464930](https://github.com/janhubicka/lean-kk/actions/runs/40696464930),
+  code `a3188b45e7c16771c7ac5f12a62d8e3dd82bbfd2`:
+  `correctedB3_of_Lprofile_dominance`,
+  `failed_markedB3_of_Lprofile_dominance`,
+  `correctedB3_iff_of_equal_Lprofiles`. A marked corrected-B3
+  test dominates the full test if it covers each ordinary initial
+  L-socle and each allowed full complete upper L-reduct type.
+  This conditional transfer needs no equality of auxiliary E atoms
+  in arbitrary continuation witnesses.
+- [PR #6](https://github.com/janhubicka/lean-kk/pull/6),
+  [run 40697939142](https://github.com/janhubicka/lean-kk/actions/runs/40697939142),
+  code `1017a99fdd370f4e83067973f200d673a5a66cc5`:
+  `normalized_avoid_without_of_future_restriction`,
+  `henson_selectedB3_failure_has_small_clique_core`.
+  Every failed actual selected-original corrected B3 has a
+  finite L-only continuation with its full old socle and only
+  the future vertices of one K_ell clique. The clique contains
+  the tested cut, leaving at most ell-1 future vertices.
+- [PR #7](https://github.com/janhubicka/lean-kk/pull/7),
+  [run 40698495262](https://github.com/janhubicka/lean-kk/actions/runs/40698495262),
+  code `33993901dba31e0110490ecbc791415244ce3ecb`:
+  `clique_core_upper_name_adjacent_to_cut`,
+  `clique_core_upper_names_local_of_cut_nonedges`,
+  `henson_failed_selectedB3_has_cut_local_small_core`.
+  Every future clique vertex of ANY allowed L-only B3 continuation
+  has a selected named actual-H original adjacent to the tested
+  cut. Excluding names by ACTUAL cut-to-original nonedges is
+  therefore valid despite unconstrained future-to-future W edges.
+  Support-locality retains the explicit outside-support nonedge
+  hypothesis; the canonical resolved gadget has not yet been
+  shown to satisfy it for all full parameter-closed names.
+
+New [PR #8](https://github.com/janhubicka/lean-kk/pull/8) checks
+the exact numerical H free-cut threshold for a later
+generation-1 auxiliary original at an earlier generation-0
+gadget cut. Until CI passes this numerical identity is **not**
+a kernel validation marker. Even if verified, free-cut eligibility
+does not imply `closureSelectedOriginal` membership; the
+I1/I2 parameter-closure record must still be studied.
+
+**Adversarial obstruction:** in K4, the two-sort age states
+`(F(x),F(z),F(x,z))=(2,1,3)` and `(2,1,2)` are valid
+and form a true cover while leaving the selected x shadow
+unchanged. Thus a future auxiliary name that is present in
+the full corrected-B3 pool can cause a hidden age drop.
+The K_k resolved construction may exclude its membership or
+otherwise represent its age event, but abstract graph-age
+axioms do not. This is a finite-state computation, not a
+Lean proof of a failure of the resolved copy.
+
+**Still pending:** full `closureSelectedOriginal` name
+classification at canonical gadget levels; actual selected
+shadow B3 projection; same-diary marked labelled inverse
+sources; final big Ramsey upper and lower bound validation.
+
+
 ## 28 October — all-generation clique witnesses and sharp numerical-H I3 bound
 
 Two stacked Lean PRs now pass complete `lake build`, named `#check`,
