@@ -206,3 +206,8 @@ import Kk
 #print axioms Kk.hNumericBinary_symmetric_of_base
 #print axioms Kk.henson_finiteNumericH_binary_symmetric
 #print axioms Kk.henson_selectedB3_failure_has_clique_witness
+
+#check @Kk.henson_any_generation_B3_has_clique_higher_signature
+#print axioms Kk.henson_any_generation_B3_has_clique_higher_signature
+#check @Kk.henson_algorithmRun_all_I3_levels_card_le_higher_clique_capacity
+#print axioms Kk.henson_algorithmRun_all_I3_levels_card_le_higher_clique_capacity
