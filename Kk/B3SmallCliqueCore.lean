@@ -142,11 +142,10 @@ theorem henson_selectedB3_failure_has_small_clique_core
     simp [hensonForbiddenFamily]
   have hNoCliqueDelete : ¬ ∃ f : Fin ell → Nat,
       (W.withoutVertex cut).Realizes (cliquePattern ell) f := by
-    exact (NormalizedForbidden.nontrivial ell
+    exact ((NormalizedForbidden.nontrivial ell
       (cliquePattern ell) (by omega)
       (cliquePattern_irreducible ell)).signaturePattern_avoids_iff
-        (W.withoutVertex cut) |>.mp
-          (hDelete _ hCliqueMember)
+        (W.withoutVertex cut)).1 (hDelete _ hCliqueMember)
   have hAt : ∃ a : Fin ell, e a = cut := by
     by_contra hn
     have hAway : ∀ a : Fin ell, e a ≠ cut := by
