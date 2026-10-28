@@ -11,6 +11,7 @@ import Kk.PrefixChainOrbitTransfer
 import Kk.PrefixEnvelopeLift
 import Kk.OrderedSourceIdentification
 import Kk.GraphAgeShadow
+import Kk.K4AuxiliaryShadow
 import Kk.PrefixCutRigidity
 import Kk.HBlockNonedges
 import Kk.HBlockClique
