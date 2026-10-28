@@ -259,3 +259,13 @@ import Kk
 #print axioms Kk.correctedB3_of_genuine_kpt_gap_Lprofile
 #check @Kk.correctedB3_of_genuine_kpt_gap_subprofile
 #print axioms Kk.correctedB3_of_genuine_kpt_gap_subprofile
+
+#check @Kk.uniformBefore_valid
+#check @Kk.uniformAfter_valid
+#check @Kk.uniformAfter_lt_before
+#check @Kk.uniformAfter_covers_before
+#check @Kk.uniform_auxiliary_shadow_cover
+#print axioms Kk.uniformBefore_valid
+#print axioms Kk.uniformAfter_valid
+#print axioms Kk.uniformAfter_covers_before
+#print axioms Kk.uniform_auxiliary_shadow_cover
