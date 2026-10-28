@@ -119,10 +119,10 @@ theorem numericH_first_gadget_second_original_in_closure
     (I : Set Nat)
     (X : Set (AdmissibleKptNode family))
     (hSeed : (finiteNumericH K 4 40).kptOriginal family hAvoid
-      (⟨38, by decide⟩ : Fin (finiteNumericH K 4 40).size) ∈ X)
+      (⟨38, by change 38 < 40; decide⟩ : Fin (finiteNumericH K 4 40).size) ∈ X)
     (hSelected22 : 22 ∈ I) :
     (finiteNumericH K 4 40).kptOriginal family hAvoid
-      (⟨22, by decide⟩ : Fin (finiteNumericH K 4 40).size) ∈
+      (⟨22, by change 22 < 40; decide⟩ : Fin (finiteNumericH K 4 40).size) ∈
         SMTree.Envelope.closure (admissibleKptSTree family) I X := by
   let A : EnumeratedPartialStructure db du dd := finiteNumericH K 4 40
   have hFree22 : 0 < A.freeLevel 22 := by
@@ -145,7 +145,7 @@ theorem numericH_first_gadget_second_original_in_closure
     (A.E_iff_freeLevel 22 38).1 hE
   obtain ⟨hiSize,hIn⟩ :=
     kpt_closure_contains_positive_parameter_of_seed
-      family A hAvoid I X (⟨38, by decide⟩ : Fin A.size)
+      family A hAvoid I X (⟨38, by change 38 < 40; decide⟩ : Fin A.size)
       hSeed 22 hSelected22 hCut38 hFree22
   exact hIn
 
