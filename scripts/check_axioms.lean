@@ -211,3 +211,10 @@ import Kk
 #print axioms Kk.henson_any_generation_B3_has_clique_higher_signature
 #check @Kk.henson_algorithmRun_all_I3_levels_card_le_higher_clique_capacity
 #print axioms Kk.henson_algorithmRun_all_I3_levels_card_le_higher_clique_capacity
+
+#check @Kk.correctedB3_of_Lprofile_dominance
+#print axioms Kk.correctedB3_of_Lprofile_dominance
+#check @Kk.failed_markedB3_of_Lprofile_dominance
+#print axioms Kk.failed_markedB3_of_Lprofile_dominance
+#check @Kk.correctedB3_iff_of_equal_Lprofiles
+#print axioms Kk.correctedB3_iff_of_equal_Lprofiles
