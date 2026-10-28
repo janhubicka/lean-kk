@@ -92,8 +92,7 @@ theorem uniformAfter_lt_before (s : Nat) :
     fin_cases t <;> simp [uniformBefore, uniformAfter] <;> omega
   · intro h
     have h2 := h 2
-    simp [TwoSortAgeLe, uniformBefore, uniformAfter] at h2
-    omega
+    simp [uniformBefore, uniformAfter] at h2
 
 /-- The only changed bound is mixed support x+z, dropping by ONE.
 There is no intermediate graph-age function, even without invoking
