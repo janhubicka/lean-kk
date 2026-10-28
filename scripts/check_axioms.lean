@@ -288,3 +288,15 @@ import Kk
 #check @Kk.k4Cut22_singleUpper_B3_fails
 #print axioms Kk.k4Cut22_deleted_avoids
 #print axioms Kk.k4Cut22_singleUpper_B3_fails
+#check @Kk.k4FourOriginalEdge_symmetric
+#check @Kk.k4FourOriginalEdge_irreflexive
+#check @Kk.k4FourOriginalEdge_cliqueFree
+#check @Kk.k4H_old_binary_true_iff
+#check @Kk.k4H_old_binary_eq
+#check @Kk.k4H_upper_edge_true_iff
+#check @Kk.k4H_upper_edge_eq
+#check @Kk.k4H_upper_edge_reverse_eq
+#print axioms Kk.k4FourOriginalEdge_cliqueFree
+#print axioms Kk.k4H_old_binary_eq
+#print axioms Kk.k4H_upper_edge_eq
+#print axioms Kk.k4H_upper_edge_reverse_eq
