@@ -49,7 +49,7 @@ def beforeK4 (s : Fin 3) : Nat :=
 /-- The mixed x,z clique capacity drops by one, but neither selected
 nor auxiliary singleton capacity changes. -/
 def afterK4 (s : Fin 3) : Nat :=
-  if s = 0 then 2 else 1
+  if s = 1 then 1 else 2
 
 theorem beforeK4_valid : IsTwoSortK4Age beforeK4 := by
   constructor
