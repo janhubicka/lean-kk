@@ -280,6 +280,16 @@ import Kk
 #print axioms Kk.bad_single_upper_precludes_onegap_crossing
 #check @Kk.bad_single_upper_forces_actual_interesting
 #print axioms Kk.bad_single_upper_forces_actual_interesting
+
+#check @Kk.fourCliqueCore_finite
+#check @Kk.fourCliqueCore_sameSocle
+#check @Kk.fourCliqueCore_upper_types
+#check @Kk.fourCliqueCore_deleted_avoids
+#check @Kk.fourCliqueCore_realizesK4
+#check @Kk.fourCliqueCore_singleUpper_B3_fails
+#print axioms Kk.fourCliqueCore_deleted_avoids
+#print axioms Kk.fourCliqueCore_singleUpper_B3_fails
+
 #check @Kk.k4Cut22_finite
 #check @Kk.k4Cut22_sameSocle
 #check @Kk.k4Cut22_upper_types
@@ -288,6 +298,7 @@ import Kk
 #check @Kk.k4Cut22_singleUpper_B3_fails
 #print axioms Kk.k4Cut22_deleted_avoids
 #print axioms Kk.k4Cut22_singleUpper_B3_fails
+
 #check @Kk.k4FourOriginalEdge_symmetric
 #check @Kk.k4FourOriginalEdge_irreflexive
 #check @Kk.k4FourOriginalEdge_cliqueFree
