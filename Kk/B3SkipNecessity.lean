@@ -48,8 +48,7 @@ theorem kpt_gap_boundary_class_correctedB3
     (S0 : PartialTypeWithE (LevelTree.lev (F a₀)-1) db du dd)
     (hS0 :
       S0 ∈ (m2Boundary_prescribedData family F q₀ a₀ hprev hgap).source) :
-    ((m2Boundary_prescribedData family F q₀ a₀ hprev hgap)
-      .restrictToCompatible S0).CorrectedB3 family := by
+    ((m2Boundary_prescribedData family F q₀ a₀ hprev hgap).restrictToCompatible S0).CorrectedB3 family := by
   let P : PrescribedBoringData (LevelTree.lev (F a₀)-1) db du dd :=
     m2Boundary_prescribedData family F q₀ a₀ hprev hgap
   have hCompatible : P.CompatibleB3 family :=
@@ -75,22 +74,18 @@ theorem correctedB3_of_genuine_kpt_gap_Lprofile
       S0 ∈ (m2Boundary_prescribedData family F q₀ a₀ hprev hgap).source)
     (marked : PrescribedBoringData (LevelTree.lev (F a₀)-1) db du dd)
     (hSocle : ∀ S, S ∈ marked.source →
-      ∃ T, T ∈ ((m2Boundary_prescribedData family F q₀ a₀ hprev hgap)
-        .restrictToCompatible S0).source ∧
+      ∃ T, T ∈ ((m2Boundary_prescribedData family F q₀ a₀ hprev hgap).restrictToCompatible S0).source ∧
         SameInitialL
           (prescribedOrdinarySocle (marked.target S))
           (prescribedOrdinarySocle
-            (((m2Boundary_prescribedData family F q₀ a₀ hprev hgap)
-                .restrictToCompatible S0).target T))
+            (((m2Boundary_prescribedData family F q₀ a₀ hprev hgap).restrictToCompatible S0).target T))
           (LevelTree.lev (F a₀)-1))
     (hUpper : ∀ R, marked.PrescribedUpperLType R →
-      ((m2Boundary_prescribedData family F q₀ a₀ hprev hgap)
-        .restrictToCompatible S0).PrescribedUpperLType R) :
+      ((m2Boundary_prescribedData family F q₀ a₀ hprev hgap).restrictToCompatible S0).PrescribedUpperLType R) :
     marked.CorrectedB3 family := by
   exact correctedB3_of_Lprofile_dominance
     marked
-    ((m2Boundary_prescribedData family F q₀ a₀ hprev hgap)
-      .restrictToCompatible S0)
+    ((m2Boundary_prescribedData family F q₀ a₀ hprev hgap).restrictToCompatible S0)
     family hSocle hUpper
     (kpt_gap_boundary_class_correctedB3 family F q₀ a₀
       hprev hgap S0 hS0)
@@ -113,12 +108,10 @@ theorem correctedB3_of_genuine_kpt_gap_subprofile
       S0 ∈ (m2Boundary_prescribedData family F q₀ a₀ hprev hgap).source)
     (marked : PrescribedBoringData (LevelTree.lev (F a₀)-1) db du dd)
     (hSource : ∀ T, T ∈ marked.source →
-      T ∈ ((m2Boundary_prescribedData family F q₀ a₀ hprev hgap)
-        .restrictToCompatible S0).source)
+      T ∈ ((m2Boundary_prescribedData family F q₀ a₀ hprev hgap).restrictToCompatible S0).source)
     (hTarget : ∀ T, T ∈ marked.source →
       marked.target T =
-        ((m2Boundary_prescribedData family F q₀ a₀ hprev hgap)
-          .restrictToCompatible S0).target T) :
+        ((m2Boundary_prescribedData family F q₀ a₀ hprev hgap).restrictToCompatible S0).target T) :
     marked.CorrectedB3 family := by
   apply correctedB3_of_genuine_kpt_gap_Lprofile
     family F q₀ a₀ hprev hgap S0 hS0 marked
