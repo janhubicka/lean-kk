@@ -29,6 +29,7 @@ B3-to-I3 equivalence is assumed.
 
 namespace Kk
 
+open SuccessorTree
 open SuccessorTree.V10
 
 /-- Any true Kpt shape map with a first consecutive source-level gap
