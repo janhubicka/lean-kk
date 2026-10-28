@@ -113,9 +113,9 @@ theorem genuine_gap_crossing_one_target_B3
       (⟨(LevelTree.lev (F a₀)-1)+1,
         kptRecordAtLevel ((LevelTree.lev (F a₀)-1)+1) b hb⟩ :
         RawPartialTypeNode db du dd) := by
-    rw [hCross]
-    exact kptRecordAtLevel_raw
-      ((LevelTree.lev (F a₀)-1)+1) b hb
+    exact (congrArg Subtype.val hCross).trans
+      (kptRecordAtLevel_raw
+        ((LevelTree.lev (F a₀)-1)+1) b hb)
   exact genuine_gap_boundary_one_target_B3
     family F q₀ a₀ hprev hgap
     (kptRecordAtLevel ((LevelTree.lev (F a₀)-1)+1) b hb)
