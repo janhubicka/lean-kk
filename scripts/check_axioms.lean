@@ -273,3 +273,10 @@ import Kk
 #print axioms Kk.uniformAfter_valid
 #print axioms Kk.uniformAfter_covers_before
 #print axioms Kk.uniform_auxiliary_shadow_cover
+
+#check @Kk.skipsOnly_crossing_requires_single_upper_B3
+#print axioms Kk.skipsOnly_crossing_requires_single_upper_B3
+#check @Kk.bad_single_upper_precludes_onegap_crossing
+#print axioms Kk.bad_single_upper_precludes_onegap_crossing
+#check @Kk.bad_single_upper_forces_actual_interesting
+#print axioms Kk.bad_single_upper_forces_actual_interesting

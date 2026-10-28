@@ -40,6 +40,7 @@ import Kk.HensonAlgorithmRunAllGenerationCapacity
 import Kk.B3ReductProfile
 import Kk.B3SkipNecessity
 import Kk.B3OneGapCrossing
+import Kk.B3OneGapInteresting
 import Kk.B3SmallCliqueCore
 import Kk.B3CutStarLocality
 import Kk.HFirstGadgetFreeCut
