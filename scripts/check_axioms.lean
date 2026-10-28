@@ -252,3 +252,10 @@ import Kk
 #print axioms Kk.afterK4_valid
 #print axioms Kk.afterK4_covers_beforeK4
 #print axioms Kk.selected_K4_shadow_does_not_detect_cover
+
+#check @Kk.kpt_gap_boundary_class_correctedB3
+#print axioms Kk.kpt_gap_boundary_class_correctedB3
+#check @Kk.correctedB3_of_genuine_kpt_gap_Lprofile
+#print axioms Kk.correctedB3_of_genuine_kpt_gap_Lprofile
+#check @Kk.correctedB3_of_genuine_kpt_gap_subprofile
+#print axioms Kk.correctedB3_of_genuine_kpt_gap_subprofile
