@@ -237,3 +237,13 @@ import Kk
 #print axioms Kk.finiteNumericH_next_original_is_freeCut_eligible
 #check @Kk.finiteNumericH_later_generation_one_is_freeCut_eligible
 #print axioms Kk.finiteNumericH_later_generation_one_is_freeCut_eligible
+
+#check @Kk.beforeK4_valid
+#check @Kk.afterK4_valid
+#check @Kk.afterK4_lt_beforeK4
+#check @Kk.afterK4_covers_beforeK4
+#check @Kk.selected_K4_shadow_does_not_detect_cover
+#print axioms Kk.beforeK4_valid
+#print axioms Kk.afterK4_valid
+#print axioms Kk.afterK4_covers_beforeK4
+#print axioms Kk.selected_K4_shadow_does_not_detect_cover
