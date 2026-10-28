@@ -127,21 +127,24 @@ theorem fourCliqueCore_deleted_avoids :
       (fourCliqueCore.withoutVertex 1).Realizes loopPattern f
     rintro ⟨f,hCopy⟩
     have hDiag := hCopy.2.2.2.2 (0 : Fin 1) (0 : Fin 1)
-    simp [fourCliqueCore, loopPattern] at hDiag
+    change false = true at hDiag
+    contradiction
   · rw [h]
     change ¬ ∃ f : Fin 2 → Nat,
       (fourCliqueCore.withoutVertex 1).Realizes forwardAsymPattern f
     rintro ⟨f,hCopy⟩
     have hNE : f 1 ≠ f 0 := (ne_of_gt (hCopy.1 (by decide)))
     have hRev := hCopy.2.2.1 (1 : Fin 2) (0 : Fin 2) (by decide) (0 : Fin 1)
-    simp [fourCliqueCore, forwardAsymPattern, hNE] at hRev
+    change (!decide (f 1 = f 0)) = false at hRev
+    simp [hNE] at hRev
   · rw [h]
     change ¬ ∃ f : Fin 2 → Nat,
       (fourCliqueCore.withoutVertex 1).Realizes backwardAsymPattern f
     rintro ⟨f,hCopy⟩
     have hNE : f 0 ≠ f 1 := (ne_of_lt (hCopy.1 (by decide)))
     have hForward := hCopy.2.2.1 (0 : Fin 2) (1 : Fin 2) (by decide) (0 : Fin 1)
-    simp [fourCliqueCore, backwardAsymPattern, hNE] at hForward
+    change (!decide (f 0 = f 1)) = false at hForward
+    simp [hNE] at hForward
   · rw [h]
     exact fourCliqueCore_deleted_noK4
 
