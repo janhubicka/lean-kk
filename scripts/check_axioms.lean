@@ -235,3 +235,5 @@ import Kk
 #print axioms Kk.finiteNumericH_next_generation_one_freeLevel
 #check @Kk.finiteNumericH_next_original_is_freeCut_eligible
 #print axioms Kk.finiteNumericH_next_original_is_freeCut_eligible
+#check @Kk.finiteNumericH_later_generation_one_is_freeCut_eligible
+#print axioms Kk.finiteNumericH_later_generation_one_is_freeCut_eligible
