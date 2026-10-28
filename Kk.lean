@@ -13,6 +13,7 @@ import Kk.OrderedSourceIdentification
 import Kk.GraphAgeShadow
 import Kk.K4AuxiliaryShadow
 import Kk.K4Cut22Continuation
+import Kk.K4NumericalHAtoms
 import Kk.UniformAuxiliaryShadow
 import Kk.PrefixCutRigidity
 import Kk.HBlockNonedges
