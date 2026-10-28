@@ -70,7 +70,7 @@ theorem skipsOnly_crossing_requires_single_upper_B3
     genuine_gap_crossing_one_target_B3
       family F q₀ a b hprev hgap hb' hCross
   have hCutEq : m = LevelTree.lev (F a)-1 := by omega
-  subst m
+  cases hCutEq
   exact hGood
 
 /-- The contrapositive, in the form needed by the K4 first-gadget
