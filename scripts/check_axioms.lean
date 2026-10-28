@@ -263,6 +263,17 @@ import Kk
 #print axioms Kk.genuine_gap_boundary_one_target_B3
 #check @Kk.genuine_gap_crossing_one_target_B3
 #print axioms Kk.genuine_gap_crossing_one_target_B3
+
+#check @Kk.uniformBefore_valid
+#check @Kk.uniformAfter_valid
+#check @Kk.uniformAfter_lt_before
+#check @Kk.uniformAfter_covers_before
+#check @Kk.uniform_auxiliary_shadow_cover
+#print axioms Kk.uniformBefore_valid
+#print axioms Kk.uniformAfter_valid
+#print axioms Kk.uniformAfter_covers_before
+#print axioms Kk.uniform_auxiliary_shadow_cover
+
 #check @Kk.skipsOnly_crossing_requires_single_upper_B3
 #print axioms Kk.skipsOnly_crossing_requires_single_upper_B3
 #check @Kk.bad_single_upper_precludes_onegap_crossing
