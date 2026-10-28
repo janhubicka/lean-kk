@@ -32,6 +32,7 @@ import Kk.HensonAlgorithmRunCliqueCapacity
 import Kk.HensonCliqueHigherSignature
 import Kk.HensonAlgorithmRunSharpCliqueCapacity
 import Kk.HensonB3Asymmetry
+import Kk.HensonZeroGenerationClique
 
 /-!
 The counting project imports the verified successor-tree library.
