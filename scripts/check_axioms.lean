@@ -298,6 +298,7 @@ import Kk
 #check @Kk.k4Cut22_singleUpper_B3_fails
 #print axioms Kk.k4Cut22_deleted_avoids
 #print axioms Kk.k4Cut22_singleUpper_B3_fails
+
 #check @Kk.k4FourOriginalEdge_symmetric
 #check @Kk.k4FourOriginalEdge_irreflexive
 #check @Kk.k4FourOriginalEdge_cliqueFree

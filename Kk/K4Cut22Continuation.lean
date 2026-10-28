@@ -108,11 +108,7 @@ theorem k4Cut22_symmetric (x y : Nat) :
     k4Cut22Continuation.binary x y (0 : Fin 1) =
       k4Cut22Continuation.binary y x (0 : Fin 1) := by
   by_cases hx : x ≤ 22 <;> by_cases hy : y ≤ 22
-  · have hPair :
-        ((x = 10 ∧ y = 22) ∨ (x = 22 ∧ y = 10)) ↔
-          ((y = 10 ∧ x = 22) ∨ (y = 22 ∧ x = 10)) := by tauto
-    simpa [k4Cut22Continuation, hx, hy] using
-      (congrArg decide (propext hPair))
+  · simp [k4Cut22Continuation, hx, hy, Bool.and_comm, Bool.or_comm]
   · simp [k4Cut22Continuation, hx, hy]
   · simp [k4Cut22Continuation, hx, hy]
   · simp [k4Cut22Continuation, hx, hy, eq_comm]
