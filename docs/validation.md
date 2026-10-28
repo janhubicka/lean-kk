@@ -1,5 +1,60 @@
 # Verification plan
 
+## 28 October — all-generation clique witnesses and sharp numerical-H I3 bound
+
+Two stacked Lean PRs now pass complete `lake build`, named `#check`,
+and `#print axioms` for every new endpoint:
+
+- [run 40607378504](https://github.com/janhubicka/lean-kk/actions/runs/40607378504),
+  at commit `a1467ebd4968a28b9c418676d9296aa954af2bff`:
+  `Kk.hNumericBinary_symmetric_of_base`,
+  `Kk.henson_finiteNumericH_binary_symmetric`, and
+  `Kk.henson_selectedB3_failure_has_clique_witness`.
+- [run 40608111843](https://github.com/janhubicka/lean-kk/actions/runs/40608111843),
+  at commit `fa3d622900e9304b1aad54b2296d32a690e76271`:
+  `Kk.henson_any_generation_B3_has_clique_higher_signature` and
+  `Kk.henson_algorithmRun_all_I3_levels_card_le_higher_clique_capacity`.
+
+The exact transitive axiom lists are
+`[propext, Classical.choice, Quot.sound]`.
+
+**New zero-generation argument.** The literal directed binary relation
+of numerical H is symmetric everywhere when the base graph is symmetric.
+In a genuine selected-original corrected-B3 failure, an actual finite
+witness W has the same initial L socle, and every upper W vertex has
+the complete directed L-type of a named actual original. Its cut-deleted
+reduct avoids the complete four-pattern Henson forbidden family.
+Thus a forbidden asymmetric pair would have to cross the tested cut,
+where complete type equality and ambient symmetry preclude it.
+A non-neutral singleton also cannot be the witness, by the checked
+proper lower/upper-cut lemma. Hence an actual K_ell clique witness exists
+even for g=0; the rank/cardinality argument g+2>=3 is no longer
+needed to classify this case.
+
+**Same witness; sharp counting.** The relocated clique witness has
+all its chosen upper original names at strictly higher H generation
+m>g, including g=0. Restrict its signature to that subpool of the
+**same actual final-stage finite pool** constructed from the complete
+AlgorithmRun, and apply the verified one-pattern signature-collision
+theorem. For all `0 <= g < k`:
+
+`|I3_g| <= (M_g+1)^ell`,
+
+where `M_g` counts exactly those higher-generation final-pool names.
+Top-generation I3 events are already excluded by a separately checked
+theorem (subject to the displayed I1/I2 absence premises).
+
+**Critical limits.** These theorems concern full selected-original
+corrected B3 and actual Algorithm 5.4 I3 levels. They DO NOT prove
+that every auxiliary B3 witness of the special resolved diary is
+captured by the marked active graph-age shadow. Further, the
+actual-original cross-block nonedge lemma controls real H cliques,
+not free future-to-future edges in arbitrary B3 continuations.
+The common marked labelled inverse source for two occurrences of a
+diary, the final Ramsey upper bound, and the published lower bound
+remain pending. No new validation certificate is assigned to them.
+
+
 ## 27 October — sharp positive-generation fixed-clique I3 bound
 
 [Full Lean run 40518293067](https://github.com/janhubicka/lean-kk/actions/runs/40518293067)
