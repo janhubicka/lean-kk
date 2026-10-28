@@ -206,3 +206,27 @@ import Kk
 #print axioms Kk.hNumericBinary_symmetric_of_base
 #print axioms Kk.henson_finiteNumericH_binary_symmetric
 #print axioms Kk.henson_selectedB3_failure_has_clique_witness
+
+#check @Kk.henson_any_generation_B3_has_clique_higher_signature
+#print axioms Kk.henson_any_generation_B3_has_clique_higher_signature
+#check @Kk.henson_algorithmRun_all_I3_levels_card_le_higher_clique_capacity
+#print axioms Kk.henson_algorithmRun_all_I3_levels_card_le_higher_clique_capacity
+
+#check @Kk.correctedB3_of_Lprofile_dominance
+#print axioms Kk.correctedB3_of_Lprofile_dominance
+#check @Kk.failed_markedB3_of_Lprofile_dominance
+#print axioms Kk.failed_markedB3_of_Lprofile_dominance
+#check @Kk.correctedB3_iff_of_equal_Lprofiles
+#print axioms Kk.correctedB3_iff_of_equal_Lprofiles
+
+#check @Kk.normalized_avoid_without_of_future_restriction
+#print axioms Kk.normalized_avoid_without_of_future_restriction
+#check @Kk.henson_selectedB3_failure_has_small_clique_core
+#print axioms Kk.henson_selectedB3_failure_has_small_clique_core
+
+#check @Kk.clique_core_upper_name_adjacent_to_cut
+#print axioms Kk.clique_core_upper_name_adjacent_to_cut
+#check @Kk.clique_core_upper_names_local_of_cut_nonedges
+#print axioms Kk.clique_core_upper_names_local_of_cut_nonedges
+#check @Kk.henson_failed_selectedB3_has_cut_local_small_core
+#print axioms Kk.henson_failed_selectedB3_has_cut_local_small_core
