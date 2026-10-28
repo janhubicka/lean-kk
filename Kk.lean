@@ -35,6 +35,7 @@ import Kk.HensonB3Asymmetry
 import Kk.HensonZeroGenerationClique
 import Kk.HensonAnyGenerationHigherSignature
 import Kk.HensonAlgorithmRunAllGenerationCapacity
+import Kk.B3ReductProfile
 
 /-!
 The counting project imports the verified successor-tree library.
