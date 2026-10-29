@@ -321,3 +321,6 @@ import Kk
 #print axioms Kk.k4H_full_old_L_socle
 #print axioms Kk.k4H_full_upper_L_type
 #print axioms Kk.k4H_actual_cut22_singleUpper_B3_failure
+
+#check @Kk.algorithmRun_selects_actual_failed_single_upper_B3
+#print axioms Kk.algorithmRun_selects_actual_failed_single_upper_B3
