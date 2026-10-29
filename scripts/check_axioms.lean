@@ -358,3 +358,8 @@ import Kk
 #print axioms Kk.k4H_cut10_full_q2_upper_type
 #print axioms Kk.k4H_cut10_full_x_upper_type
 #print axioms Kk.k4H_actual_cut10_twoUpper_B3_failure
+
+#check @Kk.genuine_gap_two_ambient_targets_B3
+#print axioms Kk.genuine_gap_two_ambient_targets_B3
+#check @Kk.bad_two_ambient_targets_contradicts_genuine_gap
+#print axioms Kk.bad_two_ambient_targets_contradicts_genuine_gap
