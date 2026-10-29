@@ -324,3 +324,12 @@ import Kk
 
 #check @Kk.algorithmRun_selects_actual_failed_single_upper_B3
 #print axioms Kk.algorithmRun_selects_actual_failed_single_upper_B3
+
+#check @Kk.k4GadgetH_avoids
+#print axioms Kk.k4GadgetH_avoids
+#check @Kk.k4GadgetH_top_freeLevel_above22
+#print axioms Kk.k4GadgetH_top_freeLevel_above22
+#check @Kk.k4Gadget_algorithmRun_selects_cut22
+#print axioms Kk.k4Gadget_algorithmRun_selects_cut22
+#check @Kk.k4Gadget_algorithmRun_q2_in_cut10_closure
+#print axioms Kk.k4Gadget_algorithmRun_q2_in_cut10_closure
