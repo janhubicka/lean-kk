@@ -69,7 +69,11 @@ theorem algorithmRun_selects_actual_failed_single_upper_B3
       (⟨m+1,A.partialTypeAt (m+1) v.val⟩ :
         RawPartialTypeNode db du dd) := by
     have h := kpt_prefix_raw_eq_ambient A family hAvoid v b hbelow
-    simpa only [hb] using h
+    exact h.trans
+      (congrArg
+        (fun n : Nat =>
+          (⟨n, A.partialTypeAt n v.val⟩ : RawPartialTypeNode db du dd))
+        hb)
   have hRecord :
       kptRecordAtLevel (m+1) b hb =
         A.partialTypeAt (m+1) v.val := by
