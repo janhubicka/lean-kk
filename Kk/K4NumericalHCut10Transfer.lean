@@ -90,6 +90,9 @@ theorem k4H_cut10_full_old_L_socle :
     omega
   · intro x y hx hy t
     fin_cases t
+    change k4Cut10Continuation.binary x y (0 : Fin 1) =
+      (finiteNumericHL (normalizedGraphModel k4FourOriginalEdge)
+        4 40).binary x y (0 : Fin 1)
     have hW : k4Cut10Continuation.binary x y (0 : Fin 1) = false := by
       simp [k4Cut10Continuation,hx,hy]
     rw [hW]
