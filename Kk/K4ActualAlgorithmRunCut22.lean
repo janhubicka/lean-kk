@@ -37,16 +37,20 @@ open SuccessorTree
 open SuccessorTree.V10
 
 /-- The concrete four-original finite H+ model. -/
+/-- The normalized loop/asymmetry/clique forbidden family of K4. -/
+abbrev k4GadgetFamily : List (NormalizedForbidden 1 0 1) :=
+  hensonForbiddenFamily 4 (by decide)
+
 noncomputable abbrev k4GadgetH : EnumeratedPartialStructure 1 0 1 :=
   finiteNumericH (normalizedGraphModel k4FourOriginalEdge) 4 40
 
 /-- The actual finite numerical H built from the K4-free base
 omits every member of the indexed normalized forbidden family. -/
 theorem k4GadgetH_avoids :
-    ∀ bad, bad ∈ hensonForbiddenFamily 4 (by decide) →
+    ∀ bad, bad ∈ k4GadgetFamily →
       bad.Avoids k4GadgetH.L := by
   have hBase :
-      ∀ bad, bad ∈ hensonForbiddenFamily 4 (by decide) →
+      ∀ bad, bad ∈ k4GadgetFamily →
         bad.Avoids (normalizedGraphModel k4FourOriginalEdge) :=
     (hensonForbiddenFamily_avoids_iff
       4 (by decide) k4FourOriginalEdge).2
@@ -54,7 +58,7 @@ theorem k4GadgetH_avoids :
        k4FourOriginalEdge_symmetric,
        k4FourOriginalEdge_cliqueFree⟩
   exact finiteNumericH_avoids_family
-    (hensonForbiddenFamily 4 (by decide))
+    (k4GadgetFamily)
     (normalizedGraphModel k4FourOriginalEdge)
     (by intro i; trivial)
     4 40 hBase
@@ -84,17 +88,17 @@ No auxiliary source-set equality or hypothetical I3 injection is
 assumed. The forcing is by one failed complete upper L-age test. -/
 theorem k4Gadget_algorithmRun_selects_cut22
     (X : Set (AdmissibleKptNode
-      (hensonForbiddenFamily 4 (by decide))))
+      (k4GadgetFamily)))
     (hSeed : k4GadgetH.kptOriginal
-      (hensonForbiddenFamily 4 (by decide)) k4GadgetH_avoids
+      (k4GadgetFamily) k4GadgetH_avoids
       (⟨38, by change 38 < 40; decide⟩ : Fin k4GadgetH.size) ∈ X)
     (ell : Nat) (hEll : 22 < ell)
     (R : SuccessorTree.SMTree.Envelope.AlgorithmRun
-      (normalizedKptSMTree (hensonForbiddenFamily 4 (by decide)))
+      (normalizedKptSMTree (k4GadgetFamily))
       X ell) :
     22 ∈ R.I 22 := by
   exact algorithmRun_selects_actual_failed_single_upper_B3
-    (hensonForbiddenFamily 4 (by decide)) k4GadgetH
+    (k4GadgetFamily) k4GadgetH
     k4GadgetH_avoids
     (⟨38, by change 38 < 40; decide⟩ : Fin k4GadgetH.size)
     22 (by decide) k4GadgetH_top_freeLevel_above22
@@ -108,19 +112,19 @@ Consequently q2 (free level 11) belongs to the real parameter-closed
 source of the stage scanning cut 10. -/
 theorem k4Gadget_algorithmRun_q2_in_cut10_closure
     (X : Set (AdmissibleKptNode
-      (hensonForbiddenFamily 4 (by decide))))
+      (k4GadgetFamily)))
     (hSeed : k4GadgetH.kptOriginal
-      (hensonForbiddenFamily 4 (by decide)) k4GadgetH_avoids
+      (k4GadgetFamily) k4GadgetH_avoids
       (⟨38, by change 38 < 40; decide⟩ : Fin k4GadgetH.size) ∈ X)
     (ell : Nat) (hEll : 22 < ell)
     (R : SuccessorTree.SMTree.Envelope.AlgorithmRun
-      (normalizedKptSMTree (hensonForbiddenFamily 4 (by decide)))
+      (normalizedKptSMTree (k4GadgetFamily))
       X ell) :
     k4GadgetH.kptOriginal
-      (hensonForbiddenFamily 4 (by decide)) k4GadgetH_avoids
+      (k4GadgetFamily) k4GadgetH_avoids
       (⟨22, by change 22 < 40; decide⟩ : Fin k4GadgetH.size) ∈
       SuccessorTree.SMTree.Envelope.closure
-        (admissibleKptSTree (hensonForbiddenFamily 4 (by decide)))
+        (admissibleKptSTree (k4GadgetFamily))
         (R.I 11) X := by
   have hSelected22 : 22 ∈ R.I 22 :=
     k4Gadget_algorithmRun_selects_cut22 X hSeed ell hEll R
@@ -131,7 +135,7 @@ theorem k4Gadget_algorithmRun_q2_in_cut10_closure
     rw [R.I_eq_final_tail_of_run 11 (by omega)]
     exact ⟨hFinal, by omega⟩
   exact numericH_first_gadget_second_original_in_closure
-    (hensonForbiddenFamily 4 (by decide))
+    (k4GadgetFamily)
     (normalizedGraphModel k4FourOriginalEdge)
     k4GadgetH_avoids (R.I 11) X hSeed hAt11
 
