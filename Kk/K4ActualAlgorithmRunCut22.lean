@@ -36,11 +36,11 @@ namespace Kk
 open SuccessorTree
 open SuccessorTree.V10
 
-/-- The concrete four-original finite H+ model. -/
 /-- The normalized loop/asymmetry/clique forbidden family of K4. -/
 abbrev k4GadgetFamily : List (NormalizedForbidden 1 0 1) :=
   hensonForbiddenFamily 4 (by decide)
 
+/-- The concrete four-original finite H+ model. -/
 noncomputable abbrev k4GadgetH : EnumeratedPartialStructure 1 0 1 :=
   finiteNumericH (normalizedGraphModel k4FourOriginalEdge) 4 40
 
