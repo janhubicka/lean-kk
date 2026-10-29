@@ -321,3 +321,12 @@ import Kk
 #print axioms Kk.k4H_full_old_L_socle
 #print axioms Kk.k4H_full_upper_L_type
 #print axioms Kk.k4H_actual_cut22_singleUpper_B3_failure
+
+#check @Kk.k4Cut10_finite
+#check @Kk.k4Cut10_sameSocle
+#check @Kk.k4Cut10_upper_types
+#check @Kk.k4Cut10_deleted_avoids
+#check @Kk.k4Cut10_realizesK4
+#check @Kk.k4Cut10_twoUpper_B3_fails
+#print axioms Kk.k4Cut10_deleted_avoids
+#print axioms Kk.k4Cut10_twoUpper_B3_fails
