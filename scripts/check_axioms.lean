@@ -333,3 +333,23 @@ import Kk
 #check @Kk.k4Cut10_twoUpper_B3_fails
 #print axioms Kk.k4Cut10_deleted_avoids
 #print axioms Kk.k4Cut10_twoUpper_B3_fails
+
+#check @Kk.k4GadgetH_avoids
+#print axioms Kk.k4GadgetH_avoids
+#check @Kk.k4GadgetH_top_freeLevel_above22
+#print axioms Kk.k4GadgetH_top_freeLevel_above22
+#check @Kk.k4Gadget_algorithmRun_selects_cut22
+#print axioms Kk.k4Gadget_algorithmRun_selects_cut22
+#check @Kk.k4Gadget_algorithmRun_q2_in_cut10_closure
+#print axioms Kk.k4Gadget_algorithmRun_q2_in_cut10_closure
+
+#check @Kk.k4H_cut10_old_binary_false
+#check @Kk.k4H_cut10_full_old_L_socle
+#check @Kk.k4H_cut10_full_q2_upper_type
+#check @Kk.k4H_cut10_full_x_upper_type
+#check @Kk.k4H_cut10_prescribed_socle
+#check @Kk.k4H_actual_cut10_twoUpper_B3_failure
+#print axioms Kk.k4H_cut10_full_old_L_socle
+#print axioms Kk.k4H_cut10_full_q2_upper_type
+#print axioms Kk.k4H_cut10_full_x_upper_type
+#print axioms Kk.k4H_actual_cut10_twoUpper_B3_failure
