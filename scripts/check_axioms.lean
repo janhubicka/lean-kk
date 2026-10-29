@@ -333,3 +333,8 @@ import Kk
 #check @Kk.k4Cut10_twoUpper_B3_fails
 #print axioms Kk.k4Cut10_deleted_avoids
 #print axioms Kk.k4Cut10_twoUpper_B3_fails
+
+#check @Kk.genuine_gap_boundary_two_targets_B3
+#print axioms Kk.genuine_gap_boundary_two_targets_B3
+#check @Kk.bad_two_upper_precludes_genuine_gap
+#print axioms Kk.bad_two_upper_precludes_genuine_gap
