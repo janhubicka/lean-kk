@@ -37,7 +37,7 @@ open SuccessorTree
 open SuccessorTree.V10
 
 /-- The concrete four-original finite H+ model. -/
-abbrev k4GadgetH : EnumeratedPartialStructure 1 0 1 :=
+noncomputable abbrev k4GadgetH : EnumeratedPartialStructure 1 0 1 :=
   finiteNumericH (normalizedGraphModel k4FourOriginalEdge) 4 40
 
 /-- The actual finite numerical H built from the K4-free base
