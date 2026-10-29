@@ -298,5 +298,29 @@ import Kk
 #check @Kk.k4Cut22_singleUpper_B3_fails
 #print axioms Kk.k4Cut22_deleted_avoids
 #print axioms Kk.k4Cut22_singleUpper_B3_fails
+
+#check @Kk.k4FourOriginalEdge_symmetric
+#check @Kk.k4FourOriginalEdge_irreflexive
+#check @Kk.k4FourOriginalEdge_cliqueFree
+#check @Kk.k4H_old_binary_true_iff
+#check @Kk.k4H_old_binary_eq
+#check @Kk.k4H_upper_edge_true_iff
+#check @Kk.k4H_upper_edge_eq
+#check @Kk.k4H_upper_edge_reverse_eq
+#print axioms Kk.k4FourOriginalEdge_cliqueFree
+#print axioms Kk.k4H_old_binary_eq
+#print axioms Kk.k4H_upper_edge_eq
+#print axioms Kk.k4H_upper_edge_reverse_eq
+
+#check @Kk.k4H_all_diagonals_false
+#check @Kk.k4H_top_binary_loop_false
+#check @Kk.k4H_full_old_L_socle
+#check @Kk.k4H_full_upper_L_type
+#check @Kk.k4H_cut22_prescribed_socle
+#check @Kk.k4H_actual_cut22_singleUpper_B3_failure
+#print axioms Kk.k4H_full_old_L_socle
+#print axioms Kk.k4H_full_upper_L_type
+#print axioms Kk.k4H_actual_cut22_singleUpper_B3_failure
+
 #check @Kk.algorithmRun_selects_actual_failed_single_upper_B3
 #print axioms Kk.algorithmRun_selects_actual_failed_single_upper_B3
