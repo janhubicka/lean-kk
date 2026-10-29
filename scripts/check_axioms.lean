@@ -324,3 +324,12 @@ import Kk
 
 #check @Kk.algorithmRun_selects_actual_failed_single_upper_B3
 #print axioms Kk.algorithmRun_selects_actual_failed_single_upper_B3
+
+#check @Kk.k4Cut10_finite
+#check @Kk.k4Cut10_sameSocle
+#check @Kk.k4Cut10_upper_types
+#check @Kk.k4Cut10_deleted_avoids
+#check @Kk.k4Cut10_realizesK4
+#check @Kk.k4Cut10_twoUpper_B3_fails
+#print axioms Kk.k4Cut10_deleted_avoids
+#print axioms Kk.k4Cut10_twoUpper_B3_fails
