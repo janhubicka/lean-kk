@@ -380,3 +380,12 @@ import Kk
 #print axioms Kk.no_new_K4_of_earlier_clone
 #check @Kk.k4Gadget_cut10_x_only_B3_good
 #print axioms Kk.k4Gadget_cut10_x_only_B3_good
+
+#check @Kk.k4Gadget_q2_and_x_have_same_old_L_socle
+#print axioms Kk.k4Gadget_q2_and_x_have_same_old_L_socle
+#check @Kk.k4Gadget_cut10_selected_only_B3_good_on_full_socle
+#print axioms Kk.k4Gadget_cut10_selected_only_B3_good_on_full_socle
+#check @Kk.k4Gadget_cut10_full_B3_does_not_project_to_selected
+#print axioms Kk.k4Gadget_cut10_full_B3_does_not_project_to_selected
+#check @Kk.k4Gadget_cut10_selected_only_cannot_certify_full_B3
+#print axioms Kk.k4Gadget_cut10_selected_only_cannot_certify_full_B3
