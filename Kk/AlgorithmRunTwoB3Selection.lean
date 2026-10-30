@@ -138,8 +138,16 @@ theorem bad_two_ambient_upper_forces_actual_interesting
       family D.map q₀ a₀ hprev hgap a₁
       (ha₁.trans ha₀.symm) A v₀.val v₁.val hOut₀ hOut₁
   have hCut : LevelTree.lev (D.map a₀)-1 = m := by omega
-  apply hBad
-  simpa only [hCut] using hGood
+  change CommonSocleAgeTest family
+    (prescribedOrdinarySocle
+      (A.partialTypeAt ((LevelTree.lev (D.map a₀)-1)+1) v₀.val))
+    (LevelTree.lev (D.map a₀)-1)
+    (fun T =>
+      T = (A.partialTypeAt ((LevelTree.lev (D.map a₀)-1)+1) v₀.val).lReduct ∨
+      T = (A.partialTypeAt ((LevelTree.lev (D.map a₀)-1)+1) v₁.val).lReduct)
+    at hGood
+  rw [hCut] at hGood
+  exact hBad hGood
 
 /-- A genuine Algorithm 5.4 run must retain any level with an actual
 two-upper B3 failure on names in its FULL selected closure. -/
