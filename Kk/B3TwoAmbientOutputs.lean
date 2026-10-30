@@ -115,7 +115,10 @@ theorem genuine_gap_two_ambient_targets_B3
   have hB3 :=
     genuine_gap_boundary_two_targets_B3
       family F q₀ a₀ hprev hgap a₁ ha₁ hCompatible
-  simpa only [hType₀,hType₁] using hB3
+  change CommonSocleAgeTest family (prescribedOrdinarySocle T₀) m
+    (fun R => R = T₀.lReduct ∨ R = T₁.lReduct) at hB3
+  rw [hType₀, hType₁] at hB3
+  exact hB3
 
 /-- The contrapositive is the form useful in the first-gadget
 adversarial audit. It is impossible to have a genuine first-gap
@@ -141,7 +144,7 @@ theorem bad_two_ambient_targets_contradicts_genuine_gap
       (F a₁).val =
         (⟨(LevelTree.lev (F a₀)-1)+1,
           A.partialTypeAt ((LevelTree.lev (F a₀)-1)+1) v₁⟩ :
-          RawPartialTypeNode db du dd)
+          RawPartialTypeNode db du dd))
     (hBad : ¬ CommonSocleAgeTest family
       (prescribedOrdinarySocle
         (A.partialTypeAt ((LevelTree.lev (F a₀)-1)+1) v₀))
