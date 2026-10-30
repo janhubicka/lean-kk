@@ -363,3 +363,15 @@ import Kk
 #print axioms Kk.genuine_gap_two_ambient_targets_B3
 #check @Kk.bad_two_ambient_targets_contradicts_genuine_gap
 #print axioms Kk.bad_two_ambient_targets_contradicts_genuine_gap
+
+#check @Kk.bad_two_ambient_upper_forces_actual_interesting
+#print axioms Kk.bad_two_ambient_upper_forces_actual_interesting
+#check @Kk.algorithmRun_selects_actual_failed_two_upper_B3
+#print axioms Kk.algorithmRun_selects_actual_failed_two_upper_B3
+
+#check @Kk.k4GadgetH_q2_freeLevel_eq_11
+#print axioms Kk.k4GadgetH_q2_freeLevel_eq_11
+#check @Kk.k4Gadget_algorithmRun_selects_cut10
+#print axioms Kk.k4Gadget_algorithmRun_selects_cut10
+#check @Kk.k4Gadget_algorithmRun_selects_cuts10_22
+#print axioms Kk.k4Gadget_algorithmRun_selects_cuts10_22
