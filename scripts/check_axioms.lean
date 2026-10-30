@@ -375,3 +375,8 @@ import Kk
 #print axioms Kk.k4Gadget_algorithmRun_selects_cut10
 #check @Kk.k4Gadget_algorithmRun_selects_cuts10_22
 #print axioms Kk.k4Gadget_algorithmRun_selects_cuts10_22
+
+#check @Kk.no_new_K4_of_earlier_clone
+#print axioms Kk.no_new_K4_of_earlier_clone
+#check @Kk.k4Gadget_cut10_x_only_B3_good
+#print axioms Kk.k4Gadget_cut10_x_only_B3_good
