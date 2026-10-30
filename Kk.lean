@@ -47,6 +47,7 @@ import Kk.B3ReductProfile
 import Kk.B3SkipNecessity
 import Kk.B3TwoGapCrossing
 import Kk.B3TwoAmbientOutputs
+import Kk.AlgorithmRunTwoB3Selection
 import Kk.B3OneGapCrossing
 import Kk.B3OneGapInteresting
 import Kk.AlgorithmRunSingleB3Selection
