@@ -34,7 +34,7 @@ theorem k4Gadget_full_upper_not_subset_x_only :
   intro W hFinite hSame hUpperW hDelete bad hBad
   exact k4Gadget_cut10_selected_only_B3_good_on_full_socle
     W hFinite hSame
-    (fun u hu hAbove => hSubset u (hUpperW u hu hAbove))
+    (fun u hu hAbove => hSubset _ (hUpperW u hu hAbove))
     hDelete bad hBad
 
 /-- The auxiliary complete upper L-reduct is genuinely distinct from
