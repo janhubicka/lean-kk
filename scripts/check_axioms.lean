@@ -113,6 +113,22 @@ import Kk
 #check @Kk.canonical_cover_block_final
 #print axioms Kk.canonical_cover_block_final
 #check @Kk.canonical_cover_block_all_stages
+#check @Kk.finiteWitnessCanonical_le_raw
+#print axioms Kk.finiteWitnessCanonical_le_raw
+#check @Kk.finiteWitnessCanonical_greatest
+#print axioms Kk.finiteWitnessCanonical_greatest
+#check @Kk.finiteWitnessCanonical_is_age
+#print axioms Kk.finiteWitnessCanonical_is_age
+#check @Kk.integerCliqueOnSupport_le
+#print axioms Kk.integerCliqueOnSupport_le
+#check @Kk.integerGraphAgeCanonical_le_raw
+#print axioms Kk.integerGraphAgeCanonical_le_raw
+#check @Kk.integerGraphAgeCanonical_is_age
+#print axioms Kk.integerGraphAgeCanonical_is_age
+#check @Kk.integerGraphAgeCanonical_greatest
+#print axioms Kk.integerGraphAgeCanonical_greatest
+#check @Kk.integerGraphAge_canonical_cover_block
+#print axioms Kk.integerGraphAge_canonical_cover_block
 #print axioms Kk.canonical_cover_block_all_stages
 
 #check @Kk.fullBefore_valid
