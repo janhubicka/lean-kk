@@ -70,9 +70,8 @@ theorem ageLe_final_rawCliqueBlockBound
   intro U
   by_cases hU : U = T
   · subst U
-    have hBound : ell - 1 - r ≤ upper T := by omega
     have hEq : ell - 1 - r = lower T := by omega
-    simp [rawCliqueBlockBound, Nat.min_eq_right hBound, hEq]
+    simpa [rawCliqueBlockBound, hEq] using hLE T
   · simpa [rawCliqueBlockBound, hU] using hLE U
 
 /-- A raw clique-block constraint never weakens the original bounds. -/
