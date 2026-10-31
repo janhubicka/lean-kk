@@ -55,8 +55,8 @@ theorem rawCliqueBlockBound_eq_upper_of_lt
   funext U
   by_cases hU : U = T
   · subst U
-    simp only [rawCliqueBlockBound, if_pos rfl]
-    omega
+    have hBound : upper T ≤ ell - 1 - a := by omega
+    simp [rawCliqueBlockBound, Nat.min_eq_left hBound]
   · simp [rawCliqueBlockBound, hU]
 
 /-- At the last clique vertex, the lower age lies below the new raw bound. -/
@@ -70,8 +70,9 @@ theorem ageLe_final_rawCliqueBlockBound
   intro U
   by_cases hU : U = T
   · subst U
-    simp only [rawCliqueBlockBound, if_pos rfl]
-    omega
+    have hBound : ell - 1 - r ≤ upper T := by omega
+    have hEq : ell - 1 - r = lower T := by omega
+    simp [rawCliqueBlockBound, Nat.min_eq_right hBound, hEq]
   · simpa [rawCliqueBlockBound, hU] using hLE U
 
 /-- A raw clique-block constraint never weakens the original bounds. -/
