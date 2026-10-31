@@ -389,3 +389,8 @@ import Kk
 #print axioms Kk.k4Gadget_cut10_full_B3_does_not_project_to_selected
 #check @Kk.k4Gadget_cut10_selected_only_cannot_certify_full_B3
 #print axioms Kk.k4Gadget_cut10_selected_only_cannot_certify_full_B3
+
+#check @Kk.k4Gadget_full_upper_not_subset_x_only
+#print axioms Kk.k4Gadget_full_upper_not_subset_x_only
+#check @Kk.k4Gadget_q2_upper_L_reduct_ne_x
+#print axioms Kk.k4Gadget_q2_upper_L_reduct_ne_x
