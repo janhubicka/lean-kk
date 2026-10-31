@@ -106,6 +106,15 @@ import Kk
 #check @Kk.common_labelled_source_iff_inverse_image_sets_eq
 #print axioms Kk.common_labelled_source_iff_inverse_image_sets_eq
 
+#check @Kk.rawCliqueBlockBound_eq_upper_of_lt
+#print axioms Kk.rawCliqueBlockBound_eq_upper_of_lt
+#check @Kk.ageLe_final_rawCliqueBlockBound
+#print axioms Kk.ageLe_final_rawCliqueBlockBound
+#check @Kk.canonical_cover_block_final
+#print axioms Kk.canonical_cover_block_final
+#check @Kk.canonical_cover_block_all_stages
+#print axioms Kk.canonical_cover_block_all_stages
+
 #check @Kk.fullBefore_valid
 #check @Kk.fullAfter_valid
 #check @Kk.fullAfter_covers_fullBefore
