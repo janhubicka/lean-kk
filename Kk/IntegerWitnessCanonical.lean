@@ -44,7 +44,7 @@ theorem witnessValue_le_canonical
   unfold finiteWitnessCanonical
   have hmem : w ∈ Finset.univ.filter (WitnessRespects value B) :=
     Finset.mem_filter.mpr ⟨Finset.mem_univ w, hw⟩
-  exact Finset.le_sup hmem
+  exact Finset.le_sup (f := fun x : ω => value x i) hmem
 
 /-- Canonicalization is pointwise below the raw bound. -/
 theorem finiteWitnessCanonical_le_raw
