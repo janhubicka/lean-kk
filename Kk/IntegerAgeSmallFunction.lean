@@ -142,7 +142,10 @@ theorem integerGraphAge_small_function
   let candidates : Finset (IntegerGraphSupport d ell) :=
     Finset.univ.filter (fun V => V.1 ⊆ T.1 ∧ V.1 ≠ T.1)
   have hUmem : U ∈ candidates := by
-    simp [candidates, hUT, hUne]
+    change U ∈ Finset.univ.filter (fun V : IntegerGraphSupport d ell =>
+      V.1 ⊆ T.1 ∧ V.1 ≠ T.1)
+    exact Finset.mem_filter.mpr
+      ⟨Finset.mem_univ U, ⟨hUT, hUne⟩⟩
   have hUpper : candidates.sup F ≤ F T := by
     apply Finset.sup_le
     intro V hV
