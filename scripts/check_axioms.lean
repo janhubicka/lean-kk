@@ -132,6 +132,8 @@ import Kk
 #print axioms Kk.normalize_raw_integer_clique_witness
 #check @Kk.rawIntegerGraphAge_iff_normalized
 #print axioms Kk.rawIntegerGraphAge_iff_normalized
+#check @Kk.rawIntegerGraphAgeCanonical_eq_normalized
+#print axioms Kk.rawIntegerGraphAgeCanonical_eq_normalized
 #print axioms Kk.integerGraphAge_canonical_cover_block
 #print axioms Kk.canonical_cover_block_all_stages
 
