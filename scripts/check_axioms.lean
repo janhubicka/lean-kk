@@ -135,6 +135,16 @@ import Kk
 #print axioms Kk.rawIntegerGraphAge_iff_normalized
 #check @Kk.rawIntegerGraphAgeCanonical_eq_normalized
 #print axioms Kk.rawIntegerGraphAgeCanonical_eq_normalized
+#check @Kk.integerGraphAge_monotone
+#print axioms Kk.integerGraphAge_monotone
+#check @Kk.rawIntegerGraphAge_monotone
+#print axioms Kk.rawIntegerGraphAge_monotone
+#check @Kk.integerGraphAge_small_support_witness
+#print axioms Kk.integerGraphAge_small_support_witness
+#check @Kk.integerGraphAge_small_function
+#print axioms Kk.integerGraphAge_small_function
+#check @Kk.rawIntegerGraphAge_small_function
+#print axioms Kk.rawIntegerGraphAge_small_function
 #check @Kk.integerGraphAgeCanonical_preserves_clique_vectors
 #print axioms Kk.integerGraphAgeCanonical_preserves_clique_vectors
 #check @Kk.integerGraphAgeCanonical_fixed_of_age
