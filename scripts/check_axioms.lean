@@ -129,6 +129,12 @@ import Kk
 #print axioms Kk.integerGraphAgeCanonical_greatest
 #check @Kk.integerGraphAge_canonical_cover_block
 #print axioms Kk.integerGraphAge_canonical_cover_block
+#check @Kk.integerGraphAgeCanonical_preserves_clique_vectors
+#print axioms Kk.integerGraphAgeCanonical_preserves_clique_vectors
+#check @Kk.integerGraphAgeCanonical_fixed_of_age
+#print axioms Kk.integerGraphAgeCanonical_fixed_of_age
+#check @Kk.integerGraphAgeCanonical_idempotent_above_age
+#print axioms Kk.integerGraphAgeCanonical_idempotent_above_age
 #print axioms Kk.canonical_cover_block_all_stages
 
 #check @Kk.fullBefore_valid
