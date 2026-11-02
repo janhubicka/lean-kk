@@ -11,6 +11,7 @@ import Kk.PrefixChainOrbitTransfer
 import Kk.PrefixEnvelopeLift
 import Kk.OrderedSourceIdentification
 import Kk.CanonicalCoverBlock
+import Kk.IntegerWitnessCanonical
 import Kk.GraphAgeShadow
 import Kk.K4AuxiliaryShadow
 import Kk.K4Cut22Continuation
