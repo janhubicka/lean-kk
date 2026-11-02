@@ -140,6 +140,7 @@ theorem rawIntegerGraphAgeCanonical_eq_normalized
     (hCap : ∀ T, B T ≤ ell - 1) :
     rawIntegerGraphAgeCanonical d ell B =
       integerGraphAgeCanonical d ell B := by
+  classical
   funext T
   change
     finiteWitnessCanonical
