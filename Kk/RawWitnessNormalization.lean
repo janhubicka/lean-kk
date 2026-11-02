@@ -118,4 +118,61 @@ theorem rawIntegerGraphAge_iff_normalized
       exact hBounds U
     · exact hValue
 
+
+/-- The manuscript's unrestricted integer-witness canonical bound:
+maximize over every coordinate-bounded multiplicity vector, without
+assuming the sum of its coordinates is at most ell-1. -/
+noncomputable def rawIntegerGraphAgeCanonical (d ell : Nat)
+    (B : IntegerGraphSupport d ell → Nat) :
+    IntegerGraphSupport d ell → Nat :=
+  finiteWitnessCanonical
+    (rawIntegerCliqueOnSupport (d := d) (ell := ell)) B
+
+/-- For every raw bound whose support values are at most ell-1,
+the unrestricted and normalized finite integer-witness
+canonicalizers agree pointwise. No age consistency of B is assumed.
+
+The forward inequality normalizes a maximizing raw witness on T.
+The reverse inequality forgets the normalized witness's total bound. -/
+theorem rawIntegerGraphAgeCanonical_eq_normalized
+    (d ell : Nat) (hell : 0 < ell)
+    (B : IntegerGraphSupport d ell → Nat)
+    (hCap : ∀ T, B T ≤ ell - 1) :
+    rawIntegerGraphAgeCanonical d ell B =
+      integerGraphAgeCanonical d ell B := by
+  funext T
+  change
+    finiteWitnessCanonical
+        (rawIntegerCliqueOnSupport (d := d) (ell := ell)) B T =
+      finiteWitnessCanonical
+        (integerCliqueOnSupport (d := d) (ell := ell)) B T
+  apply Nat.le_antisymm
+  · unfold finiteWitnessCanonical
+    apply Finset.sup_le
+    intro w hw
+    have hRaw : WitnessRespects
+        (rawIntegerCliqueOnSupport (d := d) (ell := ell)) B w :=
+      (Finset.mem_filter.mp hw).2
+    obtain ⟨wn, hNorm, hVal⟩ :=
+      normalize_raw_integer_clique_witness
+        hell B hCap w hRaw T
+    rw [← hVal]
+    exact witnessValue_le_canonical
+      (integerCliqueOnSupport (d := d) (ell := ell))
+      B wn hNorm T
+  · unfold finiteWitnessCanonical
+    apply Finset.sup_le
+    intro wn hwn
+    have hNorm : WitnessRespects
+        (integerCliqueOnSupport (d := d) (ell := ell)) B wn :=
+      (Finset.mem_filter.mp hwn).2
+    have hRaw : WitnessRespects
+        (rawIntegerCliqueOnSupport (d := d) (ell := ell)) B wn.1 := by
+      intro U
+      exact hNorm U
+    exact witnessValue_le_canonical
+      (rawIntegerCliqueOnSupport (d := d) (ell := ell))
+      B wn.1 hRaw T
+
+
 end Kk
