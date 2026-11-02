@@ -12,6 +12,7 @@ import Kk.PrefixEnvelopeLift
 import Kk.OrderedSourceIdentification
 import Kk.CanonicalCoverBlock
 import Kk.IntegerWitnessCanonical
+import Kk.IntegerAgeUniversalProperties
 import Kk.RawWitnessNormalization
 import Kk.GraphAgeShadow
 import Kk.K4AuxiliaryShadow
