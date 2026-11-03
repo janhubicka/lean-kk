@@ -26,7 +26,8 @@ def finiteNeighbourCliqueCandidates
     (E : Nat → Nat → Bool) (N size : Nat)
     (neighbour : Nat → Bool) : Finset (Finset Nat) :=
   ((Finset.range N).powersetCard size).filter (fun s =>
-    (∀ x ∈ s, neighbour x = true) ∧ IsDirectedCliqueOn E s)
+    (∀ x ∈ s, neighbour x = true) ∧
+    (∀ x ∈ s, ∀ y ∈ s, x ≠ y → E x y = true))
 
 /-- An executable Boolean test for a forbidden clique contained
 in the complete old neighbourhood of the next vertex. -/
@@ -45,14 +46,23 @@ theorem finiteNeighbourCliqueCandidates_nonempty_iff
   classical
   constructor
   · rintro ⟨s, hs⟩
-    have hFilter := Finset.mem_filter.mp hs
+    have hFilter :
+        s ∈ ((Finset.range N).powersetCard size).filter (fun s =>
+          (∀ x ∈ s, neighbour x = true) ∧
+          (∀ x ∈ s, ∀ y ∈ s, x ≠ y → E x y = true)) := hs
+    have hFilter := Finset.mem_filter.mp hFilter
     have hCardSet := Finset.mem_powersetCard.mp hFilter.1
     refine ⟨s, hCardSet.2, ?_, hFilter.2.2⟩
     intro x hx
     exact ⟨Finset.mem_range.mp (hCardSet.1 hx),
       hFilter.2.1 x hx⟩
   · rintro ⟨s, hCard, hBound, hClique⟩
-    refine ⟨s, Finset.mem_filter.mpr ⟨?_, ?_⟩⟩
+    refine ⟨s, ?_⟩
+    change s ∈ ((Finset.range N).powersetCard size).filter (fun s =>
+      (∀ x ∈ s, neighbour x = true) ∧
+      (∀ x ∈ s, ∀ y ∈ s, x ≠ y → E x y = true))
+    apply Finset.mem_filter.mpr
+    constructor
     · apply Finset.mem_powersetCard.mpr
       refine ⟨?_, hCard⟩
       intro x hx
