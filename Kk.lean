@@ -15,6 +15,7 @@ import Kk.IntegerWitnessCanonical
 import Kk.IntegerAgeUniversalProperties
 import Kk.RawWitnessNormalization
 import Kk.IntegerAgeSmallFunction
+import Kk.IntegerAgeLocality
 import Kk.GraphAgeShadow
 import Kk.K4AuxiliaryShadow
 import Kk.K4Cut22Continuation
