@@ -145,6 +145,13 @@ import Kk
 #print axioms Kk.integerGraphAge_small_function
 #check @Kk.rawIntegerGraphAge_small_function
 #print axioms Kk.rawIntegerGraphAge_small_function
+
+#check @Kk.integerAgeLowerAt_le
+#check @Kk.integerGraphAgeCanonical_single_bound_locality
+#check @Kk.integerGraphAgeCanonical_single_bound_disjoint
+#print axioms Kk.integerAgeLowerAt_le
+#print axioms Kk.integerGraphAgeCanonical_single_bound_locality
+#print axioms Kk.integerGraphAgeCanonical_single_bound_disjoint
 #check @Kk.integerGraphAgeCanonical_preserves_clique_vectors
 #print axioms Kk.integerGraphAgeCanonical_preserves_clique_vectors
 #check @Kk.integerGraphAgeCanonical_fixed_of_age
