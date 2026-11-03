@@ -79,7 +79,7 @@ theorem clique_unreserved_or_one_block
     refine ⟨b, ?_⟩
     intro y hy
     cases hY : block y with
-    | none => exact Or.inl hY
+    | none => exact Or.inl rfl
     | some c =>
       right
       have hSame : b = c :=
@@ -89,7 +89,7 @@ theorem clique_unreserved_or_one_block
   · left
     intro y hy
     cases hY : block y with
-    | none => exact hY
+    | none => rfl
     | some c =>
       exact False.elim (hExists ⟨y,hy,c,hY⟩)
 
