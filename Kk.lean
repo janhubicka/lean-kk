@@ -32,6 +32,8 @@ import Kk.HBlockClique
 import Kk.HBlockSupport
 import Kk.OnePointCliqueExtension
 import Kk.MixedNeighbourhoodBlocks
+import Kk.FiniteNeighbourCertificates
+import Kk.K4NeighbourCertificate
 import Kk.HensonI3Generation
 import Kk.HensonSelectedI3
 import Kk.HensonTopI3
