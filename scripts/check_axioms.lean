@@ -544,6 +544,8 @@ import Kk
 #print axioms Kk.henson_leftDense_first_selected_after_isolated_reserved
 #check @Kk.k4_mixed_parameter_isolation_necessary
 #print axioms Kk.k4_mixed_parameter_isolation_necessary
+#check @Kk.henson_leftDense_reserve_and_first_selected
+#print axioms Kk.henson_leftDense_reserve_and_first_selected
 #check @Kk.onePointGraphEdge_symmetric_of_base
 #print axioms Kk.onePointGraphEdge_symmetric_of_base
 #check @Kk.onePointGraphEdge_irreflexive_of_base
