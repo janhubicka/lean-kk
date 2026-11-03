@@ -30,6 +30,7 @@ import Kk.PrefixCutRigidity
 import Kk.HBlockNonedges
 import Kk.HBlockClique
 import Kk.HBlockSupport
+import Kk.OnePointCliqueExtension
 import Kk.HensonI3Generation
 import Kk.HensonSelectedI3
 import Kk.HensonTopI3
