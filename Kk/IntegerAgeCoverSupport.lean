@@ -61,8 +61,8 @@ theorem integerGraphAgeCover_minimal_changed_unique
     intro U
     by_cases hUS : U = S
     · subst U
-      change lower S ≤ min (upper S) (lower S)
-      exact le_min (hCover.le S) (le_refl _)
+      simpa [B, integerAgeLowerAt] using
+        (le_min (hCover.le S) (le_refl _))
     · simpa [B, integerAgeLowerAt, hUS] using (hCover.le U)
   have hGage : IsIntegerGraphAge d ell G :=
     integerGraphAgeCanonical_is_age d ell B lower
@@ -76,11 +76,11 @@ theorem integerGraphAgeCover_minimal_changed_unique
       (integerAgeLowerAt_le d ell upper S (lower S) U)
   have hGnotUpper : G ≠ upper := by
     intro hEq
-    have hBound : upper S ≤ B S := by
-      simpa only [G, hEq] using
-        (integerGraphAgeCanonical_le_raw d ell B S)
+    have hBound : G S ≤ B S :=
+      integerGraphAgeCanonical_le_raw d ell B S
+    rw [hEq] at hBound
     have hBound' : upper S ≤ min (upper S) (lower S) := by
-      exact hBound
+      simpa [B, integerAgeLowerAt] using hBound
     have hContr : upper S ≤ lower S :=
       hBound'.trans (Nat.min_le_right _ _)
     omega
