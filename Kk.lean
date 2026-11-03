@@ -38,6 +38,7 @@ import Kk.FiniteNeighbourSchedule
 import Kk.K4NeighbourSchedule
 import Kk.NeighbourhoodCardinality
 import Kk.IsolatedCliqueBlocks
+import Kk.FreshReservedOriginals
 import Kk.HensonI3Generation
 import Kk.HensonSelectedI3
 import Kk.HensonTopI3
