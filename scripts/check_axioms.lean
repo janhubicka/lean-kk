@@ -198,6 +198,22 @@ import Kk
 #print axioms Kk.onePointGraph_safe_of_mixing_pools
 #check @Kk.henson_leftDense_realizes_later_selected_of_mixing_pools
 #print axioms Kk.henson_leftDense_realizes_later_selected_of_mixing_pools
+#check @Kk.finitePoolCliqueCheck_true_iff
+#print axioms Kk.finitePoolCliqueCheck_true_iff
+#check @Kk.finitePoolCliqueCheck_false_iff
+#print axioms Kk.finitePoolCliqueCheck_false_iff
+#check @Kk.mixedBlockInteractionPool_subset_full_neighbourhood
+#print axioms Kk.mixedBlockInteractionPool_subset_full_neighbourhood
+#check @Kk.finiteNeighbourCliqueCheck_false_iff_exact_mixing_pools
+#print axioms Kk.finiteNeighbourCliqueCheck_false_iff_exact_mixing_pools
+#check @Kk.onePointGraph_cliqueFree_iff_exact_mixing_pools
+#print axioms Kk.onePointGraph_cliqueFree_iff_exact_mixing_pools
+#check @Kk.henson_leftDense_realizes_later_selected_of_exact_mixing
+#print axioms Kk.henson_leftDense_realizes_later_selected_of_exact_mixing
+#check @Kk.k4NoisyMixedPool_small
+#print axioms Kk.k4NoisyMixedPool_small
+#check @Kk.k4NoisyOldNeighbourhood_certified
+#print axioms Kk.k4NoisyOldNeighbourhood_certified
 
 #check @Kk.reserved_H_aux_selected_clique_support
 #check @Kk.reserved_H_clique_one_block_and_selected_support
