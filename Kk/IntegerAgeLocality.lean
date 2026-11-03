@@ -116,8 +116,7 @@ theorem integerGraphAgeCanonical_single_bound_locality
     · subst U
       have hF : integerCliqueOnSupport wn S ≤ F S :=
         (hSmall S).trans (hBounds S)
-      change integerCliqueOnSupport wn S ≤ min (F S) n
-      exact le_min hF hSBound
+      simpa [integerAgeLowerAt] using (le_min hF hSBound)
     · have hF : integerCliqueOnSupport wn U ≤ F U :=
         (hSmall U).trans (hBounds U)
       simpa [integerAgeLowerAt, hUS] using hF
@@ -155,11 +154,8 @@ theorem integerGraphAgeCanonical_single_bound_disjoint
   apply integerGraphAgeCanonical_single_bound_locality
     d ell hell F hAge S T n
   intro U hUS hUT
-  have hX : U.1 = ∅ := by
-    apply Finset.eq_empty_iff_forall_not_mem.mpr
-    intro j hj
-    exact (Finset.disjoint_left.mp hDisj)
-      (hUS hj) (hUT hj)
-  exact False.elim (U.2.1.ne_empty hX)
+  obtain ⟨j, hj⟩ := U.2.1
+  exact False.elim ((Finset.disjoint_left.mp hDisj)
+    (hUS hj) (hUT hj))
 
 end Kk
