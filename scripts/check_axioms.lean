@@ -458,3 +458,10 @@ import Kk
 #check @Kk.onePointGraph_cliqueFree_iff
 #print axioms Kk.onePointGraph_hasClique_iff
 #print axioms Kk.onePointGraph_cliqueFree_iff
+
+#check @Kk.clique_reserved_blocks_agree
+#check @Kk.clique_unreserved_or_one_block
+#check @Kk.onePointGraph_cliqueFree_of_block_checks
+#print axioms Kk.clique_reserved_blocks_agree
+#print axioms Kk.clique_unreserved_or_one_block
+#print axioms Kk.onePointGraph_cliqueFree_of_block_checks
