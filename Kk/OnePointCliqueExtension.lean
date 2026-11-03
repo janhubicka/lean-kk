@@ -139,8 +139,8 @@ theorem onePointGraph_hasClique_iff
         have := (hBound N hn).1
         omega
       refine ⟨insert N s, ?_, ?_, ?_⟩
-      · have hc : (insert N s).card = s.card + 1 :=
-          Finset.card_insert_of_not_mem hNotN
+      · have hc : (insert N s).card = s.card + 1 := by
+          simp [hNotN]
         omega
       · intro x hx
         rcases Finset.mem_insert.mp hx with h | hxS
