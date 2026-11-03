@@ -70,7 +70,7 @@ theorem henson_leftDense_reserve_and_first_selected
   have hSFront : ∀ q ∈ S, q < front := by
     intro q hq
     have hSup : q ≤ S.sup (fun u : Nat => u) :=
-      Finset.le_sup hq
+      Finset.le_sup (f := fun u : Nat => u) hq
     dsimp [front]
     omega
   let neighbour : Nat → Bool :=
