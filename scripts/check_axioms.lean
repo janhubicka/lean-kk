@@ -465,3 +465,22 @@ import Kk
 #print axioms Kk.clique_reserved_blocks_agree
 #print axioms Kk.clique_unreserved_or_one_block
 #print axioms Kk.onePointGraph_cliqueFree_of_block_checks
+
+#check @Kk.finiteNeighbourCliqueCandidates_nonempty_iff
+#print axioms Kk.finiteNeighbourCliqueCandidates_nonempty_iff
+#check @Kk.finiteNeighbourCliqueCheck_true_iff
+#print axioms Kk.finiteNeighbourCliqueCheck_true_iff
+#check @Kk.finiteNeighbourCliqueCheck_false_iff
+#print axioms Kk.finiteNeighbourCliqueCheck_false_iff
+#check @Kk.no_clique_below_of_small_carrier
+#print axioms Kk.no_clique_below_of_small_carrier
+#check @Kk.onePointGraph_cliqueFree_iff_finite_certificate
+#print axioms Kk.onePointGraph_cliqueFree_iff_finite_certificate
+#check @Kk.k4Seed_full_neighbourhood_certificate
+#print axioms Kk.k4Seed_full_neighbourhood_certificate
+#check @Kk.k4Seed_safe_onePoint_extension
+#print axioms Kk.k4Seed_safe_onePoint_extension
+#check @Kk.k4MixedParameter_triangle_certificate
+#print axioms Kk.k4MixedParameter_triangle_certificate
+#check @Kk.k4MixedParameter_forbidden_onePoint_extension
+#print axioms Kk.k4MixedParameter_forbidden_onePoint_extension
