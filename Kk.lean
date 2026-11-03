@@ -34,6 +34,8 @@ import Kk.OnePointCliqueExtension
 import Kk.MixedNeighbourhoodBlocks
 import Kk.FiniteNeighbourCertificates
 import Kk.K4NeighbourCertificate
+import Kk.FiniteNeighbourSchedule
+import Kk.K4NeighbourSchedule
 import Kk.HensonI3Generation
 import Kk.HensonSelectedI3
 import Kk.HensonTopI3
