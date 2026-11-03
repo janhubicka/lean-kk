@@ -93,11 +93,11 @@ theorem afterK4_lt_beforeK4 :
     have h2 := h 2
     norm_num [beforeK4, afterK4] at h2
 
-/-- No intermediate age function exists between the two legal
-bounds: this is a TRUE cover, not merely a strict decrease. -/
+/-- No intermediate pointwise function exists between these bounds.
+This proves a genuine graph-age cover without assuming consistency
+of a hypothetical intermediate function. -/
 theorem afterK4_covers_beforeK4
     (G : Fin 3 → Nat)
-    (_hValid : IsTwoSortK4Age G)
     (hLow : TwoSortAgeLe afterK4 G)
     (hHigh : TwoSortAgeLe G beforeK4) :
     G = afterK4 ∨ G = beforeK4 := by
