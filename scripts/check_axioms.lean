@@ -526,6 +526,16 @@ import Kk
 #print axioms Kk.smallCliqueLeftDense_of_onePointLeftDense
 #check @Kk.reserved_originals_of_onePointLeftDense
 #print axioms Kk.reserved_originals_of_onePointLeftDense
+#check @Kk.no_prefix_clique_of_no_increasing_clique
+#print axioms Kk.no_prefix_clique_of_no_increasing_clique
+#check @Kk.hensonForbiddenFamily_no_prefix_cliques
+#print axioms Kk.hensonForbiddenFamily_no_prefix_cliques
+#check @Kk.henson_leftDense_realizes_certified_original
+#print axioms Kk.henson_leftDense_realizes_certified_original
+#check @Kk.henson_leftDense_exists_reserved_originals
+#print axioms Kk.henson_leftDense_exists_reserved_originals
+#check @Kk.henson_leftDense_exists_reserved_of_graph_axioms
+#print axioms Kk.henson_leftDense_exists_reserved_of_graph_axioms
 #check @Kk.onePointGraphEdge_symmetric_of_base
 #print axioms Kk.onePointGraphEdge_symmetric_of_base
 #check @Kk.onePointGraphEdge_irreflexive_of_base
