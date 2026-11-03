@@ -98,11 +98,11 @@ theorem fullAfter_lt_fullBefore :
     have h2 := h 2
     norm_num [TwoSortAgeLe, fullBefore, fullAfter] at h2
 
-/-- There is no intermediate valid graph-age function between these
-two ages: the invisible-to-selected-shadow change is a TRUE cover. -/
+/-- There is no intermediate pointwise function between these bounds,
+so in particular the two genuine graph ages form a cover. No age
+consistency assumption on the intermediate function is needed. -/
 theorem fullAfter_covers_fullBefore
     (G : Fin 3 → Nat)
-    (_hValid : IsTwoSortTriangleAge G)
     (hLow : TwoSortAgeLe fullAfter G)
     (hHigh : TwoSortAgeLe G fullBefore) :
     G = fullAfter ∨ G = fullBefore := by

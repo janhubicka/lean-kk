@@ -1,4 +1,4 @@
-import Kk.K4AuxiliaryShadow
+import Kk.GraphAgeShadow
 import Mathlib.Tactic
 
 /-!
@@ -18,7 +18,9 @@ age discrepancy at its first auxiliary step, not just K4.
 This is a purely graph-age obstruction. It neither proves that
 the auxiliary future type enters the complete Algorithm 5.4
 parameter closure, nor refutes the particular resolved copy.
-The finite K4 instance is already checked separately.
+The finite K4 instance is already checked separately. Only the
+common pointwise order from GraphAgeShadow is needed here; the
+K4-specific witness proof is an independent regression.
 -/
 
 namespace Kk

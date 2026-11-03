@@ -1,5 +1,22 @@
 # Verification plan
 
+## Current audited status — 3 November 2026
+
+**Reference:** `main` at `b5e23db80d3c49528f0bd96d65354a03c0771426`.
+Its [full Lean build and axiom-check run 41480847852](https://github.com/janhubicka/lean-kk/actions/runs/41480847852) succeeded on 2 November. This is an audit of the stated Lean endpoints, **not** a completed proof of the big Ramsey degree.
+
+**Kernel-checked components:** finite-family type-respecting Ramsey transfer; genuinely labelled carrier/action interfaces; Henson forbidden-family translation; numerical-H selected-original and full AlgorithmRun I3 clique/signature bounds under their displayed hypotheses; integer-witness graph-age normalization, canonicalizer universal properties, monotonicity, small-function identity **with nonempty domain qualifications**, and the canonical selected-front cover-block algebra.
+
+**Refuted shortcut, retained as regression:** selected-front graph-age equality cannot be used to infer full parameter-closed corrected (B3). The numerical-H K4 cut-10 example with auxiliary original 22 and selected original 38 refutes the unrestricted inference; the two-sort examples also show the abstract problem. The `GraphAgeShadow`, `K4AuxiliaryShadow`, `UniformAuxiliaryShadow` and `K4FullVsMarkedB3` modules are *negative tests*, not alternative upper-bound proofs. Do not delete them merely for being unused in a positive proof.
+
+**Outstanding substantive gaps:** global admissibility of mixed original/parameter/clique-block extensions; synchronization of full dependent I1/I2 and ordinary L+/E successor assignments for equal macrodiaries; full I3 comparison at every selected and unrecorded microlevel; common labelled inverse-source orbit; unconditional Ramsey upper bound and matching lower-bound formalization. The verified all-generation AlgorithmRun I3 clique-capacity theorem does **not** need to be reproved, and does **not** close those gaps.
+
+**CI verifier repair (3 November):** the previous workflow's `grep -Eq 'sorryAx|unknownConstant|axiom.*Kk\.'` did not inspect the transitive axiom *list* and would not reject a new axiom named outside `Kk`. The replacement checker parses every `#print axioms` request and corresponding Lean report, rejects missing/duplicate/extra reports, and whitelists only `propext`, `Classical.choice`, and `Quot.sound`. Its parser has negative self-tests. The historical base-run log has exactly 162 named reports, all within that whitelist; the new branch needs CI before the stronger check is certified.
+
+**Adversarial cleanup rule:** remove superfluous assumptions and obsolete *arguments*, not tested counterexamples. Historical status entries below are date-specific and often say “pending” about PRs which have since merged. They are evidence of the validation process, not the current task list. Manuscript black-text corrections belong in TODOs and a separate correction note; only olive prose is edited directly.
+
+## Dated historical validation log
+
 ## 28 October — ordinary L-profile, bounded forbidden cores and cut-star localization
 
 Three new stacked PRs have passed complete full Lean builds and the

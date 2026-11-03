@@ -48,7 +48,8 @@ jobs:
         run: |
           set -euo pipefail
           lake env lean scripts/check_axioms.lean | tee axioms.log
-          ! grep -Eq 'sorryAx|unknownConstant|axiom.*Kk\.' axioms.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py scripts/check_axioms.lean axioms.log
       - name: Cache pinned Lake build
         if: success()
         uses: actions/cache/save@v4
