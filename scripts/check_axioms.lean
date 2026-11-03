@@ -520,3 +520,15 @@ import Kk
 #print axioms Kk.smallCliqueLeftDense_exists_reserved
 #check @Kk.emptyGraph_not_smallCliqueLeftDense
 #print axioms Kk.emptyGraph_not_smallCliqueLeftDense
+#check @Kk.onePointGraphEdge_symmetric_of_base
+#print axioms Kk.onePointGraphEdge_symmetric_of_base
+#check @Kk.onePointGraphEdge_irreflexive_of_base
+#print axioms Kk.onePointGraphEdge_irreflexive_of_base
+#check @Kk.appendIsolatedCliqueBlock_symmetric
+#print axioms Kk.appendIsolatedCliqueBlock_symmetric
+#check @Kk.appendIsolatedCliqueBlock_irreflexive
+#print axioms Kk.appendIsolatedCliqueBlock_irreflexive
+#check @Kk.appendIsolatedCliqueBlock_old_new_both_nonedges
+#print axioms Kk.appendIsolatedCliqueBlock_old_new_both_nonedges
+#check @Kk.appendIsolatedCliqueBlock_graph_valid_prefix
+#print axioms Kk.appendIsolatedCliqueBlock_graph_valid_prefix
