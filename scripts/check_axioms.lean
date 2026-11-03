@@ -190,6 +190,14 @@ import Kk
 #print axioms Kk.numericH_designated_reserved_to_top_both
 #check @Kk.numericH_designated_clique_of_finite_set
 #print axioms Kk.numericH_designated_clique_of_finite_set
+#check @Kk.mixed_neighbourClique_subset_interaction_pool
+#print axioms Kk.mixed_neighbourClique_subset_interaction_pool
+#check @Kk.finiteNeighbourCliqueCheck_false_of_mixing_pools
+#print axioms Kk.finiteNeighbourCliqueCheck_false_of_mixing_pools
+#check @Kk.onePointGraph_safe_of_mixing_pools
+#print axioms Kk.onePointGraph_safe_of_mixing_pools
+#check @Kk.henson_leftDense_realizes_later_selected_of_mixing_pools
+#print axioms Kk.henson_leftDense_realizes_later_selected_of_mixing_pools
 
 #check @Kk.reserved_H_aux_selected_clique_support
 #check @Kk.reserved_H_clique_one_block_and_selected_support
