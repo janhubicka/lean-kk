@@ -484,3 +484,15 @@ import Kk
 #print axioms Kk.k4MixedParameter_triangle_certificate
 #check @Kk.k4MixedParameter_forbidden_onePoint_extension
 #print axioms Kk.k4MixedParameter_forbidden_onePoint_extension
+#check @Kk.hasCliqueBelow_congr_on_prefix
+#print axioms Kk.hasCliqueBelow_congr_on_prefix
+#check @Kk.onePointGraphEdge_agrees_on_prefix
+#print axioms Kk.onePointGraphEdge_agrees_on_prefix
+#check @Kk.hasCliqueBelow_succ_iff_old_or_neighbour
+#print axioms Kk.hasCliqueBelow_succ_iff_old_or_neighbour
+#check @Kk.cliqueFree_prefix_iff_all_finite_neighbour_certificates
+#print axioms Kk.cliqueFree_prefix_iff_all_finite_neighbour_certificates
+#check @Kk.k4FourOriginal_all_stage_certificates
+#print axioms Kk.k4FourOriginal_all_stage_certificates
+#check @Kk.k4FourOriginal_initial_prefix_cliqueFree
+#print axioms Kk.k4FourOriginal_initial_prefix_cliqueFree
