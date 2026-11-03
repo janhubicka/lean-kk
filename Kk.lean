@@ -29,6 +29,7 @@ import Kk.UniformAuxiliaryShadow
 import Kk.PrefixCutRigidity
 import Kk.HBlockNonedges
 import Kk.HBlockClique
+import Kk.NumericHDesignatedPositive
 import Kk.HBlockSupport
 import Kk.OnePointCliqueExtension
 import Kk.MixedNeighbourhoodBlocks

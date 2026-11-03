@@ -182,6 +182,14 @@ import Kk
 
 #check @Kk.reserved_H_clique_one_block
 #print axioms Kk.reserved_H_clique_one_block
+#check @Kk.numericH_designated_reserved_pair_positive
+#print axioms Kk.numericH_designated_reserved_pair_positive
+#check @Kk.numericH_designated_reserved_to_top_positive
+#print axioms Kk.numericH_designated_reserved_to_top_positive
+#check @Kk.numericH_designated_reserved_to_top_both
+#print axioms Kk.numericH_designated_reserved_to_top_both
+#check @Kk.numericH_designated_clique_of_finite_set
+#print axioms Kk.numericH_designated_clique_of_finite_set
 
 #check @Kk.reserved_H_aux_selected_clique_support
 #check @Kk.reserved_H_clique_one_block_and_selected_support
