@@ -43,7 +43,6 @@ theorem finiteNeighbourCliqueCandidates_nonempty_iff
     (neighbour : Nat → Bool) :
     (finiteNeighbourCliqueCandidates E N size neighbour).Nonempty ↔
       HasNeighbourCliqueBelow E N size neighbour := by
-  classical
   constructor
   · rintro ⟨s, hs⟩
     have hFilter :
