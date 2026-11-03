@@ -496,3 +496,21 @@ import Kk
 #print axioms Kk.k4FourOriginal_all_stage_certificates
 #check @Kk.k4FourOriginal_initial_prefix_cliqueFree
 #print axioms Kk.k4FourOriginal_initial_prefix_cliqueFree
+#check @Kk.no_neighbourClique_of_small_neighbour_set
+#print axioms Kk.no_neighbourClique_of_small_neighbour_set
+#check @Kk.finiteNeighbourCliqueCheck_false_of_small_neighbour_set
+#print axioms Kk.finiteNeighbourCliqueCheck_false_of_small_neighbour_set
+#check @Kk.onePointGraph_safe_of_small_neighbour_set
+#print axioms Kk.onePointGraph_safe_of_small_neighbour_set
+#check @Kk.onePointGraph_safe_of_prescribed_neighbour_carrier
+#print axioms Kk.onePointGraph_safe_of_prescribed_neighbour_carrier
+#check @Kk.appendIsolatedCliqueBlock_old
+#print axioms Kk.appendIsolatedCliqueBlock_old
+#check @Kk.appendIsolatedCliqueBlock_old_new_nonedge
+#print axioms Kk.appendIsolatedCliqueBlock_old_new_nonedge
+#check @Kk.appendIsolatedCliqueBlock_new_clique
+#print axioms Kk.appendIsolatedCliqueBlock_new_clique
+#check @Kk.appendIsolatedCliqueBlock_next_neighbour_card
+#print axioms Kk.appendIsolatedCliqueBlock_next_neighbour_card
+#check @Kk.appendIsolatedCliqueBlock_cliqueFree
+#print axioms Kk.appendIsolatedCliqueBlock_cliqueFree
