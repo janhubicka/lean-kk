@@ -520,6 +520,12 @@ import Kk
 #print axioms Kk.smallCliqueLeftDense_exists_reserved
 #check @Kk.emptyGraph_not_smallCliqueLeftDense
 #print axioms Kk.emptyGraph_not_smallCliqueLeftDense
+#check @Kk.onePointLeftDense_realizes_finite_certificate
+#print axioms Kk.onePointLeftDense_realizes_finite_certificate
+#check @Kk.smallCliqueLeftDense_of_onePointLeftDense
+#print axioms Kk.smallCliqueLeftDense_of_onePointLeftDense
+#check @Kk.reserved_originals_of_onePointLeftDense
+#print axioms Kk.reserved_originals_of_onePointLeftDense
 #check @Kk.onePointGraphEdge_symmetric_of_base
 #print axioms Kk.onePointGraphEdge_symmetric_of_base
 #check @Kk.onePointGraphEdge_irreflexive_of_base
