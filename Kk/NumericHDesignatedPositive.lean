@@ -147,8 +147,10 @@ theorem numericH_designated_clique_of_finite_set
     intro a b hab
     have ha : original a ∈ S := S.orderEmbOfFin_mem hCard a
     have hb : original b ∈ S := S.orderEmbOfFin_mem hCard b
-    exact hClique (original a) ha (original b) hb
-      (original.injective (ne_of_lt hab))
+    have hNe : original a ≠ original b := by
+      intro heq
+      exact (ne_of_lt hab) (original.injective heq)
+    exact hClique (original a) ha (original b) hb hNe
   exact numericH_designated_reserved_pair_positive
     E k r hr original hOriginal
 
