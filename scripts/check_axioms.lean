@@ -450,3 +450,11 @@ import Kk
 #print axioms Kk.k4Gadget_full_upper_not_subset_x_only
 #check @Kk.k4Gadget_q2_upper_L_reduct_ne_x
 #print axioms Kk.k4Gadget_q2_upper_L_reduct_ne_x
+
+#check @Kk.onePointGraphEdge_old
+#check @Kk.onePointGraphEdge_right
+#check @Kk.onePointGraphEdge_left
+#check @Kk.onePointGraph_hasClique_iff
+#check @Kk.onePointGraph_cliqueFree_iff
+#print axioms Kk.onePointGraph_hasClique_iff
+#print axioms Kk.onePointGraph_cliqueFree_iff
