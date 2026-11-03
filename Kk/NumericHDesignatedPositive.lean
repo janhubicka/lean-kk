@@ -1,5 +1,6 @@
 import Kk.HBlockNonedges
 import Kk.HensonEncoding
+import Kk.OnePointCliqueExtension
 import Mathlib.Tactic
 
 /-!
@@ -97,22 +98,34 @@ theorem numericH_designated_reserved_to_top_both
       (infiniteNumericHL (normalizedGraphModel E) k).binary
         (hPosition k selected k)
         (hPosition k (original a) a.val) (0 : Fin 1) = true := by
-  have hBaseSym : ∀ i j t,
-      (normalizedGraphModel E).binary i j t =
-        (normalizedGraphModel E).binary j i t := by
-    intro i j t
-    fin_cases t
-    change E i j = E j i
-    exact hSym i j
   intro a
   have hPositive :=
     numericH_designated_reserved_to_top_positive
       E k r hr original selected hLater hJoined a
-  have hReverse := hNumericBinary_symmetric_of_base
-    (normalizedGraphModel E).binary hBaseSym k
-    (hPosition k selected k)
-    (hPosition k (original a) a.val) (0 : Fin 1)
-  exact ⟨hPositive, hReverse.trans hPositive⟩
+  have hq : a.val ≤ k := by
+    have := a.isLt
+    omega
+  have hGate : a.val < k := by
+    have := a.isLt
+    omega
+  have hReverseAtom :
+      (normalizedGraphModel E).binary
+        selected (original a) (0 : Fin 1) = true := by
+    change E selected (original a) = true
+    exact (hSym (original a) selected).symm.trans (hJoined a)
+  have hReverse :
+      (infiniteNumericHL (normalizedGraphModel E) k).binary
+        (hPosition k selected k)
+        (hPosition k (original a) a.val) (0 : Fin 1) = true := by
+    change hNumericBinary (normalizedGraphModel E).binary k
+      (hPosition k selected k)
+      (hPosition k (original a) a.val) (0 : Fin 1) = true
+    apply (hNumericBinary_true_iff
+      (normalizedGraphModel E).binary k _ _ (0 : Fin 1)).2
+    exact ⟨original a, selected, a.val, k,
+      hLater a, hq, le_rfl, Or.inl hGate,
+      Or.inr ⟨rfl, rfl, hReverseAtom⟩⟩
+  exact ⟨hPositive, hReverse⟩
 
 /-- Turn an ACTUAL finite reserved clique S, enumerated in its
 natural-number order, into a positive designated-generation
