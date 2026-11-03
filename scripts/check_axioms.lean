@@ -514,3 +514,9 @@ import Kk
 #print axioms Kk.appendIsolatedCliqueBlock_next_neighbour_card
 #check @Kk.appendIsolatedCliqueBlock_cliqueFree
 #print axioms Kk.appendIsolatedCliqueBlock_cliqueFree
+#check @Kk.smallCliqueLeftDense_build_reserved
+#print axioms Kk.smallCliqueLeftDense_build_reserved
+#check @Kk.smallCliqueLeftDense_exists_reserved
+#print axioms Kk.smallCliqueLeftDense_exists_reserved
+#check @Kk.emptyGraph_not_smallCliqueLeftDense
+#print axioms Kk.emptyGraph_not_smallCliqueLeftDense
