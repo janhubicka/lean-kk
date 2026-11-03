@@ -11,6 +11,8 @@ Its [full Lean build and axiom-check run 41480847852](https://github.com/janhubi
 
 **Outstanding substantive gaps:** global admissibility of mixed original/parameter/clique-block extensions; synchronization of full dependent I1/I2 and ordinary L+/E successor assignments for equal macrodiaries; full I3 comparison at every selected and unrecorded microlevel; common labelled inverse-source orbit; unconditional Ramsey upper bound and matching lower-bound formalization. The verified all-generation AlgorithmRun I3 clique-capacity theorem does **not** need to be reproved, and does **not** close those gaps.
 
+**CI verifier repair (3 November):** the previous workflow's `grep -Eq 'sorryAx|unknownConstant|axiom.*Kk\.'` did not inspect the transitive axiom *list* and would not reject a new axiom named outside `Kk`. The replacement checker parses every `#print axioms` request and corresponding Lean report, rejects missing/duplicate/extra reports, and whitelists only `propext`, `Classical.choice`, and `Quot.sound`. Its parser has negative self-tests. The historical base-run log has exactly 162 named reports, all within that whitelist; the new branch needs CI before the stronger check is certified.
+
 **Adversarial cleanup rule:** remove superfluous assumptions and obsolete *arguments*, not tested counterexamples. Historical status entries below are date-specific and often say “pending” about PRs which have since merged. They are evidence of the validation process, not the current task list. Manuscript black-text corrections belong in TODOs and a separate correction note; only olive prose is edited directly.
 
 ## Dated historical validation log
