@@ -1,6 +1,16 @@
 # Verification plan
 
-## Current audited status — 4 November 2026 (after PR #54)
+## Current audited status — 4 November 2026 (after PR #56)
+
+**Reference:** [PR #56](https://github.com/janhubicka/lean-kk/pull/56) is merged to `main` as `64000bd29a1df17f7fe4e8d87504e888c7d0e6d4`. [Full source build and strict axiom audit 41790461406](https://github.com/janhubicka/lean-kk/actions/runs/41790461406) passed **247 exact named transitive-axiom reports** with only `propext`, `Classical.choice`, and `Quot.sound`. This verifies the displayed conditional theorem, not an unconditional big Ramsey degree.
+
+**One complete Henson successor stage with OLD block links and NEW blocks:** In [`Kk/LinkedAndFreshStage.lean`](../Kk/LinkedAndFreshStage.lean), `henson_leftDense_later_selected_after_fresh_blocks_of_link_capacity` combines the PR #54 genuine old prefix negative-neighbourhood certificate from clique-capacity budgets with PR #52's existence of arbitrary finite families of fresh isolated reserved original cliques and one later selected original. The selected original preserves **all certified prescribed old positive passing bits**, including actual links to older reserved and selected/coding parameter vertices, sees exactly the new reserved blocks above the old cut, and has zero passing bits to every intervening outsider. The new theorem further proves every NEW reserved original is nonadjacent in both orientations to EVERY original below the old cut. The original Henson graph is not edited.
+
+**English before Lean, adversarial boundary:** The [English proof and 10-point hostile audit](linked_and_fresh_stage_english_audit.md) were committed at `ada31141070cc8f5a949575546bdf0516907f93d` BEFORE the Lean source. In particular, the new selected original can increase clique capacities for the NEXT selected stage; a one-step construction does not prove all subsequent old link-capacity budgets automatically. The `ell-1` fresh block-size inequality is strict, and all original older selected/parameter vertices are included in the actual prior certificate.
+
+**Still genuinely open:** Prove that the intended deterministic UNBOUNDED resolved-copy macrodiary passes the actual pure-unreserved and per-old-block mixed certificates at EVERY stage, not just under explicit hypotheses. Then establish equality of full assigned source-node-wise I1/I2/I3/B3 data, the common labelled inverse-source orbit, the unconditional Ramsey upper bound, and the independent Lean lower bound. The numerical-H K4 selected-only-to-full B3 counterexample remains relevant and cannot be bypassed by these old-original geometry lemmas.
+
+## Previous audited status — after PR #54
 
 **Reference:** [PR #54](https://github.com/janhubicka/lean-kk/pull/54) is merged to `main` as `117daf353d9b67fa3c54ba2890e6a137b97b41ca`. The [source full build and strict axiom audit 41789150529](https://github.com/janhubicka/lean-kk/actions/runs/41789150529) passed **246 named exact transitive-axiom reports**, all using only `propext`, `Classical.choice`, and `Quot.sound`. This certifies the precise conditional theorem endpoints, **not** an unconditional big Ramsey degree.
 
