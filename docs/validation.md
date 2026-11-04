@@ -1,6 +1,16 @@
 # Verification plan
 
-## Current audited status — 4 November 2026 (after PR #60)
+## Current audited status — 4 November 2026 (after PR #62)
+
+**Reference:** [lean-kk PR #62](https://github.com/janhubicka/lean-kk/pull/62) merged to `main` as `88004c0c43a4d1dd7b5575ce4c6687c3c8a35e49`. [Full source Lean CI 41812326889](https://github.com/janhubicka/lean-kk/actions/runs/41812326889) passed the complete build and **271 exact named standard-only transitive-axiom reports**. This validates finite original-graph theorem interfaces, not the unconditional big Ramsey theorem.
+
+**Deletion-only budget preservation:** [`Kk/DeactivationBudgetTransfer.lean`](../Kk/DeactivationBudgetTransfer.lean) proves that for fixed original E and `U1⊆U0`, `R1⊆R0`, the actual linked-unreserved pool shrinks, so `|R1|+cap_E(Link_E(U1,R1)) ≤ |R0|+cap_E(Link_E(U0,R0))`. A previously strict sufficient mixed-block budget remains safe. More strongly, inclusion of the COMPLETE next positive original-neighbourhood finset in the previous one transfers a negative q-clique checker across different prefix cuts. Under separately assumed Henson complete-column left density, the latter certifies a genuine later original. K4 regressions demonstrate that deletion can turn an old unsafe column into a safe one, so this implication has no converse.
+
+**English before Lean, adversarial limits:** The [English proof and eight-point hostile review](deactivation_budget_transfer_english_audit.md) were committed as `2801cb0102f06e188fed5b965e04ed7c1e099e27` before the implementation. Both subset assumptions require actual original-edge data. An activated live reserved witness or newly positive gap/selected/parameter bit may violate them; those stages require PR #60's exact four-quadrant update plus a NEW negative capacity or full-pool check. No canonical macrodiary has been shown to satisfy these restrictions at all stages.
+
+**Still open:** Actual event-by-event unbounded resolved-copy admissibility; exact assigned dependent I1/I2/I3/B3 source records for two same-diary occurrences; genuine common labelled inverse source and monoid orbit; unconditional upper and independent Lean lower bounds. The numerical-H K4 selected-shadow/full corrected-B3 counterexample remains an adversarial regression.
+
+## Previous audited status — after PR #60
 
 **Reference:** [lean-kk PR #60](https://github.com/janhubicka/lean-kk/pull/60) merged into `main` as `72f8f47bcf999b3f036151de1ee9c52db14cb31e`. [Full source Lean CI 41810904242](https://github.com/janhubicka/lean-kk/actions/runs/41810904242) passed **264 exact named transitive-axiom reports**, all using only `propext`, `Classical.choice`, and `Quot.sound`. This verifies exact finite original-graph interfaces; it does not close the unbounded Henson resolved-copy theorem or its common labelled source orbit.
 
