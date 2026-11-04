@@ -681,3 +681,19 @@ import Kk
 #print axioms Kk.k4_neighbour_deactivation_rescues_forbidden_column
 #check @Kk.k4_safe_star_neighbour_deactivation
 #print axioms Kk.k4_safe_star_neighbour_deactivation
+
+-- Actual age-cover macro-event locality, English-first adversarially audited.
+#check @Kk.integerGraphAge_cover_final_raw_eq_single_bound
+#print axioms Kk.integerGraphAge_cover_final_raw_eq_single_bound
+#check @Kk.integerGraphAge_cover_event_preserves_support_of_overlap
+#print axioms Kk.integerGraphAge_cover_event_preserves_support_of_overlap
+#check @Kk.integerGraphAge_cover_event_preserves_disjoint_support
+#print axioms Kk.integerGraphAge_cover_event_preserves_disjoint_support
+#check @Kk.integerGraphAge_cover_event_preserves_disjoint_subfront
+#print axioms Kk.integerGraphAge_cover_event_preserves_disjoint_subfront
+
+-- Inclusion-minimal canonical cover support: every subfront omitting T is unchanged.
+#check @Kk.integerGraphAge_cover_event_preserves_without_full_support
+#print axioms Kk.integerGraphAge_cover_event_preserves_without_full_support
+#check @Kk.integerGraphAge_cover_event_preserves_subfront_omitting_support
+#print axioms Kk.integerGraphAge_cover_event_preserves_subfront_omitting_support
