@@ -51,3 +51,20 @@ This is an **actual cover macro-event** result. The proof does not identify the 
 ## Formalization contract
 
 Use genuine `Kk.AgeCover (IsIntegerGraphAge d ell)`, `integerGraphAge_canonical_cover_block`, `integerGraphAgeCanonical_single_bound_locality`, and its `_disjoint` corollary. Prove that the final raw clique bound equals `integerAgeLowerAt`, followed by the exact overlapping-support and disjoint-subfront results. Register named axiom endpoints. English proof first; Lean code after. Run the full pinned Lean build and exact standard-only transitive-axiom report before green manuscript markers; edit OLIVE source prose only and put TODOs on unproved black claims.
+
+
+## Strengthening (proved in English and adversarially checked BEFORE Lean): inclusion-minimal cover support
+
+The manuscript uses a *distinguished* canonical cover support T. In actual graph-age cover analysis it is important to pick T **inclusion-minimal among changed supports**:
+
+  `hMinimal: for every nonempty U⊊T, lower(U)=upper(U)`.
+
+This is a substantive explicit hypothesis, not inferred merely from the displayed one-coordinate unit drop. The library already proves that any TWO inclusion-minimal changed supports in a genuine cover must coincide (`integerGraphAgeCover_minimal_changed_unique`), but it does not silently choose a minimal one or establish the unit drop for such a choice.
+
+**Stronger locality theorem.** Under `hMinimal`, if S does NOT contain all of T (`¬T⊆S`), then `lower(S)=upper(S)`. Thus **every selected subfront E omitting at least one sort of T** has the same complete restricted graph-age record before and after the cover. Unlike the earlier disjoint-front corollary, E may overlap T substantially.
+
+**English proof.** Fix any nonempty U⊆S∩T. If U=T, then T⊆S, contradicting the assumption. Hence U⊊T and hMinimal gives `upper(U)=lower(U)`. Monotonicity of the genuine *lower* integer-witness age gives `lower(U)≤lower(T)`. Thus every overlap support meets the earlier proved locality hypothesis `upper(U)≤lower(T)`, so `lower(S)=upper(S)`. If S⊆E and T⊄E, certainly T⊄S, proving the whole-subfront result.
+
+**Hostile checks:** (a) If T⊆S, its age can change, so the proof is *not* valid there. (b) Without hMinimal an overlapping proper sub-support U can also be changed; the overlap inequality cannot be manufactured from raw-bound arithmetic alone. (c) The lower age's MONOTONICITY (itself verified from actual integer witnesses) is essential; pointwise lower≤upper is not enough. (d) The lemma does NOT prove the arbitrary-subfront cover-or-equality claim for a front containing T: other supersets of T may be constrained through canonicalization. (e) This result only treats selected graph-age macro-supports; it does not identify numerical-H actual parameter edges, its full corrected B3 future types or one common labelled inverse-source orbit.
+
+**Lean contract:** Add separate named theorems for (1) noncontainment `¬T⊆S` under hMinimal and (2) all eligible supports in a selected subfront E with `¬T⊆E`. Use the already verified `integerGraphAge_monotone` from real integer-witness ages, not an assumed order property. These endpoints must pass full CI and the strict standard-only axiom audit before green manuscript markers.
