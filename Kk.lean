@@ -32,6 +32,7 @@ import Kk.HBlockClique
 import Kk.NumericHDesignatedPositive
 import Kk.LaterSelectedMixedPools
 import Kk.LaterSelectedExactMixing
+import Kk.LinkedCliqueCapacity
 import Kk.HBlockSupport
 import Kk.OnePointCliqueExtension
 import Kk.MixedNeighbourhoodBlocks
