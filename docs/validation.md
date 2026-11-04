@@ -1,6 +1,20 @@
 # Verification plan
 
-## Current audited status — 4 November 2026 (after PR #56)
+## Current audited status — 4 November 2026 (after PR #58)
+
+**Reference:** [lean-kk PR #58](https://github.com/janhubicka/lean-kk/pull/58) merged into `main` as `d918d48dca5f696b36acfbf89dac9192df0d387b`. [Full Lean source build and strict axiom audit 41808474679](https://github.com/janhubicka/lean-kk/actions/runs/41808474679) passed **256 exact named transitive-axiom reports**, all using only `propext`, `Classical.choice`, and `Quot.sound`. Initial failed builds were purely Lean elaboration/normalization issues and were corrected without weakening theorem assumptions or adding axioms. The previous [PR #56](https://github.com/janhubicka/lean-kk/pull/56) one-step old-link-plus-fresh-block construction remains verified.
+
+**Sharp dynamic update of old linked clique capacity:** For an ACTUAL directed Boolean original-edge table `E`, finite old linked set `L`, and a fresh original `v∉L`, let `M={x∈L : E(x,v)=E(v,x)=true}`. The checked theorem `finiteDirectedCliqueCapacity_insert_eq` in [`Kk/LinkedCliqueCapacityUpdate.lean`](../Kk/LinkedCliqueCapacityUpdate.lean) proves
+
+`cap_E(L∪{v}) = max(cap_E(L), 1+cap_E(M))`.
+
+It handles **both directed arcs** without assuming graph symmetry. The no-growth corollary says that if `M=∅` and `cap_E(L)≥1`, inserting `v` costs no capacity, unlike an indiscriminate +1 per linked original. A further checked finite theorem certifies the mixed pool `R∪L∪{v}` from the updated strict budget, **provided the live reserved set `R` stays fixed and the actual new linked set is precisely `L∪{v}`**. This is a conditional finite interface, not an unbounded construction.
+
+**English first; independent hostile referee:** The [English proof and eight-point adversarial audit](clique_capacity_insert_english_audit.md) were committed as `16689068c0a3b79c880abb0162b71f1926c5018e` BEFORE the Lean module. The companion independent manuscript script `verify_link_capacity_insert.py` exhaustively checks every loop-free directed graph on four vertices, all finite old linked subsets and all genuinely fresh insertions: **131,072 exact recurrences** (**80,820 no-growth** and **50,252 growth**), plus positive and negative K4 original-edge regressions. The script was added to the manuscript's `make check-foundation`. The PR's Lean theorem is a genuine generic proof, not a finite computation.
+
+**Outstanding real geometric induction:** The next selected vertex may have a DIFFERENT subset of live reserved originals, and there may be additional intervening gap originals. No proof yet identifies the actual next linked pool with one fixed `L∪{v}` or relates the resulting capacities to the intended canonical graph-age cover sequence. The global numerical-H resolved-copy schedule, full parameter-closed assigned I1/I2/I3/B3 source-node comparisons, common labelled inverse-source orbit and unconditional Ramsey upper/lower bounds remain OPEN. The real K4 cut-10/cut-22 corrected-B3 obstruction remains a regression test.
+
+## Previous audited status — after PR #56
 
 **Reference:** [PR #56](https://github.com/janhubicka/lean-kk/pull/56) is merged to `main` as `64000bd29a1df17f7fe4e8d87504e888c7d0e6d4`. [Full source build and strict axiom audit 41790461406](https://github.com/janhubicka/lean-kk/actions/runs/41790461406) passed **247 exact named transitive-axiom reports** with only `propext`, `Classical.choice`, and `Quot.sound`. This verifies the displayed conditional theorem, not an unconditional big Ramsey degree.
 
