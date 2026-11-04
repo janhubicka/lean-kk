@@ -623,3 +623,7 @@ import Kk
 #print axioms Kk.k4OldLinks_safe_by_capacity
 #check @Kk.k4OldLinks_bad_triangle_regression
 #print axioms Kk.k4OldLinks_bad_triangle_regression
+
+-- English-first combined later-selected old-link plus fresh-block stage.
+#check @Kk.henson_leftDense_later_selected_after_fresh_blocks_of_link_capacity
+#print axioms Kk.henson_leftDense_later_selected_after_fresh_blocks_of_link_capacity
