@@ -697,3 +697,17 @@ import Kk
 #print axioms Kk.integerGraphAge_cover_event_preserves_without_full_support
 #check @Kk.integerGraphAge_cover_event_preserves_subfront_omitting_support
 #print axioms Kk.integerGraphAge_cover_event_preserves_subfront_omitting_support
+
+-- Actual all-subfront cover/equality via relative integer-witness mixed raw lift.
+#check @Kk.integerGraphAge_is_subfront_age
+#print axioms Kk.integerGraphAge_is_subfront_age
+#check @Kk.subfrontMixedRawBound_between
+#print axioms Kk.subfrontMixedRawBound_between
+#check @Kk.subfrontWitness_respects_mixed_raw
+#print axioms Kk.subfrontWitness_respects_mixed_raw
+#check @Kk.integerGraphAgeCanonical_mixed_raw_restrict_eq
+#print axioms Kk.integerGraphAgeCanonical_mixed_raw_restrict_eq
+#check @Kk.integerGraphAge_cover_no_relative_intermediate
+#print axioms Kk.integerGraphAge_cover_no_relative_intermediate
+#check @Kk.integerGraphAge_cover_restrict_eq_or_cover
+#print axioms Kk.integerGraphAge_cover_restrict_eq_or_cover
