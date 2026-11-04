@@ -627,3 +627,23 @@ import Kk
 -- English-first combined later-selected old-link plus fresh-block stage.
 #check @Kk.henson_leftDense_later_selected_after_fresh_blocks_of_link_capacity
 #print axioms Kk.henson_leftDense_later_selected_after_fresh_blocks_of_link_capacity
+
+-- English-first adversarially audited exact incremental linked clique capacity.
+#check @Kk.finiteDirectedCliqueCapacity_mono
+#print axioms Kk.finiteDirectedCliqueCapacity_mono
+#check @Kk.finiteDirectedCliqueCapacity_insert_le
+#print axioms Kk.finiteDirectedCliqueCapacity_insert_le
+#check @Kk.finiteDirectedCliqueCapacity_succ_mutual_le_insert
+#print axioms Kk.finiteDirectedCliqueCapacity_succ_mutual_le_insert
+#check @Kk.finiteDirectedCliqueCapacity_insert_eq
+#print axioms Kk.finiteDirectedCliqueCapacity_insert_eq
+#check @Kk.finiteDirectedCliqueCapacity_empty
+#print axioms Kk.finiteDirectedCliqueCapacity_empty
+#check @Kk.finiteDirectedCliqueCapacity_insert_no_growth
+#print axioms Kk.finiteDirectedCliqueCapacity_insert_no_growth
+#check @Kk.finitePoolCliqueCheck_false_of_one_new_link_budget
+#print axioms Kk.finitePoolCliqueCheck_false_of_one_new_link_budget
+#check @Kk.k4LinkedCapacity_insert_no_growth_regression
+#print axioms Kk.k4LinkedCapacity_insert_no_growth_regression
+#check @Kk.k4LinkedCapacity_insert_growth_regression
+#print axioms Kk.k4LinkedCapacity_insert_growth_regression
