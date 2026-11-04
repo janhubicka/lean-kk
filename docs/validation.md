@@ -1,6 +1,16 @@
 # Verification plan
 
-## Current audited status — 4 November 2026 (after PRs #51–52)
+## Current audited status — 4 November 2026 (after PR #54)
+
+**Reference:** [PR #54](https://github.com/janhubicka/lean-kk/pull/54) is merged to `main` as `117daf353d9b67fa3c54ba2890e6a137b97b41ca`. The [source full build and strict axiom audit 41789150529](https://github.com/janhubicka/lean-kk/actions/runs/41789150529) passed **246 named exact transitive-axiom reports**, all using only `propext`, `Classical.choice`, and `Quot.sound`. This certifies the precise conditional theorem endpoints, **not** an unconditional big Ramsey degree.
+
+**Genuinely later selected vertices:** `Kk/LinkedCliqueCapacity.lean` computes the maximum directed clique cardinality in the **actual** old linked-unreserved set for a reserved block, instead of crudely bounding that set's vertex cardinality. If the number of live reserved neighbours plus this clique capacity is strictly below `ell-1` for each block, and the exact pure-unreserved checker is negative with genuine old cross-block nonedges, PR #50's exact decomposition yields a negative COMPLETE selected-neighbourhood checker. The theorem `henson_leftDense_realizes_later_selected_of_link_capacity` then selects a genuine later original under the separately stipulated Henson complete-column left-density property, even when older selected originals and coding parameters are positively adjacent to older reserved vertices.
+
+**English-first and adversarial evidence:** The [English proof and 10-point hostile audit](linked_clique_capacity_english_audit.md) were committed at `396662b279aca3826388f84274df03daafb6cd57` **before** Lean source. Exact `K_4` positive/negative regressions show the advantage over raw cardinality: one reserved original links to two older selected originals which are independent, so linked clique capacity is one even when linked cardinality is two; inserting their missing mutual edge makes the next selected vertex unsafe. The companion independent referee in the manuscript branch, `verify_link_capacity_budget.py`, tested **181,760** four-original two-block cases with **109,233** sufficient-budget instances and no counterexample.
+
+**Critical limitation:** This is a **sufficient local budget**, not an exact equivalence or a proof that the proposed infinite resolved-copy macrodiary satisfies the budgets. The nontrivial missing application is to prove negative complete mixed-neighbourhood tests at each ACTUAL recursive stage. Full assigned upper `L^+` successor types, I1/I2/I3/B3 dependent parameter-closed envelopes, common labelled inverse-source orbit, unconditional upper-bound and independent Lean lower-bound remain OPEN. The verified numerical-H `K_4` corrected-B3 counterexample continues to prohibit selected-age-shadow `=>` full B3 shortcuts.
+
+## Previous audited status — after PRs #51–52
 
 **Reference:** `main` at `efee866dcac9799c4e3240e40ce3a92245e2e893`. [Full CI on merged main 41781999792](https://github.com/janhubicka/lean-kk/actions/runs/41781999792) succeeded. [PR #52 source build and strict audit 41781628701](https://github.com/janhubicka/lean-kk/actions/runs/41781628701) checked **239 exact named transitive axiom reports**, permitting only `propext`, `Classical.choice`, and `Quot.sound`. This is validation of the theorem interfaces and their stated hypotheses, **not** validation of the final big Ramsey degree theorem.
 
