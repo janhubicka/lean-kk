@@ -94,6 +94,8 @@ theorem finiteDirectedCliqueCapacity_insert_le
         max (finiteDirectedCliqueCapacity E L)
           (1 + finiteDirectedCliqueCapacity E
             (mutualLinkedNeighbours E L v)) := le_max_right _ _
+    -- The outer supremum was unfolded above; normalize these hypotheses too.
+    simp only [finiteDirectedCliqueCapacity] at hCapacity hRight
     omega
   · have hSubL : s ⊆ L := by
       intro x hx
@@ -161,6 +163,8 @@ theorem finiteDirectedCliqueCapacity_succ_mutual_le_insert
       simp [hvNotS]
     have hBound := directedClique_card_le_capacity E
       (insert v L) (insert v s) hInsertSub hInsertClique
+    -- Match the explicit finite supremum unfolded in this subgoal.
+    simp only [finiteDirectedCliqueCapacity] at hBound
     omega
   dsimp [M] at hSup
   omega
