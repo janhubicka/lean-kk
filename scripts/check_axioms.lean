@@ -599,3 +599,11 @@ import Kk
 
 #check @Kk.full_reserved_block_forbids_selected_column
 #print axioms Kk.full_reserved_block_forbids_selected_column
+
+-- Fresh isolated blocks: complete original-neighbourhood safety + Henson realization.
+#check @Kk.finiteNeighbourCliqueCheck_false_of_last_isolated
+#print axioms Kk.finiteNeighbourCliqueCheck_false_of_last_isolated
+#check @Kk.mem_reservedBlocksUnion
+#print axioms Kk.mem_reservedBlocksUnion
+#check @Kk.henson_leftDense_selected_after_fresh_block_family
+#print axioms Kk.henson_leftDense_selected_after_fresh_block_family
