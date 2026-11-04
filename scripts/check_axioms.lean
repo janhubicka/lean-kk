@@ -691,3 +691,9 @@ import Kk
 #print axioms Kk.integerGraphAge_cover_event_preserves_disjoint_support
 #check @Kk.integerGraphAge_cover_event_preserves_disjoint_subfront
 #print axioms Kk.integerGraphAge_cover_event_preserves_disjoint_subfront
+
+-- Inclusion-minimal canonical cover support: every subfront omitting T is unchanged.
+#check @Kk.integerGraphAge_cover_event_preserves_without_full_support
+#print axioms Kk.integerGraphAge_cover_event_preserves_without_full_support
+#check @Kk.integerGraphAge_cover_event_preserves_subfront_omitting_support
+#print axioms Kk.integerGraphAge_cover_event_preserves_subfront_omitting_support
