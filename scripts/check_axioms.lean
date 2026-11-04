@@ -647,3 +647,21 @@ import Kk
 #print axioms Kk.k4LinkedCapacity_insert_no_growth_regression
 #check @Kk.k4LinkedCapacity_insert_growth_regression
 #print axioms Kk.k4LinkedCapacity_insert_growth_regression
+
+-- English-first exact changing-live-set and gap-passing four-quadrant audit.
+#check @Kk.linkedOriginalsTo_union_candidates
+#print axioms Kk.linkedOriginalsTo_union_candidates
+#check @Kk.linkedOriginalsTo_union_reserved
+#print axioms Kk.linkedOriginalsTo_union_reserved
+#check @Kk.linkedOriginalsTo_four_quadrants
+#print axioms Kk.linkedOriginalsTo_four_quadrants
+#check @Kk.linkedUnreserved_eq_updatedActualLinkedPool
+#print axioms Kk.linkedUnreserved_eq_updatedActualLinkedPool
+#check @Kk.finiteNeighbourCliqueCheck_false_of_updatedActualLinkedPool_budget
+#print axioms Kk.finiteNeighbourCliqueCheck_false_of_updatedActualLinkedPool_budget
+#check @Kk.henson_leftDense_realizes_of_updatedActualLinkedPool_budget
+#print axioms Kk.henson_leftDense_realizes_of_updatedActualLinkedPool_budget
+#check @Kk.stale_reserved_link_disappears
+#print axioms Kk.stale_reserved_link_disappears
+#check @Kk.activated_reserve_and_gap_links
+#print axioms Kk.activated_reserve_and_gap_links
