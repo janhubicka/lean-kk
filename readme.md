@@ -2,7 +2,7 @@
 
 Lean 4 validation for the big Ramsey degree project on universal `K_k`-free graphs, using the pinned [`lean-successors`](https://github.com/janhubicka/lean-successors) type-respecting Ramsey theorem.
 
-**Verified building blocks:** finite-family Ramsey refinement; labelled partial-type carriers and conditional orbit transfer; Henson graph-language encoding; selected-original and full AlgorithmRun I3 counting bounds under their exact hypotheses; integer graph-age canonicalization, cover-block arithmetic, and domain-correct small-function results. These compile with the pinned toolchain and have named transitive-axiom checks.
+**Verified building blocks:** finite-family Ramsey refinement; labelled partial-type carriers and conditional orbit transfer; Henson graph-language encoding; selected-original and full AlgorithmRun I3 counting bounds under their exact hypotheses; integer graph-age canonicalization, cover-block arithmetic, and domain-correct small-function results; finite families of genuine mutually nonadjacent reserved original cliques; and complete-neighbourhood certification for one selected original immediately following freshly isolated blocks under the precise left-density and old-prefix assumptions. These compile with the pinned toolchain and have named transitive-axiom checks.
 
 **Not proved by this library:** the proposed resolved numerical-H copy's mixed-parameter extension admissibility, equality of full parameter-closed envelope records for two occurrences of the same macrodiary, a common labelled inverse-source orbit, or the unconditional upper and lower big Ramsey bounds. In particular, selected-only age preservation does **not** imply full corrected (B3) preservation.
 
