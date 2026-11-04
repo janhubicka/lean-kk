@@ -124,4 +124,58 @@ theorem integerGraphAge_cover_event_preserves_disjoint_subfront
   exact integerGraphAge_cover_event_preserves_disjoint_support
     d ell r hell lower upper T S hCover hEll hAt hTS
 
+
+/-- A canonical cover with an inclusion-minimal changed support T
+cannot change ANY support S which does NOT contain T, even if
+S overlaps T. The minimum-support assumption is displayed explicitly:
+the previous uniqueness theorem does not silently supply existence
+or identify the cover's chosen T as that minimum. -/
+theorem integerGraphAge_cover_event_preserves_without_full_support
+    (d ell r : Nat) (hell : 0 < ell)
+    (lower upper : IntegerGraphSupport d ell → Nat)
+    (T S : IntegerGraphSupport d ell)
+    (hCover : AgeCover (IsIntegerGraphAge d ell) lower upper)
+    (hEll : ell = lower T + r + 1)
+    (hAt : upper T = lower T + 1)
+    (hMinimal : ∀ U : IntegerGraphSupport d ell,
+      U.1 ⊆ T.1 → U.1 ≠ T.1 → lower U = upper U)
+    (hNot : ¬ T.1 ⊆ S.1) :
+    lower S = upper S := by
+  apply integerGraphAge_cover_event_preserves_support_of_overlap
+    d ell r hell lower upper T S hCover hEll hAt
+  intro U hUT hUS
+  have hProper : U.1 ≠ T.1 := by
+    intro hEqual
+    apply hNot
+    simpa only [hEqual] using hUS
+  have hSame : lower U = upper U :=
+    hMinimal U hUT hProper
+  calc
+    upper U = lower U := hSame.symm
+    _ ≤ lower T :=
+      integerGraphAge_monotone d ell lower hCover.lower_age U T hUT
+
+/-- The ENTIRE selected graph-age restriction on any subfront E
+omitting at least one sort of an inclusion-minimal changed
+cover support T is unchanged. This is stronger than disjointness:
+E may contain arbitrarily many but not ALL sorts of T. -/
+theorem integerGraphAge_cover_event_preserves_subfront_omitting_support
+    (d ell r : Nat) (hell : 0 < ell)
+    (lower upper : IntegerGraphSupport d ell → Nat)
+    (T : IntegerGraphSupport d ell)
+    (hCover : AgeCover (IsIntegerGraphAge d ell) lower upper)
+    (hEll : ell = lower T + r + 1)
+    (hAt : upper T = lower T + 1)
+    (hMinimal : ∀ U : IntegerGraphSupport d ell,
+      U.1 ⊆ T.1 → U.1 ≠ T.1 → lower U = upper U)
+    (E : Finset (Fin d))
+    (hNot : ¬ T.1 ⊆ E) :
+    ∀ S : IntegerGraphSupport d ell,
+      S.1 ⊆ E → lower S = upper S := by
+  intro S hSub
+  apply integerGraphAge_cover_event_preserves_without_full_support
+    d ell r hell lower upper T S hCover hEll hAt hMinimal
+  intro hTS
+  exact hNot (hTS.trans hSub)
+
 end Kk
