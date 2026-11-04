@@ -1,6 +1,18 @@
 # Verification plan
 
-## Current audited status — 3 November 2026
+## Current audited status — 4 November 2026 (after PRs #51–52)
+
+**Reference:** `main` at `efee866dcac9799c4e3240e40ce3a92245e2e893`. [Full CI on merged main 41781999792](https://github.com/janhubicka/lean-kk/actions/runs/41781999792) succeeded. [PR #52 source build and strict audit 41781628701](https://github.com/janhubicka/lean-kk/actions/runs/41781628701) checked **239 exact named transitive axiom reports**, permitting only `propext`, `Classical.choice`, and `Quot.sound`. This is validation of the theorem interfaces and their stated hypotheses, **not** validation of the final big Ramsey degree theorem.
+
+**English-first finite block geometry:** [PR #51](https://github.com/janhubicka/lean-kk/pull/51), merged as `4b39c80c79694b2deb1be68c9cc2335312a468be` after [full CI 41756353162](https://github.com/janhubicka/lean-kk/actions/runs/41756353162), establishes any finite ordered family of *genuine original-index* reserved cliques of sizes `r<ell`, with all earlier-outsider nonedges (including enumeration gaps) and actual two-direction cross-block nonedges. The regression `full_reserved_block_forbids_selected_column` proves that a future selected vertex seeing the entire block needs the stricter `r<ell-1` condition.
+
+**Sharpened complete-neighbourhood theorem:** [PR #52](https://github.com/janhubicka/lean-kk/pull/52) (merged as `efee866dcac9799c4e3240e40ce3a92245e2e893`) first committed [an English proof and adversarial audit](last_neighbour_isolation_english_audit.md), then formalized `finiteNeighbourCliqueCheck_false_of_last_isolated`. A hypothetical `q>0` neighbour-clique has a largest original index `y`. If `y` lies in the old prefix, the old negative certificate rules it out. Otherwise it is a newly reserved neighbour; every earlier member of the alleged clique must lie in its small isolation block `S_y`, contradicting `|S_y|<q`. This checks the **entire actual original/parameter neighbourhood** without inferring an invalid selected-graph-age to full-B3 projection.
+
+**One genuine selected successor after an arbitrary finite fresh block family:** `henson_leftDense_selected_after_fresh_block_family` combines PR #51 with that maximal-neighbour argument and the separately stipulated exact `OnePointLeftDense E ell` property. It chooses a later original of the *unchanged fixed Henson enumeration* with exactly the prescribed old-prefix positive column, positive bits to the freshly reserved blocks, and zeros through every intervening gap, in both directed orientations.
+
+**Hard boundary:** This is a **single** selected extension after *freshly isolated* blocks; it cannot simply be iterated when newer selected vertices may be adjacent to older reserved blocks and older selected vertices linked to those blocks. For the proposed unbounded recursion, negative pure-unreserved and per-block *actual mixed interaction-pool* tests must still be proved at every stage. Full I1/I2/I3/B3 dependent parameter closure, occurrence-independent assigned upper L+ successor types, the genuine common labelled inverse-source orbit, the unconditional upper bound, and the independent Lean lower bound all remain open. The numerical-H K4 corrected-B3 counterexamples remain essential regression tests.
+
+## Previous audited status — 3 November 2026
 
 **Reference:** `main` at `7da043de5c0987a554fa409614252d9c84bf41f4`.
 Its source tree `2542d123ada41ae6825a4833a915e54f45de431b` passed [full Lean build and strict axiom-check run 41741406897](https://github.com/janhubicka/lean-kk/actions/runs/41741406897) on 4 November (233 exact named reports). The tested PR head and merged main have identical source trees. This is an audit of the stated Lean endpoints, **not** a completed proof of the big Ramsey degree.
