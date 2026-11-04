@@ -117,4 +117,24 @@ theorem ordered_reserved_block_cross_nonedges_of_lt
     x < y ∧ E x y = false ∧ E y x = false := by
   exact (hCross.rel_get_of_lt hij) x hx y hy
 
+
+/-- Adversarial boundary regression: a reserved clique of size
+ell-1 already makes the prescribed selected-vertex column unsafe
+when the new vertex is adjacent to the whole clique.
+The reservation theorem's weaker r<ell bound MUST NOT be
+silently reused as the selected-extension safety bound. -/
+theorem full_reserved_block_forbids_selected_column
+    (E : Nat → Nat → Bool) (ell N : Nat)
+    (S : Finset Nat)
+    (hCard : S.card = ell-1)
+    (hBelow : ∀ x ∈ S, x < N)
+    (hClique : IsDirectedCliqueOn E S)
+    (neighbour : Nat → Bool)
+    (hPass : ∀ x ∈ S, neighbour x = true) :
+    finiteNeighbourCliqueCheck E N (ell-1) neighbour = true := by
+  apply (finiteNeighbourCliqueCheck_true_iff E N (ell-1) neighbour).2
+  refine ⟨S, hCard, ?_, hClique⟩
+  intro x hx
+  exact ⟨hBelow x hx, hPass x hx⟩
+
 end Kk
