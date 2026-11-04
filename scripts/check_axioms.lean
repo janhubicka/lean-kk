@@ -665,3 +665,19 @@ import Kk
 #print axioms Kk.stale_reserved_link_disappears
 #check @Kk.activated_reserve_and_gap_links
 #print axioms Kk.activated_reserve_and_gap_links
+
+-- English-first deletion-only link budget and full-neighbourhood transfer.
+#check @Kk.linkedOriginalsTo_mono
+#print axioms Kk.linkedOriginalsTo_mono
+#check @Kk.linkedOriginals_deactivation_budget_le
+#print axioms Kk.linkedOriginals_deactivation_budget_le
+#check @Kk.finitePoolCliqueCheck_false_of_deactivation_budget
+#print axioms Kk.finitePoolCliqueCheck_false_of_deactivation_budget
+#check @Kk.finiteNeighbourCliqueCheck_false_of_neighbour_subset
+#print axioms Kk.finiteNeighbourCliqueCheck_false_of_neighbour_subset
+#check @Kk.henson_leftDense_realizes_deactivated_column
+#print axioms Kk.henson_leftDense_realizes_deactivated_column
+#check @Kk.k4_neighbour_deactivation_rescues_forbidden_column
+#print axioms Kk.k4_neighbour_deactivation_rescues_forbidden_column
+#check @Kk.k4_safe_star_neighbour_deactivation
+#print axioms Kk.k4_safe_star_neighbour_deactivation
