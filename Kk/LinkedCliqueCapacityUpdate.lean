@@ -38,9 +38,7 @@ theorem finiteDirectedCliqueCapacity_mono
     finiteDirectedCliqueCapacity E P ≤
       finiteDirectedCliqueCapacity E Q := by
   classical
-  change (P.powerset.filter (fun s =>
-    ∀ x ∈ s, ∀ y ∈ s, x ≠ y → E x y = true)).sup
-      Finset.card ≤ _
+  unfold finiteDirectedCliqueCapacity
   apply Finset.sup_le
   intro s hs
   have hPieces := Finset.mem_filter.mp hs
@@ -58,9 +56,7 @@ theorem finiteDirectedCliqueCapacity_insert_le
         (1 + finiteDirectedCliqueCapacity E
           (mutualLinkedNeighbours E L v)) := by
   classical
-  change ((insert v L).powerset.filter (fun s =>
-    ∀ x ∈ s, ∀ y ∈ s, x ≠ y → E x y = true)).sup
-      Finset.card ≤ _
+  unfold finiteDirectedCliqueCapacity
   apply Finset.sup_le
   intro s hs
   have hPieces := Finset.mem_filter.mp hs
@@ -131,9 +127,7 @@ theorem finiteDirectedCliqueCapacity_succ_mutual_le_insert
     simpa using hS
   have hSup : finiteDirectedCliqueCapacity E M ≤
       finiteDirectedCliqueCapacity E (insert v L) - 1 := by
-    change (M.powerset.filter (fun s =>
-      ∀ x ∈ s, ∀ y ∈ s, x ≠ y → E x y = true)).sup
-        Finset.card ≤ _
+    unfold finiteDirectedCliqueCapacity
     apply Finset.sup_le
     intro s hs
     have hPieces := Finset.mem_filter.mp hs
@@ -205,12 +199,13 @@ theorem finiteDirectedCliqueCapacity_insert_no_growth
       finiteDirectedCliqueCapacity E L := by
   have hEmpty : mutualLinkedNeighbours E L v = ∅ := by
     ext x
-    simp only [Finset.not_mem_empty, iff_false]
-    intro hx
+    constructor
+    · intro hx
     obtain ⟨hxL, hxMutual⟩ := Finset.mem_filter.mp hx
     have hxEdge : E x v = true := hxMutual.1
     rw [hNo x hxL] at hxEdge
     cases hxEdge
+    · simp
   rw [finiteDirectedCliqueCapacity_insert_eq E L v hv, hEmpty]
   rw [finiteDirectedCliqueCapacity_empty]
   simpa using (max_eq_left hOldCap :
