@@ -596,3 +596,6 @@ import Kk
 #print axioms Kk.henson_leftDense_ordered_reserved_blocks
 #check @Kk.ordered_reserved_block_cross_nonedges_of_lt
 #print axioms Kk.ordered_reserved_block_cross_nonedges_of_lt
+
+#check @Kk.full_reserved_block_forbids_selected_column
+#print axioms Kk.full_reserved_block_forbids_selected_column
