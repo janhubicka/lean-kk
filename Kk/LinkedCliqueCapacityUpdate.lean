@@ -201,10 +201,10 @@ theorem finiteDirectedCliqueCapacity_insert_no_growth
     ext x
     constructor
     · intro hx
-    obtain ⟨hxL, hxMutual⟩ := Finset.mem_filter.mp hx
-    have hxEdge : E x v = true := hxMutual.1
-    rw [hNo x hxL] at hxEdge
-    cases hxEdge
+      obtain ⟨hxL, hxMutual⟩ := Finset.mem_filter.mp hx
+      have hxEdge : E x v = true := hxMutual.1
+      rw [hNo x hxL] at hxEdge
+      cases hxEdge
     · simp
   rw [finiteDirectedCliqueCapacity_insert_eq E L v hv, hEmpty]
   rw [finiteDirectedCliqueCapacity_empty]
