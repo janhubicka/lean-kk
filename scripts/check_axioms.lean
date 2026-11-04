@@ -607,3 +607,19 @@ import Kk
 #print axioms Kk.mem_reservedBlocksUnion
 #check @Kk.henson_leftDense_selected_after_fresh_block_family
 #print axioms Kk.henson_leftDense_selected_after_fresh_block_family
+
+-- English-first adversarially audited true OLD-BLOCK mixed links.
+#check @Kk.directedClique_card_le_capacity
+#print axioms Kk.directedClique_card_le_capacity
+#check @Kk.finitePoolCliqueCheck_false_of_reserved_plus_link_capacity
+#print axioms Kk.finitePoolCliqueCheck_false_of_reserved_plus_link_capacity
+#check @Kk.finiteNeighbourCliqueCheck_false_of_link_capacity
+#print axioms Kk.finiteNeighbourCliqueCheck_false_of_link_capacity
+#check @Kk.henson_leftDense_realizes_later_selected_of_link_capacity
+#print axioms Kk.henson_leftDense_realizes_later_selected_of_link_capacity
+#check @Kk.k4OldLinks_capacity_regression
+#print axioms Kk.k4OldLinks_capacity_regression
+#check @Kk.k4OldLinks_safe_by_capacity
+#print axioms Kk.k4OldLinks_safe_by_capacity
+#check @Kk.k4OldLinks_bad_triangle_regression
+#print axioms Kk.k4OldLinks_bad_triangle_regression
