@@ -1,6 +1,18 @@
 # Verification plan
 
-## Current audited status — 4 November 2026 (after PR #62)
+## Current audited status — 5 November 2026 (after PR #65)
+
+**Reference:** [lean-kk PR #65](https://github.com/janhubicka/lean-kk/pull/65) merged to `main` as `4d8e3f8c277770fcff3811f49cebe0d5130d773a`. [Full source Lean CI 41933476329](https://github.com/janhubicka/lean-kk/actions/runs/41933476329) passed the complete build, strict parser negative/self-tests, and **283 exact named standard-only transitive-axiom reports** (only `propext`, `Classical.choice`, `Quot.sound`).
+
+**New actual arbitrary-subfront cover-or-equality theorem:** [`Kk/CoverSubfrontIntermediateLift.lean`](../Kk/CoverSubfrontIntermediateLift.lean) defines a genuine `IsSubfrontIntegerGraphAge d ell E H` on arbitrary active sort set `E⊆Fin d` using normalized clique-multiplicity witnesses supported INSIDE E. For any genuine full `AgeCover (IsIntegerGraphAge d ell) lower upper`, it proves that the two restricted relative ages are EQUAL or form a genuine COVER in the relative age poset. This includes all overlapping E, even those containing the canonical changed support T; the earlier PR #64 disjoint/minimal-support conditions are unnecessary here.
+
+**Exact intermediate lift (English proof first):** For any genuine relative intermediate age H between the endpoint restrictions, set the mixed RAW bounds B(S)=H(S) when S⊆E and B(S)=upper(S) otherwise. The lower full age lies below B, so the actual integer-witness canonical age G_B is a genuine full intermediate. Every saturating relative H-witness is zero outside E and respects ALL ambient B bounds: for U not inside E its contribution is on Q=U∩E; if Q empty, sum zero, otherwise `sum_Q w≤H(Q)≤upper(Q)≤upper(U)` by genuine upper-age monotonicity. Thus `G_B|E=H`, and the full cover forces G_B to equal one endpoint. The [English proof and 11-point hostile audit](cover_subfront_lift_english_audit.md) were committed at `727ced1d80679b0633026ff395f41c35921cc406` BEFORE the Lean source. No assumption that raw B is itself an age was made.
+
+**Independent adversarial finite check:** The manuscript branch includes `verify_cover_subfront_lift.py`, added to `make check-foundation`. It reconstructs ambient normalized integer-witness ages and all genuine covers, plus zero-supported relative ages on every selected subfront; exhaustive enumeration passed **2,268 cover/subfront instances** for 2 and 3 sorts with ell=3,4.
+
+**Remaining major gap:** Cover restriction **algebra** is complete; the physical numerical-H+ original-vertex clique-block *realization*, its prescribed old selected/parameter passing-column safety for every stage, and the parameter-closed Algorithm 5.4 I1/I2/I3/B3 microevent/source-record comparison are still unproved. The genuine common labelled inverse-source orbit and the unconditional upper and independent lower Ramsey bounds also remain open. In particular, the verified numerical-H K4 cut-10/cut-22 auxiliary B3 obstruction is not neutralized by this graph-age cover result. Do not turn the bounded resolved-copy lemma green.
+
+## Previous audited status — 4 November 2026 (after PR #62)
 
 **Reference:** [lean-kk PR #62](https://github.com/janhubicka/lean-kk/pull/62) merged to `main` as `88004c0c43a4d1dd7b5575ce4c6687c3c8a35e49`. [Full source Lean CI 41812326889](https://github.com/janhubicka/lean-kk/actions/runs/41812326889) passed the complete build and **271 exact named standard-only transitive-axiom reports**. This validates finite original-graph theorem interfaces, not the unconditional big Ramsey theorem.
 
