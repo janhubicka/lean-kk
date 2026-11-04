@@ -590,3 +590,9 @@ import Kk
 #print axioms Kk.appendIsolatedCliqueBlock_old_new_both_nonedges
 #check @Kk.appendIsolatedCliqueBlock_graph_valid_prefix
 #print axioms Kk.appendIsolatedCliqueBlock_graph_valid_prefix
+
+-- Finite genuine reserved block sequences, English-first audited.
+#check @Kk.henson_leftDense_ordered_reserved_blocks
+#print axioms Kk.henson_leftDense_ordered_reserved_blocks
+#check @Kk.ordered_reserved_block_cross_nonedges_of_lt
+#print axioms Kk.ordered_reserved_block_cross_nonedges_of_lt
