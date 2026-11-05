@@ -125,7 +125,7 @@ theorem henson_leftDense_linked_fresh_stage_finiteNumericH_complete_LE
     (hAvoid : ∀ bad, bad ∈ hensonForbiddenFamily ell hell →
       bad.Avoids (normalizedGraphModel adj))
     (hDense : OnePointLeftDense adj ell)
-    (base B : Nat) (hBase : 0 < base)
+    (base B : Nat)
     (block : Nat → Option (Fin B))
     (oldNeighbour : Nat → Bool)
     (hCross : ∀ x y (b c : Fin B),
@@ -138,7 +138,8 @@ theorem henson_leftDense_linked_fresh_stage_finiteNumericH_complete_LE
       (liveReservedBlock base B block oldNeighbour b).card +
       finiteDirectedCliqueCapacity adj
         (linkedUnreserved adj base B block oldNeighbour b) < ell-1)
-    (sizes : List Nat) (hSmall : ∀ r ∈ sizes, r < ell-1) :
+    (sizes : List Nat) (hSmall : ∀ r ∈ sizes, r < ell-1)
+    (hSomeFresh : ∃ r ∈ sizes, 0 < r) :
     ∃ (fresh : List (Finset Nat)) (front v N : Nat),
       fresh.map Finset.card = sizes ∧
       fresh.Pairwise (OrderedReservedBlockCrossNonedges adj) ∧
@@ -189,7 +190,16 @@ theorem henson_leftDense_linked_fresh_stage_finiteNumericH_complete_LE
       ell hell adj hAvoid hDense base B block oldNeighbour
       hCross hPlain hBudget sizes hSmall
   let N : Nat := hPosition ell v ell + 1
-  have hvPos : 0 < v := by omega
+  have hvPos : 0 < v := by
+    obtain ⟨r, hrSize, hrPos⟩ := hSomeFresh
+    have hrInCards : r ∈ fresh.map Finset.card := by
+      rw [hCards]
+      exact hrSize
+    obtain ⟨S, hS, hCard⟩ := List.mem_map.mp hrInCards
+    have hSPos : 0 < S.card := by omega
+    obtain ⟨x, hx⟩ := Finset.card_pos.mp hSPos
+    have hxFront : x < front := ((hProps S hS).1 x hx).2
+    omega
   have hHeight : 0 < ell := by omega
   have hTarget : hPosition ell v ell < N := by
     dsimp [N]
