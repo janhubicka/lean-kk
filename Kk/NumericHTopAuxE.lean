@@ -31,6 +31,20 @@ namespace Kk
 
 open SuccessorTree.V10
 
+/-- An older original at any generation q≤k lies at or before the
+previous ORIGINAL block's top real position. The predecessor index
+may equal i; in that case compare generations directly. -/
+private theorem older_real_position_le_previous_top
+    (k i j q : Nat) (hij : i < j) (hq : q ≤ k) :
+    hPosition k i q ≤ hPosition k (j-1) k := by
+  have hi : i ≤ j-1 := by omega
+  rcases lt_or_eq_of_le hi with hlt | heq
+  · exact Nat.le_of_lt
+      (hPosition_lt_of_block_lt k i (j-1) q k hq hlt)
+  · rw [heq]
+    unfold hPosition
+    omega
+
 /-- EXACT top-real auxiliary E-column in numerical H, for ALL lower
 numerical coordinates u, including odd fake coordinates. The cut is
 the first *missing* coordinate. No original graph L assumptions. -/
@@ -64,9 +78,8 @@ theorem numericH_top_auxE_all_earlier_real
     (hk : 0 < k) (hj : 0 < j)
     (hij : i < j) (hq : q ≤ k) :
     exactHEBool k (hPosition k i q) (hPosition k j k) = true := by
-  have hi : i ≤ j-1 := by omega
   have hPosLe : hPosition k i q ≤ hPosition k (j-1) k :=
-    hPosition_mono k i (j-1) q k hi hq
+    older_real_position_le_previous_top k i j q hij hq
   exact (numericH_top_auxE_true_iff
     k j (hPosition k i q) hk hj).2 (by omega)
 
@@ -229,10 +242,9 @@ theorem henson_leftDense_linked_fresh_stage_finiteNumericH_complete_LE
       apply (finiteNumericH_top_auxE_true_iff
         (normalizedGraphModel adj) ell N v
         (hPosition ell x q) hHeight hvPos hTarget).2
-      have hxPre : x ≤ v-1 := by omega
       have hxPos :
           hPosition ell x q ≤ hPosition ell (v-1) ell :=
-        hPosition_mono ell x (v-1) q ell hxPre hq
+        older_real_position_le_previous_top ell x v q hx hq
       omega
     exact ⟨hLBits.1, hLBits.2, hEBit⟩
   · intro S hS x hx y hy q m hq hm
