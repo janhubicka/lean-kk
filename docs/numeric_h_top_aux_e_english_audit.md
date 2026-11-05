@@ -41,7 +41,7 @@ Similarly all odd fake source coordinates below the cut are auxiliary E-positive
 
 Use the real Henson one-step construction from PR #67 (which itself composes PR #56's safe old-neighbourhood and genuine fresh reserved original selection). Its source hypotheses explicitly include normalized Henson graph-age avoidance, separately stipulated complete-column `OnePointLeftDense`, genuinely negative pure-unreserved and per-old-block linked-capacity tests, and fresh block sizes strictly `<ell-1`. The result returns actual selected original `v≥front≥base`, fresh original clique blocks and exact old-to-top L bits for every older original generation, two-sided, plus cross-block nonedges and designated positive clique atoms.
 
-For the E part, require the harmless chronological condition `base>0`, so the returned selected original `v>0` (without assuming something not included in the previous theorem's existential interface). Set
+For the E part, a hostile interface audit exposed an IMPORTANT point: PR #67's existential output gives `front≤v` but does not explicitly give `base≤front` when the fresh-block list is empty. Hence merely assuming `base>0` does NOT imply `v>0` from that theorem interface. To use the positive-top E formula rigorously, REQUIRE `∃r∈sizes,0<r`: the actual cover event reserves at least one genuinely nonempty fresh clique block. Its selected original x lies in a fresh block with `base≤x<front≤v`, proving `v>0` without silently strengthening PR #67. This is natural for a nontrivial canonical cover gadget and is displayed in the combined theorem. Set
 
   `N = ι(v,ell)+1`.
 
@@ -58,7 +58,7 @@ This is a true finite **one-step physical L+ record** in the numerical-H constru
 
 ## D. Hostile audit and limits
 
-1. **The top target original must be positive.** The theorem `generatedE_top_iff` requires `j>0` and `k>0`. For the combined real Henson step, `ell≥2` supplies the height; explicitly require `base>0` to ensure `v>0`. Do not assert the top E cut at j=0.
+1. **The top target original must be positive.** The theorem `generatedE_top_iff` requires `j>0` and `k>0`. For the combined real Henson step, `ell≥2` supplies the height; require at least one fresh block of positive cardinality, then use its actual original index x<front≤v to prove v>0. The case with no positive-size fresh block requires a separate j=0 root argument or an explicit v>0 result; it is not covered by this physical gadget theorem.
 2. **Literal finite carrier clipping matters.** `finiteNumericHE k N u v` is FALSE if the target `v≥N`. Require `ι(j,k)<N`, and in the physical step choose `N=ι(j,k)+1`. The L table may be defined globally, but the L+ *structure's carrier* is finite.
 3. **Fake sources are included.** The E column is quantified over ALL `u<cut`, including odd fake numeric vertices. Since those have no binary L atoms, do not mistake them for isolated L+ vertices.
 4. **The E-column is independent of the base graph's L edges.** In particular older original copies with prescribed L bit zero still have E bit one. This is a concrete obstruction to replacing the full parameter-closed B3 source by the marked selected/front L shadow.
