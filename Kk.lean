@@ -32,6 +32,7 @@ import Kk.PrefixCutRigidity
 import Kk.HBlockNonedges
 import Kk.HBlockClique
 import Kk.NumericHDesignatedPositive
+import Kk.NumericHFullSelectedColumn
 import Kk.LaterSelectedMixedPools
 import Kk.LaterSelectedExactMixing
 import Kk.LinkedCliqueCapacity
