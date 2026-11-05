@@ -711,3 +711,13 @@ import Kk
 #print axioms Kk.integerGraphAge_cover_no_relative_intermediate
 #check @Kk.integerGraphAge_cover_restrict_eq_or_cover
 #print axioms Kk.integerGraphAge_cover_restrict_eq_or_cover
+
+-- Actual numerical-H complete selected-top L column, old/fresh all-generation nonedges.
+#check @Kk.numericH_older_generation_to_top_exact
+#print axioms Kk.numericH_older_generation_to_top_exact
+#check @Kk.numericH_henson_top_full_column_both
+#print axioms Kk.numericH_henson_top_full_column_both
+#check @Kk.numericH_henson_nonedges_all_generations_both
+#print axioms Kk.numericH_henson_nonedges_all_generations_both
+#check @Kk.henson_leftDense_linked_fresh_stage_numericH_complete_L
+#print axioms Kk.henson_leftDense_linked_fresh_stage_numericH_complete_L
