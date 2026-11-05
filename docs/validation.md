@@ -1,6 +1,18 @@
 # Verification plan
 
-## Current audited status — 5 November 2026 (after PR #65)
+## Current audited status — 5 November 2026 (after PR #67)
+
+**Reference:** [lean-kk PR #67](https://github.com/janhubicka/lean-kk/pull/67) merged to `main` at `87be3df0e9f157acf6f7e5812011f3ab5ee655f8`. [Full source Lean CI 41939617150](https://github.com/janhubicka/lean-kk/actions/runs/41939617150) passed the complete build and **287 exact named standard-only transitive-axiom reports**, only `propext`, `Classical.choice`, and `Quot.sound`. This is one-step PHYSICAL numerical-H binary L geometry under explicitly displayed Henson left-density and old-neighbourhood hypotheses, not the unconditional big Ramsey upper or lower degree.
+
+**True numerical-H full binary selected column:** [`Kk/NumericHFullSelectedColumn.lean`](../Kk/NumericHFullSelectedColumn.lean) proves that for any original `i<j`, any older generation `q≤k` and new selected TOP generation `k`, the ACTUAL numerical-H binary generation gate is ALWAYS OPEN (`q<k` or `q=k=m`). Therefore `L_H(ι(i,q),ι(j,k))=E_original(i,j)` as an EXACT directed Boolean bit, including zero and old TOP-generation copies. Under genuinely symmetric Henson original graph avoidance it holds in BOTH directions. Every actual original nonedge between old and fresh reserved originals remains absent at ALL numerical generations and in both tuple orientations.
+
+**Actual Henson one-stage physical L gadget:** Combining the verified PR #56 genuine selected original plus arbitrary finite fresh isolated reserved clique blocks with the literal numerical-H rules gives a real one-step selected TOP binary column on EVERY older original/generation, exactly including old selected/parameter edges, fresh reserved clique positives and all skipped original-index zero passing bits. It also certifies all-generation old-to-new reserved nonedges and positive designated fresh clique-generation edges. The full theorem remains CONDITIONAL on the actual previously prescribed old mixed-neighbourhood and live-block clique-capacity certificates, and the separately stipulated exact Henson one-point left-density property.
+
+**Adversarial evidence:** The [English proof and fourteen hostile tests](numeric_h_full_column_english_audit.md) were committed as `0ae8f474b52e59d0fe6483e8ab00f26da6eae3c4` BEFORE the Lean source. The independent manuscript referee `verify_numeric_h_full_column.py`, registered in `make check-foundation`, reconstructed the literal real-real generator across **4096** directed four-original graphs and five numerical heights, verifying **737,280** old-to-top binary atoms, **1,351,680** all-generation absent atoms, and **19,974** designated positive clique atoms.
+
+**Still OPEN:** This exact physical binary L-atom construction has not established the intended *graph-age COVER drop* in the actual numerical-H gadget, auxiliary `E` records and free levels, selected Algorithm 5.4 I1/I2/I3 full dependent parameter closure and corrected (B3), or any common labelled inverse-source orbit. The genuine numerical-H K4 auxiliary microcut remains a critical regression. The separately proposed exact top incoming E/free-level bridge is tracked in [draft PR #68](https://github.com/janhubicka/lean-kk/pull/68) and is NOT YET validated at this snapshot.
+
+## Previous audited status — 5 November 2026 (after PR #65)
 
 **Reference:** [lean-kk PR #65](https://github.com/janhubicka/lean-kk/pull/65) merged to `main` as `4d8e3f8c277770fcff3811f49cebe0d5130d773a`. [Full source Lean CI 41933476329](https://github.com/janhubicka/lean-kk/actions/runs/41933476329) passed the complete build, strict parser negative/self-tests, and **283 exact named standard-only transitive-axiom reports** (only `propext`, `Classical.choice`, `Quot.sound`).
 
