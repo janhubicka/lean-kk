@@ -743,3 +743,7 @@ import Kk
 #print axioms Kk.finiteNumericH_top_seed_forces_genOne_parameter
 #check @Kk.henson_numericH_top_seed_forces_genOne_parameter
 #print axioms Kk.henson_numericH_top_seed_forces_genOne_parameter
+
+-- Actual AlgorithmRun selected generation-one numerical level persists to every lower Kpt closure.
+#check @Kk.finiteNumericH_run_selected_genOne_in_lower_closure
+#print axioms Kk.finiteNumericH_run_selected_genOne_in_lower_closure
