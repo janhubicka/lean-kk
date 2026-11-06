@@ -721,3 +721,15 @@ import Kk
 #print axioms Kk.numericH_henson_nonedges_all_generations_both
 #check @Kk.henson_leftDense_linked_fresh_stage_numericH_complete_L
 #print axioms Kk.henson_leftDense_linked_fresh_stage_numericH_complete_L
+
+-- Actual finite numerical-H+ selected top E column and full L+ step.
+#check @Kk.numericH_top_auxE_true_iff
+#print axioms Kk.numericH_top_auxE_true_iff
+#check @Kk.finiteNumericH_top_auxE_true_iff
+#print axioms Kk.finiteNumericH_top_auxE_true_iff
+#check @Kk.numericH_top_auxE_all_earlier_real
+#print axioms Kk.numericH_top_auxE_all_earlier_real
+#check @Kk.finiteNumericH_top_freeLevel_exact
+#print axioms Kk.finiteNumericH_top_freeLevel_exact
+#check @Kk.henson_leftDense_linked_fresh_stage_finiteNumericH_complete_LE
+#print axioms Kk.henson_leftDense_linked_fresh_stage_finiteNumericH_complete_LE
