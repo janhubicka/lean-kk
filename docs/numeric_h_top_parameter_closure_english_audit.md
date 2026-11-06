@@ -75,3 +75,27 @@ correction is documented before claiming a new Lean result.
 Write `Kk/NumericHTopParameterClosure.lean` importing the verified `NumericHTopAuxE` and `B3GadgetClosureParameter` modules. Prove (a) real predecessor generation-one position is inside the finite carrier and has strictly positive actual free level for 0<i<j and k>1; (b) its positive incoming top E and strict below-top-free-level position; (c) genuine parameter membership under explicit `c∈I` and top seed X, for an actual finite H+; (d) Henson specialization deriving finite H family avoidance from original normalized family avoidance.
 
 Register all public endpoints in exact named transitive-axiom audit. Require successful pinned Lake full build and standard-only axiom reports before adding GREEN manuscript markers; leave CONDITIONAL closure conclusions BLUE when used in the prescribed macrodiary. Edit only OLIVE prose, TODO notes and validation files, not protected BLACK mathematical prose.
+
+
+## English-first strengthening: actual AlgorithmRun selection persists to lower-cut parameter closure
+
+The genuine run interface `SMTree.Envelope.AlgorithmRun (normalizedKptSMTree family) X runHeight` provides the checked exact final-tail identity
+`R.I_eq_final_tail_of_run`. Let `c=ι(i,1)` be a positive generation-one original as above and `c<runHeight`. Suppose an **actual AlgorithmRun** selects it at its own cut:
+`c∈R.I c`.
+
+Then `R.I_eq_final_tail_of_run c` implies `c∈R.I 0`. For ANY earlier scan cut `p<c`, the same identity at `p+1` and `p+1≤c` imply
+`c∈R.I (p+1)`.
+
+Therefore the already proved genuine top-seed/gen-one Kpt source-forcing theorem, with selected-level set `I=R.I (p+1)`, forces the actual Kpt original at c into
+`SMTree.Envelope.closure (admissibleKptSTree family) (R.I (p+1)) X`.
+This is precisely the uniform mechanism used in the existing concrete K4 proof, where c=22 and p=10.
+
+**Adversarial distinctions:**
+* The new statement still requires a TRUE run-level selection `c∈R.I c`; the exact top auxiliary E-column alone does not establish it.
+* The run must actually reach c (`c<runHeight`); inventing a selected level beyond the run height is invalid.
+* Its conclusion is closure membership at an earlier scan stage, not that p itself is interesting, nor any corrected B3 obstruction at p. The K4 cut-10 selection uses an ADDITIONAL, independently checked two-upper B3 witness.
+* The top seed is a genuine `kptOriginal` in X and the Kpt family/finite H avoidance certificate is kept fixed.
+* No inverse-source equality across distinct runs or occurrence-independent microdiary is deduced.
+* The proof is English-first and uses only the already checked run-tail theorem plus the preceding new physical Kpt closure interface; do not advertise it as kernel checked before complete CI.
+
+Add the named theorem `finiteNumericH_run_selected_genOne_in_lower_closure` to Lean and strict axiom reports.
