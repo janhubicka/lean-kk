@@ -178,4 +178,58 @@ theorem henson_numericH_top_seed_forces_genOne_parameter
       (by intro x; trivial) ell N hAvoid)
     I X hSeed hSelected
 
+
+/-- An ACTUAL AlgorithmRun selection of an earlier positive-generation
+original c=iota(i,1) forces its complete Kpt parameter node into
+the genuine closure at EVERY earlier scan cut p<c, provided the
+later top Kpt original is a real seed.
+
+The selected-level premise is now c ∈ R.I c of a genuine AlgorithmRun,
+not an arbitrary externally postulated level-set I. The checked
+R.I_eq_final_tail_of_run identity propagates its membership into
+R.I (p+1), where the physical S3 parameter theorem applies.
+
+This does NOT assert that every E-positive earlier original is
+selected, or that the earlier cut p itself is interesting. In the
+literal K4 gadget the latter needs an additional actual two-upper
+corrected-B3 failure; that separate selection is already checked. -/
+theorem finiteNumericH_run_selected_genOne_in_lower_closure
+    {db du dd : Nat}
+    (family : List (NormalizedForbidden db du dd))
+    (K : AgeTestModel db du dd)
+    (k N i j : Nat)
+    (hk : 1 < k) (hi : 0 < i) (hij : i < j)
+    (hTop : hPosition k j k < N)
+    (hFiniteAvoid : ∀ bad, bad ∈ family →
+      bad.Avoids (finiteNumericH K k N).L)
+    (X : Set (AdmissibleKptNode family))
+    (hSeed :
+      (finiteNumericH K k N).kptOriginal family hFiniteAvoid
+        (⟨hPosition k j k, by
+          change hPosition k j k < N
+          exact hTop⟩ : Fin (finiteNumericH K k N).size) ∈ X)
+    (runHeight : Nat) (hScan : hPosition k i 1 < runHeight)
+    (R : SMTree.Envelope.AlgorithmRun
+      (normalizedKptSMTree family) X runHeight)
+    (hSelected :
+      hPosition k i 1 ∈ R.I (hPosition k i 1))
+    (p : Nat) (hp : p < hPosition k i 1) :
+    ∃ hiCarrier : hPosition k i 1 < (finiteNumericH K k N).size,
+      (finiteNumericH K k N).kptOriginal family hFiniteAvoid
+        (⟨hPosition k i 1, hiCarrier⟩ :
+          Fin (finiteNumericH K k N).size) ∈
+        SMTree.Envelope.closure
+          (admissibleKptSTree family) (R.I (p+1)) X := by
+  let c : Nat := hPosition k i 1
+  have hFinal : c ∈ R.I 0 := by
+    rw [R.I_eq_final_tail_of_run c (by simpa [c] using hScan)]
+      at hSelected
+    exact hSelected.1
+  have hAtPrevious : c ∈ R.I (p+1) := by
+    rw [R.I_eq_final_tail_of_run (p+1) (by omega)]
+    exact ⟨hFinal, by omega⟩
+  exact finiteNumericH_top_seed_forces_genOne_parameter
+    family K k N i j hk hi hij hTop hFiniteAvoid
+    (R.I (p+1)) X hSeed hAtPrevious
+
 end Kk
