@@ -40,9 +40,35 @@ There is NO additional arbitrary `hAvoidFiniteH` axiom or raw finite table model
 9. **The same forbidden family and avoidance witness must be used.** Avoidance of the full normalized family (loops and both asymmetric pair types, not just the K_ell clique) is required to form admissible Kpt originals. The base Henson avoidance transfers to the finite H via a checked age theorem.
 10. **No converse.** The parameter closure could contain other nodes via meet/parameter steps; failure of c∈I or positive free level does not prove c absent from the closure.
 11. **No B3 conclusion merely from node membership.** Membership can make a new auxiliary upper type relevant, but whether it produces a genuinely new corrected B3 obstruction still needs a full continuation witness or equality of dependent L+ types.
-12. **K4 microcut remains.** For height 4, original 2 generation one has numerical coordinate 22 and the later top original 3 is at 38. The existing K4 theorem gives forced closure if `22∈I` and top 38 is seeded. The present uniform theorem subsumes the general numerical mechanism, not the still-open `22∈I` premise.
+12. **The concrete K4 level is ALREADY ACTUALLY SELECTED.** For height 4, original 2 generation one has numerical coordinate 22 and the later top original 3 is at 38. The separately verified `k4Gadget_algorithmRun_selects_cut22` proves **22∈R.I 22** for any genuine AlgorithmRun seeded at 38 and scanning past 22. `k4Gadget_algorithmRun_q2_in_cut10_closure` then proves the genuine Kpt original at 22 belongs to the closure at cut 10, and `k4Gadget_algorithmRun_selects_cuts10_22` proves BOTH cuts are selected. Thus the concrete K4 selected-level premise is **DISCHARGED**, not open. The new theorem generalizes the parameter mechanism to ALL earlier positive originals, while the genuinely open task is proving the intended canonical resolved-copy schedule handles every such selected microevent occurrence-independently.
 13. **No unconditional common labelled source orbit.** Different occurrences might select different I or different seeds X, so even identical L+ columns do not force identical parameter closures.
 14. **No replacement for physical canonical cover.** This proves a source-forcing implication for the actual numerical H constructor. It does not say the canonical clique-cover block causes precisely one prescribed graph-age drop or that all unmarked lower-generation cuts are boring.
+
+## Audit correction: concrete K4 is a verified counterexample to a boring-first-level shortcut
+
+An inspection of current `lean-kk/main` uncovered the existing modules
+`Kk/K4ActualAlgorithmRunCut22.lean` and
+`Kk/K4ActualAlgorithmRunCut10.lean`. They are stronger than the
+older uncertainty about whether level 22 is selected:
+
+* For any actual `AlgorithmRun` with the numerical K4 top Kpt
+  original 38 seeded and run height `ell>22`,
+  `k4Gadget_algorithmRun_selects_cut22` proves `22∈R.I 22`;
+* by the real run's final-tail identity, level 22 remains in
+  `R.I 11`. Together with its positive free level 11,
+  `k4Gadget_algorithmRun_q2_in_cut10_closure` shows the **actual**
+  Kpt original at 22 lies in the parameter closure at cut 10;
+* `k4Gadget_algorithmRun_selects_cut10` then forces 10 as an
+  actual interesting level as well, and
+  `k4Gadget_algorithmRun_selects_cuts10_22` packages both results.
+
+Therefore the K4 gadget's extra microevent is NOT merely a
+possible selected level from an E gate: it is **unavoidable for
+the specified seeded run**. Any eventual canonical diary must
+incorporate it or use a different numerical H arrangement where
+the actual full run has been checked. General equivalence of
+source records for two occurrences remains unresolved. This
+correction is documented before claiming a new Lean result.
 
 ## Lean contract and manuscript discipline
 
