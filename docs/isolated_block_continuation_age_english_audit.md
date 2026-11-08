@@ -1,5 +1,7 @@
 # Exact finite gluing with an isolated reserved block
 
+**Validation update, 8 November 2026:** the four endpoints below are now implemented in `Kk/IsolatedBlockContinuationAge.lean`. The combined local full build and 305-endpoint strict axiom audit passed; see [the dated validation status](validation.md) and [exact verification record](audits/2026-11-08-local-validation.json). Hosted CI remains a separate pending gate. Numerical-H prefix capacities, simultaneous marked columns and the canonical-age adapter remain application obligations. The original pre-implementation plan below is retained as provenance.
+
 ## Status and implementation boundary
 
 This English proof and adversarial audit are written before the proposed

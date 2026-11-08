@@ -10,13 +10,18 @@ The counterexample modules (`GraphAgeShadow`, `K4AuxiliaryShadow`, `UniformAuxil
 
 See [the current status and dated evidence](docs/validation.md) for the exact theorem interfaces, counterexamples, open obligations, and CI run links.
 
+**8 November review branch:** the repaired numerical-H parameter closure, chronological propagation through actual AlgorithmRun stages, and exact finite isolated-block continuation criterion pass the full local build and **305 exact named standard-only axiom reports**. The [verification record](docs/audits/2026-11-08-local-validation.json) identifies the exact source revision, all source hashes and dependency pins, and every named report. This is local verification of the combined PR #70/#72/#73 source; their remote CI and merge gates are separate and remain pending at this checkpoint. The finite gluing theorem still needs its actual numerical-H prefix, simultaneous-front-column and canonical-age adapters.
+
 ## Build and axiom audit
 
-```sh
+```bash
+set -euo pipefail
 lake update
 lake exe cache get
 lake build
-lake env lean scripts/check_axioms.lean
+lake env lean scripts/check_axioms.lean | tee axioms.log
+python3 scripts/check_axiom_report.py --self-test
+python3 scripts/check_axiom_report.py scripts/check_axioms.lean axioms.log
 ```
 
 The transitive axiom audit checks the named theorem endpoints, not whether their hypotheses have been discharged for the manuscript's application. Changes must pass the full build before being described as Lean-validated.

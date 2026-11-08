@@ -1,0 +1,1693 @@
+{
+  "recorded_utc": "2026-11-08T14:40:51.094226+00:00",
+  "kind": "completed local full build and named transitive-axiom audit",
+  "is_remote_ci_result": false,
+  "local_source_commit": "e8c2fd090bf326bbbe1fc1e562bd373b3204865e",
+  "source_tree": "1ce1a26dfc23b0837d6aad54a1192c1fa2250977",
+  "source_equivalent_remote_commit": "1716d13d04f3797abc6d2529ff68adeb3d36b248",
+  "source_equivalent_remote_pr": 73,
+  "baseline_endpoint_count": 292,
+  "audited_endpoint_count": 305,
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "gate_output": "PASS: 305 exact transitive-axiom reports; only Classical.choice, Quot.sound, propext",
+  "parser_self_test_output": "PASS: axiom-report parser rejects missing/extra/custom-axiom reports",
+  "lean": {
+    "version": "4.35.0-rc3",
+    "commit": "470d5ce1400764999581fd26d5d72b00d990b0f4",
+    "official_archive_url": "https://github.com/leanprover/lean4/releases/download/v4.35.0-rc3/lean-4.35.0-rc3-linux.tar.zst",
+    "official_archive_bytes": 595611952,
+    "official_archive_sha256": "1526de16c0496f16b46a168f26c990af4e3796505273c3342fec17d72d763997",
+    "worker_count": 2
+  },
+  "dependency_revisions": {
+    "«successor-tree-lean»": "a74c10761303a18649053f2af3a1a1697f032e13",
+    "«ramsey-space-todorcevic»": "bb29d1f3f36ff37a35857247ca9fae581fa1fa43",
+    "mathlib": "5bd58ac291422a21f412ae354c91e7d172255a2c",
+    "plausible": "b7fb2b866d25bd937a2069931f9733197521cb27",
+    "LeanSearchClient": "c35806f43135ab3f254429d0c00bd13fc0123f77",
+    "importGraph": "103cd9a46972ee39d9defb2f54ae49823b1228eb",
+    "proofwidgets": "87dfe779d5dfd03142ee4fe158911b8eb553ec98",
+    "aesop": "a92ed98e694702934d40d12f24a1a449144db43e",
+    "Qq": "37b0ba0b26109cf9f9c541f0f9557e50cfa1a3b9",
+    "batteries": "950339ce0fd0cc0673a22d87036075737586aed2",
+    "Cli": "843844fa601dd56767b1eb22b7ada5b64d5e567a"
+  },
+  "runtime_path_workaround": {
+    "purpose": "Resolve only this process's executable path through /proc/self/exe in the executor PID namespace.",
+    "kernel_or_proof_flags_changed": false,
+    "source": "#define _GNU_SOURCE\n#include <dlfcn.h>\n#include <stdio.h>\n#include <string.h>\n#include <unistd.h>\n/* Lean 4.35 requests its own executable via /proc/<pid>/exe. This runtime's\n   supported self alias is /proc/self/exe. Only normalize that exact self path;\n   all other filesystem calls are delegated unchanged. */\nssize_t readlink(const char *path, char *buf, size_t bufsiz) {\n  static ssize_t (*next_readlink)(const char *, char *, size_t);\n  if (!next_readlink) next_readlink = dlsym(RTLD_NEXT, \"readlink\");\n  char self_path[80];\n  snprintf(self_path, sizeof self_path, \"/proc/%ld/exe\", (long)getpid());\n  if (strcmp(path, self_path) == 0) path = \"/proc/self/exe\";\n  return next_readlink(path, buf, bufsiz);\n}\n"
+  },
+  "checked_source_sha256": {
+    "Kk.lean": "3dec01b315f7bb570c47650a6f7d40965b9939f4c8e70fb3502fdaa56fff05f4",
+    "Kk/AlgorithmRunParameterPropagation.lean": "8408d33bea05ebf3ffde8d556f230c7272f41e6684d8a481f583b8753b8a1029",
+    "Kk/AlgorithmRunSingleB3Selection.lean": "7ec73271e0d8a3a717e26c6f914c6c81f10afa9e592a31de149382d37682766b",
+    "Kk/AlgorithmRunTwoB3Selection.lean": "4ce18eb087876facb1440d392eb1994b4e7ef189159c135cdd7a964a13ca181f",
+    "Kk/B3CutStarLocality.lean": "ea39379a66e34278be80fd8409dbea3e6acf26ab15aefa573496f32f6d107d73",
+    "Kk/B3GadgetClosureParameter.lean": "3178105e594ba750f96fecf461e5b8c5fc508b441274ae9abd7d7989d0a19471",
+    "Kk/B3OneGapCrossing.lean": "9a630175898012a6cfbfe46fc34a0b24195671fa4dd7f1c2967a73debd3732bb",
+    "Kk/B3OneGapInteresting.lean": "38365c1dc02f514b6b2bde244b6d5df621643b33bdb9c2801d6fdf016d75660c",
+    "Kk/B3ReductProfile.lean": "22f59ed82a372765a66c989ee3b9a0eeffd2725633b6a887da144da2dd228e35",
+    "Kk/B3SkipNecessity.lean": "248e37cc892f78077fcddfea96e1eb9bdc1a1b80030172daa35b1bebf311520e",
+    "Kk/B3SmallCliqueCore.lean": "38fde18c32a7dff25b45fa02d4a6f41c08c547a23dfa51bd99c96178d8a8b792",
+    "Kk/B3TwoAmbientOutputs.lean": "111b2ee5d21c79dc9adc644ab61b5d2f255d7f4c942e8582d7d1deead4347a12",
+    "Kk/B3TwoGapCrossing.lean": "ea454d3468712babfd6748f9be09416fffe14d5486996619fcdb7979b7e999b9",
+    "Kk/CanonicalCoverBlock.lean": "a6733ba601348b3c262b9071f8d46081381ca7a245f03be76c4ab77e31cdc30d",
+    "Kk/CanonicalCoverEventLocality.lean": "99017dfe96e7eb818d487c8ae85f833f83fe704fded7d059695919bc440678f6",
+    "Kk/CommonCap.lean": "fa08d4b46f0bb1941e98ddba4e153b0d5014cd3c081608e1636dce768d7a0b89",
+    "Kk/CountableOrbitTransfer.lean": "ac5c73167a66bd7a2483a33cea5793854de78b7b902ebcfdaa30a79445f5fdef",
+    "Kk/CoverSubfrontIntermediateLift.lean": "8e8e1f0fee63085dcefa8080b3bdc34a38e30f427c5c20d99745c57815acd869",
+    "Kk/DeactivationBudgetTransfer.lean": "8612044229b2037344842d520b891c58881e9530212f5a2088eb5f7aa4b9bfae",
+    "Kk/DiaryTransfer.lean": "b7efa043ce10224b4229a07ab7bac460ba5fa30502ba6a775cd72eac179c45ae",
+    "Kk/FiniteNeighbourCertificates.lean": "b987184131e7503406db69605598717ab41d5daee2235b3b641ca23dbb384fab",
+    "Kk/FiniteNeighbourSchedule.lean": "f27358abc631d37038ae4437a3bc9f728fbfab886282add2ddfb30639bbaf93f",
+    "Kk/FirstSelectedAfterReserved.lean": "9716766700f500a335a955780a77bffc5a1719b063a4b77e6f6ffc1221d5e2d6",
+    "Kk/FreshReservedOriginals.lean": "9fa1bdd83e0781f827aab63f27cb22b2f9cd06c2b27de67416423ad8ff44eca2",
+    "Kk/GraphAgeShadow.lean": "d982669cdea63eb073ae4b333c5c1615e513782f3230c7c18031bf76c631daef",
+    "Kk/HBlockClique.lean": "4f066f41483ad12f89396bf4725c9dce5058dfddcf6535eee5a1c9753aa307a1",
+    "Kk/HBlockNonedges.lean": "d8b496ce948e0c3e805133a746d3933fd9eefccde4b3987a3395c15c12c70796",
+    "Kk/HBlockSupport.lean": "bbc71f7cbc00cf1da60c7366d701d3d6417c8770d16004d1bf16e3c3eb665474",
+    "Kk/HFirstGadgetFreeCut.lean": "b6c0b606721e432d65a024b251de0b497a9ca1f0ab52273f6d95637a1f26562d",
+    "Kk/HensonAlgorithmRunAllGenerationCapacity.lean": "4b883f983624926bbc95e2fae3aacd24fdd99c6655653f916ae58da15e4a7891",
+    "Kk/HensonAlgorithmRunCliqueCapacity.lean": "e41ca9b82579a7af79d49a6a943a23aa6bb1cfebcbd93cb54b91e8bd8778b413",
+    "Kk/HensonAlgorithmRunCliqueWitness.lean": "0a456a41d86389b18c326aaefc496595eed8f4b97062b99da1b03e1b96451bec",
+    "Kk/HensonAlgorithmRunGenerationCutoff.lean": "ff621704939ffa9f44d0b9922ae6c70a0b5c905729829d96cf5015134e3d4876",
+    "Kk/HensonAlgorithmRunHigherCapacity.lean": "8a4c7d54f21db611c575c7d6f04c27eb36559a4a87620602d9c1c1ff3429a7b4",
+    "Kk/HensonAlgorithmRunLowerI3.lean": "35c32849a8ab3383f40f0eba3f7fac982dd3c9564c165bb45e3925ef3993a320",
+    "Kk/HensonAlgorithmRunSharpCliqueCapacity.lean": "be804c7425bb5b41a1ad81e5d462563dc5bb78ffc2f4b49c2ffa7ce96d4156bb",
+    "Kk/HensonAlgorithmRunTop.lean": "9e3bb9cc4bd2a1f85b34c0ac2023a22ace04b1f008e47ad11cbc3aa56546afe2",
+    "Kk/HensonAlgorithmTopI3.lean": "830c9b0e3c95c05fbe9a20935e03056269a5a209c1155a1f0f4b98cf3dea2ac9",
+    "Kk/HensonAnyGenerationHigherSignature.lean": "3e3c7377efe55e1b24d650a41357f7e9ff311289229a1bf8b4523c86f89d0b54",
+    "Kk/HensonB3Asymmetry.lean": "25767448cc2bd86fd3c2459ed7b14fdfcfcb021a5af4aaee1cce3cc5668050a5",
+    "Kk/HensonCliqueHigherSignature.lean": "8dba318f2718d44c06829fe8e4f71bd9cdc14002dafe7184e6fcab8815aaa9f5",
+    "Kk/HensonEncoding.lean": "efac044e257ce19e93f73b558840daa5bed950b0082396ba4d7ae6788b0b4035",
+    "Kk/HensonI3CliqueWitness.lean": "6aa45c9b57bd8d6995ee237fbbc3e1e3dd26b835f1a7c6cd34c799c0106eeed5",
+    "Kk/HensonI3ClosureBridge.lean": "60e6152d8bf7412a280cdc9e4fc52a35c683d428bc33964eff5e6a2211ca05f0",
+    "Kk/HensonI3Generation.lean": "5d69c1ec91db259a6582f803e6217687f383075dadd5ae106213d59a9ff636d7",
+    "Kk/HensonI3PatternSize.lean": "cc34143f47027e1b8e68ede1f79e7e34b0614a84f6f486d38ff27d61c1d56775",
+    "Kk/HensonLeftDensityAge.lean": "98894bd47dea757d2f42703925585dc0b1597132fb3d93c9ca1cbf5c92837a4c",
+    "Kk/HensonLeftDensityBridge.lean": "a5bdb42481242fc1e62993e616b0cba1e3a95c8670e8a715d41db12518f34d22",
+    "Kk/HensonSelectedI3.lean": "58d8a1b5574933b64f828482d8499a67531ce418405f93a82a7f5e51cb168e0f",
+    "Kk/HensonTopI3.lean": "a169e055f650b5ee118b801917d374e4fee8a7f5a55d769020b472c7425c0404",
+    "Kk/HensonZeroGenerationClique.lean": "ed17eaea2966f212e823a57c5f12e08fcb440b7eaeda1181bc67788dd3b61bfd",
+    "Kk/I3FixedPatternCapacity.lean": "5fedeaceaa75ba84bdadb537e8c3d7ad42e24716c44ef76c7778ea129b20928a",
+    "Kk/IntegerAgeCoverSupport.lean": "afaeceadc7bbd77dbbd913fb29efc39039a818d3b8f5e04e1de856f938b7a473",
+    "Kk/IntegerAgeLocality.lean": "576afb83f6ccaa6d2be728fd5921305b20ae7f3bda934779fce51891e757e878",
+    "Kk/IntegerAgeSmallFunction.lean": "ddf618d805e6e18663b4f7acc97e68e815df031f24d26fd55f376b4b8b5149a0",
+    "Kk/IntegerAgeUniversalProperties.lean": "ff0f7b3e88da9e88fb7151c60768b23ae22891a3269ff3c5ba8348ea81571f91",
+    "Kk/IntegerWitnessCanonical.lean": "4490728e28c5e0213b47fde9ad31f06acd5332247a14188fbe4e3f76ac499e1e",
+    "Kk/IsolatedBlockContinuationAge.lean": "28082001ebb0d8a2f4a76eec0d0da65f908856a751df9168ec309f7d68d2f2e8",
+    "Kk/IsolatedCliqueBlocks.lean": "0eb13ca2ae2910c5be5c8954d127ff391d47c71c8d2ce7a7535d170516818cda",
+    "Kk/IsolatedCliqueGraphSignature.lean": "420aaef08dad5a53e190af2c151e9c147868948c3f1639eae3280deb765f919e",
+    "Kk/K4ActualAlgorithmRunCut10.lean": "eb18364dfc26da3ab77ac129a042ec4b028c7fb9357414be9f5008f89552a443",
+    "Kk/K4ActualAlgorithmRunCut22.lean": "574b1d8d42970779dce64862ccf7aedc18da9e4336a1b8ae9ced8a6badf6513b",
+    "Kk/K4AuxiliaryShadow.lean": "da6a62a1a13418990ad2273fb3ee9962e814435fbc0fafeeff419742f260e098",
+    "Kk/K4Cut10Continuation.lean": "0fbb4d1ae7a72b59c967bfb27926d17f213e7f25b898ec890d7b1bb3087eda53",
+    "Kk/K4Cut10SelectedOnlyB3.lean": "0a032054dfff51e09347a989878e28fcc3cc0176e607603cdd18abc63a99aa83",
+    "Kk/K4Cut22Continuation.lean": "21e0c706db16c4facadb26682bd8c20fa76a8890d9b4331bc70cc9af86b71048",
+    "Kk/K4FullVsMarkedB3.lean": "272aa400d2704636ec8bdc776c8f5521c71236422bcd8536eec16fd5e52a1276",
+    "Kk/K4NeighbourCertificate.lean": "e79b7bc52e3c2da181b2741da7de63b5dfc79423b608fa14a338a2ea8271fec1",
+    "Kk/K4NeighbourSchedule.lean": "7ab5d664bc70cc3ae858b5a4807e2a56ed0971653726fbfee9a9697ee430efb3",
+    "Kk/K4NumericalHAtoms.lean": "acdab70525619fcdd23f8f5835a834beed534cd830b7f62c5d3f67eb78d09f03",
+    "Kk/K4NumericalHB3Transfer.lean": "83b67b3c4a3afa44f77f5014f46051901e156bd34adcba0ebaabc0f5a323dcfe",
+    "Kk/K4NumericalHCut10Transfer.lean": "a7a6779cac91714161b9099419c03a74fe65019f99b5f09b06280a002fca9d47",
+    "Kk/K4SingleUpperB3Core.lean": "4031111b47646a87c69aa26d7c18636f1d765ab333351f7174839d198c1684b7",
+    "Kk/K4UpperProfileNonInclusion.lean": "9c935b1334f3b6d07f0cf5bfa15b13ea37d46a6155b917175d8b6307d191e0b2",
+    "Kk/LabelledCopies.lean": "06bf17adfd100d8274ce79692595e963bb40ef0ce6c9833e412fc9aab0bede59",
+    "Kk/LabelledEnvelopeComparison.lean": "64579adcda9558163397b80c62f6dcbfe7bd0e160421a25c9e1c417a94121c8d",
+    "Kk/LastNeighbourIsolation.lean": "9def7bcf3bb5f550935a6072f45d13770a8ebb3916a287a4495b73dc7599f09e",
+    "Kk/LaterSelectedExactMixing.lean": "6e8f0882dd48b1f1e2420a4dd87e0ab37594d2ebc2f8c3472c20b02ea9df6475",
+    "Kk/LaterSelectedMixedPools.lean": "937e747265e024838727f81aa8a17059846ca7f93c54b4b1477c7ccc72d965a3",
+    "Kk/LinkedAndFreshStage.lean": "2cd38ecf8cda24b2bc8781ac7e61498fba9fe22871b1035cc2858c6861eb7ee6",
+    "Kk/LinkedCliqueCapacity.lean": "d500c0ce956ced08c649bfb9441e400b0385f59d04db504c137136e1d33d25a0",
+    "Kk/LinkedCliqueCapacityUpdate.lean": "cf17b452f3f78f5d12bdc91463ae8a050f17390ee904cc53ba35f46d89d6c249",
+    "Kk/LivePoolFourQuadrants.lean": "39611de98a14906a79f498dc9397b7620094f1943d0080c56ea94ee0cf5a9f52",
+    "Kk/MixedNeighbourhoodBlocks.lean": "991f032c65380107f1eac1e2781a808702e874471674281bf1ba9fd3082b1e81",
+    "Kk/NeighbourhoodCardinality.lean": "77584e583c858f0b2784d114f72ae6c8d7e99f4c979d5519309947a0b855a379",
+    "Kk/NumericHDesignatedPositive.lean": "94115e00bfe6ccd8e57dc400f62a8e78e089af81f0a7ab04926c08a0566d2bc3",
+    "Kk/NumericHFullSelectedColumn.lean": "8bf2d48edb4180c0f602e700ae4c9e745d3709d97e0c39445f89dfdcf7ecee03",
+    "Kk/NumericHTopAuxE.lean": "8ab0cb14e63aef656c1eb8abab7c5beefa05d4646f8de31134e186d66c601bb4",
+    "Kk/NumericHTopParameterClosure.lean": "f671d3ad7dc4bc371bb5fc0f72174e94c0fbd23e05c89f5a88bd8e14ca23dc5c",
+    "Kk/OnePointCliqueExtension.lean": "5223918963b6af8ea387619e4871fd15f3ea50eb07ae60169f687ebbb3d51e66",
+    "Kk/OrderedReservedBlockChain.lean": "c511b2fb024c0601e5c783827a542880505413d3119fbd0e12a4489642b8f231",
+    "Kk/OrderedSourceIdentification.lean": "42d74b0c41df7b9d664dd8ae8a816fe556d1f6477de7727c6dd8105d24784602",
+    "Kk/PrefixChainOrbitTransfer.lean": "413c88a5e8904c4c938dc2caed42131e1cf50a2160a134c94729c2efba9f0663",
+    "Kk/PrefixCutRigidity.lean": "87e1d5d38b5f4a88f7a12e37c86a8043475836275270e8c1cd9b470c29fd394a",
+    "Kk/PrefixEnvelopeLift.lean": "d7754ae01ad847388c98246a20ca20329a31dd7b77255a17e6f8e55ec7578c9d",
+    "Kk/RawWitnessNormalization.lean": "a632cdbfc2351ed97e70f6466158149966a27366bffa356f7e7ff0a9b76075c3",
+    "Kk/RepresentedVertices.lean": "21a81364c3c88e3bd8a8a49598c85806043cd21653325a589ddcf3a695f13c5b",
+    "Kk/ReservedFirstSelectedConstruction.lean": "042f4f2b59a6ff8d54a664cfd65c8ac15a56c66022af02a4508239fcfe268963",
+    "Kk/TypeRespecting.lean": "763d0f06b9d27d2c383329bdb9b430f021909e114541a8bd6084b0adb779c85c",
+    "Kk/UniformAuxiliaryShadow.lean": "3da238d3deb33edd8872f00294fdf4ea39ac6cfdeac18d8102dd715adbc9ac5e",
+    "Kk/enumerated_copies.lean": "f1ad393a92a0a0e6cb07769b36f9d45ec4e94ee8f0adf3230a1c8a7a22835cfe",
+    "lakefile.toml": "8c06968c126a593d7d43e880182ddab5c75f98806acff98c40d14434a8329f6c",
+    "lean-toolchain": "bc84812c94489d1e3e191baa1dc10d5eb684382d7fe9d2a5ab085e72c1c67e47",
+    "scripts/check_axiom_report.py": "1aca9c49e724a8c933f0b2b92ef89b8564ee250db4d98c8a25c9088545ad4492",
+    "scripts/check_axioms.lean": "3d4177c47852a95ff921313a5e8102e00f999239f3a41f5e78334e945ce2866d"
+  },
+  "log_fingerprints": {
+    "final-build.log": {
+      "bytes": 219331,
+      "sha256": "651feef175e55cfe6e826c5e3ee31e5a4dc473969b2b47e9a931b689f8829404"
+    },
+    "final-axioms.log": {
+      "bytes": 236216,
+      "sha256": "8615ffe9f79a3371b30ebc72765766cc4f58f0c72ec582ff41af26972a09f9e3"
+    },
+    "final-audit-result.log": {
+      "bytes": 85,
+      "sha256": "60bcfde321e5e331e8885ed09260858d00fbb68fe0dda1756be8ba21c98233df"
+    },
+    "final-audit-self-test.log": {
+      "bytes": 69,
+      "sha256": "35136b9720bd16ea68ac1052c8a0e4f836bbc09bc68290b4b585a15a03cee7ce"
+    },
+    "final-source-check-before.log": {
+      "bytes": 210,
+      "sha256": "f3cb954e2f02eb92270672b22037ecc8e432049283204b2874d13d66fd9a7d02"
+    },
+    "final-source-check-after.log": {
+      "bytes": 210,
+      "sha256": "f3cb954e2f02eb92270672b22037ecc8e432049283204b2874d13d66fd9a7d02"
+    }
+  },
+  "transitive_axiom_reports": {
+    "Kk.finite_family_type_respecting_ramsey": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.diary_colouring_constant": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.diary_colouring_factors": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.FiniteRepresentingPair.labelled_image_act": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.FiniteRepresentingPair.imageVertex_binary": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.LabelledGPlusCopy.map_fromPairs": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.LabelledGPlusCopy.colour_factors_through_diary": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.LabelledGPlusCopy.colour_factors_through_diary_of_orbits": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.LabelledGPlusCopy.labelled_copy_lifts_of_envelope": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.FiniteRepresentingPair.fromCommonUpper_vertex": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.countable_labelled_carrier": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.countable_labelled_carrier_full_atoms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.countable_labelled_carrier_all_images": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.LabelledGOmegaCopy.map_fromPairs": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.LabelledGOmegaCopy.colour_factors_through_diary": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.LabelledGOmegaCopy.map_lt_of_prefix_in_fixed_enumeration": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.countableSourceCopy_finite_representation": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.countable_source_orbits_colour_factors": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.hensonForbiddenFamily_no_loops": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.hensonForbiddenFamily_no_cliques": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.hensonForbiddenFamily_symmetric": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.hensonForbiddenFamily_avoids_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.common_source_pairs_of_equal_labelled_preimages": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.common_labelled_copy_of_equal_endpoint_preimages": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.prefixChain_finite_representation": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.prefix_chain_orbits_colour_factors": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.labelled_prefix_preimages_of_range": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.labelled_prefix_sources_of_Kpt_envelope": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.labelled_envelope_produces_intrinsic_source": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.labelled_prefix_sources_eq_of_unlabelled_range": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.source_range_eq_inverse_image": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.labelled_prefix_sources_eq_of_inverse_image_sets": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.common_labelled_source_iff_inverse_image_sets_eq": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.rawCliqueBlockBound_eq_upper_of_lt": [
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.ageLe_final_rawCliqueBlockBound": [
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.canonical_cover_block_final": [
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.finiteWitnessCanonical_le_raw": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.finiteWitnessCanonical_greatest": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.finiteWitnessCanonical_is_age": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.integerCliqueOnSupport_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.integerGraphAgeCanonical_le_raw": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.integerGraphAgeCanonical_is_age": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.integerGraphAgeCanonical_greatest": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.integerGraphAge_canonical_cover_block": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.normalize_raw_integer_clique_witness": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.rawIntegerGraphAge_iff_normalized": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.rawIntegerGraphAgeCanonical_eq_normalized": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.integerGraphAge_monotone": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.rawIntegerGraphAge_monotone": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.integerGraphAge_small_support_witness": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.integerGraphAge_small_function": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.rawIntegerGraphAge_small_function": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.integerAgeLowerAt_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.integerGraphAgeCanonical_single_bound_locality": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.integerGraphAgeCanonical_single_bound_disjoint": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.integerGraphAgeCover_minimal_changed_unique": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.integerGraphAgeCanonical_preserves_clique_vectors": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.integerGraphAgeCanonical_fixed_of_age": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.integerGraphAgeCanonical_idempotent_above_age": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.canonical_cover_block_all_stages": [
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.fullAfter_covers_fullBefore": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.selected_shadow_does_not_detect_cover": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.vertex_eq_of_common_top_and_size": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.labelled_sources_eq_of_common_top_and_cuts": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.numericH_preserves_original_nonedge": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.finiteNumericH_preserves_original_nonedge": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.reserved_H_clique_one_block": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.numericH_designated_reserved_pair_positive": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.numericH_designated_reserved_to_top_positive": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.numericH_designated_reserved_to_top_both": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.numericH_designated_clique_of_finite_set": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.mixed_neighbourClique_subset_interaction_pool": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.finiteNeighbourCliqueCheck_false_of_mixing_pools": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.onePointGraph_safe_of_mixing_pools": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.henson_leftDense_realizes_later_selected_of_mixing_pools": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.finitePoolCliqueCheck_true_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.finitePoolCliqueCheck_false_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.mixedBlockInteractionPool_subset_full_neighbourhood": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.finiteNeighbourCliqueCheck_false_iff_exact_mixing_pools": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.onePointGraph_cliqueFree_iff_exact_mixing_pools": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.henson_leftDense_realizes_later_selected_of_exact_mixing": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.k4NoisyMixedPool_small": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.k4NoisyOldNeighbourhood_certified": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.reserved_H_aux_selected_clique_support": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.reserved_H_clique_one_block_and_selected_support": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.henson_failedAmbientB3_lower_generation": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.henson_top_generation_ambientB3": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.henson_failedSelectedB3_has_higher_original": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.henson_selectedB3_of_no_higher_original": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.henson_selected_top_generation_B3": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.henson_represented_top_I3_correctedB3": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.henson_algorithm_top_generation_no_I3": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.henson_algorithmRun_top_generation_no_I3": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.henson_failedSelectedB3_higher_original_anyK": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.henson_algorithmRun_lower_I3_requires_higher_selected_original": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.henson_algorithmRun_lower_I3_levels_card_le_higher_capacity": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.henson_failedSelectedB3_generation_below_clique_margin": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.henson_selectedB3_of_generation_ge_clique_margin": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.henson_algorithmRun_lower_I3_generation_below_clique_margin": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.henson_forbidden_pattern_large_is_clique": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.henson_positive_generation_B3_has_clique_witness": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.henson_algorithmRun_positive_I3_has_clique_witness": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.i3Levels_card_le_fixedPattern_capacity": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.henson_positive_generation_B3_has_clique_signature": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.henson_algorithmRun_positive_I3_levels_card_le_clique_capacity": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.henson_positive_generation_B3_has_clique_higher_signature": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.henson_algorithmRun_positive_I3_levels_card_le_higher_clique_capacity": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.two_point_B3_cross_symmetric": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.B3_avoids_both_asym_patterns": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.hNumericBinary_symmetric_of_base": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.henson_finiteNumericH_binary_symmetric": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.henson_selectedB3_failure_has_clique_witness": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.henson_any_generation_B3_has_clique_higher_signature": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.henson_algorithmRun_all_I3_levels_card_le_higher_clique_capacity": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.correctedB3_of_Lprofile_dominance": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.failed_markedB3_of_Lprofile_dominance": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.correctedB3_iff_of_equal_Lprofiles": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.normalized_avoid_without_of_future_restriction": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.henson_selectedB3_failure_has_small_clique_core": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.clique_core_upper_name_adjacent_to_cut": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.clique_core_upper_names_local_of_cut_nonedges": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.henson_failed_selectedB3_has_cut_local_small_core": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.finiteNumericH_next_generation_one_freeLevel": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.finiteNumericH_next_original_is_freeCut_eligible": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.finiteNumericH_later_generation_one_is_freeCut_eligible": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.kpt_closure_contains_positive_parameter_of_seed": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.numericH_first_gadget_second_original_in_closure": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.beforeK4_valid": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.afterK4_valid": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.afterK4_covers_beforeK4": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.selected_K4_shadow_does_not_detect_cover": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.kpt_gap_boundary_class_correctedB3": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.correctedB3_of_genuine_kpt_gap_Lprofile": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.correctedB3_of_genuine_kpt_gap_subprofile": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.genuine_gap_boundary_one_target_B3": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.genuine_gap_crossing_one_target_B3": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.uniformBefore_valid": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.uniformAfter_valid": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.uniformAfter_covers_before": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.uniform_auxiliary_shadow_cover": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.skipsOnly_crossing_requires_single_upper_B3": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.bad_single_upper_precludes_onegap_crossing": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.bad_single_upper_forces_actual_interesting": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.fourCliqueCore_deleted_avoids": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.fourCliqueCore_singleUpper_B3_fails": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.k4Cut22_deleted_avoids": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.k4Cut22_singleUpper_B3_fails": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.k4FourOriginalEdge_cliqueFree": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.k4H_old_binary_eq": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.k4H_upper_edge_eq": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.k4H_upper_edge_reverse_eq": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.k4H_full_old_L_socle": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.k4H_full_upper_L_type": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.k4H_actual_cut22_singleUpper_B3_failure": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.algorithmRun_selects_actual_failed_single_upper_B3": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.k4Cut10_deleted_avoids": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.k4Cut10_twoUpper_B3_fails": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.genuine_gap_boundary_two_targets_B3": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.bad_two_upper_precludes_genuine_gap": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.k4GadgetH_avoids": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.k4GadgetH_top_freeLevel_above22": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.k4Gadget_algorithmRun_selects_cut22": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.k4Gadget_algorithmRun_q2_in_cut10_closure": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.k4H_cut10_full_old_L_socle": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.k4H_cut10_full_q2_upper_type": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.k4H_cut10_full_x_upper_type": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.k4H_actual_cut10_twoUpper_B3_failure": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.genuine_gap_two_ambient_targets_B3": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.bad_two_ambient_targets_contradicts_genuine_gap": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.bad_two_ambient_upper_forces_actual_interesting": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.algorithmRun_selects_actual_failed_two_upper_B3": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.k4GadgetH_q2_freeLevel_eq_11": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.k4Gadget_algorithmRun_selects_cut10": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.k4Gadget_algorithmRun_selects_cuts10_22": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.no_new_K4_of_earlier_clone": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.k4Gadget_cut10_x_only_B3_good": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.k4Gadget_q2_and_x_have_same_old_L_socle": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.k4Gadget_cut10_selected_only_B3_good_on_full_socle": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.k4Gadget_cut10_full_B3_does_not_project_to_selected": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.k4Gadget_cut10_selected_only_cannot_certify_full_B3": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.k4Gadget_full_upper_not_subset_x_only": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.k4Gadget_q2_upper_L_reduct_ne_x": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.onePointGraph_hasClique_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.onePointGraph_cliqueFree_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.clique_reserved_blocks_agree": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.clique_unreserved_or_one_block": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.onePointGraph_cliqueFree_of_block_checks": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.finiteNeighbourCliqueCandidates_nonempty_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.finiteNeighbourCliqueCheck_true_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.finiteNeighbourCliqueCheck_false_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.no_clique_below_of_small_carrier": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.onePointGraph_cliqueFree_iff_finite_certificate": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.k4Seed_full_neighbourhood_certificate": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.k4Seed_safe_onePoint_extension": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.k4MixedParameter_triangle_certificate": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.k4MixedParameter_forbidden_onePoint_extension": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.hasCliqueBelow_congr_on_prefix": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.onePointGraphEdge_agrees_on_prefix": [
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.hasCliqueBelow_succ_iff_old_or_neighbour": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.cliqueFree_prefix_iff_all_finite_neighbour_certificates": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.k4FourOriginal_all_stage_certificates": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.k4FourOriginal_initial_prefix_cliqueFree": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.no_neighbourClique_of_small_neighbour_set": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.finiteNeighbourCliqueCheck_false_of_small_neighbour_set": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.onePointGraph_safe_of_small_neighbour_set": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.onePointGraph_safe_of_prescribed_neighbour_carrier": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.appendIsolatedCliqueBlock_old": [
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.appendIsolatedCliqueBlock_old_new_nonedge": [
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.appendIsolatedCliqueBlock_new_clique": [
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.appendIsolatedCliqueBlock_next_neighbour_card": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.appendIsolatedCliqueBlock_cliqueFree": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.smallCliqueLeftDense_build_reserved": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.smallCliqueLeftDense_exists_reserved": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.emptyGraph_not_smallCliqueLeftDense": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.onePointLeftDense_realizes_finite_certificate": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.smallCliqueLeftDense_of_onePointLeftDense": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.reserved_originals_of_onePointLeftDense": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.no_prefix_clique_of_no_increasing_clique": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.hensonForbiddenFamily_no_prefix_cliques": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.henson_leftDense_realizes_certified_original": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.henson_leftDense_exists_reserved_originals": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.henson_leftDense_exists_reserved_of_graph_axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.neighbourClique_iff_prior_of_isolated_reserved": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.finiteNeighbourCliqueCheck_false_iff_prior_isolated": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.henson_leftDense_first_selected_after_isolated_reserved": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.k4_mixed_parameter_isolation_necessary": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.henson_leftDense_reserve_and_first_selected": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.onePointGraphEdge_symmetric_of_base": [
+      "propext"
+    ],
+    "Kk.onePointGraphEdge_irreflexive_of_base": [
+      "propext"
+    ],
+    "Kk.appendIsolatedCliqueBlock_symmetric": [
+      "propext"
+    ],
+    "Kk.appendIsolatedCliqueBlock_irreflexive": [
+      "propext"
+    ],
+    "Kk.appendIsolatedCliqueBlock_old_new_both_nonedges": [
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.appendIsolatedCliqueBlock_graph_valid_prefix": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.henson_leftDense_ordered_reserved_blocks": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.ordered_reserved_block_cross_nonedges_of_lt": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.full_reserved_block_forbids_selected_column": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.finiteNeighbourCliqueCheck_false_of_last_isolated": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.mem_reservedBlocksUnion": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.henson_leftDense_selected_after_fresh_block_family": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.directedClique_card_le_capacity": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.finitePoolCliqueCheck_false_of_reserved_plus_link_capacity": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.finiteNeighbourCliqueCheck_false_of_link_capacity": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.henson_leftDense_realizes_later_selected_of_link_capacity": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.k4OldLinks_capacity_regression": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.k4OldLinks_safe_by_capacity": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.k4OldLinks_bad_triangle_regression": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.henson_leftDense_later_selected_after_fresh_blocks_of_link_capacity": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.finiteDirectedCliqueCapacity_mono": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.finiteDirectedCliqueCapacity_insert_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.finiteDirectedCliqueCapacity_succ_mutual_le_insert": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.finiteDirectedCliqueCapacity_insert_eq": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.finiteDirectedCliqueCapacity_empty": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.finiteDirectedCliqueCapacity_insert_no_growth": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.finitePoolCliqueCheck_false_of_one_new_link_budget": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.k4LinkedCapacity_insert_no_growth_regression": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.k4LinkedCapacity_insert_growth_regression": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.linkedOriginalsTo_union_candidates": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.linkedOriginalsTo_union_reserved": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.linkedOriginalsTo_four_quadrants": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.linkedUnreserved_eq_updatedActualLinkedPool": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.finiteNeighbourCliqueCheck_false_of_updatedActualLinkedPool_budget": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.henson_leftDense_realizes_of_updatedActualLinkedPool_budget": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.stale_reserved_link_disappears": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.activated_reserve_and_gap_links": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.linkedOriginalsTo_mono": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.linkedOriginals_deactivation_budget_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.finitePoolCliqueCheck_false_of_deactivation_budget": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.finiteNeighbourCliqueCheck_false_of_neighbour_subset": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.henson_leftDense_realizes_deactivated_column": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.k4_neighbour_deactivation_rescues_forbidden_column": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.k4_safe_star_neighbour_deactivation": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.integerGraphAge_cover_final_raw_eq_single_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.integerGraphAge_cover_event_preserves_support_of_overlap": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.integerGraphAge_cover_event_preserves_disjoint_support": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.integerGraphAge_cover_event_preserves_disjoint_subfront": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.integerGraphAge_cover_event_preserves_without_full_support": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.integerGraphAge_cover_event_preserves_subfront_omitting_support": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.integerGraphAge_is_subfront_age": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.subfrontMixedRawBound_between": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.subfrontWitness_respects_mixed_raw": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.integerGraphAgeCanonical_mixed_raw_restrict_eq": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.integerGraphAge_cover_no_relative_intermediate": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.integerGraphAge_cover_restrict_eq_or_cover": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.numericH_older_generation_to_top_exact": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.numericH_henson_top_full_column_both": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.numericH_henson_nonedges_all_generations_both": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.henson_leftDense_linked_fresh_stage_numericH_complete_L": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.numericH_top_auxE_true_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.finiteNumericH_top_auxE_true_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.numericH_top_auxE_all_earlier_real": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.finiteNumericH_top_freeLevel_exact": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.henson_leftDense_linked_fresh_stage_finiteNumericH_complete_LE": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.finiteNumericH_earlier_generation_one_positive_freeLevel": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.finiteNumericH_generation_one_before_top_freeLevel": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.finiteNumericH_top_seed_forces_genOne_parameter": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.henson_numericH_top_seed_forces_genOne_parameter": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.finiteNumericH_run_selected_genOne_in_lower_closure": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.envelope_closure_mono_levels": [
+      "Classical.choice"
+    ],
+    "Kk.kpt_closure_contains_positive_parameter_of_original_mem": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.algorithmRun_selected_positive_parameter_in_lower_closure": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.algorithmRun_selects_two_step_B3_parameter_propagation": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.finiteDirectedCliqueCapacity_attained": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.finitePoolCliqueCheck_false_iff_capacity_lt": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.finiteDirectedCliqueCapacity_complete_join": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Kk.finitePoolCliqueCheck_isolated_block_gluing_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "scope": [
+    "Each named theorem is checked with its actual explicit hypotheses.",
+    "This endpoint count is not a percentage of the manuscript proved.",
+    "The unbounded resolved-copy schedule and full cross-occurrence source records remain unproved.",
+    "The numerical-prefix and canonical-age adapters for the finite gluing theorem remain separate.",
+    "A common labelled inverse-source orbit and unconditional Ramsey upper/lower bounds are not inferred.",
+    "Remote CI and merge gates must be assessed separately."
+  ]
+}
