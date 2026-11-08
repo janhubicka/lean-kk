@@ -1,0 +1,58 @@
+name: Temporary pinned Lean transport only (do not merge)
+
+on:
+  push:
+    branches: ['agent/local-lean-slim-transport-20261108']
+    paths: ['.github/workflows/agent-local-lean-transport.yml']
+
+permissions:
+  contents: read
+
+concurrency:
+  group: temporary-lean-compiler-slim-transport
+  cancel-in-progress: true
+
+jobs:
+  transfer:
+    runs-on: ubuntu-slim
+    timeout-minutes: 15
+    steps:
+      - name: Download and checksum official pinned compiler
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/lean-transfer"
+          cd "$RUNNER_TEMP/lean-transfer"
+          curl --fail --location --retry 3 --connect-timeout 20 \
+            https://github.com/leanprover/lean4/releases/download/v4.35.0-rc3/lean-4.35.0-rc3-linux.tar.zst \
+            -o lean-4.35.0-rc3-linux.tar.zst
+          test "$(stat -c %s lean-4.35.0-rc3-linux.tar.zst)" = 595611952
+          printf '%s  %s\n' \
+            '1526de16c0496f16b46a168f26c990af4e3796505273c3342fec17d72d763997' \
+            'lean-4.35.0-rc3-linux.tar.zst' > LEAN_SHA256SUMS
+          sha256sum -c LEAN_SHA256SUMS
+          split -b 300000000 -d -a 2 lean-4.35.0-rc3-linux.tar.zst lean.tar.zst.part-
+          test -s lean.tar.zst.part-00
+          test -s lean.tar.zst.part-01
+          test ! -e lean.tar.zst.part-02
+          sha256sum lean.tar.zst.part-* > LEAN_PART_SHA256SUMS
+          ls -lh lean.tar.zst.part-*
+      - name: Upload official part 00 and checksums
+        uses: actions/upload-artifact@v4
+        with:
+          name: lean-official-linux-4.35.0-rc3-part-00
+          path: |
+            ${{ runner.temp }}/lean-transfer/lean.tar.zst.part-00
+            ${{ runner.temp }}/lean-transfer/LEAN_SHA256SUMS
+            ${{ runner.temp }}/lean-transfer/LEAN_PART_SHA256SUMS
+          compression-level: 0
+          retention-days: 3
+          if-no-files-found: error
+      - name: Upload official part 01
+        uses: actions/upload-artifact@v4
+        with:
+          name: lean-official-linux-4.35.0-rc3-part-01
+          path: ${{ runner.temp }}/lean-transfer/lean.tar.zst.part-01
+          compression-level: 0
+          retention-days: 3
+          if-no-files-found: error
