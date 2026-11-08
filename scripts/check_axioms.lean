@@ -734,6 +734,20 @@ import Kk
 #check @Kk.henson_leftDense_linked_fresh_stage_finiteNumericH_complete_LE
 #print axioms Kk.henson_leftDense_linked_fresh_stage_finiteNumericH_complete_LE
 
+-- Actual finite numerical-H+ selected top seed forces genuine generation-one Kpt parameter closure.
+#check @Kk.finiteNumericH_earlier_generation_one_positive_freeLevel
+#print axioms Kk.finiteNumericH_earlier_generation_one_positive_freeLevel
+#check @Kk.finiteNumericH_generation_one_before_top_freeLevel
+#print axioms Kk.finiteNumericH_generation_one_before_top_freeLevel
+#check @Kk.finiteNumericH_top_seed_forces_genOne_parameter
+#print axioms Kk.finiteNumericH_top_seed_forces_genOne_parameter
+#check @Kk.henson_numericH_top_seed_forces_genOne_parameter
+#print axioms Kk.henson_numericH_top_seed_forces_genOne_parameter
+
+-- Actual AlgorithmRun selected generation-one numerical level persists to every lower Kpt closure.
+#check @Kk.finiteNumericH_run_selected_genOne_in_lower_closure
+#print axioms Kk.finiteNumericH_run_selected_genOne_in_lower_closure
+
 -- Genuine closure-parameter propagation and two successive actual B3 selections.
 #check @Kk.envelope_closure_mono_levels
 #print axioms Kk.envelope_closure_mono_levels
