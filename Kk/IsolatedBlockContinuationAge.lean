@@ -37,18 +37,17 @@ theorem finiteDirectedCliqueCapacity_attained
     P.powerset.filter (fun s =>
       ∀ x ∈ s, ∀ y ∈ s, x ≠ y → E x y = true)
   have hEmpty : (∅ : Finset Nat) ∈ C := by
-    change (∅ : Finset Nat) ∈ P.powerset.filter (fun s =>
-      ∀ x ∈ s, ∀ y ∈ s, x ≠ y → E x y = true)
+    dsimp only [C]
     refine Finset.mem_filter.mpr
       ⟨Finset.mem_powerset.mpr (Finset.empty_subset P), ?_⟩
     intro x hx
     simp at hx
   obtain ⟨s, hs, hMax⟩ :=
     Finset.exists_mem_eq_sup C ⟨∅, hEmpty⟩ Finset.card
-  have hsFilter : s ∈ P.powerset.filter (fun t =>
-      ∀ x ∈ t, ∀ y ∈ t, x ≠ y → E x y = true) := hs
-  have hParts := Finset.mem_filter.mp hsFilter
-  refine ⟨s, Finset.mem_powerset.mp hParts.1, hParts.2, ?_⟩
+  have hParts : s ⊆ P ∧ IsDirectedCliqueOn E s := by
+    simpa only [C, Finset.mem_filter, Finset.mem_powerset,
+      IsDirectedCliqueOn] using hs
+  refine ⟨s, hParts.1, hParts.2, ?_⟩
   simpa only [C, finiteDirectedCliqueCapacity] using hMax.symm
 
 /-- The executable exact-size clique checker is negative precisely
