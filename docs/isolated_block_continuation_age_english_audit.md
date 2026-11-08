@@ -45,7 +45,9 @@ finiteDirectedCliqueCapacity E A is the maximum cardinality of a clique
 subset of A, computed as a finite supremum over its powerset. The empty
 subset ensures that this maximum always exists, even when A is empty.
 
-For the main result, P,Q,G,W are pairwise disjoint finite sets:
+For the main result, P,Q,G,W are finite sets with the following intended
+roles. They may overlap in the generic theorem; the physical application
+normally supplies disjoint carriers.
 
 - P contains the old prefix vertices.
 - Q contains the inserted reserved vertices present at the tested cut.
@@ -54,8 +56,9 @@ For the main result, P,Q,G,W are pairwise disjoint finite sets:
 
 The concrete subset U of W contains those future vertices whose marked
 labels belong to the prescribed support. At this finite stage U is simply
-a Finset, with an explicit inclusion U subset W. No source-representation
-oracle or age predicate is introduced.
+a Finset, with an explicit inclusion U subset W. The only required
+disjointness is between Q and U, where it is needed for exact capacity
+addition. No source-representation oracle or age predicate is introduced.
 
 Use the same E for the entire union. Thus the edge table on P union W
 is literally the restriction of the full table, with every internal
@@ -158,9 +161,7 @@ Proposed exact signature:
 theorem finitePoolCliqueCheck_isolated_block_gluing_iff
     (E : Nat → Nat → Bool) (ell : Nat)
     (P Q G W U : Finset Nat)
-    (hPQ : Disjoint P Q)
-    (hPastG : Disjoint (P ∪ Q) G)
-    (hPastW : Disjoint ((P ∪ Q) ∪ G) W)
+    (hQU : Disjoint Q U)
     (hU : U ⊆ W)
     (hNoPQ :
       ∀ p ∈ P, ∀ q ∈ Q, E p q = false)
@@ -178,10 +179,12 @@ theorem finitePoolCliqueCheck_isolated_block_gluing_iff
           finiteDirectedCliqueCapacity E U < ell
 ```
 
-The three disjointness hypotheses express the four-part partition using
-existing Finset notions. In particular they imply Q is disjoint from U,
-using hU. They also make all cross-part vertices distinct when invoking
-the clique predicate.
+An independent hypothesis audit strengthened the initial partition-based
+plan before implementation of the main theorem: the three partition
+disjointness assumptions can be replaced by hQU alone. The exclusion
+argument only needs to remove G outside W and P outside Q. In those cases
+the necessary vertex inequalities follow from the displayed nonmembership,
+without any global partition premise. The complete-join equality uses hQU.
 
 Only one absent orientation is required in hNoPQ and hNoGW: a complete
 directed clique would require that very orientation to be positive.
@@ -190,7 +193,7 @@ by hSupport. Its absent bits also exclude every future vertex outside U
 from any clique meeting Q.
 
 There are no restrictions on P-G or Q-G edges. Cliques wholly in the past
-are handled by hPast; cliques meeting W cannot use G.
+are handled by hPast; a clique meeting W cannot use G outside W.
 
 ### English proof: classification of all possible cliques
 
@@ -198,14 +201,15 @@ Write Past=(P union Q) union G and V=Past union W. Let s be a directed
 clique with s subset V.
 
 1. If s has no member in W, then s subset Past.
-2. Otherwise choose w0 in s intersect W. No vertex of s can belong to G:
-   such a vertex g differs from w0 by disjointness, so the clique requires
-   E g w0=true, contradicting hNoGW.
+2. Otherwise choose w0 in s intersect W. No vertex of s can belong to
+   G outside W: such a vertex g differs from w0, so the clique requires
+   E g w0=true, contradicting hNoGW. Thus s subset P union Q union W.
 3. If this s has no member in Q, every member lies in P union W.
-4. Otherwise choose q0 in s intersect Q. No member can lie in P:
-   hNoPQ contradicts the ordered edge from that member to q0. Each
-   member w in s intersect W belongs to U, because the positive edge
-   E q0 w and hSupport force decide(w in U)=true. Hence s subset Q union U.
+4. Otherwise choose q0 in s intersect Q. No member can lie in P outside
+   Q: it differs from q0, and hNoPQ contradicts its ordered edge to q0.
+   Hence every member w outside Q lies in W and differs from q0.
+   The positive edge E q0 w and hSupport force decide(w in U)=true.
+   Therefore s subset Q union U, even when some of the named pools overlap.
 
 Thus every clique is contained in one of the three actual sets
 Past, P union W, or Q union U. The sets may overlap in this classification;
@@ -302,9 +306,12 @@ actual finite sets directly describe this gluing problem.
 14. **The threshold is strict.** Capacity sum equal to ell already
     supplies an ell-clique in the join, using attaining cliques and,
     if needed, subset extraction.
-15. **Disjointness is used.** It justifies cross-part vertex inequality
-    and addition of the two attaining clique cardinalities. It cannot
-    be dropped merely because the sets have different names.
+15. **Only the needed disjointness is retained.** Q and U must be
+    disjoint for addition of the two attaining clique cardinalities.
+    If Q=U is a singleton with a positive diagonal, the join premise
+    holds but the union has capacity one and the sum is two. Other
+    partition disjointness premises are unnecessary: the exclusion
+    proof derives each inequality from membership outside Q or W.
 16. **The source graph is not the future graph.** The internal table on
     W is arbitrary. This result does not freeze future-future edges
     to those of the original names representing their marked types.
