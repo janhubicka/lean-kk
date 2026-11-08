@@ -757,3 +757,13 @@ import Kk
 #print axioms Kk.algorithmRun_selected_positive_parameter_in_lower_closure
 #check @Kk.algorithmRun_selects_two_step_B3_parameter_propagation
 #print axioms Kk.algorithmRun_selects_two_step_B3_parameter_propagation
+
+-- Exact finite continuation gluing from ordinary L-atoms and actual clique capacity.
+#check @Kk.finiteDirectedCliqueCapacity_attained
+#print axioms Kk.finiteDirectedCliqueCapacity_attained
+#check @Kk.finitePoolCliqueCheck_false_iff_capacity_lt
+#print axioms Kk.finitePoolCliqueCheck_false_iff_capacity_lt
+#check @Kk.finiteDirectedCliqueCapacity_complete_join
+#print axioms Kk.finiteDirectedCliqueCapacity_complete_join
+#check @Kk.finitePoolCliqueCheck_isolated_block_gluing_iff
+#print axioms Kk.finitePoolCliqueCheck_isolated_block_gluing_iff
