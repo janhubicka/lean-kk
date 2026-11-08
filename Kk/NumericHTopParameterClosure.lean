@@ -222,7 +222,7 @@ theorem finiteNumericH_run_selected_genOne_in_lower_closure
           (admissibleKptSTree family) (R.I (p+1)) X := by
   let c : Nat := hPosition k i 1
   have hFinal : c ∈ R.I 0 := by
-    rw [R.I_eq_final_tail_of_run c (by simpa [c] using hScan)]
+    rw [R.I_eq_final_tail_of_run c (by simpa only [c] using Nat.le_of_lt hScan)]
       at hSelected
     exact hSelected.1
   have hAtPrevious : c ∈ R.I (p+1) := by
