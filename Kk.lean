@@ -34,6 +34,7 @@ import Kk.HBlockClique
 import Kk.NumericHDesignatedPositive
 import Kk.NumericHFullSelectedColumn
 import Kk.NumericHTopAuxE
+import Kk.NumericHTopParameterClosure
 import Kk.LaterSelectedMixedPools
 import Kk.LaterSelectedExactMixing
 import Kk.LinkedCliqueCapacity
