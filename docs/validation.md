@@ -6,11 +6,13 @@
 
 The [machine-readable verification record](audits/2026-11-08-local-validation.json) contains all **305 named axiom lists**, **105 source/configuration/audit hashes**, the **11 dependency revisions**, and build/audit log fingerprints. Those hashes and dependency worktrees matched both before and after the check. The compiler is the exact pinned Lean `v4.35.0-rc3` (`470d5ce1400764999581fd26d5d72b00d990b0f4`); the restored official archive's checksum and the executor's executable-path-only workaround are recorded. No kernel or proof flags were changed.
 
-**Remote status is separate:** these PRs remain drafts and unmerged. The GitHub checks observed for PR #70 and #72 were queued/pending; the repaired PR #73 source awaits its own hosted result. No hosted CI success is inferred from the local pass. The latest merged, CI-verified code baseline remains PR #68 at `6101b3cd222d97462127af0a8beca67d3006121f`, with 292 reports. No new manuscript green marker has been added for the review branches.
+**Subsequent hosted result:** [PR #70](https://github.com/janhubicka/lean-kk/pull/70) passed [Lean run 42483229981](https://github.com/janhubicka/lean-kk/actions/runs/42483229981) at exact head `3dfd7e0dfdc2a987326fb66f6b896bfa3d7feb25`: full build (9,486 jobs), parser self-test, and **297 exact standard-only named reports**. An independent comparison matched all 297 requested names to all 297 reports. It then merged at `fffb92e1a00a8b9978d5be245a0e4c8020eadcd1`. The actual merge and the hosted-tested PR merge have the identical tree `d3eaac3a597503068d7847e5c060d3f684413e79`, with the same parents. The merged, CI-verified code baseline is now 297 endpoints; the earlier 292 count below is the baseline from which this session began.
+
+**Remaining hosted gates:** PR #72 and #73 stay draft and unmerged. Their completed combined **local** 305-report check does not establish their separate hosted CI result. No new manuscript green marker is assigned to these two pending branches. PR #70's five checked results may now use precise markers at its merged source revision.
 
 | Contribution beyond the verified baseline | Named endpoints | Result |
 | --- | ---: | --- |
-| PR #70: numerical-H generation-one parameter closure | 5 | Compiled and audited in the combined source |
+| PR #70: numerical-H generation-one parameter closure | 5 | Combined local pass; separate hosted 297-report gate passed; merged |
 | PR #72: chronological full-closure propagation | 4 | Compiled and audited in the combined source |
 | PR #73: exact finite clique capacity and isolated-block continuation | 4 | Compiled and audited in the combined source |
 | Total including the 292 baseline endpoints | **305** | Full local gate passed |
