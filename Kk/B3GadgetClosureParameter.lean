@@ -22,11 +22,13 @@ first-gadget coordinates (cut 10, future original 22, active top
 seed 38). The only remaining premise is that level 22 is in I
 and the top original at address 38 is among the closure seeds.
 These premises are not inferred from the abstract macro-diary.
+For the concrete K4 seeded run, `K4ActualAlgorithmRunCut22` proves
+selection of 22 and membership of its original in the cut-10
+closure; `K4ActualAlgorithmRunCut10` proves that both cuts are selected.
 
-This isolates exactly what must be proved or ruled out for the
-circulation manuscript's "first auxiliary clique level is boring"
-claim. The results do NOT prove failure of the actual AlgorithmRun
-at cut 10, because the selection of level 22 remains conditional.
+This module supplies their conditional parameter-closure step.
+Uniform treatment of the extra microevents in the proposed
+resolved diary remains a separate construction problem.
 -/
 
 namespace Kk
@@ -108,8 +110,9 @@ literal E relation and the Kpt successor representation.
 
 In particular the E eligibility gate cannot keep this parameter
 out of the earlier cut 10 once the successor at 22 is selected.
-The remaining unresolved question is whether 22 belongs to the
-selected set I in the special resolved diary. -/
+For the concrete K4 seeded run, the selection premise is discharged
+in `K4ActualAlgorithmRunCut22`. This general conditional lemma does
+not supply the selected level set of an arbitrary resolved diary. -/
 theorem numericH_first_gadget_second_original_in_closure
     {db du dd : Nat}
     (family : List (NormalizedForbidden db du dd))

@@ -18,10 +18,10 @@ the third disjunct of Algorithm 5.4's IsInterestingAt predicate for
 a closure containing that original prefix, *without* a full
 marked-to-auxiliary source spectrum comparison.
 
-The finite numerical-H K4 witness at cut 22 remains to be given as
-an actual age-test proof for its extracted type. This module does
-not falsely assume that witness or the unresolved canonical-diary
-embedding geometry.
+The actual numerical-H K4 age-test witness at cut 22 is proved in
+`K4NumericalHB3Transfer` and used in `K4ActualAlgorithmRunCut22`.
+This generic implication retains its displayed age-test hypothesis;
+it does not establish the canonical-diary embedding geometry.
 -/
 
 namespace Kk
