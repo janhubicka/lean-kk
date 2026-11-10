@@ -797,3 +797,14 @@ import Kk
 #print axioms Kk.reservedBlockNumericPrefix_mem_finiteH
 #check @Kk.finiteNumericH_reserved_prefix_gluing_iff
 #print axioms Kk.finiteNumericH_reserved_prefix_gluing_iff
+-- Genuine selected-top pool imaging and all real reserved prefix L-columns.
+#check @Kk.numericHTopPos_injective
+#print axioms Kk.numericHTopPos_injective
+#check @Kk.numericHTopPool_mem_iff
+#print axioms Kk.numericHTopPool_mem_iff
+#check @Kk.numericHTopPool_mono
+#print axioms Kk.numericHTopPool_mono
+#check @Kk.reservedBlockNumericPrefix_disjoint_topPool
+#print axioms Kk.reservedBlockNumericPrefix_disjoint_topPool
+#check @Kk.finiteNumericH_reserved_prefix_top_support
+#print axioms Kk.finiteNumericH_reserved_prefix_top_support
