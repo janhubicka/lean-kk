@@ -808,3 +808,8 @@ import Kk
 #print axioms Kk.reservedBlockNumericPrefix_disjoint_topPool
 #check @Kk.finiteNumericH_reserved_prefix_top_support
 #print axioms Kk.finiteNumericH_reserved_prefix_top_support
+-- Every hypothetical finite continuation clique witness, not only selected copies.
+#check @Kk.finiteCliqueSupportCapacity_iff_all_witnesses
+#print axioms Kk.finiteCliqueSupportCapacity_iff_all_witnesses
+#check @Kk.finiteCliqueSupportCapacity_raw_iff_all_witnesses
+#print axioms Kk.finiteCliqueSupportCapacity_raw_iff_all_witnesses

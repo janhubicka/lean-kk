@@ -1,5 +1,11 @@
 # Verification plan
 
+## Arbitrary finite continuation clique witnesses (10 November 2026, English-first branch)
+
+A new independent two-endpoint Lean module, `Kk/FiniteCliqueSupportWitness.lean`, identifies the exact supported-future clique capacity `a+cap(W.filter (sort∈T))<ell` with the corresponding inequality on the T-part of **every** directed clique `s⊆W`. The second endpoint rewrites this under the indispensable `a<ell` condition as the precise natural raw bound `ell-1-a`. The reverse implication uses the **actual maximizing clique subset** from verified `finiteDirectedCliqueCapacity_attained`; it handles empty U and a=0. A pinned local Mathlib Lean 4.35.0-rc3 reconstruction of the full proof with exact existing predicate/capacity definitions compiled with standard-only axioms. The [English-first proof and hostile audit](clique_support_all_witnesses_english_audit.md) precedes the dependent source. Full exact-head hosted build and strict named 325-report audit remain a separate merge gate.
+
+This theorem quantifies over all clique witnesses *in any chosen W*; it neither proves existence of every desired K_ell-free W as a Henson extension nor discharges the independent old-plus-W K_ell test. To identify the result with the **integer** graph-age canonicalizer, one must still convert sort-counts of an arbitrary clique to normalized `IntegerCliqueWeights` vectors and preserve all support inequalities.
+
 ## True numerical-H reserved-to-selected top L support (10 November 2026; separate PR)
 
 The next English-first module `Kk/NumericHTopSupportPool.lean` proves injectivity of the actual top numeric position map and exact membership of selected top images; automatic disjointness of a reserved real-copy prefix from all sufficiently later selected top originals; and both-direction exact L-column support for **every** reserved real copy and **every** top future original, assuming the explicit, uniform original edge column `E (N+b) j = decide (j∈T)` for b<r and j∈S. It does not impose that T or its top image is a clique, nor assume full corrected B3 or automatic original extension admissibility. Five new named endpoints are pending the full hosted proof gate. The [English proof and hostile audit](numeric_h_selected_top_support_columns_english_audit.md) were committed FIRST.
