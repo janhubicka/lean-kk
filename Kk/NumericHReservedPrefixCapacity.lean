@@ -112,7 +112,7 @@ theorem finiteNumericH_reserved_block_exact_gate
       (normalizedGraphModel E).binary k
       (N+x.1) (N+y.1) x.2 y.2 (0 : Fin 1)
       hOrigLt hxGen hyGen]
-    simp [reservedCopyEdge, hForward, hOriginal]
+    simp [reservedCopyEdge, hForward, hOriginal] <;> omega
   · by_cases hReverse : y.1 < x.1
     · have hOriginal :
           (normalizedGraphModel E).binary
@@ -135,7 +135,7 @@ theorem finiteNumericH_reserved_block_exact_gate
         (normalizedGraphModel E).binary k
         (N+y.1) (N+x.1) y.2 x.2 (0 : Fin 1)
         hOrigLt hyGen hxGen]
-      simp [reservedCopyEdge, hForward, hReverse, hOriginal]
+      simp [reservedCopyEdge, hForward, hReverse, hOriginal] <;> omega
     · have hSame : x.1 = y.1 := by omega
       have hZero : hNumericBinary (normalizedGraphModel E).binary k
         (hPosition k (N+x.1) x.2)
@@ -153,13 +153,10 @@ theorem reservedImageCliqueCapacity_eq_finiteDirectedCliqueCapacity
     (E : Nat → Nat → Bool) (Q : Finset Nat) :
     reservedImageCliqueCapacity E Q = finiteDirectedCliqueCapacity E Q := by
   classical
-  have hFilter : Q.powerset.filter (IsNumericBoolClique E) =
-      Q.powerset.filter (fun s =>
-        ∀ x ∈ s, ∀ y ∈ s, x ≠ y → E x y = true) := by
-    ext s
-    simp only [Finset.mem_filter, IsNumericBoolClique]
   unfold reservedImageCliqueCapacity finiteDirectedCliqueCapacity
-  exact congrArg (fun p : Finset (Finset Nat) => p.sup Finset.card) hFilter
+  congr 1
+  ext s
+  simp only [Finset.mem_filter, IsNumericBoolClique]
 
 /-- Sharp single-block capacity in the literal FINITE numerical-H L
     relation. It does not yet assume the copied points are in the carrier. -/
