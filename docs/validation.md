@@ -1,6 +1,59 @@
 # Verification plan
 
-## Current audited status — 6 November 2026 (after PR #68)
+## Current audited status — 8 November 2026 (combined review branch)
+
+**Local gate passed:** the combined source of [PR #70](https://github.com/janhubicka/lean-kk/pull/70), [PR #72](https://github.com/janhubicka/lean-kk/pull/72), and [PR #73](https://github.com/janhubicka/lean-kk/pull/73) passes the complete `lake build` and **305 exact named transitive-axiom reports**, using only `propext`, `Classical.choice`, and `Quot.sound`. Every requested name occurs exactly once, and the parser's missing/extra/custom-axiom rejection tests pass. The audited source is remote commit `1716d13d04f3797abc6d2529ff68adeb3d36b248`, source-equivalent to local commit `e8c2fd090bf326bbbe1fc1e562bd373b3204865e`, with identical tree `1ce1a26dfc23b0837d6aad54a1192c1fa2250977`.
+
+The [machine-readable verification record](audits/2026-11-08-local-validation.json) contains all **305 named axiom lists**, **105 source/configuration/audit hashes**, the **11 dependency revisions**, and build/audit log fingerprints. Those hashes and dependency worktrees matched both before and after the check. The compiler is the exact pinned Lean `v4.35.0-rc3` (`470d5ce1400764999581fd26d5d72b00d990b0f4`); the restored official archive's checksum and the executor's executable-path-only workaround are recorded. No kernel or proof flags were changed.
+
+**Subsequent hosted result:** [PR #70](https://github.com/janhubicka/lean-kk/pull/70) passed [Lean run 42483229981](https://github.com/janhubicka/lean-kk/actions/runs/42483229981) at exact head `3dfd7e0dfdc2a987326fb66f6b896bfa3d7feb25`: full build (9,486 jobs), parser self-test, and **297 exact standard-only named reports**. An independent comparison matched all 297 requested names to all 297 reports. It then merged at `fffb92e1a00a8b9978d5be245a0e4c8020eadcd1`. The actual merge and the hosted-tested PR merge have the identical tree `d3eaac3a597503068d7847e5c060d3f684413e79`, with the same parents. The merged, CI-verified code baseline is now 297 endpoints; the earlier 292 count below is the baseline from which this session began.
+
+**Remaining hosted gates:** PR #72 and #73 stay draft and unmerged. Their completed combined **local** 305-report check does not establish their separate hosted CI result. No new manuscript green marker is assigned to these two pending branches. PR #70's five checked results may now use precise markers at its merged source revision.
+
+| Contribution beyond the verified baseline | Named endpoints | Result |
+| --- | ---: | --- |
+| PR #70: numerical-H generation-one parameter closure | 5 | Combined local pass; separate hosted 297-report gate passed; merged |
+| PR #72: chronological full-closure propagation | 4 | Compiled and audited in the combined source |
+| PR #73: exact finite clique capacity and isolated-block continuation | 4 | Compiled and audited in the combined source |
+| Total including the 292 baseline endpoints | **305** | Full local gate passed |
+
+### Chronological parameters and actual B3 selections
+
+[`Kk/AlgorithmRunParameterPropagation.lean`](../Kk/AlgorithmRunParameterPropagation.lean) proves monotonicity of the existing full meet/parameter closure in its allowed levels. It extends the positive-parameter theorem from a genuine original seed to a genuine original already in that closure, retaining the same ambient structure, forbidden family, seed set, and actual free levels. The implementation reuses the existing S3 theorem with the full closure as an auxiliary seed set, then collapses the repeated closure by its minimality theorem.
+
+The actual-run theorem starts with the original available in `closure (R.I (c+1)) X`, **before cut c is tested**. When c is genuinely selected, has positive free level, lies below the source's free level, and is below the run height, the final-tail identity and closure monotonicity put its genuine Kpt parameter in every lower pre-cut closure `closure (R.I (p+1)) X`, for p<c. Source availability is therefore established at the time it is needed.
+
+The two-step endpoint uses a real original seed, an actual complete one-upper B3 failure at c, and an actual complete two-upper B3 failure at m with `0<m<c`, `m<freeLevel(c)`, `c<freeLevel(v)` and `c<runHeight`. It **derives both selected cuts** and the intervening genuine parameter membership. Neither selection is assumed. The whole ambient L-socle and displayed complete upper types remain in the age tests. The existing K4 theorem for v=38, c=22 and m=10 now uses this general theorem and its already checked witnesses. The two concrete selections were already proved in the baseline; this change supplies a reusable chronological argument.
+
+The [English proof and hostile audit](algorithm_run_parameter_propagation_english_audit.md) were committed before Lean at `714d7698f1b4923b8c91a81f6a9b05b23d391e62`. Independent reviews checked the chronology and absence of circular selection assumptions. The integrated numerical-H branch also repairs a strict/non-strict scan-bound mismatch in `I_eq_final_tail_of_run` by applying `Nat.le_of_lt`; its statement is unchanged. PR #70 contributes **five**, not four, endpoints.
+
+### Exact finite isolated-block continuation
+
+[`Kk/IsolatedBlockContinuationAge.lean`](../Kk/IsolatedBlockContinuationAge.lean) proves four endpoints using the existing directed-clique predicate, exact finite capacity, and executable clique checker:
+
+- `finiteDirectedCliqueCapacity_attained`: an actual clique subset attains the finite capacity, including for the empty pool.
+- `finitePoolCliqueCheck_false_iff_capacity_lt`: a negative exact-size clique test is equivalent to capacity below its threshold, including the zero-threshold boundary.
+- `finiteDirectedCliqueCapacity_complete_join`: capacities add across a disjoint complete join, with both edge orientations specified.
+- `finitePoolCliqueCheck_isolated_block_gluing_iff`: the full finite continuation test is exactly an old-plus-future test and the inserted block's capacity bound.
+
+For the last theorem, let P be the old pool, Q the reserved pool, G the other inserted past vertices, W the future graph, and U a subset of W. Assume Q and U are disjoint, every P-to-Q and G-to-W bit is false, every Q-to-W bit in **both directions** is precisely membership in U, and the complete past `(P ∪ Q) ∪ G` is K_ell-free. Then
+
+```text
+K_ell-free (((P ∪ Q) ∪ G) ∪ W)
+  iff K_ell-free (P ∪ W) and cap(Q) + cap(U) < ell.
+```
+
+Q need not be a clique. The formula uses its actual directed-clique capacity, not its cardinality. W's internal edges are arbitrary. Only Q/U disjointness is needed; an independent audit removed three redundant partition assumptions. The classification handles overlapping pools by excluding gap vertices outside W and old vertices outside Q, so it does not silently assume a partition. In this generic theorem the Boolean table `E` is ordinary graph adjacency, corresponding to numerical-H's **L** relation, not its auxiliary Kpt field E.
+
+The [English proof and sixteen hostile checks](isolated_block_continuation_age_english_audit.md) were committed before implementation, with the strengthened contract committed at `a2c076316f20c039bd11cfaea708c59e905ce921`. A finite-maximum helper initially exhausted Lean's default elaboration budget while comparing a reconstructed executable filter. Unfolding the existing abbreviation and extracting membership at the proposition level fixed the issue; no statement or proof limit changed. The full gate then passed. Independent small directed-model checks included overlapping pools and loop bits; the manuscript's separate numerical regression passed 55 reserved-capacity cases and 2,573 labelled continuation gluings. These bounded tests support the audit and are not a substitute for the universal Lean theorem.
+
+### Remaining mathematical obligations
+
+The nearest local target is to instantiate the finite gluing theorem on actual numerical-H prefixes: prove the reserved-copy capacity formula with the required height condition `k ≥ r−1`, derive the support columns and every relevant gap zero for **all marked front sorts simultaneously**, and identify the resulting class of arbitrary labelled continuations with the canonical raw age bound. The existing integer graph-age canonical-cover theorem can be applied only after that identification. A one-target extension theorem does not supply the simultaneous-column premise.
+
+The unbounded canonical schedule still needs every complete mixed-neighbourhood certificate, occurrence-independent full dependent I1/I2/I3/B3 source records including auxiliary microevents, and a common **labelled** inverse-source orbit. The separately stipulated one-point left-density interface for the fixed enumeration remains explicit. Neither the unconditional upper bound nor the independent matching lower bound is established by these additions. The 305 endpoint count measures registered checked interfaces, not a percentage of the manuscript proved.
+
+## Previous audited status — 6 November 2026 (after PR #68)
 
 **Reference:** [lean-kk PR #68](https://github.com/janhubicka/lean-kk/pull/68) merged as `6101b3cd222d97462127af0a8beca67d3006121f` after [full Lean CI 41941551994](https://github.com/janhubicka/lean-kk/actions/runs/41941551994) passed the complete build and **292 exact named standard-only transitive-axiom reports**, with only `propext`, `Classical.choice`, and `Quot.sound`.
 
