@@ -1,4 +1,5 @@
 import Kk.AlgorithmRunTwoB3Selection
+import Kk.AlgorithmRunParameterPropagation
 import Kk.K4ActualAlgorithmRunCut22
 import Kk.K4NumericalHCut10Transfer
 import Mathlib.Tactic
@@ -80,8 +81,19 @@ theorem k4Gadget_algorithmRun_selects_cuts10_22
     (ell : Nat) (hEll : 22 < ell)
     (R : SuccessorTree.SMTree.Envelope.AlgorithmRun
       (normalizedKptSMTree k4GadgetFamily) X ell) :
-    10 ∈ R.I 10 ∧ 22 ∈ R.I 22 :=
-  ⟨k4Gadget_algorithmRun_selects_cut10 X hSeed ell hEll R,
-   k4Gadget_algorithmRun_selects_cut22 X hSeed ell hEll R⟩
+    10 ∈ R.I 10 ∧ 22 ∈ R.I 22 := by
+  have hFreeQ : 10 < k4GadgetH.freeLevel 22 := by
+    rw [k4GadgetH_q2_freeLevel_eq_11]
+    decide
+  obtain ⟨h22, h10, _⟩ :=
+    algorithmRun_selects_two_step_B3_parameter_propagation
+      k4GadgetFamily k4GadgetH k4GadgetH_avoids
+      (⟨38, by change 38 < 40; decide⟩ : Fin k4GadgetH.size)
+      22 k4GadgetH_top_freeLevel_above22
+      k4H_actual_cut22_singleUpper_B3_failure
+      10 (by decide) (by decide) hFreeQ
+      k4H_actual_cut10_twoUpper_B3_failure
+      X hSeed ell hEll R
+  exact ⟨h10, h22⟩
 
 end Kk

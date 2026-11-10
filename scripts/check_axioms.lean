@@ -747,3 +747,13 @@ import Kk
 -- Actual AlgorithmRun selected generation-one numerical level persists to every lower Kpt closure.
 #check @Kk.finiteNumericH_run_selected_genOne_in_lower_closure
 #print axioms Kk.finiteNumericH_run_selected_genOne_in_lower_closure
+
+-- Genuine closure-parameter propagation and two successive actual B3 selections.
+#check @Kk.envelope_closure_mono_levels
+#print axioms Kk.envelope_closure_mono_levels
+#check @Kk.kpt_closure_contains_positive_parameter_of_original_mem
+#print axioms Kk.kpt_closure_contains_positive_parameter_of_original_mem
+#check @Kk.algorithmRun_selected_positive_parameter_in_lower_closure
+#print axioms Kk.algorithmRun_selected_positive_parameter_in_lower_closure
+#check @Kk.algorithmRun_selects_two_step_B3_parameter_propagation
+#print axioms Kk.algorithmRun_selects_two_step_B3_parameter_propagation

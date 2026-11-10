@@ -96,6 +96,7 @@ import Kk.B3SmallCliqueCore
 import Kk.B3CutStarLocality
 import Kk.HFirstGadgetFreeCut
 import Kk.B3GadgetClosureParameter
+import Kk.AlgorithmRunParameterPropagation
 
 /-!
 The counting project imports the verified successor-tree library.
