@@ -295,8 +295,119 @@ theorem reservedPrefixCapacity_eq_of_height
   have hka : a ≤ k := by omega
   exact reservedPrefixCapacity_eq k a g hka hgk
 
+
+/-- A Boolean directed-clique checker on a finite set of actual numeric
+  coordinates. This is a local type-generic interface for transporting
+  the pair model; its later identification with the existing Kk finite
+  capacity must use the actual full library definition. -/
+def IsNumericBoolClique (E : Nat → Nat → Bool) (s : Finset Nat) : Prop :=
+  ∀ x ∈ s, ∀ y ∈ s, x ≠ y → E x y = true
+
+noncomputable def reservedImageCliqueCapacity
+    (E : Nat → Nat → Bool) (Q : Finset Nat) : Nat := by
+  classical
+  exact (Q.powerset.filter (IsNumericBoolClique E)).sup Finset.card
+
+/-- Injective transport of the exact reserved-block capacity to a concrete
+  directed Boolean relation on numbered coordinates. Both directions of
+  every off-diagonal L bit must match the generation gate; assuming only
+  positive-edge preservation would not prove the reverse direction. -/
+theorem reservedPrefixCapacity_image_transport
+    (E : Nat → Nat → Bool) (f : Nat × Nat → Nat) (k a g : Nat)
+    (hInj : Set.InjOn f ↑(reservedPrefixPool k a g))
+    (hEdge : ∀ x ∈ reservedPrefixPool k a g,
+      ∀ y ∈ reservedPrefixPool k a g, x ≠ y →
+        (E (f x) (f y) = true ↔ reservedCopyEdge k x y)) :
+    reservedImageCliqueCapacity E
+      ((reservedPrefixPool k a g).image f) =
+      reservedPrefixCapacity k a g := by
+  classical
+  let P := reservedPrefixPool k a g
+  have hInjSub (s : Finset (Nat × Nat)) (hs : s ⊆ P) :
+      Set.InjOn f ↑s := by
+    intro x hx y hy hEq
+    exact hInj (hs hx) (hs hy) hEq
+  apply Nat.le_antisymm
+  · unfold reservedImageCliqueCapacity
+    apply Finset.sup_le
+    intro t ht
+    obtain ⟨htP, htClique⟩ := Finset.mem_filter.mp ht
+    have htSub : t ⊆ P.image f := Finset.mem_powerset.mp htP
+    let s : Finset (Nat × Nat) := P.filter (fun x => f x ∈ t)
+    have hsSub : s ⊆ P := Finset.filter_subset _ _
+    have hsImage : s.image f = t := by
+      apply Finset.Subset.antisymm
+      · intro z hz
+        obtain ⟨x,hx,hxz⟩ := Finset.mem_image.mp hz
+        exact hxz ▸ (Finset.mem_filter.mp hx).2
+      · intro z hz
+        obtain ⟨x,hx,hxz⟩ := Finset.mem_image.mp (htSub hz)
+        apply Finset.mem_image.mpr
+        exact ⟨x,Finset.mem_filter.mpr ⟨hx, hxz ▸ hz⟩,hxz⟩
+    have hsCard : s.card = t.card := by
+      have h := Finset.card_image_iff.mpr (hInjSub s hsSub)
+      rw [hsImage] at h
+      exact h.symm
+    have hsClique : IsReservedCopyClique k s := by
+      intro x hx y hy hxy
+      have hxP : x ∈ P := hsSub hx
+      have hyP : y ∈ P := hsSub hy
+      have hxT : f x ∈ t := (Finset.mem_filter.mp hx).2
+      have hyT : f y ∈ t := (Finset.mem_filter.mp hy).2
+      have hfNe : f x ≠ f y := by
+        intro hEq
+        exact hxy (hInj hxP hyP hEq)
+      exact (hEdge x hxP y hyP hxy).mp (htClique (f x) hxT (f y) hyT hfNe)
+    have hsMem : s ∈ P.powerset.filter (IsReservedCopyClique k) :=
+      Finset.mem_filter.mpr ⟨Finset.mem_powerset.mpr hsSub,hsClique⟩
+    have hsBound := Finset.le_sup (f:=Finset.card) hsMem
+    rw [hsCard] at hsBound
+    exact hsBound
+  · unfold reservedPrefixCapacity
+    apply Finset.sup_le
+    intro s hs
+    obtain ⟨hsP, hsClique⟩ := Finset.mem_filter.mp hs
+    have hsSub : s ⊆ P := Finset.mem_powerset.mp hsP
+    have htSub : s.image f ⊆ P.image f := Finset.image_subset_image hsSub
+    have htClique : IsNumericBoolClique E (s.image f) := by
+      intro u hu v hv huv
+      obtain ⟨x,hx,hux⟩ := Finset.mem_image.mp hu
+      obtain ⟨y,hy,hvy⟩ := Finset.mem_image.mp hv
+      have hxy : x ≠ y := by
+        intro hSame
+        subst y
+        exact huv (hux.symm.trans hvy)
+      have h := (hEdge x (hsSub hx) y (hsSub hy) hxy).mpr
+        (hsClique x hx y hy hxy)
+      simpa only [hux,hvy] using h
+    have htMem : s.image f ∈
+        (P.image f).powerset.filter (IsNumericBoolClique E) :=
+      Finset.mem_filter.mpr ⟨Finset.mem_powerset.mpr htSub,htClique⟩
+    have htBound := Finset.le_sup (f:=Finset.card) htMem
+    have hsCard := Finset.card_image_iff.mpr (hInjSub s hsSub)
+    rw [hsCard] at htBound
+    exact htBound
+
+/-- The numerical H transfer theorem yields the same explicit formula
+  once the actual coordinates are proved injective and every L bit is
+  identified with the genuine generation gate. -/
+theorem reservedImageCliqueCapacity_eq_of_gate
+    (E : Nat → Nat → Bool) (f : Nat × Nat → Nat)
+    (k r a g : Nat)
+    (ha : a < r) (hr : r ≤ k+1) (hgk : g ≤ k)
+    (hInj : Set.InjOn f ↑(reservedPrefixPool k a g))
+    (hEdge : ∀ x ∈ reservedPrefixPool k a g,
+      ∀ y ∈ reservedPrefixPool k a g, x ≠ y →
+        (E (f x) (f y) = true ↔ reservedCopyEdge k x y)) :
+    reservedImageCliqueCapacity E ((reservedPrefixPool k a g).image f) =
+      if g < a then a else a+1 := by
+  rw [reservedPrefixCapacity_image_transport E f k a g hInj hEdge]
+  exact reservedPrefixCapacity_eq_of_height k r a g ha hr hgk
+
 #print axioms reservedPrefixClique_card_le_label_of_generation_lt
 #print axioms reservedPrefixCapacity_eq
 #print axioms reservedPrefixCapacity_eq_of_height
+#print axioms reservedPrefixCapacity_image_transport
+#print axioms reservedImageCliqueCapacity_eq_of_gate
 
 end Kk
