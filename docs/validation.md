@@ -1,5 +1,9 @@
 # Verification plan
 
+## True numerical-H reserved-to-selected top L support (10 November 2026; separate PR)
+
+The next English-first module `Kk/NumericHTopSupportPool.lean` proves injectivity of the actual top numeric position map and exact membership of selected top images; automatic disjointness of a reserved real-copy prefix from all sufficiently later selected top originals; and both-direction exact L-column support for **every** reserved real copy and **every** top future original, assuming the explicit, uniform original edge column `E (N+b) j = decide (j∈T)` for b<r and j∈S. It does not impose that T or its top image is a clique, nor assume full corrected B3 or automatic original extension admissibility. Five new named endpoints are pending the full hosted proof gate. The [English proof and hostile audit](numeric_h_selected_top_support_columns_english_audit.md) were committed FIRST.
+
 ## Physical carrier and conditional full gluing (10 November 2026, PR in progress)
 
 [PR #75](https://github.com/janhubicka/lean-kk/pull/75) passed [hosted Lean run 42903693822](https://github.com/janhubicka/lean-kk/actions/runs/42903693822), including the full build, adversarial axiom-report parser self-test, and **315 exact named standard-only reports**; merged as `9e03d4e021cca4e14bcfebf65a11d393d0c9143c`. Five new physical endpoints identify the actual finite numerical-H binary L prefix with its exact reserved-copy generation-gate clique capacity.
