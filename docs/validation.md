@@ -1,5 +1,11 @@
 # Verification plan
 
+## Physical exact gluing with ALL arbitrary future clique witnesses (10 November 2026)
+
+After the two-endpoint support-witness capacity lemma, `Kk/ArbitraryWitnessGluing.lean` composes the full finite four-pool gluing iff with the exact inequality on the T-part of **every clique** in an arbitrary W. Its generic statement keeps Q∩U=∅, old/reserved nonedges, gap/future zeros, both directed reserve/future L bits, and the past K_ell check. The numerical-H specialization substitutes the verified genuine real-copy prefix capacity `if g<a then a else a+1` (requiring a<r≤k+1 and g≤k). The [English proof and twelve-point hostile audit](arbitrary_witness_gluing_english_audit.md) were committed before Lean. Both dependent endpoints still require the full hosted gate; projected combined count is **327** standard-only named endpoints.
+
+Unlike the selected-top column theorem, these iff statements quantify over arbitrary finite future graph witnesses W under their prescribed columns. They do **not** construct those hypothetical W inside a Henson extension, identify filtered clique cardinalities with normalized integer witness vectors, discharge the old-plus-W forbidden-clique test, or prove parameter-closed B3 source equivalence.
+
 ## Arbitrary finite continuation clique witnesses (10 November 2026, English-first branch)
 
 A new independent two-endpoint Lean module, `Kk/FiniteCliqueSupportWitness.lean`, identifies the exact supported-future clique capacity `a+cap(W.filter (sort∈T))<ell` with the corresponding inequality on the T-part of **every** directed clique `s⊆W`. The second endpoint rewrites this under the indispensable `a<ell` condition as the precise natural raw bound `ell-1-a`. The reverse implication uses the **actual maximizing clique subset** from verified `finiteDirectedCliqueCapacity_attained`; it handles empty U and a=0. A pinned local Mathlib Lean 4.35.0-rc3 reconstruction of the full proof with exact existing predicate/capacity definitions compiled with standard-only axioms. The [English-first proof and hostile audit](clique_support_all_witnesses_english_audit.md) precedes the dependent source. Full exact-head hosted build and strict named 325-report audit remain a separate merge gate.
