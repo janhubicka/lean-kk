@@ -1,5 +1,11 @@
 # Verification plan
 
+## Current integration update — 10 November 2026
+
+PR [#72](https://github.com/janhubicka/lean-kk/pull/72) (AlgorithmRun closure-parameter propagation) passed its exact-head hosted Lean gate [42485796491](https://github.com/janhubicka/lean-kk/actions/runs/42485796491) and merged as `ea4c3ee540381bd5179ac9261d07380072968c0e`. PR [#73](https://github.com/janhubicka/lean-kk/pull/73) (finite isolated-block continuation) passed hosted gate [42491952187](https://github.com/janhubicka/lean-kk/actions/runs/42491952187) and merged as `9623dde0c5c0f872548fd6da99806a00010b0703`. The **305 named endpoints** from the combined source are integrated into main; this does not discharge global diary or Ramsey-bound hypotheses.
+
+**New separate English-first branch (not part of the 305 baseline):** `Kk/ReservedPrefixCapacity.lean` proves, *in the combinatorial pair-generation gate*, exact clique capacity of a single reserved original block prefix: `a` if `g<a`, else `a+1`, under `a≤k` and `g≤k`. The original height formulation assumes `a<r≤k+1`. Three local named transitive-axiom reports are standard-only, after a fresh restored Lean `4.35.0-rc3` / matching pinned Mathlib check. See [proof-first audit](numeric_h_reserved_prefix_capacity_english_audit.md). This has NOT yet been transported to actual `hPosition` / `finiteNumericHL`; hosted full project CI of the new branch is also a separate gate. No green manuscript marker for this bridge.
+
 ## Current audited status — 8 November 2026 (combined review branch)
 
 **Local gate passed:** the combined source of [PR #70](https://github.com/janhubicka/lean-kk/pull/70), [PR #72](https://github.com/janhubicka/lean-kk/pull/72), and [PR #73](https://github.com/janhubicka/lean-kk/pull/73) passes the complete `lake build` and **305 exact named transitive-axiom reports**, using only `propext`, `Classical.choice`, and `Quot.sound`. Every requested name occurs exactly once, and the parser's missing/extra/custom-axiom rejection tests pass. The audited source is remote commit `1716d13d04f3797abc6d2529ff68adeb3d36b248`, source-equivalent to local commit `e8c2fd090bf326bbbe1fc1e562bd373b3204865e`, with identical tree `1ce1a26dfc23b0837d6aad54a1192c1fa2250977`.
