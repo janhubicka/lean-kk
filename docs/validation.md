@@ -1,5 +1,11 @@
 # Verification plan
 
+## Physical carrier and conditional full gluing (10 November 2026, PR in progress)
+
+[PR #75](https://github.com/janhubicka/lean-kk/pull/75) passed [hosted Lean run 42903693822](https://github.com/janhubicka/lean-kk/actions/runs/42903693822), including the full build, adversarial axiom-report parser self-test, and **315 exact named standard-only reports**; merged as `9e03d4e021cca4e14bcfebf65a11d393d0c9143c`. Five new physical endpoints identify the actual finite numerical-H binary L prefix with its exact reserved-copy generation-gate clique capacity.
+
+On a separate English-first branch, `Kk/NumericHReservedPrefixGluing.lean` now states and proves three further conditional endpoints: inclusion of all real reserved prefix coordinates below the finite H carrier cut, membership in the literal `finiteNumericHL` carrier, and substitution of the *physical* capacity `if g<a then a else a+1` into the full four-pool finite gluing iff. The [English proof and hostile audit](physical_reserved_prefix_carrier_gluing_english_audit.md) were committed before the Lean source. The numerical prefix carrier subproof has an independent local pinned Lean check; the full dependent source still requires a fresh hosted gate. These are **not** claims that the required P/Q/G/W/U edge bits have been simultaneously realized by the resolved-copy construction. No manuscript green marker for that outstanding application.
+
 ## Current integration update — 10 November 2026
 
 PR [#72](https://github.com/janhubicka/lean-kk/pull/72) (AlgorithmRun closure-parameter propagation) passed its exact-head hosted Lean gate [42485796491](https://github.com/janhubicka/lean-kk/actions/runs/42485796491) and merged as `ea4c3ee540381bd5179ac9261d07380072968c0e`. PR [#73](https://github.com/janhubicka/lean-kk/pull/73) (finite isolated-block continuation) passed hosted gate [42491952187](https://github.com/janhubicka/lean-kk/actions/runs/42491952187) and merged as `9623dde0c5c0f872548fd6da99806a00010b0703`. The **305 named endpoints** from the combined source are integrated into main; this does not discharge global diary or Ramsey-bound hypotheses.
