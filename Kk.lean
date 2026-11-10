@@ -101,6 +101,7 @@ import Kk.IsolatedBlockContinuationAge
 import Kk.ReservedPrefixCapacity
 import Kk.NumericHReservedPrefixCapacity
 import Kk.NumericHReservedPrefixGluing
+import Kk.NumericHTopSupportPool
 
 /-!
 The counting project imports the verified successor-tree library.
