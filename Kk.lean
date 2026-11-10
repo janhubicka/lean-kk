@@ -102,6 +102,7 @@ import Kk.ReservedPrefixCapacity
 import Kk.NumericHReservedPrefixCapacity
 import Kk.NumericHReservedPrefixGluing
 import Kk.NumericHTopSupportPool
+import Kk.FiniteCliqueSupportWitness
 
 /-!
 The counting project imports the verified successor-tree library.
