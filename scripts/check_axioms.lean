@@ -813,3 +813,8 @@ import Kk
 #print axioms Kk.finiteCliqueSupportCapacity_iff_all_witnesses
 #check @Kk.finiteCliqueSupportCapacity_raw_iff_all_witnesses
 #print axioms Kk.finiteCliqueSupportCapacity_raw_iff_all_witnesses
+-- Arbitrary future L-only continuation witnesses; generic and actual numeric H.
+#check @Kk.finitePoolCliqueCheck_gluing_all_support_witnesses
+#print axioms Kk.finitePoolCliqueCheck_gluing_all_support_witnesses
+#check @Kk.finiteNumericH_reserved_prefix_gluing_all_support_witnesses
+#print axioms Kk.finiteNumericH_reserved_prefix_gluing_all_support_witnesses
