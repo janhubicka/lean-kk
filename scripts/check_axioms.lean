@@ -775,3 +775,7 @@ import Kk
 #print axioms Kk.reservedPrefixCapacity_eq
 #check @Kk.reservedPrefixCapacity_eq_of_height
 #print axioms Kk.reservedPrefixCapacity_eq_of_height
+#check @Kk.reservedPrefixCapacity_image_transport
+#print axioms Kk.reservedPrefixCapacity_image_transport
+#check @Kk.reservedImageCliqueCapacity_eq_of_gate
+#print axioms Kk.reservedImageCliqueCapacity_eq_of_gate
