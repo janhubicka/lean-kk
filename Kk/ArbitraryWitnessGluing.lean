@@ -17,6 +17,8 @@ or solve the auxiliary parameter-closed B3 source matching.
 
 namespace Kk
 
+open SuccessorTree.V10
+
 /-- Exact four-pool gluing iff, with the clique budget expressed against
 EVERY possible supported clique witness inside arbitrary W. The supported
 pool U is the actual sort filter, not a separate chosen finite set. -/
