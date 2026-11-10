@@ -2,6 +2,9 @@
 
 **10 November 2026. English FIRST; Lean follows only after review.**
 
+**Implementation checkpoint:** The abstract pair-generation gate formula, sharp upper bounds and explicit witnesses now compile in the exact pinned local Lean. A separate generic transport theorem additionally proves that an injective image of the finite prefix has exactly the same clique capacity whenever **every ordered off-diagonal Boolean L bit** is equivalent to the gate. Five named transitive-axiom reports are standard-only. This does **not** discharge the actual-H ι-coordinate injection and binary bit-matching hypotheses; those are the next obligations. Hosted full-project CI is a separate gate.
+
+
 ## Claim and precise carrier
 
 Fix the true H constructor at integer height \(k\). Let \(q_0<\cdots<q_{r-1}\) be **distinct, increasing original labels**, inducing a complete symmetric irreflexive clique in the original graph. Assume \(1\le r\le k+1\). Its real numerical-H copies are \(q_b^t=\iota(q_b,t)\) for \(0\le b<r\), \(0\le t\le k\).
