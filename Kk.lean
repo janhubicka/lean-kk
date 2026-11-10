@@ -99,6 +99,7 @@ import Kk.B3GadgetClosureParameter
 import Kk.AlgorithmRunParameterPropagation
 import Kk.IsolatedBlockContinuationAge
 import Kk.ReservedPrefixCapacity
+import Kk.NumericHReservedPrefixCapacity
 
 /-!
 The counting project imports the verified successor-tree library.

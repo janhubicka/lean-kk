@@ -779,3 +779,14 @@ import Kk
 #print axioms Kk.reservedPrefixCapacity_image_transport
 #check @Kk.reservedImageCliqueCapacity_eq_of_gate
 #print axioms Kk.reservedImageCliqueCapacity_eq_of_gate
+-- Exact physical numerical-H single-block prefix L-capacity.
+#check @Kk.reservedBlockNumericPos_injOn
+#print axioms Kk.reservedBlockNumericPos_injOn
+#check @Kk.hNumericBinary_same_original_false
+#print axioms Kk.hNumericBinary_same_original_false
+#check @Kk.finiteNumericH_reserved_block_exact_gate
+#print axioms Kk.finiteNumericH_reserved_block_exact_gate
+#check @Kk.reservedImageCliqueCapacity_eq_finiteDirectedCliqueCapacity
+#print axioms Kk.reservedImageCliqueCapacity_eq_finiteDirectedCliqueCapacity
+#check @Kk.finiteNumericH_reserved_block_prefix_capacity
+#print axioms Kk.finiteNumericH_reserved_block_prefix_capacity
