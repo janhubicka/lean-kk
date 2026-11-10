@@ -790,3 +790,10 @@ import Kk
 #print axioms Kk.reservedImageCliqueCapacity_eq_finiteDirectedCliqueCapacity
 #check @Kk.finiteNumericH_reserved_block_prefix_capacity
 #print axioms Kk.finiteNumericH_reserved_block_prefix_capacity
+-- Physical exact finite H prefix carrier and conditional full gluing.
+#check @Kk.reservedBlockNumericPrefix_inside_carrier
+#print axioms Kk.reservedBlockNumericPrefix_inside_carrier
+#check @Kk.reservedBlockNumericPrefix_mem_finiteH
+#print axioms Kk.reservedBlockNumericPrefix_mem_finiteH
+#check @Kk.finiteNumericH_reserved_prefix_gluing_iff
+#print axioms Kk.finiteNumericH_reserved_prefix_gluing_iff
