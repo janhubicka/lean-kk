@@ -98,6 +98,7 @@ import Kk.HFirstGadgetFreeCut
 import Kk.B3GadgetClosureParameter
 import Kk.AlgorithmRunParameterPropagation
 import Kk.IsolatedBlockContinuationAge
+import Kk.ReservedPrefixCapacity
 
 /-!
 The counting project imports the verified successor-tree library.
