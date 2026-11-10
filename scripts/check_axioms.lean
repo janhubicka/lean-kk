@@ -767,3 +767,11 @@ import Kk
 #print axioms Kk.finiteDirectedCliqueCapacity_complete_join
 #check @Kk.finitePoolCliqueCheck_isolated_block_gluing_iff
 #print axioms Kk.finitePoolCliqueCheck_isolated_block_gluing_iff
+
+-- English-first exact numerical-H reserved block prefix gate capacity.
+#check @Kk.reservedPrefixClique_card_le_label_of_generation_lt
+#print axioms Kk.reservedPrefixClique_card_le_label_of_generation_lt
+#check @Kk.reservedPrefixCapacity_eq
+#print axioms Kk.reservedPrefixCapacity_eq
+#check @Kk.reservedPrefixCapacity_eq_of_height
+#print axioms Kk.reservedPrefixCapacity_eq_of_height
