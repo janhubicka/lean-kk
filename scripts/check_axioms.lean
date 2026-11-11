@@ -818,3 +818,34 @@ import Kk
 #print axioms Kk.finitePoolCliqueCheck_gluing_all_support_witnesses
 #check @Kk.finiteNumericH_reserved_prefix_gluing_all_support_witnesses
 #print axioms Kk.finiteNumericH_reserved_prefix_gluing_all_support_witnesses
+
+-- Every finite L-clique becomes an exact normalized integer witness;
+-- canonicalization preserves the JOINT support-constraint system.
+#check @Kk.finiteCliqueSortCount_sum_support
+#print axioms Kk.finiteCliqueSortCount_sum_support
+#check @Kk.finiteCliqueSortCount_sum_univ
+#print axioms Kk.finiteCliqueSortCount_sum_univ
+#check @Kk.integerCliqueWeightsOfFinset_total_eq
+#print axioms Kk.integerCliqueWeightsOfFinset_total_eq
+#check @Kk.integerCliqueWeights_exists_of_finset
+#print axioms Kk.integerCliqueWeights_exists_of_finset
+#check @Kk.integerCliqueOnSupport_of_finset
+#print axioms Kk.integerCliqueOnSupport_of_finset
+#check @Kk.integerCliqueWeightsOfFinset_respects_iff
+#print axioms Kk.integerCliqueWeightsOfFinset_respects_iff
+#check @Kk.finiteCliqueSortConstraints_canonical_iff
+#print axioms Kk.finiteCliqueSortConstraints_canonical_iff
+#check @Kk.finiteCliqueSortConstraints_all_canonical_iff
+#print axioms Kk.finiteCliqueSortConstraints_all_canonical_iff
+#check @Kk.oneSortOneWeight_not_from_empty
+#print axioms Kk.oneSortOneWeight_not_from_empty
+#check @Kk.finiteCliqueSortConstraints_integerCanonical_iff
+#print axioms Kk.finiteCliqueSortConstraints_integerCanonical_iff
+#check @Kk.finiteClique_card_lt_of_pool_cliqueFree
+#print axioms Kk.finiteClique_card_lt_of_pool_cliqueFree
+#check @Kk.finiteClique_all_constraints_integerCanonical_iff
+#print axioms Kk.finiteClique_all_constraints_integerCanonical_iff
+#check @Kk.finitePoolCliqueCheck_oldFuture_implies_future_false
+#print axioms Kk.finitePoolCliqueCheck_oldFuture_implies_future_false
+#check @Kk.finiteClique_oldFuture_all_constraints_canonical_iff
+#print axioms Kk.finiteClique_oldFuture_all_constraints_canonical_iff
