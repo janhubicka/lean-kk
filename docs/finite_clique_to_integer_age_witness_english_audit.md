@@ -87,6 +87,13 @@ A possible next construction is a finite *disjoint union of typed cliques*, one 
 11. **Canonicalizer:** `G_B` preserves constraints of a *given normalized vector* by the existing theorem; it does not construct the corresponding physical finite H continuation.
 12. **No parameter shortcut:** neither the ordinary L clique nor its sort-count vector determines the Kpt auxiliary E or full parameter-closed B3 source.
 
+## A second essential pitfall: constraints are a JOINT system
+
+**Single-support trap:** The existing canonicalization theorem states
+`WitnessRespects value (G_B) w ↔ WitnessRespects value B w` for the **conjunction over every support**. It does **not** state `value w T ≤ G_B(T) ↔ value w T ≤ B(T)` separately for each T. A canonicalizer may lower one raw bound while preserving the total feasible set. Accordingly the finite-clique corollary MUST compare `∀ T` on both sides. It is invalid to replace the raw bound of one support with its canonicalized value in isolation.
+
+**Old-plus-future boundary:** the four-pool gluing statement separately assumes that `P∪W` is K_ell-free. Because W⊆P∪W, the exact clique-capacity monotonicity theorem implies that W itself is K_ell-free. Consequently *every* clique witness s⊆W is small enough to construct normalized weights. No additional smallness premise has to be assumed in the final gluing application, but the existing old-plus-future premise must not be dropped.
+
 ## Formalization gate
 
 Write (A) exact full-support and partial-support fiber sum lemmas, (B) a constructor `IntegerCliqueWeights d ell` for `s.card<ell`, (C) the exact support-count theorem for every `IntegerGraphSupport`, and (D) transfer of this one vector through the existing `WitnessRespects` and `integerGraphAgeCanonical_preserves_clique_vectors`. Include a regression against surjectivity. Use the pinned Lean 4.35.0-rc3 and matching Mathlib locally for the fiber and arithmetic core; then verify the imported Kk module with full `lake build` and exact named standard-only transitive-axiom reports. Keep the manuscript's protected black prose unchanged.
