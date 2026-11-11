@@ -1,5 +1,13 @@
 # Verification plan
 
+## 11 November 2026 — free amalgamation of compatible finite L-only witness families
+
+The prior [clique-to-integer witness PR #80](https://github.com/janhubicka/lean-kk/pull/80) passed [exact-head hosted Lean run 42993396533](https://github.com/janhubicka/lean-kk/actions/runs/42993396533) with a **9,495-job build** and **341 exact named standard-only transitive-axiom reports**, and merged as `520acdafdeee105bc613d8c5367e74b32b779798`. Its new `Kk/FiniteCliqueIntegerWitness.lean` constructs normalized integer vectors from all small realized cliques, proves exact values on every support, and transfers the **joint** system of support bounds through the verified canonicalizer. A counterexample prevents wrongly assuming every abstract vector is represented in a fixed future W.
+
+The independent new [English proof and adversarial review](finite_free_amalgamation_witness_families_english_audit.md) and `Kk/FiniteFreeAmalgamationWitnesses.lean` establish the *relative finite free-amalgamation mechanism*: if each P∪W_i is K_ell-free and different fresh pools have zero cross edges, their finite union over the same old base P remains K_ell-free. The two-pool iff also holds without artificial disjointness conditions. Its entire family includes the empty-family case with explicit base-freeness. These core proof bodies compiled locally against the exact directed clique checker and exact Boolean no-clique interface in pinned Lean 4.35.0-rc3 / Mathlib, standard-only axioms; the dependent source requires its own hosted whole-project build and **345 named reports** before merge.
+
+This proves that multiple **already compatible** individual finite L-only witness extensions may be combined with no new forbidden clique. It does not prove that each required relative normalized-vector witness extension exists with all prescribed old-to-future, reserved support, gap zeros, chronological enumeration and auxiliary Kpt E/parameter records. That separate mixed-neighbourhood realization problem is now the main mathematical obstacle. No protected manuscript black prose or green marker was changed.
+
 ## 11 November 2026 — exact finite L-clique to normalized integer-age bridge
 
 **Hosted-verified baseline:** the preceding [PR #79](https://github.com/janhubicka/lean-kk/pull/79) passed [run 42909516210](https://github.com/janhubicka/lean-kk/actions/runs/42909516210), including a full **9,494-job** build and **327 exact named transitive-axiom reports** (only `propext`, `Classical.choice`, and `Quot.sound`). It merged as `20ccd8e03b5a232097707662db1fd507aa9b1acf`. This supersedes the historical pending statements in sections below.
