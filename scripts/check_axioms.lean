@@ -849,3 +849,13 @@ import Kk
 #print axioms Kk.finitePoolCliqueCheck_oldFuture_implies_future_false
 #check @Kk.finiteClique_oldFuture_all_constraints_canonical_iff
 #print axioms Kk.finiteClique_oldFuture_all_constraints_canonical_iff
+
+-- Literal finite free amalgamation of compatible K-ell-free witnesses over one base.
+#check @Kk.finitePoolCliqueCheck_freeAmalgam_two
+#print axioms Kk.finitePoolCliqueCheck_freeAmalgam_two
+#check @Kk.finitePoolCliqueCheck_freeAmalgam_subset_false
+#print axioms Kk.finitePoolCliqueCheck_freeAmalgam_subset_false
+#check @Kk.finitePoolCliqueCheck_freeAmalgam_two_iff
+#print axioms Kk.finitePoolCliqueCheck_freeAmalgam_two_iff
+#check @Kk.finitePoolCliqueCheck_freeAmalgam_family
+#print axioms Kk.finitePoolCliqueCheck_freeAmalgam_family
