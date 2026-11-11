@@ -104,6 +104,7 @@ import Kk.NumericHReservedPrefixGluing
 import Kk.NumericHTopSupportPool
 import Kk.FiniteCliqueSupportWitness
 import Kk.ArbitraryWitnessGluing
+import Kk.FiniteCliqueIntegerWitness
 
 /-!
 The counting project imports the verified successor-tree library.
