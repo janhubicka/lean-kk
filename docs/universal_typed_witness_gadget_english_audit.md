@@ -74,6 +74,9 @@ A separate **all-pairs clique oracle** enumerated the vertices and every candida
 
 ## Adversarial audit
 
+**Zero-threshold phantom vector:** the existing subtype `IntegerCliqueWeights d ell` can be inhabited when `d=0` and `ell=0`: its empty function has total weight zero, and the truncated condition `0≤ell-1` is vacuously true because Nat subtraction saturates at zero. Consequently `Fintype.card (WitnessVertex w)<ell` is FALSE for that degenerate pair. The single-component cardinal bound must explicitly assume `0<ell`, which follows from the gadget's stated `ell≥2`. This was found by a failed local `omega` proof, diagnosed mathematically, and repaired by adding the precise premise rather than adjusting proof limits.
+
+
 1. **Empty future pool is not universal.** This construction deliberately changes W; it does not claim that an arbitrarily fixed W realizes all normalized vectors.
 2. **Only feasible vectors are included.** Adding every normalized vector regardless of B generally creates forbidden mixed cliques (negative regression).
 3. **Vector multiplicity:** C_w has w_j *distinct vertices* of sort j, not merely one vertex per occupied sort.
