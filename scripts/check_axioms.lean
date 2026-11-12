@@ -917,3 +917,11 @@ import Kk
 #print axioms Kk.integerWitnessComponent_subclique_respects_raw
 #check @Kk.integerGraphAge_has_concrete_clique_attaining_support
 #print axioms Kk.integerGraphAge_has_concrete_clique_attaining_support
+
+-- Exact old-neighbour pool clique capacity, and physical left-dense one-point realization.
+#check @Kk.finiteNeighbourCliqueCheck_membership_iff_pool
+#print axioms Kk.finiteNeighbourCliqueCheck_membership_iff_pool
+#check @Kk.onePointLeftDense_realizes_exact_finite_neighbour_set
+#print axioms Kk.onePointLeftDense_realizes_exact_finite_neighbour_set
+#check @Kk.henson_leftDense_realizes_exact_finite_neighbour_set
+#print axioms Kk.henson_leftDense_realizes_exact_finite_neighbour_set
