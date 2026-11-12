@@ -112,6 +112,7 @@ import Kk.FaithfulRelativeB3Profile
 import Kk.RelativeTriangleObstruction
 import Kk.ConcreteCanonicalMaximizers
 import Kk.UniversalFutureDisjointCliques
+import Kk.ExactFiniteNeighbourRealization
 
 /-!
 The counting project imports the verified successor-tree library.

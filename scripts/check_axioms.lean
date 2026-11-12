@@ -941,3 +941,11 @@ import Kk
 #print axioms Kk.universalWitnessFuture_clique_respects_raw
 #check @Kk.universalWitnessFuture_realizes_every_feasible
 #print axioms Kk.universalWitnessFuture_realizes_every_feasible
+
+-- Exact old-neighbour pool clique capacity, and physical left-dense one-point realization.
+#check @Kk.finiteNeighbourCliqueCheck_membership_iff_pool
+#print axioms Kk.finiteNeighbourCliqueCheck_membership_iff_pool
+#check @Kk.onePointLeftDense_realizes_exact_finite_neighbour_set
+#print axioms Kk.onePointLeftDense_realizes_exact_finite_neighbour_set
+#check @Kk.henson_leftDense_realizes_exact_finite_neighbour_set
+#print axioms Kk.henson_leftDense_realizes_exact_finite_neighbour_set
