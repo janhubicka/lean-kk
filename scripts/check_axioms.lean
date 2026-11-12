@@ -949,3 +949,13 @@ import Kk
 #print axioms Kk.onePointLeftDense_realizes_exact_finite_neighbour_set
 #check @Kk.henson_leftDense_realizes_exact_finite_neighbour_set
 #print axioms Kk.henson_leftDense_realizes_exact_finite_neighbour_set
+
+-- Exact realized profiles and canonical support capacities of one universal finite L-future.
+#check @Kk.universalWitnessFuture_exact_profile_iff
+#print axioms Kk.universalWitnessFuture_exact_profile_iff
+#check @Kk.universalWitnessFuture_clique_support_le_canonical
+#print axioms Kk.universalWitnessFuture_clique_support_le_canonical
+#check @Kk.universalWitnessFuture_clique_attains_canonical
+#print axioms Kk.universalWitnessFuture_clique_attains_canonical
+#check @Kk.universalWitnessFuture_support_capacity_eq_canonical
+#print axioms Kk.universalWitnessFuture_support_capacity_eq_canonical

@@ -1,5 +1,15 @@
 # Verification plan
 
+## 12 November 2026 — exact realized feasible profiles in one finite future
+
+The standalone ordinary-L universal future from [PR #86](https://github.com/janhubicka/lean-kk/pull/86) passed [hosted Lean run 43197604716](https://github.com/janhubicka/lean-kk/actions/runs/43197604716) with a full **9,502-job build** and **380 standard-only transitive-axiom reports**, merging as `185e304ecec27757b589bcc1d525000bb1cb3c4f`. Its future `W_B` contains every feasible normalized labelled clique as a genuine component, and no clique in W_B violates any B-support bound.
+
+The concrete one-point Henson-realization [PR #87](https://github.com/janhubicka/lean-kk/pull/87) passed [run 43199215840](https://github.com/janhubicka/lean-kk/actions/runs/43199215840) (9,503 build jobs, 383 strict standard-only reports) and merged as `8e720e148557807302a4c99890d7e3c5ee585dc3`. This produces a genuine later original with exactly a prescribed full old-neighbour column **under** the fixed graph's OnePointLeftDense property and the exact negative (ell−1)-clique certificate.
+
+**New English-first theorem:** [proof and adversarial audit](universal_future_exact_profile_english_audit.md) establish that for any arbitrary raw bounds B and ell>0 a normalized vector w is feasible **iff** it has a *single* directed clique s⊆W_B whose counts agree with w on **every** admissible sort support at once. The canonical G_B(T) is also the exact maximum T-labelled cardinality among all directed cliques of this ONE finite graph W_B, not just an upper bound. This distinction is essential: a fixed arbitrary future W is not universal; W_B was constructed for B, and different T may require different maximizing cliques.
+
+The dependent `Kk/UniversalFutureExactProfile.lean` adds four named endpoints and a finite clique-capacity definition; the strict expected hosted gate is **387 exact reports** with only `propext`, `Classical.choice`, `Quot.sound` and a full project build. Do not merge or mark any numerical-H/parameter-closed manuscript statement green until that gate passes. The graph is ordinary-L standalone and does not yet realize the full relative Henson old/reserved/gap columns, auxiliary Kpt E or common labelled inverse-source orbit.
+
 ## 12 November 2026 — exact physical one-point Henson neighbour-pool realization
 
 **Independent English-first mathematical proof and hostile audit:** [sharp neighbourhood certificate](exact_finite_neighbourhood_realization_english_audit.md) shows for ANY directed Boolean L table E, old front b, q, and finite S⊆[0,b), the existing complete-neighbour checker for `x↦decide(x∈S)` is negative **iff** the existing exact directed clique checker of S is negative. In particular, q=0 is covered, no symmetry is needed for the equivalence, and no cardinality-smallness assumption is used.
