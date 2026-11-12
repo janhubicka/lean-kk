@@ -879,3 +879,13 @@ import Kk
 #print axioms Kk.integerWitnessCompleteEdge_clique_small
 #check @Kk.integerWitnessVertex_respects_raw_bound
 #print axioms Kk.integerWitnessVertex_respects_raw_bound
+
+-- Exact abstract extension-profile / genuine integer age determination.
+#check @Kk.integerGraphAge_eq_sup_feasible_vectors
+#print axioms Kk.integerGraphAge_eq_sup_feasible_vectors
+#check @Kk.integerGraphAgeCanonical_eq_of_same_feasible_vectors
+#print axioms Kk.integerGraphAgeCanonical_eq_of_same_feasible_vectors
+#check @Kk.integerGraphAge_eq_of_same_feasible_vectors
+#print axioms Kk.integerGraphAge_eq_of_same_feasible_vectors
+#check @Kk.integerGraphAge_eq_iff_same_feasible_vectors
+#print axioms Kk.integerGraphAge_eq_iff_same_feasible_vectors
