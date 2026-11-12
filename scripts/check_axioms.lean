@@ -889,3 +889,11 @@ import Kk
 #print axioms Kk.integerGraphAge_eq_of_same_feasible_vectors
 #check @Kk.integerGraphAge_eq_iff_same_feasible_vectors
 #print axioms Kk.integerGraphAge_eq_iff_same_feasible_vectors
+
+-- Conditional relative-age profile fidelity, lost witnesses, and full B3 interface.
+#check @Kk.integerGraphAge_eq_iff_faithful_relative_profiles
+#print axioms Kk.integerGraphAge_eq_iff_faithful_relative_profiles
+#check @Kk.integerGraphAge_ne_iff_lost_relative_witness
+#print axioms Kk.integerGraphAge_ne_iff_lost_relative_witness
+#check @Kk.faithful_relative_noB3_iff_age_eq
+#print axioms Kk.faithful_relative_noB3_iff_age_eq
