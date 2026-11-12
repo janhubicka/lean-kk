@@ -1,5 +1,13 @@
 # Verification plan
 
+## 12 November 2026 — abstract clique-profile repair and independent relative-realization obstruction
+
+The corresponding editable/olive passage of [KK manuscript PR #22](https://github.com/janhubicka/Counting-big-Ramsey-degrees-of-K_k-free-graphs/pull/22), Lemma `Lem:Extension_Profile_Determines_Age`, has been repaired **in English before Lean**: a consistency vector witnesses an abstract permitted labelled clique, but its realization as a Henson extension over a fixed old prefix with prescribed old-neighbourhood L atoms requires a separate complete neighbourhood test. A triangle-free obstruction is recorded in the [adversarial audit](extension_profile_vs_relative_realisation_english_audit.md): two new vertices both adjacent to one old vertex cannot also be adjacent to one another, although the abstract 2-clique alone is admissible. The numerical extension-profile identity itself is unchanged.
+
+`Kk/ExtensionProfileAge.lean` now formalizes **four** bounded abstract-age endpoints using the **existing** `IsIntegerGraphAge`, `IntegerCliqueWeights`, `WitnessRespects` and `integerGraphAgeCanonical` definitions. For genuine F, F(T) is the supremum of counts on T over all feasible normalized labelled vectors; for arbitrary B,C, equal full feasible-vector systems imply G_B=G_C; and for genuine F,G equality of full feasible systems is equivalent to F=G. No raw per-coordinate equivalence or relative realization is smuggled in. The four proofs were first checked locally in exact pinned Lean 4.35.0-rc3 against faithful replicas of the imported definitions, using only `propext`, `Classical.choice` and `Quot.sound`. A production full-hosted `lake build` plus the strict expected **358** named reports remains the merge gate; no new manuscript validation mark is authorized before that gate.
+
+The graph-age profile is an **abstract** L-only characterization. Compatible future one-point extensions, full parameter-closed corrected-B3, and the labelled common inverse-source orbit remain outstanding.
+
 ## 11 November 2026 — explicit normalized witness components and universal-gadget research
 
 [PR #81](https://github.com/janhubicka/lean-kk/pull/81) passed [hosted run 42995032041](https://github.com/janhubicka/lean-kk/actions/runs/42995032041) (full **9,496-job** build, parser self-test and **345 named standard-only transitive-axiom reports**) and merged as `f3e52841ad886c58860529fa8caf8a0d38a4e06e`. This establishes two-/multi-component finite free amalgamation for already-compatible K_ell-free extensions over one old graph P.
