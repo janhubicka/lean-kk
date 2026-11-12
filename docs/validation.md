@@ -1,5 +1,13 @@
 # Verification plan
 
+## 12 November 2026 — English repair of the conditional boring-level criterion
+
+The editable olive `Lem:Kk_Boring_Level` in [manuscript PR #22](https://github.com/janhubicka/Counting-big-Ramsey-degrees-of-K_k-free-graphs/pull/22) previously inferred physical relative (B3) witnesses merely from changes to an abstract graph-age function. This inference is invalid without a *faithful relative-profile realization theorem* over the complete fixed old L+ source. The repaired English statement/proof and explicit triangle-free relative obstruction are recorded in the [adversarial audit](boring_level_relative_profiles_english_audit.md), committed BEFORE the Lean implementation.
+
+The new `Kk/FaithfulRelativeB3Profile.lean` contains **three** conditional endpoints. For genuine ages F_before,F_after and two relative-continuation predicates, it proves (a) equality of F iff equality of all relative predicates **assuming each is faithful to the full normalized feasible-vector system**; (b) under no creation of relative continuations, age inequality iff some relative vector is *lost*; (c) under a separately supplied full corrected-(B3)-loss equivalence, absence of B3 failure iff the age states coincide. The actual numerical-H/Kpt full-source fidelity, its stagewise monotonicity, B3-loss equivalence, (I1)/(I2) exclusions and common labelled orbit are **not** asserted or verified by these endpoints.
+
+All three proof bodies were compiled in pinned local Lean 4.35.0-rc3 against the exact finite-integer-age interface, with only `propext`, `Classical.choice` and `Quot.sound`. The formalizations are stacked after the four endpoints in PR #83; **361** exact transitive-axiom reports and a full hosted build are required before merge. No global boringness, resolved-copy or upper-bound manuscript marker is upgraded.
+
 ## 12 November 2026 — abstract clique-profile repair and independent relative-realization obstruction
 
 The corresponding editable/olive passage of [KK manuscript PR #22](https://github.com/janhubicka/Counting-big-Ramsey-degrees-of-K_k-free-graphs/pull/22), Lemma `Lem:Extension_Profile_Determines_Age`, has been repaired **in English before Lean**: a consistency vector witnesses an abstract permitted labelled clique, but its realization as a Henson extension over a fixed old prefix with prescribed old-neighbourhood L atoms requires a separate complete neighbourhood test. A triangle-free obstruction is recorded in the [adversarial audit](extension_profile_vs_relative_realisation_english_audit.md): two new vertices both adjacent to one old vertex cannot also be adjacent to one another, although the abstract 2-clique alone is admissible. The numerical extension-profile identity itself is unchanged.
