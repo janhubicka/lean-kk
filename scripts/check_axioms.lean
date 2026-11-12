@@ -897,3 +897,9 @@ import Kk
 #print axioms Kk.integerGraphAge_ne_iff_lost_relative_witness
 #check @Kk.faithful_relative_noB3_iff_age_eq
 #print axioms Kk.faithful_relative_noB3_iff_age_eq
+
+-- Negative geometric regression: old-neighbour columns can block abstract K3-free edges.
+#check @Kk.relative_triangle_from_full_old_column
+#print axioms Kk.relative_triangle_from_full_old_column
+#check @Kk.relative_triangle_blocks_two_neighbours
+#print axioms Kk.relative_triangle_blocks_two_neighbours
