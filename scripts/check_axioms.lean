@@ -903,3 +903,17 @@ import Kk
 #print axioms Kk.relative_triangle_from_full_old_column
 #check @Kk.relative_triangle_blocks_two_neighbours
 #print axioms Kk.relative_triangle_blocks_two_neighbours
+
+-- Actual concrete complete clique maximizers of arbitrary raw integer bounds.
+#check @Kk.zeroIntegerCliqueWeight_respects
+#print axioms Kk.zeroIntegerCliqueWeight_respects
+#check @Kk.feasibleIntegerCliqueVectors_nonempty
+#print axioms Kk.feasibleIntegerCliqueVectors_nonempty
+#check @Kk.integerGraphAgeCanonical_has_feasible_maximizer
+#print axioms Kk.integerGraphAgeCanonical_has_feasible_maximizer
+#check @Kk.integerGraphAgeCanonical_has_concrete_clique_maximizer
+#print axioms Kk.integerGraphAgeCanonical_has_concrete_clique_maximizer
+#check @Kk.integerWitnessComponent_subclique_respects_raw
+#print axioms Kk.integerWitnessComponent_subclique_respects_raw
+#check @Kk.integerGraphAge_has_concrete_clique_attaining_support
+#print axioms Kk.integerGraphAge_has_concrete_clique_attaining_support
