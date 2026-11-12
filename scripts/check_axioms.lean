@@ -859,3 +859,23 @@ import Kk
 #print axioms Kk.finitePoolCliqueCheck_freeAmalgam_two_iff
 #check @Kk.finitePoolCliqueCheck_freeAmalgam_family
 #print axioms Kk.finitePoolCliqueCheck_freeAmalgam_family
+
+-- Complete typed L-only component of each actual normalized integer witness.
+#check @Kk.integerWitnessVertex_total
+#print axioms Kk.integerWitnessVertex_total
+#check @Kk.integerWitnessVertex_card_lt
+#print axioms Kk.integerWitnessVertex_card_lt
+#check @Kk.integerWitnessVertex_fiber_card
+#print axioms Kk.integerWitnessVertex_fiber_card
+#check @Kk.integerWitnessVertex_support_card
+#print axioms Kk.integerWitnessVertex_support_card
+#check @Kk.integerWitnessVertex_support_eq_integerCliqueOnSupport
+#print axioms Kk.integerWitnessVertex_support_eq_integerCliqueOnSupport
+#check @Kk.integerWitnessCompleteEdge_symm
+#print axioms Kk.integerWitnessCompleteEdge_symm
+#check @Kk.integerWitnessCompleteEdge_clique
+#print axioms Kk.integerWitnessCompleteEdge_clique
+#check @Kk.integerWitnessCompleteEdge_clique_small
+#print axioms Kk.integerWitnessCompleteEdge_clique_small
+#check @Kk.integerWitnessVertex_respects_raw_bound
+#print axioms Kk.integerWitnessVertex_respects_raw_bound

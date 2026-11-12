@@ -106,6 +106,7 @@ import Kk.FiniteCliqueSupportWitness
 import Kk.ArbitraryWitnessGluing
 import Kk.FiniteCliqueIntegerWitness
 import Kk.FiniteFreeAmalgamationWitnesses
+import Kk.IntegerWitnessCompleteComponent
 
 /-!
 The counting project imports the verified successor-tree library.
