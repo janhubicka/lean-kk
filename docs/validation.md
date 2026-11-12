@@ -1,5 +1,13 @@
 # Verification plan
 
+## 12 November 2026 — concrete maximizers of arbitrary raw integer support bounds
+
+[PR #83](https://github.com/janhubicka/lean-kk/pull/83) passed its hosted [full 9,498-job build and 358 strict standard-only named-axiom reports](https://github.com/janhubicka/lean-kk/actions/runs/43172592541) and merged as `1806041a80ae30ac0dc015b6497894fd1aa94ff9`. [PR #84](https://github.com/janhubicka/lean-kk/pull/84) passed its hosted [9,500-job build and 363 standard-only reports](https://github.com/janhubicka/lean-kk/actions/runs/43174868119), merged as `99d6127155ff408d9a2a6b4aed1b074667c5293d`. Their English-first manuscript revisions remain on manuscript PR #22, whose protected-black `kk.tex` text is byte-identical outside the olive block.
+
+**Current next step, English-first and unmerged:** [Concrete maximizer audit](concrete_canonical_maximizers_english_audit.md) gives an explicit finite complete ordinary-L typed clique attaining the canonical raw integer-age bound G_B(T) for each support T, even when B is not a genuine age. The Feasible(B) set is nonempty for ell>0 by the genuine normalized all-zero vector; finite supremum is attained; the previously checked `IntegerWitnessVertex w` Sigma-type gives the actual labelled clique. All subsets of any feasible component obey the **entire joint** raw support constraint system. Different T may require different maximizing components; none is asserted to extend an arbitrary fixed Henson old prefix.
+
+`Kk/ConcreteCanonicalMaximizers.lean` is a dependent Lean implementation of six named endpoints, currently pending **369 exact named transitive-axiom reports** and a full hosted `lake build`. Do not count this branch as validated until the hosted report passes. The remaining full universal gadget, relative old-neighbourhood completion, auxiliary Kpt E/parameter records, full corrected-B3 and common labelled orbit are open; no new manuscript green marker is authorized on these global obligations.
+
 ## 12 November 2026 — English repair of the conditional boring-level criterion
 
 The editable olive `Lem:Kk_Boring_Level` in [manuscript PR #22](https://github.com/janhubicka/Counting-big-Ramsey-degrees-of-K_k-free-graphs/pull/22) previously inferred physical relative (B3) witnesses merely from changes to an abstract graph-age function. This inference is invalid without a *faithful relative-profile realization theorem* over the complete fixed old L+ source. The repaired English statement/proof and explicit triangle-free relative obstruction are recorded in the [adversarial audit](boring_level_relative_profiles_english_audit.md), committed BEFORE the Lean implementation.

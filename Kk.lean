@@ -110,6 +110,7 @@ import Kk.IntegerWitnessCompleteComponent
 import Kk.ExtensionProfileAge
 import Kk.FaithfulRelativeB3Profile
 import Kk.RelativeTriangleObstruction
+import Kk.ConcreteCanonicalMaximizers
 
 /-!
 The counting project imports the verified successor-tree library.
