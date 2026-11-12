@@ -917,3 +917,27 @@ import Kk
 #print axioms Kk.integerWitnessComponent_subclique_respects_raw
 #check @Kk.integerGraphAge_has_concrete_clique_attaining_support
 #print axioms Kk.integerGraphAge_has_concrete_clique_attaining_support
+
+-- Exact universal finite ordinary-L future from ALL feasible integer vectors.
+#check @Kk.universalWitnessEdge_symmetric
+#print axioms Kk.universalWitnessEdge_symmetric
+#check @Kk.universalWitnessEdge_irreflexive
+#print axioms Kk.universalWitnessEdge_irreflexive
+#check @Kk.universalWitness_mem_component_iff
+#print axioms Kk.universalWitness_mem_component_iff
+#check @Kk.universalWitnessComponent_card
+#print axioms Kk.universalWitnessComponent_card
+#check @Kk.universalWitnessComponent_support_card
+#print axioms Kk.universalWitnessComponent_support_card
+#check @Kk.universalWitnessComponent_clique
+#print axioms Kk.universalWitnessComponent_clique
+#check @Kk.universalWitnessClique_single_component
+#print axioms Kk.universalWitnessClique_single_component
+#check @Kk.universalWitnessFuture_clique_in_feasible_component
+#print axioms Kk.universalWitnessFuture_clique_in_feasible_component
+#check @Kk.universalWitnessFuture_clique_card_lt
+#print axioms Kk.universalWitnessFuture_clique_card_lt
+#check @Kk.universalWitnessFuture_clique_respects_raw
+#print axioms Kk.universalWitnessFuture_clique_respects_raw
+#check @Kk.universalWitnessFuture_realizes_every_feasible
+#print axioms Kk.universalWitnessFuture_realizes_every_feasible
