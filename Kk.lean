@@ -108,6 +108,7 @@ import Kk.FiniteCliqueIntegerWitness
 import Kk.FiniteFreeAmalgamationWitnesses
 import Kk.IntegerWitnessCompleteComponent
 import Kk.ExtensionProfileAge
+import Kk.FaithfulRelativeB3Profile
 
 /-!
 The counting project imports the verified successor-tree library.
