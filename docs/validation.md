@@ -1,5 +1,13 @@
 # Verification plan
 
+## 12 November 2026 — exact physical one-point Henson neighbour-pool realization
+
+**Independent English-first mathematical proof and hostile audit:** [sharp neighbourhood certificate](exact_finite_neighbourhood_realization_english_audit.md) shows for ANY directed Boolean L table E, old front b, q, and finite S⊆[0,b), the existing complete-neighbour checker for `x↦decide(x∈S)` is negative **iff** the existing exact directed clique checker of S is negative. In particular, q=0 is covered, no symmetry is needed for the equivalence, and no cardinality-smallness assumption is used.
+
+The new `Kk/ExactFiniteNeighbourRealization.lean` then uses the already verified `onePointLeftDense_realizes_finite_certificate` to construct a genuine later original (v≥b) in the SAME unchanged left-dense Henson graph whose **entire** backward ordinary-L column is exactly the characteristic function of S, in BOTH tuple orientations. Every intervening gap original is explicitly a nonneighbour. The normalized Henson-family specialization derives the necessary initial-prefix K_ell-freeness from actual forbidden-family avoidance. The only density premise is the already stipulated `OnePointLeftDense E ell`; it is not derived from K_ell-freeness alone. This sharpens `SmallCliqueLeftDense` because S may be much larger than ell−1 if its exact clique capacity is small.
+
+Three named Lean endpoints are staged in a separate draft branch with a **372**-endpoint full hosted CI and strict standard-only axiom gate (369 verified in main +3 proposed). No complete finite schedule, numerical-H H+ parameter-closed B3 or common labelled inverse source is asserted; an induction checking every *next* full old neighbour set is still needed before physical relative realization of the universal typed-witness gadget.
+
 ## 12 November 2026 — concrete maximizers of arbitrary raw integer support bounds
 
 [PR #83](https://github.com/janhubicka/lean-kk/pull/83) passed its hosted [full 9,498-job build and 358 strict standard-only named-axiom reports](https://github.com/janhubicka/lean-kk/actions/runs/43172592541) and merged as `1806041a80ae30ac0dc015b6497894fd1aa94ff9`. [PR #84](https://github.com/janhubicka/lean-kk/pull/84) passed its hosted [9,500-job build and 363 standard-only reports](https://github.com/janhubicka/lean-kk/actions/runs/43174868119), merged as `99d6127155ff408d9a2a6b4aed1b074667c5293d`. Their English-first manuscript revisions remain on manuscript PR #22, whose protected-black `kk.tex` text is byte-identical outside the olive block.
