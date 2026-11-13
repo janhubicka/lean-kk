@@ -40,3 +40,6 @@ integration owner Track G reviews the exact-head result.
 #print axioms Kk.full_event_source_eq_of_local_reconstruction
 #check @Kk.full_event_source_common_selected_and_parameter_targets
 #print axioms Kk.full_event_source_common_selected_and_parameter_targets
+
+#check @Kk.full_record_and_coverage_identify_source_closures
+#print axioms Kk.full_record_and_coverage_identify_source_closures
