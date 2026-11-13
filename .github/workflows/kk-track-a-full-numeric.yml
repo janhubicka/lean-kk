@@ -1,0 +1,51 @@
+name: KK Track A full numerical prefix
+
+on:
+  pull_request:
+    paths:
+      - 'Kk/NumericPrefixGapZero.lean'
+      - 'Kk/NumericPrefixWholeAge.lean'
+      - 'docs/numeric_prefix_gap_zero_english_audit.md'
+      - '.github/workflows/kk-track-a-full-numeric.yml'
+  push:
+    branches: [kk-track-a-full-numeric-prefix-20261113]
+  workflow_dispatch:
+
+concurrency:
+  group: kk-track-a-full-numeric-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  exact-prefix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore pinned Lake workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve pinned dependencies
+        run: lake update
+      - name: Obtain Mathlib cache
+        run: lake exe cache get
+      - name: Compile literal real-or-odd and gap-zero module
+        run: lake build Kk.NumericPrefixGapZero
+      - name: Compile exact full-prefix age corollary
+        run: lake build Kk.NumericPrefixWholeAge
+      - name: Audit exact named transitive axioms
+        run: |
+          set -euo pipefail
+          lake env lean Kk/NumericPrefixGapZero.lean | tee prefix-gap-axioms.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py Kk/NumericPrefixGapZero.lean prefix-gap-axioms.log
+          lake env lean Kk/NumericPrefixWholeAge.lean | tee full-prefix-axioms.log
+          python3 scripts/check_axiom_report.py Kk/NumericPrefixWholeAge.lean full-prefix-axioms.log
+      - name: Full library build
+        run: lake build
