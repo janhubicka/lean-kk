@@ -143,18 +143,13 @@ theorem henson_fullB3_of_cut_visible_complete_outputs
         (cliquePattern_irreducible ell)) ∈
           hensonForbiddenFamily ell hell := by
     simp [hensonForbiddenFamily]
-  have hNoClique :
-      (NormalizedForbidden.nontrivial ell
-        (cliquePattern ell) (by omega)
-        (cliquePattern_irreducible ell)).Avoids V :=
-    hMarked S hS V hFinite hMatched hUpperMarked
-      hDelete _ hCliqueMember
   have hNoCopy : ¬ ∃ f : Fin ell → Nat,
-      V.Realizes (cliquePattern ell) f :=
-    ((NormalizedForbidden.nontrivial ell
+      V.Realizes (cliquePattern ell) f := by
+    exact ((NormalizedForbidden.nontrivial ell
       (cliquePattern ell) (by omega)
       (cliquePattern_irreducible ell)).signaturePattern_avoids_iff V).1
-        hNoClique
+      (hMarked S hS V hFinite hMatched hUpperMarked
+        hDelete _ hCliqueMember)
   exact hNoCopy ⟨e,hCopy⟩
 
 /-- The logically equivalent failure-projection formulation.
