@@ -1011,3 +1011,9 @@ import Kk
 #print axioms Kk.fullB3_failure_good_marked_missing_upper
 #check @Kk.fullB3_failure_good_marked_missing_socle
 #print axioms Kk.fullB3_failure_good_marked_missing_socle
+
+-- Track B: actual ambient-pool old-socle and extra upper-type bridge
+#check @Kk.ambientPool_full_to_marked_Lsocle_coverage
+#print axioms Kk.ambientPool_full_to_marked_Lsocle_coverage
+#check @Kk.ambientPool_fullB3_failure_requires_extra_upperL
+#print axioms Kk.ambientPool_fullB3_failure_requires_extra_upperL
