@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - 'Kk/FullCrossingPoolIndependence.lean'
+      - 'Kk/FullPhysicalCrossingRelation.lean'
       - 'Kk/TrackECrossingAxiomAudit.lean'
       - 'docs/track_e_pool_independence_english_audit.md'
       - '.github/workflows/kk-track-e-pool.yml'
@@ -39,7 +40,7 @@ jobs:
       - name: Obtain Mathlib build cache
         run: lake exe cache get
       - name: Explicitly compile physical Track E crossing theorem
-        run: lake build Kk.FullCrossingPoolIndependence
+        run: lake build Kk.FullCrossingPoolIndependence Kk.FullPhysicalCrossingRelation
       - name: Strict named transitive axioms
         run: |
           set -euo pipefail
