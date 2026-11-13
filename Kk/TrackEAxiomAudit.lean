@@ -17,3 +17,6 @@ integration owner Track G reviews the exact-head result.
 
 #check @Kk.full_source_coherence_implies_diary_colour_bound
 #print axioms Kk.full_source_coherence_implies_diary_colour_bound
+
+#check @Kk.pairwise_full_source_comparison_implies_diary_colour_bound
+#print axioms Kk.pairwise_full_source_comparison_implies_diary_colour_bound
