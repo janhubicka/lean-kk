@@ -1178,3 +1178,122 @@ import Kk
 #print axioms Kk.henson_algorithmRun_B3_iff_cutStarB3
 #check @Kk.henson_numericH_run_finalPool_cutStar_B3_equivalence
 #print axioms Kk.henson_numericH_run_finalPool_cutStar_B3_equivalence
+
+-- Track G integrated Track A: finite old-prefix L age / canonical support predicates; conditional on actual columns and complete gap certificates
+#check @Kk.numericCoordinate_odd_or_real
+#print axioms Kk.numericCoordinate_odd_or_real
+#check @Kk.finiteNumericH_odd_dummy_to_top_zero
+#print axioms Kk.finiteNumericH_odd_dummy_to_top_zero
+#check @Kk.finiteNumericH_real_gap_to_top_zero
+#print axioms Kk.finiteNumericH_real_gap_to_top_zero
+#check @Kk.finiteNumericH_all_gap_to_marked_top_zero
+#print axioms Kk.finiteNumericH_all_gap_to_marked_top_zero
+#check @Kk.numericPrefixGapPool_subset_range
+#print axioms Kk.numericPrefixGapPool_subset_range
+#check @Kk.numericPrefix_union_gap_exact
+#print axioms Kk.numericPrefix_union_gap_exact
+#check @Kk.orderedReserved_numeric_cut_before_all_selected
+#print axioms Kk.orderedReserved_numeric_cut_before_all_selected
+#check @Kk.finiteNumericH_whole_prefix_and_top_in_carrier
+#print axioms Kk.finiteNumericH_whole_prefix_and_top_in_carrier
+#check @Kk.finiteNumericH_ordered_whole_prefix_marked_age_iff
+#print axioms Kk.finiteNumericH_ordered_whole_prefix_marked_age_iff
+#check @Kk.finiteOldFuture_free_implies_raw_support
+#print axioms Kk.finiteOldFuture_free_implies_raw_support
+#check @Kk.finiteOldFuture_free_of_all_raw_support
+#print axioms Kk.finiteOldFuture_free_of_all_raw_support
+#check @Kk.finiteOldFuture_free_iff_raw_support
+#print axioms Kk.finiteOldFuture_free_iff_raw_support
+#check @Kk.finiteOldFuture_free_iff_canonical_support
+#print axioms Kk.finiteOldFuture_free_iff_canonical_support
+#check @Kk.integerGraphAge_const_one_is_age
+#print axioms Kk.integerGraphAge_const_one_is_age
+#check @Kk.finiteOldColumnRawBound_positive_of_singleton_safe
+#print axioms Kk.finiteOldColumnRawBound_positive_of_singleton_safe
+#check @Kk.finiteOldColumnCanonical_is_age_of_singleton_safe
+#print axioms Kk.finiteOldColumnCanonical_is_age_of_singleton_safe
+#check @Kk.finiteClique_full_constraints_raw_block_iff
+#print axioms Kk.finiteClique_full_constraints_raw_block_iff
+#check @Kk.finiteClique_full_constraints_canonical_block_iff
+#print axioms Kk.finiteClique_full_constraints_canonical_block_iff
+#check @Kk.finiteClique_full_constraints_cover_step_iff
+#print axioms Kk.finiteClique_full_constraints_cover_step_iff
+
+-- Track G integrated Track C: same-run numerical H+ closure indexing and old/upper records; no cross-occurrence assignment
+#check @Kk.finiteNumericH_multiRoot_seeds_in_original_pool
+#print axioms Kk.finiteNumericH_multiRoot_seeds_in_original_pool
+#check @Kk.finiteNumericH_multiRoot_nextSeed_pool_preserved
+#print axioms Kk.finiteNumericH_multiRoot_nextSeed_pool_preserved
+#check @Kk.finiteNumericH_actualRun_finalClosure_finite
+#print axioms Kk.finiteNumericH_actualRun_finalClosure_finite
+#check @Kk.finiteNumericH_actualRun_uniform_exhaustive_source_index
+#print axioms Kk.finiteNumericH_actualRun_uniform_exhaustive_source_index
+#check @Kk.kpt_full_old_upper_types_of_crossing
+#print axioms Kk.kpt_full_old_upper_types_of_crossing
+#check @Kk.kpt_full_old_upper_none_of_no_crossing
+#print axioms Kk.kpt_full_old_upper_none_of_no_crossing
+#check @Kk.finiteNumericH_indexed_cut_full_old_upper_types
+#print axioms Kk.finiteNumericH_indexed_cut_full_old_upper_types
+
+-- Track G integrated Track E: same-closure full crossing graph comparisons and no-I2 functionality; not common labelled orbit
+#check @Kk.closure_crossing_source_target_le_of_cover_graph
+#print axioms Kk.closure_crossing_source_target_le_of_cover_graph
+#check @Kk.closure_crossing_graph_unique_of_two_sided_coverage
+#print axioms Kk.closure_crossing_graph_unique_of_two_sided_coverage
+#check @Kk.finiteNumericH_full_crossing_independent_of_original_pool
+#print axioms Kk.finiteNumericH_full_crossing_independent_of_original_pool
+#check @Kk.correctedB3_iff_of_identical_full_crossing_graph
+#print axioms Kk.correctedB3_iff_of_identical_full_crossing_graph
+#check @Kk.finiteNumericH_correctedB3_independent_of_original_pool
+#print axioms Kk.finiteNumericH_correctedB3_independent_of_original_pool
+#check @Kk.full_physical_crossing_nonfunctional_forces_I2
+#print axioms Kk.full_physical_crossing_nonfunctional_forces_I2
+#check @Kk.full_physical_crossing_functional_of_no_I2
+#print axioms Kk.full_physical_crossing_functional_of_no_I2
+#check @Kk.prescribed_full_graph_eq_physical_crossing
+#print axioms Kk.prescribed_full_graph_eq_physical_crossing
+#check @Kk.finiteNumericH_full_crossing_graph_is_physical_relation
+#print axioms Kk.finiteNumericH_full_crossing_graph_is_physical_relation
+#check @Kk.full_prescribed_graph_eq_implies_source_and_target_eq
+#print axioms Kk.full_prescribed_graph_eq_implies_source_and_target_eq
+#check @Kk.two_closures_full_crossings_and_B3_of_equal_physical_relation
+#print axioms Kk.two_closures_full_crossings_and_B3_of_equal_physical_relation
+#check @Kk.two_numericH_closures_B3_of_equal_full_crossing_relation
+#print axioms Kk.two_numericH_closures_B3_of_equal_full_crossing_relation
+
+-- Track G integrated Track F: genuine integer age covers and coding columns; not the full diary bijection or infinite lower bound
+#check @Kk.trackFCodingRaw_le_original
+#print axioms Kk.trackFCodingRaw_le_original
+#check @Kk.trackFCodingColumn_canonical_eq
+#print axioms Kk.trackFCodingColumn_canonical_eq
+#check @Kk.trackFCodingColumn_feasible_iff
+#print axioms Kk.trackFCodingColumn_feasible_iff
+#check @Kk.trackFCodingRaw_witness_iff
+#print axioms Kk.trackFCodingRaw_witness_iff
+#check @Kk.trackFCanonical_eq_of_feasible_iff
+#print axioms Kk.trackFCanonical_eq_of_feasible_iff
+#check @Kk.trackFCanonical_add_cap_congr
+#print axioms Kk.trackFCanonical_add_cap_congr
+#check @Kk.trackFRawCoverColumn_exact
+#print axioms Kk.trackFRawCoverColumn_exact
+#check @Kk.trackFRawCoverColumn_feasible_iff_lower
+#print axioms Kk.trackFRawCoverColumn_feasible_iff_lower
+#check @Kk.trackFCover_exists_minimal_changed
+#print axioms Kk.trackFCover_exists_minimal_changed
+#check @Kk.trackFCover_unique_minimal_changed
+#print axioms Kk.trackFCover_unique_minimal_changed
+#check @Kk.trackF_integerWitness_drop_one
+#print axioms Kk.trackF_integerWitness_drop_one
+#check @Kk.trackFCover_drop_one_at_changed
+#print axioms Kk.trackFCover_drop_one_at_changed
+#check @Kk.trackFCover_drop_at_most_one
+#print axioms Kk.trackFCover_drop_at_most_one
+#check @Kk.trackFCover_single_support_canonical
+#print axioms Kk.trackFCover_single_support_canonical
+#check @Kk.trackFCover_changed_values_of_containment
+#print axioms Kk.trackFCover_changed_values_of_containment
+#check @Kk.trackFCover_essential_contained_in_changed
+#print axioms Kk.trackFCover_essential_contained_in_changed
+#check @Kk.trackFCover_all_changed_upper_eq_essential
+#print axioms Kk.trackFCover_all_changed_upper_eq_essential
+
