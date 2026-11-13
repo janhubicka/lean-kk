@@ -170,6 +170,10 @@ import Kk.TrackFCoverEssentialSupport
 import Kk.TrackFCoverOneStep
 import Kk.TrackFCoverSupportValues
 
+-- Track D: verified full closure-selected anchor-free cut-star, including empty case.
+-- Its auxiliary originals are NOT the selected macrodiary alone.
+import Kk.B3CutStarNormalForm
+
 /-!
 The counting project imports the verified successor-tree library.
 No local replacement of the Ramsey theorem is assumed.
