@@ -20,6 +20,16 @@ abbrev TrackFRelIso {α : Type u} {β : Type v}
     (R : α → α → Prop) (S : β → β → Prop) :=
   {e : α ≃ β // ∀ x y, R x y ↔ S (e x) (e y)}
 
+/-- Every binary relational isomorphism type on two finite carriers is
+finite, as a subtype of the finite equivalence type. -/
+noncomputable instance trackFRelIsoFintype
+    {α : Type u} {β : Type v} [Fintype α] [Fintype β]
+    (R : α → α → Prop) (S : β → β → Prop) :
+    Fintype (TrackFRelIso R S) := by
+  classical
+  exact inferInstanceAs
+    (Fintype {e : α ≃ β // ∀ x y, R x y ↔ S (e x) (e y)})
+
 /-- Inverse of a binary relational isomorphism. -/
 def trackFRelIsoSymm
     {α : Type u} {β : Type v}
