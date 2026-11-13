@@ -130,6 +130,8 @@ theorem finiteNumericH_full_cut_crossing_and_upper_types
         A cut original
         (closureSelectedOriginal family A hAvoid original Z cut)
         T hT
+    change F.target T =
+      A.partialTypeAt (cut+1) (original v).val at hNext
     obtain ⟨z,hz,hzCut,hZv⟩ := hSelected
     refine ⟨z,hz,hzCut,?_,?_⟩
     · calc
