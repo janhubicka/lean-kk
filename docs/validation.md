@@ -1,5 +1,13 @@
 # Verification plan
 
+## 13 November 2026 — literal ALL-support finite graph-age gadget, English first
+
+The [English-first mathematical proof and twelve-point hostile audit](all_support_universal_graph_english_audit.md) precede `Kk/AllSupportUniversalGraph.lean`. This constructs a **literal finite ordinary-L** graph, rather than assuming one: one complete reserved clique of size `ell−1−B(T)` for EACH admissible nonempty support T, different reserved blocks pairwise nonadjacent, the same verified universal future `W_B` shared by all supports, and BOTH directed edges from a reserved T-block to a future vertex exactly when its sort lies in T.
+
+The main proposed theorem proves that every directed clique in the designated finite carrier has cardinality <ell. If the clique has no reserved vertex, the universal future theorem applies. Otherwise all reserved members have the SAME support tag T and all future members have sort in T, by the literal Boolean edge definitions. The reserved portion has at most `ell−1−B(T)` vertices, and the future portion obeys B(T) and has size <ell. The previously verified sharp raw-block budget closes the inequality, including saturating Nat subtraction. This is a genuine simultaneously supported finite graph-age construction but it is not yet a relative Henson/Kpt source.
+
+Three new named endpoints are registered; the exact-head full `lake build` and **403 named standard-only transitive-axiom reports** (400 merged baseline +3) are mandatory before merge. The geometric relative old-to-future realisation, numerical H+ auxiliary parameter E, full corrected B3 source assignments and common labelled inverse-source orbit remain explicitly open. No manuscript global green marker is changed.
+
 ## 13 November 2026 — literal reserved-support finite graph, English first
 
 The [English proof and twelve-point hostile audit](single_reserved_universal_graph_english_audit.md) precedes the new Lean module `Kk/SingleReservedUniversalGraph.lean`. A **literal finite symmetric, irreflexive ordinary-L table** is defined on a tagged disjoint sum: a true complete reserved block of cardinality `ell-1-B(T)` (Nat truncated subtraction) and the already verified universal finite future `W_B` containing feasible normalized integer clique components. Every reserved-to-future edge in both orientations equals the exact T-sort indicator; different future components have no edges.
