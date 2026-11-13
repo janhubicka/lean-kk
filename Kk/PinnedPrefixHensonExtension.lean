@@ -50,7 +50,8 @@ theorem onePointLeftDense_embeds_finite_KFree_over_fixed_prefix
         z ∉ (Finset.range m).image f →
         E z (f m) = false ∧ E (f m) z = false) := by
   classical
-  have construct (n : Nat) (hn : n ≤ N) :
+  have construct (n : Nat) :
+      n ≤ N →
       ∃ f : Nat → Nat,
         (∀ i, i < b → f i = i) ∧
         (∀ i j, i < n → j < n → i < j → f i < f j) ∧
@@ -61,6 +62,7 @@ theorem onePointLeftDense_embeds_finite_KFree_over_fixed_prefix
           E z (f m) = false ∧ E (f m) z = false) := by
     induction n with
     | zero =>
+        intro hn
         refine ⟨id, ?_, ?_, ?_, ?_⟩
         · intro i _
           rfl
@@ -71,6 +73,7 @@ theorem onePointLeftDense_embeds_finite_KFree_over_fixed_prefix
         · intro m _ hm
           omega
     | succ n ih =>
+        intro hn
         by_cases hUnderBase : n < b
         · refine ⟨id, ?_, ?_, ?_, ?_⟩
           · intro i _
