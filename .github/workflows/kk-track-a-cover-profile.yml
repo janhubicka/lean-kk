@@ -1,0 +1,46 @@
+name: KK Track A cover-profile transfer
+
+on:
+  pull_request:
+    paths:
+      - 'Kk/FiniteSupportCoverProfile.lean'
+      - 'docs/finite_support_cover_profile_english_audit.md'
+      - '.github/workflows/kk-track-a-cover-profile.yml'
+  push:
+    branches: [kk-track-a-cover-profile-transfer-20261113]
+  workflow_dispatch:
+
+concurrency:
+  group: kk-track-a-cover-profile-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  exact-cover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore pinned Lake workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve pinned dependencies
+        run: lake update
+      - name: Obtain Mathlib cache
+        run: lake exe cache get
+      - name: Compile exact cover profile module
+        run: lake build Kk.FiniteSupportCoverProfile
+      - name: Strict named transitive axioms of all exported theorems
+        run: |
+          set -euo pipefail
+          lake env lean Kk/FiniteSupportCoverProfile.lean | tee cover-profile-axioms.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py Kk/FiniteSupportCoverProfile.lean cover-profile-axioms.log
+      - name: Full library build
+        run: lake build
