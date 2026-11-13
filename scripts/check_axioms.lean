@@ -1027,3 +1027,7 @@ import Kk
 #print axioms Kk.represented_nonstructural_I3_has_extra_upper_original
 #check @Kk.algorithmRun_nonstructural_I3_has_extra_upper_original
 #print axioms Kk.algorithmRun_nonstructural_I3_has_extra_upper_original
+
+-- Track B: actual numerical-H AlgorithmRun pool discharges abstract representation
+#check @Kk.numericH_algorithmRun_nonstructural_I3_has_extra_upper_original
+#print axioms Kk.numericH_algorithmRun_nonstructural_I3_has_extra_upper_original
