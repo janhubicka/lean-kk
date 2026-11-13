@@ -1,4 +1,4 @@
-import Kk.FullPhysicalCrossingRelation
+import Kk.CrossClosurePhysicalComparison
 
 #check @Kk.closure_crossing_source_target_le_of_cover_graph
 #print axioms Kk.closure_crossing_source_target_le_of_cover_graph
@@ -26,3 +26,12 @@ import Kk.FullPhysicalCrossingRelation
 
 #check @Kk.finiteNumericH_full_crossing_graph_is_physical_relation
 #print axioms Kk.finiteNumericH_full_crossing_graph_is_physical_relation
+
+#check @Kk.full_prescribed_graph_eq_implies_source_and_target_eq
+#print axioms Kk.full_prescribed_graph_eq_implies_source_and_target_eq
+
+#check @Kk.two_closures_full_crossings_and_B3_of_equal_physical_relation
+#print axioms Kk.two_closures_full_crossings_and_B3_of_equal_physical_relation
+
+#check @Kk.two_numericH_closures_B3_of_equal_full_crossing_relation
+#print axioms Kk.two_numericH_closures_B3_of_equal_full_crossing_relation
