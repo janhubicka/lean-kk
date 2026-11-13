@@ -85,18 +85,15 @@ theorem numericH_algorithmRun_nonstructural_I3_has_extra_upper_original
         ¬ (selectedStagePoolPrescribedData A cut original Marked).PrescribedUpperLType
           ((A.partialTypeAt (cut+1) (original v).val).lReduct) := by
   classical
-  intro Marked w hw hwCut hMarked
-  let A : EnumeratedPartialStructure db du dd := finiteNumericH K k N
-  let hAvoidA := finiteNumericH_avoids_family
-    family K hCarrier k N hAvoidK
-  let V : Finset (Fin N) := hStageOriginals K k N U (R.I 0)
-  let original : Fin V.card → Fin A.size :=
-    fun j => (V.equivFin.symm j).1
+  -- The statement has four definitional let binders before the actual
+  -- quantified marked pool. Introduce them explicitly, not as fake
+  -- independent hypotheses, and preserve all definitional equations.
+  intro A hAvoidA V original Marked w hw hwCut hMarked
   have hSurj : ∀ v : Fin N, v ∈ V →
       ∃ j : Fin V.card, original j = v := by
     intro v hv
     refine ⟨V.equivFin ⟨v,hv⟩,?_⟩
-    simp [original]
+    simp [original] <;> rfl
   have hPool : ∀ z, z ∈ SMTree.Envelope.closure
       (admissibleKptSTree family) (R.I (cut+1)) X →
       ∃ j : Fin V.card,
