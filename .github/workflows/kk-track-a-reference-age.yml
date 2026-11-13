@@ -1,0 +1,50 @@
+name: KK Track A finite old-column age
+
+on:
+  pull_request:
+    paths:
+      - 'Kk/FiniteOldColumnAge.lean'
+      - 'docs/finite_old_column_reference_age_english_audit.md'
+      - '.github/workflows/kk-track-a-reference-age.yml'
+  push:
+    branches: [kk-track-a-reference-age-20261113]
+  workflow_dispatch:
+
+concurrency:
+  group: kk-track-a-reference-age-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  exact-age:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore pinned Lake workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve pinned dependencies
+        run: lake update
+      - name: Obtain Mathlib cache
+        run: lake exe cache get
+      - name: Compile exact old-column age module
+        run: lake build Kk.FiniteOldColumnAge
+      - name: Compile positive canonical age certificate
+        run: lake build Kk.FiniteOldColumnAgePositive
+      - name: Strict transitive axioms of every exported theorem
+        run: |
+          set -euo pipefail
+          lake env lean Kk/FiniteOldColumnAge.lean | tee old-age-axioms.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py Kk/FiniteOldColumnAge.lean old-age-axioms.log
+          lake env lean Kk/FiniteOldColumnAgePositive.lean | tee old-age-positive-axioms.log
+          python3 scripts/check_axiom_report.py Kk/FiniteOldColumnAgePositive.lean old-age-positive-axioms.log
+      - name: Full repository build
+        run: lake build
