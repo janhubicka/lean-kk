@@ -33,7 +33,8 @@ theorem integerGraphAge_const_one_is_age
   classical
   constructor
   · intro T
-    constructor <;> omega
+    change 1 ≤ (1 : Nat) ∧ (1 : Nat) ≤ ell - 1
+    omega
   · intro T
     obtain ⟨t, ht⟩ := T.2.1
     let sort : Nat → Fin d := fun _ => t
