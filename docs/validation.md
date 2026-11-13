@@ -1,5 +1,14 @@
 # Verification plan
 
+## 12 November 2026 — finite induced L-copy clique safety transport
+
+**English-first hostile audit:** [finite induced-clique transport](finite_clique_embedding_transport_english_audit.md) identifies the exact prerequisite for applying the real Henson one-point extension theorem PR #87 to an abstract finite extension pattern. If f is injective on a finite original pool P and matches **every ordered off-diagonal** Boolean L atom on P, then the actual finite directed clique capacity is preserved exactly, and so is every no-K_q checker for q≥0, including the q=0 boundary. The proof uses the explicit finite preimage P.filter(f(x)∈t), not global inversion of f or a one-way homomorphism. Symmetry, loops, ambient universality and auxiliary Kpt E are not assumed.
+
+`Kk/FiniteCliqueEmbeddingTransport.lean` adds three named endpoints, including a StrictMono-image corollary for chronological labelled partial embeddings. This is the finite certificate-transfer input needed to prove that any individually safe abstract new-neighbour set remains safe on its actual Henson image before invoking PR #87's `onePointLeftDense_realizes_exact_finite_neighbour_set`.
+
+The branch requires an exact-head hosted full `lake build` and **393 strict standard-only axiom reports**, after verified PRs #88 and #89. It does **not** yet prove an inductive finite embedding of an arbitrary extension over its old prefix, or any full numerical-H auxiliary E/parameter closure and common labelled source orbit. No global green marker is authorized.
+
+
 ## 12 November 2026 — sharp raw support block budget and genuine four-pool certificate
 
 **English-first proof and twelve-point adversarial review:** [sharp raw support budget](raw_support_block_budget_english_audit.md) distinguishes the `B(T)≤ell−1` and `B(T)>ell−1` cases of truncated natural subtraction. It proves the strictly sufficient budget `(ell−1−B(T))+n<ell` from **both** `n≤B(T)` and `n<ell`; forgetting the latter in the empty-block case is false. The existing literal finite universal future `universalWitnessFuture` satisfies both prerequisites for EVERY actual clique s and every admissible support T.
