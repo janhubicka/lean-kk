@@ -19,6 +19,7 @@ genuine Kpt monoid maps. No numeric H+ assumptions are discharged here.
 
 namespace Kk
 
+open SuccessorTree
 open SuccessorTree.V10
 
 /-- The complete data compared at one compressed source event.
@@ -280,7 +281,9 @@ theorem event_kind_does_not_determine_inputs :
     { compressedSourceCut := 0, kind := (),
       orderedInputs := [Sum.inr ()], successorCharacter := () },
     rfl, ?_⟩
-  decide
+  intro h
+  have hInputs := congrArg FullSourceEventFrame.orderedInputs h
+  cases hInputs
 
 /-- Negative regression: a common source, equal initial types,
 parameter presence and event frames can still hide a different
