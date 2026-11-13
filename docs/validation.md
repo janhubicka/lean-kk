@@ -1,3 +1,11 @@
+# Track B continuation (13 November 2026) — genuine AlgorithmRun missing-upper original (PENDING exact-head CI)
+
+Two English-first hostile audits: [selected-stage / true AlgorithmRun proof](track_b_actual_i3_extra_upper_english_audit.md) and [numerical-H maintained pool discharge](track_b_numeric_run_extra_upper_english_audit.md). The first four new Lean endpoints in `Kk/B3ActualI3ExtraUpper.lean` prove common lower ordinary-L socles for genuinely selected eligible source pools; extract a named *full selected original* with missing complete upper L-reduct when marked B3 passes but full B3 fails; derive this missing original at an actual nonstructural I3 crossing; and specialize to a real AlgorithmRun with the exact pre-cut closure `R.I (cut+1)`. The fifth endpoint `Kk/B3NumericalRunExtraUpper.lean` **constructs** the common finite original-name pool from `hStageOriginals ... (R.I 0)`, using the existing concrete numerical-H run closure invariant, rather than assuming the pool.
+
+**Strict pending gate:** exact-head hosted full Lean `lake build`, parser self-test, and **413** named standard-only transitive axiom reports (408 merged main baseline plus 5 new endpoints). The global resolved-copy source/target comparison, two-sided relative-profile fidelity, actual upper-type inclusion and common labelled inverse-source orbit remain OPEN. No manuscript black prose or global green B3 markers changed.
+
+---
+
 # Track B checkpoint (13 November 2026) — common actual-ambient old-L-socle bridge
 
 [English-first proof and 12 hostile checks](track_b_ambient_pool_socle_english_audit.md) precede `Kk/B3AmbientPoolSocle.lean`. For **two actual finite `ambientPoolPrescribedData` original-name pools in the SAME enumerated partial A**, a cut `p<A.size`, and a nonempty marked pool, all full old source ordinary-L socles have a marked representative. Thus passing marked corrected B3 and failing full B3 force a **genuinely extra complete upper ordinary-L reduct**, not an old-socle defect. No injection of original names, no E equality, and no physical-Henson-countable copy is assumed.

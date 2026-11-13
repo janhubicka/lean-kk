@@ -1017,3 +1017,17 @@ import Kk
 #print axioms Kk.ambientPool_full_to_marked_Lsocle_coverage
 #check @Kk.ambientPool_fullB3_failure_requires_extra_upperL
 #print axioms Kk.ambientPool_fullB3_failure_requires_extra_upperL
+
+-- Track B: exact actual selected-stage/full corrected-B3 diagnostic
+#check @Kk.selectedStagePool_full_to_marked_Lsocle_coverage
+#print axioms Kk.selectedStagePool_full_to_marked_Lsocle_coverage
+#check @Kk.selectedStagePool_fullB3_failure_has_extra_original
+#print axioms Kk.selectedStagePool_fullB3_failure_has_extra_original
+#check @Kk.represented_nonstructural_I3_has_extra_upper_original
+#print axioms Kk.represented_nonstructural_I3_has_extra_upper_original
+#check @Kk.algorithmRun_nonstructural_I3_has_extra_upper_original
+#print axioms Kk.algorithmRun_nonstructural_I3_has_extra_upper_original
+
+-- Track B: actual numerical-H AlgorithmRun pool discharges abstract representation
+#check @Kk.numericH_algorithmRun_nonstructural_I3_has_extra_upper_original
+#print axioms Kk.numericH_algorithmRun_nonstructural_I3_has_extra_upper_original
