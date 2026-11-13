@@ -109,9 +109,15 @@ theorem henson_failedSelectedB3_has_eligible_cut_neighbour
     dsimp [last,upper] at hval
     omega
   have hWEdge : W.binary cut (e upper) (0 : Fin 1) = true := by
+    have hPattern : (cliquePattern ell).binary last upper
+        (0 : Fin 1) = true := by
+      change (!decide (last = upper)) = true
+      by_cases hEq : last = upper
+      · exact (hDistinct hEq).elim
+      · simp [hEq]
     have hCopyEdge :=
       hCopy.2.2.1 last upper hDistinct (0 : Fin 1)
-    simpa [hLastEq,cliquePattern,hDistinct] using hCopyEdge
+    simpa only [hLastEq] using hCopyEdge.trans hPattern
   have hCross := congrArg
       (fun T : RelationalPrefixType (cut+1) 1 0 1 =>
         T.binary
