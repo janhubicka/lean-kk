@@ -55,10 +55,14 @@ theorem finiteClique_full_constraints_raw_block_iff
     · subst U
       have hOldAt := hOld s hsW hsClique T
       have hBudgetAt := hCapacity.mp hBudget s hsW hsClique
-      change (s.filter (fun w => sort w ∈ T.1)).card ≤
-        min (F T) (ell - 1 - a)
-      apply le_min hOldAt
-      omega
+      have hThreshold :
+          (s.filter (fun w => sort w ∈ T.1)).card ≤ ell - 1 - a := by
+        omega
+      have hBoth :
+          (s.filter (fun w => sort w ∈ T.1)).card ≤
+            min (F T) (ell - 1 - a) :=
+        le_min hOldAt hThreshold
+      simpa [rawCliqueBlockBound] using hBoth
     · have hOldAt := hOld s hsW hsClique U
       simpa [rawCliqueBlockBound, hSame] using hOldAt
   · intro hRaw
