@@ -1003,3 +1003,11 @@ import Kk
 #print axioms Kk.allSupportFutureEdge_irreflexive
 #check @Kk.allSupportFuture_no_forbidden_clique
 #print axioms Kk.allSupportFuture_no_forbidden_clique
+
+-- Track B: full/marked corrected B3 obstruction diagnostics
+#check @Kk.fullB3_failure_good_marked_profile_gap
+#print axioms Kk.fullB3_failure_good_marked_profile_gap
+#check @Kk.fullB3_failure_good_marked_missing_upper
+#print axioms Kk.fullB3_failure_good_marked_missing_upper
+#check @Kk.fullB3_failure_good_marked_missing_socle
+#print axioms Kk.fullB3_failure_good_marked_missing_socle
