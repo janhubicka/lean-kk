@@ -80,12 +80,12 @@ theorem trackF_integerWitness_drop_one
       (T.1.erase x).sum (fun j => (w.1 j).val) +
         (w.1 x).val =
       T.1.sum (fun j => (w.1 j).val) :=
-    T.1.sum_erase_add (f := fun j : Fin d => (w.1 j).val) x hx
+    T.1.sum_erase_add (fun j : Fin d => (w.1 j).val) hx
   have hNewSum :
       (T.1.erase x).sum (fun j => (wFin j).val) +
         (wFin x).val =
       T.1.sum (fun j => (wFin j).val) :=
-    T.1.sum_erase_add (f := fun j : Fin d => (wFin j).val) x hx
+    T.1.sum_erase_add (fun j : Fin d => (wFin j).val) hx
   refine ⟨w', ?_, ?_⟩
   · intro U
     unfold integerCliqueOnSupport
