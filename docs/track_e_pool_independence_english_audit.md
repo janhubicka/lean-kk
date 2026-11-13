@@ -35,3 +35,11 @@ The same argument applies pointwise along any finite list/set of cuts if each co
 ## Integration contract to Track E
 
 The stagewise comparison no longer needs to identify which pool representative was chosen at non-(I2) cuts, provided it can identify **the same complete closure** and match the cuts in common source coordinates. All physical upper-type assignments then follow automatically from Cover + Graph. This removes one auxiliary choice problem from Track E, without inventing the still-missing cross-occurrence closure identification.
+
+## Corollary: corrected (B3) is independent of the representing pool
+
+The corrected (B3) finite age-test of a prescribed B1/B2 function `F` is quantified over every old source `T ∈ F.source` and all L-only continuation structures whose ordinary socle agrees with `prescribedOrdinarySocle (F.target T)`, with each upper ordinary-L type in the image predicate `F.PrescribedUpperLType`.
+
+If two functions have the SAME source predicate and the SAME complete upper L+ target on that source (as above), the corresponding L-only allowed-upper-type predicates are equal pointwise: for each witness type `R`, the same source `T` serves as a witness on both sides. The ordinary socles are also literally equal because the full targets are. Thus `F.CorrectedB3 family ↔ G.CorrectedB3 family`, with no E assignments to arbitrary age-test witness structures. This yields a **physical finite numerical-H no-(I2) theorem**: changing between any two complete finite original-name pools representing the same actual closure preserves corrected (B3).
+
+**Adversarial limits:** equality merely of selected old source sets is not enough—different chosen next outputs can change allowed future types; equal upper ordinary-L predicates with unmatched old socles need not suffice; different actual closures or any unrepresented crossings are excluded. The corollary says only `(B3)` cannot depend on the *choice of the complete representing pool for a fixed closure*. It does not imply that all nonstructural levels are boring, that any one particular (B3) verdict holds, or that two different diary occurrences have matching closures.
