@@ -1,0 +1,10 @@
+import Kk.FullCrossingPoolIndependence
+
+#check @Kk.closure_crossing_source_target_le_of_cover_graph
+#print axioms Kk.closure_crossing_source_target_le_of_cover_graph
+
+#check @Kk.closure_crossing_graph_unique_of_two_sided_coverage
+#print axioms Kk.closure_crossing_graph_unique_of_two_sided_coverage
+
+#check @Kk.finiteNumericH_full_crossing_independent_of_original_pool
+#print axioms Kk.finiteNumericH_full_crossing_independent_of_original_pool
