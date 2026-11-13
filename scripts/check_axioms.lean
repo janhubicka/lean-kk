@@ -1031,3 +1031,13 @@ import Kk
 -- Track B: actual numerical-H AlgorithmRun pool discharges abstract representation
 #check @Kk.numericH_algorithmRun_nonstructural_I3_has_extra_upper_original
 #print axioms Kk.numericH_algorithmRun_nonstructural_I3_has_extra_upper_original
+
+-- Track B: complete upper-L-reduct profile sufficiency for finite corrected B3
+#check @Kk.selectedStagePool_correctedB3_of_upperL_coverage
+#print axioms Kk.selectedStagePool_correctedB3_of_upperL_coverage
+#check @Kk.selectedStagePool_correctedB3_iff_equal_upperL_profiles
+#print axioms Kk.selectedStagePool_correctedB3_iff_equal_upperL_profiles
+#check @Kk.closureSelectedBoringData_correctedB3_of_marked_upperL_coverage
+#print axioms Kk.closureSelectedBoringData_correctedB3_of_marked_upperL_coverage
+#check @Kk.selectedStagePool_correctedB3_of_named_upper_target_cover
+#print axioms Kk.selectedStagePool_correctedB3_of_named_upper_target_cover

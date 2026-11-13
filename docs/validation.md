@@ -1,8 +1,16 @@
-# Track B continuation (13 November 2026) — genuine AlgorithmRun missing-upper original (PENDING exact-head CI)
+# Track B — sufficient full-B3 upper-L-profile criterion (13 November 2026, PENDING exact-head CI)
+
+[English-first proof and fourteen hostile checks](track_b_upper_L_profile_sufficiency_english_audit.md) precede `Kk/B3UpperProfileSufficiency.lean`. Four precise new endpoints show: (1) when a cut-eligible marked selected-original pool passes corrected B3 and **covers all full complete upper L-reducts**, the entire full selected-source B3 passes; (2) for TWO nonempty eligible selected original pools in ONE ambient structure, equality of their complete upper L-reduct predicates implies equivalence of corrected B3; (3) the same positive sufficient criterion applies to the genuine `closureSelectedBoringData` source, not an artificially enlarged ambient pool; (4) one representative marked ORIGINAL NAME per chosen full source target, with equal chosen next-level upper L-reduct, suffices to discharge the profile inclusion. Beware duplicate old types with distinct next types: the theorem compares chosen targets, not arbitrary original next records.
+
+**Pending:** exact-head full `lake build`, parser self-test and **417** strict named standard-only axiom reports (413 verified main baseline +4); these are **conditional source-profile comparisons**. The globally resolved canonical Kk diary has NOT been proved to satisfy the required upper-type cover, and labelled L+ orbit comparison and exact big Ramsey degrees remain OPEN. No manuscript global-green marker.
+
+---
+
+# Track B continuation (13 November 2026) — genuine AlgorithmRun missing-upper original (exact-head CI PASS)
 
 Two English-first hostile audits: [selected-stage / true AlgorithmRun proof](track_b_actual_i3_extra_upper_english_audit.md) and [numerical-H maintained pool discharge](track_b_numeric_run_extra_upper_english_audit.md). The first four new Lean endpoints in `Kk/B3ActualI3ExtraUpper.lean` prove common lower ordinary-L socles for genuinely selected eligible source pools; extract a named *full selected original* with missing complete upper L-reduct when marked B3 passes but full B3 fails; derive this missing original at an actual nonstructural I3 crossing; and specialize to a real AlgorithmRun with the exact pre-cut closure `R.I (cut+1)`. The fifth endpoint `Kk/B3NumericalRunExtraUpper.lean` **constructs** the common finite original-name pool from `hStageOriginals ... (R.I 0)`, using the existing concrete numerical-H run closure invariant, rather than assuming the pool.
 
-**Strict pending gate:** exact-head hosted full Lean `lake build`, parser self-test, and **413** named standard-only transitive axiom reports (408 merged main baseline plus 5 new endpoints). The global resolved-copy source/target comparison, two-sided relative-profile fidelity, actual upper-type inclusion and common labelled inverse-source orbit remain OPEN. No manuscript black prose or global green B3 markers changed.
+**Exact-head gate PASSED:** [PR #100](https://github.com/janhubicka/lean-kk/pull/100), [run 43442719030](https://github.com/janhubicka/lean-kk/actions/runs/43442719030), full Lean `lake build`, parser self-test, and **413 exact standard-only transitive-axiom reports**, tested head `c738b404b0c4805eb9a70738843c2eb957dd5920`, merged main commit `8ac0495a73db8a96409031632ac242b242bd8300` with the EXACT same tree. The global resolved-copy source/target comparison, two-sided relative-profile fidelity, actual upper-type inclusion and common labelled inverse-source orbit remain OPEN. No manuscript black prose or global green B3 markers changed.
 
 ---
 
