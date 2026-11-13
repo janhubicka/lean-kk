@@ -36,11 +36,15 @@ jobs:
         run: lake exe cache get
       - name: Compile exact old-column age module
         run: lake build Kk.FiniteOldColumnAge
+      - name: Compile positive canonical age certificate
+        run: lake build Kk.FiniteOldColumnAgePositive
       - name: Strict transitive axioms of every exported theorem
         run: |
           set -euo pipefail
           lake env lean Kk/FiniteOldColumnAge.lean | tee old-age-axioms.log
           python3 scripts/check_axiom_report.py --self-test
           python3 scripts/check_axiom_report.py Kk/FiniteOldColumnAge.lean old-age-axioms.log
+          lake env lean Kk/FiniteOldColumnAgePositive.lean | tee old-age-positive-axioms.log
+          python3 scripts/check_axiom_report.py Kk/FiniteOldColumnAgePositive.lean old-age-positive-axioms.log
       - name: Full repository build
         run: lake build
