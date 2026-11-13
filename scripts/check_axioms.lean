@@ -1041,3 +1041,124 @@ import Kk
 #print axioms Kk.closureSelectedBoringData_correctedB3_of_marked_upperL_coverage
 #check @Kk.selectedStagePool_correctedB3_of_named_upper_target_cover
 #print axioms Kk.selectedStagePool_correctedB3_of_named_upper_target_cover
+
+
+-- Track A source-exact integration; NOT an unconditional diary proof
+#check @Kk.finitePoolCliqueCheck_false_iff_reference
+#print axioms Kk.finitePoolCliqueCheck_false_iff_reference
+#check @Kk.finite_marked_front_gluing_iff_reference
+#print axioms Kk.finite_marked_front_gluing_iff_reference
+#check @Kk.finiteNumericH_marked_front_prefix_age_iff
+#print axioms Kk.finiteNumericH_marked_front_prefix_age_iff
+#check @Kk.trackAP4_one_target_not_whole_front
+#print axioms Kk.trackAP4_one_target_not_whole_front
+#check @Kk.orderedReservedNumericPos_injOn
+#print axioms Kk.orderedReservedNumericPos_injOn
+#check @Kk.finiteNumericH_ordered_reserved_exact_gate
+#print axioms Kk.finiteNumericH_ordered_reserved_exact_gate
+#check @Kk.finiteNumericH_ordered_reserved_prefix_capacity
+#print axioms Kk.finiteNumericH_ordered_reserved_prefix_capacity
+#check @Kk.orderedReservedNumericPrefix_inside_carrier
+#print axioms Kk.orderedReservedNumericPrefix_inside_carrier
+#check @Kk.orderedReservedNumericPrefix_mem_finiteH
+#print axioms Kk.orderedReservedNumericPrefix_mem_finiteH
+#check @Kk.finiteNumericH_ordered_marked_front_prefix_age_iff
+#print axioms Kk.finiteNumericH_ordered_marked_front_prefix_age_iff
+#check @Kk.onePointLeftDense_embeds_finite_KFree_over_fixed_prefix
+#print axioms Kk.onePointLeftDense_embeds_finite_KFree_over_fixed_prefix
+#check @Kk.henson_leftDense_embeds_finite_over_fixed_prefix
+#print axioms Kk.henson_leftDense_embeds_finite_over_fixed_prefix
+#check @Kk.orderedReservedNumericPrefix_disjoint_topPool
+#print axioms Kk.orderedReservedNumericPrefix_disjoint_topPool
+#check @Kk.finiteNumericH_ordered_prefix_all_top_support
+#print axioms Kk.finiteNumericH_ordered_prefix_all_top_support
+#check @Kk.numericHTopPool_mem_finiteH_of_cut
+#print axioms Kk.numericHTopPool_mem_finiteH_of_cut
+#check @Kk.finiteNumericH_ordered_top_marked_front_age_iff
+#print axioms Kk.finiteNumericH_ordered_top_marked_front_age_iff
+
+-- Track C source-exact integration; NOT an unconditional diary proof
+#check @Kk.finiteNumericH_top_full_original_source_record
+#print axioms Kk.finiteNumericH_top_full_original_source_record
+#check @Kk.finiteNumericH_top_fake_E_positive_not_real
+#print axioms Kk.finiteNumericH_top_fake_E_positive_not_real
+#check @Kk.finiteNumericH_top_fake_full_L_plus
+#print axioms Kk.finiteNumericH_top_fake_full_L_plus
+#check @Kk.finiteNumericH_all_closure_nodes_seed_parameter_or_meet
+#print axioms Kk.finiteNumericH_all_closure_nodes_seed_parameter_or_meet
+#check @Kk.finiteNumericH_even_real_level_nonseed_is_original_meet
+#print axioms Kk.finiteNumericH_even_real_level_nonseed_is_original_meet
+#check @Kk.finiteNumericH_run_selected_genOne_full_source_eligibility
+#print axioms Kk.finiteNumericH_run_selected_genOne_full_source_eligibility
+#check @Kk.finiteNumericH_positive_freeLevel_has_real_target
+#print axioms Kk.finiteNumericH_positive_freeLevel_has_real_target
+#check @Kk.finiteNumericH_full_cut_crossing_and_upper_types
+#print axioms Kk.finiteNumericH_full_cut_crossing_and_upper_types
+#check @Kk.finiteNumericH_run_cut_crossing_and_upper_types
+#print axioms Kk.finiteNumericH_run_cut_crossing_and_upper_types
+#check @Kk.finiteNumericH_topSeeds_closure_inside_root_stage_pool
+#print axioms Kk.finiteNumericH_topSeeds_closure_inside_root_stage_pool
+#check @Kk.finiteNumericH_topSeeds_full_cut_crossing_and_upper_types
+#print axioms Kk.finiteNumericH_topSeeds_full_cut_crossing_and_upper_types
+#check @Kk.finiteNumericH_topSeeds_run_cut_crossing_and_upper_types
+#print axioms Kk.finiteNumericH_topSeeds_run_cut_crossing_and_upper_types
+#check @Kk.finiteNumericH_named_pool_cut_crossing_and_upper_types
+#print axioms Kk.finiteNumericH_named_pool_cut_crossing_and_upper_types
+#check @Kk.finiteNumericH_run_final_pool_crossing_and_upper_types
+#print axioms Kk.finiteNumericH_run_final_pool_crossing_and_upper_types
+
+-- Track D source-exact integration; NOT an unconditional diary proof
+#check @Kk.henson_fullB3_of_cut_visible_complete_outputs
+#print axioms Kk.henson_fullB3_of_cut_visible_complete_outputs
+#check @Kk.henson_cut_visible_fullB3_failure_implies_marked_failure
+#print axioms Kk.henson_cut_visible_fullB3_failure_implies_marked_failure
+#check @Kk.henson_fullB3_of_marked_cut_neighbours_and_fibre_coherence
+#print axioms Kk.henson_fullB3_of_marked_cut_neighbours_and_fibre_coherence
+#check @Kk.henson_selectedStageB3_iff_cut_visible_output_equivalence
+#print axioms Kk.henson_selectedStageB3_iff_cut_visible_output_equivalence
+#check @Kk.kpt_marked_next_full_type_eq_of_no_meet
+#print axioms Kk.kpt_marked_next_full_type_eq_of_no_meet
+#check @Kk.henson_fullB3_of_no_i2_marked_closure_cut_neighbours
+#print axioms Kk.henson_fullB3_of_no_i2_marked_closure_cut_neighbours
+
+-- Track E source-exact integration; NOT an unconditional diary proof
+#check @Kk.fullLabelledSourceRecord_ext
+#print axioms Kk.fullLabelledSourceRecord_ext
+#check @Kk.full_source_records_eq_of_inverse_comparison
+#print axioms Kk.full_source_records_eq_of_inverse_comparison
+#check @Kk.common_labelled_orbit_of_full_record_eq
+#print axioms Kk.common_labelled_orbit_of_full_record_eq
+#check @Kk.full_source_coherence_implies_diary_colour_bound
+#print axioms Kk.full_source_coherence_implies_diary_colour_bound
+#check @Kk.pairwise_full_source_comparison_implies_diary_colour_bound
+#print axioms Kk.pairwise_full_source_comparison_implies_diary_colour_bound
+#check @Kk.fullEventIndexedSourceRecord_ext
+#print axioms Kk.fullEventIndexedSourceRecord_ext
+#check @Kk.KptClosureRecipe.evaluate_congr
+#print axioms Kk.KptClosureRecipe.evaluate_congr
+#check @Kk.KptClosureRecipe.wellFormed_congr
+#print axioms Kk.KptClosureRecipe.wellFormed_congr
+#check @Kk.full_event_source_eq_of_inverse_sets_and_recipes
+#print axioms Kk.full_event_source_eq_of_inverse_sets_and_recipes
+#check @Kk.full_event_source_coherence_implies_diary_colour_bound
+#print axioms Kk.full_event_source_coherence_implies_diary_colour_bound
+#check @Kk.event_kind_does_not_determine_inputs
+#print axioms Kk.event_kind_does_not_determine_inputs
+#check @Kk.assigned_upper_type_requires_event_indexing
+#print axioms Kk.assigned_upper_type_requires_event_indexing
+#check @Kk.full_event_source_eq_of_local_reconstruction
+#print axioms Kk.full_event_source_eq_of_local_reconstruction
+#check @Kk.full_event_source_common_selected_and_parameter_targets
+#print axioms Kk.full_event_source_common_selected_and_parameter_targets
+#check @Kk.full_record_and_coverage_identify_source_closures
+#print axioms Kk.full_record_and_coverage_identify_source_closures
+
+-- Track F source-exact integration; NOT an unconditional diary proof
+#check @Kk.diaryCoverColumnRaw_le_upper
+#print axioms Kk.diaryCoverColumnRaw_le_upper
+#check @Kk.diaryCoverColumnCanonical_exact
+#print axioms Kk.diaryCoverColumnCanonical_exact
+#check @Kk.diaryCoverColumn_feasible_iff_lower
+#print axioms Kk.diaryCoverColumn_feasible_iff_lower
+#check @Kk.trackF_card_labelled_diaries
+#print axioms Kk.trackF_card_labelled_diaries
