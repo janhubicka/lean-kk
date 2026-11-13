@@ -80,12 +80,12 @@ theorem trackF_integerWitness_drop_one
       (T.1.erase x).sum (fun j => (w.1 j).val) +
         (w.1 x).val =
       T.1.sum (fun j => (w.1 j).val) :=
-    T.1.sum_erase_add x hx
+    T.1.sum_erase_add (f := fun j : Fin d => (wFin j).val) x hx
   have hNewSum :
       (T.1.erase x).sum (fun j => (wFin j).val) +
         (wFin x).val =
       T.1.sum (fun j => (wFin j).val) :=
-    T.1.sum_erase_add x hx
+    T.1.sum_erase_add (f := fun j : Fin d => (wFin j).val) x hx
   refine ⟨w', ?_, ?_⟩
   · intro U
     unfold integerCliqueOnSupport
@@ -137,9 +137,10 @@ theorem trackFCover_drop_one_at_changed
     have hBound : upper T ≤ B T := by
       simpa only [hEq] using
         (integerGraphAgeCanonical_le_raw d ell B T)
-    have hUpperLE : upper T ≤ n := by
+    have hBn : B T ≤ n := by
       simpa [B, integerAgeLowerAt] using
-        hBound.trans (Nat.min_le_right (upper T) n)
+        (Nat.min_le_right (upper T) n)
+    have hUpperLE : upper T ≤ n := hBound.trans hBn
     dsimp [n] at hUpperLE
     have hPos : 0 < upper T := by omega
     omega
