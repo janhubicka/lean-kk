@@ -48,7 +48,7 @@ theorem orderedReservedNumericPrefix_disjoint_topPool
     omega
   have hNumeric :
       hPosition k (q x.1) x.2 = hPosition k j k := by
-    exact hxEq.symm.trans hjEq
+    exact hxEq.trans hjEq.symm
   have hOriginal :=
     (hPosition_injective_bounded k (q x.1) x.2 j k
       ht le_rfl hNumeric).1
@@ -128,7 +128,7 @@ theorem numericHTopPool_mem_finiteH_of_cut
   intro w hw
   obtain ⟨j,hj,heq⟩ := Finset.mem_image.mp hw
   change w < M
-  rw [heq]
+  rw [← heq]
   exact hTop j hj
 
 /-- Conditional physical marked-front age with a nonconsecutive
