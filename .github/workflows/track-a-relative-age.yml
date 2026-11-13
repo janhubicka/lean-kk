@@ -29,11 +29,11 @@ jobs:
         run: lake exe cache get
       - name: Explicitly compile the new Track A module
         run: lake build Kk.RelativeMarkedFrontAge
-      - name: Build all currently imported modules
-        run: lake build
       - name: Check exact named standard-only transitive axioms of Track A
         run: |
           set -euo pipefail
           lake env lean Kk/RelativeMarkedFrontAge.lean | tee track-a-axioms.log
           python3 scripts/check_axiom_report.py --self-test
           python3 scripts/check_axiom_report.py Kk/RelativeMarkedFrontAge.lean track-a-axioms.log
+      - name: Build all currently imported modules
+        run: lake build

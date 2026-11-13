@@ -206,9 +206,9 @@ theorem trackAP4_one_target_not_whole_front :
       decide ((2 : Nat) ∈ ({3} : Finset Nat)) := by
   decide
 
-#print axioms finitePoolCliqueCheck_false_iff_reference
-#print axioms finite_marked_front_gluing_iff_reference
-#print axioms finiteNumericH_marked_front_prefix_age_iff
-#print axioms trackAP4_one_target_not_whole_front
+#print axioms Kk.finitePoolCliqueCheck_false_iff_reference
+#print axioms Kk.finite_marked_front_gluing_iff_reference
+#print axioms Kk.finiteNumericH_marked_front_prefix_age_iff
+#print axioms Kk.trackAP4_one_target_not_whole_front
 
 end Kk
