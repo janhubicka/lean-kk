@@ -975,3 +975,9 @@ import Kk
 #print axioms Kk.finitePoolCliqueCheck_false_iff_induced_image
 #check @Kk.finitePoolCliqueCheck_false_iff_strictMono_image
 #print axioms Kk.finitePoolCliqueCheck_false_iff_strictMono_image
+
+-- Actual fixed-Henson one-point extension of a faithful finite induced L pattern.
+#check @Kk.onePointLeftDense_extend_finite_induced_copy
+#print axioms Kk.onePointLeftDense_extend_finite_induced_copy
+#check @Kk.henson_leftDense_extend_finite_induced_copy
+#print axioms Kk.henson_leftDense_extend_finite_induced_copy
