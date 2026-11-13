@@ -1,0 +1,51 @@
+name: KK-free Track D — full B3 cut-visible transfer
+
+on:
+  push:
+    branches:
+      - kk-track-d-full-b3-20261113
+  pull_request:
+    paths:
+      - 'Kk/B3CutVisibleTransfer.lean'
+      - 'Kk/B3ClosureFibreCoherence.lean'
+      - 'scripts/check_axioms_track_d.lean'
+      - '.github/workflows/track-d-full-b3.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: kk-track-d-b3-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  checked-b3-transfer:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache Lean toolchain
+        uses: actions/cache@v4
+        with:
+          path: ~/.elan/toolchains
+          key: lean-toolchain-${{ runner.os }}-${{ hashFiles('lean-toolchain') }}
+      - name: Restore pinned Lake workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve exact dependency pin
+        run: lake update
+      - name: Restore Mathlib cache
+        run: lake exe cache get
+      - name: Compile exact Track D module
+        run: lake build Kk.B3ClosureFibreCoherence
+      - name: Named standard-only transitive axiom gate
+        run: |
+          set -euo pipefail
+          lake env lean scripts/check_axioms_track_d.lean | tee track_d_axioms.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py scripts/check_axioms_track_d.lean track_d_axioms.log

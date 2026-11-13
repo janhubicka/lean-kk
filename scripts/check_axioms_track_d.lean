@@ -1,0 +1,17 @@
+import Kk.B3ClosureFibreCoherence
+
+-- Track D: strict checks of the actual full corrected-B3 cut-visible
+-- transfer. No manuscript global B3/diary claim is registered here.
+#check @Kk.henson_fullB3_of_cut_visible_complete_outputs
+#print axioms Kk.henson_fullB3_of_cut_visible_complete_outputs
+#check @Kk.henson_cut_visible_fullB3_failure_implies_marked_failure
+#print axioms Kk.henson_cut_visible_fullB3_failure_implies_marked_failure
+#check @Kk.henson_fullB3_of_marked_cut_neighbours_and_fibre_coherence
+#print axioms Kk.henson_fullB3_of_marked_cut_neighbours_and_fibre_coherence
+#check @Kk.henson_selectedStageB3_iff_cut_visible_output_equivalence
+#print axioms Kk.henson_selectedStageB3_iff_cut_visible_output_equivalence
+
+#check @Kk.kpt_marked_next_full_type_eq_of_no_meet
+#print axioms Kk.kpt_marked_next_full_type_eq_of_no_meet
+#check @Kk.henson_fullB3_of_no_i2_marked_closure_cut_neighbours
+#print axioms Kk.henson_fullB3_of_no_i2_marked_closure_cut_neighbours
