@@ -1,6 +1,7 @@
 import Kk.DiaryCoverColumn
 import Kk.TrackFLabelledFibre
 import Kk.TrackFCodingColumn
+import Kk.TrackFRawCoverColumn
 
 -- Track F's *local* exact-head certificate; no changes to G's global registry.
 #print axioms Kk.diaryCoverColumnRaw_le_upper
@@ -11,3 +12,9 @@ import Kk.TrackFCodingColumn
 #print axioms Kk.trackFCodingRaw_le_original
 #print axioms Kk.trackFCodingColumn_canonical_eq
 #print axioms Kk.trackFCodingColumn_feasible_iff
+
+#print axioms Kk.trackFCodingRaw_witness_iff
+#print axioms Kk.trackFCanonical_eq_of_feasible_iff
+#print axioms Kk.trackFCanonical_add_cap_congr
+#print axioms Kk.trackFRawCoverColumn_exact
+#print axioms Kk.trackFRawCoverColumn_feasible_iff_lower
