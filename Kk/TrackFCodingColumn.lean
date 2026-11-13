@@ -117,7 +117,8 @@ theorem trackFCodingColumn_feasible_iff
         rw [trackFCodingColumn_canonical_eq d ell B F X n
           hAge hCanonical hSafe]
     _ ↔ WitnessRespects
-          (integerCliqueOnSupport (d := d) (ell := ell)) B w :=
-        integerGraphAgeCanonical_preserves_clique_vectors d ell B w
+          (integerCliqueOnSupport (d := d) (ell := ell)) B w := by
+        simpa only [hCanonical] using
+          (integerGraphAgeCanonical_preserves_clique_vectors d ell B w)
 
 end Kk
