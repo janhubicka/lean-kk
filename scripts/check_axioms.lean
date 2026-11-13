@@ -959,3 +959,11 @@ import Kk
 #print axioms Kk.universalWitnessFuture_clique_attains_canonical
 #check @Kk.universalWitnessFuture_support_capacity_eq_canonical
 #print axioms Kk.universalWitnessFuture_support_capacity_eq_canonical
+
+-- Sharp truncated raw support block budget; standalone future and actual four-pool certificate.
+#check @Kk.rawSupportBlock_add_clique_below
+#print axioms Kk.rawSupportBlock_add_clique_below
+#check @Kk.universalWitnessFuture_raw_support_block_budget
+#print axioms Kk.universalWitnessFuture_raw_support_block_budget
+#check @Kk.finitePoolCliqueCheck_gluing_of_raw_support_bound
+#print axioms Kk.finitePoolCliqueCheck_gluing_of_raw_support_bound
