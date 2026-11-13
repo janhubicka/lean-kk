@@ -241,4 +241,55 @@ theorem full_source_coherence_implies_diary_colour_bound
           (LabelledGOmegaCopy.toGPlus enum e) := by rw [hGPlus]
     _ = e := LabelledGOmegaCopy.fromGPlus_toGPlus enum e
 
+
+/-- A useful quantified form of the Track-E contract. It is enough to
+compare all full source records pairwise within a diary class: choosing
+one genuine representative for every realised diary then yields ONE
+canonical labelled source and the conditional Ramsey upper bound.
+
+The representative need not be a shortest occurrence, and is NOT used
+as the common source itself: its *pulled-back* full record is. The
+assumptions require the representative source prefix chains to have
+genuine caps, while the same-diary record equality is still a
+KK-specific geometric obligation. -/
+theorem pairwise_full_source_comparison_implies_diary_colour_bound
+    {n : Nat} {ι κ Params Old Upper Events EventKind : Type}
+    [Fintype κ] [Nonempty κ]
+    (enum : Nat ≃ FiniteGPlusVertex family)
+    (diaryIndices : Finset ι)
+    (diary : LabelledGOmegaCopy (Fin n) → ι)
+    (selected : Set (LabelledGOmegaCopy (Fin n)))
+    (hIndexed : ∀ e, e ∈ selected → diary e ∈ diaryIndices)
+    (representative : ι → LabelledGOmegaCopy (Fin n))
+    (hRep : ∀ i, i ∈ diaryIndices →
+      representative i ∈ selected ∧ diary (representative i) = i)
+    (pulledBack : LabelledGOmegaCopy (Fin n) →
+      KptFullSourceRecord family n Params Old Upper Events EventKind)
+    (tops : ι → FiniteGPlusVertex family)
+    (hPrefix : ∀ i a,
+      ((pulledBack (representative i)).selected a).val.IsPrefix (tops i).val)
+    (hInjective : ∀ i,
+      Function.Injective (pulledBack (representative i)).selected)
+    (envelope : LabelledGOmegaCopy (Fin n) →
+      SuccessorTree.SMTree.MMap (normalizedKptSMTree family))
+    (hImage : ∀ e, e ∈ selected → ∀ a,
+      enum.symm (gPlusShapeImage (envelope e).map
+        ((pulledBack e).selected a)) = e.1 a)
+    (hPairwise : ∀ e, e ∈ selected → ∀ e', e' ∈ selected →
+      diary e = diary e' → pulledBack e = pulledBack e')
+    (colour : LabelledGOmegaCopy (Fin n) → κ) :
+    ∃ (F : SuccessorTree.SMTree.MMap (normalizedKptSMTree family))
+      (byDiary : ι → κ),
+      ∀ e, e ∈ selected →
+        colour (LabelledGOmegaCopy.map enum F e) =
+          byDiary (diary e) := by
+  apply full_source_coherence_implies_diary_colour_bound
+    enum diaryIndices (fun i => pulledBack (representative i))
+    tops hPrefix hInjective diary selected hIndexed
+    pulledBack envelope hImage ?_ colour
+  intro e he
+  have hRepresentative := hRep (diary e) (hIndexed e he)
+  exact hPairwise e he (representative (diary e))
+    hRepresentative.1 hRepresentative.2.symm
+
 end Kk
