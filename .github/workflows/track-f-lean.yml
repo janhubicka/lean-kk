@@ -1,13 +1,15 @@
-name: Track F diary cover
+name: Track F diary correspondence
 
 on:
   pull_request:
     paths:
       - 'Kk/DiaryCoverColumn.lean'
       - 'Kk/TrackFLabelledFibre.lean'
+      - 'Kk/TrackFCodingColumn.lean'
       - 'scripts/track_f_axioms.lean'
       - 'docs/track_f_cover_column_english_audit.md'
       - 'docs/track_f_labelled_fibre_english_audit.md'
+      - 'docs/track_f_coding_column_english_audit.md'
       - '.github/workflows/track-f-lean.yml'
   workflow_dispatch:
 
@@ -37,8 +39,8 @@ jobs:
       - name: Restore Mathlib compilation cache
         run: lake exe cache get
       - name: Compile new Track F module explicitly
-        run: lake build Kk.DiaryCoverColumn Kk.TrackFLabelledFibre
-      - name: Check only standard Lean axioms in all three endpoints
+        run: lake build Kk.DiaryCoverColumn Kk.TrackFLabelledFibre Kk.TrackFCodingColumn
+      - name: Check only standard Lean axioms in all seven endpoints
         shell: bash
         run: |
           set -euo pipefail
@@ -52,6 +54,9 @@ jobs:
             "Kk.diaryCoverColumnCanonical_exact",
             "Kk.diaryCoverColumn_feasible_iff_lower",
             "Kk.trackF_card_labelled_diaries",
+            "Kk.trackFCodingRaw_le_original",
+            "Kk.trackFCodingColumn_canonical_eq",
+            "Kk.trackFCodingColumn_feasible_iff",
           ]
           permitted = {"propext", "Classical.choice", "Quot.sound"}
           for name in expected:
