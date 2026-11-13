@@ -112,9 +112,7 @@ theorem henson_failedSelectedB3_has_eligible_cut_neighbour
   have hWEdge : W.binary cut (e upper) (0 : Fin 1) = true := by
     have hPattern : (cliquePattern ell).binary last upper
         (0 : Fin 1) = true := by
-      by_cases hEq : last = upper
-      · exact (hDistinct hEq).elim
-      · simp [cliquePattern,hEq]
+      simpa [cliquePattern] using hDistinct
     have hCopyEdge :=
       hCopy.2.2.1 last upper hDistinct (0 : Fin 1)
     simpa only [hLastEq] using hCopyEdge.trans hPattern
