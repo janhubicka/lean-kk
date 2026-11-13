@@ -1,0 +1,37 @@
+import Kk.CrossClosurePhysicalComparison
+
+#check @Kk.closure_crossing_source_target_le_of_cover_graph
+#print axioms Kk.closure_crossing_source_target_le_of_cover_graph
+
+#check @Kk.closure_crossing_graph_unique_of_two_sided_coverage
+#print axioms Kk.closure_crossing_graph_unique_of_two_sided_coverage
+
+#check @Kk.finiteNumericH_full_crossing_independent_of_original_pool
+#print axioms Kk.finiteNumericH_full_crossing_independent_of_original_pool
+
+#check @Kk.correctedB3_iff_of_identical_full_crossing_graph
+#print axioms Kk.correctedB3_iff_of_identical_full_crossing_graph
+
+#check @Kk.finiteNumericH_correctedB3_independent_of_original_pool
+#print axioms Kk.finiteNumericH_correctedB3_independent_of_original_pool
+
+#check @Kk.full_physical_crossing_nonfunctional_forces_I2
+#print axioms Kk.full_physical_crossing_nonfunctional_forces_I2
+
+#check @Kk.full_physical_crossing_functional_of_no_I2
+#print axioms Kk.full_physical_crossing_functional_of_no_I2
+
+#check @Kk.prescribed_full_graph_eq_physical_crossing
+#print axioms Kk.prescribed_full_graph_eq_physical_crossing
+
+#check @Kk.finiteNumericH_full_crossing_graph_is_physical_relation
+#print axioms Kk.finiteNumericH_full_crossing_graph_is_physical_relation
+
+#check @Kk.full_prescribed_graph_eq_implies_source_and_target_eq
+#print axioms Kk.full_prescribed_graph_eq_implies_source_and_target_eq
+
+#check @Kk.two_closures_full_crossings_and_B3_of_equal_physical_relation
+#print axioms Kk.two_closures_full_crossings_and_B3_of_equal_physical_relation
+
+#check @Kk.two_numericH_closures_B3_of_equal_full_crossing_relation
+#print axioms Kk.two_numericH_closures_B3_of_equal_full_crossing_relation
