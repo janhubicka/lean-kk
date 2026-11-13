@@ -88,11 +88,11 @@ sets using proper-prefix reflection; parameters are recovered from
 their named singleton fibres. The remaining FULL type/event assignments
 are explicit independent premises. -/
 theorem full_source_records_eq_of_inverse_comparison
-    {n : Nat} {Π Old Upper Events EventKind : Type}
+    {n : Nat} {Params Old Upper Events EventKind : Type}
     (F G : SuccessorTree.SMTree.MMap (normalizedKptSMTree family))
-    (R S : KptFullSourceRecord family n Π Old Upper Events EventKind)
+    (R S : KptFullSourceRecord family n Params Old Upper Events EventKind)
     (targetF targetG : Fin n → FiniteGPlusVertex family)
-    (paramF paramG : Π → AdmissibleKptNode family)
+    (paramF paramG : Params → AdmissibleKptNode family)
     (hSelectedF : ∀ a, gPlusShapeImage F.map (R.selected a) = targetF a)
     (hSelectedG : ∀ a, gPlusShapeImage G.map (S.selected a) = targetG a)
     (hStrictF : ∀ a b : Fin n, a < b →
@@ -135,9 +135,9 @@ theorem full_source_records_eq_of_inverse_comparison
 monoid source for both target copies. This is a concrete equality in
 the actual G+ presentation, not an abstract envelope isomorphism. -/
 theorem common_labelled_orbit_of_full_record_eq
-    {n : Nat} {Π Old Upper Events EventKind : Type}
+    {n : Nat} {Params Old Upper Events EventKind : Type}
     (F G : SuccessorTree.SMTree.MMap (normalizedKptSMTree family))
-    (R S : KptFullSourceRecord family n Π Old Upper Events EventKind)
+    (R S : KptFullSourceRecord family n Params Old Upper Events EventKind)
     (targetF targetG : Fin n → FiniteGPlusVertex family)
     (hTargetFInj : Function.Injective targetF)
     (hTargetGInj : Function.Injective targetG)
@@ -159,7 +159,7 @@ theorem common_labelled_orbit_of_full_record_eq
         congrArg (gPlusShapeImage F.map) hab
       _ = targetF b := hSelectedF b
   have hSourceEq : R.selected = S.selected :=
-    congrArg (fun T : KptFullSourceRecord family n Π Old Upper Events EventKind =>
+    congrArg (fun T : KptFullSourceRecord family n Params Old Upper Events EventKind =>
       T.selected) hRecord
   refine ⟨⟨R.selected, hSourceInj⟩, ?_, ?_⟩
   · apply Subtype.ext
@@ -180,11 +180,11 @@ The full-record coherence premise is exactly the missing resolved-H+
 geometry. The finite full-profile carrier and Ramsey step are *derived*
 by the existing verified prefix-chain transfer theorem. -/
 theorem full_source_coherence_implies_diary_colour_bound
-    {n : Nat} {ι κ Π Old Upper Events EventKind : Type}
+    {n : Nat} {ι κ Params Old Upper Events EventKind : Type}
     [Fintype κ] [Nonempty κ]
     (enum : Nat ≃ FiniteGPlusVertex family)
     (diaryIndices : Finset ι)
-    (sources : ι → KptFullSourceRecord family n Π Old Upper Events EventKind)
+    (sources : ι → KptFullSourceRecord family n Params Old Upper Events EventKind)
     (tops : ι → FiniteGPlusVertex family)
     (hPrefix : ∀ i a, ((sources i).selected a).val.IsPrefix (tops i).val)
     (hInjective : ∀ i, Function.Injective (sources i).selected)
@@ -192,7 +192,7 @@ theorem full_source_coherence_implies_diary_colour_bound
     (selected : Set (LabelledGOmegaCopy (Fin n)))
     (hIndexed : ∀ e, e ∈ selected → diary e ∈ diaryIndices)
     (pulledBack : LabelledGOmegaCopy (Fin n) →
-      KptFullSourceRecord family n Π Old Upper Events EventKind)
+      KptFullSourceRecord family n Params Old Upper Events EventKind)
     (envelope : LabelledGOmegaCopy (Fin n) →
       SuccessorTree.SMTree.MMap (normalizedKptSMTree family))
     (hImage : ∀ e, e ∈ selected → ∀ a,
