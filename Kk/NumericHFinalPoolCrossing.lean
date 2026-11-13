@@ -182,7 +182,7 @@ theorem finiteNumericH_run_final_pool_crossing_and_upper_types
         top cut hCut R z hz
     let j : Fin V.card := V.equivFin ⟨v,hv⟩
     have hOriginal : original j = v := by
-      simp [original, hOriginalName, j]
+      simp [original, hOriginalName, j] <;> rfl
     refine ⟨j, ?_⟩
     simpa only [A,hAvoidA,hOriginal] using hzv
   exact finiteNumericH_named_pool_cut_crossing_and_upper_types
