@@ -38,7 +38,7 @@ def FullPhysicalClosureCrossing
 
 /-- Compare only the GRAPH of a partial prescribed function.
 Values of F.target outside F.source are intentionally ignored. -/
-def PrescribedBoringData.fullSourceGraph
+def fullPrescribedCrossingGraph
     {db du dd cut : Nat}
     (F : PrescribedBoringData cut db du dd) :
     Set (PartialTypeWithE cut db du dd ×
@@ -84,7 +84,14 @@ theorem full_physical_crossing_nonfunctional_forces_I2
     have hRaw :
         (⟨cut+1,U⟩ : RawPartialTypeNode db du dd) =
           (⟨cut+1,V⟩ : RawPartialTypeNode db du dd) :=
-      hUpperZ.trans (congrArg Subtype.val hEq).trans hUpperW.symm
+      calc
+        (⟨cut+1,U⟩ : RawPartialTypeNode db du dd) =
+            (LevelTree.ancestor z (cut+1) (Nat.succ_le_iff.mpr hCutZ)).val :=
+          hUpperZ
+        _ = (LevelTree.ancestor w (cut+1) (Nat.succ_le_iff.mpr hCutW)).val :=
+          congrArg Subtype.val hEq
+        _ = (⟨cut+1,V⟩ : RawPartialTypeNode db du dd) :=
+          hUpperW.symm
     exact hNe (eq_of_heq (Sigma.mk.inj_iff.mp hRaw).2)
   have hMeetLevel : LevelTree.lev (LevelTree.meet z w) = cut := by
     by_contra hNot
@@ -127,7 +134,7 @@ theorem prescribed_full_graph_eq_physical_crossing
     (F : PrescribedBoringData cut db du dd)
     (hCover : CoversClosureCrossing family Z cut F)
     (hGraph : IsCrossingGraphOf family Z cut F) :
-    F.fullSourceGraph = FullPhysicalClosureCrossing family Z cut := by
+    fullPrescribedCrossingGraph F = FullPhysicalClosureCrossing family Z cut := by
   ext p
   constructor
   · rintro ⟨hSource,hTarget⟩
@@ -147,6 +154,7 @@ theorem prescribed_full_graph_eq_physical_crossing
       hNext.trans hNextF.symm
     have hpNext : p.2 = F.target T :=
       eq_of_heq (Sigma.mk.inj_iff.mp hNextEq).2
+    change p.1 ∈ F.source ∧ F.target p.1 = p.2
     constructor
     · rw [hpT]
       exact hT
@@ -174,8 +182,8 @@ theorem finiteNumericH_full_crossing_graph_is_physical_relation
       ∃ b : AdmissibleKptNode family,
         b ∈ Z ∧ SMTree.Envelope.SameComponent a b ∧
         LevelTree.lev (LevelTree.meet a b) = cut) :
-    (closureSelectedBoringData family (finiteNumericH K k N)
-      hAvoid original Z cut).fullSourceGraph =
+    fullPrescribedCrossingGraph (closureSelectedBoringData family (finiteNumericH K k N)
+      hAvoid original Z cut) =
         FullPhysicalClosureCrossing family Z cut := by
   obtain ⟨hCover,hGraph,_⟩ :=
     finiteNumericH_named_pool_cut_crossing_and_upper_types
