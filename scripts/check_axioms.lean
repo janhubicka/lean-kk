@@ -1162,3 +1162,9 @@ import Kk
 #print axioms Kk.diaryCoverColumn_feasible_iff_lower
 #check @Kk.trackF_card_labelled_diaries
 #print axioms Kk.trackF_card_labelled_diaries
+
+-- Track D cut-star normalization: actual full B3 under genuine no-(I2)
+#check @Kk.henson_failedSelectedB3_has_eligible_cut_neighbour
+#print axioms Kk.henson_failedSelectedB3_has_eligible_cut_neighbour
+#check @Kk.henson_fullB3_iff_cut_star_of_no_i2
+#print axioms Kk.henson_fullB3_iff_cut_star_of_no_i2
