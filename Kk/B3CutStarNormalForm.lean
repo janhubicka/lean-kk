@@ -95,12 +95,13 @@ theorem henson_failedSelectedB3_has_eligible_cut_neighbour
     normalizedForbidden_bounded_signature_cut
       C W cut k bad hBound
       hSocle hAvoidA (hDelete bad hBadMem) hBad
+  change W.Realizes (cliquePattern ell) e at hCopy
   let upper : Fin ell := ⟨r,hrt⟩
   have hUpperAbove : cut < e upper :=
     (hHigh upper).1 (by simp [upper])
   obtain ⟨v,hSelected,hFree,hType⟩ :=
     hUpper (e upper) (hCopy.2.1 upper) hUpperAbove
-  let last : Fin ell := ⟨r-1,by omega⟩
+  let last : Fin bad.patternCard := ⟨r-1,by omega⟩
   have hLastEq : e last = cut := hLast
   have hDistinct : last ≠ upper := by
     intro heq
