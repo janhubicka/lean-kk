@@ -51,3 +51,9 @@ For a *family* of occurrences, choose one canonical full source record `R_Θ` fo
 * **E after B–D:** establish the inverse-selected-set and parameter-fibre equalities **uniformly across every pair of occurrences of a diary**; extract one canonical record and genuine outgoing maps; apply the conditional finite-carrier/Ramsey transfer.
 
 **Validation policy:** no global green mark and no unconditional upper bound is justified by the conditional abstract record theorem. The source-exact Lean build and named standard-only axiom checks are additional requirements before accepting the module.
+
+## Pairwise-to-uniform quantifier bridge (formalized)
+
+A chosen occurrence `r(i)` of each realized diary `i` is **not** itself generally a universal monoid source. Use instead the full pulled-back record `R_i = pulledBack(r(i))`. If `pulledBack(e) = pulledBack(e')` holds for **every pair** of selected occurrences of the same diary, then `pulledBack(e)=R_{diary(e)}` for every selected `e`. Assume the representatives' selected source codes form actual finite prefix chains with named top codes and the genuine maps carry the preimages to every target. Then `prefix_chain_orbits_colour_factors` supplies one intrinsic finite carrier per diary and the claimed upper colour factorization. This argument requires **both** that each realized diary has a chosen occurrence and that pairwise equality is literal in one fixed source coordinate system. The choice of a representative must not be confused with an arbitrary uncompressed source orbit.
+
+Lean: `Kk.pairwise_full_source_comparison_implies_diary_colour_bound`. It is a conditional quantifier conversion, **not** proof of the still-missing per-diary source equality from the macrodiary.
