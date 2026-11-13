@@ -1,3 +1,11 @@
+# Track B checkpoint (13 November 2026) — common actual-ambient old-L-socle bridge
+
+[English-first proof and 12 hostile checks](track_b_ambient_pool_socle_english_audit.md) precede `Kk/B3AmbientPoolSocle.lean`. For **two actual finite `ambientPoolPrescribedData` original-name pools in the SAME enumerated partial A**, a cut `p<A.size`, and a nonempty marked pool, all full old source ordinary-L socles have a marked representative. Thus passing marked corrected B3 and failing full B3 force a **genuinely extra complete upper ordinary-L reduct**, not an old-socle defect. No injection of original names, no E equality, and no physical-Henson-countable copy is assumed.
+
+The earlier 3 generic Track B endpoints passed [exact-head CI run 43435254435](https://github.com/janhubicka/lean-kk/actions/runs/43435254435): full `lake build`, parser self-test and **406** standard-only transitive-axiom reports at head `fb65e5bc39d077b62b773716f071c447a9174718`. This subsequent two-theorem bridge requires **408** exact named reports and a NEW full build at its final PR head; **PENDING** until the new gate passes. The actual AlgorithmRun parameter-closed source identification and canonical upper-reduct inclusion remain unproved. Do not upgrade the global manuscript B3 validation marker.
+
+---
+
 # Track B checkpoint (13 November 2026) — profile-gap diagnostic, PENDING exact-head CI
 
 English-first proof and twelve-point adversarial audit: [full corrected-(B3) gap](track_b_full_b3_profile_gap_english_audit.md). New module `Kk/B3ProfileGapAudit.lean` records the **necessary** alternatives when a complete parameter-closed B3 test fails while a marked B3 test passes: an unrepresented old ordinary-L socle OR a missing complete upper L-reduct. Under old-socle coverage only the second alternative remains; under upper-type inclusion only the first remains. The real K4 cut-10 gadget already exhibits the missing q2 upper type, independently established by `Kk/K4UpperProfileNonInclusion.lean`.
