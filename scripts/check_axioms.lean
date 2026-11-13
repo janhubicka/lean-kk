@@ -995,3 +995,11 @@ import Kk
 #print axioms Kk.singleReservedFutureEdge_irreflexive
 #check @Kk.singleReservedFuture_no_forbidden_clique
 #print axioms Kk.singleReservedFuture_no_forbidden_clique
+
+-- Explicit multi-reserved finite graph for the complete joint integer support system.
+#check @Kk.allSupportFutureEdge_symmetric
+#print axioms Kk.allSupportFutureEdge_symmetric
+#check @Kk.allSupportFutureEdge_irreflexive
+#print axioms Kk.allSupportFutureEdge_irreflexive
+#check @Kk.allSupportFuture_no_forbidden_clique
+#print axioms Kk.allSupportFuture_no_forbidden_clique
