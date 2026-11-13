@@ -1170,3 +1170,9 @@ import Kk
 #print axioms Kk.henson_algorithmRun_I3_requires_unmarked_cut_neighbour
 #check @Kk.henson_numericH_algorithmRun_I3_requires_unmarked_cut_neighbour
 #print axioms Kk.henson_numericH_algorithmRun_I3_requires_unmarked_cut_neighbour
+
+-- Track D canonical cut-star normal form: full B3 (actual H, no I2)
+#check @Kk.henson_failedSelectedB3_has_eligible_cut_neighbour
+#print axioms Kk.henson_failedSelectedB3_has_eligible_cut_neighbour
+#check @Kk.henson_fullB3_iff_cut_star_of_no_i2
+#print axioms Kk.henson_fullB3_iff_cut_star_of_no_i2
