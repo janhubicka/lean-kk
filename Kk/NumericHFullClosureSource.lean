@@ -1,5 +1,7 @@
 import Kk.NumericHTopParameterClosure
 import Kk.NumericHFullSelectedColumn
+import SuccessorTree.V10.KptStageClosureNormalForm
+import SuccessorTree.V10.HPositiveFreeLevelOdd
 import Mathlib.Tactic
 
 /-!
@@ -170,9 +172,99 @@ theorem finiteNumericH_run_selected_genOne_full_source_eligibility
       X hSeed runHeight hScan R hSelected p hp
   exact ⟨hPos, hBelow, hiCarrier, hSource⟩
 
+
+/-- The ACTUAL numerical-H+ meet-and-parameter closure has no fourth
+sort of node: each closure source is a seed, a selected positive
+original parameter, or a meet of two full ambient original types
+from the maintained stage pool.
+
+The seed pool must have a genuine ambient original-prefix
+representation. This theorem does NOT identify the actual assigned
+upper L+ type of each cut-crossing source. -/
+theorem finiteNumericH_all_closure_nodes_seed_parameter_or_meet
+    {db du dd : Nat}
+    (family : List (NormalizedForbidden db du dd))
+    (K : AgeTestModel db du dd) (k N : Nat)
+    (hAvoid : ∀ bad, bad ∈ family →
+      bad.Avoids (finiteNumericH K k N).L)
+    (I : Set Nat) (X : Set (AdmissibleKptNode family))
+    (U : Set (Fin (finiteNumericH K k N).size))
+    (hSeeds : X ⊆
+      ambientPrefixPool family (finiteNumericH K k N) hAvoid U)
+    (z : AdmissibleKptNode family)
+    (hz : z ∈ SMTree.Envelope.closure
+      (admissibleKptSTree family) I X) :
+    z ∈ X ∨
+    (∃ v : Fin (finiteNumericH K k N).size,
+      v.val ∈ I ∧
+      0 < (finiteNumericH K k N).freeLevel v.val ∧
+      z = (finiteNumericH K k N).kptOriginal family hAvoid v) ∨
+    (∃ v : Fin (finiteNumericH K k N).size,
+      v ∈ ambientStagePool (finiteNumericH K k N) U I ∧
+      ∃ w : Fin (finiteNumericH K k N).size,
+        w ∈ ambientStagePool (finiteNumericH K k N) U I ∧
+        SMTree.Envelope.SameComponent
+          ((finiteNumericH K k N).kptOriginal family hAvoid v)
+          ((finiteNumericH K k N).kptOriginal family hAvoid w) ∧
+        z = LevelTree.meet
+          ((finiteNumericH K k N).kptOriginal family hAvoid v)
+          ((finiteNumericH K k N).kptOriginal family hAvoid w)) := by
+  exact admissibleKpt_actual_stage_closure_normalForm
+    family (finiteNumericH K k N) hAvoid I X U hSeeds hz
+
+/-- A non-SEED closure node at any genuine even numerical H level
+cannot be a selected positive original parameter (whose canonical
+free level is necessarily odd). Consequently it is a MEET of two
+full actual ambient originals from the maintained stage pool.
+
+This is an all-closure-node I1 source classification, conditional on
+representation of the seed pool. It proves neither that an I1 event
+occurs nor that the two originals lie in a smaller selected-front pool. -/
+theorem finiteNumericH_even_real_level_nonseed_is_original_meet
+    {db du dd : Nat}
+    (family : List (NormalizedForbidden db du dd))
+    (K : AgeTestModel db du dd) (k N : Nat)
+    (hAvoid : ∀ bad, bad ∈ family →
+      bad.Avoids (finiteNumericH K k N).L)
+    (I : Set Nat) (X : Set (AdmissibleKptNode family))
+    (U : Set (Fin (finiteNumericH K k N).size))
+    (hSeeds : X ⊆
+      ambientPrefixPool family (finiteNumericH K k N) hAvoid U)
+    (z : AdmissibleKptNode family)
+    (i q : Nat) (hLevel : LevelTree.lev z = hPosition k i q)
+    (hz : z ∈ SMTree.Envelope.closure
+      (admissibleKptSTree family) I X)
+    (hNotSeed : z ∉ X) :
+    ∃ v : Fin (finiteNumericH K k N).size,
+      v ∈ ambientStagePool (finiteNumericH K k N) U I ∧
+      ∃ w : Fin (finiteNumericH K k N).size,
+        w ∈ ambientStagePool (finiteNumericH K k N) U I ∧
+        SMTree.Envelope.SameComponent
+          ((finiteNumericH K k N).kptOriginal family hAvoid v)
+          ((finiteNumericH K k N).kptOriginal family hAvoid w) ∧
+        z = LevelTree.meet
+          ((finiteNumericH K k N).kptOriginal family hAvoid v)
+          ((finiteNumericH K k N).kptOriginal family hAvoid w) := by
+  apply admissibleKpt_actual_closure_node_original_meet
+    family (finiteNumericH K k N) hAvoid I X U
+    hSeeds z hz hNotSeed
+  rintro ⟨v, _, hPos, hEq⟩
+  have hActualLevel :
+      LevelTree.lev z =
+        (finiteNumericH K k N).freeLevel v.val := by
+    rw [hEq]
+    rfl
+  have hEvenFree :
+      (finiteNumericH K k N).freeLevel v.val = hPosition k i q :=
+    hActualLevel.symm.trans hLevel
+  exact (finiteNumericH_positive_freeLevel_ne_realPosition
+    K k N v.val i q v.isLt hPos) hEvenFree
+
 #print axioms Kk.finiteNumericH_top_full_original_source_record
 #print axioms Kk.finiteNumericH_top_fake_E_positive_not_real
 #print axioms Kk.finiteNumericH_top_fake_full_L_plus
+#print axioms Kk.finiteNumericH_all_closure_nodes_seed_parameter_or_meet
+#print axioms Kk.finiteNumericH_even_real_level_nonseed_is_original_meet
 #print axioms Kk.finiteNumericH_run_selected_genOne_full_source_eligibility
 
 end Kk
