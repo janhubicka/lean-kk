@@ -8,3 +8,9 @@ import Kk.FullCrossingPoolIndependence
 
 #check @Kk.finiteNumericH_full_crossing_independent_of_original_pool
 #print axioms Kk.finiteNumericH_full_crossing_independent_of_original_pool
+
+#check @Kk.correctedB3_iff_of_identical_full_crossing_graph
+#print axioms Kk.correctedB3_iff_of_identical_full_crossing_graph
+
+#check @Kk.finiteNumericH_correctedB3_independent_of_original_pool
+#print axioms Kk.finiteNumericH_correctedB3_independent_of_original_pool
