@@ -6,8 +6,10 @@ on:
     paths:
       - 'Kk/NumericHFullClosureSource.lean'
       - 'Kk/NumericHFullClosureCrossing.lean'
+      - 'Kk/NumericHTopSeedFullSource.lean'
       - 'docs/track_c_full_source_english_audit.md'
       - 'docs/track_c_cut_crossing_upper_types_english_audit.md'
+      - 'docs/track_c_top_seed_full_source_english_audit.md'
       - '.github/workflows/lean-track-c.yml'
   pull_request:
     paths:
@@ -61,3 +63,11 @@ jobs:
           lake env lean Kk/NumericHFullClosureCrossing.lean | tee track-c-crossing-axioms.log
           python3 scripts/check_axiom_report.py --self-test
           python3 scripts/check_axiom_report.py Kk/NumericHFullClosureCrossing.lean track-c-crossing-axioms.log
+      - name: Explicitly compile canonical top-seed full source
+        run: lake build Kk.NumericHTopSeedFullSource
+      - name: Check canonical top-seed source theorem axioms
+        run: |
+          set -euo pipefail
+          lake env lean Kk/NumericHTopSeedFullSource.lean | tee track-c-top-seed-axioms.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py Kk/NumericHTopSeedFullSource.lean track-c-top-seed-axioms.log
