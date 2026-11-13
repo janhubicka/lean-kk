@@ -52,7 +52,7 @@ jobs:
           ]
           permitted = {"propext", "Classical.choice", "Quot.sound"}
           for name in expected:
-              m = re.search(r"(?m)^" + re.escape(name) + r"\s*:\s*\[([^\]]*)\]", lines)
+              m = re.search(r"(?m)^\x27" + re.escape(name) + r"\x27 depends on axioms: \[([^\]]*)\]", lines)
               if not m:
                   raise SystemExit("FAIL: missing named axiom report for " + name)
               axioms = {x.strip() for x in m.group(1).split(",") if x.strip()}
