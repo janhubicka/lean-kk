@@ -1,0 +1,53 @@
+name: Lean Track C indexed upper L+ sources
+
+on:
+  push:
+    branches: [kk-track-c-indexed-upper-records-20261113]
+    paths:
+      - 'Kk/NumericHIndexedUpperRecords.lean'
+      - 'docs/track_c_indexed_upper_records_english_audit.md'
+      - '.github/workflows/lean-track-c-upper.yml'
+  pull_request:
+    paths:
+      - 'Kk/NumericHIndexedUpperRecords.lean'
+      - 'docs/track_c_indexed_upper_records_english_audit.md'
+      - '.github/workflows/lean-track-c-upper.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: track-c-upper-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  indexed-upper:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache Lean toolchain
+        uses: actions/cache@v4
+        with:
+          path: ~/.elan/toolchains
+          key: lean-toolchain-${{ runner.os }}-${{ hashFiles('lean-toolchain') }}
+      - name: Restore Lean workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve pinned dependencies
+        run: lake update
+      - name: Obtain Mathlib cache
+        run: lake exe cache get
+      - name: Explicitly compile indexed upper L+ type module
+        run: lake build Kk.NumericHIndexedUpperRecords
+      - name: Check exact new named standard-only axioms
+        run: |
+          set -euo pipefail
+          lake env lean Kk/NumericHIndexedUpperRecords.lean | tee track-c-upper.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py Kk/NumericHIndexedUpperRecords.lean track-c-upper.log
