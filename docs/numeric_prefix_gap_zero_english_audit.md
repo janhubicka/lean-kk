@@ -142,6 +142,18 @@ realizes all abstract labelled graphs.
 10. **No global Ramsey claim:** neither unbounded schedule nor
     auxiliary Kpt E/B3/full-labelled orbit is provided.
 
+## Actual finite-H carrier boundary
+
+The finite numerical-H `L.binary` relation is defined on all Nat
+coordinates even when its carrier is only `[0,M)`. The exact
+whole-prefix age iff is consequently a Boolean-table theorem:
+a **literal finite-H substructure** application also requires
+`iota_k(q(a),g)<M` and `iota_k(j,k)<M` for every selected original
+j. The new independent carrier lemma establishes membership of
+every coordinate of `[0,iota_k(q(a),g)+1)∪W` from precisely those
+guards. It prevents incorrectly claiming the L-table theorem by
+itself places all future top names in the physical finite carrier.
+
 ## Lean contracts
 
 A new `Kk/NumericPrefixGapZero.lean` will prove real-or-odd,

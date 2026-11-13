@@ -146,6 +146,30 @@ theorem finiteNumericH_ordered_whole_prefix_marked_age_iff
   rw [hFull] at hBridge
   exact hBridge
 
+/-- A literal FINITE numerical-H carrier statement is not implied by
+the total Boolean L table: all numerical prefix and selected-top
+coordinates lie in the carrier only under numerical cutoff guards. -/
+theorem finiteNumericH_whole_prefix_and_top_in_carrier
+    (E : Nat → Nat → Bool) (k M a g : Nat)
+    (q : Nat → Nat) (S : Finset Nat)
+    (hPivot : hPosition k (q a) g < M)
+    (hTop : ∀ j ∈ S, hPosition k j k < M) :
+    ∀ u ∈ ((Finset.range (hPosition k (q a) g + 1)) ∪
+      numericHTopPool k S),
+      u ∈ (finiteNumericHL (normalizedGraphModel E) k M).carrier := by
+  classical
+  intro u hu
+  change u < M
+  rcases Finset.mem_union.mp hu with hPrefix | hSelected
+  · have hNum : u < hPosition k (q a) g + 1 :=
+      Finset.mem_range.mp hPrefix
+    omega
+  · obtain ⟨j, hj, hEq⟩ := Finset.mem_image.mp hSelected
+    rw [← hEq]
+    exact hTop j hj
+
+#print axioms Kk.finiteNumericH_whole_prefix_and_top_in_carrier
+
 #print axioms Kk.finiteNumericH_ordered_whole_prefix_marked_age_iff
 
 end Kk
