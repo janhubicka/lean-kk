@@ -1,0 +1,39 @@
+name: KK Track A - exact module validation
+
+on:
+  push:
+    branches: [kk-track-a-relative-marked-front-20261113]
+  pull_request:
+    paths:
+      - 'Kk/RelativeMarkedFrontAge.lean'
+      - 'docs/relative_marked_front_age_english_audit.md'
+      - '.github/workflows/track-a-relative-age.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: kk-track-a-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  exact-module:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pinned Lean toolchain
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve pinned dependencies
+        run: lake update
+      - name: Restore pinned Mathlib cache
+        run: lake exe cache get
+      - name: Explicitly compile the new Track A module
+        run: lake build Kk.RelativeMarkedFrontAge
+      - name: Build all currently imported modules
+        run: lake build
+      - name: Check exact named standard-only transitive axioms of Track A
+        run: |
+          set -euo pipefail
+          lake env lean Kk/RelativeMarkedFrontAge.lean | tee track-a-axioms.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py Kk/RelativeMarkedFrontAge.lean track-a-axioms.log
