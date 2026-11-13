@@ -9,6 +9,7 @@ on:
       - 'Kk/TrackFRawCoverColumn.lean'
       - 'Kk/TrackFCoverEssentialSupport.lean'
       - 'Kk/TrackFCoverOneStep.lean'
+      - 'Kk/TrackFCoverSupportValues.lean'
       - 'scripts/track_f_axioms.lean'
       - 'docs/track_f_cover_column_english_audit.md'
       - 'docs/track_f_labelled_fibre_english_audit.md'
@@ -16,6 +17,7 @@ on:
       - 'docs/track_f_raw_cover_column_english_audit.md'
       - 'docs/track_f_cover_essential_support_english_audit.md'
       - 'docs/track_f_cover_one_step_english_audit.md'
+      - 'docs/track_f_consecutive_part3_english_audit.md'
       - '.github/workflows/track-f-lean.yml'
   workflow_dispatch:
 
@@ -45,8 +47,8 @@ jobs:
       - name: Restore Mathlib compilation cache
         run: lake exe cache get
       - name: Compile new Track F module explicitly
-        run: lake build Kk.DiaryCoverColumn Kk.TrackFLabelledFibre Kk.TrackFCodingColumn Kk.TrackFRawCoverColumn Kk.TrackFCoverEssentialSupport Kk.TrackFCoverOneStep
-      - name: Check only standard Lean axioms in all seventeen endpoints
+        run: lake build Kk.DiaryCoverColumn Kk.TrackFLabelledFibre Kk.TrackFCodingColumn Kk.TrackFRawCoverColumn Kk.TrackFCoverEssentialSupport Kk.TrackFCoverOneStep Kk.TrackFCoverSupportValues
+      - name: Check only standard Lean axioms in all twenty-one endpoints
         shell: bash
         run: |
           set -euo pipefail
@@ -73,6 +75,10 @@ jobs:
             "Kk.trackF_integerWitness_drop_one",
             "Kk.trackFCover_drop_one_at_changed",
             "Kk.trackFCover_drop_at_most_one",
+            "Kk.trackFCover_single_support_canonical",
+            "Kk.trackFCover_changed_values_of_containment",
+            "Kk.trackFCover_essential_contained_in_changed",
+            "Kk.trackFCover_all_changed_upper_eq_essential",
           ]
           permitted = {"propext", "Classical.choice", "Quot.sound"}
           for name in expected:
