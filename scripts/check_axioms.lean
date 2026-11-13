@@ -1170,3 +1170,11 @@ import Kk
 #print axioms Kk.henson_algorithmRun_I3_requires_unmarked_cut_neighbour
 #check @Kk.henson_numericH_algorithmRun_I3_requires_unmarked_cut_neighbour
 #print axioms Kk.henson_numericH_algorithmRun_I3_requires_unmarked_cut_neighbour
+
+-- Track B: exact anchored cut-star reduction for full corrected B3
+#check @Kk.henson_closureB3_iff_cutStarB3
+#print axioms Kk.henson_closureB3_iff_cutStarB3
+#check @Kk.henson_algorithmRun_B3_iff_cutStarB3
+#print axioms Kk.henson_algorithmRun_B3_iff_cutStarB3
+#check @Kk.henson_numericH_run_finalPool_cutStar_B3_equivalence
+#print axioms Kk.henson_numericH_run_finalPool_cutStar_B3_equivalence

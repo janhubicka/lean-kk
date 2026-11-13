@@ -87,6 +87,7 @@ import Kk.B3NumericalRunExtraUpper
 import Kk.B3UpperProfileSufficiency
 import Kk.B3CutAdjacentI3
 import Kk.B3CutAdjacentRun
+import Kk.B3CutStarCompression
 import Kk.B3SkipNecessity
 import Kk.B3TwoGapCrossing
 import Kk.B3TwoAmbientOutputs
