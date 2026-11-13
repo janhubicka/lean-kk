@@ -68,6 +68,7 @@ theorem henson_failedSelectedB3_has_eligible_cut_neighbour
         (original v).val ∧
       (finiteNumericHL (normalizedGraphModel E) k N).binary
         cut (original v).val (0 : Fin 1) = true := by
+  classical
   let family : List (NormalizedForbidden 1 0 1) :=
     hensonForbiddenFamily ell hell
   let K : AgeTestModel 1 0 1 := normalizedGraphModel E
