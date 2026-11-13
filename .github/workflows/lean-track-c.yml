@@ -7,9 +7,11 @@ on:
       - 'Kk/NumericHFullClosureSource.lean'
       - 'Kk/NumericHFullClosureCrossing.lean'
       - 'Kk/NumericHTopSeedFullSource.lean'
+      - 'Kk/NumericHFinalPoolCrossing.lean'
       - 'docs/track_c_full_source_english_audit.md'
       - 'docs/track_c_cut_crossing_upper_types_english_audit.md'
       - 'docs/track_c_top_seed_full_source_english_audit.md'
+      - 'docs/track_c_final_pool_full_source_english_audit.md'
       - '.github/workflows/lean-track-c.yml'
   pull_request:
     paths:
@@ -71,3 +73,11 @@ jobs:
           lake env lean Kk/NumericHTopSeedFullSource.lean | tee track-c-top-seed-axioms.log
           python3 scripts/check_axiom_report.py --self-test
           python3 scripts/check_axiom_report.py Kk/NumericHTopSeedFullSource.lean track-c-top-seed-axioms.log
+      - name: Explicitly compile final finite pool Track C source
+        run: lake build Kk.NumericHFinalPoolCrossing
+      - name: Check final finite pool source theorem axioms
+        run: |
+          set -euo pipefail
+          lake env lean Kk/NumericHFinalPoolCrossing.lean | tee track-c-final-pool-axioms.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py Kk/NumericHFinalPoolCrossing.lean track-c-final-pool-axioms.log
