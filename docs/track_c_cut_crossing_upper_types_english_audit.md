@@ -53,7 +53,7 @@ exact numerical H+ names:
 
 `F=closureSelectedBoringData family A hAvoid id Z p`.
 
-Then BOTH statements hold:
+Then THREE statements hold:
 
 1. **Forward coverage (every actual closure crossing).** For every
    `z∈Z` with `p < lev z`, there exists `T∈F.source` such that
