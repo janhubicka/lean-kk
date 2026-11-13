@@ -445,4 +445,44 @@ theorem full_event_source_common_selected_and_parameter_targets
   exact hParamG p
 
 
+
+/-- Non-vacuous completeness certificate for a genuinely physical
+Algorithm-5.4 source: EVERY node of the actual parameter-closed Kpt
+source at a synchronized cut must occur as one of the named, active
+dependent source parameters, and every named active parameter must
+really belong to that closure.
+
+This is an *additional geometric hypothesis*, not a field automatically
+true of an arbitrary event-indexed record. In particular an empty
+parameter index does not certify a nonempty actual source closure. -/
+def KptEventIndexedSourceRecord.CoversParameterClosure
+    {n : Nat} {Parameters Old Upper Events Kind Character : Type}
+    (R : KptEventIndexedSourceRecord family n
+      Parameters Old Upper Events Kind Character)
+    (actualClosure : Events → Set (AdmissibleKptNode family)) : Prop :=
+  ∀ (j : Events) (z : AdmissibleKptNode family),
+    z ∈ actualClosure j ↔
+      ∃ p : Parameters,
+        R.presentAt j (Sum.inr p) = true ∧ R.parameters p = z
+
+/-- Full-record equality **plus independent physical coverage** implies
+literal equality of the entire actual source parameter closures at
+every synchronized cut. This does not follow from equality of a
+possibly incomplete family of named nodes and does not identify target
+envelopes without actual monoid transport. -/
+theorem full_record_and_coverage_identify_source_closures
+    {n : Nat} {Parameters Old Upper Events Kind Character : Type}
+    (R S : KptEventIndexedSourceRecord family n
+      Parameters Old Upper Events Kind Character)
+    (actualR actualS : Events → Set (AdmissibleKptNode family))
+    (hRecord : R = S)
+    (hR : R.CoversParameterClosure actualR)
+    (hS : S.CoversParameterClosure actualS) :
+    actualR = actualS := by
+  cases hRecord
+  funext j
+  ext z
+  exact (hR j z).trans (hS j z).symm
+
+
 end Kk
