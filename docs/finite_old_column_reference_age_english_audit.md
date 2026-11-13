@@ -92,6 +92,14 @@ hypothesis therefore puts p in R(T). It follows that
 inequality gives |H_W|≤ell−1−rho(T). Summing yields
 ell=|H_P|+|H_W|≤ell−1, contradiction.
 
+**Truncated-subtraction guard (essential).** As R(T)⊆P and P is
+K_ell-free, rho(T)≤cap(P)<ell. Thus rho(T)≤ell−1 and the
+natural-number difference ell−1−rho(T) has its intended arithmetic
+meaning. The converse proof MUST explicitly derive rho(T)<ell
+before deriving the contradiction from the truncated bound; without
+this, the last omega step has a legitimate countermodel with
+rho(T)≥ell and bound 0. This was caught by the first Lean compile.
+
 This proof also works if H_P is empty: then H⊆W already
 contradicts the assumed K_ell-freeness of W.
 

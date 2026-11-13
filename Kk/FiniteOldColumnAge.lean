@@ -149,8 +149,7 @@ theorem finiteOldFuture_free_of_all_raw_support
       rcases Finset.mem_union.mp (hHSub hz) with hPz | hWz
       · exact hPz
       · have hYz : z ∈ Y := Finset.mem_inter.mpr ⟨hz, hWz⟩
-        rw [hEmpty] at hYz
-        exact False.elim ((Finset.not_mem_empty z) hYz)
+        simp [hEmpty] at hYz
     exact ((finitePoolCliqueCheck_false_iff E ell P).mp hPFree)
       ⟨H, hHSubP, hHCard, hHClique⟩
   have hYSmall : Y.card < ell :=
@@ -192,6 +191,17 @@ theorem finiteOldFuture_free_of_all_raw_support
         (oldSupportCommonNeighbourPool P c T.1) :=
     directedClique_card_le_capacity E
       (oldSupportCommonNeighbourPool P c T.1) X hXCommon hXClique
+  have hOldCommonSub : oldSupportCommonNeighbourPool P c T.1 ⊆ P := by
+    intro p hp
+    exact (Finset.mem_filter.mp hp).1
+  have hOldCommonCapLt :
+      finiteDirectedCliqueCapacity E
+        (oldSupportCommonNeighbourPool P c T.1) < ell := by
+    have hCapMono := finiteDirectedCliqueCapacity_mono
+      E (oldSupportCommonNeighbourPool P c T.1) P hOldCommonSub
+    have hOldBound :=
+      (finitePoolCliqueCheck_false_iff_capacity_lt E ell P).mp hPFree
+    omega
   have hXYDisjoint : Disjoint X Y := by
     apply Finset.disjoint_left.mpr
     intro z hzX hzY
