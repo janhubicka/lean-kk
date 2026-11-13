@@ -981,3 +981,9 @@ import Kk
 #print axioms Kk.onePointLeftDense_extend_finite_induced_copy
 #check @Kk.henson_leftDense_extend_finite_induced_copy
 #print axioms Kk.henson_leftDense_extend_finite_induced_copy
+
+-- Complete finite strictly increasing induced K-free pattern embedding by exact Henson certificates.
+#check @Kk.onePointLeftDense_embeds_finite_KFree_pattern
+#print axioms Kk.onePointLeftDense_embeds_finite_KFree_pattern
+#check @Kk.henson_leftDense_embeds_finite_KFree_pattern
+#print axioms Kk.henson_leftDense_embeds_finite_KFree_pattern

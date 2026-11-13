@@ -115,6 +115,7 @@ import Kk.UniversalFutureDisjointCliques
 import Kk.ExactFiniteNeighbourRealization
 import Kk.FiniteCliqueEmbeddingTransport
 import Kk.FiniteInducedOnePointExtension
+import Kk.FiniteChronologicalHensonEmbedding
 import Kk.RawSupportBlockBudget
 import Kk.UniversalFutureExactProfile
 
