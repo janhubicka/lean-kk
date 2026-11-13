@@ -7,11 +7,13 @@ on:
       - 'Kk/TrackFLabelledFibre.lean'
       - 'Kk/TrackFCodingColumn.lean'
       - 'Kk/TrackFRawCoverColumn.lean'
+      - 'Kk/TrackFCoverEssentialSupport.lean'
       - 'scripts/track_f_axioms.lean'
       - 'docs/track_f_cover_column_english_audit.md'
       - 'docs/track_f_labelled_fibre_english_audit.md'
       - 'docs/track_f_coding_column_english_audit.md'
       - 'docs/track_f_raw_cover_column_english_audit.md'
+      - 'docs/track_f_cover_essential_support_english_audit.md'
       - '.github/workflows/track-f-lean.yml'
   workflow_dispatch:
 
@@ -41,8 +43,8 @@ jobs:
       - name: Restore Mathlib compilation cache
         run: lake exe cache get
       - name: Compile new Track F module explicitly
-        run: lake build Kk.DiaryCoverColumn Kk.TrackFLabelledFibre Kk.TrackFCodingColumn Kk.TrackFRawCoverColumn
-      - name: Check only standard Lean axioms in all twelve endpoints
+        run: lake build Kk.DiaryCoverColumn Kk.TrackFLabelledFibre Kk.TrackFCodingColumn Kk.TrackFRawCoverColumn Kk.TrackFCoverEssentialSupport
+      - name: Check only standard Lean axioms in all fourteen endpoints
         shell: bash
         run: |
           set -euo pipefail
@@ -64,6 +66,8 @@ jobs:
             "Kk.trackFCanonical_add_cap_congr",
             "Kk.trackFRawCoverColumn_exact",
             "Kk.trackFRawCoverColumn_feasible_iff_lower",
+            "Kk.trackFCover_exists_minimal_changed",
+            "Kk.trackFCover_unique_minimal_changed",
           ]
           permitted = {"propext", "Classical.choice", "Quot.sound"}
           for name in expected:
