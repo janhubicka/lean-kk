@@ -155,6 +155,13 @@ theorem finiteNumericH_indexed_cut_full_old_upper_types
     (finiteNumericH_run_final_pool_crossing_and_upper_types
       family K hCarrier hAvoidK k N U X hX top cut
       hCut R hNoMeet).2.1
+  change ∀ T : PartialTypeWithE cut db du dd, T ∈ F.source →
+    ∃ j : Fin params.card,
+      presentAt cut j = true ∧
+      kptFullOldAtCut (params.equivFin.symm j).val cut =
+        some (⟨cut,T⟩ : RawPartialTypeNode db du dd) ∧
+      kptFullUpperAtCut (params.equivFin.symm j).val cut =
+        some (⟨cut+1,F.target T⟩ : RawPartialTypeNode db du dd)
   intro T hT
   obtain ⟨z,hz,hzCut,hOld,hUpper⟩ := hGraph T hT
   have hLevels : R.I (cut+1) ⊆ R.I 0 := by
