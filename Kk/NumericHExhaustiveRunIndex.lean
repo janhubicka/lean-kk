@@ -134,13 +134,7 @@ theorem finiteNumericH_actualRun_uniform_exhaustive_source_index
           SMTree.Envelope.closure (admissibleKptSTree family)
             (R.I (cut+1)) X := by
     intro cut j
-    change decide ((params.equivFin.symm j).val ∈
-      SMTree.Envelope.closure (admissibleKptSTree family)
-        (R.I (cut+1)) X) = true ↔
-          ((params.equivFin.symm j).val ∈
-            SMTree.Envelope.closure (admissibleKptSTree family)
-              (R.I (cut+1)) X)
-    exact decide_eq_true_eq
+    simp [presentAt]
   refine ⟨params, presentAt, ?_, ?_, hPresent, ?_⟩
   · exact hExact
   · intro i j hEq
