@@ -3,6 +3,7 @@ import Kk.TrackFLabelledFibre
 import Kk.TrackFCodingColumn
 import Kk.TrackFRawCoverColumn
 import Kk.TrackFCoverEssentialSupport
+import Kk.TrackFCoverOneStep
 
 -- Track F's *local* exact-head certificate; no changes to G's global registry.
 #print axioms Kk.diaryCoverColumnRaw_le_upper
@@ -22,3 +23,6 @@ import Kk.TrackFCoverEssentialSupport
 
 #print axioms Kk.trackFCover_exists_minimal_changed
 #print axioms Kk.trackFCover_unique_minimal_changed
+#print axioms Kk.trackF_integerWitness_drop_one
+#print axioms Kk.trackFCover_drop_one_at_changed
+#print axioms Kk.trackFCover_drop_at_most_one
