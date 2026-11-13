@@ -1,3 +1,11 @@
+# Track B checkpoint (13 November 2026) — profile-gap diagnostic, PENDING exact-head CI
+
+English-first proof and twelve-point adversarial audit: [full corrected-(B3) gap](track_b_full_b3_profile_gap_english_audit.md). New module `Kk/B3ProfileGapAudit.lean` records the **necessary** alternatives when a complete parameter-closed B3 test fails while a marked B3 test passes: an unrepresented old ordinary-L socle OR a missing complete upper L-reduct. Under old-socle coverage only the second alternative remains; under upper-type inclusion only the first remains. The real K4 cut-10 gadget already exhibits the missing q2 upper type, independently established by `Kk/K4UpperProfileNonInclusion.lean`.
+
+**Validation gate not yet discharged:** require full `lake build`, parser self-test, and exactly 406 standard-only axiom reports on this PR's exact head (403 known-good baseline + 3 new). These are generic finite profile implications only; the actual resolved numerical-H+ source classification, faithful before/after relative profiles, full corrected-(B3) matching and common labelled inverse orbit remain **OPEN**. No global manuscript green mark is warranted.
+
+---
+
 # Verification plan
 
 ## 13 November 2026 — literal ALL-support finite graph-age gadget, English first
