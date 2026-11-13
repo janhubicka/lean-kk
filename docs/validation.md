@@ -1,5 +1,14 @@
 # Verification plan
 
+## 13 November 2026 — literal reserved-support finite graph, English first
+
+The [English proof and twelve-point hostile audit](single_reserved_universal_graph_english_audit.md) precedes the new Lean module `Kk/SingleReservedUniversalGraph.lean`. A **literal finite symmetric, irreflexive ordinary-L table** is defined on a tagged disjoint sum: a true complete reserved block of cardinality `ell-1-B(T)` (Nat truncated subtraction) and the already verified universal finite future `W_B` containing feasible normalized integer clique components. Every reserved-to-future edge in both orientations equals the exact T-sort indicator; different future components have no edges.
+
+The proposed proof classifies every directed clique: without reserved vertices it lies in the verified K_ell-free future; with a reserved vertex its future part lies on support T and so has cardinality ≤B(T), while its reserved part has cardinality ≤ell−1−B(T). The exact sharp raw-block budget from merged PR #89 handles the truncated-subtraction boundary and supplies <ell. Unlike the earlier conditional four-pool certificate, this graph and its L edges are **explicitly built**; its source is not assumed.
+
+Three new theorem endpoints are registered. An exact-head full `lake build` and **400 named standard-only axiom reports** (397 verified main baseline +3) are required before merge. The full multi-support gadget, its relative induced embedding over an arbitrary fixed Henson past, numerical H+ auxiliary E/parameter closure, corrected B3 equivalence and common labelled inverse-source orbit remain open. No manuscript global green marker.
+
+
 ## 12 November 2026 — finite chronological induced K-free embeddings (English-first pending Lean gate)
 
 The [English proof and fourteen-point hostile audit](finite_chronological_henson_embedding_english_audit.md) precede `Kk/FiniteChronologicalHensonEmbedding.lean`. The proposed induction embeds the entire finite initial segment [0,N) of ANY symmetric loop-free K_ell-free target A into ONE fixed left-dense K_ell-free actual Boolean graph E by a **strictly increasing** genuine original-index map f, preserving every **directed off-diagonal** L atom exactly. Each successor chooses the finite old neighbour set S={i<n:A(i,n)=1}; the verified target prefix decomposition proves S is K_(ell−1)-free. The stacked induced-image checker PR #90 transports that exact safety to the already embedded physical old image, and PR #91's true one-point extension supplies a later genuine original with the complete desired old column and no positive atoms to unnamed indices in the intervening gap. The target is finite and the exact induced embedding and monotonicity are only required on [0,N), not an unproved total-Nat monotonicity.
