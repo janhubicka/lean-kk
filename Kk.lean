@@ -139,6 +139,7 @@ import Kk.NumericHFinalPoolCrossing
 -- Track D scoped finite/conditional modules
 import Kk.B3CutVisibleTransfer
 import Kk.B3ClosureFibreCoherence
+import Kk.B3CutStarNormalForm
 -- Track E scoped finite/conditional modules
 import Kk.FullLabelledOrbitBridge
 import Kk.FullEventIndexedOrbitBridge
