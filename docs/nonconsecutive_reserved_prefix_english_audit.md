@@ -109,3 +109,13 @@ marked-front gluing criterion. Demand explicit module build,
 fully-qualified strict standard-only transitive axiom reports,
 and full `lake build` at the exact PR head. Manuscript marking
 belongs to Track G.
+
+## Independently executed bounded regression
+
+The 13 November 2026 Python test enumerated **278** combinations of
+heights k=1,...,4, admissible block lengths r, pivot (a,g), and two
+strictly increasing nonconsecutive sample choices q(b)=2+3b and
+q(b)=5+3b². It directly enumerated reserved-prefix cliques using
+the literal generation gate and verified capacity equals a for g<a,
+and a+1 otherwise. This is finite regression evidence, not a
+substitute for the Lean kernel proof.

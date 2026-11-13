@@ -15,7 +15,7 @@ Assume:
    the **entire physical enumeration** `[0,b)`, not just selected
    old vertices.
 
-Then there is a strictly increasing induced embedding
+Then there is a strictly increasing off-diagonal induced-L embedding
 `f:[0,N)→Nat` into the same E such that `f(i)=i` for every
 `i<b`, every ordered edge among images equals A, and for each newly
 embedded original `n∈[b,N)`:
@@ -125,3 +125,10 @@ third component. Add fully qualified `#print axioms` for all public
 endpoints; compile explicitly, check standard-only transitive axioms,
 then the full library at the exact feature-branch head. No manuscript
 green marks before integration and geometry closure.
+
+**Generic-table loops qualification:** the generic Lean result
+asserts exact **off-diagonal** L agreement, not equality on loops.
+The normalized-Henson specialization supplies loop-freeness of the
+ambient E separately via forbidden-family avoidance. Calling the
+generic theorem an induced *loop-free graph* embedding without this
+qualification would overstate its hypotheses.

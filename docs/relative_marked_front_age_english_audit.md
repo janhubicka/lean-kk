@@ -138,10 +138,13 @@ labelled future pattern.
     inverse-source orbit, global resolved-copy existence, or any final
     BRD formula.
 
-A separate bounded Python adversarial test generated 1,807 random
-symmetric admissible finite gluings (ell=3,4,5, with random labels,
-supports, gaps and internal W edges), and observed no violation of
-the equivalence. This is *regression evidence only*, not formal
+A separate seeded Python adversarial check (seed 20261113) tested
+1,807 admissible finite gluings of arbitrary directed Boolean tables
+(ell=1,...,5, independent disjoint old/reserved/gap/future pools,
+random supported subsets, and independently varied unused reference
+atoms). It observed no violation of the exact equivalence, among
+2,836 candidate draws. This tests the finite gluing criterion,
+not actual whole-front physical existence. This is *regression evidence only*, not formal
 validation; the theorem still requires exact-head Lean compilation.
 
 ## Formalization checklist

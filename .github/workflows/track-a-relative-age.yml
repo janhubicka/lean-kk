@@ -33,6 +33,8 @@ jobs:
         run: lake build Kk.NonconsecutiveReservedPrefix
       - name: Explicitly compile pinned-prefix Henson extension
         run: lake build Kk.PinnedPrefixHensonExtension
+      - name: Explicitly compile all-front top support module
+        run: lake build Kk.OrderedTopMarkedSupport
       - name: Check exact named standard-only transitive axioms of Track A
         run: |
           set -euo pipefail
@@ -43,5 +45,7 @@ jobs:
           python3 scripts/check_axiom_report.py Kk/NonconsecutiveReservedPrefix.lean track-a-nonconsecutive-axioms.log
           lake env lean Kk/PinnedPrefixHensonExtension.lean | tee track-a-pinned-prefix-axioms.log
           python3 scripts/check_axiom_report.py Kk/PinnedPrefixHensonExtension.lean track-a-pinned-prefix-axioms.log
+          lake env lean Kk/OrderedTopMarkedSupport.lean | tee track-a-ordered-top-axioms.log
+          python3 scripts/check_axiom_report.py Kk/OrderedTopMarkedSupport.lean track-a-ordered-top-axioms.log
       - name: Build all currently imported modules
         run: lake build
