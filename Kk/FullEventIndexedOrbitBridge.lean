@@ -101,7 +101,7 @@ variable {db du dd : Nat}
 variable {family : List (NormalizedForbidden db du dd)}
 variable {Seeds Positives Originals : Type}
 
-def evaluate
+noncomputable def evaluate
     (atoms : KptSourceAtomAssignment family Seeds Positives Originals) :
     KptClosureRecipe Seeds Positives Originals →
       AdmissibleKptNode family
