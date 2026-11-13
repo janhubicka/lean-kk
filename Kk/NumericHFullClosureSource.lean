@@ -92,6 +92,35 @@ theorem finiteNumericH_top_fake_E_positive_not_real
     obtain ⟨t, ht⟩ := hPosition_even k i q
     omega
 
+
+/-- A fake odd numerical coordinate can lie below the true incoming
+auxiliary E cut while carrying ZERO directed binary L atoms in EVERY
+sort and BOTH orientations. Its positive E bit neither creates a graph
+edge nor identifies it as a genuine original or a closure parameter. -/
+theorem finiteNumericH_top_fake_full_L_plus
+    {db du dd : Nat} (K : AgeTestModel db du dd)
+    (k N j a : Nat) (hk : 0 < k) (hj : 0 < j)
+    (hTop : hPosition k j k < N)
+    (hBelow : 2*a+1 < hPosition k (j-1) k + 1) :
+    (finiteNumericH K k N).E (2*a+1) (hPosition k j k) = true ∧
+    (∀ r : Fin db,
+      (finiteNumericH K k N).L.binary
+        (2*a+1) (hPosition k j k) r = false ∧
+      (finiteNumericH K k N).L.binary
+        (hPosition k j k) (2*a+1) r = false) ∧
+    (∀ i q : Nat, 2*a+1 ≠ hPosition k i q) := by
+  obtain ⟨hE,hFake⟩ := finiteNumericH_top_fake_E_positive_not_real
+    K k N j a hk hj hTop hBelow
+  refine ⟨hE, ?_, hFake⟩
+  intro r
+  constructor
+  · change hNumericBinary K.binary k
+      (2*a+1) (hPosition k j k) r = false
+    exact hNumericBinary_odd_left_false K.binary k a (hPosition k j k) r
+  · change hNumericBinary K.binary k
+      (hPosition k j k) (2*a+1) r = false
+    exact hNumericBinary_odd_right_false K.binary k (hPosition k j k) a r
+
 /-- In a genuine AlgorithmRun, a selected earlier generation-one
 source below a seeded TOP original has both necessary numerical
 free-level inequalities AND a true Kpt original in every lower
@@ -141,8 +170,9 @@ theorem finiteNumericH_run_selected_genOne_full_source_eligibility
       X hSeed runHeight hScan R hSelected p hp
   exact ⟨hPos, hBelow, hiCarrier, hSource⟩
 
-#print axioms finiteNumericH_top_full_original_source_record
-#print axioms finiteNumericH_top_fake_E_positive_not_real
-#print axioms finiteNumericH_run_selected_genOne_full_source_eligibility
+#print axioms Kk.finiteNumericH_top_full_original_source_record
+#print axioms Kk.finiteNumericH_top_fake_E_positive_not_real
+#print axioms Kk.finiteNumericH_top_fake_full_L_plus
+#print axioms Kk.finiteNumericH_run_selected_genOne_full_source_eligibility
 
 end Kk
