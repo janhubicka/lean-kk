@@ -987,3 +987,11 @@ import Kk
 #print axioms Kk.onePointLeftDense_embeds_finite_KFree_pattern
 #check @Kk.henson_leftDense_embeds_finite_KFree_pattern
 #print axioms Kk.henson_leftDense_embeds_finite_KFree_pattern
+
+-- Literal reserved block with all jointly feasible future cliques.
+#check @Kk.singleReservedFutureEdge_symmetric
+#print axioms Kk.singleReservedFutureEdge_symmetric
+#check @Kk.singleReservedFutureEdge_irreflexive
+#print axioms Kk.singleReservedFutureEdge_irreflexive
+#check @Kk.singleReservedFuture_no_forbidden_clique
+#print axioms Kk.singleReservedFuture_no_forbidden_clique

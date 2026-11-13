@@ -114,6 +114,7 @@ import Kk.ConcreteCanonicalMaximizers
 import Kk.UniversalFutureDisjointCliques
 import Kk.ExactFiniteNeighbourRealization
 import Kk.FiniteCliqueEmbeddingTransport
+import Kk.SingleReservedUniversalGraph
 import Kk.FiniteInducedOnePointExtension
 import Kk.FiniteChronologicalHensonEmbedding
 import Kk.RawSupportBlockBudget
