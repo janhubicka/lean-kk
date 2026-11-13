@@ -1,5 +1,14 @@
 # Verification plan
 
+## 12 November 2026 — actual induced one-point Henson extension from exact abstract certificate
+
+The mathematical proof and 12-point hostile audit in [finite induced one-point extension](finite_induced_one_point_extension_english_audit.md) were committed BEFORE the dependent Lean source. `Kk/FiniteInducedOnePointExtension.lean` combines the finite induced-copy K_q-checker transfer on stacked PR #90 with the already merged true left-dense one-point realization theorem PR #87. From a faithful finite induced ordinary-L map f on abstract old P, a subset S⊆P with a certified K_(ell-1)-free neighbourhood in abstract A, and the entire actual E prefix K_ell-free, it produces a **genuine later original** v≥front. The new vertex has exactly A(x,n),A(n,x) to every previously represented f(x) in BOTH orientations, and is nonadjacent to EVERY earlier physical original outside f[P], including gaps. This is stronger than an abstract standalone clique realizer and works for nonconsecutive f[P].
+
+The second endpoint specializes old-prefix freeness to the actual normalized-Henson forbidden family. The fixed enumeration's `OnePointLeftDense` remains a hypothesis; it is not inferred from K_ell-freeness alone. All target old-new binary bits must be symmetric, and S must pass the complete old-neighbourhood K_(ell-1) test. This is **one** compatible chronological extension, not yet the full inductive sequence; auxiliary H+ Kpt E/parameter-closed corrected B3 and a labelled common inverse source remain open.
+
+This branch stacks on the exact finite induced-copy safety PR #90 and registers **two** further named axiom reports. The initial stacked exact-head gate is **395** standard-only reports and a full `lake build`; after base PR integration and the independent #88/#89 merges, the expected baseline must be recalculated before a final merge. No global manuscript green mark.
+
+
 ## 12 November 2026 — finite induced L-copy clique safety transport
 
 **English-first hostile audit:** [finite induced-clique transport](finite_clique_embedding_transport_english_audit.md) identifies the exact prerequisite for applying the real Henson one-point extension theorem PR #87 to an abstract finite extension pattern. If f is injective on a finite original pool P and matches **every ordered off-diagonal** Boolean L atom on P, then the actual finite directed clique capacity is preserved exactly, and so is every no-K_q checker for q≥0, including the q=0 boundary. The proof uses the explicit finite preimage P.filter(f(x)∈t), not global inversion of f or a one-way homomorphism. Symmetry, loops, ambient universality and auxiliary Kpt E are not assumed.
