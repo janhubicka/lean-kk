@@ -1,0 +1,315 @@
+import Kk.FullLabelledOrbitBridge
+import SuccessorTree.V10.KptStageClosureNormalForm
+
+/-!
+# Track E: event-indexed full-source comparison by physical closure recipes
+
+This strengthens the earlier flat source-record interface. Actual
+Algorithm-5.4 source tests use PER-CUT source participation and complete
+old/upper L+ type assignments, and event incidence matters in addition
+to its I1/I2/I3/B3 kind. The event index must be the fully synchronized
+event/microevent sequence, NOT merely the macrodiary.
+
+This is a strict *conditional* source uniqueness theorem. Normal-form
+recipes do not magically exist: Track C must provide genuine names and
+certify actual seed/positive parameter/compatible-meet normal forms,
+while D must compare full event traces. The two occurrence maps are
+genuine Kpt monoid maps. No numeric H+ assumptions are discharged here.
+-/
+
+namespace Kk
+
+open SuccessorTree.V10
+
+/-- The complete data compared at one compressed source event.
+
+The cut is in *source* coordinates; target numerical gaps may differ.
+The ordered inputs retain which selected vertex or auxiliary parameter
+participates in this event. A successor-character payload can include
+the complete ordered tuple of dependencies if needed by the concrete
+numerical H+ construction. -/
+structure FullSourceEventFrame
+    (Labels Parameters Kind Character : Type) where
+  compressedSourceCut : Nat
+  kind : Kind
+  orderedInputs : List (Sum Labels Parameters)
+  successorCharacter : Character
+
+/-- A complete synchronized algorithm trace must retain source
+presence and assigned old/upper types **at every event**.
+
+The index Events must include all auxiliary I1/I2/I3/B3 microevents.
+The actual meaning of Old, Upper, Kind and Character must be supplied
+by the physical H+ source; generic payload types do not certify this.
+-/
+structure FullEventIndexedSourceRecord
+    (Labels Parameters SelectedNodes ParameterNodes Old Upper
+      Events Kind Character : Type) where
+  selected : Labels → SelectedNodes
+  parameters : Parameters → ParameterNodes
+  presentAt : Events → Sum Labels Parameters → Bool
+  oldAt : Events → Sum Labels Parameters → Old
+  upperAt : Events → Sum Labels Parameters → Upper
+  eventFrame : Events → FullSourceEventFrame Labels Parameters Kind Character
+
+theorem fullEventIndexedSourceRecord_ext
+    {Labels Parameters SelectedNodes ParameterNodes Old Upper
+      Events Kind Character : Type}
+    {R S : FullEventIndexedSourceRecord Labels Parameters
+      SelectedNodes ParameterNodes Old Upper Events Kind Character}
+    (hSelected : R.selected = S.selected)
+    (hParameters : R.parameters = S.parameters)
+    (hPresent : R.presentAt = S.presentAt)
+    (hOld : R.oldAt = S.oldAt)
+    (hUpper : R.upperAt = S.upperAt)
+    (hEvents : R.eventFrame = S.eventFrame) : R = S := by
+  cases R with
+  | mk sr pr ar or ur er =>
+    cases S with
+    | mk ss ps as os us es =>
+      cases hSelected
+      cases hParameters
+      cases hPresent
+      cases hOld
+      cases hUpper
+      cases hEvents
+      rfl
+
+/-- Physical source-atom indices are kept separate: selected original
+parameters may include positive free-cut nodes distinct from initial
+seeds and from arbitrary ambient originals used in meet witnesses. -/
+structure KptSourceAtomAssignment
+    {db du dd : Nat}
+    (family : List (NormalizedForbidden db du dd))
+    (Seeds Positives Originals : Type) where
+  seed : Seeds → AdmissibleKptNode family
+  positiveParameter : Positives → AdmissibleKptNode family
+  ambientOriginal : Originals → AdmissibleKptNode family
+
+/-- Track-C's three normal-form constructors. These are syntactic
+recipes; meeting two incompatible nodes is not certified until the
+separate SameComponent premise below is checked. -/
+inductive KptClosureRecipe (Seeds Positives Originals : Type)
+  | seed (s : Seeds)
+  | positive (p : Positives)
+  | meetOf (u v : Originals)
+
+namespace KptClosureRecipe
+
+variable {db du dd : Nat}
+variable {family : List (NormalizedForbidden db du dd)}
+variable {Seeds Positives Originals : Type}
+
+def evaluate
+    (atoms : KptSourceAtomAssignment family Seeds Positives Originals) :
+    KptClosureRecipe Seeds Positives Originals →
+      AdmissibleKptNode family
+  | .seed s => atoms.seed s
+  | .positive p => atoms.positiveParameter p
+  | .meetOf u v =>
+      LevelTree.meet (atoms.ambientOriginal u) (atoms.ambientOriginal v)
+
+/-- The normal-form meet case is geometrically legitimate only with
+the actual SameComponent certificate. -/
+def WellFormed
+    (atoms : KptSourceAtomAssignment family Seeds Positives Originals) :
+    KptClosureRecipe Seeds Positives Originals → Prop
+  | .seed _ => True
+  | .positive _ => True
+  | .meetOf u v =>
+      SMTree.Envelope.SameComponent
+        (atoms.ambientOriginal u) (atoms.ambientOriginal v)
+
+theorem evaluate_congr
+    {A B : KptSourceAtomAssignment family Seeds Positives Originals}
+    (hAtoms : A = B)
+    (r : KptClosureRecipe Seeds Positives Originals) :
+    evaluate A r = evaluate B r := by
+  cases hAtoms
+  rfl
+
+theorem wellFormed_congr
+    {A B : KptSourceAtomAssignment family Seeds Positives Originals}
+    (hAtoms : A = B)
+    (r : KptClosureRecipe Seeds Positives Originals) :
+    WellFormed A r ↔ WellFormed B r := by
+  cases hAtoms
+  rfl
+
+end KptClosureRecipe
+
+/-- All event-indexed source values are in the *same* genuine Kpt/G+
+source presentation. This does not assert that arbitrary event payloads
+really arise from the numerical construction. -/
+abbrev KptEventIndexedSourceRecord
+    {db du dd : Nat}
+    (family : List (NormalizedForbidden db du dd))
+    (n : Nat) (Parameters Old Upper Events Kind Character : Type) :=
+  FullEventIndexedSourceRecord
+    (Fin n) Parameters (FiniteGPlusVertex family)
+    (AdmissibleKptNode family) Old Upper Events Kind Character
+
+variable {db du dd : Nat}
+variable {family : List (NormalizedForbidden db du dd)}
+
+/-- Cross-occurrence comparison from an unlabelled selected inverse set
+and identical **physical closure recipes**, rather than equal singleton
+inverse fibres for every derived dependent Kpt parameter.
+
+The meet certificates are explicitly returned on the second side:
+a purely syntactic "meet" label without SameComponent is not valid
+closure geometry. Old/upper assignments and full event frames must
+still be checked at **every** synchronized microevent. -/
+theorem full_event_source_eq_of_inverse_sets_and_recipes
+    {n : Nat} {Parameters Old Upper Events Kind Character : Type}
+    {Seeds Positives Originals : Type}
+    (F G : SuccessorTree.SMTree.MMap (normalizedKptSMTree family))
+    (R S : KptEventIndexedSourceRecord family n
+      Parameters Old Upper Events Kind Character)
+    (targetF targetG : Fin n → FiniteGPlusVertex family)
+    (hSelectedF : ∀ a, gPlusShapeImage F.map (R.selected a) = targetF a)
+    (hSelectedG : ∀ a, gPlusShapeImage G.map (S.selected a) = targetG a)
+    (hStrictF : ∀ a b : Fin n, a < b →
+      (targetF a).IsProperPrefix (targetF b))
+    (hStrictG : ∀ a b : Fin n, a < b →
+      (targetG a).IsProperPrefix (targetG b))
+    (hInverse :
+      (gPlusShapeImage F.map) ⁻¹' (Set.range targetF) =
+      (gPlusShapeImage G.map) ⁻¹' (Set.range targetG))
+    (atomsF atomsG :
+      KptSourceAtomAssignment family Seeds Positives Originals)
+    (recipes : Parameters → KptClosureRecipe Seeds Positives Originals)
+    (hRecipeF : ∀ p,
+      R.parameters p = (recipes p).evaluate atomsF)
+    (hRecipeG : ∀ p,
+      S.parameters p = (recipes p).evaluate atomsG)
+    (hAtoms : atomsF = atomsG)
+    (hWellFormedF : ∀ p,
+      (recipes p).WellFormed atomsF)
+    (hPresent : R.presentAt = S.presentAt)
+    (hOld : R.oldAt = S.oldAt)
+    (hUpper : R.upperAt = S.upperAt)
+    (hEvents : R.eventFrame = S.eventFrame) :
+    R = S ∧ ∀ p, (recipes p).WellFormed atomsG := by
+  have hSelected : R.selected = S.selected :=
+    labelled_prefix_sources_eq_of_inverse_image_sets
+      F G targetF targetG R.selected S.selected
+      hSelectedF hSelectedG hStrictF hStrictG hInverse
+  have hParameters : R.parameters = S.parameters := by
+    funext p
+    calc
+      R.parameters p = (recipes p).evaluate atomsF := hRecipeF p
+      _ = (recipes p).evaluate atomsG :=
+        KptClosureRecipe.evaluate_congr hAtoms (recipes p)
+      _ = S.parameters p := (hRecipeG p).symm
+  constructor
+  · exact fullEventIndexedSourceRecord_ext
+      hSelected hParameters hPresent hOld hUpper hEvents
+  · intro p
+    exact ((KptClosureRecipe.wellFormed_congr
+      hAtoms (recipes p)).mp (hWellFormedF p))
+
+/-- Extract only the selected Kpt/G+ data needed by the **already
+checked** finite type-respecting Ramsey transfer. This forgetful map
+is for the Ramsey step only; it cannot justify claiming that a
+flat record has verified all of the full per-event L+ geometry. -/
+def KptEventIndexedSourceRecord.orbitProjection
+    {n : Nat} {Parameters Old Upper Events Kind Character : Type}
+    (R : KptEventIndexedSourceRecord family n Parameters
+      Old Upper Events Kind Character) :
+    KptFullSourceRecord family n Parameters Unit Unit Unit Unit := {
+  selected := R.selected
+  parameters := R.parameters
+  oldTypes := fun _ => ()
+  upperTypes := fun _ => ()
+  eventKinds := fun _ => ()
+}
+
+/-- Once actual full time-indexed records are coherent for each
+diary, the already verified uniform prefix-chain Ramsey reduction
+applies to their selected source projections. In particular no
+additional countable-source theorem is needed. -/
+theorem full_event_source_coherence_implies_diary_colour_bound
+    {n : Nat} {ι κ Parameters Old Upper Events Kind Character : Type}
+    [Fintype κ] [Nonempty κ]
+    (enum : Nat ≃ FiniteGPlusVertex family)
+    (diaryIndices : Finset ι)
+    (sources : ι → KptEventIndexedSourceRecord family n
+      Parameters Old Upper Events Kind Character)
+    (tops : ι → FiniteGPlusVertex family)
+    (hPrefix : ∀ i a, ((sources i).selected a).val.IsPrefix (tops i).val)
+    (hInjective : ∀ i, Function.Injective (sources i).selected)
+    (diary : LabelledGOmegaCopy (Fin n) → ι)
+    (selected : Set (LabelledGOmegaCopy (Fin n)))
+    (hIndexed : ∀ e, e ∈ selected → diary e ∈ diaryIndices)
+    (pulledBack : LabelledGOmegaCopy (Fin n) →
+      KptEventIndexedSourceRecord family n Parameters
+        Old Upper Events Kind Character)
+    (envelope : LabelledGOmegaCopy (Fin n) →
+      SuccessorTree.SMTree.MMap (normalizedKptSMTree family))
+    (hImage : ∀ e, e ∈ selected → ∀ a,
+      enum.symm (gPlusShapeImage (envelope e).map
+        ((pulledBack e).selected a)) = e.1 a)
+    (hCoherent : ∀ e, e ∈ selected →
+      pulledBack e = sources (diary e))
+    (colour : LabelledGOmegaCopy (Fin n) → κ) :
+    ∃ (F : SuccessorTree.SMTree.MMap (normalizedKptSMTree family))
+      (byDiary : ι → κ),
+      ∀ e, e ∈ selected →
+        colour (LabelledGOmegaCopy.map enum F e) =
+          byDiary (diary e) := by
+  apply full_source_coherence_implies_diary_colour_bound
+    enum diaryIndices
+    (fun i => (sources i).orbitProjection)
+    tops hPrefix hInjective
+    diary selected hIndexed
+    (fun e => (pulledBack e).orbitProjection)
+    envelope hImage ?_ colour
+  intro e he
+  rw [hCoherent e he]
+
+/-- Negative regression: event-kind equality does not identify
+source participation. Two genuine event *records* can have identical
+kinds but different selected/parameter source names. -/
+theorem event_kind_does_not_determine_inputs :
+    ∃ A B : FullSourceEventFrame Unit Unit Unit Unit,
+      A.kind = B.kind ∧ A ≠ B := by
+  refine ⟨
+    { compressedSourceCut := 0, kind := (),
+      orderedInputs := [Sum.inl ()], successorCharacter := () },
+    { compressedSourceCut := 0, kind := (),
+      orderedInputs := [Sum.inr ()], successorCharacter := () },
+    rfl, ?_⟩
+  decide
+
+/-- Negative regression: a common source, equal initial types,
+parameter presence and event frames can still hide a different
+second-cut assigned upper L+ type. -/
+private def toyCutRecord (b : Bool) :
+    FullEventIndexedSourceRecord Unit Unit Unit Unit
+      Unit Bool Bool Unit Unit := {
+  selected := fun _ => ()
+  parameters := fun _ => ()
+  presentAt := fun _ _ => true
+  oldAt := fun _ _ => ()
+  upperAt := fun e _ => if e then b else false
+  eventFrame := fun _ => {
+    compressedSourceCut := 0
+    kind := ()
+    orderedInputs := []
+    successorCharacter := () }
+}
+
+theorem assigned_upper_type_requires_event_indexing :
+    (toyCutRecord false).selected = (toyCutRecord true).selected ∧
+    (toyCutRecord false).parameters = (toyCutRecord true).parameters ∧
+    (toyCutRecord false).presentAt = (toyCutRecord true).presentAt ∧
+    (toyCutRecord false).oldAt = (toyCutRecord true).oldAt ∧
+    (toyCutRecord false).eventFrame = (toyCutRecord true).eventFrame ∧
+    (toyCutRecord false).upperAt ≠ (toyCutRecord true).upperAt := by
+  refine ⟨rfl, rfl, rfl, rfl, rfl, ?_⟩
+  intro h
+  have hv := congrArg (fun f => f true (Sum.inl ())) h
+  cases hv
+
+end Kk
