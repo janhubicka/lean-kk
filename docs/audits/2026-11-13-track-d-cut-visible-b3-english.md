@@ -9,7 +9,7 @@ The useful narrower statement is **cut-visible profile dominance**. Let A be the
 
 Assume:
 1. **A marked source exists**: some S belongs to G.source. The conclusion would otherwise be vacuous on the marked side.
-2. **Cut-visible complete-output coverage**: for every Full-selected name v whose actual C-edge from cut to original(v) is true, the *full complete (cut+1) L-reduct* of v equals `(G.target T).lReduct` for some actual `T ∈ G.source`. This is about G's genuinely chosen source representative, not merely `Marked v`, and does not infer auxiliary E on an age-test continuation.
+2. **Cut-visible complete-output coverage**: for every Full-selected **cut-eligible** name v (with `cut+1 ≤ A.freeLevel(original(v))`) whose actual C-edge from cut to original(v) is true, the *full complete (cut+1) L-reduct* of v equals `(G.target T).lReduct` for some actual `T ∈ G.source`. This is about G's genuinely chosen source representative, not merely `Marked v`, and does not infer auxiliary E on an age-test continuation.
 3. G satisfies corrected B3 for the normalized Henson family.
 
 **Claim.** F satisfies corrected B3 for the same family. Equivalently, failure of F forces failure of G under (1)–(2).
@@ -34,7 +34,7 @@ All hypotheses of G.CorrectedB3 now hold for V: bounded carrier; same old socle;
 - **No global statement:** The physical diary still needs to prove the cut-visible target coverage for the *entire parameter closure* and compatibility across two occurrences. It also needs the actual full f_ell identification and the common labelled inverse-source orbit. None is inferred.
 - **Source nonemptiness:** if G.source is empty, G.CorrectedB3 is vacuous. Do not drop hypothesis (1) without separately deriving it from a genuine upper clique witness and (2).
 - **Strict cutoff:** the cut+1 type, not merely the cut type, carries the tested crossing atom. Replacing cut+1 by cut loses the decisive edge.
-- **Quantifier check:** the coverage premise is uniform over all Full-selected names with a real positive cut edge, not just the names occurring in a particular proposed canonical witness.
+- **Quantifier check:** coverage is uniform over all genuinely cut-eligible Full-selected names with a real positive cut edge, not just the names occurring in a particular proposed canonical witness. It deliberately excludes ineligible selected names (their full next-cut types are absent from the prescribed source).
 
 ## Lean validation gate
 
