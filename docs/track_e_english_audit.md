@@ -102,3 +102,16 @@ such that at each synchronized event `j`, the actual assigned old/upper `L^+` ty
 **Absent sources and fixed indexing.** Current formal fields are total maps with a separate presence mask. For an eventual physical instantiation, assignments at absent source/cut pairs must have a *shared fixed convention* (for instance `Option` with `none` for absence), not arbitrary witness-dependent values. A finite per-diary parameter/event index or a uniform finite padded index must be justified, including every auxiliary microevent. Raw numerical target cut levels are not the same as compressed source event ranks.
 
 **Target-node transport.** Even literal equality of the source records does not alone prove that a chosen monoid map sends every dependent source parameter to its *actual target Algorithm-5.4 parameter*. This map-compatibility is an independent check for the full minimal-envelope assertion, although the labelled selected-vertex orbit suffices for the already verified conditional Ramsey transfer. Track E should expose this transport as a separate explicit endpoint.
+
+
+## E4: non-vacuity — complete source coverage, not just equal named records
+
+An indexed "full" record is **not** automatically a complete encoding of the actual Algorithm-5.4 closure. Two occurrences can have literally identical selected and named parameter records if the index set omits a generated meet, even though their actual closures differ. In the extreme, choosing an empty parameter index makes all the parameter comparisons vacuous. Thus an unconditional application of the record comparison requires, for every synchronized scan cut `j`, the explicit **coverage equation**
+
+`z ∈ actualClosure(j) ↔ ∃ p, record.presentAt(j, parameter p)=true ∧ record.parameters(p)=z`.
+
+The right-hand side must include **all** actual seeds, selected positive-free-level parameters, and meets in the full parameter-closed source. Source parameter names may be redundant, but no actual node may be omitted.
+
+**Lemma.** If two actual presentations have complete coverage by the same literal event-indexed record `R=S`, their parameter-closed source sets agree at every synchronized cut. **Proof:** use equality of the record's parameter map and active mask to identify their images pointwise; the two surjective coverage equations then identify each actual closure set by extensionality. This is a property of literal pulled-back source sets; it does *not* claim equality of the corresponding *target* closures without separate monoid transport.
+
+**Adversarial limits.** C's normal-form theorem only establishes that each closure node is *representable* as seed/parameter/meet; it does not provide a fixed finite index or a coherent choice of names/recipes across all occurrences. E must require an actual coverage certificate in addition to agreeing recipe data. Likewise the full event-index itself must cover all I1/I2/I3/B3 microevents in the real run; parameter coverage alone is not full event coverage. These are geometry obligations, never automatic properties of a Lean record structure.
