@@ -149,25 +149,26 @@ import Kk.FullEventIndexedOrbitBridge
 import Kk.DiaryCoverColumn
 import Kk.TrackFLabelledFibre
 
--- Track A: audited conditional/finite modules
-import Kk.RelativeMarkedFrontAge
-import Kk.NonconsecutiveReservedPrefix
-import Kk.PinnedPrefixHensonExtension
-import Kk.OrderedTopMarkedSupport
--- Track C: audited conditional/finite modules
-import Kk.NumericHFullClosureSource
-import Kk.NumericHFullClosureCrossing
-import Kk.NumericHTopSeedFullSource
-import Kk.NumericHFinalPoolCrossing
--- Track D: audited conditional/finite modules
-import Kk.B3CutVisibleTransfer
-import Kk.B3ClosureFibreCoherence
--- Track E: audited conditional/finite modules
-import Kk.FullLabelledOrbitBridge
-import Kk.FullEventIndexedOrbitBridge
--- Track F: audited conditional/finite modules
-import Kk.DiaryCoverColumn
-import Kk.TrackFLabelledFibre
+-- Track A: further standalone-verified components; no global KK degree claim
+import Kk.NumericPrefixGapZero
+import Kk.NumericPrefixWholeAge
+import Kk.FiniteOldColumnAge
+import Kk.FiniteOldColumnAgePositive
+import Kk.FiniteSupportCoverProfile
+-- Track C: further standalone-verified components; no global KK degree claim
+import Kk.NumericHMultiRootPreservation
+import Kk.NumericHExhaustiveRunIndex
+import Kk.NumericHIndexedUpperRecords
+-- Track E: further standalone-verified components; no global KK degree claim
+import Kk.FullCrossingPoolIndependence
+import Kk.FullPhysicalCrossingRelation
+import Kk.CrossClosurePhysicalComparison
+-- Track F: further standalone-verified components; no global KK degree claim
+import Kk.TrackFCodingColumn
+import Kk.TrackFRawCoverColumn
+import Kk.TrackFCoverEssentialSupport
+import Kk.TrackFCoverOneStep
+import Kk.TrackFCoverSupportValues
 
 /-!
 The counting project imports the verified successor-tree library.
