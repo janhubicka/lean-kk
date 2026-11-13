@@ -52,6 +52,8 @@ theorem henson_fullB3_of_cut_visible_complete_outputs
         (finiteNumericH (normalizedGraphModel E) k N)
         cut original Marked).source)
     (hCutVisible : ∀ v : Fin M, Full v →
+      cut+1 ≤ (finiteNumericH (normalizedGraphModel E) k N).freeLevel
+        (original v).val →
       (finiteNumericHL (normalizedGraphModel E) k N).binary
         cut (original v).val (0 : Fin 1) = true →
       ∃ T, T ∈ (selectedStagePoolPrescribedData
@@ -109,7 +111,7 @@ theorem henson_fullB3_of_cut_visible_complete_outputs
       UpperTypesPrescribed V cut G.PrescribedUpperLType := by
     intro x hx hAbove
     obtain ⟨a,ha⟩ := hFuture x hx hAbove
-    obtain ⟨v,hFull,_hFree,hType⟩ := hUpper x hx hAbove
+    obtain ⟨v,hFull,hFree,hType⟩ := hUpper x hx hAbove
     obtain ⟨b,hb⟩ := hAt
     have hba : b ≠ a := by
       intro hEq
@@ -135,7 +137,7 @@ theorem henson_fullB3_of_cut_visible_complete_outputs
         C.binary cut (original v).val (0 : Fin 1) = true :=
       hCross.symm.trans hWEdge
     obtain ⟨T,hT,hTargetType⟩ :=
-      hCutVisible v hFull hActualEdge
+      hCutVisible v hFull hFree hActualEdge
     exact ⟨T,hT,hType.trans hTargetType.symm⟩
   have hCliqueMember :
       (NormalizedForbidden.nontrivial ell
@@ -174,6 +176,8 @@ theorem henson_cut_visible_fullB3_failure_implies_marked_failure
         (finiteNumericH (normalizedGraphModel E) k N)
         cut original Marked).source)
     (hCutVisible : ∀ v : Fin M, Full v →
+      cut+1 ≤ (finiteNumericH (normalizedGraphModel E) k N).freeLevel
+        (original v).val →
       (finiteNumericHL (normalizedGraphModel E) k N).binary
         cut (original v).val (0 : Fin 1) = true →
       ∃ T, T ∈ (selectedStagePoolPrescribedData
