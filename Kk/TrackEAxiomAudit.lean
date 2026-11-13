@@ -35,3 +35,8 @@ integration owner Track G reviews the exact-head result.
 #print axioms Kk.event_kind_does_not_determine_inputs
 #check @Kk.assigned_upper_type_requires_event_indexing
 #print axioms Kk.assigned_upper_type_requires_event_indexing
+
+#check @Kk.full_event_source_eq_of_local_reconstruction
+#print axioms Kk.full_event_source_eq_of_local_reconstruction
+#check @Kk.full_event_source_common_selected_and_parameter_targets
+#print axioms Kk.full_event_source_common_selected_and_parameter_targets
