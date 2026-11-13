@@ -1,0 +1,83 @@
+name: Lean Track C finite H+ source
+
+on:
+  push:
+    branches: [kk-track-c-full-source-20261113]
+    paths:
+      - 'Kk/NumericHFullClosureSource.lean'
+      - 'Kk/NumericHFullClosureCrossing.lean'
+      - 'Kk/NumericHTopSeedFullSource.lean'
+      - 'Kk/NumericHFinalPoolCrossing.lean'
+      - 'docs/track_c_full_source_english_audit.md'
+      - 'docs/track_c_cut_crossing_upper_types_english_audit.md'
+      - 'docs/track_c_top_seed_full_source_english_audit.md'
+      - 'docs/track_c_final_pool_full_source_english_audit.md'
+      - '.github/workflows/lean-track-c.yml'
+  pull_request:
+    paths:
+      - 'Kk/NumericHFullClosureSource.lean'
+      - 'docs/track_c_full_source_english_audit.md'
+      - '.github/workflows/lean-track-c.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: track-c-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  isolated-source:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache Lean toolchain
+        uses: actions/cache@v4
+        with:
+          path: ~/.elan/toolchains
+          key: lean-toolchain-${{ runner.os }}-${{ hashFiles('lean-toolchain') }}
+      - name: Restore Lean workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve pinned successor-tree dependencies
+        run: lake update
+      - name: Obtain Mathlib cache
+        run: lake exe cache get
+      - name: Explicitly compile isolated Track C module
+        run: lake build Kk.NumericHFullClosureSource
+      - name: Check exact Track C transitive axiom reports
+        run: |
+          set -euo pipefail
+          lake env lean Kk/NumericHFullClosureSource.lean | tee track-c-axioms.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py Kk/NumericHFullClosureSource.lean track-c-axioms.log
+      - name: Explicitly compile full cut-crossing Track C module
+        run: lake build Kk.NumericHFullClosureCrossing
+      - name: Check exact three full cut-crossing transitive axiom reports
+        run: |
+          set -euo pipefail
+          lake env lean Kk/NumericHFullClosureCrossing.lean | tee track-c-crossing-axioms.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py Kk/NumericHFullClosureCrossing.lean track-c-crossing-axioms.log
+      - name: Explicitly compile canonical top-seed full source
+        run: lake build Kk.NumericHTopSeedFullSource
+      - name: Check canonical top-seed source theorem axioms
+        run: |
+          set -euo pipefail
+          lake env lean Kk/NumericHTopSeedFullSource.lean | tee track-c-top-seed-axioms.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py Kk/NumericHTopSeedFullSource.lean track-c-top-seed-axioms.log
+      - name: Explicitly compile final finite pool Track C source
+        run: lake build Kk.NumericHFinalPoolCrossing
+      - name: Check final finite pool source theorem axioms
+        run: |
+          set -euo pipefail
+          lake env lean Kk/NumericHFinalPoolCrossing.lean | tee track-c-final-pool-axioms.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py Kk/NumericHFinalPoolCrossing.lean track-c-final-pool-axioms.log
