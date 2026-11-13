@@ -1162,3 +1162,11 @@ import Kk
 #print axioms Kk.diaryCoverColumn_feasible_iff_lower
 #check @Kk.trackF_card_labelled_diaries
 #print axioms Kk.trackF_card_labelled_diaries
+
+-- Track B 13 November: cut-visible actual I3 has omitted physical L neighbour
+#check @Kk.henson_represented_I3_requires_unmarked_cut_neighbour
+#print axioms Kk.henson_represented_I3_requires_unmarked_cut_neighbour
+#check @Kk.henson_algorithmRun_I3_requires_unmarked_cut_neighbour
+#print axioms Kk.henson_algorithmRun_I3_requires_unmarked_cut_neighbour
+#check @Kk.henson_numericH_algorithmRun_I3_requires_unmarked_cut_neighbour
+#print axioms Kk.henson_numericH_algorithmRun_I3_requires_unmarked_cut_neighbour
