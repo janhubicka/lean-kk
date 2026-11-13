@@ -5,7 +5,9 @@ on:
     branches: [kk-track-c-full-source-20261113]
     paths:
       - 'Kk/NumericHFullClosureSource.lean'
+      - 'Kk/NumericHFullClosureCrossing.lean'
       - 'docs/track_c_full_source_english_audit.md'
+      - 'docs/track_c_cut_crossing_upper_types_english_audit.md'
       - '.github/workflows/lean-track-c.yml'
   pull_request:
     paths:
@@ -51,3 +53,11 @@ jobs:
           lake env lean Kk/NumericHFullClosureSource.lean | tee track-c-axioms.log
           python3 scripts/check_axiom_report.py --self-test
           python3 scripts/check_axiom_report.py Kk/NumericHFullClosureSource.lean track-c-axioms.log
+      - name: Explicitly compile full cut-crossing Track C module
+        run: lake build Kk.NumericHFullClosureCrossing
+      - name: Check exact three full cut-crossing transitive axiom reports
+        run: |
+          set -euo pipefail
+          lake env lean Kk/NumericHFullClosureCrossing.lean | tee track-c-crossing-axioms.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py Kk/NumericHFullClosureCrossing.lean track-c-crossing-axioms.log
