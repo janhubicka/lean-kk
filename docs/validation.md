@@ -1,5 +1,14 @@
 # Verification plan
 
+## 12 November 2026 — sharp raw support block budget and genuine four-pool certificate
+
+**English-first proof and twelve-point adversarial review:** [sharp raw support budget](raw_support_block_budget_english_audit.md) distinguishes the `B(T)≤ell−1` and `B(T)>ell−1` cases of truncated natural subtraction. It proves the strictly sufficient budget `(ell−1−B(T))+n<ell` from **both** `n≤B(T)` and `n<ell`; forgetting the latter in the empty-block case is false. The existing literal finite universal future `universalWitnessFuture` satisfies both prerequisites for EVERY actual clique s and every admissible support T.
+
+`Kk/RawSupportBlockBudget.lean` also proves a **conditional Nat-indexed ordinary-L four-pool certificate**. If actual reserved Q has exact clique capacity `ell−1−B(T)`, the old-to-Q and gap-to-future columns vanish, both directed Q–W bits equal the exact T-support indicator, Q is disjoint from supported W, the entire past and old-plus-future are K_ell-free, and every future clique obeys B(T), then the **complete union** is K_ell-free. The proof uses the already kernel-checked exact all-witness gluing iff and the independent old-plus-W → W-freeness theorem, so it does not assume W_T is itself a clique or compare B(T) with a false cardinality of W_T.
+
+The branch adds three named endpoints. Its strict exact-head hosted gate is **390 standard-only transitive-axiom reports** (387 current merged baseline +3) and the full `lake build`; a separate universal future exact-profile PR #88 is also pending and should not be conflated with this independent branch. No manuscript validation mark is authorized for unproved simultaneous relative Henson source realization, full Kpt auxiliary E/parameter closure or a common labelled inverse-source orbit.
+
+
 ## 12 November 2026 — exact realized feasible profiles in one finite future
 
 The standalone ordinary-L universal future from [PR #86](https://github.com/janhubicka/lean-kk/pull/86) passed [hosted Lean run 43197604716](https://github.com/janhubicka/lean-kk/actions/runs/43197604716) with a full **9,502-job build** and **380 standard-only transitive-axiom reports**, merging as `185e304ecec27757b589bcc1d525000bb1cb3c4f`. Its future `W_B` contains every feasible normalized labelled clique as a genuine component, and no clique in W_B violates any B-support bound.

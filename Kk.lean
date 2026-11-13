@@ -113,6 +113,7 @@ import Kk.RelativeTriangleObstruction
 import Kk.ConcreteCanonicalMaximizers
 import Kk.UniversalFutureDisjointCliques
 import Kk.ExactFiniteNeighbourRealization
+import Kk.RawSupportBlockBudget
 import Kk.UniversalFutureExactProfile
 
 /-!
