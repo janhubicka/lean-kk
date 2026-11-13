@@ -1,0 +1,48 @@
+name: KK Track E isolated Lean gate
+
+on:
+  pull_request:
+    paths:
+      - 'Kk/FullLabelledOrbitBridge.lean'
+      - 'Kk/TrackEAxiomAudit.lean'
+      - 'docs/track_e_english_audit.md'
+      - '.github/workflows/kk-track-e.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: kk-track-e-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  explicit-module-and-axioms:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache Lean toolchain
+        uses: actions/cache@v4
+        with:
+          path: ~/.elan/toolchains
+          key: lean-toolchain-${{ runner.os }}-${{ hashFiles('lean-toolchain') }}
+      - name: Restore pinned workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve pinned library
+        run: lake update
+      - name: Obtain Mathlib build cache
+        run: lake exe cache get
+      - name: Compile Track E explicitly
+        run: lake build Kk.FullLabelledOrbitBridge
+      - name: Exact named transitive-axiom checks
+        run: |
+          set -euo pipefail
+          lake env lean Kk/TrackEAxiomAudit.lean | tee track-e-axioms.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py Kk/TrackEAxiomAudit.lean track-e-axioms.log
