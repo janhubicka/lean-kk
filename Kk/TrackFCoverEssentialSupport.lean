@@ -64,9 +64,9 @@ theorem trackFCover_exists_minimal_changed
   have hUcardmem : U.1.card ∈ cards :=
     Finset.mem_image.mpr ⟨U,hUmem,rfl⟩
   have hLower : cards.min' hCardsNon ≤ U.1.card := by
-    exact Finset.min'_le cards hUcardmem
+    exact Finset.min'_le cards U.1.card hUcardmem
   have hStrict : U.1 ⊂ T.1 :=
-    ssubset_of_subset_ne hUT hUNe
+    Finset.ssubset_iff_subset_ne.mpr ⟨hUT, hUNe⟩
   have hCardStrict : U.1.card < T.1.card :=
     Finset.card_lt_card hStrict
   omega
