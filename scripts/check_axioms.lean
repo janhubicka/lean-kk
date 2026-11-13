@@ -1297,3 +1297,9 @@ import Kk
 #check @Kk.trackFCover_all_changed_upper_eq_essential
 #print axioms Kk.trackFCover_all_changed_upper_eq_essential
 
+
+-- Track G: conditional anchor-free full closure-selected cut-star; not selected macrodiary.
+#check @Kk.henson_failedSelectedB3_has_eligible_cut_neighbour
+#print axioms Kk.henson_failedSelectedB3_has_eligible_cut_neighbour
+#check @Kk.henson_fullB3_iff_cut_star_of_no_i2
+#print axioms Kk.henson_fullB3_iff_cut_star_of_no_i2
