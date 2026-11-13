@@ -315,4 +315,134 @@ theorem assigned_upper_type_requires_event_indexing :
   have hv := congrArg (fun f => f true (Sum.inl ())) h
   cases hv
 
+
+/-- A literal finite-index source trace: all selected labels, named
+parameters and event/microevent ranks are finite. To use this alias
+for the manuscript, Tracks C/D must provide a **uniform** size or a
+canonical padding convention across the compared diary occurrences. -/
+abbrev KptFiniteEventSourceRecord
+    {db du dd : Nat} (family : List (NormalizedForbidden db du dd))
+    (n nParams nEvents : Nat) (Old Upper Kind Character : Type) :=
+  KptEventIndexedSourceRecord family n (Fin nParams) Old Upper
+    (Fin nEvents) Kind Character
+
+/-- Disjointly-typed lookup of the *actual* source node for a selected
+label or a named dependent Kpt parameter. It retains which of the two
+kinds of source is being requested. -/
+def KptEventIndexedSourceRecord.namedNode
+    {n : Nat} {Parameters Old Upper Events Kind Character : Type}
+    (R : KptEventIndexedSourceRecord family n
+      Parameters Old Upper Events Kind Character) :
+    Sum (Fin n) Parameters →
+      Sum (FiniteGPlusVertex family) (AdmissibleKptNode family)
+  | .inl a => .inl (R.selected a)
+  | .inr p => .inr (R.parameters p)
+
+/-- Physical local-reconstruction bridge: full synchronized event frames
+and equal source nodes imply equality of assigned old/upper L+ types
+IF both actual numerical presentations use the same deterministic
+assignment functions on their full event frames and named source nodes.
+
+The reconstruction premise is not known from equality of old source
+types or B3 verdicts; it must reflect actual chosen upper successor
+characters, including auxiliary E. This theorem is independent of
+finite H+, and does not discharge that premise. -/
+theorem full_event_source_eq_of_local_reconstruction
+    {n : Nat} {Parameters Old Upper Events Kind Character : Type}
+    (R S : KptEventIndexedSourceRecord family n
+      Parameters Old Upper Events Kind Character)
+    (hSelected : R.selected = S.selected)
+    (hParams : R.parameters = S.parameters)
+    (hPresent : R.presentAt = S.presentAt)
+    (hFrames : R.eventFrame = S.eventFrame)
+    (recoverOld : Events →
+      FullSourceEventFrame (Fin n) Parameters Kind Character →
+      Sum (FiniteGPlusVertex family) (AdmissibleKptNode family) → Old)
+    (recoverUpper : Events →
+      FullSourceEventFrame (Fin n) Parameters Kind Character →
+      Sum (FiniteGPlusVertex family) (AdmissibleKptNode family) → Upper)
+    (hOldR : ∀ j x,
+      R.oldAt j x = recoverOld j (R.eventFrame j) (R.namedNode x))
+    (hOldS : ∀ j x,
+      S.oldAt j x = recoverOld j (S.eventFrame j) (S.namedNode x))
+    (hUpperR : ∀ j x,
+      R.upperAt j x = recoverUpper j (R.eventFrame j) (R.namedNode x))
+    (hUpperS : ∀ j x,
+      S.upperAt j x = recoverUpper j (S.eventFrame j) (S.namedNode x)) :
+    R = S := by
+  have hNodes : R.namedNode = S.namedNode := by
+    funext x
+    cases x with
+    | inl a =>
+      change Sum.inl (R.selected a) = Sum.inl (S.selected a)
+      exact congrArg Sum.inl (congrFun hSelected a)
+    | inr p =>
+      change Sum.inr (R.parameters p) = Sum.inr (S.parameters p)
+      exact congrArg Sum.inr (congrFun hParams p)
+  have hOldAt : R.oldAt = S.oldAt := by
+    funext j x
+    calc
+      R.oldAt j x = recoverOld j (R.eventFrame j) (R.namedNode x) :=
+        hOldR j x
+      _ = recoverOld j (S.eventFrame j) (S.namedNode x) := by
+        rw [hFrames, hNodes]
+      _ = S.oldAt j x := (hOldS j x).symm
+  have hUpperAt : R.upperAt = S.upperAt := by
+    funext j x
+    calc
+      R.upperAt j x = recoverUpper j (R.eventFrame j) (R.namedNode x) :=
+        hUpperR j x
+      _ = recoverUpper j (S.eventFrame j) (S.namedNode x) := by
+        rw [hFrames, hNodes]
+      _ = S.upperAt j x := (hUpperS j x).symm
+  exact fullEventIndexedSourceRecord_ext
+    hSelected hParams hPresent hOldAt hUpperAt hFrames
+
+/-- A physically named common source span: the same **genuine**
+selected G+ labels and every named dependent Kpt parameter must map
+to the stated target selected vertices / parameter nodes under the
+two monoid maps. This is stronger than a source-only equality or an
+unlabelled minimal-envelope isomorphism. It is still conditional on
+the input maps and actual target-node transport checks. -/
+theorem full_event_source_common_selected_and_parameter_targets
+    {n : Nat} {Parameters Old Upper Events Kind Character : Type}
+    (F G : SuccessorTree.SMTree.MMap (normalizedKptSMTree family))
+    (R S : KptEventIndexedSourceRecord family n
+      Parameters Old Upper Events Kind Character)
+    (targetF targetG : Fin n → FiniteGPlusVertex family)
+    (targetParamF targetParamG : Parameters → AdmissibleKptNode family)
+    (hInjF : Function.Injective targetF)
+    (hInjG : Function.Injective targetG)
+    (hRecord : R = S)
+    (hSelectedF : ∀ a, gPlusShapeImage F.map (R.selected a) = targetF a)
+    (hSelectedG : ∀ a, gPlusShapeImage G.map (S.selected a) = targetG a)
+    (hParamF : ∀ p, F.map (R.parameters p) = targetParamF p)
+    (hParamG : ∀ p, G.map (S.parameters p) = targetParamG p) :
+    ∃ (source : LabelledGPlusCopy family (Fin n))
+      (sourceParameters : Parameters → AdmissibleKptNode family),
+      LabelledGPlusCopy.map F source =
+        (⟨targetF, hInjF⟩ : LabelledGPlusCopy family (Fin n)) ∧
+      LabelledGPlusCopy.map G source =
+        (⟨targetG, hInjG⟩ : LabelledGPlusCopy family (Fin n)) ∧
+      (∀ p, F.map (sourceParameters p) = targetParamF p) ∧
+      (∀ p, G.map (sourceParameters p) = targetParamG p) := by
+  have hFlat : R.orbitProjection = S.orbitProjection :=
+    congrArg
+      (fun T : KptEventIndexedSourceRecord family n Parameters
+        Old Upper Events Kind Character => T.orbitProjection) hRecord
+  obtain ⟨source, hF, hG⟩ :=
+    common_labelled_orbit_of_full_record_eq
+      F G R.orbitProjection S.orbitProjection
+      targetF targetG hInjF hInjG hFlat
+      hSelectedF hSelectedG
+  have hParams : R.parameters = S.parameters :=
+    congrArg
+      (fun T : KptEventIndexedSourceRecord family n Parameters
+        Old Upper Events Kind Character => T.parameters) hRecord
+  refine ⟨source, R.parameters, hF, hG, hParamF, ?_⟩
+  intro p
+  rw [hParams]
+  exact hParamG p
+
+
 end Kk
