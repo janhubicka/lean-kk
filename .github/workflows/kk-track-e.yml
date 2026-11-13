@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - 'Kk/FullLabelledOrbitBridge.lean'
+      - 'Kk/FullEventIndexedOrbitBridge.lean'
       - 'Kk/TrackEAxiomAudit.lean'
       - 'docs/track_e_english_audit.md'
       - '.github/workflows/kk-track-e.yml'
@@ -39,7 +40,7 @@ jobs:
       - name: Obtain Mathlib build cache
         run: lake exe cache get
       - name: Compile Track E explicitly
-        run: lake build Kk.FullLabelledOrbitBridge
+        run: lake build Kk.FullLabelledOrbitBridge Kk.FullEventIndexedOrbitBridge
       - name: Exact named transitive-axiom checks
         run: |
           set -euo pipefail
