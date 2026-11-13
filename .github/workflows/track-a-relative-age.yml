@@ -1,0 +1,58 @@
+name: KK Track A - exact module validation
+
+on:
+  push:
+    branches: [kk-track-a-relative-marked-front-20261113]
+  pull_request:
+    paths:
+      - 'Kk/RelativeMarkedFrontAge.lean'
+      - 'docs/relative_marked_front_age_english_audit.md'
+      - '.github/workflows/track-a-relative-age.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: kk-track-a-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  exact-module:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore Lean workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install pinned Lean toolchain
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve pinned dependencies
+        run: lake update
+      - name: Restore pinned Mathlib cache
+        run: lake exe cache get
+      - name: Explicitly compile the new Track A module
+        run: lake build Kk.RelativeMarkedFrontAge
+      - name: Explicitly compile nonconsecutive reserved prefix module
+        run: lake build Kk.NonconsecutiveReservedPrefix
+      - name: Explicitly compile pinned-prefix Henson extension
+        run: lake build Kk.PinnedPrefixHensonExtension
+      - name: Explicitly compile all-front top support module
+        run: lake build Kk.OrderedTopMarkedSupport
+      - name: Check exact named standard-only transitive axioms of Track A
+        run: |
+          set -euo pipefail
+          lake env lean Kk/RelativeMarkedFrontAge.lean | tee track-a-axioms.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py Kk/RelativeMarkedFrontAge.lean track-a-axioms.log
+          lake env lean Kk/NonconsecutiveReservedPrefix.lean | tee track-a-nonconsecutive-axioms.log
+          python3 scripts/check_axiom_report.py Kk/NonconsecutiveReservedPrefix.lean track-a-nonconsecutive-axioms.log
+          lake env lean Kk/PinnedPrefixHensonExtension.lean | tee track-a-pinned-prefix-axioms.log
+          python3 scripts/check_axiom_report.py Kk/PinnedPrefixHensonExtension.lean track-a-pinned-prefix-axioms.log
+          lake env lean Kk/OrderedTopMarkedSupport.lean | tee track-a-ordered-top-axioms.log
+          python3 scripts/check_axiom_report.py Kk/OrderedTopMarkedSupport.lean track-a-ordered-top-axioms.log
+      - name: Build all currently imported modules
+        run: lake build
