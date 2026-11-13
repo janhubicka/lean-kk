@@ -1,5 +1,6 @@
 import Kk.NumericHFinalPoolCrossing
 import Kk.NumericHMultiRootPreservation
+import Kk.AlgorithmRunParameterPropagation
 import Mathlib.Tactic
 
 /-!
@@ -93,21 +94,25 @@ theorem finiteNumericH_actualRun_uniform_exhaustive_source_index
     (R : SMTree.Envelope.AlgorithmRun
       (normalizedKptSMTree family) X runHeight) :
     ∃ params : Finset (AdmissibleKptNode family),
+      ∃ presentAt : Nat → Fin params.card → Bool,
       (∀ z : AdmissibleKptNode family,
          z ∈ params ↔
            z ∈ SMTree.Envelope.closure (admissibleKptSTree family)
              (R.I 0) X) ∧
       Function.Injective
         (fun j : Fin params.card => (params.equivFin.symm j).val) ∧
+      (∀ cut : Nat, ∀ j : Fin params.card,
+        presentAt cut j = true ↔
+        (params.equivFin.symm j).val ∈
+          SMTree.Envelope.closure (admissibleKptSTree family)
+            (R.I (cut+1)) X) ∧
       (∀ cut : Nat, cut < runHeight →
         ∀ z : AdmissibleKptNode family,
           z ∈ SMTree.Envelope.closure (admissibleKptSTree family)
             (R.I (cut+1)) X ↔
           ∃ j : Fin params.card,
             (params.equivFin.symm j).val = z ∧
-            decide ((params.equivFin.symm j).val ∈
-              SMTree.Envelope.closure (admissibleKptSTree family)
-                (R.I (cut+1)) X) = true) := by
+            presentAt cut j = true) := by
   classical
   let Z : Set (AdmissibleKptNode family) :=
     SMTree.Envelope.closure (admissibleKptSTree family) (R.I 0) X
@@ -119,7 +124,21 @@ theorem finiteNumericH_actualRun_uniform_exhaustive_source_index
       z ∈ params ↔ z ∈ Z := by
     intro z
     simp [params]
-  refine ⟨params, ?_, ?_, ?_⟩
+  let presentAt : Nat → Fin params.card → Bool :=
+    fun cut j => decide ((params.equivFin.symm j).val ∈
+      SMTree.Envelope.closure (admissibleKptSTree family)
+        (R.I (cut+1)) X)
+  have hPresent : ∀ cut : Nat, ∀ j : Fin params.card,
+      presentAt cut j = true ↔
+        (params.equivFin.symm j).val ∈
+          SMTree.Envelope.closure (admissibleKptSTree family)
+            (R.I (cut+1)) X := by
+    intro cut j
+    change decide ((params.equivFin.symm j).val ∈
+      SMTree.Envelope.closure (admissibleKptSTree family)
+        (R.I (cut+1)) X) = true ↔ _
+    exact decide_eq_true_eq
+  refine ⟨params, presentAt, ?_, ?_, hPresent, ?_⟩
   · exact hExact
   · intro i j hEq
     have hPairs :
@@ -146,12 +165,10 @@ theorem finiteNumericH_actualRun_uniform_exhaustive_source_index
       have hName : (params.equivFin.symm j).val = z := by
         simp [j]
       refine ⟨j,hName,?_⟩
-      have hPresent : decide (z ∈ Zcut) = true :=
-        decide_eq_true_eq.mpr hz
-      simpa only [hName] using hPresent
-    · rintro ⟨j,hName,hPresent⟩
+      exact (hPresent cut j).2 (by simpa only [hName] using hz)
+    · rintro ⟨j,hName,hLive⟩
       have hz : (params.equivFin.symm j).val ∈ Zcut :=
-        decide_eq_true_eq.mp hPresent
+        (hPresent cut j).1 hLive
       rw [hName] at hz
       exact hz
 
