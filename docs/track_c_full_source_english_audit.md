@@ -132,6 +132,55 @@ lemmas, now exported as one source-record API.
     nodes. C1 and C2 do not identify all those nodes or prove
     agreement of source records across two occurrences.
 
+
+## C3. Full closure normal form and *even-real-level* source exclusion
+
+Let A=finiteNumericH K k N, let A.L actually avoid the selected
+normalized forbidden family, and let X be a Kpt seed set **represented**
+inside ambientPrefixPool family A hAvoid U for an explicitly maintained
+original pool U. For an arbitrary selected-level set I, the actual
+meet-and-parameter closure of X over I has the following exhaustive
+normal form (the successor-tree `KptStageClosureNormalForm` theorem):
+
+* an original seed z in X;
+* an original parameter node z=A.kptOriginal(v) at a selected
+  original coordinate v.val in I with positive A.freeLevel v.val;
+* a meet z=meet(A.kptOriginal(v),A.kptOriginal(w)) of two originals
+  v,w from the **actual maintained** ambientStagePool A U I,
+  with SameComponent explicitly provided.
+
+This is a genuine closure theorem, not a selected-front graph-age
+surrogate. The ambient stage pool contains both the initial seed pool
+and eligible selected parameters. It is NOT necessarily the manuscript's
+smaller designated selected-original pool.
+
+**New even-real-level corollary.** If a closure node z has
+LevelTree.lev z = hPosition k i q (any i,q; a genuine even numerical
+coordinate) and z is NOT a seed, it MUST be a meet of two ambient
+originals in that maintained stage pool. A selected positive
+parameter z=A.kptOriginal(v) would have LevelTree.lev z =
+A.freeLevel v.val; in any actual finite numerical H+ this is odd
+whenever positive, contradicting equality with the even real
+hPosition k i q. This uses the **actual** canonical E free-level
+parity theorem, not guessed generation labels.
+
+Adversarial obligations:
+(a) the seed exception is essential, including potential zero-free-cut
+seeds at numerical level zero; (b) positive parameter eligibility and
+the carrier bound v.val<N are indispensable; (c) conclude a meet
+**representation**, not uniqueness, selected status, or a new
+interesting I1 event; (d) the two originals in a meet belong to
+ambientStagePool A U I, not automatically to a restricted selected
+copy; (e) crossing source/target equality at cut p and p+1 remains
+unproved, even if all meeting types are represented; (f) do not
+treat a fake odd E-positive *numerical coordinate* as an actual
+positive-free-level parameter without the entire Kpt closure test.
+
+This is the first usable **all-closure-node classification** toward
+I1/I2/I3. It is still conditional on the actual stage-seed pool
+being representable by originals. The unbounded recursive resolved
+copy must establish that pool hypothesis at each stage.
+
 ## Acceptance and next C obligations
 
 In `Kk/NumericHFullClosureSource.lean`, export one C1 theorem giving
