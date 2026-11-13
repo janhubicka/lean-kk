@@ -7,6 +7,7 @@ on:
   pull_request:
     paths:
       - 'Kk/B3CutVisibleTransfer.lean'
+      - 'Kk/B3ClosureFibreCoherence.lean'
       - 'scripts/check_axioms_track_d.lean'
       - '.github/workflows/track-d-full-b3.yml'
   workflow_dispatch:
@@ -41,7 +42,7 @@ jobs:
       - name: Restore Mathlib cache
         run: lake exe cache get
       - name: Compile exact Track D module
-        run: lake build Kk.B3CutVisibleTransfer
+        run: lake build Kk.B3ClosureFibreCoherence
       - name: Named standard-only transitive axiom gate
         run: |
           set -euo pipefail
