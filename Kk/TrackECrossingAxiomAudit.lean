@@ -1,4 +1,4 @@
-import Kk.FullCrossingPoolIndependence
+import Kk.FullPhysicalCrossingRelation
 
 #check @Kk.closure_crossing_source_target_le_of_cover_graph
 #print axioms Kk.closure_crossing_source_target_le_of_cover_graph
@@ -14,3 +14,15 @@ import Kk.FullCrossingPoolIndependence
 
 #check @Kk.finiteNumericH_correctedB3_independent_of_original_pool
 #print axioms Kk.finiteNumericH_correctedB3_independent_of_original_pool
+
+#check @Kk.full_physical_crossing_nonfunctional_forces_I2
+#print axioms Kk.full_physical_crossing_nonfunctional_forces_I2
+
+#check @Kk.full_physical_crossing_functional_of_no_I2
+#print axioms Kk.full_physical_crossing_functional_of_no_I2
+
+#check @Kk.prescribed_full_graph_eq_physical_crossing
+#print axioms Kk.prescribed_full_graph_eq_physical_crossing
+
+#check @Kk.finiteNumericH_full_crossing_graph_is_physical_relation
+#print axioms Kk.finiteNumericH_full_crossing_graph_is_physical_relation
