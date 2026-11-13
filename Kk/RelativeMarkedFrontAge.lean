@@ -22,6 +22,8 @@ auxiliary Kpt E / B3 / a common labelled source.
 
 namespace Kk
 
+open SuccessorTree.V10
+
 /-- The marked vertices whose sorts belong to the reserved support.
 There may be arbitrarily many vertices of the same sort. -/
 def markedSupportPool (d : Nat) (W : Finset Nat)
