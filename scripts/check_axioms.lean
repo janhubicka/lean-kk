@@ -967,3 +967,11 @@ import Kk
 #print axioms Kk.universalWitnessFuture_raw_support_block_budget
 #check @Kk.finitePoolCliqueCheck_gluing_of_raw_support_bound
 #print axioms Kk.finitePoolCliqueCheck_gluing_of_raw_support_bound
+
+-- Exact finite injective induced L-copy transport for all K-q safety tests.
+#check @Kk.finiteDirectedCliqueCapacity_induced_image_eq
+#print axioms Kk.finiteDirectedCliqueCapacity_induced_image_eq
+#check @Kk.finitePoolCliqueCheck_false_iff_induced_image
+#print axioms Kk.finitePoolCliqueCheck_false_iff_induced_image
+#check @Kk.finitePoolCliqueCheck_false_iff_strictMono_image
+#print axioms Kk.finitePoolCliqueCheck_false_iff_strictMono_image
