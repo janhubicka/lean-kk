@@ -26,11 +26,15 @@ Assume the **following actual statements, not inferred age conclusions**:
    `L(q,w)=L(w,q)=1[tau(w)∈T]`. In particular all outside-support
    bits are zero: checking only one selected target is not enough.
 5. The complete past `P∪Q∪G` contains no directed `K_ell`.
-6. On every ordered off-diagonal pair of `P∪W`, `L=A`.
-   It is enough to check all four subrectangles
-   `P×P`, `P×W`, `W×P`, `W×W`; these include the full old-to-future
-   columns and arbitrary within-future graph edges, *not just a chosen
-   actual list of future originals*.
+6. Fix a prescribed **typed old column** `c(p,d)` for each old
+   `p∈P` and marked sort `d∈D`. Both `L` and `A` have exactly
+   `L(p,w)=L(w,p)=A(p,w)=A(w,p)=c(p,tau(w))` for EVERY `p∈P,w∈W`.
+   Furthermore `L=A` on all off-diagonal `P×P` and `W×W` pairs.
+   Thus the two tables coincide on all four subrectangles
+   `P×P`, `P×W`, `W×P`, `W×W`, including arbitrary within-future
+   graph edges. Distinct future vertices of the same label have the
+   same prescribed column to P; the condition covers **every** front
+   sort, not just one designated original.
 
 Then, with `cap_L(V)` denoting the maximum cardinality of an
 off-diagonal directed clique in `V`,
