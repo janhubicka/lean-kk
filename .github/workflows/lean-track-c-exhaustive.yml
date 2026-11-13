@@ -1,0 +1,63 @@
+name: Lean Track C exhaustive source index
+
+on:
+  push:
+    branches: [kk-track-c-exhaustive-run-index-20261113]
+    paths:
+      - 'Kk/NumericHMultiRootPreservation.lean'
+      - 'Kk/NumericHExhaustiveRunIndex.lean'
+      - 'docs/track_c_exhaustive_run_index_english_audit.md'
+      - '.github/workflows/lean-track-c-exhaustive.yml'
+  pull_request:
+    paths:
+      - 'Kk/NumericHMultiRootPreservation.lean'
+      - 'Kk/NumericHExhaustiveRunIndex.lean'
+      - 'docs/track_c_exhaustive_run_index_english_audit.md'
+      - '.github/workflows/lean-track-c-exhaustive.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: track-c-exhaustive-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  audited-source:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache Lean toolchain
+        uses: actions/cache@v4
+        with:
+          path: ~/.elan/toolchains
+          key: lean-toolchain-${{ runner.os }}-${{ hashFiles('lean-toolchain') }}
+      - name: Restore Lean workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve pinned dependencies
+        run: lake update
+      - name: Obtain Mathlib cache
+        run: lake exe cache get
+      - name: Compile genuine multi-root source preservation
+        run: lake build Kk.NumericHMultiRootPreservation
+      - name: Check multi-root theorem axioms strictly
+        run: |
+          set -euo pipefail
+          lake env lean Kk/NumericHMultiRootPreservation.lean | tee track-c-multiroot-axioms.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py Kk/NumericHMultiRootPreservation.lean track-c-multiroot-axioms.log
+      - name: Compile exhaustive actual-run closure index
+        run: lake build Kk.NumericHExhaustiveRunIndex
+      - name: Check finite index theorem axioms strictly
+        run: |
+          set -euo pipefail
+          lake env lean Kk/NumericHExhaustiveRunIndex.lean | tee track-c-index-axioms.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py Kk/NumericHExhaustiveRunIndex.lean track-c-index-axioms.log
