@@ -15,3 +15,6 @@ import Kk.TrackFSurvivorCanonical
 #print axioms Kk.trackFExtendWeights_feasible
 #print axioms Kk.trackFCanonical_reindex_mono
 #print axioms Kk.trackFWordCanonical_reindex
+#print axioms Kk.trackFGraphAge_reindex
+#print axioms Kk.trackFWordCanonical_delete_at
+#print axioms Kk.trackFWordRaw_coding_after_delete_exact
