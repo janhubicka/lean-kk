@@ -1,3 +1,13 @@
+# Track B — cross-ambient full corrected-(B3) cut-star transport (14 November 2026; PENDING exact-head CI)
+
+[English-first proof and seventeen hostile checks](track_b_cross_ambient_cutstar_english_audit.md) precede `Kk/B3CrossAmbientProfile.lean` and `Kk/B3CrossAmbientCutStar.lean`. Three general finite source-pool endpoints derive cross-ambient old-ordinary-L socle coverage from complete one-sided upper-type inclusion, transfer corrected B3 between TWO independent actual ambients, and prove an iff for equal complete upper-L predicates **including empty source pools without anchors**. Two Henson-specialized endpoints package each finite physical `HensonCutOccurrence` with actual graph avoidance, full represented Kpt closure and **no (I2)**; if the OLD L socles and complete **unanchored cut-star next L-reduct sets** match at ONE common source-coordinate cut, the FULL corrected-B3 tests match. If first full B3 fails and second passes, a genuine cut-eligible PHYSICAL cut-adjacent original in the first occurrence has a complete next-cut L reduct ABSENT from the second occurrence's cut-star profile. No shared ambient original-name universe or auxiliary E equality is assumed.
+
+**Strict gate PENDING:** current merged Track G source `498b83ec77871b5efd9c38c7a75491cbc261f6c9` passed [run 43481519534](https://github.com/janhubicka/lean-kk/actions/runs/43481519534), full build and **535** strict standard-only named transitive-axiom reports. These five new endpoints require exact-head full `lake build`, parser self-test and **540** standard-only named reports. Until that gate passes, do NOT add manuscript green marks.
+
+**Remaining application gap:** the proposed canonical resolved diary has NOT yet been proved to align the two old L socles and the COMPLETE physical cut-star upper-L spectra across all occurrences. A common source-coordinate cut is a genuine alignment hypothesis, not an automatic numerical gap reindexing. Structural I1/I2 records, full event-indexed L+ parameter/meet assignments, relative-profile fidelity, common labelled inverse orbit and unconditional exact K_k-free BRDs remain OPEN.
+
+---
+
 # Track G — central 535-report source-exact integration (13 November 2026)
 
 Two verified infrastructure merges now make all audited, previously standalone A/C/E/F modules part of the normal Kk.lean build, and add the certified Track D anchor-free full-closure cut-star:
