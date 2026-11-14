@@ -50,7 +50,7 @@ jobs:
         run: lake exe cache get
       - name: Compile new Track F module explicitly
         run: lake build Kk.DiaryCoverColumn Kk.TrackFLabelledFibre Kk.TrackFCodingColumn Kk.TrackFRawCoverColumn Kk.TrackFCoverEssentialSupport Kk.TrackFCoverOneStep Kk.TrackFCoverSupportValues Kk.TrackFLiteralWordColumns
-      - name: Check only standard Lean axioms in all twenty-eight endpoints
+      - name: Check only standard Lean axioms in all thirty endpoints
         shell: bash
         run: |
           set -euo pipefail
@@ -82,7 +82,9 @@ jobs:
             "Kk.trackFCover_essential_contained_in_changed",
             "Kk.trackFCover_all_changed_upper_eq_essential",
             "Kk.trackFColumnRepresentative_mem",
+            "Kk.trackFColumnCommon_pos_iff",
             "Kk.trackFNewColumnCommon",
+            "Kk.trackFWordRaw_eq_sub_max",
             "Kk.trackFWordRaw_append",
             "Kk.trackFWordRaw_append_as_coding_cap",
             "Kk.trackFWord_cover_symbol_valid",
