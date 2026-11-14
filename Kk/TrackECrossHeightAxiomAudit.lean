@@ -1,4 +1,5 @@
 import Kk.CrossHeightFiniteIndexStability
+import Kk.CrossHeightIndexedNovelty
 
 #check @Kk.crossheight_new_selected_Kpt_cut_has_new_terminal_or_full_crossing
 #print axioms Kk.crossheight_new_selected_Kpt_cut_has_new_terminal_or_full_crossing
