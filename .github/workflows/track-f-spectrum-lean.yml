@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - 'Kk/TrackFBranchSpectrum.lean'
+      - 'Kk/TrackFBranchSpectrumCover.lean'
       - 'docs/track_f_branch_spectrum_english_audit.md'
       - 'scripts/track_f_spectrum_axioms.lean'
       - '.github/workflows/track-f-spectrum-lean.yml'
@@ -35,8 +36,8 @@ jobs:
       - name: Mathlib cache
         run: lake exe cache get
       - name: Compile spectrum module
-        run: lake build Kk.TrackFBranchSpectrum
-      - name: Strict three-theorem axioms
+        run: lake build Kk.TrackFBranchSpectrum Kk.TrackFBranchSpectrumCover
+      - name: Strict five-theorem axioms
         shell: bash
         run: |
           set -euo pipefail
@@ -47,7 +48,9 @@ jobs:
           data=Path("spectrum.log").read_text()
           expected=["Kk.trackFSeenSymbol_append",
             "Kk.trackFBranchInitial_append",
-            "Kk.trackFAllBranchInitial_append"]
+            "Kk.trackFAllBranchInitial_append",
+            "Kk.trackFWordSpectrum_age_cover",
+            "Kk.trackFWordSpectrum_coding_column"]
           allowed={"propext","Classical.choice","Quot.sound"}
           for name in expected:
               m=re.search(r"(?m)^'"+re.escape(name)+r"' depends on axioms: \[([^\]]*)\]",data)
