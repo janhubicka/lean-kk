@@ -1597,3 +1597,114 @@ import Kk
 #print axioms Kk.HensonPhysicalRunCutData.two_runs_finite_live_cutStar_cover_controls_full_B3
 #check @Kk.HensonPhysicalRunCutData.two_runs_bad_good_has_finite_unmatched_live_Kpt_node
 #print axioms Kk.HensonPhysicalRunCutData.two_runs_bad_good_has_finite_unmatched_live_Kpt_node
+
+-- Track G: qualified A/C/D/E standalone checked endpoints centrally registered.
+-- No assertion that every same-diary occurrence has this physical source.
+-- Track A: 24 exact component reports
+#check @Kk.finiteNumericH_top_exact_original_edge
+#print axioms Kk.finiteNumericH_top_exact_original_edge
+#check @Kk.finiteNumericH_top_clique_iff_original
+#print axioms Kk.finiteNumericH_top_clique_iff_original
+#check @Kk.finiteNumericH_top_supported_count_eq
+#print axioms Kk.finiteNumericH_top_supported_count_eq
+#check @Kk.finiteNumericH_top_profile_iff_original
+#print axioms Kk.finiteNumericH_top_profile_iff_original
+#check @Kk.finiteNumericH_top_carrier_of_sup_cut
+#print axioms Kk.finiteNumericH_top_carrier_of_sup_cut
+#check @Kk.henson_leftDense_realizes_all_finite_numericTop_profiles
+#print axioms Kk.henson_leftDense_realizes_all_finite_numericTop_profiles
+#check @Kk.finiteNumericH_pinned_old_generation_column_both
+#print axioms Kk.finiteNumericH_pinned_old_generation_column_both
+#check @Kk.finiteNumericH_pinned_gap_generation_zero_both
+#print axioms Kk.finiteNumericH_pinned_gap_generation_zero_both
+#check @Kk.henson_leftDense_uniform_finite_numericH_complete_columns
+#print axioms Kk.henson_leftDense_uniform_finite_numericH_complete_columns
+#check @Kk.henson_leftDense_realizes_all_finite_numericH_L_columns_and_profiles
+#print axioms Kk.henson_leftDense_realizes_all_finite_numericH_L_columns_and_profiles
+#check @Kk.delayedOldColumn_old
+#print axioms Kk.delayedOldColumn_old
+#check @Kk.delayedOldColumn_padding_zero
+#print axioms Kk.delayedOldColumn_padding_zero
+#check @Kk.delayedOldCommonNeighbourPool_eq
+#print axioms Kk.delayedOldCommonNeighbourPool_eq
+#check @Kk.delayedOldRawBound_eq
+#print axioms Kk.delayedOldRawBound_eq
+#check @Kk.delayedOldCanonicalAge_eq
+#print axioms Kk.delayedOldCanonicalAge_eq
+#check @Kk.delayedOldFeasibleVectors_eq
+#print axioms Kk.delayedOldFeasibleVectors_eq
+#check @Kk.henson_leftDense_uniform_numericH_after_neutral_delay
+#print axioms Kk.henson_leftDense_uniform_numericH_after_neutral_delay
+#check @Kk.finiteDirectedCliqueCapacity_isolated_union_max
+#print axioms Kk.finiteDirectedCliqueCapacity_isolated_union_max
+#check @Kk.supportBlockOldColumn_on_reserved
+#print axioms Kk.supportBlockOldColumn_on_reserved
+#check @Kk.supportBlockOldColumn_off_reserved
+#print axioms Kk.supportBlockOldColumn_off_reserved
+#check @Kk.supportBlockCommonNeighbourPool_eq
+#print axioms Kk.supportBlockCommonNeighbourPool_eq
+#check @Kk.supportBlockRawBound_exact
+#print axioms Kk.supportBlockRawBound_exact
+#check @Kk.supportBlockRawBound_le_old
+#print axioms Kk.supportBlockRawBound_le_old
+#check @Kk.supportBlockRawBound_unchanged_off_support
+#print axioms Kk.supportBlockRawBound_unchanged_off_support
+-- Track C: 12 exact component reports
+#check @Kk.finiteNumericH_baseExtension_old_named_source_iff
+#print axioms Kk.finiteNumericH_baseExtension_old_named_source_iff
+#check @Kk.finiteNumericH_baseExtension_same_closure_full_source_B3_stable
+#print axioms Kk.finiteNumericH_baseExtension_same_closure_full_source_B3_stable
+#check @Kk.numericH_two_actual_runs_baseExtension_full_source_B3_stable
+#print axioms Kk.numericH_two_actual_runs_baseExtension_full_source_B3_stable
+#check @Kk.finiteNumericH_baseExtension_constructed_nextSeeds_represented
+#print axioms Kk.finiteNumericH_baseExtension_constructed_nextSeeds_represented
+#check @Kk.finiteNumericH_baseExtension_construct_actual_run_from_new_root
+#print axioms Kk.finiteNumericH_baseExtension_construct_actual_run_from_new_root
+#check @Kk.finiteNumericH_baseExtension_actual_top_root_run
+#print axioms Kk.finiteNumericH_baseExtension_actual_top_root_run
+#check @Kk.finiteNumericH_baseExtension_actual_top_root_run_bounded
+#print axioms Kk.finiteNumericH_baseExtension_actual_top_root_run_bounded
+#check @Kk.hPosition_old_real_below_previous_top_cut
+#print axioms Kk.hPosition_old_real_below_previous_top_cut
+#check @Kk.hPosition_previous_top_chronological_bounds
+#print axioms Kk.hPosition_previous_top_chronological_bounds
+#check @Kk.finiteNumericH_chronological_top_root_bounded_run
+#print axioms Kk.finiteNumericH_chronological_top_root_bounded_run
+#check @Kk.finiteNumericH_newRootOnly_seed_levels_exact
+#print axioms Kk.finiteNumericH_newRootOnly_seed_levels_exact
+#check @Kk.finiteNumericH_rootOnly_lower_initial_I1_iff_old_closure
+#print axioms Kk.finiteNumericH_rootOnly_lower_initial_I1_iff_old_closure
+-- Track D: 2 exact component reports
+#check @Kk.physical_clique_upper_indices_have_normalized_sort_weights
+#print axioms Kk.physical_clique_upper_indices_have_normalized_sort_weights
+#check @Kk.henson_actualRun_I3_good_marked_has_unmarked_inside_same_clique
+#print axioms Kk.henson_actualRun_I3_good_marked_has_unmarked_inside_same_clique
+-- Track E: 14 exact component reports
+#check @Kk.envelope_closure_mono_both
+#print axioms Kk.envelope_closure_mono_both
+#check @Kk.actual_IsInterestingAt_mono_full_source
+#print axioms Kk.actual_IsInterestingAt_mono_full_source
+#check @Kk.actual_AlgorithmRun_selected_levels_mono_of_seed_growth
+#print axioms Kk.actual_AlgorithmRun_selected_levels_mono_of_seed_growth
+#check @Kk.actual_AlgorithmRun_final_levels_mono_of_seed_growth
+#print axioms Kk.actual_AlgorithmRun_final_levels_mono_of_seed_growth
+#check @Kk.actual_Kpt_new_roots_preserve_old_interesting_levels
+#print axioms Kk.actual_Kpt_new_roots_preserve_old_interesting_levels
+#check @Kk.full_physical_crossing_mono_of_source_subset
+#print axioms Kk.full_physical_crossing_mono_of_source_subset
+#check @Kk.new_selected_Kpt_cut_has_new_terminal_or_full_crossing
+#print axioms Kk.new_selected_Kpt_cut_has_new_terminal_or_full_crossing
+#check @Kk.actual_Kpt_new_root_extra_cut_has_physical_witness
+#print axioms Kk.actual_Kpt_new_root_extra_cut_has_physical_witness
+#check @Kk.new_selected_Kpt_cut_has_indexed_physical_witness
+#print axioms Kk.new_selected_Kpt_cut_has_indexed_physical_witness
+#check @Kk.finiteNumericH_actual_extra_cut_has_finite_source_witness
+#print axioms Kk.finiteNumericH_actual_extra_cut_has_finite_source_witness
+#check @Kk.two_actual_Kpt_runs_levels_eq_of_one_sided_no_novelty
+#print axioms Kk.two_actual_Kpt_runs_levels_eq_of_one_sided_no_novelty
+#check @Kk.two_actual_Kpt_runs_levels_eq_of_finite_indexed_quiet_source
+#print axioms Kk.two_actual_Kpt_runs_levels_eq_of_finite_indexed_quiet_source
+#check @Kk.two_actual_Kpt_runs_levels_eq_of_two_finite_index_cover
+#print axioms Kk.two_actual_Kpt_runs_levels_eq_of_two_finite_index_cover
+#check @Kk.canonical_Kpt_new_roots_selected_levels_mono
+#print axioms Kk.canonical_Kpt_new_roots_selected_levels_mono

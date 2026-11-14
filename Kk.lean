@@ -220,6 +220,29 @@ import Kk.TrackFSurvivorCanonical
 import Kk.TrackFBranchSpectrum
 import Kk.TrackFBranchSpectrumCover
 
+-- Track G: separately verified finite A/C/D/E components.
+-- These are conditional/source-local lemmas, NOT an unbounded resolved copy.
+-- Track A: 5 new imports; 24 new axiom endpoints
+import Kk.FiniteUniformNumericTopAge
+import Kk.FiniteUniformNumericColumns
+import Kk.FiniteUniformNumericComplete
+import Kk.CofinalNeutralOldColumnAge
+import Kk.IsolatedSupportBlockRawAge
+-- Track C: 4 new imports; 12 new axiom endpoints
+import Kk.NumericHBaseExtendedRunStability
+import Kk.NumericHPhysicalNewRootRun
+import Kk.NumericHChronologicalTopCut
+import Kk.NumericHRootOnlyI1Regression
+-- Track D: 2 new imports; 2 new axiom endpoints
+import Kk.B3PhysicalCoreNormalizedWeights
+import Kk.B3ActualI3UnmarkedSameClique
+-- Track E: 5 new imports; 14 new axiom endpoints
+import Kk.ActualRunSeedMonotonicity
+import Kk.NewSourceEventWitness
+import Kk.NewRootIndexedNovelty
+import Kk.NoNewRootEventCriterion
+import Kk.TwoFiniteIndexNewRootStability
+
 /-!
 The counting project imports the verified successor-tree library.
 No local replacement of the Ramsey theorem is assumed.
