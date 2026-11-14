@@ -1439,3 +1439,26 @@ import Kk
 #print axioms Kk.trackFCanonical_locality_of_monotone
 #check @Kk.trackFWordRaw_locality
 #print axioms Kk.trackFWordRaw_locality
+
+-- Track B integrated: physically EXHAUSTIVE actual run, common-base L socle,
+-- and true finite-index projection of the entire cut-star source.
+#check @Kk.actualHensonRunCutOccurrence_fullExact
+#print axioms Kk.actualHensonRunCutOccurrence_fullExact
+#check @Kk.actualHensonRunCutOccurrence_poolExhaustive
+#print axioms Kk.actualHensonRunCutOccurrence_poolExhaustive
+#check @Kk.actualHensonRunCutOccurrence_fullGraph_and_starSpectrum
+#print axioms Kk.actualHensonRunCutOccurrence_fullGraph_and_starSpectrum
+#check @Kk.finiteNumericHL_same_base_old_socle
+#print axioms Kk.finiteNumericHL_same_base_old_socle
+#check @Kk.HensonCutOccurrence.same_base_old_socle
+#print axioms Kk.HensonCutOccurrence.same_base_old_socle
+#check @Kk.HensonCutOccurrence.full_B3_iff_same_base_intrinsic_cutStar
+#print axioms Kk.HensonCutOccurrence.full_B3_iff_same_base_intrinsic_cutStar
+#check @Kk.indexedCutStar_has_live_physical_node
+#print axioms Kk.indexedCutStar_has_live_physical_node
+#check @Kk.indexedCutStar_iff_physical_of_exact
+#print axioms Kk.indexedCutStar_iff_physical_of_exact
+#check @Kk.numericH_actual_run_all_cuts_indexed_cutStar
+#print axioms Kk.numericH_actual_run_all_cuts_indexed_cutStar
+#check @Kk.two_closures_physical_cutStar_eq_of_indexed_projection
+#print axioms Kk.two_closures_physical_cutStar_eq_of_indexed_projection
