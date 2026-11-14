@@ -1,0 +1,53 @@
+name: Lean Track C repaired root-only I1 regression
+
+on:
+  push:
+    branches: [kk-track-c-root-only-I1-regression-20261114]
+    paths:
+      - 'Kk/NumericHRootOnlyI1Regression.lean'
+      - 'docs/track_c_root_only_I1_regression_english_audit.md'
+      - '.github/workflows/lean-track-c-root-only-i1.yml'
+  pull_request:
+    paths:
+      - 'Kk/NumericHRootOnlyI1Regression.lean'
+      - 'docs/track_c_root_only_I1_regression_english_audit.md'
+      - '.github/workflows/lean-track-c-root-only-i1.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: track-c-root-only-i1-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  root-only-i1:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache Lean toolchain
+        uses: actions/cache@v4
+        with:
+          path: ~/.elan/toolchains
+          key: lean-toolchain-${{ runner.os }}-${{ hashFiles('lean-toolchain') }}
+      - name: Restore Lean workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve pinned dependencies
+        run: lake update
+      - name: Obtain Mathlib cache
+        run: lake exe cache get
+      - name: Compile corrected root-only lower-I1 regression
+        run: lake build Kk.NumericHRootOnlyI1Regression
+      - name: Audit two exact named standard-only transitive axioms
+        run: |
+          set -euo pipefail
+          lake env lean Kk/NumericHRootOnlyI1Regression.lean | tee track-c-root-only-i1.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py Kk/NumericHRootOnlyI1Regression.lean track-c-root-only-i1.log
