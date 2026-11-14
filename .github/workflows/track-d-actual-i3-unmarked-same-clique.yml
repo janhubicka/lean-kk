@@ -1,0 +1,47 @@
+name: KK Track D — true I3 unmarked upper vertex of SAME forbidden clique
+
+on:
+  pull_request:
+    paths:
+      - 'Kk/B3ActualI3UnmarkedSameClique.lean'
+      - 'scripts/check_axioms_actual_i3_unmarked_same_clique.lean'
+      - '.github/workflows/track-d-actual-i3-unmarked-same-clique.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: kk-actual-i3-omitted-clique-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  actual-i3-omitted:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache Lean toolchain
+        uses: actions/cache@v4
+        with:
+          path: ~/.elan/toolchains
+          key: lean-toolchain-${{ runner.os }}-${{ hashFiles('lean-toolchain') }}
+      - name: Restore pinned Lake workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve pinned dependencies
+        run: lake update
+      - name: Obtain Mathlib build cache
+        run: lake exe cache get
+      - name: Compile actual I3 omitted same-clique module
+        run: lake build Kk.B3ActualI3UnmarkedSameClique
+      - name: Strict named transitive-axiom report
+        run: |
+          set -euo pipefail
+          lake env lean scripts/check_axioms_actual_i3_unmarked_same_clique.lean | tee actual_i3_unmarked_same_clique.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py scripts/check_axioms_actual_i3_unmarked_same_clique.lean actual_i3_unmarked_same_clique.log
