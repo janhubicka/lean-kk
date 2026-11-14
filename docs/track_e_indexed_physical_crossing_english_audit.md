@@ -68,3 +68,19 @@ This is the precise hypothesis that can feed the already verified Track E `two_n
 * Unconditional `Lem:Kk_Diary_Determines_Envelope`, `Lem:Kk_Diary_Finite_Carrier`, and the successor-tree BRD upper bound remain PENDING.
 
 **Validation gate:** direct module compilation and exact named standard-only `#print axioms` reports, plus full `lake build` on exact branch head, before recording any Lean certification. The shared `Kk.lean`, global validation scripts and frozen manuscript are not to be changed in this Track E PR.
+
+## E19. Strong adversarial failure: crossing spectra cannot see terminal prefixes
+
+There is a sharper reason why **even equality at every cut** of the complete old→upper crossing relations does not identify the whole source closure.
+
+Suppose `x≤y` are genuine Kpt nodes, and an actual node set `Z` contains `y`. Adding `x` to `Z` changes **no** crossing relation at **any** cut:
+
+`FullPhysicalClosureCrossing (insert x Z) c = FullPhysicalClosureCrossing Z c` for all c.
+
+**Proof.** Only crossings witnessed by `x` could be new. If `c<lev x`, then `c<lev y`, and both the old ancestor of x at c and its next ancestor at c+1 are identical to the corresponding ancestors of y, because x is an initial segment of y. So the pair already has witness y∈Z. For c≥lev x, x never crosses the cut and adds no pair. Reverse inclusion is immediate. Every atom in the L+ pair, including E, is preserved by equality of the literal ancestors.
+
+If also `x≠y` and `Z={y}`, then the node sets `insert x {y}` and `{y}` are different, even though **all** crossing spectra agree. This example is at the level of arbitrary actual Kpt NODE SETS; one must not claim it automatically constructs two different genuine AlgorithmRun closures without checking closure constraints.
+
+**Why this matters.** An (I1) structural event detects the presence of an actual closure node *ending* at the event cut. The crossing relation tests nodes extending **strictly above** the cut and cannot see an extra terminal prefix when some longer node already supplies its shorter crossings. Thus E18's two-sided crossing-pair matching can certify equality of full B3 input graphs at no-I2 cuts, but **cannot by itself determine (I1) events, closure equality, labelled envelope isomorphism, or the common monoid orbit**. A suitable refined trace must additionally record terminal node membership, and enough node-incidence/meet data to identify (I2) multiplicities.
+
+This is an explicit negative regression for the next Track E proof, not a proposed repair via increasing the upper-type spectrum: no spectrum-only strengthening will reconstruct the lost terminal membership. The per-cut live mask on the **actual finite Kpt node index** from Track C retains precisely the missing information, provided cross-occurrence indices are aligned by a genuine incidence-preserving correspondence rather than compared as sets of crossing pairs.
