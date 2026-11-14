@@ -38,7 +38,7 @@ jobs:
         run: lake exe cache get
       - name: Compile two-sort theorem
         run: lake build Kk.TrackFPairCapacity Kk.TrackFSingletonCapacity Kk.TrackFPairCapacityTrue
-      - name: Verify six named theorem axioms
+      - name: Verify eight named theorem axioms
         shell: bash
         run: |
           set -euo pipefail
@@ -54,6 +54,8 @@ jobs:
             "Kk.trackFPair_canonical_capacity",
             "Kk.trackFCanonical_singleton_eq_raw",
             "Kk.trackFPair_canonical_true_singletons",
+            "Kk.trackFPair_word_capacity",
+            "Kk.trackFPair_passing_arithmetic",
           ]
           allowed={"propext","Classical.choice","Quot.sound"}
           for name in expected:
