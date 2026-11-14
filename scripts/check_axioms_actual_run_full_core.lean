@@ -1,0 +1,4 @@
+import Kk.B3ActualRunFullBadCoreIff
+
+#check @Kk.henson_actualRun_complete_fullB3_failure_iff_physical_bad_core
+#print axioms Kk.henson_actualRun_complete_fullB3_failure_iff_physical_bad_core
