@@ -119,7 +119,7 @@ assume a cross-presentation monoid isomorphism.
 ## Validation gate and ownership
 
 Formalize in an independent Track C module
-`Kk/NumericHPrefixLPlusCoherence.lean` with six scoped theorem
+`Kk/NumericHPrefixLPlusCoherence.lean` with eight scoped theorem
 endpoints: exact E, free cut, full L+ partial types, raw full
 originals, Kpt originals, root and stage-pool transport.
 Use an English-first committed proof and independent exact-head
