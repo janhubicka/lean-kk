@@ -234,3 +234,28 @@ at the exact feature-head. Do not touch `Kk.lean`,
 `scripts/check_axioms.lean`, `kk.tex`,
 `validation.tex`, or protected black manuscript text;
 Track G owns integration and mark promotion.
+
+## Exact unique cover-pivot normal form (separate arithmetic endpoint)
+
+Let `a<r`. The sharp reserved prefix capacity is
+`c(a,g)=a` for `g<a`, and `a+1` otherwise. Then
+
+```text
+c(a,g)=r  iff  a+1=r and a<=g.
+c(a,g)<r  iff  a+1<r or g<a.
+```
+
+For the first equivalence, a strict lower generation gives capacity
+a<r, hence cannot reach r. At a nonlower generation the capacity is
+a+1, which reaches r precisely for the final original a=r−1.
+The second equivalence is the corresponding strict inequality;
+there is no other case because c(a,g)≤r. Both statements include
+generation g=0 and height-irrelevant arithmetic, and need no
+assumption about the original Henson graph.
+
+Consequently the profile-valued function
+`if c(a,g)<r then upper else lower` is *identically equal* to
+`if a+1=r and a<=g then lower else upper`.
+This is an exact order-theoretic normal form for the **conditional**
+age-cover conclusion. It does NOT turn the hypotheses of the physical
+composition theorem into unconditional schedule existence.
