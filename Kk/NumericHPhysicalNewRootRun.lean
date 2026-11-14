@@ -263,8 +263,99 @@ theorem finiteNumericH_baseExtension_actual_top_root_run
     hAvoidK hAvoidL U X hSeeds I ({w} : Set (Fin M))
     (hPosition k (j-1) k+1) hRoot
 
+/-- A selected top-generation numeric H+ root supplies more than
+a top seed: if the OLD numerical carrier N lies at or below
+its ACTUAL canonical free cut, then EVERY node of the constructed
+new seed Y (including all inherited MEETS/PARAMETERS and new-root
+prefixes) is at or below the scan height.
+
+This essential boundedness was NOT automatic from the previous
+top-seed theorem. It enables proper application of bounded
+successor-tree envelope invariants, still without identifying a
+canonical global resolved macrodiary. -/
+theorem finiteNumericH_baseExtension_actual_top_root_run_bounded
+    {db du dd : Nat}
+    (family : List (NormalizedForbidden db du dd))
+    (K L : AgeTestModel db du dd)
+    (k b N M j : Nat)
+    (hNM : N ≤ M) (hBlock : N ≤ hPosition k b 0)
+    (hk : 0 < k) (hj : 0 < j)
+    (hTarget : hPosition k j k < M)
+    (hNTop : N ≤ hPosition k (j-1) k+1)
+    (hBin : ∀ i j : Nat, i < b → j < b →
+      ∀ r : Fin db, K.binary i j r = L.binary i j r)
+    (hUn : ∀ i : Nat, i < b → ∀ r : Fin du,
+      K.unary i r = L.unary i r)
+    (hDiag : ∀ i : Nat, i < b → ∀ r : Fin dd,
+      K.diagonal i r = L.diagonal i r)
+    (hAvoidK : ∀ bad, bad ∈ family →
+      bad.Avoids (finiteNumericH K k N).L)
+    (hAvoidL : ∀ bad, bad ∈ family →
+      bad.Avoids (finiteNumericH L k M).L)
+    (U : Set (Fin N))
+    (X : Set (AdmissibleKptNode family))
+    (hSeeds : X ⊆ ambientPrefixPool family
+      (finiteNumericH K k N) hAvoidK U)
+    (I : Set Nat) :
+    let w : Fin M := ⟨hPosition k j k, hTarget⟩
+    let Y := finiteNumericH_physicalExtendedSeeds
+      family L k M hAvoidL I X ({w} : Set (Fin M))
+    HasPhysicalExhaustiveKptRun family Y
+      (hPosition k (j-1) k+1) ∧
+    Y ⊆ SMTree.Envelope.levelLe
+      (T := AdmissibleKptNode family)
+      (hPosition k (j-1) k+1) := by
+  let A : EnumeratedPartialStructure db du dd :=
+    finiteNumericH K k N
+  let B : EnumeratedPartialStructure db du dd :=
+    finiteNumericH L k M
+  let top : Nat := hPosition k (j-1) k+1
+  let w : Fin M := ⟨hPosition k j k, hTarget⟩
+  let Y : Set (AdmissibleKptNode family) :=
+    finiteNumericH_physicalExtendedSeeds
+      family L k M hAvoidL I X ({w} : Set (Fin M))
+  have hOldLevel : X ⊆
+      SMTree.Envelope.levelLe
+        (T := AdmissibleKptNode family) top := by
+    intro z hz
+    obtain ⟨o,⟨v,_hv,rfl⟩,hBelow⟩ := hSeeds hz
+    have hLev := LevelTree.level_le_of_le hBelow
+    have hFree := A.freeLevel_le v.val
+    have hvN : v.val < N := v.isLt
+    change LevelTree.lev z ≤ top
+    omega
+  have hClosureBound :
+      SMTree.Envelope.closure (admissibleKptSTree family) I X ⊆
+        SMTree.Envelope.levelLe
+          (T := AdmissibleKptNode family) top :=
+    SMTree.Envelope.closure_subset_levelLe
+      (S := admissibleKptSTree family) I X top hOldLevel
+  have hNewFree : B.freeLevel w.val = top := by
+    change (finiteNumericH L k M).freeLevel
+      (hPosition k j k) = hPosition k (j-1) k+1
+    exact finiteNumericH_top_freeLevel_exact
+      L k M j hk hj hTarget
+  have hYBound : Y ⊆ SMTree.Envelope.levelLe
+      (T := AdmissibleKptNode family) top := by
+    intro z hz
+    rcases hz with hzOld | hzNew
+    · exact hClosureBound hzOld
+    · obtain ⟨o, ⟨v,hv,rfl⟩,hBelow⟩ := hzNew
+      have hEq : v = w := by
+        simpa using hv
+      subst v
+      have hLev := LevelTree.level_le_of_le hBelow
+      change LevelTree.lev z ≤ top
+      omega
+  constructor
+  · exact finiteNumericH_baseExtension_actual_top_root_run
+      family K L k b N M j hNM hBlock hk hj hTarget
+      hBin hUn hDiag hAvoidK hAvoidL U X hSeeds I
+  · exact hYBound
+
 #print axioms Kk.finiteNumericH_baseExtension_constructed_nextSeeds_represented
 #print axioms Kk.finiteNumericH_baseExtension_construct_actual_run_from_new_root
 #print axioms Kk.finiteNumericH_baseExtension_actual_top_root_run
+#print axioms Kk.finiteNumericH_baseExtension_actual_top_root_run_bounded
 
 end Kk
