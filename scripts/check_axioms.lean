@@ -1303,3 +1303,15 @@ import Kk
 #print axioms Kk.henson_failedSelectedB3_has_eligible_cut_neighbour
 #check @Kk.henson_fullB3_iff_cut_star_of_no_i2
 #print axioms Kk.henson_fullB3_iff_cut_star_of_no_i2
+
+-- Track B: cross-ambient B3 transport and cut-star physical mismatch witness
+#check @Kk.selectedStagePool_crossAmbient_socle_coverage_of_upperL
+#print axioms Kk.selectedStagePool_crossAmbient_socle_coverage_of_upperL
+#check @Kk.selectedStagePool_crossAmbient_B3_of_upperL
+#print axioms Kk.selectedStagePool_crossAmbient_B3_of_upperL
+#check @Kk.selectedStagePool_crossAmbient_B3_iff_equal_upperL
+#print axioms Kk.selectedStagePool_crossAmbient_B3_iff_equal_upperL
+#check @Kk.HensonCutOccurrence.full_B3_crossAmbient_iff_of_cutStar_profiles
+#print axioms Kk.HensonCutOccurrence.full_B3_crossAmbient_iff_of_cutStar_profiles
+#check @Kk.HensonCutOccurrence.failing_full_B3_has_unmatched_cutStar_original
+#print axioms Kk.HensonCutOccurrence.failing_full_B3_has_unmatched_cutStar_original
