@@ -1,0 +1,13 @@
+import Kk.IndexedPhysicalCrossing
+
+#check @Kk.indexed_physical_crossing_eq_full_closure_relation
+#print axioms Kk.indexed_physical_crossing_eq_full_closure_relation
+
+#check @Kk.numericH_actual_run_all_cuts_indexed_physical_crossing
+#print axioms Kk.numericH_actual_run_all_cuts_indexed_physical_crossing
+
+#check @Kk.indexed_physical_crossings_eq_of_two_sided_pair_matching
+#print axioms Kk.indexed_physical_crossings_eq_of_two_sided_pair_matching
+
+#check @Kk.two_physical_closures_crossing_eq_of_indexed_pair_matching
+#print axioms Kk.two_physical_closures_crossing_eq_of_indexed_pair_matching
