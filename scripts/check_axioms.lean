@@ -1333,3 +1333,11 @@ import Kk
 #print axioms Kk.HensonCutOccurrence.starProfile_upperL_iff_physical_of_exhaustive
 #check @Kk.HensonCutOccurrence.full_B3_crossAmbient_iff_of_intrinsic_physical_cutStar
 #print axioms Kk.HensonCutOccurrence.full_B3_crossAmbient_iff_of_intrinsic_physical_cutStar
+
+-- Track B actual-run FULL physical-source completeness and intrinsic cut-star
+#check @Kk.actualHensonRunCutOccurrence_fullExact
+#print axioms Kk.actualHensonRunCutOccurrence_fullExact
+#check @Kk.actualHensonRunCutOccurrence_poolExhaustive
+#print axioms Kk.actualHensonRunCutOccurrence_poolExhaustive
+#check @Kk.actualHensonRunCutOccurrence_fullGraph_and_starSpectrum
+#print axioms Kk.actualHensonRunCutOccurrence_fullGraph_and_starSpectrum
