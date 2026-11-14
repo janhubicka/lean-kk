@@ -38,3 +38,6 @@ import Kk.TwoFiniteIndexNewRootStability
 
 #check @Kk.two_actual_Kpt_runs_levels_eq_of_two_finite_index_cover
 #print axioms Kk.two_actual_Kpt_runs_levels_eq_of_two_finite_index_cover
+
+#check @Kk.canonical_Kpt_new_roots_selected_levels_mono
+#print axioms Kk.canonical_Kpt_new_roots_selected_levels_mono
