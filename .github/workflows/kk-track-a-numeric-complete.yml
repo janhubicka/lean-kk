@@ -1,0 +1,51 @@
+name: KK Track A one-witness complete finite numerical H L
+
+on:
+  pull_request:
+    paths:
+      - 'Kk/FiniteUniformNumericComplete.lean'
+      - 'Kk/FiniteUniformNumericColumns.lean'
+      - 'docs/finite_uniform_numeric_complete_english_audit.md'
+      - '.github/workflows/kk-track-a-numeric-complete.yml'
+  push:
+    branches: [kk-track-a-uniform-complete-numeric-l-20261114]
+  workflow_dispatch:
+
+concurrency:
+  group: kk-track-a-numeric-complete-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  exact-numeric-complete:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore pinned Lake workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve pinned dependencies
+        run: lake update
+      - name: Restore Mathlib cache
+        run: lake exe cache get
+      - name: Explicitly compile same-witness complete numeric H L theorem
+        run: lake build Kk.FiniteUniformNumericComplete
+      - name: Strict named standard-only transitive axiom reports
+        run: |
+          set -euo pipefail
+          python3 scripts/check_axiom_report.py --self-test
+          lake env lean Kk/FiniteUniformNumericTopAge.lean | tee numeric-top-axioms.log
+          python3 scripts/check_axiom_report.py Kk/FiniteUniformNumericTopAge.lean numeric-top-axioms.log
+          lake env lean Kk/FiniteUniformNumericColumns.lean | tee numeric-columns-axioms.log
+          python3 scripts/check_axiom_report.py Kk/FiniteUniformNumericColumns.lean numeric-columns-axioms.log
+          lake env lean Kk/FiniteUniformNumericComplete.lean | tee numeric-complete-axioms.log
+          python3 scripts/check_axiom_report.py Kk/FiniteUniformNumericComplete.lean numeric-complete-axioms.log
+      - name: Full existing library build
+        run: lake build
