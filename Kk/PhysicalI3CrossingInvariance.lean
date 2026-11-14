@@ -166,8 +166,9 @@ theorem kpt_actual_interesting_iff_I1_or_I2_or_nonskippable
       · exact Or.inr (Or.inl hI2)
       · refine Or.inr (Or.inr ?_)
         rintro ⟨D,hSkip,hRespect⟩
+        rcases D with ⟨Φ,hMem⟩
         apply hNoSkip
-        refine ⟨D.map,D.property,hSkip,?_⟩
+        refine ⟨Φ,hMem,hSkip,?_⟩
         intro z hz hCutZ
         exact hRespect hz hCutZ
 
@@ -215,7 +216,7 @@ theorem kpt_actual_interesting_iff_of_terminal_and_crossing_eq
       · by_cases hI1 : KptI1AtCut family Z₂ cut
         · exact Or.inl (hTerminal.mpr hI1)
         · exact Or.inr (hFlags.2.1.mpr ⟨
-            (fun ht => hI1 (hTerminal.mp ht)),hI2⟩).2
+            (fun ht => hI1 (hTerminal.mpr ht)),hI2⟩).2
   calc
     SMTree.Envelope.IsInterestingAt
       (normalizedKptSMTree family) Z₁ cut ↔
