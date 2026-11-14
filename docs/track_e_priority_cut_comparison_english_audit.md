@@ -188,3 +188,18 @@ This is an adversarial **conditional counterexample for arbitrary actual Kpt nod
 **Correct repair:** To infer the orbit, match actual selected vertices and each dependent parameter node by a coherent injection/bijection into one finite source and preserve their incidence/meet/successor dependencies, rather than only comparing existential local event tags. No matter how many extra boring cuts are compared, multiplicity and identity can be invisible to set-valued spectra. Track C's exact live-node index carries the information but does **not** produce an occurrence-independent matching of those indices.
 
 **Lean deliverable:** new `Kk/LocalEventTraceBlindness.lean` with a theorem proving all-cut terminal + full-crossing agreement and all-cut actual interestingness/priority-tag agreement, **plus** a conclusion `Set.insert x Z≠Z` under x∉Z. No `sorry`; explicit two endpoints under strict transitive-axiom gate. This hostile regression must not be turned into a claim about two actual numerical H+ runs unless the construction is separately provided.
+
+
+## E28. The all-cut invisibility obstruction survives MEET CLOSURE
+
+The E27 negative example used arbitrary genuine Kpt-node sets. This can be strengthened without postulating a fake closure.
+
+**Lemma (inserting a comparable old prefix preserves meet-closedness).** Let Z be componentwise meet-closed in the genuine admissible Kpt LevelTree, and assume y∈Z and x≤y. Then `Z∪{x}` is componentwise meet-closed.
+
+**Proof.** Old-old meets stay in Z. The self-meet of x is x. For any b∈Z sharing a component with x, y also shares that component with b, so `m=meet(y,b)` lies in Z. Since x and m are both predecessors of y, they are comparable. If x≤m, then x≤b and hence `meet(x,b)=x`, in the enlarged set. If m≤x, then `meet(x,b)=m`: m is a common predecessor of x,b, and every common predecessor of x,b is also a common predecessor of y,b. Thus the meet is in Z. Reverse-ordered pairs are handled by the fact that componentwise meet is symmetric whenever the nodes share a common predecessor (proved from the greatest-common-predecessor axioms; not assumed as a total meet-commutativity axiom).
+
+**Application to actual envelope closure with NO selected parameter levels.** For any meet-closed Kpt node set Y, `closure (admissibleKptSTree family) ∅ Y = Y`. Indeed, `Y` is itself an admissible candidate in the least-closed-set definition: parameter closure over the empty level set holds vacuously. The reverse inclusion is the generic `subset_closure` theorem. Therefore whenever E27's hypotheses hold with Z meet-closed, both Z and `insert x Z` are **literal genuine Kpt meet/parameter closures for I=∅**, of two different seed sets, and all their local terminal flags / complete crossing spectra / monoid interestingness decisions are identical.
+
+**Exact limitation.** This does NOT make the two closures pre-cut sources of two actual AlgorithmRuns under the global resolved diary: those runs start at top-level `I={top}` and have structural seed, bounded-presentation and physical-Henson invariants. This result nevertheless refutes the idea that simply upgrading “arbitrary node sets” to “least meet-and-parameter-closed Kpt sources” makes the local-event trace complete.
+
+**Lean target:** prove insertion of comparable prefix preserves `SMTree.Envelope.MeetClosed`, prove the `I=∅` closure identity from the actual generic closure definition, and prove the source-level negative corollary for the two genuine closures. Exact build and standard-only transitive axiom reports required. No full-diary/BRD marker promotion.
