@@ -151,3 +151,16 @@ This is a **finite `∀j∃i` test**, directly available for the actual finite n
 **New hostile cases:** preserve each source's *cut-specific* live mask; old final-closure membership alone does not imply pre-cut activity. Comparing only complete UPPER L-reducts loses old dependent-L+ source identity and cannot transfer genuine I3 skipping maps. Requiring a bijection of all nodes is unnecessarily strong for the selected-level skeleton, but may remain essential for full labelled orbit. This criterion is sufficient, not necessary; an extra pair may be skippable. It is source-coordinate-dependent and says nothing about inserted boring gaps until those coordinates are actually normalized.
 
 Lean target: a lemma deriving E35 from two exact finite index representations and the two finite coverage conditions, followed (optionally) by a separate genuine finite numerical-H+ constructor theorem that invokes Track C's source-index construction on each run. English proof and adversarial qualifications precede Lean, with strict exact-head axiom checks required.
+
+
+## E37. Construct BOTH actual runs rather than assuming them
+
+The pinned `lean-successors` library already proves the generic `SMTree.Envelope.canonicalAlgorithmRun H X top` constructor for ANY Kpt seed set X and source-level horizon top (using genuine I1/I2/I3 choices). Therefore the source-monotonicity theorem can be strengthened to a **fully constructed pair of real AlgorithmRuns**:
+
+`∀i≤top, (canonicalAlgorithmRun H X top).I i ⊆ (canonicalAlgorithmRun H (closure I X ∪ W) top).I i.`
+
+**Proof:** the old X is contained in the genuine meet-and-parameter closure over I, hence in its union with W. Apply the already proved generic AlgorithmRun seed-monotonicity to the TWO literally constructed canonical runs. The skip maps are genuine Kpt monoid maps supplied by the existing algorithm constructor, not arbitrary shape witnesses.
+
+This removes the *existence* of two AlgorithmRuns as an application hypothesis: Track C's physical new-root theorem supplies genuine admissible Kpt seed nodes X and W. Choosing a **common** top produces both runs automatically. **Hostile warning:** if the old resolved construction was previously run at a DIFFERENT top, this compares the newly CONSTRUCTED old run at the new common horizon, not necessarily the earlier historical old run. Track C's boundedness hypothesis is still necessary to interpret the common-top canonical run as a proper bounded envelope presentation of the physical source, and it has not been inferred from the original macrodiary.
+
+The theorem guarantees one-sided inclusion, not equality, no added auxiliary I1/I2/I3, a uniform finite envelope carrier, or a fully labelled inverse-source orbit. It is still useful: a physical new-root step no longer needs a separately postulated old/new AlgorithmRun pair just to apply the one-sided diagnostic.
