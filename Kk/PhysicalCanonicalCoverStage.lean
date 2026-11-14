@@ -68,10 +68,15 @@ theorem integerCliqueFeasible_eq_of_canonical_eq
   classical
   ext w
   change
-    WitnessRespects
-      (integerCliqueOnSupport (d := d) (ell := ell)) B w ↔
-    WitnessRespects
-      (integerCliqueOnSupport (d := d) (ell := ell)) H w
+    w ∈ (Finset.univ.filter
+      (WitnessRespects
+        (integerCliqueOnSupport (d := d) (ell := ell)) B) :
+          Finset (IntegerCliqueWeights d ell)) ↔
+    w ∈ (Finset.univ.filter
+      (WitnessRespects
+        (integerCliqueOnSupport (d := d) (ell := ell)) H) :
+          Finset (IntegerCliqueWeights d ell))
+  simp only [Finset.mem_filter, Finset.mem_univ, true_and]
   rw [← hCanonical]
   exact (integerGraphAgeCanonical_preserves_clique_vectors
     d ell B w).symm
