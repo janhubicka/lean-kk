@@ -1,0 +1,53 @@
+name: Lean Track C physical H+ prefix full B3 stability
+
+on:
+  push:
+    branches: [kk-track-c-prefix-B3-transport-20261114]
+    paths:
+      - 'Kk/NumericHPrefixB3Stability.lean'
+      - 'docs/track_c_numeric_prefix_B3_stability_english_audit.md'
+      - '.github/workflows/lean-track-c-prefix-b3.yml'
+  pull_request:
+    paths:
+      - 'Kk/NumericHPrefixB3Stability.lean'
+      - 'docs/track_c_numeric_prefix_B3_stability_english_audit.md'
+      - '.github/workflows/lean-track-c-prefix-b3.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: track-c-prefix-b3-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  full-prefix-b3:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache Lean toolchain
+        uses: actions/cache@v4
+        with:
+          path: ~/.elan/toolchains
+          key: lean-toolchain-${{ runner.os }}-${{ hashFiles('lean-toolchain') }}
+      - name: Restore Lean workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve pinned dependencies
+        run: lake update
+      - name: Obtain Mathlib cache
+        run: lake exe cache get
+      - name: Compile actual cross-carrier full-source B3 stability
+        run: lake build Kk.NumericHPrefixB3Stability
+      - name: Audit two exact standard-only transitive-axiom reports
+        run: |
+          set -euo pipefail
+          lake env lean Kk/NumericHPrefixB3Stability.lean | tee track-c-prefix-b3.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py Kk/NumericHPrefixB3Stability.lean track-c-prefix-b3.log
