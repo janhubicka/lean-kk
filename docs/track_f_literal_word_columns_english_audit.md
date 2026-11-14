@@ -76,3 +76,13 @@ The additional `trackFColumnCommon_pos_iff` proves, at each fixed column and for
 `trackFWordRaw(C,U)=ell−1−trackFWordMax(C,U)`.
 
 The elementary identity `min(a−b,a−c)=a−max(b,c)` (with natural truncated subtraction) propagates by induction over the *actual ordered list of columns*. Thus the raw history is exactly the manuscript's \(\phi_D\) for bounded alphabet words, not a merely analogous encoding. The target CI gate has been increased to **30 named theorem reports**, and this additional exact-head gate must pass before promoting this strengthened result.
+
+## Necessary raw-monotonicity property for the next deletion step
+
+The companion English-first [deletion audit](https://github.com/janhubicka/Counting-big-Ramsey-degrees-of-K_k-free-graphs/pull/35) shows that **arbitrary nonmonotone raw capacities do not commute with deleting a coordinate**. Concrete word histories have an additional genuine invariant:
+
+If `U subseteq V` are nonempty admissible supports, any positive symbol common to all branches of V is also common to U. Therefore `common(column,V) <= common(column,U)`, and hence for every chronological word history
+
+`trackFWordRaw(C,U) <= trackFWordRaw(C,V)`.
+
+The new actual Lean declarations `trackFColumnCommon_antitone` and `trackFWordRaw_monotone` prove precisely these two statements, not merely a condition for a hypothetical raw bound. A fresh **32-report strict axiom and module-build gate** is required for their final versions. Full monotone-raw deletion/canonicalization compatibility is separately explained and computationally tested in PR #35, but is not implied solely by the monotonicity theorem and remains to be formalized.
