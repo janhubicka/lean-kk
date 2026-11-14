@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - 'Kk/TrackFPairCapacity.lean'
+      - 'Kk/TrackFSingletonCapacity.lean'
       - 'docs/track_f_pair_capacity_english_audit.md'
       - 'scripts/track_f_pair_axioms.lean'
       - '.github/workflows/track-f-pair-lean.yml'
@@ -35,8 +36,8 @@ jobs:
       - name: Mathlib cache
         run: lake exe cache get
       - name: Compile two-sort theorem
-        run: lake build Kk.TrackFPairCapacity
-      - name: Verify four named theorem axioms
+        run: lake build Kk.TrackFPairCapacity Kk.TrackFSingletonCapacity
+      - name: Verify five named theorem axioms
         shell: bash
         run: |
           set -euo pipefail
@@ -50,6 +51,7 @@ jobs:
             "Kk.trackFPair_mass_second",
             "Kk.trackFPair_mass_both",
             "Kk.trackFPair_canonical_capacity",
+            "Kk.trackFCanonical_singleton_eq_raw",
           ]
           allowed={"propext","Classical.choice","Quot.sound"}
           for name in expected:
