@@ -59,8 +59,9 @@ theorem trackFColumnCommon_reindex {e d ell : Nat}
       exact h (f i) (Finset.mem_image.mpr ⟨i,hi,rfl⟩)
   let a := trackFColumnCommon (fun i => col (f i)) U
   let b := trackFColumnCommon col (trackFMapSupport f U)
+  change a = b
   by_cases ha : 0 < a
-  · exact (hPositive a ha).mp rfl
+  · exact ((hPositive a ha).mp rfl).symm
   · have ha0 : a = 0 := Nat.eq_zero_of_not_pos ha
     by_cases hb : 0 < b
     · exact (hPositive b hb).mpr rfl
