@@ -122,7 +122,7 @@ theorem finiteNumericH_crossheight_extra_cut_has_finite_source_witness
     family X Y hXY oldTop newTop cut hTopLe hTopSeed
     RunX RunY hCut hNew hOld
     (fun j : Fin params.card => (params.equivFin.symm j).val)
-    live (hCover cut hCut)
+    live (hCover cut (lt_of_lt_of_le hCut hTopLe))
 
 
 end Kk
