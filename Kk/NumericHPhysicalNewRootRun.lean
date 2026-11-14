@@ -319,7 +319,8 @@ theorem finiteNumericH_baseExtension_actual_top_root_run_bounded
         (T := AdmissibleKptNode family) top := by
     intro z hz
     obtain ⟨o,⟨v,_hv,rfl⟩,hBelow⟩ := hSeeds hz
-    have hLev := LevelTree.level_le_of_le hBelow
+    have hLev : LevelTree.lev z ≤ A.freeLevel v.val :=
+      LevelTree.level_le_of_le hBelow
     have hFree := A.freeLevel_le v.val
     have hvN : v.val < N := v.isLt
     change LevelTree.lev z ≤ top
@@ -344,7 +345,8 @@ theorem finiteNumericH_baseExtension_actual_top_root_run_bounded
       have hEq : v = w := by
         simpa using hv
       subst v
-      have hLev := LevelTree.level_le_of_le hBelow
+      have hLev : LevelTree.lev z ≤ B.freeLevel w.val :=
+        LevelTree.level_le_of_le hBelow
       change LevelTree.lev z ≤ top
       omega
   constructor
