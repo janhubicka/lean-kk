@@ -129,3 +129,38 @@ One may refine this to identical PRIORITY FOUR-WAY event tags `I1/I2/I3/boring` 
 8. **Local interestingness is not full orbit.** Even equal local I1/I2/I3/boring tags at every cut do not by themselves construct a common fully labelled inverse-source monoid orbit, finite uniform carrier, or diary bijection. The full named parameter incidence and stage-by-stage normalization remain open.
 
 **Lean targets:** monotonicity of genuine shape-map crossing constraints; equality of `NonSkippableClosureCrossing`; and direct equality of the actual `SMTree.Envelope.IsInterestingAt` predicate from terminal+crossing profile. Explicit isolated build, named standard-only transitive-axiom audit and full repository CI are mandatory before promoting any Lean validation marker.
+
+## E26. A new actual-AlgorithmRun consequence: local full-source comparison synchronizes ALL selected levels
+
+Use the full monoid-level E25 theorem, not just the corrected-B3 equivalence.
+
+Fix one normalized Kpt (S,M)-tree and a common finite scan horizon `top`. Let `X,Y` be TWO possibly different genuine Kpt seed sets, and let
+`R_X : AlgorithmRun (normalizedKptSMTree family) X top`,
+`R_Y : AlgorithmRun (normalizedKptSMTree family) Y top`
+be actual descending runs. Their chosen one-level ShapeMaps and the Kpt sources may differ.
+
+For every cut `i<top`, assume the following **conditional** stagewise source profile comparison:
+
+> Whenever the ALREADY-CHOSEN higher level sets agree, i.e.
+> `R_X.I(i+1)=R_Y.I(i+1)`, the two ACTUAL pre-cut Kpt closures
+> `Z_X(i)=closure (admissibleKptSTree family) (R_X.I(i+1)) X`
+> and
+> `Z_Y(i)=closure (admissibleKptSTree family) (R_Y.I(i+1)) Y`
+> have equal terminal (I1) node-presence flags and identical complete physical old/upper L+ crossing relations at **source cut i**.
+
+Then the ENTIRE chosen level-set runs agree:
+`∀ i≤top, R_X.I i = R_Y.I i`.
+
+**English proof (backward induction).** At the top, both actual AlgorithmRuns start with the same level-set `{top}` by the `topI` field. Suppose the level sets already agree at `i+1`. The conditional source profile comparison applies at cut i. E25 identifies the actual `IsInterestingAt` verdict on the two (possibly different) physical source closures. If interesting, the genuine `interesting_step` law forces both `I i = insert i (I(i+1))`. If not, each genuine `noninteresting_step` law forces `I i = I(i+1)`. Thus the level sets agree at i. This uses **no (E1)**, no equality of one-level ShapeMaps and no equality of the two seed sets.
+
+**Significance:** This derives equal **selected-level diary skeletons**, not merely equal local tags, from an explicit stagewise comparison of complete Kpt source profiles. Earlier Track E only gave local source/orbit transfer if full record equality was supplied. The new result is a genuine recursion-level consequence of the semantic monoid (I3) transfer.
+
+**Adversarial limitations:** 
+1. The source comparison is still a real hypothesis; it has NOT been proved from same unrefined KK macrodiary or from graph ages. K4 auxiliary microlevels remain non-negotiable.
+2. The comparison is evaluated at the ACTUAL previous stage `R.I(i+1)`, never a guessed selected-front set.
+3. Equal `I` sets do NOT imply equal `F` monoid maps or a common inverse-source orbit. On noninteresting cuts each run may choose a different skip map (as allowed by its definition).
+4. The common horizon and common **source coordinate** cuts are essential; two numerical target presentations may need alignment before applying the induction.
+5. The selected-level sets alone omit dependent parameter names, ordered event incidences, and the finite uniform carrier required for the global big Ramsey upper bound.
+6. No-(I2) and corrected (B3) are **not** assumptions of this induction: E25 already compared the actual general `IsInterestingAt` predicate, including the genuine non-skippability condition.
+
+**Lean target:** a full downward-induction theorem for TWO actual `AlgorithmRun`s with DIFFERENT seed sets, using E25 at each stage where their higher level sets agree. Add an exact-head explicit build and strict named axiom report. Do not promote global manuscript orbit/carrier/upper bounds.
