@@ -108,7 +108,7 @@ theorem envelope_algorithmRun_selected_levels_mono_seeds
     (R : SMTree.Envelope.AlgorithmRun H X top)
     (Q : SMTree.Envelope.AlgorithmRun H Y top) :
     ∀ i : Nat, i ≤ top → R.I i ⊆ Q.I i := by
-  apply SMTree.Envelope.induction_down
+  apply induction_down
   · rw [R.topI, Q.topI]
   · intro i hi hNext
     have hClosure :
