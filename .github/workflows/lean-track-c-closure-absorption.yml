@@ -1,0 +1,53 @@
+name: Lean Track C actual new-root closure absorption
+
+on:
+  push:
+    branches: [kk-track-c-new-root-closure-absorption-20261114]
+    paths:
+      - 'Kk/NumericHNewRootClosureAbsorption.lean'
+      - 'docs/track_c_new_root_closure_absorption_english_audit.md'
+      - '.github/workflows/lean-track-c-closure-absorption.yml'
+  pull_request:
+    paths:
+      - 'Kk/NumericHNewRootClosureAbsorption.lean'
+      - 'docs/track_c_new_root_closure_absorption_english_audit.md'
+      - '.github/workflows/lean-track-c-closure-absorption.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: track-c-closure-absorption-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  actual-closure-absorption:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache Lean toolchain
+        uses: actions/cache@v4
+        with:
+          path: ~/.elan/toolchains
+          key: lean-toolchain-${{ runner.os }}-${{ hashFiles('lean-toolchain') }}
+      - name: Restore Lean workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve pinned dependencies
+        run: lake update
+      - name: Obtain Mathlib cache
+        run: lake exe cache get
+      - name: Compile true new-root pre-cut absorption
+        run: lake build Kk.NumericHNewRootClosureAbsorption
+      - name: Audit four exact named standard-only axioms
+        run: |
+          set -euo pipefail
+          lake env lean Kk/NumericHNewRootClosureAbsorption.lean | tee track-c-closure-absorption.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py Kk/NumericHNewRootClosureAbsorption.lean track-c-closure-absorption.log
