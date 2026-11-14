@@ -123,15 +123,18 @@ theorem henson_failed_selectedB3_has_exact_full_cut_star_core
         C.binary cut (original v).val (0 : Fin 1) = true ∧
         RelationalPrefixType.ofAgeModel V (cut+1) (e a) =
           RelationalPrefixType.ofAgeModel C (cut+1) (original v).val := by
-    apply clique_core_every_upper_has_exact_cut_neighbour_label
-      C V cut ell M (fun v => (original v).val)
-      (fun v => Selected v ∧ cut+1 ≤ A.freeLevel (original v).val)
-    · intro x hx hAbove
+    have hUpperNamed : ∀ x, x ∈ V.carrier → cut < x →
+        ∃ v : Fin M,
+          (Selected v ∧ cut+1 ≤ A.freeLevel (original v).val) ∧
+          RelationalPrefixType.ofAgeModel V (cut+1) x =
+            RelationalPrefixType.ofAgeModel C (cut+1) (original v).val := by
+      intro x hx hAbove
       obtain ⟨v,hSelected,hFree,hType⟩ := hUpper x hx hAbove
       exact ⟨v,⟨hSelected,hFree⟩,hType⟩
-    · exact e
-    · exact hCopy
-    · exact hAt
+    exact clique_core_every_upper_has_exact_cut_neighbour_label
+      C V cut ell M (fun v => (original v).val)
+      (fun v => Selected v ∧ cut+1 ≤ A.freeLevel (original v).val)
+      hUpperNamed e hCopy hAt
   refine ⟨V,e,hFinite,hSocle,hDelete,hCopy,hAt,hFuture,?_⟩
   intro x hx hAbove
   obtain ⟨a,ha⟩ := hFuture x hx hAbove
