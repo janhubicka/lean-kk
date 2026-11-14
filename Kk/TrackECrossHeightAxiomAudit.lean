@@ -1,0 +1,13 @@
+import Kk.CrossHeightIndexedNovelty
+
+#check @Kk.crossheight_new_selected_Kpt_cut_has_new_terminal_or_full_crossing
+#print axioms Kk.crossheight_new_selected_Kpt_cut_has_new_terminal_or_full_crossing
+
+#check @Kk.numericH_crossheight_extra_cut_has_bare_original_witness
+#print axioms Kk.numericH_crossheight_extra_cut_has_bare_original_witness
+
+#check @Kk.crossheight_new_selected_Kpt_cut_has_indexed_physical_witness
+#print axioms Kk.crossheight_new_selected_Kpt_cut_has_indexed_physical_witness
+
+#check @Kk.finiteNumericH_crossheight_extra_cut_has_finite_source_witness
+#print axioms Kk.finiteNumericH_crossheight_extra_cut_has_finite_source_witness
