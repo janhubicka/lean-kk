@@ -65,7 +65,7 @@ theorem full_physical_crossing_ignores_redundant_terminal_ancestor
       · exact hUpper.trans (congrArg Subtype.val hUpperEq)
     · exact ⟨z,hzZ,hCut,hOld,hUpper⟩
   · rintro ⟨z,hz,hCut,hOld,hUpper⟩
-    exact ⟨z,Set.mem_insert_of_mem hz,hCut,hOld,hUpper⟩
+    exact ⟨z,Set.mem_insert_of_mem x hz,hCut,hOld,hUpper⟩
 
 /-- The terminal-prefix regression is a literal inequality of
 actual Kpt node SETS, despite full crossing equality at EVERY cut.
@@ -85,9 +85,11 @@ theorem distinct_kpt_node_sets_same_all_full_crossings
           ({y} : Set (AdmissibleKptNode family)) cut := by
   constructor
   · intro hEq
-    have hx : x ∈ ({y} : Set (AdmissibleKptNode family)) := by
-      rw [← hEq]
+    have hxInserted :
+        x ∈ Set.insert x ({y} : Set (AdmissibleKptNode family)) := by
       simp
+    have hx : x ∈ ({y} : Set (AdmissibleKptNode family)) := by
+      simpa only [hEq] using hxInserted
     have hxyEq : x = y := by simpa using hx
     exact hne hxyEq
   · intro cut
