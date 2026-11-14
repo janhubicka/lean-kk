@@ -92,8 +92,8 @@ theorem kpt_meetClosed_insert_below
       have hComm : LevelTree.meet a x = LevelTree.meet x a := by
         apply le_antisymm
         · exact LevelTree.le_meet
-            (LevelTree.meet_le_right hComp)
-            (LevelTree.meet_le_left hComp)
+            (LevelTree.meet_le_right ⟨r,hra,hrx⟩)
+            (LevelTree.meet_le_left ⟨r,hra,hrx⟩)
         · exact LevelTree.le_meet
             (LevelTree.meet_le_right hSwapComp)
             (LevelTree.meet_le_left hSwapComp)
@@ -116,7 +116,7 @@ theorem kpt_closure_empty_levels_eq_of_meetClosed
       SMTree.Envelope.ParameterClosedOver
         (admissibleKptSTree family) Z (∅ : Set Nat) := by
     intro a ha i hi
-    exact False.elim (Set.not_mem_empty i hi)
+    exact False.elim (by simpa using hi)
   apply Set.Subset.antisymm
   · exact SMTree.Envelope.closure_minimal
       (admissibleKptSTree family) (∅ : Set Nat) Z Z
