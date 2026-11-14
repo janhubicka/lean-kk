@@ -1,3 +1,23 @@
+# Track B — physical-name cut-star matching between occurrences (14 November 2026; exact-head CI PASS)
+
+[English-first proof and 16 hostile checks](track_b_cutstar_name_transport_english_audit.md) precede `Kk/B3CutStarNameTransport.lean`. The prior cross-ambient Track B source theorem compares complete permitted cut-star upper-L-reduct **sets**. This stacked module derives inclusion from an application-facing *actual original-name* relation: each genuine cut-star original name on one side has a genuine name on the other with the SAME COMPLETE next-cut ordinary-L reduct, with no equality of index carriers or E data. Crucially the verification proves that **every** real cut-star original's next L-reduct is permitted by its selected source profile even when the constructor chooses a different representative of the same old L+ type: full no-(I2) and genuine closure representation establish the complete next-L+ fibre coherence. Two-way physical name coverage plus aligned old L-socles imply FULL corrected-B3 equivalence between independent finite Henson occurrences; a failing/pass discrepancy produces a cut-adjacent original name on the failing side with **no matching physical L next-type in the passing cut-star**.
+
+**Exact-head gate PASSED:** [PR #132](https://github.com/janhubicka/lean-kk/pull/132), [full hosted run 43585469329](https://github.com/janhubicka/lean-kk/actions/runs/43585469329), full `lake build`, parser self-test, **544 exact standard-only named transitive-axiom reports** at head `ead12ce003b249720f73e923367eb82332682992`. Merged main `add3876be2c1f09e631108b3e9cdcb6ba953d186` has the **same Git tree**. Conditional comparison only; no global manuscript green marker. No global manuscript green marker is justified.
+
+**Open:** synchronized old L socles in a common source coordinate, canonical physical cut-star name relation for ALL resolved diary occurrences, structural I1/I2 event-indexed L+ records, full relative-profile/B3-loss equivalence and common labelled monoid orbit. This theorem gives a conditional criterion, not an unconditional canonicality/BRD result.
+
+---
+
+# Track B — cross-ambient full corrected-(B3) cut-star transport (14 November 2026; exact-head CI PASS)
+
+[English-first proof and seventeen hostile checks](track_b_cross_ambient_cutstar_english_audit.md) precede `Kk/B3CrossAmbientProfile.lean` and `Kk/B3CrossAmbientCutStar.lean`. Three general finite source-pool endpoints derive cross-ambient old-ordinary-L socle coverage from complete one-sided upper-type inclusion, transfer corrected B3 between TWO independent actual ambients, and prove an iff for equal complete upper-L predicates **including empty source pools without anchors**. Two Henson-specialized endpoints package each finite physical `HensonCutOccurrence` with actual graph avoidance, full represented Kpt closure and **no (I2)**; if the OLD L socles and complete **unanchored cut-star next L-reduct sets** match at ONE common source-coordinate cut, the FULL corrected-B3 tests match. If first full B3 fails and second passes, a genuine cut-eligible PHYSICAL cut-adjacent original in the first occurrence has a complete next-cut L reduct ABSENT from the second occurrence's cut-star profile. No shared ambient original-name universe or auxiliary E equality is assumed.
+
+**Exact-head gate PASSED:** [PR #129](https://github.com/janhubicka/lean-kk/pull/129), [full hosted run 43585300251](https://github.com/janhubicka/lean-kk/actions/runs/43585300251), complete `lake build`, parser self-test, **540 exact standard-only reports**, tested head `576e26355be91d8734a15d8c8bf7774071bdac48` and merged as `e87001de6477164d700377bfeae19bc104d95baf` with identical Git tree. Previous Track G baseline had 535 strict reports. No global manuscript-green promotion.
+
+**Remaining application gap:** the proposed canonical resolved diary has NOT yet been proved to align the two old L socles and the COMPLETE physical cut-star upper-L spectra across all occurrences. A common source-coordinate cut is a genuine alignment hypothesis, not an automatic numerical gap reindexing. Structural I1/I2 records, full event-indexed L+ parameter/meet assignments, relative-profile fidelity, common labelled inverse orbit and unconditional exact K_k-free BRDs remain OPEN.
+
+---
+
 # Track G — central 535-report source-exact integration (13 November 2026)
 
 Two verified infrastructure merges now make all audited, previously standalone A/C/E/F modules part of the normal Kk.lean build, and add the certified Track D anchor-free full-closure cut-star:
