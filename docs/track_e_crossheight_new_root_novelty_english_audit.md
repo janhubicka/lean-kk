@@ -91,3 +91,45 @@ No injective matching of two indexes is assumed; the new **index itself** is inj
 - Actual corrected physical finite numerical-H+ new-root extra-cut witness IN THE BARE original-seed closure, with I⊆old higher levels and no no-I2 premise.
 - If manageable, a finite true full-Kpt-index version.
 - All modules to be explicitly compiled and strict named standard-only transitive axioms checked on the same exact head; independent full repository `lake build`. Keep PR draft/stacked on C #196/#194/#192. No protected manuscript text, central imports/scripts or global validation marks.
+
+
+## E47. A height-normalized old-range diary skeleton theorem
+
+A new run with `newTop>oldTop` necessarily has selected levels ABOVE oldTop, most notably its new top. Therefore literal equality `Rold.I0=Rnew.I0` is NOT the right stability target and must never be inferred from source-profile agreement below oldTop.
+
+The correct conclusion is **old-range restriction**:
+
+`RunOld.I0 = {q∈RunNew.I0 : q≤oldTop}`,
+
+and, stronger, for EVERY `i≤oldTop`,
+
+`RunOld.I i = {q∈RunNew.I i : q≤oldTop}`.
+
+These are actual level-set equalities, with higher new-root stages explicitly discarded. They are formulated in ONE source-coordinate tree; this does NOT yet solve the manuscript's different-generation rank normalization.
+
+### Sufficient physical no-novelty hypothesis
+
+Take TWO actual runs with `X⊆Y`, `oldTop≤newTop`, a REAL old seed at oldTop, and arbitrary choices of genuine Kpt monoid maps. At every `c<oldTop`, use the ACTUAL pre-cut source closures `Zold(c),Znew(c)` (which already involve the potentially different higher selected-level sets of the two runs), and suppose:
+
+- **No NEW terminal existence:** every terminal node-at-cut event in `Znew(c)` already has some terminal witness in `Zold(c)`;
+- **No NEW complete L+ crossing pair:** `Cross(Znew(c),c)⊆Cross(Zold(c),c)`, with both full old and upper types including auxiliary E.
+
+The OLD→NEW directions are already guaranteed by exact seed/selected-level monotonicity. The assumption is therefore ONE-SIDED, as in earlier same-top Track E, and it does not require a bijection of Kpt source nodes.
+
+### English proof
+
+Cross-height monotonicity first gives `RunOld.I0⊆RunNew.I0`. Every old selected level is ≤oldTop by the genuine AlgorithmRun bound, so one set inclusion in the displayed old-range identity is immediate.
+
+For the reverse inclusion take any q∈RunNew.I0 with q≤oldTop. If q=oldTop, `RunOld.I oldTop={oldTop}` and actual run final-tail identity imply q∈RunOld.I0.
+
+If q<oldTop, suppose q∉RunOld.I0. By the actual final-tail identity in BOTH runs, q is selected at its own stage in the new run but absent at its own stage in the old run. Apply the newly verified E44 **cross-height extra-cut witness theorem**: a NEW terminal Kpt node or a NEW complete full-L+ crossing pair must occur at q.
+
+The first contradicts the assumed no-new-terminal condition, since a terminal node in the OLD pre-cut source would make the OLD cut interesting and therefore selected. The second contradicts no-new-pair containment. Thus q∈RunOld.I0. This proves old-range final equality.
+
+For arbitrary i≤oldTop, use the already verified `AlgorithmRun.I_eq_final_tail_of_run` for each run: membership in its i-th selected-level set is exactly membership in its final set at a level ≥i. Restricting the new final set to q≤oldTop gives the stagewise old-range equality.
+
+**Key improvement:** this handles the true taller-root case without requiring raw selected-level equality across differing tops; it is a correct **height-filtered** diary skeleton. It separates planned new levels ABOVE oldTop from unplanned auxiliary changes in the old range.
+
+**Hostile tests:** (1) Require a real old-top seed: the taller run may otherwise delete the artificial old top. (2) No-novelty only at cuts strictly below oldTop; top persistence is handled separately by its actual seed. (3) The tests reference the REAL pre-cut closures of both runs, not guessed equal parameter front sets. (4) The conclusion is about `I` only, not outgoing monoid maps, dependent parameter labels or a common labelled inverse-source orbit. (5) New interesting levels below oldTop are possible—K4 cuts 10/22 exemplify the danger—and then the theorem correctly reports failure of its source no-novelty assumption. (6) The old-run horizon need not equal the new-run horizon, but old/new must be literal nodes in the same normalized Kpt tree. (7) No-uniform-bound / no-BRD conclusion.
+
+**Lean endpoints:** exact old-range final selected-set equality, then exact filtered stagewise equality from run-tail equations, both conditional on the one-sided physical no-new-terminal/full-pair certificate. These do not assume global full source-node identity.
