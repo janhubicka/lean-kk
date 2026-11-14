@@ -95,3 +95,46 @@ Now E38 literally identifies `Z_new` with `Z_bare=closure_(RunNew.I(c+1))(X∪O)
 14. **No silent manuscript green:** current full labelled orbit and upper BRD markers remain PENDING; Track G owns central imports and validation marks.
 
 **Lean gate:** new independent `Kk/NewRootMonotoneAbsorptionBridge.lean` atop C #192, plus isolated explicit build and exact named standard-only transitive axiom audit, and independent full repository build. Both still require exact-head CI before certification.
+
+
+## E42. No spurious LOWER interesting levels from preinserting old selected closure
+
+The E38 source identity at one actual pre-cut also yields a useful **run-level** stability theorem below a boundary cut, provided the two relevant runs have already agreed above that boundary.
+
+Fix ONE genuine (S,M)-tree, original seeds X and truly new seeds O. Define
+`Y_bare = X∪O` and `Y_full = closure_I X ∪ O`.
+Let `RunBare` and `RunFull` be two genuine AlgorithmRuns on these respective seed sets with the SAME top.
+
+Fix a boundary `c<top`. Assume:
+1. `I⊆RunBare.I0`: every old parameter-generating selected level is genuinely selected by the bare run;
+2. `∀q∈I, c<q`: each such generating level lies STRICTLY above the boundary;
+3. `RunBare.I(c+1)=RunFull.I(c+1)`: the two runs have ALREADY agreed on the higher selected levels at the boundary.
+
+**Conclusion:** `∀i≤c, RunBare.I i=RunFull.I i`.
+
+**Proof by descending induction over i=c,...,0.** The upper-level equality is hypothesis (3). If the sets agree at i+1, the run-tail identity gives `I⊆RunBare.I(i+1)` because i≤c and each inherited q∈I satisfies c<q. Track C's proved closure absorption at J=`RunBare.I(i+1)` says
+
+`closure_J(Y_full)=closure_J(Y_bare)`.
+
+Using `RunBare.I(i+1)=RunFull.I(i+1)`, these are EXACTLY the genuine pre-cut source closures of the two actual runs at i, including all meet/parameter Kpt nodes and their successor data. Therefore their ACTUAL `IsInterestingAt` decisions are literally equal, even at true I2 forks and regardless of corrected B3. If interesting, both choose `insert i` by their real `interesting_step` fields; otherwise both retain the next level set by their real `noninteresting_step` fields. The induction closes.
+
+This is strictly stronger than E38's one-cut data comparison: **preinserting the old closure cannot introduce extra selected levels BELOW c once the higher-level run choices have aligned and all generating levels I are above c**. It is NOT a proof that their higher choices align: such alignment remains a geometric resolved-diary obligation.
+
+### E43. Derive bare-run selection of I from an ACTUAL old run
+
+Often `I⊆RunBare.I0` is not an independent checked fact. Suppose there is a third actual same-top run `RunOld` on X and `I⊆RunOld.I0`. Literal seed inclusion X⊆X∪O and Track E's verified actual run seed-monotonicity give `RunOld.I0⊆RunBare.I0`. Hence E42 applies automatically without an externally assumed retention certificate for RunBare.
+
+Thus there is a three-run interface: `RunOld` on X, `RunBare` on X∪O, and `RunFull` on closure_I X∪O; if I was genuinely selected by RunOld, is above c, and Bare/Full agree at c+1, their **ENTIRE lower selected-level skeletons coincide**. The monoid shape maps may still differ. Neither the terminal-node identity/multiplicity nor common outgoing labelled inverse source follows from selected-level agreement.
+
+### Hostile limits
+
+1. Dropping the higher-run boundary equality is not justified: preinserted old closure may influence decisions AT/ABOVE generating levels I before a comparison below c begins.
+2. Dropping the strict `c<q` condition allows `q∈I` to be absent from both pre-cut selected level sets, and inherited-closure pre-seeding may alter the closure.
+3. Selected level-set agreement DOES NOT imply equality of the selected/per-parameter labels or their complete monoid inverse-source pullbacks.
+4. Exact source equality at a step uses real meet-and-parameter closure absorption, not a false distributivity or a selected graph-age shadow.
+5. There is no no-(I2) or (B3) assumption: genuine semantic `IsInterestingAt` is compared by literal equality of full Kpt sources.
+6. The three runs MUST share the same source-level top and the same normalized Kpt tree; historic old/new numerical top/generation alignment remains to be proved separately.
+7. The boundary `c+1` may itself be an interesting level selected differently for distinct actual resolved occurrences. The theorem is a conditional *propagation* result, not an automatic global diary theorem.
+8. This still does not give a finite uniform parameter carrier or a single common fully labelled monoid inverse-source orbit.
+
+Lean target: a generic two-run lower-tail absorption theorem and a three-run corollary which discharges bare-run inherited-level retention by genuine seed-growth monotonicity. Both to receive exact-head compilation and named standard-only transitive-axiom checks.
