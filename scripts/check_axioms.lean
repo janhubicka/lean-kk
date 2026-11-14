@@ -1585,3 +1585,15 @@ import Kk
 #print axioms Kk.HensonRunCutData.bad_good_has_unmatched_live_Kpt_node
 #check @Kk.HensonRunCutData.two_runs_bad_good_has_finite_unmatched_live_Kpt_node
 #print axioms Kk.HensonRunCutData.two_runs_bad_good_has_finite_unmatched_live_Kpt_node
+
+-- Track B: two actual finite Henson AlgorithmRuns with DIFFERENT E/k,
+-- aligned physical OLD ordinary-L prefixes at one source cut,
+-- complete positive-cut Kpt live-node spectrum comparison.
+#check @Kk.HensonPhysicalRunCutData.occurrence_full_source_exhaustive
+#print axioms Kk.HensonPhysicalRunCutData.occurrence_full_source_exhaustive
+#check @Kk.HensonPhysicalRunCutData.two_runs_full_B3_iff_of_old_socle_and_physical_cutStar
+#print axioms Kk.HensonPhysicalRunCutData.two_runs_full_B3_iff_of_old_socle_and_physical_cutStar
+#check @Kk.HensonPhysicalRunCutData.two_runs_finite_live_cutStar_cover_controls_full_B3
+#print axioms Kk.HensonPhysicalRunCutData.two_runs_finite_live_cutStar_cover_controls_full_B3
+#check @Kk.HensonPhysicalRunCutData.two_runs_bad_good_has_finite_unmatched_live_Kpt_node
+#print axioms Kk.HensonPhysicalRunCutData.two_runs_bad_good_has_finite_unmatched_live_Kpt_node
