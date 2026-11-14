@@ -174,7 +174,7 @@ theorem henson_leftDense_realizes_all_finite_numericH_L_columns_and_profiles
     have hTop := hCut i
       (Finset.mem_union.mpr
         (Or.inl (Finset.mem_range.mpr hi)))
-    unfold hPosition at *
+    dsimp [hPosition] at hTop ⊢
     omega
   have hGapCarrier : ∀ w ∈ W, ∀ z, z < f w →
       ∀ q, q ≤ k → hPosition k z q < M := by
