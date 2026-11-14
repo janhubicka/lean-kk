@@ -44,7 +44,7 @@ bounds simultaneously. Q may be a nonconsecutive reserved pool.
 No claim of an infinite coherent stage schedule is embedded. -/
 def HasUniformPositiveSupportStage
     (E : Nat → Nat → Bool)
-    (d ell b F k : Nat)
+    (d ell b F k : Nat) (hd : 0 < d)
     (c : Nat → Fin d → Bool)
     (Q : Finset Nat) (T : IntegerGraphSupport d ell) : Prop :=
   let B := finiteOldColumnRawBound E ell d
@@ -56,14 +56,7 @@ def HasUniformPositiveSupportStage
     (relativeUniversalTaggedEdge d ell B)
     (relativeUniversalTaggedSort d ell B)
     (supportBlockGappedColumn b Q T.1 c)
-  let tau : Nat → Fin d := finiteTaggedFutureSort (by
-    have : 0 < d := by
-      rcases T.2.1 with ⟨t,_⟩
-      exact Nat.pos_of_ne_zero (by
-        intro hz
-        subst d
-        exact (Fin.elim0 t))
-    exact this)
+  let tau : Nat → Fin d := finiteTaggedFutureSort hd
     (relativeUniversalTaggedSort d ell B) F
   ∃ (f : Nat → Nat) (M : Nat),
     (∀ i, i < F → f i = i) ∧
@@ -144,7 +137,7 @@ theorem henson_leftDense_uniform_finite_stage_after_support_block
     (Q : Finset Nat)
     (hQWithin : ∀ q ∈ Q, b ≤ q ∧ q < F)
     (T : IntegerGraphSupport d ell) :
-    HasUniformPositiveSupportStage E d ell b F k c Q T := by
+    HasUniformPositiveSupportStage E d ell b F k hd c Q T := by
   classical
   let C : Nat → Fin d → Bool :=
     supportBlockGappedColumn b Q T.1 c
@@ -216,7 +209,7 @@ theorem henson_leftDense_uniform_finite_stage_after_support_block
     obtain ⟨hForward,hReverse⟩ :=
       hColumns i hiF w hw q hq
     exact ⟨hForward.trans hC,hReverse.trans hC⟩
-  change HasUniformPositiveSupportStage E d ell b F k c Q T
+  change HasUniformPositiveSupportStage E d ell b F k hd c Q T
   unfold HasUniformPositiveSupportStage
   refine ⟨f,M,hFix,hMono,hGraph,hAfter,hCut,hProfile,
     hOldCol,hReservedCol,hGapCol,hGapNumeric,hDummy⟩
@@ -250,7 +243,7 @@ theorem henson_leftDense_exists_uniform_finite_support_stage
       IsDirectedCliqueOn E Q ∧
       (∀ p, p < b → ∀ q ∈ Q,
         E p q = false ∧ E q p = false) ∧
-      HasUniformPositiveSupportStage E d ell b F k c Q T := by
+      HasUniformPositiveSupportStage E d ell b F k hd c Q T := by
   classical
   obtain ⟨Q,hCard,hAfter,hClique,hIso⟩ :=
     henson_leftDense_exists_reserved_originals
