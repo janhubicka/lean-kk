@@ -1,5 +1,6 @@
 import Kk.ActualRunLevelProfileSync
 import SuccessorTree.EnvelopeRun
+import SuccessorTree.EnvelopeRunExistence
 import Mathlib.Tactic
 
 /-!
@@ -177,5 +178,41 @@ theorem actual_Kpt_new_roots_preserve_old_interesting_levels
   exact actual_AlgorithmRun_selected_levels_mono_of_seed_growth
     (SuccessorTree.V10.normalizedKptSMTree family)
     X _ hXY top RunOld RunNew
+
+
+/-- The two actual Kpt AlgorithmRuns in a new-root extension need
+NOT be separately postulated: the verified generic
+canonicalAlgorithmRun constructor builds them at a common source
+top, using genuine Kpt monoid maps.
+
+For ANY actual Kpt seed family X, fixed old selected parameter-level
+set I and newly introduced admissible Kpt-root prefix set W, the
+literally constructed old and enlarged canonical AlgorithmRuns
+satisfy source-level selected-set INCLUSION at every stage.
+
+This compares a re-run of the OLD seeds at the SAME chosen top.
+It does not identify a historical old run with a different top,
+prove the new physical source is top-bounded, or infer an exact
+labelled inverse-source orbit. -/
+theorem canonical_Kpt_new_roots_selected_levels_mono
+    {db du dd : Nat}
+    (family : List (SuccessorTree.V10.NormalizedForbidden db du dd))
+    (X W : Set (SuccessorTree.V10.AdmissibleKptNode family))
+    (I : Set Nat) (top : Nat) :
+    ∀ i : Nat, i ≤ top →
+      (SMTree.Envelope.canonicalAlgorithmRun
+        (SuccessorTree.V10.normalizedKptSMTree family) X top).I i ⊆
+      (SMTree.Envelope.canonicalAlgorithmRun
+        (SuccessorTree.V10.normalizedKptSMTree family)
+        (SMTree.Envelope.closure
+          (SuccessorTree.V10.admissibleKptSTree family) I X ∪ W) top).I i := by
+  exact actual_Kpt_new_roots_preserve_old_interesting_levels
+    family X W I top
+    (SMTree.Envelope.canonicalAlgorithmRun
+      (SuccessorTree.V10.normalizedKptSMTree family) X top)
+    (SMTree.Envelope.canonicalAlgorithmRun
+      (SuccessorTree.V10.normalizedKptSMTree family)
+      (SMTree.Envelope.closure
+        (SuccessorTree.V10.admissibleKptSTree family) I X ∪ W) top)
 
 end Kk
