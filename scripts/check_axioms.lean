@@ -1333,3 +1333,11 @@ import Kk
 #print axioms Kk.HensonCutOccurrence.starProfile_upperL_iff_physical_of_exhaustive
 #check @Kk.HensonCutOccurrence.full_B3_crossAmbient_iff_of_intrinsic_physical_cutStar
 #print axioms Kk.HensonCutOccurrence.full_B3_crossAmbient_iff_of_intrinsic_physical_cutStar
+
+-- Track B: SAME numerical H base/parameter gives common old ordinary L socle
+#check @Kk.finiteNumericHL_same_base_old_socle
+#print axioms Kk.finiteNumericHL_same_base_old_socle
+#check @Kk.HensonCutOccurrence.same_base_old_socle
+#print axioms Kk.HensonCutOccurrence.same_base_old_socle
+#check @Kk.HensonCutOccurrence.full_B3_iff_same_base_intrinsic_cutStar
+#print axioms Kk.HensonCutOccurrence.full_B3_iff_same_base_intrinsic_cutStar
