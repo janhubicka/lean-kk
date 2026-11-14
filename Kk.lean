@@ -175,6 +175,7 @@ import Kk.TrackFCoverSupportValues
 import Kk.B3CutStarNormalForm
 import Kk.B3ExactCutStarWitness
 import Kk.B3PhysicalBadCoreIff
+import Kk.B3ActualRunFullBadCoreIff
 
 -- Track B: inter-ambient full-B3 comparison of complete physical cut-star profiles
 import Kk.B3CrossAmbientProfile
