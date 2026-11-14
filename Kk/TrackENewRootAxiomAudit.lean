@@ -1,0 +1,25 @@
+import Kk.NewSourceEventWitness
+
+#check @Kk.envelope_closure_mono_both
+#print axioms Kk.envelope_closure_mono_both
+
+#check @Kk.actual_IsInterestingAt_mono_full_source
+#print axioms Kk.actual_IsInterestingAt_mono_full_source
+
+#check @Kk.actual_AlgorithmRun_selected_levels_mono_of_seed_growth
+#print axioms Kk.actual_AlgorithmRun_selected_levels_mono_of_seed_growth
+
+#check @Kk.actual_AlgorithmRun_final_levels_mono_of_seed_growth
+#print axioms Kk.actual_AlgorithmRun_final_levels_mono_of_seed_growth
+
+#check @Kk.actual_Kpt_new_roots_preserve_old_interesting_levels
+#print axioms Kk.actual_Kpt_new_roots_preserve_old_interesting_levels
+
+#check @Kk.full_physical_crossing_mono_of_source_subset
+#print axioms Kk.full_physical_crossing_mono_of_source_subset
+
+#check @Kk.new_selected_Kpt_cut_has_new_terminal_or_full_crossing
+#print axioms Kk.new_selected_Kpt_cut_has_new_terminal_or_full_crossing
+
+#check @Kk.actual_Kpt_new_root_extra_cut_has_physical_witness
+#print axioms Kk.actual_Kpt_new_root_extra_cut_has_physical_witness
