@@ -323,10 +323,9 @@ theorem finiteTagged_old_future_glued_KFree
     A ell d P W tau c hDisjoint hColumns hPFreeA hWFree hBoundsA
   have hUnion : P ∪ W = Finset.range (b + Fintype.card V) := by
     ext z
-    simp only [Finset.mem_union, Finset.mem_range]
-    change (z < b ∨ z ∈ finiteTaggedFuturePool (V := V) b) ↔
-      z < b + Fintype.card V
-    rw [finiteTaggedFuturePool_mem_iff]
+    dsimp [P,W]
+    simp only [Finset.mem_union, Finset.mem_range,
+      finiteTaggedFuturePool_mem_iff]
     omega
   rw [← hUnion]
   exact hGlued
