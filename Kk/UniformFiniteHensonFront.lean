@@ -36,6 +36,18 @@ def pulledBackFiniteSortIn
     (T : IntegerGraphSupport d ell) (z : Nat) : Prop :=
   z ∈ (W.filter (fun x => sort x ∈ T.1)).image f
 
+/-- The pulled-back physical sort test is literal membership in a
+finite Nat pool, so filtering by it needs no unbounded existential
+decision procedure or arbitrary global sort default. -/
+instance pulledBackFiniteSortIn_decidable
+    {d ell : Nat} (W : Finset Nat)
+    (sort : Nat → Fin d) (f : Nat → Nat)
+    (T : IntegerGraphSupport d ell) :
+    DecidablePred (pulledBackFiniteSortIn W sort f T) := by
+  intro z
+  change Decidable (z ∈ (W.filter (fun x => sort x ∈ T.1)).image f)
+  infer_instance
+
 /-- Exact support multiplicities commute with an injective finite
 image using the actual pulled-back sort predicate on the image.
 Every support T is handled simultaneously by the same injection f. -/
