@@ -1,0 +1,66 @@
+name: Track F literal E passing
+
+on:
+  pull_request:
+    paths:
+      - 'Kk/TrackFWordEdgeLiteral.lean'
+      - 'Kk/TrackFWordEdgePassing.lean'
+      - 'docs/track_f_word_edge_passing_english_audit.md'
+      - 'scripts/track_f_word_edge_axioms.lean'
+      - '.github/workflows/track-f-word-edge-lean.yml'
+  workflow_dispatch:
+
+jobs:
+  exact-module:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache Lean toolchain
+        uses: actions/cache@v4
+        with:
+          path: ~/.elan/toolchains
+          key: lean-toolchain-${{ runner.os }}-${{ hashFiles('lean-toolchain') }}
+      - name: Restore Lean workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve dependencies
+        run: lake update
+      - name: Mathlib cache
+        run: lake exe cache get
+      - name: Build new Track F E theorem
+        run: lake build Kk.TrackFWordEdgeLiteral Kk.TrackFWordEdgePassing
+      - name: Strict standard-only axiom gate
+        shell: bash
+        run: |
+          set -euo pipefail
+          lake env lean scripts/track_f_word_edge_axioms.lean | tee edge-axioms.log
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          lines=Path("edge-axioms.log").read_text()
+          expected=[
+            "Kk.trackFConcreteEdgePair_iff_no_top",
+            "Kk.trackFWordMax_lt_iff",
+            "Kk.trackFWordMax_pair_lt_iff",
+            "Kk.trackFConcreteEdgePair_iff_commonMax_lt",
+            "Kk.trackFWordMax_pair_le_height",
+            "Kk.trackFConcreteEdgePair_iff_abstractPassing",
+          ]
+          allowed={"propext","Classical.choice","Quot.sound"}
+          for name in expected:
+              m=re.search(r"(?m)^'"+re.escape(name)+r"' depends on axioms: \[([^\]]*)\]",lines)
+              if not m:
+                  raise SystemExit("FAIL missing axiom report: "+name)
+              used={x.strip() for x in m.group(1).split(",") if x.strip()}
+              if not used<=allowed:
+                  raise SystemExit(f"FAIL forbidden axioms in {name}: {sorted(used-allowed)}")
+              print(f"PASS {name}: {sorted(used)}")
+          PY
