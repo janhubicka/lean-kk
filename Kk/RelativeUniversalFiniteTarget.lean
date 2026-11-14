@@ -124,16 +124,18 @@ theorem relativeUniversalTagged_image_support_count_eq
     · intro hu
       obtain ⟨hImage,hSort⟩ := Finset.mem_filter.mp hu
       obtain ⟨v,hv,hvu⟩ := Finset.mem_image.mp hImage
+      subst u
       have hvSort : relativeUniversalTaggedSort d ell B v ∈ T.1 := by
-        simpa only [relativeUniversalTaggedSort, ← hvu] using hSort
+        simpa only [relativeUniversalTaggedSort] using hSort
       exact Finset.mem_image.mpr
-        ⟨v,Finset.mem_filter.mpr ⟨hv,hvSort⟩,hvu⟩
+        ⟨v,Finset.mem_filter.mpr ⟨hv,hvSort⟩,rfl⟩
     · intro hu
       obtain ⟨v,hv,hvu⟩ := Finset.mem_image.mp hu
       obtain ⟨hvs,hvSort⟩ := Finset.mem_filter.mp hv
+      subst u
       apply Finset.mem_filter.mpr
-      refine ⟨Finset.mem_image.mpr ⟨v,hvs,hvu⟩,?_⟩
-      simpa only [relativeUniversalTaggedSort, ← hvu] using hvSort
+      refine ⟨Finset.mem_image.mpr ⟨v,hvs,rfl⟩,?_⟩
+      simpa only [relativeUniversalTaggedSort] using hvSort
   rw [hFilter]
   exact Finset.card_image_of_injective _ Subtype.val_injective
 
