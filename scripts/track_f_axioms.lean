@@ -5,6 +5,7 @@ import Kk.TrackFRawCoverColumn
 import Kk.TrackFCoverEssentialSupport
 import Kk.TrackFCoverOneStep
 import Kk.TrackFCoverSupportValues
+import Kk.TrackFLiteralWordColumns
 
 -- Track F's *local* exact-head certificate; no changes to G's global registry.
 #print axioms Kk.diaryCoverColumnRaw_le_upper
@@ -31,3 +32,10 @@ import Kk.TrackFCoverSupportValues
 #print axioms Kk.trackFCover_changed_values_of_containment
 #print axioms Kk.trackFCover_essential_contained_in_changed
 #print axioms Kk.trackFCover_all_changed_upper_eq_essential
+#print axioms Kk.trackFColumnRepresentative_mem
+#print axioms Kk.trackFNewColumnCommon
+#print axioms Kk.trackFWordRaw_append
+#print axioms Kk.trackFWordRaw_append_as_coding_cap
+#print axioms Kk.trackFWord_cover_symbol_valid
+#print axioms Kk.trackFWordRaw_age_cover_exact
+#print axioms Kk.trackFWordRaw_coding_preserves_age
