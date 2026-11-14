@@ -61,7 +61,7 @@ namespace HensonCutOccurrence
 
 variable {ell cut : Nat} {hell : 2 ≤ ell}
 
-abbrev ambient (P : HensonCutOccurrence ell cut hell) :
+noncomputable abbrev ambient (P : HensonCutOccurrence ell cut hell) :
     EnumeratedPartialStructure 1 0 1 :=
   finiteNumericH (normalizedGraphModel P.E) P.k P.N
 
