@@ -332,4 +332,85 @@ theorem trackFWordCanonical_reindex {e d ell : Nat}
     (trackFWordRaw d ell cols)
     (fun S T hST => trackFWordRaw_monotone cols S T hST) U
 
+/-- A genuine finite normalized K_ell graph age on d sorts restricts
+along ANY injective survivor map to a genuine age on e sorts.
+Witness saturation is preserved by actual coordinate restriction,
+and no new graph-age axiom is postulated. -/
+theorem trackFGraphAge_reindex {e d ell : Nat}
+    (f : Fin e ↪ Fin d)
+    (F : IntegerGraphSupport d ell → Nat)
+    (hAge : IsIntegerGraphAge d ell F) :
+    IsIntegerGraphAge e ell (trackFPullbackRaw f F) := by
+  constructor
+  · intro U
+    exact hAge.1 (trackFMapSupport f U)
+  · intro U
+    obtain ⟨w,hw,hValue⟩ := hAge.2 (trackFMapSupport f U)
+    refine ⟨trackFRestrictWeights f w, ?_, ?_⟩
+    · intro S
+      rw [trackFRestrictWeights_mass]
+      exact hw (trackFMapSupport f S)
+    · rw [trackFRestrictWeights_mass]
+      exact hValue
+
+/-- Explicitly delete a SPECIFIED branch j from d+1 chronological
+concrete words, using Mathlib's order-preserving injection that
+skips j. This is the actual finite-diary dimension reduction. -/
+theorem trackFWordCanonical_delete_at
+    (d ell : Nat) (j : Fin (d + 1)) (hell : 0 < ell)
+    (cols : List (Fin (d + 1) → Nat))
+    (U : IntegerGraphSupport d ell) :
+    integerGraphAgeCanonical d ell
+      (trackFWordRaw d ell
+        (trackFRestrictColumns (Fin.succAboveEmb j) cols)) U =
+    integerGraphAgeCanonical (d + 1) ell
+      (trackFWordRaw (d + 1) ell cols)
+      (trackFMapSupport (Fin.succAboveEmb j) U) := by
+  exact trackFWordCanonical_reindex
+    (Fin.succAboveEmb j) hell cols U
+
+/-- The finite AGE-PROFILE part of controlled coding is exact:
+delete the coded branch j, then add the literal passing-one column
+on a specified survivor set X satisfying ALL small-support safety
+conditions. The resulting normalized canonical age equals the old
+genuine age restricted to survivors. This does NOT determine X by
+the concrete E edge test or prove controlled-coding admissibility. -/
+theorem trackFWordRaw_coding_after_delete_exact
+    (d ell : Nat) (j : Fin (d + 1)) (hell : 0 < ell)
+    (cols : List (Fin (d + 1) → Nat))
+    (F : IntegerGraphSupport (d + 1) ell → Nat)
+    (hAge : IsIntegerGraphAge (d + 1) ell F)
+    (hOld : integerGraphAgeCanonical (d + 1) ell
+      (trackFWordRaw (d + 1) ell cols) = F)
+    (X : Finset (Fin d))
+    (hSafe : ∀ U : IntegerGraphSupport d ell,
+       U.1 ⊆ X →
+         F (trackFMapSupport (Fin.succAboveEmb j) U) ≤ ell - 2) :
+    integerGraphAgeCanonical d ell
+      (trackFWordRaw d ell
+        (trackFRestrictColumns (Fin.succAboveEmb j) cols ++
+          [trackFNewColumn X 1])) =
+      trackFPullbackRaw (Fin.succAboveEmb j) F := by
+  let f := Fin.succAboveEmb j
+  have hSmallAge : IsIntegerGraphAge d ell
+      (trackFPullbackRaw f F) :=
+    trackFGraphAge_reindex f F hAge
+  have hOldSmall :
+      integerGraphAgeCanonical d ell
+        (trackFWordRaw d ell (trackFRestrictColumns f cols)) =
+      trackFPullbackRaw f F := by
+    funext U
+    calc
+      integerGraphAgeCanonical d ell
+          (trackFWordRaw d ell (trackFRestrictColumns f cols)) U =
+        integerGraphAgeCanonical (d + 1) ell
+          (trackFWordRaw (d + 1) ell cols)
+          (trackFMapSupport f U) :=
+        trackFWordCanonical_reindex f hell cols U
+      _ = F (trackFMapSupport f U) := by rw [hOld]
+  exact trackFWordRaw_coding_preserves_age d ell
+    (trackFRestrictColumns f cols) X (trackFPullbackRaw f F)
+    hSmallAge hOldSmall hSafe
+
+
 end Kk
