@@ -34,7 +34,7 @@ def pulledBackFiniteSortIn
     {d ell : Nat} (W : Finset Nat)
     (sort : Nat → Fin d) (f : Nat → Nat)
     (T : IntegerGraphSupport d ell) (z : Nat) : Prop :=
-  ∃ x ∈ W, f x = z ∧ sort x ∈ T.1
+  z ∈ (W.filter (fun x => sort x ∈ T.1)).image f
 
 /-- Exact support multiplicities commute with an injective finite
 image using the actual pulled-back sort predicate on the image.
@@ -56,9 +56,10 @@ theorem pulledBackFiniteSort_count_image_eq
     · intro hz
       obtain ⟨hzImg,hzType⟩ := Finset.mem_filter.mp hz
       obtain ⟨x,hx,hxz⟩ := Finset.mem_image.mp hzImg
-      obtain ⟨y,hy,hzy,hyt⟩ := hzType
+      obtain ⟨y,hy,hzy⟩ := Finset.mem_image.mp hzType
+      obtain ⟨hyW,hyt⟩ := Finset.mem_filter.mp hy
       have hxy : x = y :=
-        hInj (hSW hx) hy (hxz.trans hzy.symm)
+        hInj (hSW hx) hyW (hxz.trans hzy.symm)
       apply Finset.mem_image.mpr
       refine ⟨x,Finset.mem_filter.mpr ⟨hx,?_⟩,hxz⟩
       simpa only [hxy] using hyt
@@ -67,7 +68,8 @@ theorem pulledBackFiniteSort_count_image_eq
       obtain ⟨hxs,hxt⟩ := Finset.mem_filter.mp hx
       apply Finset.mem_filter.mpr
       refine ⟨Finset.mem_image.mpr ⟨x,hxs,hxz⟩,?_⟩
-      exact ⟨x,hSW hxs,hxz,hxt⟩
+      exact Finset.mem_image.mpr
+        ⟨x,Finset.mem_filter.mpr ⟨hSW hxs,hxt⟩,hxz⟩
   rw [hFilterImage]
   have hInjFiltered :
       Set.InjOn f ↑(s.filter (fun x => sort x ∈ T.1)) := by
