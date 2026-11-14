@@ -299,7 +299,7 @@ theorem finiteTagged_old_future_glued_KFree
         c p (tau w) ∧
       finiteTaggedOldFutureEdge b E R sort c w p =
         c p (tau w)
-    rw [← hwv,hSort]
+    rw [hSort, ← hwv]
     exact ⟨finiteTaggedEdge_old_future b E R sort c p v
         (Finset.mem_range.mp hp),
       finiteTaggedEdge_future_old b E R sort c p v
@@ -323,6 +323,7 @@ theorem finiteTagged_old_future_glued_KFree
     A ell d P W tau c hDisjoint hColumns hPFreeA hWFree hBoundsA
   have hUnion : P ∪ W = Finset.range (b + Fintype.card V) := by
     ext z
+    simp only [Finset.mem_union, Finset.mem_range]
     change (z < b ∨ z ∈ finiteTaggedFuturePool (V := V) b) ↔
       z < b + Fintype.card V
     rw [finiteTaggedFuturePool_mem_iff]
