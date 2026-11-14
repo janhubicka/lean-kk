@@ -164,3 +164,27 @@ Then the ENTIRE chosen level-set runs agree:
 6. No-(I2) and corrected (B3) are **not** assumptions of this induction: E25 already compared the actual general `IsInterestingAt` predicate, including the genuine non-skippability condition.
 
 **Lean target:** a full downward-induction theorem for TWO actual `AlgorithmRun`s with DIFFERENT seed sets, using E25 at each stage where their higher level sets agree. Add an exact-head explicit build and strict named axiom report. Do not promote global manuscript orbit/carrier/upper bounds.
+
+
+## E27. All local event decisions still do not recover the full named source
+
+The new E25/E26 comparison recovers actual `IsInterestingAt` and, when applied through the run recursion, the selected-level *skeleton*. It is **not** a theorem that these local decisions recover the full Kpt closure, because even the *combination* of ALL complete crossing relations and ALL terminal-(I1)-existence flags can lose information.
+
+Fix any finite or infinite set `Z` of genuine admissible Kpt nodes. Suppose:
+- `x≤y` and `y∈Z`: x is an actual (possibly terminal) prefix of a longer node already present;
+- `t∈Z` and `lev t = lev x`: the level of x already has a terminal-node witness, possibly a distinct branch;
+- `x∉Z`: x is genuinely not an existing node.
+
+Put `Z^+=Z∪{x}`. For EVERY source cut c:
+
+**(1) Complete crossing spectra coincide.** The already-verified Track E theorem `full_physical_crossing_ignores_redundant_terminal_ancestor` gives `Cross_{Z^+}(c)=Cross_Z(c)`. Every crossing of x is already realized by y with literally equal full L+ ancestors, including E.
+
+**(2) Terminal (I1) existence flags coincide.** If `lev x≠c`, adding x cannot create a new node at c. If `lev x=c`, t already witnesses node existence at that level in Z. The reverse implication is immediate from `Z⊆Z^+`.
+
+**(3) Hence ALL actual local `IsInterestingAt` verdicts coincide** by E25, and all prioritized structural tags coincide by E22. Nevertheless `Z^+≠Z` because x was absent from Z.
+
+This is an adversarial **conditional counterexample for arbitrary actual Kpt node sets**, not a claim that both sets are genuine distinct AlgorithmRuns' parameter-closed sources; establishing physical closure/schedule realizability would require further work. It proves that the proposed data (all local crossing spectra and terminal PRESENCE flags) by themselves are not logically sufficient to reconstruct a fully named source or derive the common inverse-source orbit.
+
+**Correct repair:** To infer the orbit, match actual selected vertices and each dependent parameter node by a coherent injection/bijection into one finite source and preserve their incidence/meet/successor dependencies, rather than only comparing existential local event tags. No matter how many extra boring cuts are compared, multiplicity and identity can be invisible to set-valued spectra. Track C's exact live-node index carries the information but does **not** produce an occurrence-independent matching of those indices.
+
+**Lean deliverable:** new `Kk/LocalEventTraceBlindness.lean` with a theorem proving all-cut terminal + full-crossing agreement and all-cut actual interestingness/priority-tag agreement, **plus** a conclusion `Set.insert x Z≠Z` under x∉Z. No `sorry`; explicit two endpoints under strict transitive-axiom gate. This hostile regression must not be turned into a claim about two actual numerical H+ runs unless the construction is separately provided.
