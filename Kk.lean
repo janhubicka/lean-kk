@@ -174,6 +174,7 @@ import Kk.TrackFCoverSupportValues
 -- Its auxiliary originals are NOT the selected macrodiary alone.
 import Kk.B3CutStarNormalForm
 import Kk.B3ExactCutStarWitness
+import Kk.B3MissingMarkedOneCore
 import Kk.B3PhysicalBadCoreIff
 import Kk.B3ActualRunFullBadCoreIff
 
