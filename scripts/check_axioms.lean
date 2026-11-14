@@ -1570,3 +1570,10 @@ import Kk
 -- of the SAME full forbidden clique; no diary-relative loss claim.
 #check @Kk.henson_failed_fullB3_good_marked_has_missing_type_inside_one_core
 #print axioms Kk.henson_failed_fullB3_good_marked_has_missing_type_inside_one_core
+
+-- Track D: at one genuine no-(I2) closure, missing chosen upper L type
+-- from SAME forbidden full-B3 clique identifies an actually UNMARKED name.
+#check @Kk.missing_nextL_type_of_marked_closure_implies_unmarked_noI2
+#print axioms Kk.missing_nextL_type_of_marked_closure_implies_unmarked_noI2
+#check @Kk.henson_failed_fullB3_good_marked_has_unmarked_inside_same_core_of_noI2
+#print axioms Kk.henson_failed_fullB3_good_marked_has_unmarked_inside_same_core_of_noI2
