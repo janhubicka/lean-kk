@@ -1546,3 +1546,22 @@ import Kk
 -- Track D: exhaustive actual AlgorithmRun B3 bad-core iff; not diary-age loss.
 #check @Kk.henson_actualRun_complete_fullB3_failure_iff_physical_bad_core
 #print axioms Kk.henson_actualRun_complete_fullB3_failure_iff_physical_bad_core
+
+-- Track B 14-Nov: two actual Henson runs, true finite Kpt indexed
+-- cut-star live node matching, and exactness of this physical cover.
+#check @Kk.HensonRunCutData.occurrence_full_source_exhaustive
+#print axioms Kk.HensonRunCutData.occurrence_full_source_exhaustive
+#check @Kk.HensonRunCutData.two_runs_full_B3_iff_of_intrinsic_spectra
+#print axioms Kk.HensonRunCutData.two_runs_full_B3_iff_of_intrinsic_spectra
+#check @Kk.HensonRunCutData.two_runs_finite_indexed_cutStar_controls_full_B3
+#print axioms Kk.HensonRunCutData.two_runs_finite_indexed_cutStar_controls_full_B3
+#check @Kk.indexed_cutStar_upperL_of_live_cover
+#print axioms Kk.indexed_cutStar_upperL_of_live_cover
+#check @Kk.indexed_cutStar_iff_of_bilateral_live_cover
+#print axioms Kk.indexed_cutStar_iff_of_bilateral_live_cover
+#check @Kk.HensonRunCutData.two_runs_finite_live_cutStar_cover_controls_full_B3
+#print axioms Kk.HensonRunCutData.two_runs_finite_live_cutStar_cover_controls_full_B3
+#check @Kk.indexed_cutStar_live_cover_iff_upperL_inclusion
+#print axioms Kk.indexed_cutStar_live_cover_iff_upperL_inclusion
+#check @Kk.indexed_cutStar_bilateral_live_cover_iff_spectra_equal
+#print axioms Kk.indexed_cutStar_bilateral_live_cover_iff_spectra_equal
