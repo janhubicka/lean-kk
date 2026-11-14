@@ -75,3 +75,57 @@ Then:
 This is a **real physical reduction** of the cross-occurrence comparison assumptions, not a proof that diary equality supplies the terminal and crossing agreement. The second no-(I2) test has been *derived* instead of postulated. No I3 selection or boring-level classification is inferred solely from the B3 verdict.
 
 **Hostile test.** A one-sided no-(I2) premise without common terminal flags is insufficient: a new terminal prefix in the other closure may create a degenerate raw (I2) self-meet while leaving every crossing relation unchanged. Thus the terminal-flag hypothesis must not be dropped. If (I1) holds in the first closure, it gets priority but the first/second raw (I2) values need not match; the B3-stage theorem is only applied on the common genuinely nonstructural branch.
+
+## E25. Stronger result: **actual monoid I3 non-skippability** is a full-crossing invariant
+
+The previous E24 proof transferred the *corrected (B3) verdict* between two physical no-(I1)/(I2) source closures. That is NOT enough to identify actual (I3) interestingness, because known arguments give non-skippable ⇒ failed corrected B3, not the converse in arbitrary finite stages.
+
+There is, however, a **direct and stronger** approach: use the actual successor-tree monoid quantification, not the B3 age test.
+
+Recall the genuine Kpt source definition `NonSkippableClosureCrossing family Z c`:
+
+> There is no actual `Φ : ShapeMap (admissibleKptSTree family)`, with `Φ∈KptM family`, which skips exactly c and satisfies `Φ(ancestor z c)=ancestor z (c+1)` for EVERY node `z∈Z` crossing c.
+
+The assertion that any *given* `Φ` satisfies these equations depends **only** on the canonical complete physical relation
+`Cross_Z(c) = {(T,U) : ∃z∈Z crossing c, T=old(z,c), U=upper(z,c)}`.
+No terminal Kpt node at c contributes a crossing equation.
+
+### Monotonic transfer proof
+
+Let `Cross_{Z₂}(c)⊆Cross_{Z₁}(c)`. Suppose a genuine Kpt shape map Φ respects all crossings of Z₁. Let z₂ be any crossing node of Z₂; take its exact old/upper full L+ pair (T,U). The relation inclusion yields some REAL crossing witness z₁∈Z₁ for the SAME pair. Since admissible Kpt nodes are *subtypes of complete raw partial types*, equality of their old raw types gives **literal equality** of the old Kpt ancestors, and similarly for the upper ancestors. Apply the Φ equation for z₁ and transport through these two equalities to obtain the equation for z₂. The actual monoid Φ and skip law have not changed.
+
+Under equality of relations, repeat in both orientations. Thus
+
+`NonSkippableClosureCrossing family Z₁ c ↔ NonSkippableClosureCrossing family Z₂ c`
+
+for ANY two Kpt node sets, with **no no-I1/no-I2 premises** and no assumption of an `L`-age witness or B3 test. This is a genuine monoid-level result, not merely a type-profile sufficient condition.
+
+### Recover complete local interestingness
+
+The generic actual AlgorithmRun predicate `SMTree.Envelope.IsInterestingAt (normalizedKptSMTree family) Z c` is the disjunction:
+1. a terminal node at c (I1);
+2. a cut-level meet (I2);
+3. no shape map in the **actual Kpt monoid** skipping the cut and respecting all closure crossings (I3).
+
+The third condition is exactly the `NonSkippableClosureCrossing` predicate, because `normalizedKptSMTree family` has monoid `KptM family`.
+
+If the two closures have the same terminal flag and the same complete physical crossing relation:
+- If (I1) holds, they are both interesting by (I1).
+- Otherwise their I2 status agrees by merged Track C's physical-fork theorem.
+- If neither structural event occurs, their I3 non-skippability agrees by the new monoid result.
+Hence their **full local IsInterestingAt truth values agree**, with no separate B3 premise and no need to match all individual pairwise meets.
+
+One may refine this to identical PRIORITY FOUR-WAY event tags `I1/I2/I3/boring` at a common source-coordinate cut.
+
+### Adversarial checklist
+
+1. **Shape map is genuine.** Transfer the *same* actual Φ∈KptM; do not replace the monoid quantifier with an arbitrary map on selected shadows.
+2. **Full old/upper types.** Kpt ancestor equality comes from identical complete dependent raw L+ types, including E; equality of ordinary L-reducts does not identify Kpt nodes.
+3. **Two-sided relation equality.** One-way inclusion transfers a map respecting the larger relation to the smaller; equality is needed for equivalence of non-skippability.
+4. **B3 is not I3.** A failed corrected B3 test need not by itself prove no skipping map exists. This argument works directly with the original monoid-level definition instead.
+5. **I1 priority.** If a terminal source node exists at c, the raw I2 self-meet may also exist without any crossing fork; priority keeps the classification honest.
+6. **No diary implication yet.** Equal unrefined macrodiaries have NOT been proved to yield identical full physical crossing relations and terminal flags; the K4 cuts 10/22 are live negative regressions.
+7. **Source-coordinate cuts.** Different raw numerical H cuts may need a nontrivial normalization; this theorem assumes they are expressed at one common normalized Kpt source level c.
+8. **Local interestingness is not full orbit.** Even equal local I1/I2/I3/boring tags at every cut do not by themselves construct a common fully labelled inverse-source monoid orbit, finite uniform carrier, or diary bijection. The full named parameter incidence and stage-by-stage normalization remain open.
+
+**Lean targets:** monotonicity of genuine shape-map crossing constraints; equality of `NonSkippableClosureCrossing`; and direct equality of the actual `SMTree.Envelope.IsInterestingAt` predicate from terminal+crossing profile. Explicit isolated build, named standard-only transitive-axiom audit and full repository CI are mandatory before promoting any Lean validation marker.
