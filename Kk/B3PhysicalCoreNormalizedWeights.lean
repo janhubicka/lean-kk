@@ -63,7 +63,9 @@ theorem physical_clique_upper_indices_have_normalized_sort_weights
     have hSubCount :
         (upper.filter (fun a => tau a = j)).card ≤ upper.card :=
       Finset.card_le_card (Finset.filter_subset _ _)
-    have hPos : 0 < ell := by omega
+    have hPos : 0 < ell := by
+      have hlt := a0.isLt
+      omega
     dsimp [count]
     omega
   let v : Fin d → Fin ell :=
@@ -89,10 +91,7 @@ theorem physical_clique_upper_indices_have_normalized_sort_weights
     ((Finset.univ : Finset (Fin ell)).filter
       (fun a => cut < e a ∧ tau a ∈ T.1)).card
   rw [←hFibre T.1]
-  simp only [upper,Finset.filter_filter]
-  congr 1
-  ext a
-  simp [and_comm,and_left_comm,and_assoc]
+  simp [upper,Finset.filter_filter,and_comm,and_left_comm,and_assoc]
 
 #print axioms physical_clique_upper_indices_have_normalized_sort_weights
 
