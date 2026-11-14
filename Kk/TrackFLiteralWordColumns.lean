@@ -71,7 +71,8 @@ theorem trackFNewColumnCommon {d ell : Nat}
         trackFNewColumn T n i = trackFNewColumn T n x := by
       intro i hi
       simp [trackFNewColumn, hSub hi, hxT]
-    simp [hSub, hUniform, trackFNewColumn, hxT]
+    rw [if_pos hUniform, if_pos hSub]
+    simp [trackFNewColumn, hxT]
   · obtain ⟨i, hiU, hiNotT⟩ := Finset.not_subset.mp hSub
     by_cases hxT : x ∈ T
     · have hNonuniform : ¬ (∀ j ∈ U.1,
