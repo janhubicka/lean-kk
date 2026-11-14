@@ -33,7 +33,9 @@ import Kk.TrackFLiteralWordColumns
 #print axioms Kk.trackFCover_essential_contained_in_changed
 #print axioms Kk.trackFCover_all_changed_upper_eq_essential
 #print axioms Kk.trackFColumnRepresentative_mem
+#print axioms Kk.trackFColumnCommon_pos_iff
 #print axioms Kk.trackFNewColumnCommon
+#print axioms Kk.trackFWordRaw_eq_sub_max
 #print axioms Kk.trackFWordRaw_append
 #print axioms Kk.trackFWordRaw_append_as_coding_cap
 #print axioms Kk.trackFWord_cover_symbol_valid
