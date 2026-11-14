@@ -40,13 +40,18 @@ theorem trackFCanonical_singleton_eq_raw
   let S : IntegerGraphSupport d ell :=
     trackFSingletonSupport d ell i hell
   let a : Nat := B S
+  have hACap : a ≤ ell - 1 := by simpa [a,S] using hCap
   have hALt : a < ell := by omega
   let aFin : Fin ell := ⟨a,hALt⟩
   let zero : Fin ell := ⟨0,by omega⟩
   let v : Fin d → Fin ell :=
     fun j => if j = i then aFin else zero
+  have hVal (j : Fin d) : (v j).val = if j = i then a else 0 := by
+    by_cases hj : j = i
+    · simp [v,hj,aFin]
+    · simp [v,hj,zero]
   have hSum : Finset.univ.sum (fun j : Fin d => (v j).val) = a := by
-    simp [v,aFin,zero]
+    simp only [hVal, Finset.sum_ite_eq', Finset.mem_univ, ite_true]
   let w : IntegerCliqueWeights d ell := ⟨v,by
     rw [hSum]
     exact hCap⟩
@@ -54,7 +59,9 @@ theorem trackFCanonical_singleton_eq_raw
       integerCliqueOnSupport w U =
         if i ∈ U.1 then a else 0 := by
     unfold integerCliqueOnSupport
-    simp [w,v,aFin,zero]
+    change U.1.sum (fun j => (v j).val) =
+      if i ∈ U.1 then a else 0
+    simp only [hVal, Finset.sum_ite_eq']
   have hFeasible :
       WitnessRespects
         (integerCliqueOnSupport (d := d) (ell := ell)) B w := by
@@ -72,7 +79,8 @@ theorem trackFCanonical_singleton_eq_raw
     simp [S,trackFSingletonSupport]
   apply Nat.le_antisymm
   · exact integerGraphAgeCanonical_le_raw d ell B S
-  · rw [← hSval]
+  · change a ≤ integerGraphAgeCanonical d ell B S
+    rw [← hSval]
     exact witnessValue_le_canonical
       (integerCliqueOnSupport (d := d) (ell := ell))
       B w hFeasible S
