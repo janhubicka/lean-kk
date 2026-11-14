@@ -1,0 +1,6 @@
+import Kk.B3UnmarkedInsideSameCore
+
+#check @Kk.missing_nextL_type_of_marked_closure_implies_unmarked_noI2
+#print axioms Kk.missing_nextL_type_of_marked_closure_implies_unmarked_noI2
+#check @Kk.henson_failed_fullB3_good_marked_has_unmarked_inside_same_core_of_noI2
+#print axioms Kk.henson_failed_fullB3_good_marked_has_unmarked_inside_same_core_of_noI2
