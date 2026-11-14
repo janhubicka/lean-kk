@@ -1,0 +1,46 @@
+name: KK Track A isolated support-block raw age update
+
+on:
+  pull_request:
+    paths:
+      - 'Kk/IsolatedSupportBlockRawAge.lean'
+      - 'docs/isolated_support_block_raw_age_english_audit.md'
+      - '.github/workflows/kk-track-a-isolated-raw-update.yml'
+  push:
+    branches: [kk-track-a-isolated-support-raw-update-20261114]
+  workflow_dispatch:
+
+concurrency:
+  group: kk-track-a-isolated-raw-update-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  exact-raw-update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore pinned Lake workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve pinned dependencies
+        run: lake update
+      - name: Restore Mathlib cache
+        run: lake exe cache get
+      - name: Explicitly compile isolated-support raw age update
+        run: lake build Kk.IsolatedSupportBlockRawAge
+      - name: Strict named transitive axioms
+        run: |
+          set -euo pipefail
+          lake env lean Kk/IsolatedSupportBlockRawAge.lean | tee support-raw-age-axioms.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py Kk/IsolatedSupportBlockRawAge.lean support-raw-age-axioms.log
+      - name: Full repository build
+        run: lake build
