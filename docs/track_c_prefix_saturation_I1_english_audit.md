@@ -54,4 +54,4 @@ There is no special numerical H assumption beyond genuine physical Kpt admissibi
 
 ## Lean/CI acceptance
 
-New Track C module `Kk/PrefixSaturationI1Obstruction.lean` with two direct standard-only theorem endpoints. Isolated exact-head `lake build`, strict named transitive-axiom parser, and separate full-project Lean workflow. Do not alter manuscript black/olive prose, validation marks or shared registry. Pass the precise obstruction to Track B, Track D and Track G for avoiding future overgeneration errors.
+New Track C module `Kk/PrefixSaturationI1Obstruction.lean` with three direct standard-only theorem endpoints. Isolated exact-head `lake build`, strict named transitive-axiom parser, and separate full-project Lean workflow. Do not alter manuscript black/olive prose, validation marks or shared registry. Pass the precise obstruction to Track B, Track D and Track G for avoiding future overgeneration errors.
