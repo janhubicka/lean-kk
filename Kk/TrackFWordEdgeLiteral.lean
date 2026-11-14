@@ -193,6 +193,40 @@ theorem trackFWordMax_pair_lt_iff
       dsimp [n]
       omega
 
+/-- If x=0 has positive initial spectrum {1,...,a}, every
+simultaneously common positive symbol is at most a, even when
+the other word is arbitrary. In particular the chronological
+common-symbol maximum c satisfies c≤a. -/
+theorem trackFWordMax_pair_le_height
+    (ell a : Nat) (hell : 3 ≤ ell)
+    (cols : List (Fin 2 → Nat))
+    (hX : trackFBranchInitial cols (0 : Fin 2) a) :
+    trackFWordMax 2 ell cols (trackFPairBoth ell hell) ≤ a := by
+  have hColumn : ∀ col ∈ cols,
+      trackFColumnCommon col (trackFPairBoth ell hell) ≤ a := by
+    intro col hMem
+    let n := trackFColumnCommon col (trackFPairBoth ell hell)
+    by_cases hn : 0 < n
+    · have hEq0 : col 0 = n :=
+        (trackFColumnCommon_pos_iff col
+          (trackFPairBoth ell hell) n hn).mp rfl
+          (0 : Fin 2) (by simp [trackFPairBoth])
+      have hSeen : trackFSeenSymbol cols 0 n :=
+        ⟨col,hMem,hEq0⟩
+      exact (hX n hn).mp hSeen
+    · have hn0 : n = 0 := Nat.eq_zero_of_not_pos hn
+      dsimp [n]
+      omega
+  have hMaxLT : trackFWordMax 2 ell cols
+        (trackFPairBoth ell hell) < a + 1 :=
+    (trackFWordMax_lt_iff cols
+      (trackFPairBoth ell hell) (a + 1)).mpr
+      ⟨by omega,by
+        intro col hMem
+        have h := hColumn col hMem
+        omega⟩
+  omega
+
 /-- The full literal equal-length E predicate for the two selected
 branches is exactly the strict inequality c<a between the largest
 SIMULTANEOUS symbol c and the largest individually seen symbol a
