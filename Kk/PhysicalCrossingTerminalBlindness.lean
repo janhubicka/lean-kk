@@ -86,14 +86,14 @@ theorem distinct_kpt_node_sets_same_all_full_crossings
   constructor
   · intro hEq
     have hxInserted :
-        x ∈ Set.insert x ({y} : Set (AdmissibleKptNode family)) := by
-      simp
+        x ∈ Set.insert x ({y} : Set (AdmissibleKptNode family)) :=
+      Set.mem_insert_iff.mpr (Or.inl rfl)
     have hx : x ∈ ({y} : Set (AdmissibleKptNode family)) := by
       simpa only [hEq] using hxInserted
-    have hxyEq : x = y := by simpa using hx
+    have hxyEq : x = y := Set.mem_singleton_iff.mp hx
     exact hne hxyEq
   · intro cut
     exact full_physical_crossing_ignores_redundant_terminal_ancestor
-      family {y} x y hxy (by simp) cut
+      family {y} x y hxy (Set.mem_singleton_iff.mpr rfl) cut
 
 end Kk
