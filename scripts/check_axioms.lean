@@ -1577,3 +1577,11 @@ import Kk
 #print axioms Kk.missing_nextL_type_of_marked_closure_implies_unmarked_noI2
 #check @Kk.henson_failed_fullB3_good_marked_has_unmarked_inside_same_core_of_noI2
 #print axioms Kk.henson_failed_fullB3_good_marked_has_unmarked_inside_same_core_of_noI2
+
+-- Track B: full corrected B3 discrepancy yields unmatched LIVE Kpt source node.
+#check @Kk.HensonRunCutData.bad_good_has_missing_indexed_cutStar_type
+#print axioms Kk.HensonRunCutData.bad_good_has_missing_indexed_cutStar_type
+#check @Kk.HensonRunCutData.bad_good_has_unmatched_live_Kpt_node
+#print axioms Kk.HensonRunCutData.bad_good_has_unmatched_live_Kpt_node
+#check @Kk.HensonRunCutData.two_runs_bad_good_has_finite_unmatched_live_Kpt_node
+#print axioms Kk.HensonRunCutData.two_runs_bad_good_has_finite_unmatched_live_Kpt_node
