@@ -1,4 +1,4 @@
-import Kk.CrossHeightOldRangeStability
+import Kk.CrossHeightFiniteIndexStability
 
 #check @Kk.crossheight_new_selected_Kpt_cut_has_new_terminal_or_full_crossing
 #print axioms Kk.crossheight_new_selected_Kpt_cut_has_new_terminal_or_full_crossing
@@ -17,3 +17,6 @@ import Kk.CrossHeightOldRangeStability
 
 #check @Kk.crossheight_runs_all_old_range_levels_eq_of_no_novelty
 #print axioms Kk.crossheight_runs_all_old_range_levels_eq_of_no_novelty
+
+#check @Kk.crossheight_runs_old_range_eq_of_two_finite_index_cover
+#print axioms Kk.crossheight_runs_old_range_eq_of_two_finite_index_cover
