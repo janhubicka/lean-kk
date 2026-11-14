@@ -1471,3 +1471,10 @@ import Kk
 #print axioms Kk.numericH_actual_run_all_cuts_indexed_cutStar
 #check @Kk.two_closures_physical_cutStar_eq_of_indexed_projection
 #print axioms Kk.two_closures_physical_cutStar_eq_of_indexed_projection
+
+-- Track D: exact PHYSICAL finite cut-star bad-core iff genuinely failed
+-- full corrected B3 at one no-(I2) closure. NOT diary graph-age loss.
+#check @Kk.selected_named_nextL_permitted_of_no_I2
+#print axioms Kk.selected_named_nextL_permitted_of_no_I2
+#check @Kk.henson_fullB3_failure_iff_physical_cut_star_bad_core_of_no_I2
+#print axioms Kk.henson_fullB3_failure_iff_physical_cut_star_bad_core_of_no_I2
