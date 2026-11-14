@@ -1560,3 +1560,9 @@ import Kk
 #print axioms Kk.indexed_cutStar_iff_of_bilateral_live_cover
 #check @Kk.HensonRunCutData.two_runs_finite_live_cutStar_cover_controls_full_B3
 #print axioms Kk.HensonRunCutData.two_runs_finite_live_cutStar_cover_controls_full_B3
+
+-- Track B: physical live Kpt cut-star name-cover ↔ exact upper L spectrum.
+#check @Kk.indexed_cutStar_live_cover_iff_upperL_inclusion
+#print axioms Kk.indexed_cutStar_live_cover_iff_upperL_inclusion
+#check @Kk.indexed_cutStar_bilateral_live_cover_iff_spectra_equal
+#print axioms Kk.indexed_cutStar_bilateral_live_cover_iff_spectra_equal
