@@ -6,11 +6,13 @@ on:
     paths:
       - 'Kk/NumericHPhysicalNewRootRun.lean'
       - 'docs/track_c_physical_new_root_run_english_audit.md'
+      - 'docs/track_c_new_root_top_bound_english_audit.md'
       - '.github/workflows/lean-track-c-new-root-run.yml'
   pull_request:
     paths:
       - 'Kk/NumericHPhysicalNewRootRun.lean'
       - 'docs/track_c_physical_new_root_run_english_audit.md'
+      - 'docs/track_c_new_root_top_bound_english_audit.md'
       - '.github/workflows/lean-track-c-new-root-run.yml'
   workflow_dispatch:
 
@@ -45,7 +47,7 @@ jobs:
         run: lake exe cache get
       - name: Compile constructed actual new-root indexed Kpt run
         run: lake build Kk.NumericHPhysicalNewRootRun
-      - name: Audit three exact named standard-only axioms
+      - name: Audit four exact named standard-only axioms
         run: |
           set -euo pipefail
           lake env lean Kk/NumericHPhysicalNewRootRun.lean | tee track-c-new-root-run.log
