@@ -133,3 +133,28 @@ For arbitrary i≤oldTop, use the already verified `AlgorithmRun.I_eq_final_tail
 **Hostile tests:** (1) Require a real old-top seed: the taller run may otherwise delete the artificial old top. (2) No-novelty only at cuts strictly below oldTop; top persistence is handled separately by its actual seed. (3) The tests reference the REAL pre-cut closures of both runs, not guessed equal parameter front sets. (4) The conclusion is about `I` only, not outgoing monoid maps, dependent parameter labels or a common labelled inverse-source orbit. (5) New interesting levels below oldTop are possible—K4 cuts 10/22 exemplify the danger—and then the theorem correctly reports failure of its source no-novelty assumption. (6) The old-run horizon need not equal the new-run horizon, but old/new must be literal nodes in the same normalized Kpt tree. (7) No-uniform-bound / no-BRD conclusion.
 
 **Lean endpoints:** exact old-range final selected-set equality, then exact filtered stagewise equality from run-tail equations, both conditional on the one-sided physical no-new-terminal/full-pair certificate. These do not assume global full source-node identity.
+
+
+## E48. Entirely FINITE two-index height-filtered certification
+
+E47's no-new terminal/full-crossing hypothesis can be certified without an infinite Kpt-source set comparison. Track C already constructs one finite exhaustive true Kpt node index for EACH physical finite numerical-H+ AlgorithmRun, including a Boolean live mask at every actual cut. The old and new index cardinalities need NOT match.
+
+Fix two actual runs as in E47 with `oldTop≤newTop`, a real oldTop seed and literal X⊆Y in the SAME Kpt tree. Let
+`nodeOld : Fin P→Kpt`, `liveOld : Nat→Fin P→Bool` and
+`nodeNew : Fin Q→Kpt`, `liveNew : Nat→Fin Q→Bool`
+be independently exact source-index records for their actual pre-cut full meet/parameter closures at every `c<oldTop`.
+
+For each `c<oldTop`, require only TWO finite source tests:
+
+1. For every `j:Fin Q` with `liveNew(c,j)=true` and `lev(nodeNew j)=c`, there exists `i:Fin P` with `liveOld(c,i)=true` and `lev(nodeOld i)=c`.
+2. For every `j:Fin Q` live at c and every FULL dependent old/upper pair `(T,U)` recorded as its `Option RawPartialTypeNode` ancestors, there exists an OLD live index `i:Fin P` whose **same node** has the exact same old/upper pair. No source-index bijection, multiplicity equality or name alignment is demanded.
+
+The first check gives **no new terminal-existence event** in the new complete pre-cut Kpt source. The second gives inclusion of the new canonical physical crossing relation in the old relation, by the verified `indexed_physical_crossing_eq_full_closure_relation` on BOTH exact indices. Thus E47 yields, FOR ALL `i≤oldTop`,
+[
+  \mathrm{RunOld}.I(i) =
+  \{q\in\mathrm{RunNew}.I(i):q\le oldTop\}.
+]
+
+This is the correct finite, source-height-filtered AlgorithmRun stability test for a genuine higher-top new-root extension. It detects K4 auxiliary I3 microcuts if they appear: a newly added full-E crossing pair below oldTop makes the second finite coverage check fail, so the theorem does not falsely call that cut boring.
+
+**Adversarial limitations:** the finite source index must be EXACT for each ACTUAL pre-cut closure, not the old final closure or the selected F-front; both old and upper type Options come from ONE live node; comparing only ordinary upper L reducts is weaker and may lose monoid I3. The new top and any extra selected levels above oldTop are deliberately outside the filtered conclusion. This remains a criterion, not a proof the resolved diary supplies the finite matching. Fully labelled source/parameter incidence, actual monoid inverse source maps and the uniform BRD finite-carrier theorem still require stronger data.
