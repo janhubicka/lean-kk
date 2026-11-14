@@ -1,0 +1,49 @@
+name: KK Track A physical uniform finite Henson age
+
+on:
+  pull_request:
+    paths:
+      - 'Kk/FiniteUniformHensonRealization.lean'
+      - 'Kk/UniformFiniteHensonFront.lean'
+      - 'docs/finite_uniform_henson_realization_english_audit.md'
+      - '.github/workflows/kk-track-a-physical-uniform-age.yml'
+  push:
+    branches: [kk-track-a-physical-uniform-relative-age-20261114]
+  workflow_dispatch:
+
+concurrency:
+  group: kk-track-a-physical-uniform-age-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  exact-physical-uniform-age:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore pinned Lake workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve pinned dependencies
+        run: lake update
+      - name: Restore Mathlib cache
+        run: lake exe cache get
+      - name: Explicitly compile exact physical uniform finite Henson age
+        run: lake build Kk.FiniteUniformHensonRealization
+      - name: Strict named transitive axiom reports
+        run: |
+          set -euo pipefail
+          lake env lean Kk/UniformFiniteHensonFront.lean | tee uniform-transport-axioms.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py Kk/UniformFiniteHensonFront.lean uniform-transport-axioms.log
+          lake env lean Kk/FiniteUniformHensonRealization.lean | tee uniform-physical-axioms.log
+          python3 scripts/check_axiom_report.py Kk/FiniteUniformHensonRealization.lean uniform-physical-axioms.log
+      - name: Full existing repository build
+        run: lake build
