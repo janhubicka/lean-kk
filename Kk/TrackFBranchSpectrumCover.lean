@@ -88,8 +88,10 @@ theorem trackFWordSpectrum_age_cover
         have hLo : 1 ≤ lower S := (hCover.lower_age.1 S).1
         have hLoCap : lower S ≤ ell - 1 := (hCover.lower_age.1 S).2
         have hUpCap : upper S ≤ ell - 1 := (hCover.upper_age.1 S).2
+        have hiS : i ∈ S.1 := by
+          simpa only [hTS] using hiT
         have hQ : q = ell - 1 - lower S := by
-          simp [q,trackFNewColumn,hiT,hTS]
+          simp [q,trackFNewColumn,hTS,hiS]
         rw [hQ]
         dsimp [a,a']
         omega
@@ -165,7 +167,8 @@ theorem trackFWordSpectrum_coding_column
   apply trackFAllBranchInitial_append
     cols (trackFNewColumn X 1) heights hInit
   intro i
-  simp [trackFNewColumn]
-  omega
+  by_cases hiX : i ∈ X
+  · simp [trackFNewColumn,hiX]
+  · simp [trackFNewColumn,hiX]
 
 end Kk
