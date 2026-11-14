@@ -1,0 +1,43 @@
+import Kk.TwoFiniteIndexNewRootStability
+
+#check @Kk.envelope_closure_mono_both
+#print axioms Kk.envelope_closure_mono_both
+
+#check @Kk.actual_IsInterestingAt_mono_full_source
+#print axioms Kk.actual_IsInterestingAt_mono_full_source
+
+#check @Kk.actual_AlgorithmRun_selected_levels_mono_of_seed_growth
+#print axioms Kk.actual_AlgorithmRun_selected_levels_mono_of_seed_growth
+
+#check @Kk.actual_AlgorithmRun_final_levels_mono_of_seed_growth
+#print axioms Kk.actual_AlgorithmRun_final_levels_mono_of_seed_growth
+
+#check @Kk.actual_Kpt_new_roots_preserve_old_interesting_levels
+#print axioms Kk.actual_Kpt_new_roots_preserve_old_interesting_levels
+
+#check @Kk.full_physical_crossing_mono_of_source_subset
+#print axioms Kk.full_physical_crossing_mono_of_source_subset
+
+#check @Kk.new_selected_Kpt_cut_has_new_terminal_or_full_crossing
+#print axioms Kk.new_selected_Kpt_cut_has_new_terminal_or_full_crossing
+
+#check @Kk.actual_Kpt_new_root_extra_cut_has_physical_witness
+#print axioms Kk.actual_Kpt_new_root_extra_cut_has_physical_witness
+
+#check @Kk.new_selected_Kpt_cut_has_indexed_physical_witness
+#print axioms Kk.new_selected_Kpt_cut_has_indexed_physical_witness
+
+#check @Kk.finiteNumericH_actual_extra_cut_has_finite_source_witness
+#print axioms Kk.finiteNumericH_actual_extra_cut_has_finite_source_witness
+
+#check @Kk.two_actual_Kpt_runs_levels_eq_of_one_sided_no_novelty
+#print axioms Kk.two_actual_Kpt_runs_levels_eq_of_one_sided_no_novelty
+
+#check @Kk.two_actual_Kpt_runs_levels_eq_of_finite_indexed_quiet_source
+#print axioms Kk.two_actual_Kpt_runs_levels_eq_of_finite_indexed_quiet_source
+
+#check @Kk.two_actual_Kpt_runs_levels_eq_of_two_finite_index_cover
+#print axioms Kk.two_actual_Kpt_runs_levels_eq_of_two_finite_index_cover
+
+#check @Kk.canonical_Kpt_new_roots_selected_levels_mono
+#print axioms Kk.canonical_Kpt_new_roots_selected_levels_mono
