@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - 'Kk/NewRootMonotoneAbsorptionBridge.lean'
+      - 'Kk/NewRootAbsorbedLowerRunStability.lean'
       - 'Kk/TrackEAbsorptionAxiomAudit.lean'
       - 'docs/track_e_new_root_monotone_absorption_english_audit.md'
       - '.github/workflows/kk-track-e-monotone-absorption.yml'
@@ -39,7 +40,7 @@ jobs:
       - name: Obtain Mathlib build cache
         run: lake exe cache get
       - name: Explicitly compile actual new-root closure absorption
-        run: lake build Kk.NewRootMonotoneAbsorptionBridge
+        run: lake build Kk.NewRootMonotoneAbsorptionBridge Kk.NewRootAbsorbedLowerRunStability
       - name: Strict named transitive axioms
         run: |
           set -euo pipefail
