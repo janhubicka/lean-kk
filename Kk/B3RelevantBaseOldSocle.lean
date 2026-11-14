@@ -142,7 +142,8 @@ theorem numericalH_old_binary_eq_of_relevant_base_pairs
           contradiction
   | true =>
       have hf := hTrue.mp he
-      rw [he,hf]
+      -- The case split has already reduced the left Boolean to true.
+      exact hf.symm
 
 /-- Two DIFFERENT graph base models with the same numerical-H
 generation k agree on their FULL old ordinary-L socle through c
