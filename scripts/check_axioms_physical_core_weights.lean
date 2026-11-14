@@ -1,0 +1,4 @@
+import Kk.B3PhysicalCoreNormalizedWeights
+
+#check @Kk.physical_clique_upper_indices_have_normalized_sort_weights
+#print axioms Kk.physical_clique_upper_indices_have_normalized_sort_weights
