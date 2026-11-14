@@ -270,12 +270,12 @@ theorem finiteTagged_old_future_glued_KFree
   let W : Finset Nat := finiteTaggedFuturePool (V := V) b
   let tau : Nat → Fin d := finiteTaggedFutureSort hd sort b
   have hPFreeA : finitePoolCliqueCheck A ell P = false := by
-    apply (finitePoolCliqueCheck_false_iff_reference E A ell P).mp
-    · intro x hx y hy hxy
-      exact (finiteTaggedEdge_old_old
-        b E R sort c x y (Finset.mem_range.mp hx)
-        (Finset.mem_range.mp hy)).symm
-    · exact hOldFree
+    apply (finitePoolCliqueCheck_false_iff_reference E A ell P
+      (by
+        intro x hx y hy hxy
+        exact (finiteTaggedEdge_old_old b E R sort c x y
+          (Finset.mem_range.mp hx) (Finset.mem_range.mp hy)).symm)).mp
+    exact hOldFree
   have hWFree : finitePoolCliqueCheck A ell W = false :=
     finiteTagged_future_KFree b ell E R sort c hSmall
   have hDisjoint : Disjoint P W := by
@@ -283,7 +283,7 @@ theorem finiteTagged_old_future_glued_KFree
     intro x hxP hxW
     have hxOld : x < b := Finset.mem_range.mp hxP
     have hxLater : b ≤ x :=
-      (finiteTaggedFuturePool_mem_iff (V := V) b x).mp hxW |>.1
+      ((finiteTaggedFuturePool_mem_iff (V := V) b x).mp hxW).1
     omega
   have hColumns :
       ∀ p ∈ P, ∀ w ∈ W,
@@ -323,7 +323,7 @@ theorem finiteTagged_old_future_glued_KFree
     A ell d P W tau c hDisjoint hColumns hPFreeA hWFree hBoundsA
   have hUnion : P ∪ W = Finset.range (b + Fintype.card V) := by
     ext z
-    change (z < b ∨ z ∈ finiteTaggedFuturePool b) ↔
+    change (z < b ∨ z ∈ finiteTaggedFuturePool (V := V) b) ↔
       z < b + Fintype.card V
     rw [finiteTaggedFuturePool_mem_iff]
     omega
