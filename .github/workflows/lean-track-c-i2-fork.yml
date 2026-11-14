@@ -1,0 +1,53 @@
+name: Lean Track C I2 full source fork
+
+on:
+  push:
+    branches: [kk-track-c-i2-fork-index-20261114]
+    paths:
+      - 'Kk/NumericHI2FullFork.lean'
+      - 'docs/track_c_i2_full_fork_english_audit.md'
+      - '.github/workflows/lean-track-c-i2-fork.yml'
+  pull_request:
+    paths:
+      - 'Kk/NumericHI2FullFork.lean'
+      - 'docs/track_c_i2_full_fork_english_audit.md'
+      - '.github/workflows/lean-track-c-i2-fork.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: track-c-i2-fork-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  full-i2-fork:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache Lean toolchain
+        uses: actions/cache@v4
+        with:
+          path: ~/.elan/toolchains
+          key: lean-toolchain-${{ runner.os }}-${{ hashFiles('lean-toolchain') }}
+      - name: Restore Lean workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve pinned dependencies
+        run: lake update
+      - name: Obtain Mathlib cache
+        run: lake exe cache get
+      - name: Compile exact physical I2/full-fork module
+        run: lake build Kk.NumericHI2FullFork
+      - name: Audit six exact standard-only named theorem reports
+        run: |
+          set -euo pipefail
+          lake env lean Kk/NumericHI2FullFork.lean | tee track-c-i2-full-fork.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py Kk/NumericHI2FullFork.lean track-c-i2-full-fork.log
