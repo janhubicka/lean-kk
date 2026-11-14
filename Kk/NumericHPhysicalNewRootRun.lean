@@ -15,7 +15,7 @@ base Henson original table gains new blocks. We now CONSTRUCT the
 next Kpt seed set, rather than postulating its hNext inclusion:
 
   Y = entire old meet/parameter closure at old levels I
-      UNION every genuine prefix of the new physical originals W.
+      UNION the actual NEW original Kpt nodes in W (not all prefixes).
 
 Both summands use the actual forbidden-free Kpt tree and actual
 physical numerical-H+ originals, including auxiliary E and negative
@@ -37,9 +37,10 @@ open SuccessorTree
 open SuccessorTree.V10
 
 /-- A canonical explicitly CONSTRUCTED next Kpt seed set:
-all actual old meet/selected-parameter closure nodes, plus
-ALL prefixes of genuine NEW physical original Kpt nodes.
-This includes the full auxiliary E structure. -/
+all actual old meet/selected-parameter closure nodes, plus the
+NEW genuine physical Kpt originals themselves, NOT their entire
+prefix chains. The covering prefix pool is a different set.
+This preserves complete auxiliary E and negative ordinary-L data. -/
 def finiteNumericH_physicalExtendedSeeds
     {db du dd : Nat}
     (family : List (NormalizedForbidden db du dd))
@@ -50,7 +51,8 @@ def finiteNumericH_physicalExtendedSeeds
     (X : Set (AdmissibleKptNode family))
     (W : Set (Fin M)) : Set (AdmissibleKptNode family) :=
   SMTree.Envelope.closure (admissibleKptSTree family) I X ∪
-    ambientPrefixPool family (finiteNumericH L k M) hAvoidL W
+    ((fun w : Fin M =>
+      (finiteNumericH L k M).kptOriginal family hAvoidL w) '' W)
 
 /-- After extending the base Henson model K to L and the finite
 numeric carrier N to M, the EXPLICIT full-old-closure plus
@@ -96,11 +98,23 @@ theorem finiteNumericH_baseExtension_constructed_nextSeeds_represented
     finiteNumericH_baseExtension_old_seedPool_lifts
       family K L k b N M hNM hBlock hBin hUn hDiag
       hAvoidK hAvoidL U X hSeeds
+  have hNext :
+      finiteNumericH_physicalExtendedSeeds family L k M
+          hAvoidL I X W ⊆
+        SMTree.Envelope.closure (admissibleKptSTree family) I X ∪
+          ambientPrefixPool family (finiteNumericH L k M) hAvoidL W := by
+    intro z hz
+    rcases hz with hOld | hNew
+    · exact Or.inl hOld
+    · obtain ⟨w, hw, hEq⟩ := hNew
+      subst z
+      exact Or.inr ⟨(finiteNumericH L k M).kptOriginal family hAvoidL w,
+        ⟨w,hw,rfl⟩,le_rfl⟩
   exact finiteNumericH_multiRoot_nextSeed_pool_preserved
     family L k M hAvoidL U' W I X
     (finiteNumericH_physicalExtendedSeeds family L k M
       hAvoidL I X W)
-    hOldSeeds (by intro z hz; exact hz)
+    hOldSeeds hNext
 
 /-- An actual REAL numerical-H+ AlgorithmRun together with ONE
 complete finite, injectively named Kpt source-index universe and
@@ -195,8 +209,8 @@ theorem finiteNumericH_baseExtension_construct_actual_run_from_new_root
     refine ⟨y, ?_, ?_⟩
     · change y ∈
         SMTree.Envelope.closure (admissibleKptSTree family) I X ∪
-          ambientPrefixPool family B hAvoidL W
-      exact Or.inr ⟨y, ⟨w,hw,rfl⟩, le_rfl⟩
+          ((fun v : Fin M => B.kptOriginal family hAvoidL v) '' W)
+      exact Or.inr ⟨w,hw,rfl⟩
     · change B.freeLevel w.val = top
       exact hFree
   let R : SMTree.Envelope.AlgorithmRun
@@ -341,12 +355,13 @@ theorem finiteNumericH_baseExtension_actual_top_root_run_bounded
     intro z hz
     rcases hz with hzOld | hzNew
     · exact hClosureBound hzOld
-    · obtain ⟨o, ⟨v,hv,rfl⟩,hBelow⟩ := hzNew
-      have hEq : v = w := by
+    · obtain ⟨v,hv,hEq⟩ := hzNew
+      have hvEq : v = w := by
         simpa using hv
       subst v
-      have hLev : LevelTree.lev z ≤ B.freeLevel w.val :=
-        LevelTree.level_le_of_le hBelow
+      have hLevel : LevelTree.lev z = B.freeLevel w.val := by
+        rw [← hEq]
+        rfl
       change LevelTree.lev z ≤ top
       omega
   constructor
