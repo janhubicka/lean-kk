@@ -1,0 +1,10 @@
+import Kk.PriorityPhysicalCutComparison
+
+#check @Kk.terminal_kpt_node_witnesses_raw_I1_and_I2
+#print axioms Kk.terminal_kpt_node_witnesses_raw_I1_and_I2
+#check @Kk.kpt_priority_structural_flags_eq_of_terminal_and_crossings
+#print axioms Kk.kpt_priority_structural_flags_eq_of_terminal_and_crossings
+#check @Kk.kpt_priority_tag_eq_of_terminal_and_crossings
+#print axioms Kk.kpt_priority_tag_eq_of_terminal_and_crossings
+#check @Kk.kpt_priority_tag_eq_of_indexed_terminal_and_crossings
+#print axioms Kk.kpt_priority_tag_eq_of_indexed_terminal_and_crossings
