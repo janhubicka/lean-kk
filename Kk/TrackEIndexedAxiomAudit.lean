@@ -1,3 +1,4 @@
+import Kk.PhysicalCrossingTerminalBlindness
 import Kk.IndexedPhysicalStructuralEvents
 
 #check @Kk.indexed_physical_crossing_eq_full_closure_relation
