@@ -1,4 +1,4 @@
-import Kk.IndexedPhysicalCrossing
+import Kk.PhysicalCrossingTerminalBlindness
 
 #check @Kk.indexed_physical_crossing_eq_full_closure_relation
 #print axioms Kk.indexed_physical_crossing_eq_full_closure_relation
@@ -11,3 +11,9 @@ import Kk.IndexedPhysicalCrossing
 
 #check @Kk.two_physical_closures_crossing_eq_of_indexed_pair_matching
 #print axioms Kk.two_physical_closures_crossing_eq_of_indexed_pair_matching
+
+#check @Kk.full_physical_crossing_ignores_redundant_terminal_ancestor
+#print axioms Kk.full_physical_crossing_ignores_redundant_terminal_ancestor
+
+#check @Kk.distinct_kpt_node_sets_same_all_full_crossings
+#print axioms Kk.distinct_kpt_node_sets_same_all_full_crossings
