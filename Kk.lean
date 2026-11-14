@@ -185,6 +185,7 @@ import Kk.B3ActualRunFullSourceCertification
 import Kk.B3SameBaseOldSocle
 import Kk.B3IndexedPhysicalCutStar
 import Kk.B3TwoActualRuns
+import Kk.B3TwoRunLiveCutStarCover
 
 -- Track G second source-exact integration: new standalone A/C/E/F finite/conditional modules.
 -- This does NOT construct a global resolved diary, common labelled orbit, or BRD theorem.
