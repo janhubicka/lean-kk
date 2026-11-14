@@ -86,9 +86,11 @@ theorem trackFConcreteEdgePair_iff_abstractPassing
   have hPair : F sp =
       min (ell - 1 - c) (F s0 + F s1) := by
     exact trackFPair_word_capacity ell hell cols
+  have hJ : F s1 = 1 := hCoding
   have hPair1 : F sp = min (ell - 1 - c) (F s0 + 1) := by
-    rw [hPair]
-    simpa only [hCoding]
+    calc
+      F sp = min (ell - 1 - c) (F s0 + F s1) := hPair
+      _ = min (ell - 1 - c) (F s0 + 1) := by rw [hJ]
   have hXSum : F s0 + 1 = ell - a := by
     dsimp [a]
     omega
