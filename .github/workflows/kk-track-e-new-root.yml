@@ -6,6 +6,7 @@ on:
       - 'Kk/ActualRunSeedMonotonicity.lean'
       - 'Kk/NewSourceEventWitness.lean'
       - 'Kk/NewRootIndexedNovelty.lean'
+      - 'Kk/NoNewRootEventCriterion.lean'
       - 'Kk/TrackENewRootAxiomAudit.lean'
       - 'docs/track_e_monotone_seed_growth_english_audit.md'
       - '.github/workflows/kk-track-e-new-root.yml'
@@ -41,7 +42,7 @@ jobs:
       - name: Obtain Mathlib build cache
         run: lake exe cache get
       - name: Explicitly compile actual new-root monotonicity and novel-cut witness
-        run: lake build Kk.ActualRunSeedMonotonicity Kk.NewSourceEventWitness Kk.NewRootIndexedNovelty
+        run: lake build Kk.ActualRunSeedMonotonicity Kk.NewSourceEventWitness Kk.NewRootIndexedNovelty Kk.NoNewRootEventCriterion
       - name: Strict named transitive axioms
         run: |
           set -euo pipefail
