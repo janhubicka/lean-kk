@@ -131,4 +131,92 @@ theorem crossheight_new_selected_Kpt_cut_has_new_terminal_or_full_crossing
     exact hOldBoring (hInterestingEq.mpr hNewInteresting)
 
 
+
+/-- At a genuine growing-top physical numerical-H+ new-root stage,
+all NEW interesting-cut physical witnesses below the old top
+can be found already in the closure of the BARE old original
+seeds and inserted genuinely NEW Kpt originals, not in the
+bookkeeping pre-insertion of old meet/parameter closure.
+
+Unlike the older theorem requiring cut below EVERY level of
+RunOld.I 0, this uses only the actual OLD HIGHER selected levels
+I ⊆ RunOld.I(cut+1). This works even with an I2 crossing fork
+and without a corrected B3 assumption.
+
+The actual new-root seeds are ORIGINAL-only, not the (false)
+entire-prefix source that would force all lower I1 cuts. -/
+theorem numericH_crossheight_extra_cut_has_bare_original_witness
+    {db du dd : Nat}
+    (family : List (NormalizedForbidden db du dd))
+    (L : AgeTestModel db du dd)
+    (k M : Nat)
+    (hAvoid : ∀ bad, bad ∈ family →
+      bad.Avoids (finiteNumericH L k M).L)
+    (I : Set Nat)
+    (X : Set (AdmissibleKptNode family))
+    (W : Set (Fin M))
+    (oldTop newTop cut : Nat)
+    (hTopLe : oldTop ≤ newTop)
+    (hTopSeed : ∃ x ∈ X, LevelTree.lev x = oldTop)
+    (RunOld : SMTree.Envelope.AlgorithmRun
+      (normalizedKptSMTree family) X oldTop)
+    (RunNew : SMTree.Envelope.AlgorithmRun
+      (normalizedKptSMTree family)
+      (finiteNumericH_physicalExtendedSeeds
+        family L k M hAvoid I X W) newTop)
+    (hCut : cut < oldTop)
+    (hOldHigher : I ⊆ RunOld.I (cut+1))
+    (hNew : cut ∈ RunNew.I cut)
+    (hOld : cut ∉ RunOld.I cut) :
+    let O : Set (AdmissibleKptNode family) :=
+      ((fun w : Fin M =>
+        (finiteNumericH L k M).kptOriginal family hAvoid w) '' W)
+    let Zold : Set (AdmissibleKptNode family) :=
+      SMTree.Envelope.closure (admissibleKptSTree family)
+        (RunOld.I (cut+1)) X
+    let Zbare : Set (AdmissibleKptNode family) :=
+      SMTree.Envelope.closure (admissibleKptSTree family)
+        (RunNew.I (cut+1)) (X ∪ O)
+    (∃ z : AdmissibleKptNode family,
+      z ∈ Zbare ∧ z ∉ Zold ∧ LevelTree.lev z = cut) ∨
+    (∃ p : PartialTypeWithE cut db du dd ×
+        PartialTypeWithE (cut+1) db du dd,
+      p ∈ FullPhysicalClosureCrossing family Zbare cut ∧
+      p ∉ FullPhysicalClosureCrossing family Zold cut) := by
+  have hSeed : X ⊆ finiteNumericH_physicalExtendedSeeds
+      family L k M hAvoid I X W := by
+    intro z hz
+    exact Or.inl ((SMTree.Envelope.subset_closure
+      (admissibleKptSTree family) I X) hz)
+  have hNovel :=
+    crossheight_new_selected_Kpt_cut_has_new_terminal_or_full_crossing
+      family X
+      (finiteNumericH_physicalExtendedSeeds
+        family L k M hAvoid I X W)
+      hSeed oldTop newTop cut
+      hTopLe hTopSeed RunOld RunNew hCut hNew hOld
+  have hAboveNew : I ⊆ RunNew.I (cut+1) := by
+    have hLevels :=
+      envelope_algorithmRun_selected_levels_mono_seed_height
+        (normalizedKptSMTree family)
+        X (finiteNumericH_physicalExtendedSeeds
+          family L k M hAvoid I X W)
+        hSeed oldTop newTop hTopLe hTopSeed RunOld RunNew
+        (cut+1) (by omega)
+    exact hOldHigher.trans hLevels
+  have hAbs :
+      SMTree.Envelope.closure (admissibleKptSTree family)
+        (RunNew.I (cut+1))
+        (finiteNumericH_physicalExtendedSeeds
+          family L k M hAvoid I X W) =
+      SMTree.Envelope.closure (admissibleKptSTree family)
+        (RunNew.I (cut+1))
+        (X ∪ ((fun w : Fin M =>
+          (finiteNumericH L k M).kptOriginal family hAvoid w) '' W)) :=
+    finiteNumericH_newRoot_closure_absorption
+      family L k M hAvoid I (RunNew.I (cut+1)) X W hAboveNew
+  dsimp only at hNovel ⊢
+  rw [hAbs] at hNovel
+  exact hNovel
+
 end Kk
