@@ -173,12 +173,16 @@ import Kk.TrackFCoverSupportValues
 -- Track D: verified full closure-selected anchor-free cut-star, including empty case.
 -- Its auxiliary originals are NOT the selected macrodiary alone.
 import Kk.B3CutStarNormalForm
+import Kk.B3ExactCutStarWitness
 
 -- Track B: inter-ambient full-B3 comparison of complete physical cut-star profiles
 import Kk.B3CrossAmbientProfile
 import Kk.B3CrossAmbientCutStar
 import Kk.B3CutStarNameTransport
 import Kk.B3FullSourceCertification
+import Kk.B3ActualRunFullSourceCertification
+import Kk.B3SameBaseOldSocle
+import Kk.B3IndexedPhysicalCutStar
 
 -- Track G second source-exact integration: new standalone A/C/E/F finite/conditional modules.
 -- This does NOT construct a global resolved diary, common labelled orbit, or BRD theorem.

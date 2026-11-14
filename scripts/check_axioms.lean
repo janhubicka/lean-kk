@@ -1439,3 +1439,35 @@ import Kk
 #print axioms Kk.trackFCanonical_locality_of_monotone
 #check @Kk.trackFWordRaw_locality
 #print axioms Kk.trackFWordRaw_locality
+
+-- Track D: one genuinely failed full-(B3) finite K_ell clique core;
+-- ALL upper vertices have COMPLETE eligible physical cut-star L-types.
+-- No global diary/relative-profile loss assertion is inferred.
+#check @Kk.clique_core_every_upper_has_exact_cut_neighbour_label
+#print axioms Kk.clique_core_every_upper_has_exact_cut_neighbour_label
+#check @Kk.henson_failed_selectedB3_has_exact_full_cut_star_core
+#print axioms Kk.henson_failed_selectedB3_has_exact_full_cut_star_core
+
+-- Track B: ten verified or pending physical source completeness endpoints.
+-- Includes actual run original pool, same-base ordinary-L old socles
+-- and the finite Kpt active mask computing intrinsic cut-star types.
+#check @Kk.actualHensonRunCutOccurrence_fullExact
+#print axioms Kk.actualHensonRunCutOccurrence_fullExact
+#check @Kk.actualHensonRunCutOccurrence_poolExhaustive
+#print axioms Kk.actualHensonRunCutOccurrence_poolExhaustive
+#check @Kk.actualHensonRunCutOccurrence_fullGraph_and_starSpectrum
+#print axioms Kk.actualHensonRunCutOccurrence_fullGraph_and_starSpectrum
+#check @Kk.finiteNumericHL_same_base_old_socle
+#print axioms Kk.finiteNumericHL_same_base_old_socle
+#check @Kk.HensonCutOccurrence.same_base_old_socle
+#print axioms Kk.HensonCutOccurrence.same_base_old_socle
+#check @Kk.HensonCutOccurrence.full_B3_iff_same_base_intrinsic_cutStar
+#print axioms Kk.HensonCutOccurrence.full_B3_iff_same_base_intrinsic_cutStar
+#check @Kk.indexedCutStar_has_live_physical_node
+#print axioms Kk.indexedCutStar_has_live_physical_node
+#check @Kk.indexedCutStar_iff_physical_of_exact
+#print axioms Kk.indexedCutStar_iff_physical_of_exact
+#check @Kk.numericH_actual_run_all_cuts_indexed_cutStar
+#print axioms Kk.numericH_actual_run_all_cuts_indexed_cutStar
+#check @Kk.two_closures_physical_cutStar_eq_of_indexed_projection
+#print axioms Kk.two_closures_physical_cutStar_eq_of_indexed_projection
