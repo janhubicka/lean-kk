@@ -174,6 +174,10 @@ import Kk.TrackFCoverSupportValues
 -- Its auxiliary originals are NOT the selected macrodiary alone.
 import Kk.B3CutStarNormalForm
 
+-- Track B: inter-ambient full-B3 comparison of complete physical cut-star profiles
+import Kk.B3CrossAmbientProfile
+import Kk.B3CrossAmbientCutStar
+
 /-!
 The counting project imports the verified successor-tree library.
 No local replacement of the Ramsey theorem is assumed.
