@@ -187,10 +187,10 @@ theorem trackFWordMax_pair_lt_iff
         refine ⟨col,hMem,?_,?_⟩
         · simpa [hEqual] using hEq0
         · simpa [hEqual] using hEq1
-      dsimp [n]
+      change n < a
       omega
     · have hnZero : n = 0 := Nat.eq_zero_of_not_pos hn
-      dsimp [n]
+      change n < a
       omega
 
 /-- If x=0 has positive initial spectrum {1,...,a}, every
@@ -215,7 +215,7 @@ theorem trackFWordMax_pair_le_height
         ⟨col,hMem,hEq0⟩
       exact (hX n hn).mp hSeen
     · have hn0 : n = 0 := Nat.eq_zero_of_not_pos hn
-      dsimp [n]
+      change n < a
       omega
   have hMaxLT : trackFWordMax 2 ell cols
         (trackFPairBoth ell hell) < a + 1 :=
