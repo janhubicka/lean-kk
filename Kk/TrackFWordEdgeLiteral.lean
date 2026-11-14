@@ -215,7 +215,7 @@ theorem trackFWordMax_pair_le_height
         ⟨col,hMem,hEq0⟩
       exact (hX n hn).mp hSeen
     · have hn0 : n = 0 := Nat.eq_zero_of_not_pos hn
-      change n < a
+      change n ≤ a
       omega
   have hMaxLT : trackFWordMax 2 ell cols
         (trackFPairBoth ell hell) < a + 1 :=
