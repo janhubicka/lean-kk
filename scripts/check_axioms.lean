@@ -1315,3 +1315,13 @@ import Kk
 #print axioms Kk.HensonCutOccurrence.full_B3_crossAmbient_iff_of_cutStar_profiles
 #check @Kk.HensonCutOccurrence.failing_full_B3_has_unmatched_cutStar_original
 #print axioms Kk.HensonCutOccurrence.failing_full_B3_has_unmatched_cutStar_original
+
+-- Track B: match true physical cut-star original names across Henson occurrences
+#check @Kk.HensonCutOccurrence.star_name_complete_upperL_permitted
+#print axioms Kk.HensonCutOccurrence.star_name_complete_upperL_permitted
+#check @Kk.HensonCutOccurrence.star_upperL_inclusion_of_physical_name_cover
+#print axioms Kk.HensonCutOccurrence.star_upperL_inclusion_of_physical_name_cover
+#check @Kk.HensonCutOccurrence.full_B3_crossAmbient_iff_of_physical_cutStar_name_cover
+#print axioms Kk.HensonCutOccurrence.full_B3_crossAmbient_iff_of_physical_cutStar_name_cover
+#check @Kk.HensonCutOccurrence.failing_full_B3_has_unmatchable_physical_cutStar_name
+#print axioms Kk.HensonCutOccurrence.failing_full_B3_has_unmatchable_physical_cutStar_name
