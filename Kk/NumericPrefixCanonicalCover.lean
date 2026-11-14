@@ -386,7 +386,7 @@ theorem orderedReservedCapacity_cover_age_normal_form
   · have hEq : (if g < a then a else a + 1) = r :=
       (orderedReservedCapacity_reaches_full_iff r a g ha).2 hFinal
     have hNot : ¬ (if g < a then a else a + 1) < r := by omega
-    simp [hFinal, hNot]
+    rw [if_neg hNot, if_pos hFinal]
   · have hCapLe : (if g < a then a else a + 1) ≤ r := by
       split_ifs <;> omega
     have hCapNe : (if g < a then a else a + 1) ≠ r := by
@@ -394,7 +394,7 @@ theorem orderedReservedCapacity_cover_age_normal_form
       exact hFinal
         ((orderedReservedCapacity_reaches_full_iff r a g ha).1 hEq)
     have hLt : (if g < a then a else a + 1) < r := by omega
-    simp [hFinal, hLt]
+    rw [if_pos hLt, if_neg hFinal]
 
 #print axioms Kk.orderedReservedCapacity_reaches_full_iff
 #print axioms Kk.orderedReservedCapacity_before_full_iff
