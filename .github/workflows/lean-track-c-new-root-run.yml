@@ -1,0 +1,57 @@
+name: Lean Track C construct actual new-root Kpt run
+
+on:
+  push:
+    branches: [kk-track-c-physical-new-root-run-20261114]
+    paths:
+      - 'Kk/NumericHPhysicalNewRootRun.lean'
+      - 'docs/track_c_physical_new_root_run_english_audit.md'
+      - 'docs/track_c_new_root_top_bound_english_audit.md'
+      - 'docs/track_c_new_root_overgeneration_repair_english_audit.md'
+      - '.github/workflows/lean-track-c-new-root-run.yml'
+  pull_request:
+    paths:
+      - 'Kk/NumericHPhysicalNewRootRun.lean'
+      - 'docs/track_c_physical_new_root_run_english_audit.md'
+      - 'docs/track_c_new_root_top_bound_english_audit.md'
+      - 'docs/track_c_new_root_overgeneration_repair_english_audit.md'
+      - '.github/workflows/lean-track-c-new-root-run.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: track-c-new-root-run-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  actual-new-root-run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache Lean toolchain
+        uses: actions/cache@v4
+        with:
+          path: ~/.elan/toolchains
+          key: lean-toolchain-${{ runner.os }}-${{ hashFiles('lean-toolchain') }}
+      - name: Restore Lean workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve pinned dependencies
+        run: lake update
+      - name: Obtain Mathlib cache
+        run: lake exe cache get
+      - name: Compile constructed actual new-root indexed Kpt run
+        run: lake build Kk.NumericHPhysicalNewRootRun
+      - name: Audit four exact named standard-only axioms
+        run: |
+          set -euo pipefail
+          lake env lean Kk/NumericHPhysicalNewRootRun.lean | tee track-c-new-root-run.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py Kk/NumericHPhysicalNewRootRun.lean track-c-new-root-run.log
