@@ -84,7 +84,7 @@ theorem envelope_algorithmRun_selected_levels_mono_seed_height
       have hStep := (Q.interesting_step oldTop hLt hInteresting).1
       rw [hStep]
       simp
-  apply SMTree.Envelope.induction_down
+  apply induction_down
   · exact hBase
   · intro i hi hNext
     have hClosure :
