@@ -1,0 +1,4 @@
+import Kk.B3MissingMarkedOneCore
+
+#check @Kk.henson_failed_fullB3_good_marked_has_missing_type_inside_one_core
+#print axioms Kk.henson_failed_fullB3_good_marked_has_missing_type_inside_one_core
