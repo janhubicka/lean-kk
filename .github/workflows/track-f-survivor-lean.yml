@@ -60,6 +60,9 @@ jobs:
             "Kk.trackFExtendWeights_feasible",
             "Kk.trackFCanonical_reindex_mono",
             "Kk.trackFWordCanonical_reindex",
+            "Kk.trackFGraphAge_reindex",
+            "Kk.trackFWordCanonical_delete_at",
+            "Kk.trackFWordRaw_coding_after_delete_exact",
           ]
           permitted = {"propext","Classical.choice","Quot.sound"}
           for name in declarations:
