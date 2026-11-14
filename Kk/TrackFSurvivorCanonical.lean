@@ -180,7 +180,7 @@ theorem trackFSelectedPreimage_image {e d ell : Nat}
     Finset.mem_filter, Finset.mem_univ, true_and, Finset.mem_inter]
   constructor
   · rintro ⟨i,hi,rfl⟩
-    exact ⟨hi,⟨i,Finset.mem_univ i,rfl⟩⟩
+    exact ⟨hi,⟨i,rfl⟩⟩
   · rintro ⟨hj,⟨i,_,rfl⟩⟩
     exact ⟨i,hj,rfl⟩
 
@@ -259,6 +259,7 @@ theorem trackFExtendWeights_feasible {e d ell : Nat}
       _ ≤ B (trackFMapSupport f U) := hPull U
       _ ≤ B V := hMono (trackFMapSupport f U) V hImageSub
   · have hEmpty : S = ∅ := Finset.not_nonempty_iff_eq_empty.mp hS
+    change S.sum (fun i => (w.1 i).val) ≤ B V
     simp [hEmpty]
 
 /-- The true normalized finite integer-clique canonicalizer commutes
@@ -326,7 +327,7 @@ theorem trackFWordCanonical_reindex {e d ell : Nat}
       (trackFWordRaw e ell (trackFRestrictColumns f cols)) U =
     integerGraphAgeCanonical d ell
       (trackFWordRaw d ell cols) (trackFMapSupport f U) := by
-  rw [trackFWordRaw_restrict_columns]
+  rw [trackFWordRaw_pullback f cols]
   exact trackFCanonical_reindex_mono f hell
     (trackFWordRaw d ell cols)
     (fun S T hST => trackFWordRaw_monotone cols S T hST) U
