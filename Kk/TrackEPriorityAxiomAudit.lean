@@ -1,4 +1,4 @@
-import Kk.PriorityPhysicalB3Transfer
+import Kk.PhysicalI3CrossingInvariance
 
 #check @Kk.terminal_kpt_node_witnesses_raw_I1_and_I2
 #print axioms Kk.terminal_kpt_node_witnesses_raw_I1_and_I2
@@ -13,3 +13,12 @@ import Kk.PriorityPhysicalB3Transfer
 #print axioms Kk.kpt_no_structural_event_transfers_of_local_profile
 #check @Kk.two_numericH_nonstructural_B3_of_terminal_and_crossing_profile
 #print axioms Kk.two_numericH_nonstructural_B3_of_terminal_and_crossing_profile
+
+#check @Kk.kpt_crossing_map_respects_of_physical_inclusion
+#print axioms Kk.kpt_crossing_map_respects_of_physical_inclusion
+#check @Kk.kpt_nonSkippable_iff_of_equal_physical_crossing
+#print axioms Kk.kpt_nonSkippable_iff_of_equal_physical_crossing
+#check @Kk.kpt_actual_interesting_iff_I1_or_I2_or_nonskippable
+#print axioms Kk.kpt_actual_interesting_iff_I1_or_I2_or_nonskippable
+#check @Kk.kpt_actual_interesting_iff_of_terminal_and_crossing_eq
+#print axioms Kk.kpt_actual_interesting_iff_of_terminal_and_crossing_eq
