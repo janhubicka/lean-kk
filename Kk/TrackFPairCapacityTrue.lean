@@ -1,5 +1,6 @@
 import Kk.TrackFPairCapacity
 import Kk.TrackFSingletonCapacity
+import Kk.TrackFLiteralWordColumns
 import Mathlib.Tactic
 
 /-!
@@ -58,5 +59,46 @@ theorem trackFPair_canonical_true_singletons
         2 ell h2 B hMono (1 : Fin 2) hCap)
   rw [trackFPair_canonical_capacity ell hell B (hBound _)]
   rw [h0, h1]
+
+/-- The exact capacity identity in the manuscript's *literal*
+chronological common-letter notation: the raw pair bound is ell-1
+minus the largest positive letter seen simultaneously on both words.
+The singleton values on the RHS are genuinely canonical ages. -/
+theorem trackFPair_word_capacity
+    (ell : Nat) (hell : 3 ≤ ell)
+    (cols : List (Fin 2 → Nat)) :
+    integerGraphAgeCanonical 2 ell (trackFWordRaw 2 ell cols)
+        (trackFPairBoth ell hell) =
+      min (ell - 1 -
+             trackFWordMax 2 ell cols (trackFPairBoth ell hell))
+        (integerGraphAgeCanonical 2 ell (trackFWordRaw 2 ell cols)
+            (trackFPairFirst ell hell) +
+         integerGraphAgeCanonical 2 ell (trackFWordRaw 2 ell cols)
+            (trackFPairSecond ell hell)) := by
+  have hMono : TrackFRawSupportMonotone 2 ell
+      (trackFWordRaw 2 ell cols) :=
+    fun U V hUV => trackFWordRaw_monotone cols U V hUV
+  have hBound : ∀ U : IntegerGraphSupport 2 ell,
+      trackFWordRaw 2 ell cols U ≤ ell - 1 :=
+    fun U => trackFWordRaw_le_cap cols U
+  simpa only [trackFWordRaw_eq_sub_max] using
+    (trackFPair_canonical_true_singletons ell hell
+      (trackFWordRaw 2 ell cols) hMono hBound)
+
+/-- The remaining numeric passing-bit criterion for a candidate
+coded branch j of singleton age 1.
+Here a is the largest positive symbol appearing on x, and c is
+the largest symbol occurring *simultaneously* on j and x.
+Under 0≤c≤a≤ell-2 the abstract pair-capacity equation holds
+exactly when c<a. The word-based E predicate will be identified
+with c<a using the positive-initial-segment invariant. -/
+theorem trackFPair_passing_arithmetic
+    (ell a c : Nat)
+    (hell : 3 ≤ ell)
+    (ha : a ≤ ell - 2)
+    (hc : c ≤ a) :
+    min (ell - 1 - c) (ell - a) = ell - a ↔ c < a := by
+  omega
+
 
 end Kk
