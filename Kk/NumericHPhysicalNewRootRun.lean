@@ -343,7 +343,7 @@ theorem finiteNumericH_baseExtension_actual_top_root_run_bounded
     · exact hClosureBound hzOld
     · obtain ⟨o, ⟨v,hv,rfl⟩,hBelow⟩ := hzNew
       have hEq : v = w := by
-        simpa using hv
+        simpa only [Set.mem_singleton_iff] using hv
       subst v
       have hLev : LevelTree.lev z ≤ B.freeLevel w.val :=
         LevelTree.level_le_of_le hBelow
