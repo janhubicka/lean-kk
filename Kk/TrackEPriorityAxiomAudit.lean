@@ -1,4 +1,4 @@
-import Kk.PhysicalI3CrossingInvariance
+import Kk.ActualRunLevelProfileSync
 
 #check @Kk.terminal_kpt_node_witnesses_raw_I1_and_I2
 #print axioms Kk.terminal_kpt_node_witnesses_raw_I1_and_I2
@@ -22,3 +22,8 @@ import Kk.PhysicalI3CrossingInvariance
 #print axioms Kk.kpt_actual_interesting_iff_I1_or_I2_or_nonskippable
 #check @Kk.kpt_actual_interesting_iff_of_terminal_and_crossing_eq
 #print axioms Kk.kpt_actual_interesting_iff_of_terminal_and_crossing_eq
+
+#check @Kk.two_actual_Kpt_runs_level_sets_eq_of_stagewise_full_profiles
+#print axioms Kk.two_actual_Kpt_runs_level_sets_eq_of_stagewise_full_profiles
+#check @Kk.two_actual_Kpt_runs_final_level_sets_eq_of_stagewise_profiles
+#print axioms Kk.two_actual_Kpt_runs_final_level_sets_eq_of_stagewise_profiles
