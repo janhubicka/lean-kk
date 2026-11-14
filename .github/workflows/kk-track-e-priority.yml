@@ -8,6 +8,7 @@ on:
       - 'Kk/PhysicalI3CrossingInvariance.lean'
       - 'Kk/ActualRunLevelProfileSync.lean'
       - 'Kk/LocalEventTraceBlindness.lean'
+      - 'Kk/LocalClosedEventTraceBlindness.lean'
       - 'Kk/TrackEPriorityAxiomAudit.lean'
       - 'docs/track_e_priority_cut_comparison_english_audit.md'
       - '.github/workflows/kk-track-e-priority.yml'
@@ -43,7 +44,7 @@ jobs:
       - name: Obtain Mathlib build cache
         run: lake exe cache get
       - name: Explicitly compile priority I1 I2 comparison
-        run: lake build Kk.PriorityPhysicalCutComparison Kk.PriorityPhysicalB3Transfer Kk.PhysicalI3CrossingInvariance Kk.ActualRunLevelProfileSync Kk.LocalEventTraceBlindness
+        run: lake build Kk.PriorityPhysicalCutComparison Kk.PriorityPhysicalB3Transfer Kk.PhysicalI3CrossingInvariance Kk.ActualRunLevelProfileSync Kk.LocalEventTraceBlindness Kk.LocalClosedEventTraceBlindness
       - name: Strict named transitive axioms
         run: |
           set -euo pipefail
