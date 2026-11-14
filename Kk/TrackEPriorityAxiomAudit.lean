@@ -1,4 +1,4 @@
-import Kk.ActualRunLevelProfileSync
+import Kk.LocalEventTraceBlindness
 
 #check @Kk.terminal_kpt_node_witnesses_raw_I1_and_I2
 #print axioms Kk.terminal_kpt_node_witnesses_raw_I1_and_I2
@@ -27,3 +27,8 @@ import Kk.ActualRunLevelProfileSync
 #print axioms Kk.two_actual_Kpt_runs_level_sets_eq_of_stagewise_full_profiles
 #check @Kk.two_actual_Kpt_runs_final_level_sets_eq_of_stagewise_profiles
 #print axioms Kk.two_actual_Kpt_runs_final_level_sets_eq_of_stagewise_profiles
+
+#check @Kk.redundant_Kpt_node_invisible_to_all_local_source_profiles
+#print axioms Kk.redundant_Kpt_node_invisible_to_all_local_source_profiles
+#check @Kk.distinct_Kpt_node_sets_same_all_I1_I2_I3_local_verdicts
+#print axioms Kk.distinct_Kpt_node_sets_same_all_I1_I2_I3_local_verdicts
