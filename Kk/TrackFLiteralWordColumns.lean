@@ -76,6 +76,34 @@ theorem trackFColumnCommon_pos_iff {d ell : Nat}
     rw [if_pos hSame]
     exact hRep
 
+
+/-- A letter common to a larger support V is also common to any
+nonempty smaller support U. Hence the maximum common symbol is
+*antitone* with respect to support inclusion. -/
+theorem trackFColumnCommon_antitone {d ell : Nat}
+    (column : Fin d → Nat)
+    (U V : IntegerGraphSupport d ell)
+    (hUV : U.1 ⊆ V.1) :
+    trackFColumnCommon column V ≤ trackFColumnCommon column U := by
+  classical
+  by_cases hV : ∀ i ∈ V.1,
+      column i = column (trackFColumnRepresentative V)
+  · have hU : ∀ i ∈ U.1,
+        column i = column (trackFColumnRepresentative U) := by
+      intro i hi
+      calc
+        column i = column (trackFColumnRepresentative V) :=
+          hV i (hUV hi)
+        _ = column (trackFColumnRepresentative U) :=
+          (hV _ (hUV (trackFColumnRepresentative_mem U))).symm
+    unfold trackFColumnCommon
+    rw [if_pos hV, if_pos hU]
+    exact le_of_eq
+      (hV _ (hUV (trackFColumnRepresentative_mem U))).symm
+  · unfold trackFColumnCommon
+    rw [if_neg hV]
+    exact Nat.zero_le _
+
 /-- The literal new concrete diary column: put letter n on T,
 and 0 on all other active branches. -/
 def trackFNewColumn {d : Nat}
@@ -192,6 +220,42 @@ private theorem trackFWordRaw_fold_le {d ell : Nat}
   | cons c cs ih =>
       simp only [List.foldl_cons]
       exact (ih _).trans (Nat.min_le_left _ _)
+
+
+/-- The literal concrete-word raw function is support-monotone.
+The antitone common-letter maximum makes each raw capacity
+nondecreasing as the support grows, and finite minima preserve it.
+This is the *necessary* hypothesis in the coding-branch deletion lemma,
+and it is proved from actual chronological columns. -/
+theorem trackFWordRaw_monotone {d ell : Nat}
+    (cols : List (Fin d → Nat))
+    (U V : IntegerGraphSupport d ell)
+    (hUV : U.1 ⊆ V.1) :
+    trackFWordRaw d ell cols U ≤ trackFWordRaw d ell cols V := by
+  classical
+  have hFold : ∀ (xs : List (Fin d → Nat)) (a b : Nat),
+      a ≤ b →
+      xs.foldl
+        (fun cap col => min cap (ell - 1 - trackFColumnCommon col U)) a ≤
+      xs.foldl
+        (fun cap col => min cap (ell - 1 - trackFColumnCommon col V)) b := by
+    intro xs
+    induction xs with
+    | nil =>
+        intro a b hab
+        simpa using hab
+    | cons col tail ih =>
+        intro a b hab
+        simp only [List.foldl_cons]
+        apply ih
+        have hCommon : trackFColumnCommon col V ≤
+            trackFColumnCommon col U :=
+          trackFColumnCommon_antitone col U V hUV
+        have hCap : ell - 1 - trackFColumnCommon col U ≤
+            ell - 1 - trackFColumnCommon col V :=
+          Nat.sub_le_sub_left hCommon (ell - 1)
+        exact min_le_min hab hCap
+  exact hFold cols (ell - 1) (ell - 1) le_rfl
 
 /-- Every raw word bound is at most the initial capacity ell-1. -/
 theorem trackFWordRaw_le_cap {d ell : Nat}
