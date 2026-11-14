@@ -1,4 +1,4 @@
-import Kk.NoNewRootEventCriterion
+import Kk.TwoFiniteIndexNewRootStability
 
 #check @Kk.envelope_closure_mono_both
 #print axioms Kk.envelope_closure_mono_both
@@ -35,3 +35,6 @@ import Kk.NoNewRootEventCriterion
 
 #check @Kk.two_actual_Kpt_runs_levels_eq_of_finite_indexed_quiet_source
 #print axioms Kk.two_actual_Kpt_runs_levels_eq_of_finite_indexed_quiet_source
+
+#check @Kk.two_actual_Kpt_runs_levels_eq_of_two_finite_index_cover
+#print axioms Kk.two_actual_Kpt_runs_levels_eq_of_two_finite_index_cover
