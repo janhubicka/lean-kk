@@ -1542,3 +1542,7 @@ import Kk
 #print axioms Kk.trackFWordSpectrum_age_cover
 #check @Kk.trackFWordSpectrum_coding_column
 #print axioms Kk.trackFWordSpectrum_coding_column
+
+-- Track D: exhaustive actual AlgorithmRun B3 bad-core iff; not diary-age loss.
+#check @Kk.henson_actualRun_complete_fullB3_failure_iff_physical_bad_core
+#print axioms Kk.henson_actualRun_complete_fullB3_failure_iff_physical_bad_core
