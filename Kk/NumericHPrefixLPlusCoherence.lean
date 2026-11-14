@@ -224,7 +224,10 @@ theorem finiteNumericH_prefix_stage_pool_lifts
       (finiteNumericH K k M).freeLevel v.val :=
       finiteNumericH_prefix_old_freeLevel_eq
         K k N M hNM v.val v.isLt
-    exact ⟨hI,by rw [← hEq]; exact hFree⟩
+    refine ⟨hI, ?_⟩
+    change 0 < (finiteNumericH K k M).freeLevel v.val
+    rw [← hEq]
+    exact hFree
 
 /-- The ENTIRE actual Kpt meet-and-parameter closure at a fixed
 selected set I retains a concrete original-prefix representation
