@@ -1325,3 +1325,11 @@ import Kk
 #print axioms Kk.HensonCutOccurrence.full_B3_crossAmbient_iff_of_physical_cutStar_name_cover
 #check @Kk.HensonCutOccurrence.failing_full_B3_has_unmatchable_physical_cutStar_name
 #print axioms Kk.HensonCutOccurrence.failing_full_B3_has_unmatchable_physical_cutStar_name
+
+-- Track B: source-exhaustiveness gate and intrinsic physical cut-star B3
+#check @Kk.HensonCutOccurrence.fullProfile_graph_eq_physical_of_exhaustive
+#print axioms Kk.HensonCutOccurrence.fullProfile_graph_eq_physical_of_exhaustive
+#check @Kk.HensonCutOccurrence.starProfile_upperL_iff_physical_of_exhaustive
+#print axioms Kk.HensonCutOccurrence.starProfile_upperL_iff_physical_of_exhaustive
+#check @Kk.HensonCutOccurrence.full_B3_crossAmbient_iff_of_intrinsic_physical_cutStar
+#print axioms Kk.HensonCutOccurrence.full_B3_crossAmbient_iff_of_intrinsic_physical_cutStar
