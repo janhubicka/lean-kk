@@ -136,7 +136,7 @@ theorem envelope_algorithmRun_selected_levels_mono_seed_height
         · rw [hQI]
         · rw [hQI]
           intro z hz
-          exact Set.mem_insert_of_mem hz
+          exact Set.mem_insert_iff.mpr (Or.inr hz)
       rw [hRI]
       exact hNext.trans hQNext
 
