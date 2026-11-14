@@ -128,3 +128,26 @@ The previously verified finite-index/physical-relation equality turns these chec
 - Equality of the selected-level skeleton does NOT itself determine the selected+auxiliary parameter label correspondence or the real monoid-map pullback orbit.
 
 **Lean targets:** actual two-run one-sided no-novelty theorem and a corresponding exact-full-index criterion. The latter must use the existing verified exhaustive current-run index, never a guessed set of original names. Strict isolated direct build and named standard-only transitive-axiom reports before any validation claim.
+
+
+## E36. Entirely FINITE two-index physical NEW-ROOT stabilization test
+
+The E35 finite criterion still tests whether the new index's old/upper pair lies in the old **set-valued** crossing relation. Track C constructs an exhaustive finite Kpt index for BOTH actual finite numerical-H+ runs. We can therefore eliminate the remaining infinite-set membership from the verification interface.
+
+Fix actual same-horizon `Run_X` and `Run_Y` with literal X⊆Y. Take two possibly different finite source universes
+`node_X : Fin p→Kpt`, `node_Y : Fin q→Kpt`
+with exact pre-cut presence masks `live_X(c,i)`, `live_Y(c,j)`. Each exactness statement says a node belongs to its actual full meet-and-parameter pre-cut closure **iff** it is one of the live finite node values at that cut.
+
+For EACH cut c<top and EACH new-live index j, perform just two finite source checks:
+
+**Terminal coverage:** If `lev(node_Y j)=c`, there exists some old-live index i with `lev(node_X i)=c`. No node identity or multiplicity match is needed to keep the Boolean (I1) flag fixed.
+
+**Full transition coverage:** Whenever the complete old and upper Kpt raw type assignments of `node_Y j` at c exist, say `(T,U)`, there is some old-live index i whose complete old and upper raw assignments are **exactly the SAME pair `(T,U)`**. The two records for either index come from the SAME genuine Kpt node, retaining all E/negative atoms and potential I2 forks. The relation of old/new label numbers is not required to be a function, injection or bijection—duplicates may collapse to the same physical pair.
+
+Then **all selected-level sets of the two real runs coincide**. The proof composes E35's exact-new-index criterion with the actual old-index coverage: terminal matches give genuine old terminal witnesses; matching old `Option RawPartialTypeNode` records give membership in the old `IndexedPhysicalCrossing`, which equals the full canonical physical crossing relation by the already certified Track E source-index theorem.
+
+This is a **finite `∀j∃i` test**, directly available for the actual finite numerical-H+ closure indices constructed in Track C, and is the smallest concrete input needed for an *inert* new-root extension at a fixed horizon. The two finite index sizes may differ. No global uniform bound is inferred; an actual resolved-copy construction may have deliberate newly interesting cuts, which must be treated as planned exceptional events rather than erroneously required to be inert.
+
+**New hostile cases:** preserve each source's *cut-specific* live mask; old final-closure membership alone does not imply pre-cut activity. Comparing only complete UPPER L-reducts loses old dependent-L+ source identity and cannot transfer genuine I3 skipping maps. Requiring a bijection of all nodes is unnecessarily strong for the selected-level skeleton, but may remain essential for full labelled orbit. This criterion is sufficient, not necessary; an extra pair may be skippable. It is source-coordinate-dependent and says nothing about inserted boring gaps until those coordinates are actually normalized.
+
+Lean target: a lemma deriving E35 from two exact finite index representations and the two finite coverage conditions, followed (optionally) by a separate genuine finite numerical-H+ constructor theorem that invokes Track C's source-index construction on each run. English proof and adversarial qualifications precede Lean, with strict exact-head axiom checks required.
