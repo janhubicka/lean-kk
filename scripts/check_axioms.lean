@@ -1610,3 +1610,14 @@ import Kk
 #print axioms Kk.HensonCutOccurrence.old_socle_of_relevant_base_pair_agreement
 #check @Kk.HensonCutOccurrence.full_B3_iff_of_relevant_base_and_intrinsic_cutStar
 #print axioms Kk.HensonCutOccurrence.full_B3_iff_of_relevant_base_and_intrinsic_cutStar
+
+-- Track B: two actual Henson runs, DIFFERENT underlying E but SAME k,
+-- finitely relevant OLD base pairs and true physical LIVE cut-star types.
+#check @Kk.HensonPhysicalRunCutData.old_socle_of_relevant_base_pairs
+#print axioms Kk.HensonPhysicalRunCutData.old_socle_of_relevant_base_pairs
+#check @Kk.HensonPhysicalRunCutData.full_B3_iff_of_relevant_base_and_intrinsic_cutStar
+#print axioms Kk.HensonPhysicalRunCutData.full_B3_iff_of_relevant_base_and_intrinsic_cutStar
+#check @Kk.HensonPhysicalRunCutData.full_B3_iff_of_relevant_base_and_live_cover
+#print axioms Kk.HensonPhysicalRunCutData.full_B3_iff_of_relevant_base_and_live_cover
+#check @Kk.HensonPhysicalRunCutData.bad_good_has_missing_intrinsic_cutStar_type_of_relevant_base
+#print axioms Kk.HensonPhysicalRunCutData.bad_good_has_missing_intrinsic_cutStar_type_of_relevant_base
