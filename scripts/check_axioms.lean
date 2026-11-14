@@ -1439,3 +1439,11 @@ import Kk
 #print axioms Kk.trackFCanonical_locality_of_monotone
 #check @Kk.trackFWordRaw_locality
 #print axioms Kk.trackFWordRaw_locality
+
+-- Track D: one genuinely failed full-(B3) finite K_ell clique core;
+-- ALL upper vertices have COMPLETE eligible physical cut-star L-types.
+-- No global diary/relative-profile loss assertion is inferred.
+#check @Kk.clique_core_every_upper_has_exact_cut_neighbour_label
+#print axioms Kk.clique_core_every_upper_has_exact_cut_neighbour_label
+#check @Kk.henson_failed_selectedB3_has_exact_full_cut_star_core
+#print axioms Kk.henson_failed_selectedB3_has_exact_full_cut_star_core
