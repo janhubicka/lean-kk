@@ -1,4 +1,4 @@
-import Kk.NewSourceEventWitness
+import Kk.NewRootIndexedNovelty
 
 #check @Kk.envelope_closure_mono_both
 #print axioms Kk.envelope_closure_mono_both
@@ -23,3 +23,9 @@ import Kk.NewSourceEventWitness
 
 #check @Kk.actual_Kpt_new_root_extra_cut_has_physical_witness
 #print axioms Kk.actual_Kpt_new_root_extra_cut_has_physical_witness
+
+#check @Kk.new_selected_Kpt_cut_has_indexed_physical_witness
+#print axioms Kk.new_selected_Kpt_cut_has_indexed_physical_witness
+
+#check @Kk.finiteNumericH_actual_extra_cut_has_finite_source_witness
+#print axioms Kk.finiteNumericH_actual_extra_cut_has_finite_source_witness
