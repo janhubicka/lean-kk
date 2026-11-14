@@ -1,0 +1,7 @@
+import Kk.PhysicalCrossHeightConstructedWitness
+
+#check @Kk.finiteNumericH_old_physical_top_le_new_chronological_top
+#print axioms Kk.finiteNumericH_old_physical_top_le_new_chronological_top
+
+#check @Kk.finiteNumericH_constructed_growing_runs_extra_cuts_have_finite_witness
+#print axioms Kk.finiteNumericH_constructed_growing_runs_extra_cuts_have_finite_witness
