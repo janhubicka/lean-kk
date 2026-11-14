@@ -173,6 +173,7 @@ import Kk.TrackFCoverSupportValues
 -- Track D: verified full closure-selected anchor-free cut-star, including empty case.
 -- Its auxiliary originals are NOT the selected macrodiary alone.
 import Kk.B3CutStarNormalForm
+import Kk.B3ExactCutStarWitness
 
 -- Track B: inter-ambient full-B3 comparison of complete physical cut-star profiles
 import Kk.B3CrossAmbientProfile
