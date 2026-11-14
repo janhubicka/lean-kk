@@ -37,6 +37,26 @@ open SuccessorTree.V10
 
 universe u v
 
+/-- Descending natural-number induction, explicitly reproduced because
+the upstream successor-tree induction helper is private. -/
+private theorem crossheight_induction_down
+    {ell : Nat} {P : Nat → Prop}
+    (htop : P ell)
+    (hstep : ∀ i, i < ell → P (i + 1) → P i) :
+    ∀ i, i ≤ ell → P i := by
+  have main : ∀ d : Nat, ∀ i, ell - i = d → i ≤ ell → P i := by
+    intro d
+    induction d using Nat.strong_induction_on with
+    | h d ih =>
+        intro i hdi hiell
+        by_cases hieq : i = ell
+        · simpa [hieq] using htop
+        · have hilt : i < ell := lt_of_le_of_ne hiell hieq
+          apply hstep i hilt
+          apply ih (ell - (i + 1)) (by omega) (i + 1) rfl (by omega)
+  intro i hiell
+  exact main (ell - i) i rfl hiell
+
 /-- TWO genuine successor-tree AlgorithmRuns with different scan
 tops and X⊆Y have MONOTONE selected level sets through the entire
 old scan, provided the SMALL run has a GENUINE seed at its top.
@@ -84,7 +104,7 @@ theorem envelope_algorithmRun_selected_levels_mono_seed_height
       have hStep := (Q.interesting_step oldTop hLt hInteresting).1
       rw [hStep]
       simp
-  apply induction_down
+  apply crossheight_induction_down
   · exact hBase
   · intro i hi hNext
     have hClosure :
