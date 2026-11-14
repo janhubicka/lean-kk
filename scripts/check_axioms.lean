@@ -1551,3 +1551,12 @@ import Kk
 #print axioms Kk.HensonRunCutData.two_runs_full_B3_iff_of_intrinsic_spectra
 #check @Kk.HensonRunCutData.two_runs_finite_indexed_cutStar_controls_full_B3
 #print axioms Kk.HensonRunCutData.two_runs_finite_indexed_cutStar_controls_full_B3
+
+-- Track B: physically LIVE Kpt cut-neighbour names need only matching
+-- COMPLETE next ordinary-L types, not entire dependent old/upper L+ records.
+#check @Kk.indexed_cutStar_upperL_of_live_cover
+#print axioms Kk.indexed_cutStar_upperL_of_live_cover
+#check @Kk.indexed_cutStar_iff_of_bilateral_live_cover
+#print axioms Kk.indexed_cutStar_iff_of_bilateral_live_cover
+#check @Kk.HensonRunCutData.two_runs_finite_live_cutStar_cover_controls_full_B3
+#print axioms Kk.HensonRunCutData.two_runs_finite_live_cutStar_cover_controls_full_B3
