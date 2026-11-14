@@ -1,0 +1,12 @@
+import Kk.PhysicalBareNewRootRun
+
+#check @Kk.finiteNumericH_bareTopRootSeeds
+
+#check @Kk.finiteNumericH_bareTopRoot_seeds_represented_bounded
+#print axioms Kk.finiteNumericH_bareTopRoot_seeds_represented_bounded
+
+#check @Kk.finiteNumericH_bareTopRoot_construct_exhaustive_run
+#print axioms Kk.finiteNumericH_bareTopRoot_construct_exhaustive_run
+
+#check @Kk.finiteNumericH_old_and_bare_new_runs_extra_cuts_have_finite_witness
+#print axioms Kk.finiteNumericH_old_and_bare_new_runs_extra_cuts_have_finite_witness
