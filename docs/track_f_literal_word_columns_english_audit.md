@@ -66,3 +66,13 @@ Implement a new `Kk/TrackFLiteralWordColumns.lean` with the actual list-of-colum
 - `trackFWordRaw_coding_preserves_age`
 
 Check a concrete finite regression independently, then targeted `lake build Kk.TrackFLiteralWordColumns`, exact named standard-only axiom reports, and the full repository build at the final PR head. A theorem about the raw chronological words must use the actual column-based function, not assume the post-column cap as a hypothesis.
+
+## Strengthened exact definition bridge (added after initial targeted build)
+
+The original module proved the correct effect of appending a literal column, but the initial version defined the history's raw bound as a **minimum of per-column capacities**, whereas the manuscript defines it as **ell−1 minus the largest positive common symbol**. These formulas must not be declared identical merely because finite tests agree.
+
+The additional `trackFColumnCommon_pos_iff` proves, at each fixed column and for every positive symbol n, that `common(column,U)=n` if and only if **every word indexed by U has symbol n at that chronological position**. The module now also defines the literal maximum `trackFWordMax(C,U)` and proves the general identity
+
+`trackFWordRaw(C,U)=ell−1−trackFWordMax(C,U)`.
+
+The elementary identity `min(a−b,a−c)=a−max(b,c)` (with natural truncated subtraction) propagates by induction over the *actual ordered list of columns*. Thus the raw history is exactly the manuscript's \(\phi_D\) for bounded alphabet words, not a merely analogous encoding. The target CI gate has been increased to **30 named theorem reports**, and this additional exact-head gate must pass before promoting this strengthened result.
