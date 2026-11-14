@@ -1,4 +1,4 @@
-import Kk.NewRootMonotoneAbsorptionBridge
+import Kk.NewRootAbsorbedLowerRunStability
 
 #check @Kk.actual_two_run_preCut_absorption_of_old_higher_levels
 #print axioms Kk.actual_two_run_preCut_absorption_of_old_higher_levels
@@ -11,3 +11,9 @@ import Kk.NewRootMonotoneAbsorptionBridge
 
 #check @Kk.numericH_new_selected_cut_has_bare_original_source_witness
 #print axioms Kk.numericH_new_selected_cut_has_bare_original_source_witness
+
+#check @Kk.actual_two_runs_lower_levels_eq_after_old_closure_absorption
+#print axioms Kk.actual_two_runs_lower_levels_eq_after_old_closure_absorption
+
+#check @Kk.actual_three_runs_lower_levels_eq_of_old_selected_generators
+#print axioms Kk.actual_three_runs_lower_levels_eq_of_old_selected_generators
