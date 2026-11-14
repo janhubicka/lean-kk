@@ -1333,3 +1333,13 @@ import Kk
 #print axioms Kk.HensonCutOccurrence.starProfile_upperL_iff_physical_of_exhaustive
 #check @Kk.HensonCutOccurrence.full_B3_crossAmbient_iff_of_intrinsic_physical_cutStar
 #print axioms Kk.HensonCutOccurrence.full_B3_crossAmbient_iff_of_intrinsic_physical_cutStar
+
+-- Track B: exact finite Kpt live-node cut-star physical upper-L profiles
+#check @Kk.indexedCutStar_has_live_physical_node
+#print axioms Kk.indexedCutStar_has_live_physical_node
+#check @Kk.indexedCutStar_iff_physical_of_exact
+#print axioms Kk.indexedCutStar_iff_physical_of_exact
+#check @Kk.numericH_actual_run_all_cuts_indexed_cutStar
+#print axioms Kk.numericH_actual_run_all_cuts_indexed_cutStar
+#check @Kk.two_closures_physical_cutStar_eq_of_indexed_projection
+#print axioms Kk.two_closures_physical_cutStar_eq_of_indexed_projection
