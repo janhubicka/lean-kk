@@ -7,12 +7,14 @@ on:
       - 'Kk/NumericHPhysicalNewRootRun.lean'
       - 'docs/track_c_physical_new_root_run_english_audit.md'
       - 'docs/track_c_new_root_top_bound_english_audit.md'
+      - 'docs/track_c_new_root_overgeneration_repair_english_audit.md'
       - '.github/workflows/lean-track-c-new-root-run.yml'
   pull_request:
     paths:
       - 'Kk/NumericHPhysicalNewRootRun.lean'
       - 'docs/track_c_physical_new_root_run_english_audit.md'
       - 'docs/track_c_new_root_top_bound_english_audit.md'
+      - 'docs/track_c_new_root_overgeneration_repair_english_audit.md'
       - '.github/workflows/lean-track-c-new-root-run.yml'
   workflow_dispatch:
 
