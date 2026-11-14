@@ -92,3 +92,39 @@ Let `Y` be the genuine larger Kpt seed set of a real numerical-H+ structure `A=f
 The resulting finite source-index universe is **not uniformly bounded across ambient N**, and the selected source labels / parameter-incidence relations still need to be transported to obtain a fully labelled orbit. This is, however, an auditable finite physical obstruction certificate for every extra interesting cut in a genuinely resolved new-root extension.
 
 **Hostile tests:** (a) live≠crossing; first alternative includes terminal live nodes and second requires both *non-none* ancestor Options from the SAME j; (b) never substitute the old run's finite index for the new complete closure index; (c) strict `c<top` is needed for the pre-cut run stage; (d) no-(I2) is not assumed—multiple upper records are kept; (e) the hypothesis `Y⊆ambientPrefixPool` is a real physical representation obligation, discharged by Track C's actual new-root construction only after its avoidance/new-root input checks; (f) no selected F shadow; (g) if new closure has redundant terminal prefixes, extra events need not follow and the theorem asserts only the implication from new selected levels; (h) no automatic diary canonicality.
+
+
+## E35. A ONE-SIDED stability certificate for true new-root AlgorithmRuns
+
+The preceding E31 proves `Run_X.I i⊆Run_Y.I i` for actual same-top runs whenever X⊆Y. In particular, at every actual pre-cut stage the full Kpt source of the old run is contained in the full Kpt source of the new run, even if their higher selected-level sets do not coincide.
+
+Therefore to prove the **opposite inclusion** of selected levels, symmetric source comparisons are unnecessary. It suffices to certify, for every source-coordinate cut `c<top` in the two real runs, the following two **one-sided absence-of-novelty** facts, where
+`Z_X(c)=closure (Run_X.I(c+1)) X` and
+`Z_Y(c)=closure (Run_Y.I(c+1)) Y`:
+
+1. **No new terminal I1 witness:** whenever `Z_Y(c)` contains ANY node ending at c, `Z_X(c)` already contains a node ending at c. This does not require the two witness nodes to be identical.
+2. **No new full crossing pair:** `FullPhysicalClosureCrossing(Z_Y(c),c) ⊆ FullPhysicalClosureCrossing(Z_X(c),c)`. This compares the complete dependent old+upper L+ pair, with auxiliary E and ALL old parameters, not merely the set of next ordinary-L reducts.
+
+Then the actual source inclusion from E31/E29 gives the REVERSE implications for both terminal existence and crossing pairs automatically. Thus the actual physical terminal and crossing profiles are equal at each cut, and the verified `two_actual_Kpt_runs_level_sets_eq_of_stagewise_full_profiles` backwards-induction theorem yields
+
+`∀ i≤top, Run_X.I i=Run_Y.I i`.
+
+This is a genuinely more economical **new-root stage certification** than proving source-graph equality in both directions from scratch. The mathematical work left for the resolved diary is to show that its newly inserted physical original roots satisfy the two no-novelty conditions at all cuts which are *supposed* to stay boring or retain their event status. At a planned new diary event, the finite novelty theorem E34 identifies exactly which new terminal/full-crossing witness needs to be accounted for.
+
+### Finite indexed form
+
+Use one exhaustive *finite new-run Kpt source index* `node : Fin params.card→Kpt` and its exact `live(c,j)` mask, supplied by Track C's real numerical-H+ source theorem. Instead of comparing arbitrary sets of physical crossings, check the following on **every live index j**:
+- if `lev(node j)=c`, old `Z_X(c)` already has *some* node terminating at c;
+- if `kptFullOldAtCut(node j,c)=some ⟨c,T⟩` and `kptFullUpperAtCut(node j,c)=some ⟨c+1,U⟩`, then `(T,U)` already belongs to the old physical crossing relation.
+
+The previously verified finite-index/physical-relation equality turns these checks into the two no-novelty conditions. Therefore all selected levels of the two real runs agree. This is an **application-ready FINITE verification interface** for a full physical new-root stage once its old/new Kpt source node names and source-cut normalization are constructed. It still does NOT bound `params.card` uniformly across ambient N and does not prove a common labelled inverse-source orbit.
+
+### Additional hostile checks
+- The no-novelty condition is SUFFICIENT, not necessary for selected-level equality: one may add a new crossing that the genuine Kpt monoid can still skip, or a duplicate terminal node at an already-interesting cut.
+- Full pair containment is stronger than equality of B3 verdicts; the I3 obstruction depends on actual complete Kpt source crossing equations.
+- The tests use `Run_X.I(c+1)` and `Run_Y.I(c+1)` as calculated by the **real runs**, not an externally guessed shared level set.
+- If the new-run full source index is incomplete or its live mask is restricted to marked selected vertices, the conclusion is invalid.
+- Same top and literal source-level alignment remain necessary. The unbounded resolved-copy construction may increase the top or alter the generation k.
+- Equality of the selected-level skeleton does NOT itself determine the selected+auxiliary parameter label correspondence or the real monoid-map pullback orbit.
+
+**Lean targets:** actual two-run one-sided no-novelty theorem and a corresponding exact-full-index criterion. The latter must use the existing verified exhaustive current-run index, never a guessed set of original names. Strict isolated direct build and named standard-only transitive-axiom reports before any validation claim.
