@@ -178,6 +178,7 @@ import Kk.B3CutStarNormalForm
 import Kk.B3CrossAmbientProfile
 import Kk.B3CrossAmbientCutStar
 import Kk.B3CutStarNameTransport
+import Kk.B3FullSourceCertification
 
 /-!
 The counting project imports the verified successor-tree library.
