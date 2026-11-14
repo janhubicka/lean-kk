@@ -43,6 +43,39 @@ noncomputable def trackFColumnCommon {d ell : Nat}
   then column (trackFColumnRepresentative U)
   else 0
 
+
+/-- For every positive symbol n, the column's common-letter function
+equals n exactly when *every* active branch in the nonempty support U
+has letter n. This is precisely the manuscript's c_n(U) predicate
+at one fixed chronological coordinate. -/
+theorem trackFColumnCommon_pos_iff {d ell : Nat}
+    (column : Fin d → Nat) (U : IntegerGraphSupport d ell)
+    (n : Nat) (hn : 0 < n) :
+    trackFColumnCommon column U = n ↔
+      ∀ i ∈ U.1, column i = n := by
+  classical
+  constructor
+  · intro h
+    by_cases hUniform : ∀ i ∈ U.1,
+        column i = column (trackFColumnRepresentative U)
+    · unfold trackFColumnCommon at h
+      rw [if_pos hUniform] at h
+      intro i hi
+      exact (hUniform i hi).trans h
+    · unfold trackFColumnCommon at h
+      rw [if_neg hUniform] at h
+      omega
+  · intro hUniform
+    have hRep : column (trackFColumnRepresentative U) = n :=
+      hUniform _ (trackFColumnRepresentative_mem U)
+    have hSame : ∀ i ∈ U.1,
+        column i = column (trackFColumnRepresentative U) := by
+      intro i hi
+      exact (hUniform i hi).trans hRep.symm
+    unfold trackFColumnCommon
+    rw [if_pos hSame]
+    exact hRep
+
 /-- The literal new concrete diary column: put letter n on T,
 and 0 on all other active branches. -/
 def trackFNewColumn {d : Nat}
@@ -98,6 +131,55 @@ noncomputable def trackFWordRaw (d ell : Nat)
     (fun bound column =>
       min bound (ell - 1 - trackFColumnCommon column U))
     (ell - 1)
+
+
+/-- Largest common nonzero letter in the chronological history,
+with 0 if there is no common positive letter in any column.
+This is the maximum n appearing in the manuscript's c_n(U). -/
+noncomputable def trackFWordMax (d ell : Nat)
+    (columns : List (Fin d → Nat)) :
+    IntegerGraphSupport d ell → Nat :=
+  fun U => columns.foldl
+    (fun maximum col => max maximum (trackFColumnCommon col U)) 0
+
+private theorem trackF_sub_max (a b c : Nat) :
+    min (a - b) (a - c) = a - max b c := by
+  by_cases h : b ≤ c
+  · have hsub : a - c ≤ a - b := Nat.sub_le_sub_left h a
+    rw [max_eq_right h]
+    exact min_eq_right hsub
+  · have hcb : c ≤ b := by omega
+    have hsub : a - b ≤ a - c := Nat.sub_le_sub_left hcb a
+    rw [max_eq_left hcb]
+    exact min_eq_left hsub
+
+/-- Exact equivalence between the folded raw word bound and the
+manuscript's formula ell-1 minus the largest common positive letter.
+The word order is retained, although the numerical raw bound itself
+is insensitive to permutations of chronological columns. -/
+theorem trackFWordRaw_eq_sub_max {d ell : Nat}
+    (cols : List (Fin d → Nat))
+    (U : IntegerGraphSupport d ell) :
+    trackFWordRaw d ell cols U =
+      ell - 1 - trackFWordMax d ell cols U := by
+  have hRec : ∀ (xs : List (Fin d → Nat)) (b : Nat),
+      xs.foldl
+        (fun cap col => min cap (ell - 1 - trackFColumnCommon col U))
+        (ell - 1 - b) =
+      ell - 1 -
+        xs.foldl
+          (fun mx col => max mx (trackFColumnCommon col U)) b := by
+    intro xs
+    induction xs with
+    | nil =>
+        intro b
+        simp
+    | cons col tail ih =>
+        intro b
+        simp only [List.foldl_cons]
+        rw [trackF_sub_max (ell - 1) b (trackFColumnCommon col U)]
+        exact ih (max b (trackFColumnCommon col U))
+  simpa [trackFWordRaw, trackFWordMax] using hRec cols 0
 
 private theorem trackFWordRaw_fold_le {d ell : Nat}
     (U : IntegerGraphSupport d ell)
