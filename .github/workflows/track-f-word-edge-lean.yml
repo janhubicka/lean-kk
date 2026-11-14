@@ -36,7 +36,7 @@ jobs:
       - name: Mathlib cache
         run: lake exe cache get
       - name: Build new Track F E theorem
-        run: lake build Kk.TrackFWordEdgeLiteral
+        run: lake build Kk.TrackFWordEdgeLiteral Kk.TrackFWordEdgePassing
       - name: Strict standard-only axiom gate
         shell: bash
         run: |
@@ -51,6 +51,8 @@ jobs:
             "Kk.trackFWordMax_lt_iff",
             "Kk.trackFWordMax_pair_lt_iff",
             "Kk.trackFConcreteEdgePair_iff_commonMax_lt",
+            "Kk.trackFWordMax_pair_le_height",
+            "Kk.trackFConcreteEdgePair_iff_abstractPassing",
           ]
           allowed={"propext","Classical.choice","Quot.sound"}
           for name in expected:
