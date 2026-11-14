@@ -105,9 +105,11 @@ theorem trackFConcreteEdgePair_reindex {d : Nat}
     trackFConcreteEdgePair ell (trackFRestrictColumns f cols) ↔
       trackFConcreteEdgeAt ell cols (f 0) (f 1) := by
   simp only [trackFConcreteEdgePair, trackFConcreteEdgeAt,
-    trackFWordDifferent, trackFWordDifferent_reindex,
-    trackFSeenSymbol_reindex, trackFPairSimultaneous_reindex]
-  rfl
+    trackFWordDifferent, trackFSeenSymbol_reindex,
+    trackFPairSimultaneous_reindex]
+  apply and_congr
+  · exact trackFWordDifferent_reindex f cols (0 : Fin 2) (1 : Fin 2)
+  · exact Iff.rfl
 
 /-- Select x first and the candidate coded branch j second,
 using an *injective* two-sort embedding. The pair must be distinct. -/
@@ -122,12 +124,14 @@ def trackFSelectPair {d : Nat}
 @[simp] theorem trackFSelectPair_zero {d : Nat}
     (x j : Fin d) (hne : x ≠ j) :
     trackFSelectPair x j hne (0 : Fin 2) = x := by
-  simp [trackFSelectPair]
+  change (if (0 : Fin 2) = 0 then x else j) = x
+  simp
 
 @[simp] theorem trackFSelectPair_one {d : Nat}
     (x j : Fin d) (hne : x ≠ j) :
     trackFSelectPair x j hne (1 : Fin 2) = j := by
-  simp [trackFSelectPair]
+  change (if (1 : Fin 2) = 0 then x else j) = j
+  simp
 
 /-- Exact singleton supports commute with injecting selected
 surviving branch coordinates into the original finite sort level. -/
@@ -228,7 +232,9 @@ theorem trackFConcreteEdgeAt_iff_abstractPassing
   have hEdge : trackFConcreteEdgeAt ell cols x j ↔
       trackFConcreteEdgePair ell cols2 := by
     have h := trackFConcreteEdgePair_reindex ell f cols
-    simpa only [trackFSelectPair_zero,trackFSelectPair_one] using h.symm
+    have hZero : f 0 = x := trackFSelectPair_zero x j hNe
+    have hOne : f 1 = j := trackFSelectPair_one x j hNe
+    simpa only [hZero,hOne] using h.symm
   calc
     trackFConcreteEdgeAt ell cols x j ↔
         trackFConcreteEdgePair ell cols2 := hEdge
