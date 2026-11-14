@@ -1,6 +1,7 @@
 import Kk.NumericHBaseExtensionCoherence
 import Kk.NumericHTopAuxE
 import Kk.NumericHExhaustiveRunIndex
+import SuccessorTree.EnvelopeRunExistence
 import Mathlib.Tactic
 
 /-!
