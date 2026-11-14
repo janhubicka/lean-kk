@@ -33,8 +33,9 @@ def trackFDeletedPair (d : Nat)
 relation of the chronological word columns. -/
 def trackFConcretePassingSet (d ell : Nat)
     (j : Fin (d + 1))
-    (cols : List (Fin (d + 1) → Nat)) : Finset (Fin d) :=
-  Finset.univ.filter (fun i =>
+    (cols : List (Fin (d + 1) → Nat)) : Finset (Fin d) := by
+  classical
+  exact Finset.univ.filter (fun i =>
     trackFConcreteEdgeAt ell cols ((Fin.succAboveEmb j) i) j)
 
 /-- The INDEPENDENT abstract pair-capacity passing-one set. Unlike
