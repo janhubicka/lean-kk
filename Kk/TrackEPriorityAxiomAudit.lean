@@ -1,4 +1,4 @@
-import Kk.LocalEventTraceBlindness
+import Kk.LocalClosedEventTraceBlindness
 
 #check @Kk.terminal_kpt_node_witnesses_raw_I1_and_I2
 #print axioms Kk.terminal_kpt_node_witnesses_raw_I1_and_I2
@@ -32,3 +32,10 @@ import Kk.LocalEventTraceBlindness
 #print axioms Kk.redundant_Kpt_node_invisible_to_all_local_source_profiles
 #check @Kk.distinct_Kpt_node_sets_same_all_I1_I2_I3_local_verdicts
 #print axioms Kk.distinct_Kpt_node_sets_same_all_I1_I2_I3_local_verdicts
+
+#check @Kk.kpt_meetClosed_insert_below
+#print axioms Kk.kpt_meetClosed_insert_below
+#check @Kk.kpt_closure_empty_levels_eq_of_meetClosed
+#print axioms Kk.kpt_closure_empty_levels_eq_of_meetClosed
+#check @Kk.distinct_meetClosed_Kpt_closures_same_all_local_verdicts
+#print axioms Kk.distinct_meetClosed_Kpt_closures_same_all_local_verdicts
