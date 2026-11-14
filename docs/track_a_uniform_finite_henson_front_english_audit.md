@@ -41,7 +41,13 @@ Define the physical future pool `W'=f(W)`. Instead of guessing
 a global sort labelling on all of Nat (which is impossible if d=0),
 use the intrinsic **pulled-back sort predicate** on W':
 
-  `IsSortIn_T(z) :↔ ∃x∈W, f(x)=z ∧ tau(x)∈T`.
+  `IsSortIn_T(z) :↔ z∈f(W.filter(tau∈T))`.
+
+On f(W), injectivity makes this exactly the equivalent bounded
+existential `∃x∈W, f(x)=z ∧ tau(x)∈T`. The finite-image
+membership form is essential in Lean: it supplies a literal
+decidable predicate for Finset.filter at theorem-statement
+elaboration, avoiding unbounded existential decidability.
 
 Then with the SAME single f and W' all feasible vectors v
 have actual E-clique witnesses s'⊆W' whose IsSortIn_T
