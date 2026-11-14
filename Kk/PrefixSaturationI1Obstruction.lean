@@ -62,7 +62,7 @@ theorem kpt_full_prefix_seeds_force_all_levels
     LevelTree.level_ancestor x p hpx
   have hSelected : p ∈ R.I p := by
     by_cases heq : p = top
-    · subst p
+    · rw [heq]
       rw [R.topI]
       simp
     · have hlt : p < top := by omega
