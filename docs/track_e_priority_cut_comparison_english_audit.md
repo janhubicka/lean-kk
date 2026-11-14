@@ -61,3 +61,17 @@ If both are in the nonstructural case, the above proof supplies no-(I1) and no-(
 - Concrete numerical H+ transfer of no-(I2) and corrected (B3) under the above source profile, possibly separately gated if the Lean type parameters become too unwieldy.
 
 All statements are **conditional** on the actual local profile agreements. No assertion that same unrefined KK macrodiary supplies them. No global envelope/carrier or upper BRD validation marks should be promoted on this basis.
+## E24. Physical two-numerical-H B3 transfer with only ONE no-(I2) input
+
+The prior merged cross-numerical-H theorem `two_numericH_closures_B3_of_equal_full_crossing_relation` requires no-(I2) in **both** physical source closures. Under the new minimal local profile comparison, the SECOND no-(I2) premise is no longer independent.
+
+Take two genuine finite numerical H+ presentations `A₁=finiteNumericH K₁ k₁ N₁` and `A₂=finiteNumericH K₂ k₂ N₂`, the same normalized forbidden family and a common source-coordinate cut c, with complete Kpt closure sources `Z₁,Z₂`. Suppose each finite original-name pool actually represents every node of its respective closure (the explicit Track C `hPool` hypothesis). Suppose (I1) is **absent** and no competing (I2) meet occurs in `Z₁`, and suppose the terminal flag agrees and their **FULL physical** old+upper L+ crossing relations agree.
+
+Then:
+1. (I1) and (I2) are both absent in `Z₂`, by E22 priority transfer and the verified no-I1 fork equivalence.
+2. Both canonical `closureSelectedBoringData` prescribed source maps therefore satisfy the physical no-I2 crossing coverage/graph theorem.
+3. Their source domains and full assigned upper L+ outputs coincide, and their corrected (B3) truth values coincide, by merged Track E `two_numericH_closures_B3_of_equal_full_crossing_relation`.
+
+This is a **real physical reduction** of the cross-occurrence comparison assumptions, not a proof that diary equality supplies the terminal and crossing agreement. The second no-(I2) test has been *derived* instead of postulated. No I3 selection or boring-level classification is inferred solely from the B3 verdict.
+
+**Hostile test.** A one-sided no-(I2) premise without common terminal flags is insufficient: a new terminal prefix in the other closure may create a degenerate raw (I2) self-meet while leaving every crossing relation unchanged. Thus the terminal-flag hypothesis must not be dropped. If (I1) holds in the first closure, it gets priority but the first/second raw (I2) values need not match; the B3-stage theorem is only applied on the common genuinely nonstructural branch.
