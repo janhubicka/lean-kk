@@ -6,6 +6,7 @@ on:
       - 'Kk/CrossHeightNewRootNovelty.lean'
       - 'Kk/CrossHeightIndexedNovelty.lean'
       - 'Kk/CrossHeightOldRangeStability.lean'
+      - 'Kk/CrossHeightFiniteIndexStability.lean'
       - 'Kk/TrackECrossHeightAxiomAudit.lean'
       - 'docs/track_e_crossheight_new_root_novelty_english_audit.md'
       - '.github/workflows/kk-track-e-crossheight.yml'
@@ -41,7 +42,7 @@ jobs:
       - name: Obtain Mathlib build cache
         run: lake exe cache get
       - name: Explicitly compile actual cross-height new-root novelty and finite source
-        run: lake build Kk.CrossHeightNewRootNovelty Kk.CrossHeightIndexedNovelty Kk.CrossHeightOldRangeStability
+        run: lake build Kk.CrossHeightNewRootNovelty Kk.CrossHeightIndexedNovelty Kk.CrossHeightOldRangeStability Kk.CrossHeightFiniteIndexStability
       - name: Strict named transitive axioms
         run: |
           set -euo pipefail
