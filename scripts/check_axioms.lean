@@ -1708,3 +1708,24 @@ import Kk
 #print axioms Kk.two_actual_Kpt_runs_levels_eq_of_two_finite_index_cover
 #check @Kk.canonical_Kpt_new_roots_selected_levels_mono
 #print axioms Kk.canonical_Kpt_new_roots_selected_levels_mono
+
+-- Track B 14-Nov: finite real OLD numerical-H base pair support
+-- and two genuine Kpt AlgorithmRuns with different base E but same k.
+#check @Kk.relevant_base_pair_base_indices_bounded
+#print axioms Kk.relevant_base_pair_base_indices_bounded
+#check @Kk.numericalH_old_binary_eq_of_relevant_base_pairs
+#print axioms Kk.numericalH_old_binary_eq_of_relevant_base_pairs
+#check @Kk.numericalH_old_socle_eq_of_relevant_base_pairs
+#print axioms Kk.numericalH_old_socle_eq_of_relevant_base_pairs
+#check @Kk.HensonCutOccurrence.old_socle_of_relevant_base_pair_agreement
+#print axioms Kk.HensonCutOccurrence.old_socle_of_relevant_base_pair_agreement
+#check @Kk.HensonCutOccurrence.full_B3_iff_of_relevant_base_and_intrinsic_cutStar
+#print axioms Kk.HensonCutOccurrence.full_B3_iff_of_relevant_base_and_intrinsic_cutStar
+#check @Kk.HensonPhysicalRunCutData.old_socle_of_relevant_base_pairs
+#print axioms Kk.HensonPhysicalRunCutData.old_socle_of_relevant_base_pairs
+#check @Kk.HensonPhysicalRunCutData.full_B3_iff_of_relevant_base_and_intrinsic_cutStar
+#print axioms Kk.HensonPhysicalRunCutData.full_B3_iff_of_relevant_base_and_intrinsic_cutStar
+#check @Kk.HensonPhysicalRunCutData.full_B3_iff_of_relevant_base_and_live_cover
+#print axioms Kk.HensonPhysicalRunCutData.full_B3_iff_of_relevant_base_and_live_cover
+#check @Kk.HensonPhysicalRunCutData.bad_good_has_missing_intrinsic_cutStar_type_of_relevant_base
+#print axioms Kk.HensonPhysicalRunCutData.bad_good_has_missing_intrinsic_cutStar_type_of_relevant_base
