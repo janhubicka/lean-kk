@@ -1,4 +1,4 @@
-import Kk.PhysicalCrossingTerminalBlindness
+import Kk.IndexedPhysicalStructuralEvents
 
 #check @Kk.indexed_physical_crossing_eq_full_closure_relation
 #print axioms Kk.indexed_physical_crossing_eq_full_closure_relation
@@ -17,3 +17,9 @@ import Kk.PhysicalCrossingTerminalBlindness
 
 #check @Kk.distinct_kpt_node_sets_same_all_full_crossings
 #print axioms Kk.distinct_kpt_node_sets_same_all_full_crossings
+
+#check @Kk.physical_I1_I2_iff_indexed_active_nodes
+#print axioms Kk.physical_I1_I2_iff_indexed_active_nodes
+
+#check @Kk.numericH_actual_run_all_cuts_full_structural_trace
+#print axioms Kk.numericH_actual_run_all_cuts_full_structural_trace
