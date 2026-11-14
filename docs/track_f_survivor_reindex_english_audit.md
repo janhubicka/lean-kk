@@ -56,3 +56,29 @@ New file `Kk/TrackFSurvivorReindex.lean`, with targeted declarations:
 5. `trackFWordCanonical_reindex`: specialization to concrete word levels.
 
 Run exact-head targeted module build, strict standard-only `#print axioms` checks, and ordinary full repository build. No `sorry`/new axioms and no mutations of central `Kk.lean` or the protected manuscript proof. Keep the full diary lemma pending.
+
+## Completed survivor-graph-age and controlled-coding corollaries (English proof first)
+
+The general injection theorem is not the last useful formulation. In the manuscript's literal coding event, one deletes a *specified* branch j, so the surviving order is represented by the canonical order-preserving embedding `Fin.succAboveEmb j : Fin d ↪ Fin (d+1)`. Its defining property is that it lists every old index except j, in increasing order. Specializing the general pullback theorem gives **exactly**, at each admissible U,
+
+`G_(raw surviving words)(U)=G_(raw old words)(image_(succAboveEmb j)(U))`.
+
+This statement requires no extra age assumption: the *raw* chronological word bound is already support-monotone, as verified by `trackFWordRaw_monotone`. It also preserves the literal chronological list of columns, even though the raw numerical ages themselves depend only on which letters appeared.
+
+### Restricting a genuine age is a genuine age
+
+Suppose `F : IntegerGraphSupport (d+1) ell → Nat` satisfies the **actual normalized integer-witness graph-age axioms**, and choose any injective f selecting survivors. Define `Fsmall(U)=F(f(U))`. Positivity and upper bounds come directly from F on the mapped supports. For a selected U, take a genuine normalized full-vector witness w attaining F(f(U)); restrict its coordinates along f. The restricted w has total ≤ell−1, respects every smaller support bound `Fsmall(S)`, and saturates U. Thus `IsIntegerGraphAge d ell Fsmall`. This requires no new existence axiom and uses the already formally defined `trackFRestrictWeights`.
+
+### Safe controlled-coding column after deletion
+
+Fix a genuine full old age F with `G_(old raw word columns)=F`, a coded index j, and its **already independently determined** passing set `X ⊆ Fin d`. Suppose that for every admissible nonempty U⊆X the restricted value `F(f(U))≤ell−2`. Deletion reindexing gives `G_(raw surviving columns)=Fsmall`. The preceding result says Fsmall is a genuine age. The previously verified `trackFWordRaw_coding_preserves_age` therefore applies after adding the literal one/zero column `trackFNewColumn X 1`, proving that the new canonical age is **exactly** `Fsmall` on all surviving supports.
+
+This is the complete *age-profile* part of a controlled-coding transition; it **does not** itself derive which X is allowed, the word predicate E, the minimal-pre-age clause, or terminal coded-graph preservation. Those remain separate obligations. In particular, do not assume that any choice of X obeying the age cap is an admissible controlled-coding event.
+
+### New named endpoints to verify
+
+- `trackFGraphAge_reindex`: a genuine finite sorted graph age restricts to a genuine age on an injectively selected subset of sorts;
+- `trackFWordCanonical_delete_at`: the canonical age of a literal word level after deleting j equals the pullback of the old canonical age;
+- `trackFWordRaw_coding_after_delete_exact`: under actual old age and the full controlled-coding safety cap, deleting j and writing the literal new 1/0 column preserves exactly the restricted canonical age.
+
+Require exact-head compilation and standard-only `#print axioms`; none of these claims supplies the missing E/X equivalence or the entire diary inverse.
