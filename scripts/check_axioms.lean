@@ -1597,3 +1597,16 @@ import Kk
 #print axioms Kk.HensonPhysicalRunCutData.two_runs_finite_live_cutStar_cover_controls_full_B3
 #check @Kk.HensonPhysicalRunCutData.two_runs_bad_good_has_finite_unmatched_live_Kpt_node
 #print axioms Kk.HensonPhysicalRunCutData.two_runs_bad_good_has_finite_unmatched_live_Kpt_node
+
+-- Track B: finite OLD numerical-H L-socle depends only on admissible
+-- real base-graph edge pairs with BOTH physical coordinates ≤ cut.
+#check @Kk.relevant_base_pair_base_indices_bounded
+#print axioms Kk.relevant_base_pair_base_indices_bounded
+#check @Kk.numericalH_old_binary_eq_of_relevant_base_pairs
+#print axioms Kk.numericalH_old_binary_eq_of_relevant_base_pairs
+#check @Kk.numericalH_old_socle_eq_of_relevant_base_pairs
+#print axioms Kk.numericalH_old_socle_eq_of_relevant_base_pairs
+#check @Kk.HensonCutOccurrence.old_socle_of_relevant_base_pair_agreement
+#print axioms Kk.HensonCutOccurrence.old_socle_of_relevant_base_pair_agreement
+#check @Kk.HensonCutOccurrence.full_B3_iff_of_relevant_base_and_intrinsic_cutStar
+#print axioms Kk.HensonCutOccurrence.full_B3_iff_of_relevant_base_and_intrinsic_cutStar
