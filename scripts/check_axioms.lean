@@ -1333,3 +1333,109 @@ import Kk
 #print axioms Kk.HensonCutOccurrence.starProfile_upperL_iff_physical_of_exhaustive
 #check @Kk.HensonCutOccurrence.full_B3_crossAmbient_iff_of_intrinsic_physical_cutStar
 #print axioms Kk.HensonCutOccurrence.full_B3_crossAmbient_iff_of_intrinsic_physical_cutStar
+
+-- Track G: isolated verified A/C/E/F modules integrated at exact main baseline.
+-- Full-closure/source/cut diagnostics are CONDITIONAL and cannot certify the
+-- unbounded H+ resolved diary or common labelled inverse-source orbit.
+
+-- Track A: 7 source-exact named standard-only reports
+#check @Kk.orderedReservedCapacity_reaches_full_iff
+#print axioms Kk.orderedReservedCapacity_reaches_full_iff
+#check @Kk.orderedReservedCapacity_before_full_iff
+#print axioms Kk.orderedReservedCapacity_before_full_iff
+#check @Kk.orderedReservedCapacity_cover_age_normal_form
+#print axioms Kk.orderedReservedCapacity_cover_age_normal_form
+#check @Kk.finiteDirectedCliqueCapacity_eq_of_offDiagonal_agreement
+#print axioms Kk.finiteDirectedCliqueCapacity_eq_of_offDiagonal_agreement
+#check @Kk.finiteNumericH_whole_prefix_raw_canonical_block_iff
+#print axioms Kk.finiteNumericH_whole_prefix_raw_canonical_block_iff
+#check @Kk.finiteClique_canonical_cover_of_reference_eq
+#print axioms Kk.finiteClique_canonical_cover_of_reference_eq
+#check @Kk.finiteNumericH_whole_prefix_cover_step_iff
+#print axioms Kk.finiteNumericH_whole_prefix_cover_step_iff
+
+-- Track C: 15 source-exact named standard-only reports
+#check @Kk.kpt_full_cut_fork_forces_I2_meet
+#print axioms Kk.kpt_full_cut_fork_forces_I2_meet
+#check @Kk.kpt_I2_meet_forces_full_cut_fork_of_no_I1
+#print axioms Kk.kpt_I2_meet_forces_full_cut_fork_of_no_I1
+#check @Kk.kpt_I2_meet_implies_I1_or_full_fork
+#print axioms Kk.kpt_I2_meet_implies_I1_or_full_fork
+#check @Kk.kpt_no_I1_I2_iff_complete_full_fork
+#print axioms Kk.kpt_no_I1_I2_iff_complete_full_fork
+#check @Kk.kpt_full_fork_iff_finite_active_indices
+#print axioms Kk.kpt_full_fork_iff_finite_active_indices
+#check @Kk.finiteNumericH_run_no_I1_I2_iff_indexed_full_fork
+#print axioms Kk.finiteNumericH_run_no_I1_I2_iff_indexed_full_fork
+#check @Kk.kpt_actual_crossing_has_physical_full_pair
+#print axioms Kk.kpt_actual_crossing_has_physical_full_pair
+#check @Kk.kpt_full_fork_forces_physical_crossing_nonfunctional
+#print axioms Kk.kpt_full_fork_forces_physical_crossing_nonfunctional
+#check @Kk.kpt_no_I1_I2_iff_physical_crossing_nonfunctional
+#print axioms Kk.kpt_no_I1_I2_iff_physical_crossing_nonfunctional
+#check @Kk.finiteNumericH_run_indexed_I2_iff_physical_nonfunctional
+#print axioms Kk.finiteNumericH_run_indexed_I2_iff_physical_nonfunctional
+#check @Kk.kpt_I1_or_I2_iff_I1_or_complete_full_fork
+#print axioms Kk.kpt_I1_or_I2_iff_I1_or_complete_full_fork
+#check @Kk.kpt_I1_or_I2_iff_I1_or_physical_nonfunctional
+#print axioms Kk.kpt_I1_or_I2_iff_I1_or_physical_nonfunctional
+#check @Kk.finiteNumericH_run_structural_I1I2_iff_active_node_or_fork
+#print axioms Kk.finiteNumericH_run_structural_I1I2_iff_active_node_or_fork
+#check @Kk.finiteNumericH_run_no_indexed_structural_event_fails_full_B3
+#print axioms Kk.finiteNumericH_run_no_indexed_structural_event_fails_full_B3
+#check @Kk.finiteNumericH_run_selected_full_B3_implies_indexed_I1_or_I2
+#print axioms Kk.finiteNumericH_run_selected_full_B3_implies_indexed_I1_or_I2
+
+-- Track E: 8 source-exact named standard-only reports
+#check @Kk.indexed_physical_crossing_eq_full_closure_relation
+#print axioms Kk.indexed_physical_crossing_eq_full_closure_relation
+#check @Kk.numericH_actual_run_all_cuts_indexed_physical_crossing
+#print axioms Kk.numericH_actual_run_all_cuts_indexed_physical_crossing
+#check @Kk.indexed_physical_crossings_eq_of_two_sided_pair_matching
+#print axioms Kk.indexed_physical_crossings_eq_of_two_sided_pair_matching
+#check @Kk.two_physical_closures_crossing_eq_of_indexed_pair_matching
+#print axioms Kk.two_physical_closures_crossing_eq_of_indexed_pair_matching
+#check @Kk.full_physical_crossing_ignores_redundant_terminal_ancestor
+#print axioms Kk.full_physical_crossing_ignores_redundant_terminal_ancestor
+#check @Kk.distinct_kpt_node_sets_same_all_full_crossings
+#print axioms Kk.distinct_kpt_node_sets_same_all_full_crossings
+#check @Kk.physical_I1_I2_iff_indexed_active_nodes
+#print axioms Kk.physical_I1_I2_iff_indexed_active_nodes
+#check @Kk.numericH_actual_run_all_cuts_full_structural_trace
+#print axioms Kk.numericH_actual_run_all_cuts_full_structural_trace
+
+-- Track F: 17 source-exact named standard-only reports
+#check @Kk.trackFColumnRepresentative_mem
+#print axioms Kk.trackFColumnRepresentative_mem
+#check @Kk.trackFColumnCommon_pos_iff
+#print axioms Kk.trackFColumnCommon_pos_iff
+#check @Kk.trackFColumnCommon_antitone
+#print axioms Kk.trackFColumnCommon_antitone
+#check @Kk.trackFNewColumnCommon
+#print axioms Kk.trackFNewColumnCommon
+#check @Kk.trackFWordRaw_eq_sub_max
+#print axioms Kk.trackFWordRaw_eq_sub_max
+#check @Kk.trackFWordRaw_monotone
+#print axioms Kk.trackFWordRaw_monotone
+#check @Kk.trackFWordRaw_append
+#print axioms Kk.trackFWordRaw_append
+#check @Kk.trackFWordRaw_append_as_coding_cap
+#print axioms Kk.trackFWordRaw_append_as_coding_cap
+#check @Kk.trackFWord_cover_symbol_valid
+#print axioms Kk.trackFWord_cover_symbol_valid
+#check @Kk.trackFWordRaw_age_cover_exact
+#print axioms Kk.trackFWordRaw_age_cover_exact
+#check @Kk.trackFWordRaw_coding_preserves_age
+#print axioms Kk.trackFWordRaw_coding_preserves_age
+#check @Kk.trackFZeroOutside_le
+#print axioms Kk.trackFZeroOutside_le
+#check @Kk.trackFZeroOutside_T_mass
+#print axioms Kk.trackFZeroOutside_T_mass
+#check @Kk.trackFZeroOutside_inter_sum
+#print axioms Kk.trackFZeroOutside_inter_sum
+#check @Kk.trackFZeroOutside_feasible_of_agree
+#print axioms Kk.trackFZeroOutside_feasible_of_agree
+#check @Kk.trackFCanonical_locality_of_monotone
+#print axioms Kk.trackFCanonical_locality_of_monotone
+#check @Kk.trackFWordRaw_locality
+#print axioms Kk.trackFWordRaw_locality

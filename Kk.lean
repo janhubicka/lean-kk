@@ -180,6 +180,23 @@ import Kk.B3CrossAmbientCutStar
 import Kk.B3CutStarNameTransport
 import Kk.B3FullSourceCertification
 
+-- Track G second source-exact integration: new standalone A/C/E/F finite/conditional modules.
+-- This does NOT construct a global resolved diary, common labelled orbit, or BRD theorem.
+-- Track A (7 checked component endpoints)
+import Kk.NumericPrefixCanonicalCover
+-- Track C (15 checked component endpoints)
+import Kk.NumericHI2FullFork
+import Kk.NumericHPhysicalI2Fork
+import Kk.NumericHStructuralCutClassifier
+import Kk.NumericHIndexedI3Failure
+-- Track E (8 checked component endpoints)
+import Kk.IndexedPhysicalCrossing
+import Kk.IndexedPhysicalStructuralEvents
+import Kk.PhysicalCrossingTerminalBlindness
+-- Track F (17 checked component endpoints)
+import Kk.TrackFLiteralWordColumns
+import Kk.TrackFMonotoneRawLocality
+
 /-!
 The counting project imports the verified successor-tree library.
 No local replacement of the Ramsey theorem is assumed.
