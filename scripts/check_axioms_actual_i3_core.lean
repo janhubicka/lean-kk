@@ -1,0 +1,4 @@
+import Kk.B3ActualI3PhysicalCore
+
+#check @Kk.henson_actualRun_nonstructural_I3_has_exact_physical_core
+#print axioms Kk.henson_actualRun_nonstructural_I3_has_exact_physical_core
