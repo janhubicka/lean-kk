@@ -1542,3 +1542,12 @@ import Kk
 #print axioms Kk.trackFWordSpectrum_age_cover
 #check @Kk.trackFWordSpectrum_coding_column
 #print axioms Kk.trackFWordSpectrum_coding_column
+
+-- Track B: actual TWO finite Kpt AlgorithmRuns on a shared Henson base,
+-- real full sources, and conditional indexed physical cut-star comparison.
+#check @Kk.HensonRunCutData.occurrence_full_source_exhaustive
+#print axioms Kk.HensonRunCutData.occurrence_full_source_exhaustive
+#check @Kk.HensonRunCutData.two_runs_full_B3_iff_of_intrinsic_spectra
+#print axioms Kk.HensonRunCutData.two_runs_full_B3_iff_of_intrinsic_spectra
+#check @Kk.HensonRunCutData.two_runs_finite_indexed_cutStar_controls_full_B3
+#print axioms Kk.HensonRunCutData.two_runs_finite_indexed_cutStar_controls_full_B3
