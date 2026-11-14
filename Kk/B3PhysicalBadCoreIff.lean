@@ -169,9 +169,6 @@ theorem henson_fullB3_failure_iff_physical_cut_star_bad_core_of_no_I2
   let C : AgeTestModel 1 0 1 := finiteNumericHL K k N
   let F : PrescribedBoringData cut 1 0 1 :=
     selectedStagePoolPrescribedData A cut original Selected
-  have hFamily : hensonForbiddenFamily ell hell =
-      hensonForbiddenFamily ell hell := by
-    rfl
   constructor
   · intro hFail
     obtain ⟨v0,hSel0,hEligible0,_hEdge0⟩ :=
