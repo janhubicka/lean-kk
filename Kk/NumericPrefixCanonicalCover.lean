@@ -347,6 +347,59 @@ theorem finiteNumericH_whole_prefix_cover_step_iff
     exact hGeneral.mpr
       ⟨hWFree, (hProfiles hWFree).mpr hCoverProfile⟩
 
+/-- The reserved real-copy prefix reaches capacity r only on the
+FINAL original a=r-1, at generation g>=a. It cannot reach r
+during any earlier original or any lower generation. -/
+theorem orderedReservedCapacity_reaches_full_iff
+    (r a g : Nat) (ha : a < r) :
+    (if g < a then a else a + 1) = r ↔
+      a + 1 = r ∧ a ≤ g := by
+  by_cases hg : g < a
+  · have hne : a ≠ r := by omega
+    have hnot : ¬ a ≤ g := by omega
+    simp [hg, hne, hnot]
+  · have hge : a ≤ g := by omega
+    simp [hg, hge]
+
+/-- The complement of the final event: the sharp reserved capacity is
+strictly below the block size precisely before the last-original
+threshold or at a generation lower than the current original rank. -/
+theorem orderedReservedCapacity_before_full_iff
+    (r a g : Nat) (ha : a < r) :
+    (if g < a then a else a + 1) < r ↔
+      a + 1 < r ∨ g < a := by
+  by_cases hg : g < a
+  · simp [hg, ha]
+  · simp [hg]
+
+/-- Replace the nested capacity threshold in a canonical-cover age
+expression by the unique final physical original/generation event.
+No assumption about an Henson schedule is used in this arithmetic
+identity, and no new physical existence is inferred. -/
+theorem orderedReservedCapacity_cover_age_normal_form
+    {α : Type} (r a g : Nat) (ha : a < r)
+    (lower upper : α → Nat) :
+    (if (if g < a then a else a + 1) < r then upper else lower) =
+      (if a + 1 = r ∧ a ≤ g then lower else upper) := by
+  classical
+  by_cases hFinal : a + 1 = r ∧ a ≤ g
+  · have hEq : (if g < a then a else a + 1) = r :=
+      (orderedReservedCapacity_reaches_full_iff r a g ha).2 hFinal
+    have hNot : ¬ (if g < a then a else a + 1) < r := by omega
+    simp [hFinal, hNot]
+  · have hCapLe : (if g < a then a else a + 1) ≤ r := by
+      split_ifs <;> omega
+    have hCapNe : (if g < a then a else a + 1) ≠ r := by
+      intro hEq
+      exact hFinal
+        ((orderedReservedCapacity_reaches_full_iff r a g ha).1 hEq)
+    have hLt : (if g < a then a else a + 1) < r := by omega
+    simp [hFinal, hLt]
+
+#print axioms Kk.orderedReservedCapacity_reaches_full_iff
+#print axioms Kk.orderedReservedCapacity_before_full_iff
+#print axioms Kk.orderedReservedCapacity_cover_age_normal_form
+
 #print axioms Kk.finiteDirectedCliqueCapacity_eq_of_offDiagonal_agreement
 #print axioms Kk.finiteNumericH_whole_prefix_raw_canonical_block_iff
 #print axioms Kk.finiteClique_canonical_cover_of_reference_eq
