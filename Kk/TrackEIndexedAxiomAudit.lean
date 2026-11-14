@@ -1,0 +1,26 @@
+import Kk.PhysicalCrossingTerminalBlindness
+import Kk.IndexedPhysicalStructuralEvents
+
+#check @Kk.indexed_physical_crossing_eq_full_closure_relation
+#print axioms Kk.indexed_physical_crossing_eq_full_closure_relation
+
+#check @Kk.numericH_actual_run_all_cuts_indexed_physical_crossing
+#print axioms Kk.numericH_actual_run_all_cuts_indexed_physical_crossing
+
+#check @Kk.indexed_physical_crossings_eq_of_two_sided_pair_matching
+#print axioms Kk.indexed_physical_crossings_eq_of_two_sided_pair_matching
+
+#check @Kk.two_physical_closures_crossing_eq_of_indexed_pair_matching
+#print axioms Kk.two_physical_closures_crossing_eq_of_indexed_pair_matching
+
+#check @Kk.full_physical_crossing_ignores_redundant_terminal_ancestor
+#print axioms Kk.full_physical_crossing_ignores_redundant_terminal_ancestor
+
+#check @Kk.distinct_kpt_node_sets_same_all_full_crossings
+#print axioms Kk.distinct_kpt_node_sets_same_all_full_crossings
+
+#check @Kk.physical_I1_I2_iff_indexed_active_nodes
+#print axioms Kk.physical_I1_I2_iff_indexed_active_nodes
+
+#check @Kk.numericH_actual_run_all_cuts_full_structural_trace
+#print axioms Kk.numericH_actual_run_all_cuts_full_structural_trace

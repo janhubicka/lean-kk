@@ -1,0 +1,50 @@
+name: KK Track E indexed physical crossing gate
+
+on:
+  pull_request:
+    paths:
+      - 'Kk/IndexedPhysicalCrossing.lean'
+      - 'Kk/PhysicalCrossingTerminalBlindness.lean'
+      - 'Kk/IndexedPhysicalStructuralEvents.lean'
+      - 'Kk/TrackEIndexedAxiomAudit.lean'
+      - 'docs/track_e_indexed_physical_crossing_english_audit.md'
+      - '.github/workflows/kk-track-e-indexed.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: kk-track-e-indexed-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  direct-build-and-axioms:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache Lean toolchain
+        uses: actions/cache@v4
+        with:
+          path: ~/.elan/toolchains
+          key: lean-toolchain-${{ runner.os }}-${{ hashFiles('lean-toolchain') }}
+      - name: Restore Lean workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve dependencies
+        run: lake update
+      - name: Obtain Mathlib build cache
+        run: lake exe cache get
+      - name: Explicitly compile full indexed physical crossing
+        run: lake build Kk.IndexedPhysicalCrossing Kk.PhysicalCrossingTerminalBlindness Kk.IndexedPhysicalStructuralEvents
+      - name: Strict named transitive axioms
+        run: |
+          set -euo pipefail
+          lake env lean Kk/TrackEIndexedAxiomAudit.lean | tee track-e-indexed-axioms.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py Kk/TrackEIndexedAxiomAudit.lean track-e-indexed-axioms.log
