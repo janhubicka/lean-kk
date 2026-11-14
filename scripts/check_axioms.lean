@@ -1333,3 +1333,11 @@ import Kk
 #print axioms Kk.HensonCutOccurrence.starProfile_upperL_iff_physical_of_exhaustive
 #check @Kk.HensonCutOccurrence.full_B3_crossAmbient_iff_of_intrinsic_physical_cutStar
 #print axioms Kk.HensonCutOccurrence.full_B3_crossAmbient_iff_of_intrinsic_physical_cutStar
+
+-- Track D: one finite full-(B3) forbidden core with all eligible
+-- physically cut-adjacent ORIGINAL names and exact next L-types.
+-- These are conditional finite Henson witnesses, not a diary theorem.
+#check @Kk.clique_core_every_upper_has_exact_cut_neighbour_label
+#print axioms Kk.clique_core_every_upper_has_exact_cut_neighbour_label
+#check @Kk.henson_failed_selectedB3_has_exact_full_cut_star_core
+#print axioms Kk.henson_failed_selectedB3_has_exact_full_cut_star_core
