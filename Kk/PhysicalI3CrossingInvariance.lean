@@ -215,8 +215,7 @@ theorem kpt_actual_interesting_iff_of_terminal_and_crossing_eq
       · exact Or.inl (hTerminal.mpr hI1)
       · by_cases hI1 : KptI1AtCut family Z₂ cut
         · exact Or.inl (hTerminal.mpr hI1)
-        · exact Or.inr (hFlags.2.1.mpr ⟨
-            (fun ht => hI1 (hTerminal.mpr ht)),hI2⟩).2
+        · exact Or.inr (hFlags.2.1.mpr ⟨hI1,hI2⟩).2
   calc
     SMTree.Envelope.IsInterestingAt
       (normalizedKptSMTree family) Z₁ cut ↔
