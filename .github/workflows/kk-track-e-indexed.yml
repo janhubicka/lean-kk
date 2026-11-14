@@ -5,6 +5,7 @@ on:
     paths:
       - 'Kk/IndexedPhysicalCrossing.lean'
       - 'Kk/PhysicalCrossingTerminalBlindness.lean'
+      - 'Kk/IndexedPhysicalStructuralEvents.lean'
       - 'Kk/TrackEIndexedAxiomAudit.lean'
       - 'docs/track_e_indexed_physical_crossing_english_audit.md'
       - '.github/workflows/kk-track-e-indexed.yml'
@@ -40,7 +41,7 @@ jobs:
       - name: Obtain Mathlib build cache
         run: lake exe cache get
       - name: Explicitly compile full indexed physical crossing
-        run: lake build Kk.IndexedPhysicalCrossing Kk.PhysicalCrossingTerminalBlindness
+        run: lake build Kk.IndexedPhysicalCrossing Kk.PhysicalCrossingTerminalBlindness Kk.IndexedPhysicalStructuralEvents
       - name: Strict named transitive axioms
         run: |
           set -euo pipefail
