@@ -37,6 +37,26 @@ open SuccessorTree.V10
 
 universe u v
 
+/-- Elementary descending induction, proved here because the corresponding
+successor-tree helper is PRIVATE to its implementation module. -/
+private theorem seed_mono_induction_down
+    {ell : Nat} {P : Nat → Prop}
+    (htop : P ell)
+    (hstep : ∀ i, i < ell → P (i + 1) → P i) :
+    ∀ i, i ≤ ell → P i := by
+  have main : ∀ d : Nat, ∀ i, ell - i = d → i ≤ ell → P i := by
+    intro d
+    induction d using Nat.strong_induction_on with
+    | h d ih =>
+        intro i hdi hiell
+        by_cases hieq : i = ell
+        · simpa [hieq] using htop
+        · have hilt : i < ell := lt_of_le_of_ne hiell hieq
+          apply hstep i hilt
+          apply ih (ell - (i + 1)) (by omega) (i + 1) rfl (by omega)
+  intro i hiell
+  exact main (ell - i) i rfl hiell
+
 /-- The EXACT successor-tree Algorithm 5.4 interestingness test
 (I1, I2, or impossibility of a one-level skip realizing every
 crossing) is monotone under increasing the COMPLETE Kpt node set.
@@ -108,7 +128,7 @@ theorem envelope_algorithmRun_selected_levels_mono_seeds
     (R : SMTree.Envelope.AlgorithmRun H X top)
     (Q : SMTree.Envelope.AlgorithmRun H Y top) :
     ∀ i : Nat, i ≤ top → R.I i ⊆ Q.I i := by
-  apply induction_down
+  apply seed_mono_induction_down
   · rw [R.topI, Q.topI]
   · intro i hi hNext
     have hClosure :
