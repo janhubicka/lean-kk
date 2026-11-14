@@ -1565,3 +1565,8 @@ import Kk
 #print axioms Kk.indexed_cutStar_live_cover_iff_upperL_inclusion
 #check @Kk.indexed_cutStar_bilateral_live_cover_iff_spectra_equal
 #print axioms Kk.indexed_cutStar_bilateral_live_cover_iff_spectra_equal
+
+-- Track D: missing marked chosen next-L type at one upper vertex
+-- of the SAME full forbidden clique; no diary-relative loss claim.
+#check @Kk.henson_failed_fullB3_good_marked_has_missing_type_inside_one_core
+#print axioms Kk.henson_failed_fullB3_good_marked_has_missing_type_inside_one_core
