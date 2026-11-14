@@ -119,23 +119,29 @@ theorem finiteNumericH_constructed_growing_runs_extra_cuts_have_finite_witness
       (finiteNumericH K k N) hAvoidK U)
     (oldTop : Nat)
     (hOldPhysical : HasPhysicalExhaustiveKptRun family X oldTop) :
-    let w : Fin M := ⟨hPosition k j k, hTarget⟩
-    let newTop : Nat := hPosition k (j-1) k+1
     ∃ RunOld : SMTree.Envelope.AlgorithmRun
         (normalizedKptSMTree family) X oldTop,
-      let Y : Set (AdmissibleKptNode family) :=
-        finiteNumericH_physicalExtendedSeeds
-          family L k M hAvoidL (RunOld.I 0) X ({w} : Set (Fin M))
       ∃ RunNew : SMTree.Envelope.AlgorithmRun
-          (normalizedKptSMTree family) Y newTop,
+          (normalizedKptSMTree family)
+          (finiteNumericH_physicalExtendedSeeds
+      family L k M hAvoidL (RunOld.I 0) X
+      ({(⟨hPosition k j k, hTarget⟩ : Fin M)} : Set (Fin M)))
+          (hPosition k (j-1) k+1),
         ∃ params : Finset (AdmissibleKptNode family),
           ∃ live : Nat → Fin params.card → Bool,
-            Y ⊆ SMTree.Envelope.levelLe
-              (T := AdmissibleKptNode family) newTop ∧
+            (finiteNumericH_physicalExtendedSeeds
+      family L k M hAvoidL (RunOld.I 0) X
+      ({(⟨hPosition k j k, hTarget⟩ : Fin M)} : Set (Fin M))) ⊆
+              SMTree.Envelope.levelLe
+                (T := AdmissibleKptNode family)
+                (hPosition k (j-1) k+1) ∧
             (∀ z : AdmissibleKptNode family,
               z ∈ params ↔
               z ∈ SMTree.Envelope.closure
-                (admissibleKptSTree family) (RunNew.I 0) Y) ∧
+                (admissibleKptSTree family) (RunNew.I 0)
+                (finiteNumericH_physicalExtendedSeeds
+      family L k M hAvoidL (RunOld.I 0) X
+      ({(⟨hPosition k j k, hTarget⟩ : Fin M)} : Set (Fin M)))) ∧
             (∀ cut : Nat, cut < oldTop →
               cut ∈ RunNew.I cut → cut ∉ RunOld.I cut →
                 IndexedNewSourceCutWitness family
