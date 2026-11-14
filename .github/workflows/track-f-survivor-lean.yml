@@ -1,0 +1,62 @@
+name: Track F survivor reindex
+
+on:
+  pull_request:
+    paths:
+      - 'Kk/TrackFSurvivorReindex.lean'
+      - 'docs/track_f_survivor_reindex_english_audit.md'
+      - 'scripts/track_f_survivor_axioms.lean'
+      - '.github/workflows/track-f-survivor-lean.yml'
+  workflow_dispatch:
+
+jobs:
+  exact-survivor-module:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache Lean toolchain
+        uses: actions/cache@v4
+        with:
+          path: ~/.elan/toolchains
+          key: lean-toolchain-${{ runner.os }}-${{ hashFiles('lean-toolchain') }}
+      - name: Restore Lean workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve pinned dependencies
+        run: lake update
+      - name: Obtain Mathlib cache
+        run: lake exe cache get
+      - name: Build new survivor theorem module
+        run: lake build Kk.TrackFSurvivorReindex
+      - name: Strict standard-only axiom gate
+        shell: bash
+        run: |
+          set -euo pipefail
+          lake env lean scripts/track_f_survivor_axioms.lean | tee survivor-axioms.log
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          reports = Path("survivor-axioms.log").read_text()
+          declarations = [
+            "Kk.trackFColumnCommon_reindex",
+            "Kk.trackFWordRaw_restrict_columns",
+            "Kk.trackFWordRaw_pullback",
+          ]
+          permitted = {"propext","Classical.choice","Quot.sound"}
+          for name in declarations:
+              m = re.search(r"(?m)^'" + re.escape(name) + r"' depends on axioms: \[([^\]]*)\]",reports)
+              if not m:
+                  raise SystemExit(f"FAIL: no axiom report for {name}")
+              axioms = {x.strip() for x in m.group(1).split(",") if x.strip()}
+              if not axioms <= permitted:
+                  raise SystemExit(f"FAIL: {name} depends on {sorted(axioms-permitted)}")
+              print(f"PASS: {name}: {sorted(axioms)}")
+          PY
