@@ -6,6 +6,7 @@ import Kk.TrackFCoverEssentialSupport
 import Kk.TrackFCoverOneStep
 import Kk.TrackFCoverSupportValues
 import Kk.TrackFLiteralWordColumns
+import Kk.TrackFMonotoneRawLocality
 
 -- Track F's *local* exact-head certificate; no changes to G's global registry.
 #print axioms Kk.diaryCoverColumnRaw_le_upper
@@ -43,3 +44,9 @@ import Kk.TrackFLiteralWordColumns
 #print axioms Kk.trackFWord_cover_symbol_valid
 #print axioms Kk.trackFWordRaw_age_cover_exact
 #print axioms Kk.trackFWordRaw_coding_preserves_age
+#print axioms Kk.trackFZeroOutside_le
+#print axioms Kk.trackFZeroOutside_T_mass
+#print axioms Kk.trackFZeroOutside_inter_sum
+#print axioms Kk.trackFZeroOutside_feasible_of_agree
+#print axioms Kk.trackFCanonical_locality_of_monotone
+#print axioms Kk.trackFWordRaw_locality
