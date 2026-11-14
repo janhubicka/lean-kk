@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - 'Kk/TrackFSurvivorReindex.lean'
+      - 'Kk/TrackFSurvivorCanonical.lean'
       - 'docs/track_f_survivor_reindex_english_audit.md'
       - 'scripts/track_f_survivor_axioms.lean'
       - '.github/workflows/track-f-survivor-lean.yml'
@@ -35,7 +36,7 @@ jobs:
       - name: Obtain Mathlib cache
         run: lake exe cache get
       - name: Build new survivor theorem module
-        run: lake build Kk.TrackFSurvivorReindex
+        run: lake build Kk.TrackFSurvivorReindex Kk.TrackFSurvivorCanonical
       - name: Strict standard-only axiom gate
         shell: bash
         run: |
@@ -49,6 +50,16 @@ jobs:
             "Kk.trackFColumnCommon_reindex",
             "Kk.trackFWordRaw_restrict_columns",
             "Kk.trackFWordRaw_pullback",
+            "Kk.trackFRestrictWeights_mass",
+            "Kk.trackFExtendCoordinate_selected",
+            "Kk.trackFExtendCoordinate_outside",
+            "Kk.trackFExtendWeights_mass",
+            "Kk.trackFRestrictWeights_feasible",
+            "Kk.trackFSelectedPreimage_image",
+            "Kk.trackFExtendWeights_preimage_mass",
+            "Kk.trackFExtendWeights_feasible",
+            "Kk.trackFCanonical_reindex_mono",
+            "Kk.trackFWordCanonical_reindex",
           ]
           permitted = {"propext","Classical.choice","Quot.sound"}
           for name in declarations:
