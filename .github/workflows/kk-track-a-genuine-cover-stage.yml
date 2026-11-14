@@ -1,0 +1,49 @@
+name: KK Track A genuine finite canonical cover event
+
+on:
+  pull_request:
+    paths:
+      - 'Kk/PhysicalCanonicalCoverStage.lean'
+      - 'Kk/IsolatedSupportCanonicalAge.lean'
+      - 'docs/physical_canonical_cover_stage_english_audit.md'
+      - '.github/workflows/kk-track-a-genuine-cover-stage.yml'
+  push:
+    branches: [kk-track-a-physical-cover-stage-20261114]
+  workflow_dispatch:
+
+concurrency:
+  group: kk-track-a-genuine-cover-stage-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  exact-genuine-cover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore pinned Lake workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve pinned dependencies
+        run: lake update
+      - name: Restore Mathlib cache
+        run: lake exe cache get
+      - name: Compile genuine finite canonical cover stage
+        run: lake build Kk.PhysicalCanonicalCoverStage
+      - name: Strict named transitive axiom audit for combined proof
+        run: |
+          set -euo pipefail
+          python3 scripts/check_axiom_report.py --self-test
+          lake env lean Kk/IsolatedSupportCanonicalAge.lean | tee isolated-canonical-axioms.log
+          python3 scripts/check_axiom_report.py Kk/IsolatedSupportCanonicalAge.lean isolated-canonical-axioms.log
+          lake env lean Kk/PhysicalCanonicalCoverStage.lean | tee physical-cover-stage-axioms.log
+          python3 scripts/check_axiom_report.py Kk/PhysicalCanonicalCoverStage.lean physical-cover-stage-axioms.log
+      - name: Full repository build
+        run: lake build
