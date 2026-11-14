@@ -74,3 +74,21 @@ Then one of the following **concrete novelties** must occur:
 12. **I1 priority:** raw I2 can be true at a self-meet terminal level; novelty theorem uses the actual disjunction `IsInterestingAt` rather than an unqualified I2⇔fork.
 
 **Validation contract:** commit this English proof before Lean source. Direct exact-head build of the new module and strict named standard-only transitive-axiom parser, independently of the full repository `lake build`. Do not edit frozen manuscript text, central `Kk.lean` imports or global validation marks.
+
+## E34. FINITE live-index certificate for every extra cut of an actual numerical H+ run
+
+Track C's merged `finiteNumericH_actualRun_uniform_exhaustive_source_index` **constructs** one genuine finite index `Fin params.card` of all dependent Kpt nodes of the final closure of a real finite numerical-H+ AlgorithmRun, with a per-cut Boolean activity mask exact for its physical pre-cut closure. Thus the E33 novelty alternatives need not remain unindexed existential node-set claims.
+
+Let `Y` be the genuine larger Kpt seed set of a real numerical-H+ structure `A=finiteNumericH K k N`, with an explicit original-prefix representation `Y⊆ambientPrefixPool family A hAvoid U`. Let `X⊆Y` be the old seeds, and let actual same-top Kpt AlgorithmRuns `RunX,RunY` exist. At any cut `c<top` that `RunY` selects but `RunX` skips, construct, **from the actual RunY source**, one finite `params`, one `live(c,j)`, and one of:
+
+1. an actual live index j whose node `params[j]` is **not** in the old run's pre-cut closure and whose level is exactly c; OR
+2. an actual live index j and full dependent raw types `(T,U)`, such that
+   `kptFullOldAtCut(params[j],c)=some ⟨c,T⟩`,
+   `kptFullUpperAtCut(params[j],c)=some ⟨c+1,U⟩`,
+   and `(T,U)` does **not** occur in the old run's canonical complete crossing relation at c.
+
+**Proof:** E33 supplies a real new node or real new crossing pair. The *constructed* exhaustive index gives a live index for the node, or, through verified `indexed_physical_crossing_eq_full_closure_relation`, a live index witnessing the complete pair. The same j supplies both old and upper records; fake E and all absent atoms are preserved. No artificial finite witness of graph age is introduced. The final-level version follows from the actual `AlgorithmRun.I_eq_final_tail_of_run`: for any 0≤c<top, `c∈Run.I 0` iff `c∈Run.I c`.
+
+The resulting finite source-index universe is **not uniformly bounded across ambient N**, and the selected source labels / parameter-incidence relations still need to be transported to obtain a fully labelled orbit. This is, however, an auditable finite physical obstruction certificate for every extra interesting cut in a genuinely resolved new-root extension.
+
+**Hostile tests:** (a) live≠crossing; first alternative includes terminal live nodes and second requires both *non-none* ancestor Options from the SAME j; (b) never substitute the old run's finite index for the new complete closure index; (c) strict `c<top` is needed for the pre-cut run stage; (d) no-(I2) is not assumed—multiple upper records are kept; (e) the hypothesis `Y⊆ambientPrefixPool` is a real physical representation obligation, discharged by Track C's actual new-root construction only after its avoidance/new-root input checks; (f) no selected F shadow; (g) if new closure has redundant terminal prefixes, extra events need not follow and the theorem asserts only the implication from new selected levels; (h) no automatic diary canonicality.
