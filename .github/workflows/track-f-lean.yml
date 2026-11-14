@@ -11,6 +11,7 @@ on:
       - 'Kk/TrackFCoverOneStep.lean'
       - 'Kk/TrackFCoverSupportValues.lean'
       - 'Kk/TrackFLiteralWordColumns.lean'
+      - 'Kk/TrackFMonotoneRawLocality.lean'
       - 'scripts/track_f_axioms.lean'
       - 'docs/track_f_cover_column_english_audit.md'
       - 'docs/track_f_labelled_fibre_english_audit.md'
@@ -20,6 +21,7 @@ on:
       - 'docs/track_f_cover_one_step_english_audit.md'
       - 'docs/track_f_consecutive_part3_english_audit.md'
       - 'docs/track_f_literal_word_columns_english_audit.md'
+      - 'docs/track_f_monotone_raw_locality_english_audit.md'
       - '.github/workflows/track-f-lean.yml'
   workflow_dispatch:
 
@@ -49,8 +51,8 @@ jobs:
       - name: Restore Mathlib compilation cache
         run: lake exe cache get
       - name: Compile new Track F module explicitly
-        run: lake build Kk.DiaryCoverColumn Kk.TrackFLabelledFibre Kk.TrackFCodingColumn Kk.TrackFRawCoverColumn Kk.TrackFCoverEssentialSupport Kk.TrackFCoverOneStep Kk.TrackFCoverSupportValues Kk.TrackFLiteralWordColumns
-      - name: Check only standard Lean axioms in all thirty-two endpoints
+        run: lake build Kk.DiaryCoverColumn Kk.TrackFLabelledFibre Kk.TrackFCodingColumn Kk.TrackFRawCoverColumn Kk.TrackFCoverEssentialSupport Kk.TrackFCoverOneStep Kk.TrackFCoverSupportValues Kk.TrackFLiteralWordColumns Kk.TrackFMonotoneRawLocality
+      - name: Check only standard Lean axioms in all thirty-eight endpoints
         shell: bash
         run: |
           set -euo pipefail
@@ -92,6 +94,12 @@ jobs:
             "Kk.trackFWord_cover_symbol_valid",
             "Kk.trackFWordRaw_age_cover_exact",
             "Kk.trackFWordRaw_coding_preserves_age",
+            "Kk.trackFZeroOutside_le",
+            "Kk.trackFZeroOutside_T_mass",
+            "Kk.trackFZeroOutside_inter_sum",
+            "Kk.trackFZeroOutside_feasible_of_agree",
+            "Kk.trackFCanonical_locality_of_monotone",
+            "Kk.trackFWordRaw_locality",
           ]
           permitted = {"propext", "Classical.choice", "Quot.sound"}
           for name in expected:
