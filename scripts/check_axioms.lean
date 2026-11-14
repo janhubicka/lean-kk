@@ -1478,3 +1478,67 @@ import Kk
 #print axioms Kk.selected_named_nextL_permitted_of_no_I2
 #check @Kk.henson_fullB3_failure_iff_physical_cut_star_bad_core_of_no_I2
 #print axioms Kk.henson_fullB3_failure_iff_physical_cut_star_bad_core_of_no_I2
+
+-- Track G source-exact integration of FINITE Track F lemmas.
+-- Complete decorated diary inverse and infinite lower bound are OPEN.
+-- pair normalized clique capacities (8 qualified endpoints)
+#check @Kk.trackFPair_mass_first
+#print axioms Kk.trackFPair_mass_first
+#check @Kk.trackFPair_mass_second
+#print axioms Kk.trackFPair_mass_second
+#check @Kk.trackFPair_mass_both
+#print axioms Kk.trackFPair_mass_both
+#check @Kk.trackFPair_canonical_capacity
+#print axioms Kk.trackFPair_canonical_capacity
+#check @Kk.trackFCanonical_singleton_eq_raw
+#print axioms Kk.trackFCanonical_singleton_eq_raw
+#check @Kk.trackFPair_canonical_true_singletons
+#print axioms Kk.trackFPair_canonical_true_singletons
+#check @Kk.trackFPair_word_capacity
+#print axioms Kk.trackFPair_word_capacity
+#check @Kk.trackFPair_passing_arithmetic
+#print axioms Kk.trackFPair_passing_arithmetic
+-- literal survivor reindexing and canonicalization (16 qualified endpoints)
+#check @Kk.trackFColumnCommon_reindex
+#print axioms Kk.trackFColumnCommon_reindex
+#check @Kk.trackFWordRaw_restrict_columns
+#print axioms Kk.trackFWordRaw_restrict_columns
+#check @Kk.trackFWordRaw_pullback
+#print axioms Kk.trackFWordRaw_pullback
+#check @Kk.trackFRestrictWeights_mass
+#print axioms Kk.trackFRestrictWeights_mass
+#check @Kk.trackFExtendCoordinate_selected
+#print axioms Kk.trackFExtendCoordinate_selected
+#check @Kk.trackFExtendCoordinate_outside
+#print axioms Kk.trackFExtendCoordinate_outside
+#check @Kk.trackFExtendWeights_mass
+#print axioms Kk.trackFExtendWeights_mass
+#check @Kk.trackFRestrictWeights_feasible
+#print axioms Kk.trackFRestrictWeights_feasible
+#check @Kk.trackFSelectedPreimage_image
+#print axioms Kk.trackFSelectedPreimage_image
+#check @Kk.trackFExtendWeights_preimage_mass
+#print axioms Kk.trackFExtendWeights_preimage_mass
+#check @Kk.trackFExtendWeights_feasible
+#print axioms Kk.trackFExtendWeights_feasible
+#check @Kk.trackFCanonical_reindex_mono
+#print axioms Kk.trackFCanonical_reindex_mono
+#check @Kk.trackFWordCanonical_reindex
+#print axioms Kk.trackFWordCanonical_reindex
+#check @Kk.trackFGraphAge_reindex
+#print axioms Kk.trackFGraphAge_reindex
+#check @Kk.trackFWordCanonical_delete_at
+#print axioms Kk.trackFWordCanonical_delete_at
+#check @Kk.trackFWordRaw_coding_after_delete_exact
+#print axioms Kk.trackFWordRaw_coding_after_delete_exact
+-- positive-symbol initial-segment preservation (5 qualified endpoints)
+#check @Kk.trackFSeenSymbol_append
+#print axioms Kk.trackFSeenSymbol_append
+#check @Kk.trackFBranchInitial_append
+#print axioms Kk.trackFBranchInitial_append
+#check @Kk.trackFAllBranchInitial_append
+#print axioms Kk.trackFAllBranchInitial_append
+#check @Kk.trackFWordSpectrum_age_cover
+#print axioms Kk.trackFWordSpectrum_age_cover
+#check @Kk.trackFWordSpectrum_coding_column
+#print axioms Kk.trackFWordSpectrum_coding_column

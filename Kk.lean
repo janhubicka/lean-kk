@@ -202,6 +202,16 @@ import Kk.PhysicalCrossingTerminalBlindness
 import Kk.TrackFLiteralWordColumns
 import Kk.TrackFMonotoneRawLocality
 
+-- Track G: finite Track F pair capacities, actual survivor-coordinate
+-- canonicalization and per-cover branch spectrum; not diary bijection.
+import Kk.TrackFPairCapacity
+import Kk.TrackFSingletonCapacity
+import Kk.TrackFPairCapacityTrue
+import Kk.TrackFSurvivorReindex
+import Kk.TrackFSurvivorCanonical
+import Kk.TrackFBranchSpectrum
+import Kk.TrackFBranchSpectrumCover
+
 /-!
 The counting project imports the verified successor-tree library.
 No local replacement of the Ramsey theorem is assumed.
