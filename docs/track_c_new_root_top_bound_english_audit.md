@@ -1,4 +1,4 @@
-# Track C repair: genuine top seed does NOT automatically bound all seeds
+> **SUPERSEDED seed formula (14 November).** This English boundedness argument originally included `ambientPrefixPool B {w}` among the new initial seeds, forcing every numerical level to be I1. The separate [overgeneration-repair audit](track_c_new_root_overgeneration_repair_english_audit.md) explains why this is unacceptable and replaces the new seed component by the **singleton set of actual Kpt original nodes**. The bound on the ENTIRE corrected Y still follows under the same explicit `N≤top` hypothesis.\n\n# Track C repair: genuine top seed does NOT automatically bound all seeds
 
 **14 November 2026 — English-first adversarial correction before the Lean patch.**
 PR #165's original three theorem endpoints were verified on the isolated module gate with exact standard-only axioms. An additional mathematical hypothesis is needed before using the result in the successor-tree *bounded envelope* theorem: `canonicalAlgorithmRun` is defined at arbitrary height `top`, even if some seed has level ABOVE that height. Existence of one top-level seed does not imply all seeds are bounded.
