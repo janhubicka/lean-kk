@@ -196,6 +196,9 @@ theorem finiteNumericH_top_carrier_of_sup_cut
     ∀ z ∈ numericHTopPool k S,
       z ∈ (finiteNumericHL (normalizedGraphModel E) k M).carrier := by
   classical
+  change ∀ z ∈ numericHTopPool k S,
+    z ∈ (finiteNumericHL (normalizedGraphModel E) k
+      (S.sup (fun i => hPosition k i k) + 1)).carrier
   intro z hz
   obtain ⟨i,hi,hiz⟩ := Finset.mem_image.mp hz
   have hBound : hPosition k i k ≤ S.sup (fun i => hPosition k i k) :=
@@ -301,7 +304,13 @@ theorem henson_leftDense_realizes_all_finite_numericTop_profiles
                 i ∈ (W.filter (fun x => tau x ∈ T.1)).image f)).card =
                   integerCliqueOnSupport v T) := by
     intro v
-    simpa only [pulledBackFiniteSortIn] using (hProfile v)
+    change v ∈ feasibleIntegerCliqueVectors d ell B ↔
+      ∃ t : Finset Nat,
+        t ⊆ W.image f ∧ IsDirectedCliqueOn E t ∧
+        (∀ T : IntegerGraphSupport d ell,
+          (t.filter (pulledBackFiniteSortIn W tau f T)).card =
+            integerCliqueOnSupport v T)
+    exact hProfile v
   have hTopProfile :
       ∀ v : IntegerCliqueWeights d ell,
         v ∈ feasibleIntegerCliqueVectors d ell B ↔
