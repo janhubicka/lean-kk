@@ -98,7 +98,8 @@ Upper--upper edges of the witness are unconstrained by physical H.
 This certificate is NOT a selected-front integer graph-age loss and
 does not prescribe auxiliary E on the witness. -/
 def HensonPhysicalCutStarBadCore
-    (ell k N cut M : Nat)
+    (ell : Nat) (hell : 2 ≤ ell)
+    (k N cut M : Nat)
     (E : Nat → Nat → Bool)
     (original : Fin M → Fin N)
     (Selected : Fin M → Prop) : Prop :=
@@ -110,7 +111,7 @@ def HensonPhysicalCutStarBadCore
     cut+1 ≤ A.freeLevel (original v0).val ∧
     ∃ (V : AgeTestModel 1 0 1) (e : Fin ell → Nat),
       V.BoundedCarrier ∧ SameInitialL V C cut ∧
-      (∀ bad, bad ∈ hensonForbiddenFamily ell (by omega : 2 ≤ ell) →
+      (∀ bad, bad ∈ hensonForbiddenFamily ell hell →
         bad.Avoids (V.withoutVertex cut)) ∧
       V.Realizes (cliquePattern ell) e ∧
       (∃ a : Fin ell, e a = cut) ∧
@@ -161,14 +162,14 @@ theorem henson_fullB3_failure_iff_physical_cut_star_bad_core_of_no_I2
     ¬ (selectedStagePoolPrescribedData
       (finiteNumericH (normalizedGraphModel E) k N)
       cut original Selected).CorrectedB3 (hensonForbiddenFamily ell hell) ↔
-    HensonPhysicalCutStarBadCore ell k N cut M E original Selected := by
+    HensonPhysicalCutStarBadCore ell hell k N cut M E original Selected := by
   classical
   let K : AgeTestModel 1 0 1 := normalizedGraphModel E
   let A : EnumeratedPartialStructure 1 0 1 := finiteNumericH K k N
   let C : AgeTestModel 1 0 1 := finiteNumericHL K k N
   let F : PrescribedBoringData cut 1 0 1 :=
     selectedStagePoolPrescribedData A cut original Selected
-  have hFamily : hensonForbiddenFamily ell (by omega : 2 ≤ ell) =
+  have hFamily : hensonForbiddenFamily ell hell =
       hensonForbiddenFamily ell hell := by
     rfl
   constructor
@@ -181,13 +182,12 @@ theorem henson_fullB3_failure_iff_physical_cut_star_bad_core_of_no_I2
       henson_failed_selectedB3_has_exact_full_cut_star_core
         ell hell k hK E hLoops hSym hClique
         N cut M hCut original Selected hFail
-    change HensonPhysicalCutStarBadCore ell k N cut M E original Selected
+    change HensonPhysicalCutStarBadCore ell hell k N cut M E original Selected
     unfold HensonPhysicalCutStarBadCore
-    refine ⟨v0,hSel0,hEligible0,V,e,hFinite,hSocle,?_,hCopy,
-      hAt,hFuture,hUpper⟩
-    simpa only [hFamily] using hDelete
+    exact ⟨v0,hSel0,hEligible0,V,e,hFinite,hSocle,
+      hDelete,hCopy,hAt,hFuture,hUpper⟩
   · intro hBad hGood
-    change HensonPhysicalCutStarBadCore ell k N cut M E original Selected
+    change HensonPhysicalCutStarBadCore ell hell k N cut M E original Selected
       at hBad
     unfold HensonPhysicalCutStarBadCore at hBad
     obtain ⟨v0,hSel0,hEligible0,V,e,hFinite,hSocle,
@@ -238,7 +238,7 @@ theorem henson_fullB3_failure_iff_physical_cut_star_bad_core_of_no_I2
       exact hPermitted
     have hAvoidV := hGood T0 hT0 V hFinite
       hRelativeSocle hUpperChosen
-      (by simpa only [hFamily] using hDelete)
+      hDelete
     let bad : NormalizedForbidden 1 0 1 :=
       .nontrivial ell (cliquePattern ell) (by omega)
         (cliquePattern_irreducible ell)
