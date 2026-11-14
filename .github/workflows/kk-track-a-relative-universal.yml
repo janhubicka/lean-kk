@@ -1,0 +1,46 @@
+name: KK Track A concrete relative universal future
+
+on:
+  pull_request:
+    paths:
+      - 'Kk/RelativeUniversalFiniteTarget.lean'
+      - 'docs/relative_universal_finite_target_english_audit.md'
+      - '.github/workflows/kk-track-a-relative-universal.yml'
+  push:
+    branches: [kk-track-a-realized-universal-target-20261114]
+  workflow_dispatch:
+
+concurrency:
+  group: kk-track-a-relative-universal-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  exact-universal:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore pinned Lake workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve pinned dependencies
+        run: lake update
+      - name: Restore Mathlib cache
+        run: lake exe cache get
+      - name: Explicitly compile literal universal relative finite target
+        run: lake build Kk.RelativeUniversalFiniteTarget
+      - name: Strict named standard-only axiom report
+        run: |
+          set -euo pipefail
+          lake env lean Kk/RelativeUniversalFiniteTarget.lean | tee universal-relative-axioms.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py Kk/RelativeUniversalFiniteTarget.lean universal-relative-axioms.log
+      - name: Full existing repository build
+        run: lake build
