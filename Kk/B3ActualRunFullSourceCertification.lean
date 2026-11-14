@@ -201,8 +201,10 @@ theorem actualHensonRunCutOccurrence_poolExhaustive
     change hOriginalName V j = v
     simp [hOriginalName,j] <;> rfl
   refine ⟨j,?_⟩
-  simpa only [P,actualHensonRunCutOccurrence,
-    HensonCutOccurrence.ambient,hOriginal] using hzv
+  -- First rewrite the genuine maintained original address. Only then
+  -- elaborate the two proof-irrelevant physical avoidance certificates.
+  rw [hOriginal]
+  exact hzv
 
 /-- True AlgorithmRun source-certification in ONE theorem:
 its COMPLETE chosen old/upper L+ source graph is the canonical
