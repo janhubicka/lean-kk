@@ -120,7 +120,7 @@ theorem henson_leftDense_exact_type_rank_drop
     omega
   have hMutual : mutualLinkedNeighbours E U v = C := by
     ext x
-    change (x ∈ U ∧ E x v = true ∧ E v x = true) ↔ x ∈ C
+    simp only [mutualLinkedNeighbours, Finset.mem_filter]
     constructor
     · rintro ⟨hxU, hxEdge, _⟩
       have hxlt : x < v := lt_of_lt_of_le (hBelow x hxU) hv
