@@ -1,0 +1,7 @@
+import Kk.BareRootOldTailRetention
+
+#check @Kk.envelope_algorithmRun_retains_old_selected_tail
+#print axioms Kk.envelope_algorithmRun_retains_old_selected_tail
+
+#check @Kk.finiteNumericH_bareTopRoot_retains_old_selected_tail
+#print axioms Kk.finiteNumericH_bareTopRoot_retains_old_selected_tail
