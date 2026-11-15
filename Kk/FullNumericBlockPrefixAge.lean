@@ -102,8 +102,14 @@ theorem numericH_full_block_real_odd_disjoint (k b : Nat) :
       (Finset.range b) z).mp hzReal
   have hzMod : z % 2 = 1 := (Finset.mem_filter.mp hzOdd).2
   rw [←hEq] at hzMod
-  dsimp [hPosition] at hzMod
-  omega
+  -- A direct omega invocation does not normalize the nonlinear
+  -- block-spacing product; factor the coordinate as twice a Nat.
+  have hFactor :
+      hPosition k i q = 2 * ((k + 1) * i + q) := by
+    dsimp [hPosition]
+    ring
+  rw [hFactor] at hzMod
+  simp [Nat.mul_mod] at hzMod
 
 /-- Complete typed original-to-future column on the genuine
 numeric-H block prefix: EVERY old real generation carries
