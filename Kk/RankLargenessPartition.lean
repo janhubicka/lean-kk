@@ -119,7 +119,7 @@ theorem large_union_partition (rank : Node → Nat)
           exact hSomeA ⟨u, le_refl u, hu, ha⟩
         change ¬ (∀ v : Node, u ≤ v →
           ∃ w : Node, v ≤ w ∧ w ∈ A) at hNotA
-        push_neg at hNotA
+        push Not at hNotA
         obtain ⟨v, huv, hNoA⟩ := hNotA
         have hv : rank v = 0 := by
           have hle := hAnti huv
@@ -129,7 +129,7 @@ theorem large_union_partition (rank : Node → Nat)
         obtain ⟨w, htw, hw⟩ :=
           hLarge t (le_trans huv hvt)
         have hwB : w ∈ B := by
-          rcases Set.mem_union.mp hw with hwA | hwB
+          rcases hw with hwA | hwB
           · exact False.elim
               ((hNoA w (le_trans hvt htw)) hwA)
           · exact hwB
@@ -146,7 +146,7 @@ theorem large_union_partition (rank : Node → Nat)
         change ¬ (∀ v : Node, u ≤ v → rank v = n + 1 →
           ∃ w : Node, v ≤ w ∧ rank w = n ∧
             Large rank A n w) at hNotA
-        push_neg at hNotA
+        push Not at hNotA
         obtain ⟨v, huv, hv, hNoA⟩ := hNotA
         refine ⟨v, huv, hv, ?_⟩
         intro t hvt ht
