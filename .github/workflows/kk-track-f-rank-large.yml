@@ -6,6 +6,7 @@ on:
       - 'Kk/RankLargenessPartition.lean'
       - 'Kk/RankLargenessAxiomAudit.lean'
       - 'docs/track_f_rank_large_partition_english_audit.md'
+      - 'scripts/verify_rank_large_partition.py'
       - '.github/workflows/kk-track-f-rank-large.yml'
   workflow_dispatch:
 
@@ -38,6 +39,8 @@ jobs:
         run: lake update
       - name: Obtain Mathlib build cache
         run: lake exe cache get
+      - name: Independent exhaustive finite-model regression
+        run: python3 scripts/verify_rank_large_partition.py
       - name: Build actual finite-partition proof
         run: lake build Kk.RankLargenessPartition
       - name: Strict four-theorem standard-only axiom gate
