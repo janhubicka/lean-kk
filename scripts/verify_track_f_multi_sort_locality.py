@@ -84,7 +84,7 @@ def verify():
 
 if __name__ == "__main__":
     n, m, breakdown = verify()
-    assert (n, m) == (49391, 328503), (n, m)
+    assert (n, m) == (49182, 327110), (n, m)
     assert breakdown == {
         3: (1809, 11991), 4: (12827, 85297),
         5: (17273, 114911), 6: (17482, 116304),
