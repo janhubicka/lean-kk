@@ -1891,3 +1891,15 @@ import Kk
 #print axioms Kk.integerGraphAgeCanonical_next_prefix_eq_of_mutual_budgets
 #check @Kk.actual_original_stage_preserves_free_and_all_support_age
 #print axioms Kk.actual_original_stage_preserves_free_and_all_support_age
+
+-- Track D: exact finite B3 transfers, verified independently in merged PR #215.
+-- Nonempty marked source is DERIVED when needed, not an extra axiom.
+-- Still conditional on full physical cut-visible source coverage.
+#check @Kk.henson_fullB3_of_no_eligible_cut_neighbour
+#print axioms Kk.henson_fullB3_of_no_eligible_cut_neighbour
+#check @Kk.henson_fullB3_of_cut_visible_complete_outputs_no_nonempty
+#print axioms Kk.henson_fullB3_of_cut_visible_complete_outputs_no_nonempty
+#check @Kk.henson_cut_visible_fullB3_failure_implies_marked_failure_no_nonempty
+#print axioms Kk.henson_cut_visible_fullB3_failure_implies_marked_failure_no_nonempty
+#check @Kk.henson_fullB3_of_no_i2_marked_closure_cut_neighbours_no_nonempty
+#print axioms Kk.henson_fullB3_of_no_i2_marked_closure_cut_neighbours_no_nonempty
