@@ -277,6 +277,9 @@ import Kk.CrossHeightFiniteIndexStability
 import Kk.PhysicalCrossHeightConstructedWitness
 import Kk.PhysicalBareNewRootRun
 
+-- Track G: actual old-boring physical novelty decomposition.
+import Kk.TrackGOldBoringNoTerminal
+
 /-!
 The counting project imports the verified successor-tree library.
 No local replacement of the Ramsey theorem is assumed.
