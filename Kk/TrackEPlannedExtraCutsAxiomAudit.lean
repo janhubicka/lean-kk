@@ -1,0 +1,7 @@
+import Kk.CrossHeightPlannedCutCover
+
+#check @Kk.crossheight_extra_selected_cut_is_allowed_of_offplan_no_novelty
+#print axioms Kk.crossheight_extra_selected_cut_is_allowed_of_offplan_no_novelty
+
+#check @Kk.crossheight_old_range_sandwich_of_offplan_no_novelty
+#print axioms Kk.crossheight_old_range_sandwich_of_offplan_no_novelty
