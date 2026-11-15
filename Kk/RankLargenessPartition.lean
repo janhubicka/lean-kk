@@ -60,6 +60,44 @@ theorem large_mono_cone (rank : Node → Nat) (S : Set Node) :
       intro u v huv hLarge w hvw hw
       exact hLarge w (le_trans huv hvw) hw
 
+/-- Enlarging the set of available coding nodes preserves rank
+largeness, at every rank and node. -/
+theorem large_mono_set (rank : Node → Nat) {S T : Set Node}
+    (hST : S ⊆ T) :
+    ∀ n (u : Node), Large rank S n u → Large rank T n u := by
+  intro n
+  induction n with
+  | zero =>
+      intro u hLarge v huv
+      obtain ⟨w, hvw, hw⟩ := hLarge v huv
+      exact ⟨w, hvw, hST hw⟩
+  | succ n ih =>
+      intro u hLarge v huv hv
+      obtain ⟨w, hvw, hw, hwLarge⟩ := hLarge v huv hv
+      exact ⟨w, hvw, hw, ih w hwLarge⟩
+
+/-- Density above a source of rank n implies n-largeness whenever
+EVERY positive-rank node has a genuine one-step rank-lowering
+extension. In the Henson application this premise requires REAL
+clique-certificate constructions; it is not a diary axiom. -/
+theorem dense_implies_large (rank : Node → Nat)
+    (hDrop : ∀ n (v : Node), rank v = n + 1 →
+      ∃ w, v ≤ w ∧ rank w = n)
+    (S : Set Node) :
+    ∀ n (u : Node), rank u = n → Large rank S 0 u →
+      Large rank S n u := by
+  intro n
+  induction n with
+  | zero =>
+      intro u _ hDense
+      exact hDense
+  | succ n ih =>
+      intro u _ hDense v huv hv
+      obtain ⟨w, hvw, hw⟩ := hDrop n v hv
+      have hDenseW : Large rank S 0 w :=
+        large_mono_cone rank S 0 u w (le_trans huv hvw) hDense
+      exact ⟨w, hvw, hw, ih w hw hDenseW⟩
+
 /-- Every genuine rank-large union has a colour-large cone of
 the SAME original rank. Antitonicity is needed already at rank zero.
 This proof uses no diary type as a primitive assumption. -/
