@@ -43,7 +43,7 @@ jobs:
         run: python3 scripts/verify_rank_large_partition.py
       - name: Build actual finite-partition proof
         run: lake build Kk.RankLargenessPartition
-      - name: Strict six-theorem standard-only axiom gate
+      - name: Strict nine-theorem standard-only axiom gate
         run: |
           set -euo pipefail
           lake env lean Kk/RankLargenessAxiomAudit.lean | tee track-f-rank-large-axioms.log
