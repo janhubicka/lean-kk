@@ -246,11 +246,17 @@ theorem finiteNumericH_partial_actual_top_column_both
         numericHPartialOldColumn k b g
           (fun i u => E i (j u)) z t = false := by
       simp [numericHPartialOldColumn,hzReal]
-    constructor
-    · rw [hzForm]
-      exact hZero.1.trans hCol.symm
-    · rw [hzForm]
-      exact hZero.2.trans hCol.symm
+    have hForward :
+        (finiteNumericHL (normalizedGraphModel E) k M).binary
+          z (hPosition k (j t) k) (0 : Fin 1) = false := by
+      rw [hzForm]
+      exact hZero.1
+    have hReverse :
+        (finiteNumericHL (normalizedGraphModel E) k M).binary
+          (hPosition k (j t) k) z (0 : Fin 1) = false := by
+      rw [hzForm]
+      exact hZero.2
+    exact ⟨hForward.trans hCol.symm, hReverse.trans hCol.symm⟩
 
 /-- At every NONEMPTY future support, the literal full old
 numbered prefix and the EVEN real pool have the same actual
