@@ -115,6 +115,54 @@ unexamined diary axiom.
 These two theorems are primitive bookkeeping and do not supply
 the graph-specific rank-drop hypothesis or any lower BRD statement.
 
+## Finite deletion without assuming false abstract branching (15 November continuation)
+
+The manuscript also needs to remove finitely many unwanted coding nodes
+without losing rank largeness. This requires an *escape hypothesis*; it is
+not a consequence of the ranked-preorder axioms alone. For example, in the
+one-node preorder at rank zero, the singleton set is dense and hence
+large. Therefore a declaration that **no finite set is large in every
+ranked preorder** would be false.
+
+Here is the precise standalone English route, with the source rank fixed
+to `n` throughout.
+
+1. **Avoidable cone is not large.** Suppose `r(u)=n` and there is
+   `v≥u` of rank `n` whose entire cone avoids `F`. Then `F` is
+   not `n`-large above `u`. Indeed largeness transfers to `v`;
+   the already proved `large_has_member` would then produce a member
+   of `F` above `v`, a contradiction.
+
+2. **Subtract a nonlarge set.** Suppose `S` is `n`-large above
+   `u` of rank `n`, and `F` is not `n`-large above *any*
+   rank-`n` extension of `u`. The cover
+   `S⊆(S\F)∪F` and set monotonicity make the union `n`-large.
+   The exact two-colour partition theorem finds a same-rank descendant
+   on which either `S\F` or `F` is `n`-large.
+   The second case contradicts the uniform nonlargeness assumption.
+
+3. **Cone-escape consequence.** If from every rank-`n` descendant
+   of `u` there is a further same-rank descendant with a whole cone
+   disjoint from `F`, then the preceding two results show that
+   `S\F` is `n`-large on some rank-`n` descendant of `u`.
+   This is the exact nontrivial order-theoretic part of finite avoidance.
+
+**Hostile checks:** (a) same rank is essential when applying
+`large_has_member`; (b) existence of *one* avoiding cone is not
+enough to show `F` is nowhere large; (c) finite cardinality by itself
+does not imply the cone-escape property in an arbitrary preorder;
+(d) antitonicity is used at the partition step, not in the first
+avoidance lemma; (e) there is no assumption that `F` itself is
+downwards closed; (f) this argument does not import any diary or
+big-Ramsey-degree theorem.
+
+For actual Henson coding nodes, proving same-rank zero-padding far
+beyond every element of a *finite* forbidden coding-node set yields the
+cone-escape premise. That geometric padding statement is still open
+as a separately verified Lean application. This new abstract deduction
+is therefore a **conditional component**, not a certification of the
+manuscript's finite-deletion claim on Henson nodes.
+
 ## Next graph-specific obligations
 
 Instantiate the preorder with the *actual* Henson coding tree,
