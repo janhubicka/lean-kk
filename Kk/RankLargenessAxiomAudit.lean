@@ -11,3 +11,9 @@ import Kk.RankLargenessPartition
 
 #check @Kk.RankLargeness.large_finite_colour_partition
 #print axioms Kk.RankLargeness.large_finite_colour_partition
+
+#check @Kk.RankLargeness.large_mono_set
+#print axioms Kk.RankLargeness.large_mono_set
+
+#check @Kk.RankLargeness.dense_implies_large
+#print axioms Kk.RankLargeness.dense_implies_large
