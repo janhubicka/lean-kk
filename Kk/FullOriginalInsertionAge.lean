@@ -188,6 +188,64 @@ theorem finiteOldColumnRawBound_insert_eq_iff_mutual_budget_of_cap_lt
     rw [max_eq_left hBudget]
     rfl
 
+/-- The nonsaturation premise above follows automatically when
+the ENTIRE newly enlarged original pool is genuinely K_ell-free.
+Therefore, for a positive support, age neutrality is EQUIVALENT to
+the true mutual-clique budget at every safe physical stage.
+
+This is raw-age equivalence, not a full corrected B3 or canonical
+diary equivalence. -/
+theorem finiteOldColumnRawBound_insert_eq_iff_mutual_budget_of_safe_pool
+    (E : Nat → Nat → Bool) (ell d : Nat)
+    (P : Finset Nat) (c : Nat → Fin d → Bool)
+    (U : IntegerGraphSupport d ell) (v : Nat) (hv : v ∉ P)
+    (hLive : ∀ t ∈ U.1, c v t = true)
+    (hSafe : finitePoolCliqueCheck E ell (insert v P) = false) :
+    (finiteOldColumnRawBound E ell d (insert v P) c U =
+      finiteOldColumnRawBound E ell d P c U) ↔
+      1 + finiteDirectedCliqueCapacity E
+        (mutualLinkedNeighbours E
+          (oldSupportCommonNeighbourPool P c U.1) v) ≤
+      finiteDirectedCliqueCapacity E
+        (oldSupportCommonNeighbourPool P c U.1) := by
+  classical
+  have hPoolSub :
+      oldSupportCommonNeighbourPool (insert v P) c U.1 ⊆ insert v P := by
+    intro x hx
+    exact (Finset.mem_filter.mp hx).1
+  have hMono := finiteDirectedCliqueCapacity_mono E
+    (oldSupportCommonNeighbourPool (insert v P) c U.1)
+    (insert v P) hPoolSub
+  have hFull :
+      finiteDirectedCliqueCapacity E (insert v P) < ell :=
+    (finitePoolCliqueCheck_false_iff_capacity_lt
+      E ell (insert v P)).mp hSafe
+  have hvPool : v ∉ oldSupportCommonNeighbourPool P c U.1 := by
+    intro hx
+    exact hv (Finset.mem_filter.mp hx).1
+  have hExact :
+      finiteDirectedCliqueCapacity E
+          (oldSupportCommonNeighbourPool (insert v P) c U.1) =
+        max (finiteDirectedCliqueCapacity E
+          (oldSupportCommonNeighbourPool P c U.1))
+          (1 + finiteDirectedCliqueCapacity E
+            (mutualLinkedNeighbours E
+              (oldSupportCommonNeighbourPool P c U.1) v)) := by
+    rw [oldSupportCommonNeighbourPool_insert_exact]
+    simp only [if_pos hLive]
+    rw [finiteDirectedCliqueCapacity_insert_eq E
+      (oldSupportCommonNeighbourPool P c U.1) v hvPool]
+  have hCapacity :
+      max (finiteDirectedCliqueCapacity E
+        (oldSupportCommonNeighbourPool P c U.1))
+        (1 + finiteDirectedCliqueCapacity E
+          (mutualLinkedNeighbours E
+            (oldSupportCommonNeighbourPool P c U.1) v)) < ell := by
+    rw [← hExact]
+    exact lt_of_le_of_lt hMono hFull
+  exact finiteOldColumnRawBound_insert_eq_iff_mutual_budget_of_cap_lt
+    E ell d P c U v hv hLive hCapacity
+
 /-- Literal raw old-column ages are antitone under extension of
 the original pool, provided the old typed columns are UNCHANGED.
 This is weaker than exact support-by-support formulas, but needs
@@ -324,6 +382,7 @@ theorem actual_original_stage_preserves_free_and_all_support_age
 #print axioms Kk.finiteOldColumnRawBound_insert_off
 #print axioms Kk.finiteOldColumnRawBound_insert_no_growth
 #print axioms Kk.finiteOldColumnRawBound_insert_eq_iff_mutual_budget_of_cap_lt
+#print axioms Kk.finiteOldColumnRawBound_insert_eq_iff_mutual_budget_of_safe_pool
 #print axioms Kk.finiteOldColumnRawBound_antitone_old_pool
 #print axioms Kk.finiteOldColumnRawBound_next_prefix_exact
 #print axioms Kk.finiteOldColumnRawBound_next_prefix_eq_of_mutual_budgets
