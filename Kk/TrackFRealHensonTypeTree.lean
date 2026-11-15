@@ -53,9 +53,6 @@ instance : Preorder (HensonOneType ell E) where
     intro x hx
     exact (huv.2 x hx).trans
       (hvw.2 x (lt_of_lt_of_le hx huv.1))
-  lt_iff_le_not_le := by
-    intro u v
-    rfl
 
 /-- Exact actual zero-based rank (one less than manuscript
 singleton age), defined from the old graph's maximum clique. -/
@@ -226,7 +223,7 @@ theorem large_difference_finite
     (rank u) u rfl hLarge
   intro v huv hv
   obtain ⟨z, hvz, hzRank, hAvoid⟩ := finite_cone_escape F v
-  exact ⟨z, hvz, hzRank, by
+  exact ⟨z, hvz, hzRank.trans hv, by
     intro w hzw hwF
     exact hAvoid w hzw (by simpa using hwF)⟩
 
