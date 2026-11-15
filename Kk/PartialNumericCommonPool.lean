@@ -121,7 +121,7 @@ theorem finiteNumericH_partial_actual_common_pool_explicit
       · have hzCurrent :
             z ∈ (Finset.range g).image
               (fun q => hPosition k b q) := by
-          simpa [hEligible] using hCurrent
+          simpa only [if_pos hEligible] using hCurrent
         obtain ⟨q,hq,hEq⟩ := Finset.mem_image.mp hzCurrent
         have hqLe : q ≤ k := by
           have hqLt : q < g := Finset.mem_range.mp hq
