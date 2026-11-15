@@ -1903,3 +1903,11 @@ import Kk
 #print axioms Kk.henson_cut_visible_fullB3_failure_implies_marked_failure_no_nonempty
 #check @Kk.henson_fullB3_of_no_i2_marked_closure_cut_neighbours_no_nonempty
 #print axioms Kk.henson_fullB3_of_no_i2_marked_closure_cut_neighbours_no_nonempty
+
+-- Track G: exact physical no-terminal and novel full L+ pair at old-boring cuts.
+#check @Kk.actual_Kpt_old_boring_cut_no_terminal
+#print axioms Kk.actual_Kpt_old_boring_cut_no_terminal
+#check @Kk.kpt_twoIndex_offplan_iff_terminalFree_of_old_exact
+#print axioms Kk.kpt_twoIndex_offplan_iff_terminalFree_of_old_exact
+#check @Kk.actual_Kpt_old_boring_novelty_iff_terminal_or_missing_pair
+#print axioms Kk.actual_Kpt_old_boring_novelty_iff_terminal_or_missing_pair
