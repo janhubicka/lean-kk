@@ -1,5 +1,6 @@
 import Kk.B3CutVisibleTransfer
 import Kk.B3CutStarNormalForm
+import Kk.B3PhysicalBadCoreIff
 import Mathlib.Tactic
 
 /-!
@@ -158,8 +159,92 @@ theorem henson_cut_visible_fullB3_failure_implies_marked_failure_no_nonempty
       N cut M hCut original Full Marked
       hCutVisible hMarked)
 
+
+/-- At one actual represented no-(I2) Kpt closure, FULL corrected (B3)
+follows from a MARKED corrected-(B3) source covering every genuinely
+eligible physical positive Full cut-neighbour, WITHOUT an independently
+given marked name.
+
+No-(I2) is needed only to show that a represented marked name has its
+complete next-cut ordinary-L type among the ACTUALLY CHOSEN marked
+outputs, despite old L+ source-fibre deduplication. Once cut-visible
+chosen-output coverage is established, the strengthened cut-visible
+transfer does not need a separate nonemptiness premise.
+
+This remains conditional on the all-Full-cut-neighbours-marked
+hypothesis; it does NOT establish that hypothesis for a resolved diary. -/
+theorem henson_fullB3_of_no_i2_marked_closure_cut_neighbours_no_nonempty
+    (ell : Nat) (hell : 2 ≤ ell)
+    (k : Nat) (hK : ell ≤ k+1)
+    (E : Nat → Nat → Bool)
+    (hLoops : ∀ i, E i i = false)
+    (hSym : ∀ x y, E x y = E y x)
+    (hClique : ¬ ∃ f : Fin ell → Nat, StrictMono f ∧
+      (∀ a b : Fin ell, a ≠ b → E (f a) (f b) = true))
+    (N cut M : Nat) (hCut : cut < N)
+    (original : Fin M → Fin N)
+    (hAvoid : ∀ bad, bad ∈ hensonForbiddenFamily ell hell →
+      bad.Avoids (finiteNumericH (normalizedGraphModel E) k N).L)
+    (Z : Set (AdmissibleKptNode (hensonForbiddenFamily ell hell)))
+    (Full Marked : Fin M → Prop)
+    (hMarkedRepresented : ∀ v : Fin M, Marked v →
+      closureSelectedOriginal
+        (hensonForbiddenFamily ell hell)
+        (finiteNumericH (normalizedGraphModel E) k N)
+        hAvoid original Z cut v)
+    (hNoI2 : ¬ ∃ a : AdmissibleKptNode (hensonForbiddenFamily ell hell),
+      a ∈ Z ∧ ∃ b : AdmissibleKptNode (hensonForbiddenFamily ell hell),
+        b ∈ Z ∧ SMTree.Envelope.SameComponent a b ∧
+        LevelTree.lev (LevelTree.meet a b) = cut)
+    (hAllCutNeighboursMarked : ∀ v : Fin M, Full v →
+      cut+1 ≤ (finiteNumericH (normalizedGraphModel E) k N).freeLevel
+        (original v).val →
+      (finiteNumericHL (normalizedGraphModel E) k N).binary
+        cut (original v).val (0 : Fin 1) = true → Marked v)
+    (hMarkedB3 :
+      (selectedStagePoolPrescribedData
+        (finiteNumericH (normalizedGraphModel E) k N)
+        cut original Marked).CorrectedB3
+          (hensonForbiddenFamily ell hell)) :
+    (selectedStagePoolPrescribedData
+      (finiteNumericH (normalizedGraphModel E) k N)
+      cut original Full).CorrectedB3
+        (hensonForbiddenFamily ell hell) := by
+  classical
+  let A := finiteNumericH (normalizedGraphModel E) k N
+  let C := finiteNumericHL (normalizedGraphModel E) k N
+  let G := selectedStagePoolPrescribedData A cut original Marked
+  have hVisible : ∀ v : Fin M, Full v →
+      cut+1 ≤ A.freeLevel (original v).val →
+      C.binary cut (original v).val (0 : Fin 1) = true →
+      ∃ T, T ∈ G.source ∧
+        (G.target T).lReduct =
+          RelationalPrefixType.ofAgeModel C
+            (cut+1) (original v).val := by
+    intro v hFull hEligible hCutEdge
+    have hv : Marked v :=
+      hAllCutNeighboursMarked v hFull hEligible hCutEdge
+    obtain ⟨T,hT,hType⟩ :=
+      selected_named_nextL_permitted_of_no_I2
+        (hensonForbiddenFamily ell hell)
+        A hAvoid cut original Z Marked
+        hMarkedRepresented hNoI2 v hv hEligible
+    refine ⟨T,hT,?_⟩
+    calc
+      (G.target T).lReduct =
+          (A.partialTypeAt (cut+1) (original v).val).lReduct :=
+        hType.symm
+      _ = RelationalPrefixType.ofAgeModel C
+            (cut+1) (original v).val :=
+        partialTypeAt_lReduct_eq_ofAgeModel
+          A (cut+1) (original v).val
+  exact henson_fullB3_of_cut_visible_complete_outputs_no_nonempty
+    ell hell k hK E hLoops hSym hClique
+    N cut M hCut original Full Marked hVisible hMarkedB3
+
 #print axioms henson_fullB3_of_no_eligible_cut_neighbour
 #print axioms henson_fullB3_of_cut_visible_complete_outputs_no_nonempty
 #print axioms henson_cut_visible_fullB3_failure_implies_marked_failure_no_nonempty
+#print axioms henson_fullB3_of_no_i2_marked_closure_cut_neighbours_no_nonempty
 
 end Kk
