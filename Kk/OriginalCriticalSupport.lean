@@ -72,9 +72,11 @@ theorem finiteOldColumnRawBound_insert_critical_exact
     (P : Finset Nat) (c : Nat → Fin d → Bool)
     (U : IntegerGraphSupport d ell) (v : Nat) (hv : v ∉ P) :
     finiteOldColumnRawBound E ell d (insert v P) c U =
-      if originalCriticalSupport E P c U v then
-        finiteOldColumnRawBound E ell d P c U - 1
-      else finiteOldColumnRawBound E ell d P c U := by
+      (by
+        classical
+        exact if originalCriticalSupport E P c U v then
+          finiteOldColumnRawBound E ell d P c U - 1
+        else finiteOldColumnRawBound E ell d P c U) := by
   classical
   have hSubset : mutualLinkedNeighbours E
       (oldSupportCommonNeighbourPool P c U.1) v ⊆
