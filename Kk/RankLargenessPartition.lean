@@ -225,4 +225,57 @@ theorem large_finite_colour_partition
     hFind Finset.univ u hu (by simpa only [hCover] using hLarge)
   exact ⟨j, w, huw, hw, hFibre⟩
 
+
+/-- An entirely avoiding same-rank cone rules out largeness of the
+avoided set. No global tree branching or finite-set theorem is assumed. -/
+theorem not_large_of_avoidable_cone
+    (rank : Node → Nat) (F : Set Node)
+    (n : Nat) (u : Node) (hu : rank u = n)
+    (hEscape : ∃ v, u ≤ v ∧ rank v = n ∧
+      ∀ w, v ≤ w → w ∉ F) :
+    ¬ Large rank F n u := by
+  intro hLarge
+  obtain ⟨v, huv, hv, hAvoid⟩ := hEscape
+  have hLargeV : Large rank F n v :=
+    large_mono_cone rank F n u v huv hLarge
+  obtain ⟨w, hvw, hwF⟩ :=
+    large_has_member rank F n v hv hLargeV
+  exact (hAvoid w hvw) hwF
+
+/-- A large set remains large after subtracting a set which is
+not large on ANY same-rank subcone. Uses only the previous genuine
+two-colour theorem; the smallness premise is deliberately explicit. -/
+theorem large_difference_of_small
+    (rank : Node → Nat) (hAnti : Antitone rank)
+    (S F : Set Node) (n : Nat) (u : Node)
+    (hu : rank u = n) (hLarge : Large rank S n u)
+    (hSmall : ∀ v, u ≤ v → rank v = n → ¬ Large rank F n v) :
+    ∃ v, u ≤ v ∧ rank v = n ∧ Large rank (S \ F) n v := by
+  have hST : S ⊆ (S \ F) ∪ F := by
+    intro x hx
+    by_cases hxF : x ∈ F
+    · exact Or.inr hxF
+    · exact Or.inl ⟨hx, hxF⟩
+  have hUnion : Large rank ((S \ F) ∪ F) n u :=
+    large_mono_set rank hST n u hLarge
+  rcases large_union_partition rank hAnti (S \ F) F n u hu hUnion with
+    hGood | hBad
+  · exact hGood
+  · obtain ⟨v, huv, hv, hLargeF⟩ := hBad
+    exact False.elim ((hSmall v huv hv) hLargeF)
+
+/-- Conditional finite-avoidance interface: every same-rank subcone
+has a further same-rank cone wholly avoiding F. A finite obstruction
+in an ACTUAL coding tree needs a separate geometric padding proof. -/
+theorem large_difference_of_cone_escape
+    (rank : Node → Nat) (hAnti : Antitone rank)
+    (S F : Set Node) (n : Nat) (u : Node)
+    (hu : rank u = n) (hLarge : Large rank S n u)
+    (hEscape : ∀ v, u ≤ v → rank v = n →
+      ∃ z, v ≤ z ∧ rank z = n ∧ ∀ w, z ≤ w → w ∉ F) :
+    ∃ v, u ≤ v ∧ rank v = n ∧ Large rank (S \ F) n v := by
+  apply large_difference_of_small rank hAnti S F n u hu hLarge
+  intro v huv hv
+  exact not_large_of_avoidable_cone rank F n v hv (hEscape v huv hv)
+
 end Kk.RankLargeness
