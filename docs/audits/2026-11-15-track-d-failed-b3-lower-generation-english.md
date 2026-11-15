@@ -142,3 +142,29 @@ Derive top-cut impossibility using `hPosition_injective_bounded`.
 Register both exact named theorems in the strict standard-only
 axiom report. This does not modify or import the unverified global
 small-independent application.
+
+## Further packaged corollary — one same-core higher-generation witness
+
+Once the non-top real cut `c=hPosition k idx g`, `g<k`, is
+**derived** rather than assumed, apply the already verified
+`henson_any_generation_B3_has_clique_higher_signature` at this
+same cut, same selected name pool and same failed corrected B3.
+It returns **one** genuine finite ordinary-L forbidden `K_ell`
+signature witness, with every upper vertex represented by
+an actual selected original of some generation `m>g`.
+Importantly, the theorem supplies one shared forbidden clique
+rather than collecting unrelated individual positive neighbours.
+
+This is a direct composition of two existing / newly formalized
+finite theorems; it is not a new graph-age/diary bridge.
+The complete selected upper-type equality and the finite original
+name map are retained. The failure implies `g<k` but does not
+identify the higher names with active diary branches, which can still
+omit genuine auxiliary parameters.
+
+Additional adversarial checks: use the same original map and
+`Selected` on both invocations, preserve exactly the same
+`cut` and `hFailure` witness, and do not move `g<k` into an
+external hypothesis. Do not weaken next-cut L-type equality to
+one positive adjacency bit. Register an additional exact named
+transitive-axiom report only after the new corollary compiles.
