@@ -143,7 +143,9 @@ theorem numericH_partial_real_pool_exact
     · apply Finset.mem_union.mpr
       right
       apply Finset.mem_image.mpr
-      exact ⟨q,Finset.mem_range.mpr hqLt,by rw [←hEq,hiEq]⟩
+      refine ⟨q,Finset.mem_range.mpr hqLt,?_⟩
+      rw [hiEq] at hEq
+      exact hEq.symm
   · intro hz
     rcases Finset.mem_union.mp hz with hEarlier | hCurrent
     · obtain ⟨i,hi,q,hq,hEq⟩ :=
