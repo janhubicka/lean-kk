@@ -134,6 +134,26 @@ numerical source. **No diary-uniform cardinality bound** follows.
     same physical sources**. There is no claim that two
     *different diary occurrences* have the same Bad support.
 
+## Adversarial abstract source-record example: Bad does not determine labels
+
+Consider two labelled sources a,b at one aligned cut, with the
+same complete old type T but distinct complete upper dependent
+types U0 and U1. In the first finite indexed presentation the
+assignment is a↦(T,U0), b↦(T,U1); in the second it is
+a↦(T,U1), b↦(T,U0). The *unlabelled* complete crossing
+relation is the identical set {(T,U0),(T,U1)}. The terminal
+existence flag is unchanged. Thus the physical no-novelty
+criterion, the canonical bad-cut support and even the full
+UNLABELLED pair spectrum cannot detect this label swap.
+
+This is an **abstract finite record counterexample to the
+logical implication**, not a claim that these four records
+constitute two realized Kpt diary occurrences. Actual Kpt
+prefix-chain and chronology conditions might prohibit some
+swaps. This is precisely why a verified common labelled source
+orbit requires additional occurrence-independent **assigned**
+upper L+ data, not just set-theoretic cut equality.
+
 ## Explicit next gap
 
 Find a diary-derived finite planned microevent set P, uniform
