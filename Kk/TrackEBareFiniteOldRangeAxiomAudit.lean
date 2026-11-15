@@ -1,0 +1,9 @@
+import Kk.PhysicalBareFiniteOldRangeStability
+
+#check @Kk.finiteNumericH_bareTopRoot_has_physical_exhaustive_run
+#print axioms Kk.finiteNumericH_bareTopRoot_has_physical_exhaustive_run
+
+#check @Kk.KptTwoIndexOldRangeNoNovelty
+
+#check @Kk.finiteNumericH_bareTopRoot_old_range_stable_of_two_finite_covers
+#print axioms Kk.finiteNumericH_bareTopRoot_old_range_stable_of_two_finite_covers
