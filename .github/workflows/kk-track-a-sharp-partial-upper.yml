@@ -1,0 +1,54 @@
+name: KK Track A sharp actual partial numeric-H upper bound
+
+on:
+  pull_request:
+    paths:
+      - 'Kk/PartialNumericSharpUpper.lean'
+      - 'docs/partial_numeric_sharp_upper_english_audit.md'
+      - '.github/workflows/kk-track-a-sharp-partial-upper.yml'
+  push:
+    branches: [kk-track-a-sharp-partial-upper-20261115]
+  workflow_dispatch:
+
+concurrency:
+  group: kk-track-a-sharp-partial-upper-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  sharp-upper:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore pinned Lake workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve pinned dependencies
+        run: lake update
+      - name: Restore Mathlib cache
+        run: lake exe cache get
+      - name: Independent 26,880-case exact sharp-capacity model check
+        run: python3 scripts/check_partial_numeric_old_age.py
+      - name: Explicit build of all sharp-upper dependencies
+        run: |
+          lake build Kk.PartialNumericOldColumns
+          lake build Kk.PartialNumericCommonPool
+          lake build Kk.PartialNumericGenerationHeight
+          lake build Kk.PartialNumericCurrentLinkUpper
+      - name: Build exact physical sharp upper theorem
+        run: lake build Kk.PartialNumericSharpUpper
+      - name: Strict standard-only exact named axiom audit
+        run: |
+          set -euo pipefail
+          python3 scripts/check_axiom_report.py --self-test
+          lake env lean Kk/PartialNumericSharpUpper.lean | tee sharp-upper-axioms.log
+          python3 scripts/check_axiom_report.py Kk/PartialNumericSharpUpper.lean sharp-upper-axioms.log
+      - name: Full repository Lean build
+        run: lake build
