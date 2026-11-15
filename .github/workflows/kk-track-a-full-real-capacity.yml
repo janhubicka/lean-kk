@@ -1,0 +1,46 @@
+name: KK Track A full real-generation clique projection
+
+on:
+  pull_request:
+    paths:
+      - 'Kk/FullRealGenerationCapacity.lean'
+      - 'docs/full_real_generation_capacity_english_audit.md'
+      - '.github/workflows/kk-track-a-full-real-capacity.yml'
+  push:
+    branches: [kk-track-a-all-real-generation-capacity-20261115]
+  workflow_dispatch:
+
+concurrency:
+  group: kk-track-a-full-real-capacity-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  exact-full-real-projection:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore pinned Lake workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve pinned dependencies
+        run: lake update
+      - name: Restore Mathlib cache
+        run: lake exe cache get
+      - name: Explicitly compile full real-generation capacity module
+        run: lake build Kk.FullRealGenerationCapacity
+      - name: Strict fully qualified transitive axiom report
+        run: |
+          set -euo pipefail
+          python3 scripts/check_axiom_report.py --self-test
+          lake env lean Kk/FullRealGenerationCapacity.lean | tee full-real-capacity-axioms.log
+          python3 scripts/check_axiom_report.py Kk/FullRealGenerationCapacity.lean full-real-capacity-axioms.log
+      - name: Full repository build
+        run: lake build
