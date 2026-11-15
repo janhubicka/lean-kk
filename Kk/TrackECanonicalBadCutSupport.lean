@@ -185,7 +185,6 @@ theorem mem_kptCanonicalOffPlanBadCuts
   classical
   simp only [kptCanonicalOffPlanBadCuts,
     Finset.mem_filter, Finset.mem_range]
-  tauto
 
 /-- The physical off-plan tests hold outside Allowed if and only if
 the canonical finite bad-cut set is INCLUDED in Allowed. Thus the
@@ -373,6 +372,6 @@ theorem crossheight_old_range_sandwich_of_canonical_badCuts
       family X Y hXY oldTop newTop hTopLe hTopSeed
       RunOld RunNew Bad oldNode newNode oldLive newLive
       hExactOld hExactNew hCoverage
-  simpa only [Bad, Set.mem_setOf_eq] using hSandwich
+  simpa only [Bad, Set.mem_ofPred_eq] using hSandwich
 
 end Kk
