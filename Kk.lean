@@ -50,6 +50,8 @@ import Kk.K4NeighbourCertificate
 import Kk.FiniteNeighbourSchedule
 -- Track B: all-support literal original insertion and age-neutral stage
 import Kk.FullOriginalInsertionAge
+-- Track B: exact critical support capacity and raw-age jumps
+import Kk.OriginalCriticalSupport
 import Kk.K4NeighbourSchedule
 import Kk.NeighbourhoodCardinality
 import Kk.IsolatedCliqueBlocks
