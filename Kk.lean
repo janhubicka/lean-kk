@@ -180,6 +180,7 @@ import Kk.B3MissingMarkedOneCore
 import Kk.B3UnmarkedInsideSameCore
 import Kk.B3PhysicalBadCoreIff
 import Kk.B3ActualRunFullBadCoreIff
+import Kk.B3CutVisibleNoNonempty
 
 -- Track B: inter-ambient full-B3 comparison of complete physical cut-star profiles
 import Kk.B3CrossAmbientProfile
