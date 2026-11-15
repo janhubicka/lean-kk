@@ -1867,3 +1867,23 @@ import Kk
 #print axioms Kk.finiteNumericH_bareTopRoot_construct_exhaustive_run
 #check @Kk.finiteNumericH_old_and_bare_new_runs_extra_cuts_have_finite_witness
 #print axioms Kk.finiteNumericH_old_and_bare_new_runs_extra_cuts_have_finite_witness
+
+-- Track B: nine conditional physical full-support original insertion endpoints.
+#check @Kk.oldSupportCommonNeighbourPool_insert_exact
+#print axioms Kk.oldSupportCommonNeighbourPool_insert_exact
+#check @Kk.finiteOldColumnRawBound_insert_exact
+#print axioms Kk.finiteOldColumnRawBound_insert_exact
+#check @Kk.finiteOldColumnRawBound_insert_off
+#print axioms Kk.finiteOldColumnRawBound_insert_off
+#check @Kk.finiteOldColumnRawBound_insert_no_growth
+#print axioms Kk.finiteOldColumnRawBound_insert_no_growth
+#check @Kk.finiteOldColumnRawBound_antitone_old_pool
+#print axioms Kk.finiteOldColumnRawBound_antitone_old_pool
+#check @Kk.finiteOldColumnRawBound_next_prefix_exact
+#print axioms Kk.finiteOldColumnRawBound_next_prefix_exact
+#check @Kk.finiteOldColumnRawBound_next_prefix_eq_of_mutual_budgets
+#print axioms Kk.finiteOldColumnRawBound_next_prefix_eq_of_mutual_budgets
+#check @Kk.integerGraphAgeCanonical_next_prefix_eq_of_mutual_budgets
+#print axioms Kk.integerGraphAgeCanonical_next_prefix_eq_of_mutual_budgets
+#check @Kk.actual_original_stage_preserves_free_and_all_support_age
+#print axioms Kk.actual_original_stage_preserves_free_and_all_support_age
