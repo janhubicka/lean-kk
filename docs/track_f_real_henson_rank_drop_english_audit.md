@@ -40,6 +40,34 @@ For **zero padding / cofinal coding witnesses**, start with a valid `U` and any 
 6. **The branch is real but not a global diary.** The theorem constructs one actual coding-type extension; it does **not** prove multi-coordinate class synchronization, homogeneous subcopy rank transport, or one-diary unavoidability.
 7. **Left-density remains an explicit hypothesis.** Merely avoiding `K_ell` in an arbitrary graph does not guarantee the prescribed later one-point extension. The theorem never pretends otherwise.
 
+## Independent finite-graph regression (15 November)
+
+An independent executable regression in
+`scripts/verify_track_f_real_rank_drop.py` enumerates all simple
+old graphs on 0 through 5 vertices for `ell=3,4,5,6`; it retains only
+old `K_ell`-free graphs. On every old-neighbourhood subset with
+`cap(U)+3<=ell`, and for **every** maximal old clique
+`C subset U`, it inserts a genuinely new vertex adjacent exactly
+to `C` in the finite graph. The program checks the whole graph
+remains `K_ell`-free, the type capacity increases exactly one,
+and the enlarged type still has capacity below `ell-1`.
+
+Executed offline against the source algorithm, it passed
+**76,873** eligible old-neighbourhood instances and **121,179**
+distinct maximal-clique certificate choices. It excluded 35,707
+instances outside the rank-at-least-two hypothesis. The script
+also checks an explicit failing boundary: an edge as an old
+`K_4` type neighbourhood has capacity two; joining a new
+vertex to both endpoints creates a triangle of neighbours, so
+the new one-point type is inadmissible. This validates the
+precondition's necessity.
+
+**Scope:** these are independent finite arithmetic/model checks,
+not a kernel proof and not a test that a particular infinite
+Henson enumeration actually realizes a chosen one-point
+extension. The exact-head Lean proof and its transitive-axiom
+audit remain separate acceptance conditions.
+
 ## Formalization acceptance
 
 Prove in a new module the real same-cone cofinal coding extension and the real one-step type rank drop, then expose a `#print axioms` audit for both. Confirm the statements mention actual `hensonForbiddenFamily`, `OnePointLeftDense`, full old columns, and the true finite clique capacity. A successful CI establishes the **one-coordinate** Henson geometry, not rank-largeness of arbitrary fibres or the global lower theorem.
