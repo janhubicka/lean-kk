@@ -103,6 +103,32 @@ If a full B3 test depends only on this complete crossing and old socle, its
 local verdict can be transferred by separately verified hypotheses; no
 such global implication is inserted as an axiom here.
 
+## Stronger consequence: actual successor-tree I3 is also cut-visible
+
+Inspect the EXACT upstream \`IsInterestingAt H Z c\` definition:
+its three disjuncts are (I1) an actual node z∈Z with lev(z)=c,
+(I2) a pair of Z nodes whose componentwise meet has level c,
+and (I3) **nonexistence** of a one-level skipping map D that realizes
+the required crossing equation for EVERY z∈Z with c<lev(z).
+
+Each clause depends exclusively on Z∩{lev≥c}. The first is immediate;
+the second needs meet≤each argument; and the I3 *map* predicate
+quantifies only nodes crossing c, so replacing Z by W with the same
+cut-visible set gives EXACTLY THE SAME class of candidate skip maps.
+Negating these identical existence predicates yields the same I3 verdict.
+
+Thus the cut-visible physical closure theorem also yields
+
+  IsInterestingAt H Zfull c  ↔  IsInterestingAt H Zbare c,
+
+**including the real I3 no-skipping-map branch**, and not merely
+the reduct corrected-(B3) finite age-test approximation.
+No extra axiom about a canonical diary is required. A separate
+generic Lean theorem will formalize this exact logical equivalence.
+This does not identify the distinct genuine bare vs inherited-full
+AlgorithmRuns' selected sets, since the equality compares their two
+closures using the SAME already chosen Rnew.I(c+1).
+
 ## Hostile checks
 
 1. c=0: Low(c)=empty. No index i=0 has a parameter below 0, so the theorem
