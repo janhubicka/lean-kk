@@ -1891,3 +1891,21 @@ import Kk
 #print axioms Kk.integerGraphAgeCanonical_next_prefix_eq_of_mutual_budgets
 #check @Kk.actual_original_stage_preserves_free_and_all_support_age
 #print axioms Kk.actual_original_stage_preserves_free_and_all_support_age
+
+-- Track B: support-image raw transport (six), finite certified neutral intervals (two)
+#check @Kk.integerGraphSupportImage
+#print axioms Kk.integerGraphSupportImage
+#check @Kk.oldSupportCommonNeighbourPool_reindex
+#print axioms Kk.oldSupportCommonNeighbourPool_reindex
+#check @Kk.finiteOldColumnRawBound_reindex
+#print axioms Kk.finiteOldColumnRawBound_reindex
+#check @Kk.finiteOldColumnRawBound_reindex_after_insert
+#print axioms Kk.finiteOldColumnRawBound_reindex_after_insert
+#check @Kk.original_mutual_budget_reindex
+#print axioms Kk.original_mutual_budget_reindex
+#check @Kk.integerGraphAgeCanonical_next_prefix_neutral_reindex
+#print axioms Kk.integerGraphAgeCanonical_next_prefix_neutral_reindex
+#check @Kk.actual_original_neutral_interval_preserves_free_raw_canonical
+#print axioms Kk.actual_original_neutral_interval_preserves_free_raw_canonical
+#check @Kk.actual_original_neutral_interval_preserves_prior_age
+#print axioms Kk.actual_original_neutral_interval_preserves_prior_age
