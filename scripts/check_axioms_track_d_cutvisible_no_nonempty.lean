@@ -1,0 +1,9 @@
+import Kk.B3CutVisibleNoNonempty
+
+-- Track D: finite physical no-cut and source-nonempty-free transfers.
+#check @Kk.henson_fullB3_of_no_eligible_cut_neighbour
+#print axioms Kk.henson_fullB3_of_no_eligible_cut_neighbour
+#check @Kk.henson_fullB3_of_cut_visible_complete_outputs_no_nonempty
+#print axioms Kk.henson_fullB3_of_cut_visible_complete_outputs_no_nonempty
+#check @Kk.henson_cut_visible_fullB3_failure_implies_marked_failure_no_nonempty
+#print axioms Kk.henson_cut_visible_fullB3_failure_implies_marked_failure_no_nonempty
