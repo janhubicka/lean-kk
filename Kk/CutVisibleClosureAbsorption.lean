@@ -249,6 +249,75 @@ theorem kpt_cut_visible_same_structural_and_full_crossing
       exact ⟨z, (hVisible z (by omega)).mpr hz,
         hCut, hOld, hUpper⟩
 
+/-- The GENUINE successor-tree I1/I2/I3 interestingness test at cut
+only inspects nodes of level >= cut. Its I3 branch is a negated
+existence statement about a one-level skipping MMap on ALL actual
+crossing nodes; equality of these node sets makes the map predicate
+literally equivalent, including all dependent parameters and E.
+
+No shortcut through selected ordinary-L age or corrected B3 is used. -/
+theorem envelope_IsInterestingAt_iff_of_cut_visible
+    {T : Type u} {Label : Type v}
+    [PartialOrder T] [LevelTree T]
+    {S : STree T Label}
+    (H : SMTree S) (C D : Set T) (cut : Nat)
+    (hVisible : ∀ z : T, cut ≤ LevelTree.lev z →
+      (z ∈ C ↔ z ∈ D)) :
+    SMTree.Envelope.IsInterestingAt H C cut ↔
+    SMTree.Envelope.IsInterestingAt H D cut := by
+  unfold SMTree.Envelope.IsInterestingAt
+  constructor
+  · intro h
+    rcases h with hNode | hMeet | hNoMap
+    · obtain ⟨z, hz, hLev⟩ := hNode
+      exact Or.inl ⟨z, (hVisible z (by omega)).mp hz, hLev⟩
+    · obtain ⟨a, ha, b, hb, hComp, hMeetLev⟩ := hMeet
+      have haLev : cut ≤ LevelTree.lev a := by
+        have h := LevelTree.level_le_of_le
+          (LevelTree.meet_le_left hComp)
+        omega
+      have hbLev : cut ≤ LevelTree.lev b := by
+        have h := LevelTree.level_le_of_le
+          (LevelTree.meet_le_right hComp)
+        omega
+      exact Or.inr (Or.inl
+        ⟨a, (hVisible a haLev).mp ha,
+         b, (hVisible b hbLev).mp hb,
+         hComp, hMeetLev⟩)
+    · right
+      right
+      intro hMap
+      obtain ⟨F, hSkip, hCross⟩ := hMap
+      apply hNoMap
+      refine ⟨F, hSkip, ?_⟩
+      intro z hz hCrossZ
+      exact hCross ((hVisible z (by omega)).mp hz) hCrossZ
+  · intro h
+    rcases h with hNode | hMeet | hNoMap
+    · obtain ⟨z, hz, hLev⟩ := hNode
+      exact Or.inl ⟨z, (hVisible z (by omega)).mpr hz, hLev⟩
+    · obtain ⟨a, ha, b, hb, hComp, hMeetLev⟩ := hMeet
+      have haLev : cut ≤ LevelTree.lev a := by
+        have h := LevelTree.level_le_of_le
+          (LevelTree.meet_le_left hComp)
+        omega
+      have hbLev : cut ≤ LevelTree.lev b := by
+        have h := LevelTree.level_le_of_le
+          (LevelTree.meet_le_right hComp)
+        omega
+      exact Or.inr (Or.inl
+        ⟨a, (hVisible a haLev).mpr ha,
+         b, (hVisible b hbLev).mpr hb,
+         hComp, hMeetLev⟩)
+    · right
+      right
+      intro hMap
+      obtain ⟨F, hSkip, hCross⟩ := hMap
+      apply hNoMap
+      refine ⟨F, hSkip, ?_⟩
+      intro z hz hCrossZ
+      exact hCross ((hVisible z (by omega)).mpr hz) hCrossZ
+
 /-- Track C physical consequence at EVERY real old cut c<oldTop,
 even if the old selected run contains levels 0,...,c.
 
@@ -302,7 +371,11 @@ theorem finiteNumericH_newRoot_run_cut_visible_absorption
     (KptI2MeetAtCut family Zfull cut ↔
       KptI2MeetAtCut family Zbare cut) ∧
     (FullPhysicalClosureCrossing family Zfull cut =
-      FullPhysicalClosureCrossing family Zbare cut) := by
+      FullPhysicalClosureCrossing family Zbare cut) ∧
+    (SMTree.Envelope.IsInterestingAt
+      (normalizedKptSMTree family) Zfull cut ↔
+     SMTree.Envelope.IsInterestingAt
+      (normalizedKptSMTree family) Zbare cut) := by
   let O : Set (AdmissibleKptNode family) :=
     ((fun w : Fin M =>
       (finiteNumericH L k M).kptOriginal family hAvoid w) '' W)
@@ -334,7 +407,11 @@ theorem finiteNumericH_newRoot_run_cut_visible_absorption
   have hStruct :=
     kpt_cut_visible_same_structural_and_full_crossing
       family Zfull Zbare cut hVisible
+  have hInteresting :=
+    envelope_IsInterestingAt_iff_of_cut_visible
+      (normalizedKptSMTree family) Zfull Zbare cut hVisible
   dsimp only
-  exact ⟨hVisible, hStruct.1, hStruct.2.1, hStruct.2.2⟩
+  exact ⟨hVisible, hStruct.1, hStruct.2.1,
+    hStruct.2.2, hInteresting⟩
 
 end Kk
