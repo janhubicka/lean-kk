@@ -1,0 +1,51 @@
+name: KK Track F exact genuine multi-sort raw locality
+
+on:
+  pull_request:
+    paths:
+      - 'Kk/TrackFMultiSortRawIsolation.lean'
+      - 'Kk/TrackFMultiSortRawIsolationAxiomAudit.lean'
+      - 'docs/track_f_multisort_single_coordinate_isolation_english_audit.md'
+      - 'scripts/verify_track_f_multi_sort_locality.py'
+      - '.github/workflows/kk-track-f-multisort-raw.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: kk-track-f-multi-raw-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  physical-raw-isolation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache Lean toolchain
+        uses: actions/cache@v4
+        with:
+          path: ~/.elan/toolchains
+          key: lean-toolchain-${{ runner.os }}-${{ hashFiles('lean-toolchain') }}
+      - name: Restore Lean workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve dependencies
+        run: lake update
+      - name: Obtain Mathlib build cache
+        run: lake exe cache get
+      - name: Independent exhaustive multi-sort rank-drop regression
+        run: python3 scripts/verify_track_f_multi_sort_locality.py
+      - name: Build real multi-sort raw-isolation proof
+        run: lake build Kk.TrackFMultiSortRawIsolation
+      - name: Strict seven-theorem standard-only axiom gate
+        run: |
+          set -euo pipefail
+          lake env lean Kk/TrackFMultiSortRawIsolationAxiomAudit.lean | tee track-f-multi-raw-axioms.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py Kk/TrackFMultiSortRawIsolationAxiomAudit.lean track-f-multi-raw-axioms.log
