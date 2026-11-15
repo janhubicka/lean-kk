@@ -1,0 +1,46 @@
+name: KK Track A actual full numeric old/top column
+
+on:
+  pull_request:
+    paths:
+      - 'Kk/FullBlockActualTopColumn.lean'
+      - 'docs/full_block_actual_top_column_english_audit.md'
+      - '.github/workflows/kk-track-a-full-block-actual-column.yml'
+  push:
+    branches: [kk-track-a-full-prefix-actual-top-column-20261115]
+  workflow_dispatch:
+
+concurrency:
+  group: kk-track-a-full-block-actual-column-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  exact-actual-top-column:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore pinned Lake workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve pinned dependencies
+        run: lake update
+      - name: Restore Mathlib cache
+        run: lake exe cache get
+      - name: Explicitly compile full block actual top columns
+        run: lake build Kk.FullBlockActualTopColumn
+      - name: Strict exact qualified named transitive axiom audit
+        run: |
+          set -euo pipefail
+          python3 scripts/check_axiom_report.py --self-test
+          lake env lean Kk/FullBlockActualTopColumn.lean | tee full-actual-column-axioms.log
+          python3 scripts/check_axiom_report.py Kk/FullBlockActualTopColumn.lean full-actual-column-axioms.log
+      - name: Full repository build
+        run: lake build
