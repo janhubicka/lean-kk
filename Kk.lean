@@ -50,6 +50,9 @@ import Kk.K4NeighbourCertificate
 import Kk.FiniteNeighbourSchedule
 -- Track B: all-support literal original insertion and age-neutral stage
 import Kk.FullOriginalInsertionAge
+-- Track B: exact image-support transport and certified finite neutral intervals
+import Kk.SupportImageAge
+import Kk.NeutralOriginalInterval
 import Kk.K4NeighbourSchedule
 import Kk.NeighbourhoodCardinality
 import Kk.IsolatedCliqueBlocks
