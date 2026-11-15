@@ -12,5 +12,8 @@ import Kk.CutVisibleClosureAbsorption
 #check @Kk.kpt_cut_visible_same_structural_and_full_crossing
 #print axioms Kk.kpt_cut_visible_same_structural_and_full_crossing
 
+#check @Kk.envelope_IsInterestingAt_iff_of_cut_visible
+#print axioms Kk.envelope_IsInterestingAt_iff_of_cut_visible
+
 #check @Kk.finiteNumericH_newRoot_run_cut_visible_absorption
 #print axioms Kk.finiteNumericH_newRoot_run_cut_visible_absorption
