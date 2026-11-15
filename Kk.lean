@@ -48,6 +48,8 @@ import Kk.MixedNeighbourhoodBlocks
 import Kk.FiniteNeighbourCertificates
 import Kk.K4NeighbourCertificate
 import Kk.FiniteNeighbourSchedule
+-- Track B: all-support literal original insertion and age-neutral stage
+import Kk.FullOriginalInsertionAge
 import Kk.K4NeighbourSchedule
 import Kk.NeighbourhoodCardinality
 import Kk.IsolatedCliqueBlocks
