@@ -75,13 +75,20 @@ hypotheses on these three fields are needed.
 By the checked FullEventIndexedSourceRecord extensionality,
 **R=S as complete event-indexed source records.**
 
-This is a strictly weaker condition than the old
+This **strictly relaxes the atom-equality component** of the old
 \`full_event_source_eq_of_inverse_sets_and_recipes\` interface:
-unused ambient atoms may differ, and presence/old/upper fields
-are derived from deterministic reconstruction rules rather than
-postulated equal. But the COMMON rules, equality of the full
-event frames, exact selected inverse sets, and matched used
-recipe values remain **open geometric hypotheses**.
+unused ambient atoms may differ. It simultaneously REPLACES the
+old direct equality assumptions on presence/old/upper fields by
+common deterministic reconstruction-function hypotheses. Those
+are *different*, substantive premises, and the entire new
+hypothesis package has **not** been proved globally weaker
+than the old one. The new theorem is an alternative interface
+designed for event-local geometric verification, not an
+unconditional strengthening of the old orbit result.
+
+The COMMON recovery functions, equality of full event frames,
+exact selected inverse sets, physically valid meet recipes and
+matched used outputs remain **open geometric obligations**.
 
 ## Adversarial checks (18)
 
