@@ -1,0 +1,9 @@
+import Kk.PhysicalOffPlanFiniteIndex
+
+#check @Kk.KptTwoIndexOffPlanNoNovelty
+
+#check @Kk.crossheight_old_range_sandwich_of_two_finite_offplan_indices
+#print axioms Kk.crossheight_old_range_sandwich_of_two_finite_offplan_indices
+
+#check @Kk.finiteNumericH_bareTopRoot_sandwich_of_finite_offplan_coverage
+#print axioms Kk.finiteNumericH_bareTopRoot_sandwich_of_finite_offplan_coverage
