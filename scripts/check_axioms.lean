@@ -1729,3 +1729,141 @@ import Kk
 #print axioms Kk.HensonPhysicalRunCutData.full_B3_iff_of_relevant_base_and_live_cover
 #check @Kk.HensonPhysicalRunCutData.bad_good_has_missing_intrinsic_cutStar_type_of_relevant_base
 #print axioms Kk.HensonPhysicalRunCutData.bad_good_has_missing_intrinsic_cutStar_type_of_relevant_base
+
+-- Track G: centrally verify standalone A/C/E/F and physical cross-height E stack.
+-- Every theorem retains its real finite/source/chronological hypotheses.
+-- Track A: 16 qualified endpoints
+#check @Kk.isolatedSupportWitnessRespects_iff_old_and_threshold
+#print axioms Kk.isolatedSupportWitnessRespects_iff_old_and_threshold
+#check @Kk.integerWitnessRespects_rawCliqueBlock_iff
+#print axioms Kk.integerWitnessRespects_rawCliqueBlock_iff
+#check @Kk.isolatedSupportWitnessRespects_iff_ideal
+#print axioms Kk.isolatedSupportWitnessRespects_iff_ideal
+#check @Kk.integerGraphAgeCanonical_eq_of_respects_iff
+#print axioms Kk.integerGraphAgeCanonical_eq_of_respects_iff
+#check @Kk.isolatedSupportCanonicalAge_eq_ideal
+#print axioms Kk.isolatedSupportCanonicalAge_eq_ideal
+#check @Kk.integerGraphAgeCanonical_idealBlock_congr
+#print axioms Kk.integerGraphAgeCanonical_idealBlock_congr
+#check @Kk.isolatedSupportCanonicalAge_cover_step
+#print axioms Kk.isolatedSupportCanonicalAge_cover_step
+#check @Kk.isolatedReservedClique_capacity_eq_card
+#print axioms Kk.isolatedReservedClique_capacity_eq_card
+#check @Kk.integerCliqueFeasible_eq_of_canonical_eq
+#print axioms Kk.integerCliqueFeasible_eq_of_canonical_eq
+#check @Kk.henson_leftDense_exists_physical_finite_canonical_cover_stage
+#print axioms Kk.henson_leftDense_exists_physical_finite_canonical_cover_stage
+#check @Kk.henson_leftDense_uniform_finite_stage_after_support_block
+#print axioms Kk.henson_leftDense_uniform_finite_stage_after_support_block
+#check @Kk.henson_leftDense_exists_uniform_finite_support_stage
+#print axioms Kk.henson_leftDense_exists_uniform_finite_support_stage
+#check @Kk.supportBlockGappedColumn_agrees_on_old_and_Q
+#print axioms Kk.supportBlockGappedColumn_agrees_on_old_and_Q
+#check @Kk.supportBlockGappedCommonNeighbourPool_eq
+#print axioms Kk.supportBlockGappedCommonNeighbourPool_eq
+#check @Kk.supportBlockGappedRawBound_eq
+#print axioms Kk.supportBlockGappedRawBound_eq
+#check @Kk.supportBlockGappedCanonicalAge_eq
+#print axioms Kk.supportBlockGappedCanonicalAge_eq
+-- Track C: 15 qualified endpoints
+#check @Kk.envelope_closure_absorbs_old_closure_of_levels
+#print axioms Kk.envelope_closure_absorbs_old_closure_of_levels
+#check @Kk.finiteNumericH_newRoot_closure_absorption
+#print axioms Kk.finiteNumericH_newRoot_closure_absorption
+#check @Kk.finiteNumericH_newRoot_run_preCut_structural_profile_absorbs
+#print axioms Kk.finiteNumericH_newRoot_run_preCut_structural_profile_absorbs
+#check @Kk.finiteNumericH_newRoot_run_preCut_absorbs_of_retained_above
+#print axioms Kk.finiteNumericH_newRoot_run_preCut_absorbs_of_retained_above
+#check @Kk.envelope_IsInterestingAt_mono_nodes
+#print axioms Kk.envelope_IsInterestingAt_mono_nodes
+#check @Kk.envelope_closure_mono_seeds_and_levels
+#print axioms Kk.envelope_closure_mono_seeds_and_levels
+#check @Kk.envelope_algorithmRun_selected_levels_mono_seeds
+#print axioms Kk.envelope_algorithmRun_selected_levels_mono_seeds
+#check @Kk.finiteNumericH_newRoot_run_retains_same_height_old_levels
+#print axioms Kk.finiteNumericH_newRoot_run_retains_same_height_old_levels
+#check @Kk.finiteNumericH_newRoot_preCut_absorbs_retained_old_run
+#print axioms Kk.finiteNumericH_newRoot_preCut_absorbs_retained_old_run
+#check @Kk.envelope_algorithmRun_selected_levels_mono_seed_height
+#print axioms Kk.envelope_algorithmRun_selected_levels_mono_seed_height
+#check @Kk.finiteNumericH_newRoot_run_retains_old_levels_larger_top
+#print axioms Kk.finiteNumericH_newRoot_run_retains_old_levels_larger_top
+#check @Kk.finiteNumericH_newRoot_preCut_absorbs_old_run_larger_top
+#print axioms Kk.finiteNumericH_newRoot_preCut_absorbs_old_run_larger_top
+#check @Kk.kpt_full_prefix_seeds_force_all_levels
+#print axioms Kk.kpt_full_prefix_seeds_force_all_levels
+#check @Kk.kpt_full_prefix_seeds_final_levels_all
+#print axioms Kk.kpt_full_prefix_seeds_final_levels_all
+#check @Kk.kpt_physical_full_prefix_pool_forces_all_levels
+#print axioms Kk.kpt_physical_full_prefix_pool_forces_all_levels
+-- Track E: 6 qualified endpoints
+#check @Kk.actual_two_run_preCut_absorption_of_old_higher_levels
+#print axioms Kk.actual_two_run_preCut_absorption_of_old_higher_levels
+#check @Kk.numericH_two_runs_preCut_full_profile_absorbs_of_old_higher
+#print axioms Kk.numericH_two_runs_preCut_full_profile_absorbs_of_old_higher
+#check @Kk.numericH_canonical_new_root_old_tail_preCut_full_profile_absorbs
+#print axioms Kk.numericH_canonical_new_root_old_tail_preCut_full_profile_absorbs
+#check @Kk.numericH_new_selected_cut_has_bare_original_source_witness
+#print axioms Kk.numericH_new_selected_cut_has_bare_original_source_witness
+#check @Kk.actual_two_runs_lower_levels_eq_after_old_closure_absorption
+#print axioms Kk.actual_two_runs_lower_levels_eq_after_old_closure_absorption
+#check @Kk.actual_three_runs_lower_levels_eq_of_old_selected_generators
+#print axioms Kk.actual_three_runs_lower_levels_eq_of_old_selected_generators
+-- Track F: 16 qualified endpoints
+#check @Kk.trackFConcreteEdgePair_iff_no_top
+#print axioms Kk.trackFConcreteEdgePair_iff_no_top
+#check @Kk.trackFWordMax_lt_iff
+#print axioms Kk.trackFWordMax_lt_iff
+#check @Kk.trackFWordMax_pair_lt_iff
+#print axioms Kk.trackFWordMax_pair_lt_iff
+#check @Kk.trackFConcreteEdgePair_iff_commonMax_lt
+#print axioms Kk.trackFConcreteEdgePair_iff_commonMax_lt
+#check @Kk.trackFWordMax_pair_le_height
+#print axioms Kk.trackFWordMax_pair_le_height
+#check @Kk.trackFConcreteEdgePair_iff_abstractPassing
+#print axioms Kk.trackFConcreteEdgePair_iff_abstractPassing
+#check @Kk.trackFSeenSymbol_reindex
+#print axioms Kk.trackFSeenSymbol_reindex
+#check @Kk.trackFWordDifferent_reindex
+#print axioms Kk.trackFWordDifferent_reindex
+#check @Kk.trackFPairSimultaneous_reindex
+#print axioms Kk.trackFPairSimultaneous_reindex
+#check @Kk.trackFConcreteEdgePair_reindex
+#print axioms Kk.trackFConcreteEdgePair_reindex
+#check @Kk.trackFMapSpectrumSingleton
+#print axioms Kk.trackFMapSpectrumSingleton
+#check @Kk.trackFWordSpectrumMatches_reindex
+#print axioms Kk.trackFWordSpectrumMatches_reindex
+#check @Kk.trackFConcreteEdgeAt_iff_abstractPassing
+#print axioms Kk.trackFConcreteEdgeAt_iff_abstractPassing
+#check @Kk.trackFConcretePassingSet_eq_abstract
+#print axioms Kk.trackFConcretePassingSet_eq_abstract
+#check @Kk.trackFWordRaw_coding_by_literal_E_exact
+#print axioms Kk.trackFWordRaw_coding_by_literal_E_exact
+#check @Kk.trackFWordRaw_coding_by_abstractSet_exact
+#print axioms Kk.trackFWordRaw_coding_by_abstractSet_exact
+-- Track E-stacked: 12 qualified endpoints
+#check @Kk.crossheight_new_selected_Kpt_cut_has_new_terminal_or_full_crossing
+#print axioms Kk.crossheight_new_selected_Kpt_cut_has_new_terminal_or_full_crossing
+#check @Kk.numericH_crossheight_extra_cut_has_bare_original_witness
+#print axioms Kk.numericH_crossheight_extra_cut_has_bare_original_witness
+#check @Kk.crossheight_new_selected_Kpt_cut_has_indexed_physical_witness
+#print axioms Kk.crossheight_new_selected_Kpt_cut_has_indexed_physical_witness
+#check @Kk.finiteNumericH_crossheight_extra_cut_has_finite_source_witness
+#print axioms Kk.finiteNumericH_crossheight_extra_cut_has_finite_source_witness
+#check @Kk.crossheight_runs_final_old_range_eq_of_no_novelty
+#print axioms Kk.crossheight_runs_final_old_range_eq_of_no_novelty
+#check @Kk.crossheight_runs_all_old_range_levels_eq_of_no_novelty
+#print axioms Kk.crossheight_runs_all_old_range_levels_eq_of_no_novelty
+#check @Kk.crossheight_runs_old_range_eq_of_two_finite_index_cover
+#print axioms Kk.crossheight_runs_old_range_eq_of_two_finite_index_cover
+#check @Kk.finiteNumericH_old_physical_top_le_new_chronological_top
+#print axioms Kk.finiteNumericH_old_physical_top_le_new_chronological_top
+#check @Kk.finiteNumericH_constructed_growing_runs_extra_cuts_have_finite_witness
+#print axioms Kk.finiteNumericH_constructed_growing_runs_extra_cuts_have_finite_witness
+#check @Kk.finiteNumericH_bareTopRoot_seeds_represented_bounded
+#print axioms Kk.finiteNumericH_bareTopRoot_seeds_represented_bounded
+#check @Kk.finiteNumericH_bareTopRoot_construct_exhaustive_run
+#print axioms Kk.finiteNumericH_bareTopRoot_construct_exhaustive_run
+#check @Kk.finiteNumericH_old_and_bare_new_runs_extra_cuts_have_finite_witness
+#print axioms Kk.finiteNumericH_old_and_bare_new_runs_extra_cuts_have_finite_witness

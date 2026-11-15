@@ -245,6 +245,35 @@ import Kk.NewRootIndexedNovelty
 import Kk.NoNewRootEventCriterion
 import Kk.TwoFiniteIndexNewRootStability
 
+-- Track G: actual individually certified finite A/C/E/F component modules.
+-- Stacked Track E sources are byte-identical to exact-head PR #205.
+-- These do not imply a global labelled diary orbit or an upper BRD.
+-- Track A: 4 modules, 16 reports
+import Kk.IsolatedSupportCanonicalAge
+import Kk.PhysicalCanonicalCoverStage
+import Kk.PhysicalIsolatedSupportStage
+import Kk.SupportBlockGapAge
+-- Track C: 4 modules, 15 reports
+import Kk.NumericHNewRootClosureAbsorption
+import Kk.AlgorithmRunSeedMonotonicity
+import Kk.AlgorithmRunCrossHeightMonotonicity
+import Kk.PrefixSaturationI1Obstruction
+-- Track E: 2 modules, 6 reports
+import Kk.NewRootMonotoneAbsorptionBridge
+import Kk.NewRootAbsorbedLowerRunStability
+-- Track F: 4 modules, 16 reports
+import Kk.TrackFWordEdgeLiteral
+import Kk.TrackFWordEdgePassing
+import Kk.TrackFWordEdgeAny
+import Kk.TrackFActualCodingSet
+-- Track E-stacked: 6 modules, 12 reports
+import Kk.CrossHeightNewRootNovelty
+import Kk.CrossHeightIndexedNovelty
+import Kk.CrossHeightOldRangeStability
+import Kk.CrossHeightFiniteIndexStability
+import Kk.PhysicalCrossHeightConstructedWitness
+import Kk.PhysicalBareNewRootRun
+
 /-!
 The counting project imports the verified successor-tree library.
 No local replacement of the Ramsey theorem is assumed.
