@@ -1,0 +1,50 @@
+name: KK Track A literal full numeric block old age
+
+on:
+  pull_request:
+    paths:
+      - 'Kk/FullNumericBlockPrefixAge.lean'
+      - 'docs/full_numeric_block_prefix_age_english_audit.md'
+      - '.github/workflows/kk-track-a-full-block-age.yml'
+  push:
+    branches: [kk-track-a-complete-numeric-block-age-20261115]
+  workflow_dispatch:
+
+concurrency:
+  group: kk-track-a-full-block-age-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  exact-full-block:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore pinned Lake workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve pinned dependencies
+        run: lake update
+      - name: Restore Mathlib cache
+        run: lake exe cache get
+      - name: Explicitly build complete real-generation projection
+        run: lake build Kk.FullRealGenerationCapacity
+      - name: Explicitly build full numeric block prefix age
+        run: lake build Kk.FullNumericBlockPrefixAge
+      - name: Strict fully qualified named transitive axiom audit
+        run: |
+          set -euo pipefail
+          python3 scripts/check_axiom_report.py --self-test
+          lake env lean Kk/FullRealGenerationCapacity.lean | tee full-real-axioms.log
+          python3 scripts/check_axiom_report.py Kk/FullRealGenerationCapacity.lean full-real-axioms.log
+          lake env lean Kk/FullNumericBlockPrefixAge.lean | tee full-block-axioms.log
+          python3 scripts/check_axiom_report.py Kk/FullNumericBlockPrefixAge.lean full-block-axioms.log
+      - name: Full repository build
+        run: lake build
