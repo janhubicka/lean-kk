@@ -192,7 +192,7 @@ theorem envelope_closure_high_absorbs_old_closure
     rcases hOldFull hOldZ with hC | hLow
     · exact hC
     · exact False.elim ((Nat.not_lt_of_ge hzLev) hLow)
-  · exact hBareFull
+  · exact hBareFull hz
 
 /-- The three actual finite Kpt structural/crossing objects visible
 at cut c depend ONLY on closure members of level >= c.
