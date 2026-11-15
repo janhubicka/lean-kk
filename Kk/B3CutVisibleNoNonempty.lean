@@ -21,6 +21,7 @@ labelled inverse-source orbit is smuggled into the statement.
 
 namespace Kk
 
+open SuccessorTree
 open SuccessorTree.V10
 
 /-- If NO cut-eligible selected physical original is adjacent to the
