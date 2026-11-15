@@ -227,7 +227,11 @@ theorem finiteNumericH_partial_actual_top_column_both
     have hCol :
         numericHPartialOldColumn k b g
           (fun i u => E i (j u)) z t = E i (j t) := by
-      simp [numericHPartialOldColumn,hzReal,hEq,
+      have hMem : hPosition k i q ∈ numericHPartialRealPool k b g := by
+        rw [← hEq]
+        exact hzReal
+      rw [hEq]
+      simp [numericHPartialOldColumn,hMem,
         numericHRealOriginal_at k i q hq]
     exact ⟨hForward.trans hCol.symm,
       (hSwap.symm.trans hForward).trans hCol.symm⟩
@@ -296,6 +300,8 @@ theorem finiteNumericH_partial_actual_common_pool_eq
           numericHPartialOldColumn k b g
             (fun i u => E i (j u)) z t = false := by
         simp [numericHPartialOldColumn,hNot]
+      change (finiteNumericHL (normalizedGraphModel E) k M).binary
+        z (hPosition k (j t) k) (0 : Fin 1) = true at hActual
       rw [hEq,hZero] at hActual
       contradiction
     apply Finset.mem_filter.mpr
