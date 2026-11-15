@@ -17,3 +17,12 @@ import Kk.RankLargenessPartition
 
 #check @Kk.RankLargeness.dense_implies_large
 #print axioms Kk.RankLargeness.dense_implies_large
+
+#check @Kk.RankLargeness.not_large_of_avoidable_cone
+#print axioms Kk.RankLargeness.not_large_of_avoidable_cone
+
+#check @Kk.RankLargeness.large_difference_of_small
+#print axioms Kk.RankLargeness.large_difference_of_small
+
+#check @Kk.RankLargeness.large_difference_of_cone_escape
+#print axioms Kk.RankLargeness.large_difference_of_cone_escape
