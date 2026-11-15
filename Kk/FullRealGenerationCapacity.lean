@@ -64,8 +64,9 @@ theorem numericHCompleteRealPool_mem_iff
 coordinates. On any non-real coordinate its default is irrelevant.
 The original index is unique by the verified bounded iota
 injectivity; it never renames the original Henson graph. -/
-noncomputable def numericHRealOriginal (k z : Nat) : Nat :=
-  if h : ∃ i : Nat, ∃ q : Nat, q ≤ k ∧ hPosition k i q = z then
+noncomputable def numericHRealOriginal (k z : Nat) : Nat := by
+  classical
+  exact if h : ∃ i : Nat, ∃ q : Nat, q ≤ k ∧ hPosition k i q = z then
     Classical.choose h
   else 0
 
