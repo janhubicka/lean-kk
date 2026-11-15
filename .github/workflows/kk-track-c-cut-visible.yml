@@ -36,7 +36,7 @@ jobs:
         run: lake exe cache get
       - name: Build the graded cut-visible source module
         run: lake build Kk.CutVisibleClosureAbsorption
-      - name: Strict five-theorem standard-only axiom gate
+      - name: Strict six-theorem standard-only axiom gate
         run: |
           set -euo pipefail
           lake env lean Kk/TrackCCutVisibleAxiomAudit.lean | tee track-c-visible-axioms.log
