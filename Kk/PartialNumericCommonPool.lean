@@ -93,7 +93,7 @@ theorem finiteNumericH_partial_actual_common_pool_explicit
           using hVal
       apply Finset.mem_union.mpr
       right
-      simpa [hEligible] using hCurrent
+      simpa only [if_pos hEligible] using hCurrent
   · intro hz
     rcases Finset.mem_union.mp hz with hOld | hCurrent
     · obtain ⟨i,hi,q,hq,hEq⟩ :=
