@@ -270,6 +270,14 @@ theorem finiteOldColumnRawBound_antitone_old_pool
   unfold finiteOldColumnRawBound
   omega
 
+/-- Local form of the finite-prefix successor identity; avoids relying
+on a removed Finset.range_succ name in the pinned Mathlib version. -/
+private theorem range_next_eq_insert (b : Nat) :
+    Finset.range (b+1) = insert b (Finset.range b) := by
+  ext x
+  simp only [Finset.mem_range, Finset.mem_insert]
+  omega
+
 /-- The special old-prefix version required by a chronological
 Henson schedule. Every tested support may have its own mutual
 old-neighbour capacity. The SAME c is used at both stages. -/
@@ -287,7 +295,7 @@ theorem finiteOldColumnRawBound_next_prefix_exact
                 (oldSupportCommonNeighbourPool (Finset.range b) c U.1) b))
          else finiteDirectedCliqueCapacity E
             (oldSupportCommonNeighbourPool (Finset.range b) c U.1)) := by
-  rw [Finset.range_succ]
+  rw [range_next_eq_insert b]
   exact finiteOldColumnRawBound_insert_exact E ell d
     (Finset.range b) c U b (by simp)
 
@@ -307,7 +315,7 @@ theorem finiteOldColumnRawBound_next_prefix_eq_of_mutual_budgets
     finiteOldColumnRawBound E ell d (Finset.range (b+1)) c =
       finiteOldColumnRawBound E ell d (Finset.range b) c := by
   funext U
-  rw [Finset.range_succ]
+  rw [range_next_eq_insert b]
   by_cases hLive : ∀ t ∈ U.1, c b t = true
   · exact finiteOldColumnRawBound_insert_no_growth E ell d
       (Finset.range b) c U b (by simp) hLive (hBudget U hLive)
