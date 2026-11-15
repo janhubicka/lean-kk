@@ -87,6 +87,34 @@ Nothing about the Henson graph or a particular diary is used.
     Henson coding-node fibres, their compatibility, age synchronization
     and one-diary embedding still require independent proofs.
 
+## Two further elementary lemmas (English first, 15 November)
+
+**Monotonicity in the selected coding-node set.** If `S⊆T`,
+then `Large(n,S,u) ⇒ Large(n,T,u)` at every rank and node.
+Proof by induction on `n`: at rank zero retain the same density
+witness; at successor rank retain each rank-drop witness and apply
+the induction hypothesis to its recursively large cone. No rank
+assumption or antitonicity is needed.
+
+**Density implies rank largeness given actual rank drops.** Suppose
+for every node `v` of positive rank `n+1`, there is a REAL
+extension `w≥v` of rank `n`. If `r(u)=n` and `S`
+is dense above `u`, then `Large(n,S,u)`. Induct on `n`.
+The base is density. At successor rank, fix a same-rank
+`v≥u` and choose its genuine rank-drop extension `w`.
+Density above `u` remains density above `w`, so the
+induction hypothesis makes `S` recursively large at `w`.
+
+**Necessity of the rank-drop assumption:** A one-node preorder
+of rank 1 and `S={u}` is dense, but `Large(1,S,u)`
+fails because it has no rank-0 extension. In the Henson
+application the rank-drop premise must be proved by real finite
+clique-certificate extensions; it must not be postulated as an
+unexamined diary axiom.
+
+These two theorems are primitive bookkeeping and do not supply
+the graph-specific rank-drop hypothesis or any lower BRD statement.
+
 ## Next graph-specific obligations
 
 Instantiate the preorder with the *actual* Henson coding tree,
