@@ -1,0 +1,23 @@
+import Kk.CrossHeightFiniteIndexStability
+import Kk.CrossHeightIndexedNovelty
+
+#check @Kk.crossheight_new_selected_Kpt_cut_has_new_terminal_or_full_crossing
+#print axioms Kk.crossheight_new_selected_Kpt_cut_has_new_terminal_or_full_crossing
+
+#check @Kk.numericH_crossheight_extra_cut_has_bare_original_witness
+#print axioms Kk.numericH_crossheight_extra_cut_has_bare_original_witness
+
+#check @Kk.crossheight_new_selected_Kpt_cut_has_indexed_physical_witness
+#print axioms Kk.crossheight_new_selected_Kpt_cut_has_indexed_physical_witness
+
+#check @Kk.finiteNumericH_crossheight_extra_cut_has_finite_source_witness
+#print axioms Kk.finiteNumericH_crossheight_extra_cut_has_finite_source_witness
+
+#check @Kk.crossheight_runs_final_old_range_eq_of_no_novelty
+#print axioms Kk.crossheight_runs_final_old_range_eq_of_no_novelty
+
+#check @Kk.crossheight_runs_all_old_range_levels_eq_of_no_novelty
+#print axioms Kk.crossheight_runs_all_old_range_levels_eq_of_no_novelty
+
+#check @Kk.crossheight_runs_old_range_eq_of_two_finite_index_cover
+#print axioms Kk.crossheight_runs_old_range_eq_of_two_finite_index_cover

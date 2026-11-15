@@ -1,0 +1,51 @@
+name: KK Track E genuine cross-height Kpt novelty gate
+
+on:
+  pull_request:
+    paths:
+      - 'Kk/CrossHeightNewRootNovelty.lean'
+      - 'Kk/CrossHeightIndexedNovelty.lean'
+      - 'Kk/CrossHeightOldRangeStability.lean'
+      - 'Kk/CrossHeightFiniteIndexStability.lean'
+      - 'Kk/TrackECrossHeightAxiomAudit.lean'
+      - 'docs/track_e_crossheight_new_root_novelty_english_audit.md'
+      - '.github/workflows/kk-track-e-crossheight.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: kk-track-e-crossheight-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  direct-build-and-axioms:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache Lean toolchain
+        uses: actions/cache@v4
+        with:
+          path: ~/.elan/toolchains
+          key: lean-toolchain-${{ runner.os }}-${{ hashFiles('lean-toolchain') }}
+      - name: Restore Lean workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve dependencies
+        run: lake update
+      - name: Obtain Mathlib build cache
+        run: lake exe cache get
+      - name: Explicitly compile actual cross-height new-root novelty and finite source
+        run: lake build Kk.CrossHeightNewRootNovelty Kk.CrossHeightIndexedNovelty Kk.CrossHeightOldRangeStability Kk.CrossHeightFiniteIndexStability
+      - name: Strict named transitive axioms
+        run: |
+          set -euo pipefail
+          lake env lean Kk/TrackECrossHeightAxiomAudit.lean | tee track-e-crossheight-axioms.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py Kk/TrackECrossHeightAxiomAudit.lean track-e-crossheight-axioms.log
