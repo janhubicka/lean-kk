@@ -1891,3 +1891,13 @@ import Kk
 #print axioms Kk.integerGraphAgeCanonical_next_prefix_eq_of_mutual_budgets
 #check @Kk.actual_original_stage_preserves_free_and_all_support_age
 #print axioms Kk.actual_original_stage_preserves_free_and_all_support_age
+
+-- Track B: all-support one-original critical zero/one raw jump
+#check @Kk.finiteDirectedCliqueCapacity_insert_one_jump
+#print axioms Kk.finiteDirectedCliqueCapacity_insert_one_jump
+#check @Kk.originalCriticalSupport
+#print axioms Kk.originalCriticalSupport
+#check @Kk.finiteOldColumnRawBound_insert_critical_exact
+#print axioms Kk.finiteOldColumnRawBound_insert_critical_exact
+#check @Kk.finiteOldColumnRawBound_insert_strict_drop_iff_critical_of_safe
+#print axioms Kk.finiteOldColumnRawBound_insert_strict_drop_iff_critical_of_safe
