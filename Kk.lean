@@ -276,6 +276,9 @@ import Kk.CrossHeightFiniteIndexStability
 import Kk.PhysicalCrossHeightConstructedWitness
 import Kk.PhysicalBareNewRootRun
 
+-- Track G: genuine finite off-plan physical source certificates (conditional)
+import Kk.TrackGPhysicalOffPlanFinite
+
 /-!
 The counting project imports the verified successor-tree library.
 No local replacement of the Ramsey theorem is assumed.

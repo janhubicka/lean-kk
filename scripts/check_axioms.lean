@@ -1891,3 +1891,9 @@ import Kk
 #print axioms Kk.integerGraphAgeCanonical_next_prefix_eq_of_mutual_budgets
 #check @Kk.actual_original_stage_preserves_free_and_all_support_age
 #print axioms Kk.actual_original_stage_preserves_free_and_all_support_age
+
+-- Track G: actual bare-root two-index off-plan source (conditional only).
+#check @Kk.crossheight_runs_old_range_sandwich_of_two_finite_offplan_cover
+#print axioms Kk.crossheight_runs_old_range_sandwich_of_two_finite_offplan_cover
+#check @Kk.finiteNumericH_bareTopRoot_old_range_offplan_sandwich
+#print axioms Kk.finiteNumericH_bareTopRoot_old_range_offplan_sandwich
