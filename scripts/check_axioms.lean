@@ -1868,7 +1868,7 @@ import Kk
 #check @Kk.finiteNumericH_old_and_bare_new_runs_extra_cuts_have_finite_witness
 #print axioms Kk.finiteNumericH_old_and_bare_new_runs_extra_cuts_have_finite_witness
 
--- Track B: ten conditional physical full-support original insertion endpoints.
+-- Track B: eleven conditional physical full-support original insertion endpoints.
 #check @Kk.oldSupportCommonNeighbourPool_insert_exact
 #print axioms Kk.oldSupportCommonNeighbourPool_insert_exact
 #check @Kk.finiteOldColumnRawBound_insert_exact
@@ -1879,6 +1879,8 @@ import Kk
 #print axioms Kk.finiteOldColumnRawBound_insert_no_growth
 #check @Kk.finiteOldColumnRawBound_insert_eq_iff_mutual_budget_of_cap_lt
 #print axioms Kk.finiteOldColumnRawBound_insert_eq_iff_mutual_budget_of_cap_lt
+#check @Kk.finiteOldColumnRawBound_insert_eq_iff_mutual_budget_of_safe_pool
+#print axioms Kk.finiteOldColumnRawBound_insert_eq_iff_mutual_budget_of_safe_pool
 #check @Kk.finiteOldColumnRawBound_antitone_old_pool
 #print axioms Kk.finiteOldColumnRawBound_antitone_old_pool
 #check @Kk.finiteOldColumnRawBound_next_prefix_exact
