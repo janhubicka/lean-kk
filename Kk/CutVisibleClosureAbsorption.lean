@@ -271,7 +271,6 @@ theorem finiteNumericH_newRoot_run_cut_visible_absorption
     (L : AgeTestModel db du dd) (k M : Nat)
     (hAvoid : ∀ bad, bad ∈ family →
       bad.Avoids (finiteNumericH L k M).L)
-    (Iunused : Unit)
     (X : Set (AdmissibleKptNode family))
     (W : Set (Fin M))
     (oldTop newTop : Nat)
