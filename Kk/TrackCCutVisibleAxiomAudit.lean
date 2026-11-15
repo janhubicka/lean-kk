@@ -1,0 +1,16 @@
+import Kk.CutVisibleClosureAbsorption
+
+#check @Kk.envelope_union_low_closed
+#print axioms Kk.envelope_union_low_closed
+
+#check @Kk.envelope_closure_high_mono_of_tail
+#print axioms Kk.envelope_closure_high_mono_of_tail
+
+#check @Kk.envelope_closure_high_absorbs_old_closure
+#print axioms Kk.envelope_closure_high_absorbs_old_closure
+
+#check @Kk.kpt_cut_visible_same_structural_and_full_crossing
+#print axioms Kk.kpt_cut_visible_same_structural_and_full_crossing
+
+#check @Kk.finiteNumericH_newRoot_run_cut_visible_absorption
+#print axioms Kk.finiteNumericH_newRoot_run_cut_visible_absorption
