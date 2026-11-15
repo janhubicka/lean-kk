@@ -6,6 +6,7 @@ on:
       - 'Kk/TrackFRealHensonRankDrop.lean'
       - 'Kk/TrackFRealHensonRankDropAxiomAudit.lean'
       - 'docs/track_f_real_henson_rank_drop_english_audit.md'
+      - 'scripts/verify_track_f_real_rank_drop.py'
       - '.github/workflows/kk-track-f-real-rank-drop.yml'
   workflow_dispatch:
 
@@ -38,6 +39,8 @@ jobs:
         run: lake update
       - name: Obtain Mathlib build cache
         run: lake exe cache get
+      - name: Independent exhaustive finite-graph rank-drop regression
+        run: python3 scripts/verify_track_f_real_rank_drop.py
       - name: Build real Henson rank-drop proof
         run: lake build Kk.TrackFRealHensonRankDrop
       - name: Strict three-theorem transitive axiom gate
