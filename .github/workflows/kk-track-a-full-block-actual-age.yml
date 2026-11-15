@@ -34,6 +34,8 @@ jobs:
         run: lake update
       - name: Restore Mathlib cache
         run: lake exe cache get
+      - name: Independent 23,040-case finite old-age regression
+        run: python3 scripts/check_actual_full_block_age.py
       - name: Explicitly compile actual full-block old-to-top columns
         run: lake build Kk.FullBlockActualTopColumn
       - name: Explicitly compile actual full-block raw/canonical age
