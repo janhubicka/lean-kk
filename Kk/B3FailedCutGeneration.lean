@@ -1,4 +1,5 @@
 import Kk.HensonZeroGenerationClique
+import Kk.HensonAnyGenerationHigherSignature
 import SuccessorTree.V10.I3ActualWitnessGeneration
 import Mathlib.Tactic
 
@@ -130,7 +131,57 @@ theorem henson_numericH_top_generation_cut_correctedB3
       (Nat.le_of_lt hg) hGen).2
   omega
 
+/-- No externally specified cut generation is needed to obtain ONE
+finite forbidden clique witness whose upper vertices are ALL named
+by genuinely selected numerical-H originals of strictly HIGHER
+generation. The generation g<k of the cut is derived from failure
+and then passed to the exact verified clique-higher-signature theorem.
+
+No macrodiary source projection or common labelled inverse orbit follows.
+-/
+theorem henson_failed_selectedB3_has_higher_generation_clique
+    (ell : Nat) (hell : 2 ≤ ell)
+    (k : Nat) (hK : ell ≤ k+1)
+    (E : Nat → Nat → Bool)
+    (hLoops : ∀ i, E i i = false)
+    (hSym : ∀ x y, E x y = E y x)
+    (hClique : ¬ ∃ f : Fin ell → Nat, StrictMono f ∧
+      (∀ a b : Fin ell, a ≠ b → E (f a) (f b) = true))
+    (N cut M : Nat) (hCut : cut < N)
+    (original : Fin M → Fin N)
+    (Selected : Fin M → Prop)
+    (hFailure :
+      ¬ (selectedStagePoolPrescribedData
+        (finiteNumericH (normalizedGraphModel E) k N)
+        cut original Selected).CorrectedB3
+          (hensonForbiddenFamily ell hell)) :
+    ∃ g idx : Nat, g < k ∧ cut = hPosition k idx g ∧
+      ∃ w : I3OriginalSignatureWitness
+          (fun _ : Fin 1 => ell)
+          (fun _ : Fin 1 => cliquePattern ell)
+          (finiteNumericHL (normalizedGraphModel E) k N)
+          (fun v : Fin M => (original v).val) cut,
+        ∀ a : Fin ell, cut < w.e a →
+          ∃ v : Fin M,
+            (∃ j m : Nat, g < m ∧ m ≤ k ∧
+              (original v).val = hPosition k j m) ∧
+            RelationalPrefixType.ofAgeModel w.W
+              (cut+1) (w.e a) =
+              RelationalPrefixType.ofAgeModel
+                (finiteNumericHL (normalizedGraphModel E) k N)
+                (cut+1) (original v).val := by
+  obtain ⟨g,idx,hg,hGen⟩ :=
+    henson_failed_selectedB3_forces_lower_real_generation
+      ell hell k hK E hLoops hSym hClique
+      N cut M hCut original Selected hFailure
+  obtain ⟨w,hHigher⟩ :=
+    henson_any_generation_B3_has_clique_higher_signature
+      ell hell k hK E hLoops hSym hClique
+      N cut g idx M hg hCut hGen original Selected hFailure
+  exact ⟨g,idx,hg,hGen,w,hHigher⟩
+
 #print axioms henson_failed_selectedB3_forces_lower_real_generation
 #print axioms henson_numericH_top_generation_cut_correctedB3
+#print axioms henson_failed_selectedB3_has_higher_generation_clique
 
 end Kk
