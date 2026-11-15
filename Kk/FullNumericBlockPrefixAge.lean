@@ -190,12 +190,14 @@ theorem numericH_full_block_common_neighbourhood_eq
       have hBit := hAll t ht
       simpa [numericHFullBlockOldColumn,
         numericHRealColumn, Real,hzReal] using hBit
-    exact hRealEq.mp hCommon
+    rw [hRealEq] at hCommon
+    exact hCommon
   · intro hz
     have hCommon :
         z ∈ oldSupportCommonNeighbourPool Real
-          (numericHRealColumn k c) U.1 :=
-      hRealEq.mpr hz
+          (numericHRealColumn k c) U.1 := by
+      rw [hRealEq]
+      exact hz
     obtain ⟨hzReal,hAll⟩ := Finset.mem_filter.mp hCommon
     have hzRange : z ∈ Finset.range (hPosition k b 0) := by
       have hzUnion : z ∈
