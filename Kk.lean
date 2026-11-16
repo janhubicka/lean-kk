@@ -280,6 +280,15 @@ import Kk.PhysicalBareNewRootRun
 -- Track G: actual old-boring physical novelty decomposition.
 import Kk.TrackGOldBoringNoTerminal
 
+-- Track D: fourteen previously exact-head verified physical cut and structural endpoints.
+-- Local finite conditional theorems only; not the arbitrary-diary BRD upper bound.
+import Kk.B3OddFakeCut
+import Kk.B3FailedCutGeneration
+import Kk.ActualRunOddStructural
+import Kk.ActualRunOddFiniteIndex
+import Kk.ActualRunStructuralOrLowerReal
+import Kk.PhysicalLowerRealCutNeighbour
+
 /-!
 The counting project imports the verified successor-tree library.
 No local replacement of the Ramsey theorem is assumed.
