@@ -62,3 +62,17 @@ A separate strict two-name `#print axioms` gate must build the exact module. If 
 ## Next application step
 
 Instantiate `P` with the ACTUAL finite old Q prefix before the omitted meaningful event and `c` with its constant old-to-selected branch column. From the previously preserved singleton capacity at most two, extract v∈P with true old passing bit. Then prove by the actual numerical-H level formula that the generation-zero copy v_0 lies before the tested real cut and distinguishes the full dependent L+ records of the selected top from the negative auxiliary/cap source. This remains the concrete unsettled no-I2 bridge.
+
+## Exact-head failed CI and English repair (16 November)
+
+The FIRST dedicated workflow [43824932790](https://github.com/janhubicka/lean-kk/actions/runs/43824932790), tested at `968bc4ee97c242958b72e5c1ac30bd48aae30d07`, actually FAILED compiling `Kk.K4SingletonOldNeighbour`. Job log ID 133156394434 records:
+- line 114: unknown constant `Finset.eq_empty_iff_forall_not_mem.mpr`;
+- line 115: no goals left, owing to the invalid tactic combination;
+- line 118: the proof of `B({i})=3` did not discharge the empty common-neighbour clique capacity goal; Lean reported `sorryAx` in the incomplete theorem.
+
+The ordinary full `Lean` workflow at the same commit passed only because the NEW module was **not imported by the central `Kk.lean`**. That result must NOT be treated as verification of this particular theorem. Its separate source/gate is mandatory.
+
+**Repaired English proof:** Establish the common-neighbour pool is empty by Finset extensionality. Membership in the filtered actual old pool gives one prohibited real old neighbour and contradicts `hNoOld`; the converse is impossible since the empty set has no members. Separately prove
+`finiteDirectedCliqueCapacity E ∅ = 0` directly from the definition as a supremum over directed cliques: every subset of the empty pool is itself empty, hence every admissible clique candidate has cardinal zero. Only after that calculation may one rewrite `B({i})=3`. Thus no hidden assumption on E, no unsupported simplifier claim and no unproved axiom are introduced.
+
+**Adversarial caveat:** the canonical singleton equation remains a component of the FULL actual old-column reference age, not of a freely stipulated selected age. Proving empty clique capacity is harmless general-purpose arithmetic and does not certify the remaining generation-zero full-Kpt fork argument. The repaired direct-module gate must check every named theorem, the strict standard-only axiom parser, and no `sorryAx`; its own exact-head success is required before merging.
