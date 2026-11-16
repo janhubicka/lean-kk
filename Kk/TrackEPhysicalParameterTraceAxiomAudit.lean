@@ -1,0 +1,13 @@
+import Kk.TrackEPhysicalParameterTrace
+
+#check @Kk.KptPhysicalParameterTrace
+#check @Kk.kptPhysicalEventRecord
+
+#check @Kk.kptPhysicalEventRecord_has_parameter_trace
+#print axioms Kk.kptPhysicalEventRecord_has_parameter_trace
+
+#check @Kk.kpt_physical_parameter_fields_eq_of_membership
+#print axioms Kk.kpt_physical_parameter_fields_eq_of_membership
+
+#check @Kk.full_event_source_eq_of_used_recipes_and_physical_trace
+#print axioms Kk.full_event_source_eq_of_used_recipes_and_physical_trace
