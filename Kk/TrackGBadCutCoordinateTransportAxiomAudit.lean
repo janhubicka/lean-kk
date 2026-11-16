@@ -13,5 +13,8 @@ import Kk.TrackGBadCutCoordinateTransport
 #check @Kk.kptPhysicalBadCuts_subset_image_union_extra
 #print axioms Kk.kptPhysicalBadCuts_subset_image_union_extra
 
+#check @Kk.kptPhysicalBadCuts_card_le_reference_bad_add_extra
+#print axioms Kk.kptPhysicalBadCuts_card_le_reference_bad_add_extra
+
 #check @Kk.kptPhysicalBadCuts_card_le_reference_top_add_extra
 #print axioms Kk.kptPhysicalBadCuts_card_le_reference_top_add_extra
