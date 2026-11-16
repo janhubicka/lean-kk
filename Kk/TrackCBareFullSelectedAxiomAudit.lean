@@ -1,0 +1,7 @@
+import Kk.BareFullRunSelectedEquivalence
+
+#check @Kk.envelope_bare_full_new_runs_same_selected_levels
+#print axioms Kk.envelope_bare_full_new_runs_same_selected_levels
+
+#check @Kk.finiteNumericH_bare_and_full_new_runs_same_selected_levels
+#print axioms Kk.finiteNumericH_bare_and_full_new_runs_same_selected_levels
