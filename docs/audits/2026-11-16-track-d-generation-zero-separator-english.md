@@ -58,3 +58,16 @@ Therefore if `E(v,j)=true` and `E(v,b)=false`, a SAME old coordinate old0 strict
 Use no custom axioms or sorry; a dedicated exact-head direct module build and fully qualified `#print axioms` gate are required.
 
 The next step is to combine this with the actual old-Q neighbour extracted by #263 and with exact pre-cut full Kpt source representation: then the selected positive and negative auxiliary physical originals cannot have equal old dependent L+ source types. Prove separately that all other pairs of full generated parameters/meets cannot fork at each omitted cut.
+
+## Adversarial scope repair — explicit finite carrier (added before Lean corollary)
+
+The bare numerical H Boolean table `hNumericBinary` is total on Nat even outside the `finiteNumericH(...,N).carrier`. Therefore the second theorem about two **numeric addresses** cannot, by itself, be used to claim either target is a named original in a particular finite AlgorithmRun. The English proposed finite-carrier corollary is a genuinely separate Lean statement, and must not be omitted.
+
+New required endpoint `finiteNumericH_old_zero_separates_named_future_originals` adds:
+- an actual physical cut `hPosition k cutBase g < N`;
+- `selectedName auxName : Fin N` with their exact numerical address equalities to the selected top and negative auxiliary coordinates;
+- a conclusion that the old generation-zero distinguishing coordinate is also strictly below `N`, AND the complete dependent old L+ partial types **of the two actual Fin N original names** are unequal.
+
+The proof takes the already established oldZero<cut from the generic physical theorem, composes with cut<N for physical old carrier membership, and substitutes the two Fin N address equalities into the earlier full partial type inequality. It does **not** claim these two actual original nodes are in the Kpt pre-cut closure, nor that their free levels exceed the cut: that source-membership/eligibility bridge remains open.
+
+This closes a real potential domain-of-definition ambiguity in the first draft without weakening the physically useful algebraic theorem. The new exact-head strict gate must register all THREE qualified endpoints, not only the initial two.
