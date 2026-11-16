@@ -60,6 +60,25 @@ theorem finiteOldColumnRawBound_support_mono
   unfold finiteOldColumnRawBound
   omega
 
+/-- The genuine finite directed-clique capacity of an EMPTY old
+original pool is exactly zero. All candidate cliques in its
+powerset are empty. No graph relation assumptions are needed. -/
+theorem finiteDirectedCliqueCapacity_empty
+    (E : Nat → Nat → Bool) :
+    finiteDirectedCliqueCapacity E (∅ : Finset Nat) = 0 := by
+  unfold finiteDirectedCliqueCapacity
+  have hSup :
+      ((∅ : Finset Nat).powerset.filter
+        (fun s => ∀ x ∈ s, ∀ y ∈ s, x ≠ y → E x y = true)).sup
+        Finset.card ≤ 0 := by
+    apply Finset.sup_le
+    intro s hs
+    have hSub : s ⊆ (∅ : Finset Nat) :=
+      Finset.mem_powerset.mp (Finset.mem_filter.mp hs).1
+    have hsZero : s = ∅ := Finset.subset_empty.mp hSub
+    simp [hsZero]
+  omega
+
 /-- For an ACTUAL finite old Q prefix P and one complete future
 ordinary-L type column i, canonical singleton K4 capacity ≤2
 is EQUIVALENT to an actual old vertex whose prescribed
@@ -111,13 +130,19 @@ theorem k4_canonical_singleton_le_two_iff_old_neighbour
     have hEmpty :
         oldSupportCommonNeighbourPool P c T.1 = ∅ := by
       rw [hPool]
-      apply Finset.eq_empty_iff_forall_not_mem.mpr
-      intro p hp
-      obtain ⟨hpP,hBit⟩ := Finset.mem_filter.mp hp
-      exact hNoOld ⟨p,hpP,hBit⟩
+      ext p
+      constructor
+      · intro hp
+        obtain ⟨hpP,hBit⟩ := Finset.mem_filter.mp hp
+        exact False.elim (hNoOld ⟨p,hpP,hBit⟩)
+      · intro hp
+        simp at hp
     have hRawFull : B T = 3 := by
-      simp [B, finiteOldColumnRawBound, hEmpty,
-        finiteDirectedCliqueCapacity]
+      change 4-1-
+        finiteDirectedCliqueCapacity E
+          (oldSupportCommonNeighbourPool P c T.1) = 3
+      rw [hEmpty, finiteDirectedCliqueCapacity_empty]
+      omega
     omega
   · rintro ⟨p,hpP,hBit⟩
     have hpPool : p ∈ oldSupportCommonNeighbourPool P c T.1 := by
@@ -148,6 +173,7 @@ theorem k4_canonical_singleton_le_two_iff_old_neighbour
     exact hRawSmall
 
 #print axioms finiteOldColumnRawBound_support_mono
+#print axioms finiteDirectedCliqueCapacity_empty
 #print axioms k4_canonical_singleton_le_two_iff_old_neighbour
 
 end Kk
