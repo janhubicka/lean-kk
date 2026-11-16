@@ -106,7 +106,7 @@ theorem finiteNumericH_partial_actual_capacity_ge_staircase
           ⟨x.2,Finset.mem_range.mpr hGen,hCoord⟩
       apply Finset.mem_union.mpr
       right
-      simpa [hEligible] using hPart
+      simpa only [if_pos hEligible] using hPart
   have hCapacity :
       finiteDirectedCliqueCapacity L
         (orderedReservedNumericPrefix k q a a) = a+1 := by
