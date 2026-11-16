@@ -40,7 +40,7 @@ jobs:
         run: lake exe cache get
       - name: Compile physical bad-cut reindex module explicitly
         run: lake build Kk.TrackGBadCutCoordinateTransport
-      - name: Strict two-endpoint named transitive-axiom gate
+      - name: Strict four-endpoint named transitive-axiom gate
         run: |
           set -euo pipefail
           lake env lean Kk/TrackGBadCutCoordinateTransportAxiomAudit.lean | tee track-g-badcut-reindex-axioms.log
