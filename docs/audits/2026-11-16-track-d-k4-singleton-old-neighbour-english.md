@@ -76,3 +76,14 @@ The ordinary full `Lean` workflow at the same commit passed only because the NEW
 `finiteDirectedCliqueCapacity E ∅ = 0` directly from the definition as a supremum over directed cliques: every subset of the empty pool is itself empty, hence every admissible clique candidate has cardinal zero. Only after that calculation may one rewrite `B({i})=3`. Thus no hidden assumption on E, no unsupported simplifier claim and no unproved axiom are introduced.
 
 **Adversarial caveat:** the canonical singleton equation remains a component of the FULL actual old-column reference age, not of a freely stipulated selected age. Proving empty clique capacity is harmless general-purpose arithmetic and does not certify the remaining generation-zero full-Kpt fork argument. The repaired direct-module gate must check every named theorem, the strict standard-only axiom parser, and no `sorryAx`; its own exact-head success is required before merging.
+
+## Second exact-head compile failure and source-only repair
+
+The second direct job [43890191861](https://github.com/janhubicka/lean-kk/actions/runs/43890191861) at `1b09ee0c5135e5c050f46fcbe0d20cf7427d6d08` FAILED. Its actual Lean log, not guessed from the general workflow, shows:
+- line 66: `Kk.finiteDirectedCliqueCapacity_empty` was **already declared** by an imported module (the helper's proposed name collided with an existing declaration);
+- line 145: `No goals to be solved` after `rw [hEmpty, finiteDirectedCliqueCapacity_empty]`; this rewrite has already discharged the precise zero-capacity arithmetic identity, so the following `omega` was a dead tactic.
+The incomplete theorem still reported `sorryAx`. The concurrent full Lean workflow again did not guarantee this standalone module compiled.
+
+**Repair before the next gate:** Rename the local helper uniquely to `k4TrackD_empty_old_pool_clique_capacity`. Keep its independent explicit supremum proof for an actually EMPTY old pool (useful even though an imported theorem with a different name already exists). Change the rewrite to the renamed lemma and DELETE the redundant `omega` immediately after it. Keep the second `omega` outside the helper (where it actually concludes `¬(B({i})≤2)` from `B({i})=3`). Register the renamed helper in the strict script. The mathematical hypotheses and underlying full old-column canonical age remain unchanged.
+
+No theorem may be promoted until the dedicated exact-head direct `lake build Kk.K4SingletonOldNeighbour` and strict named-axiom report BOTH pass, with no `sorryAx`.
