@@ -72,6 +72,43 @@ Only after constructing the maps and verifying all four conditions
 can we conclude the number of bad cuts is uniformly bounded by
 the representative's finite top. We do NOT yet have the premises.
 
+## G-reindex with permitted extra microcuts (more useful stagewise form)
+
+The preceding no-off-image-failure hypothesis is too strong for a
+resolved-copy stage that intentionally adds genuine auxiliary
+microevents outside the transported old source-cut template.
+
+Fix a **finite** set `Extra` of *permitted* new physical cut coordinates,
+which includes all intentionally new auxiliary I1/I2/I3/B3 microcuts.
+Keep the range and on-image old-boring/terminal/crossing failure-flag
+equivalences from G-reindex. Replace off-image **quietness** by the weaker
+condition: every old-boring target cut outside the image which carries a
+physical terminal or complete paired-L+ crossing failure belongs to
+`Extra`.
+
+Then, directly from the E55 membership normal form,
+
+```
+Bad₂ ⊆ (Bad₁).image f ∪ Extra,
+card Bad₂ ≤ card Bad₁ + card Extra ≤ top₁ + card Extra.
+```
+
+Proof: a bad target cut with a preimage transports to Bad₁ as before;
+a bad target cut without a preimage lies in Extra by the new assumption.
+Finite-set inclusion gives the first cardinal inequality, followed
+by the elementary union and image cardinality bounds. **No
+injectivity of f or equality of finite source-index sizes is
+needed.** If `Extra=∅`, this becomes the original exact-image result.
+
+This is preferable for an inductive resolved-diary construction:
+each legitimate microevent may add a bounded number of extra bad
+cuts. However, the theorem does **not** prove that the permitted
+new extras are uniformly bounded by the diary, or that the
+physical sources satisfy the stated off-image classification.
+Without those geometric facts the cardinal inequality is only
+conditional. A template of the form `Extra=Finset.range top₂`
+would make it useless; this must not be advertised as a BRD bound.
+
 ## Hostile audit
 
 1. **Vacuity check:** `f(c)=c` between genuinely different runs is
