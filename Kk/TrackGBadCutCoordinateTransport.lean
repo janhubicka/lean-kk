@@ -153,8 +153,8 @@ theorem kptPhysicalBadCuts_card_le_reference_top_of_reindex
       ((mem_kptPhysicalBadCuts family oldSelected1 top1
         oldSource1 newSource1 c).mp hc).1
   calc
-    (kptPhysicalBadCuts family oldSelected1 top1
-      oldSource1 newSource1).image f |>.card
+    ((kptPhysicalBadCuts family oldSelected1 top1
+      oldSource1 newSource1).image f).card
         ≤ (kptPhysicalBadCuts family oldSelected1 top1
             oldSource1 newSource1).card :=
           Finset.card_image_le
