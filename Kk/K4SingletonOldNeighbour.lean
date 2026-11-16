@@ -63,7 +63,7 @@ theorem finiteOldColumnRawBound_support_mono
 /-- The genuine finite directed-clique capacity of an EMPTY old
 original pool is exactly zero. All candidate cliques in its
 powerset are empty. No graph relation assumptions are needed. -/
-theorem finiteDirectedCliqueCapacity_empty
+theorem k4TrackD_empty_old_pool_clique_capacity
     (E : Nat → Nat → Bool) :
     finiteDirectedCliqueCapacity E (∅ : Finset Nat) = 0 := by
   unfold finiteDirectedCliqueCapacity
@@ -141,8 +141,7 @@ theorem k4_canonical_singleton_le_two_iff_old_neighbour
       change 4-1-
         finiteDirectedCliqueCapacity E
           (oldSupportCommonNeighbourPool P c T.1) = 3
-      rw [hEmpty, finiteDirectedCliqueCapacity_empty]
-      omega
+      rw [hEmpty, k4TrackD_empty_old_pool_clique_capacity]
     omega
   · rintro ⟨p,hpP,hBit⟩
     have hpPool : p ∈ oldSupportCommonNeighbourPool P c T.1 := by
@@ -173,7 +172,7 @@ theorem k4_canonical_singleton_le_two_iff_old_neighbour
     exact hRawSmall
 
 #print axioms finiteOldColumnRawBound_support_mono
-#print axioms finiteDirectedCliqueCapacity_empty
+#print axioms k4TrackD_empty_old_pool_clique_capacity
 #print axioms k4_canonical_singleton_le_two_iff_old_neighbour
 
 end Kk
