@@ -1,0 +1,55 @@
+name: KK Track A exact eligibility-conditioned sharp partial capacity
+
+on:
+  pull_request:
+    paths:
+      - 'Kk/OrderedCliquePrefixWitness.lean'
+      - 'Kk/PartialNumericSharpLower.lean'
+      - 'docs/partial_numeric_sharp_lower_english_audit.md'
+      - '.github/workflows/kk-track-a-sharp-partial-lower.yml'
+  push:
+    branches: [kk-track-a-sharp-partial-lower-20261116]
+  workflow_dispatch:
+
+concurrency:
+  group: kk-track-a-conditional-sharp-lower-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  exact-conditional-sharp:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore pinned Lake workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve pinned dependencies
+        run: lake update
+      - name: Restore Mathlib cache
+        run: lake exe cache get
+      - name: Independent 26,880-case full sharp physical regression
+        run: python3 scripts/check_partial_numeric_old_age.py
+      - name: Compile sorted capacity-attaining original clique
+        run: lake build Kk.OrderedCliquePrefixWitness
+      - name: Compile conditional physical staircase lower
+        run: lake build Kk.PartialNumericStaircaseLower
+      - name: Compile unconditional sharp partial physical equality
+        run: lake build Kk.PartialNumericSharpLower
+      - name: Strict fully qualified standard-only named axiom audit
+        run: |
+          set -euo pipefail
+          python3 scripts/check_axiom_report.py --self-test
+          lake env lean Kk/OrderedCliquePrefixWitness.lean | tee ordered-clique-axioms.log
+          python3 scripts/check_axiom_report.py Kk/OrderedCliquePrefixWitness.lean ordered-clique-axioms.log
+          lake env lean Kk/PartialNumericSharpLower.lean | tee sharp-lower-axioms.log
+          python3 scripts/check_axiom_report.py Kk/PartialNumericSharpLower.lean sharp-lower-axioms.log
+      - name: Full Lean repository build
+        run: lake build
