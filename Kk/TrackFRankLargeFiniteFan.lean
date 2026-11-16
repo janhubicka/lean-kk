@@ -184,9 +184,9 @@ theorem rank_large_finite_fan
   | zero =>
       refine ⟨∅, by simp, ?_, ?_⟩
       · intro v hv
-        exact False.elim (Finset.not_mem_empty v hv)
+        simp at hv
       · intro v hv
-        exact False.elim (Finset.not_mem_empty v hv)
+        simp at hv
   | succ k ih =>
       obtain ⟨F, hCard, hMembers, hSep⟩ := ih
       have hFamily : ∀ v ∈ F, u ≤ v ∧ rank v = n := by
