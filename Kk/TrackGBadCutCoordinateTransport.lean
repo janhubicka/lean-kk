@@ -235,10 +235,47 @@ theorem kptPhysicalBadCuts_subset_image_union_extra
   · exact Finset.mem_union.mpr
       (Or.inr (h.offImageAllowed d hd hPre hSkip2 hFail2))
 
-/-- If at most |Extra| genuinely new bad cuts are permitted at this
-physical stage, their total number is bounded by reference oldTop
-plus |Extra|. This is a FINITE-SET inequality, not a uniform BRD
-bound without a fixed diary-derived reference and geometric inputs. -/
+/-- The SHARP stagewise recurrence: at most one transported
+exception per reference bad cut, PLUS at most |Extra| genuine NEW
+auxiliary microcut exceptions. This is the useful induction bound. -/
+theorem kptPhysicalBadCuts_card_le_reference_bad_add_extra
+    {db du dd : Nat}
+    (family : List (NormalizedForbidden db du dd))
+    (oldSelected1 oldSelected2 : Nat → Set Nat)
+    (top1 top2 : Nat)
+    (oldSource1 newSource1 : Nat → Set (AdmissibleKptNode family))
+    (oldSource2 newSource2 : Nat → Set (AdmissibleKptNode family))
+    (f : Nat → Nat) (Extra : Finset Nat)
+    (h : KptPhysicalBadCutReindexExtraCertificate family
+      oldSelected1 oldSelected2 top1 top2
+      oldSource1 newSource1 oldSource2 newSource2 f Extra) :
+    (kptPhysicalBadCuts family oldSelected2 top2
+      oldSource2 newSource2).card ≤
+    (kptPhysicalBadCuts family oldSelected1 top1
+      oldSource1 newSource1).card + Extra.card := by
+  classical
+  let B1 : Finset Nat :=
+    kptPhysicalBadCuts family oldSelected1 top1
+      oldSource1 newSource1
+  let B2 : Finset Nat :=
+    kptPhysicalBadCuts family oldSelected2 top2
+      oldSource2 newSource2
+  have hSub : B2 ⊆ B1.image f ∪ Extra :=
+    kptPhysicalBadCuts_subset_image_union_extra
+      family oldSelected1 oldSelected2 top1 top2
+      oldSource1 newSource1 oldSource2 newSource2 f Extra h
+  change B2.card ≤ B1.card + Extra.card
+  calc
+    B2.card ≤ (B1.image f ∪ Extra).card :=
+      Finset.card_le_card hSub
+    _ ≤ (B1.image f).card + Extra.card :=
+      Finset.card_union_le
+    _ ≤ B1.card + Extra.card :=
+      Nat.add_le_add_right Finset.card_image_le _
+
+/-- A weaker but explicit uniform numerical bound follows from
+the reference bad set lying in its finite source-cut interval.
+This is NOT an unconditional diary-uniform bound or a BRD degree. -/
 theorem kptPhysicalBadCuts_card_le_reference_top_add_extra
     {db du dd : Nat}
     (family : List (NormalizedForbidden db du dd))
@@ -253,34 +290,28 @@ theorem kptPhysicalBadCuts_card_le_reference_top_add_extra
     (kptPhysicalBadCuts family oldSelected2 top2
       oldSource2 newSource2).card ≤ top1 + Extra.card := by
   classical
-  let B1 : Finset Nat :=
-    kptPhysicalBadCuts family oldSelected1 top1
-      oldSource1 newSource1
-  let B2 : Finset Nat :=
-    kptPhysicalBadCuts family oldSelected2 top2
-      oldSource2 newSource2
-  have hSub : B2 ⊆ B1.image f ∪ Extra :=
-    kptPhysicalBadCuts_subset_image_union_extra
+  have hSharp :
+      (kptPhysicalBadCuts family oldSelected2 top2
+        oldSource2 newSource2).card ≤
+      (kptPhysicalBadCuts family oldSelected1 top1
+        oldSource1 newSource1).card + Extra.card :=
+    kptPhysicalBadCuts_card_le_reference_bad_add_extra
       family oldSelected1 oldSelected2 top1 top2
       oldSource1 newSource1 oldSource2 newSource2 f Extra h
-  have hB1Range : B1 ⊆ Finset.range top1 := by
+  have hB1Range :
+      kptPhysicalBadCuts family oldSelected1 top1
+        oldSource1 newSource1 ⊆ Finset.range top1 := by
     intro c hc
     exact Finset.mem_range.mpr
       ((mem_kptPhysicalBadCuts family oldSelected1 top1
         oldSource1 newSource1 c).mp hc).1
-  have hB1Card : B1.card ≤ top1 := by
+  have hB1Card :
+      (kptPhysicalBadCuts family oldSelected1 top1
+        oldSource1 newSource1).card ≤ top1 := by
     calc
-      B1.card ≤ (Finset.range top1).card :=
+      _ ≤ (Finset.range top1).card :=
         Finset.card_le_card hB1Range
       _ = top1 := Finset.card_range top1
-  calc
-    B2.card ≤ (B1.image f ∪ Extra).card :=
-      Finset.card_le_card hSub
-    _ ≤ (B1.image f).card + Extra.card :=
-      Finset.card_union_le
-    _ ≤ B1.card + Extra.card :=
-      Nat.add_le_add_right Finset.card_image_le _
-    _ ≤ top1 + Extra.card :=
-      Nat.add_le_add_right hB1Card _
+  exact le_trans hSharp (Nat.add_le_add_right hB1Card Extra.card)
 
 end Kk
