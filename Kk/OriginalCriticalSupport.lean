@@ -91,15 +91,24 @@ theorem finiteOldColumnRawBound_insert_critical_exact
       finiteDirectedCliqueCapacity E
         (oldSupportCommonNeighbourPool P c U.1) :=
     finiteDirectedCliqueCapacity_mono E _ _ hSubset
+  -- Expose the classically decided RHS in the statement as an ordinary ite.
+  -- This is definitional normalization, not a new theorem assumption.
+  change
+    finiteOldColumnRawBound E ell d (insert v P) c U =
+      if originalCriticalSupport E P c U v then
+        finiteOldColumnRawBound E ell d P c U - 1
+      else finiteOldColumnRawBound E ell d P c U
   rw [finiteOldColumnRawBound_insert_exact E ell d P c U v hv]
   by_cases hLive : ∀ t ∈ U.1, c v t = true
-  · simp only [if_pos hLive, originalCriticalSupport, hLive, true_and]
+  · simp only [if_pos hLive]
     by_cases hEq : finiteDirectedCliqueCapacity E
         (mutualLinkedNeighbours E
           (oldSupportCommonNeighbourPool P c U.1) v) =
         finiteDirectedCliqueCapacity E
           (oldSupportCommonNeighbourPool P c U.1)
-    · simp only [if_pos hEq]
+    · have hCrit : originalCriticalSupport E P c U v :=
+        ⟨hLive, hEq⟩
+      simp only [if_pos hCrit]
       change ell - 1 -
         max (finiteDirectedCliqueCapacity E
           (oldSupportCommonNeighbourPool P c U.1))
@@ -110,7 +119,10 @@ theorem finiteOldColumnRawBound_insert_critical_exact
           finiteDirectedCliqueCapacity E
             (oldSupportCommonNeighbourPool P c U.1)) - 1
       omega
-    · simp only [if_neg hEq]
+    · have hNotCrit : ¬ originalCriticalSupport E P c U v := by
+        intro hc
+        exact hEq hc.2
+      simp only [if_neg hNotCrit]
       change ell - 1 -
         max (finiteDirectedCliqueCapacity E
           (oldSupportCommonNeighbourPool P c U.1))
@@ -121,8 +133,10 @@ theorem finiteOldColumnRawBound_insert_critical_exact
           finiteDirectedCliqueCapacity E
             (oldSupportCommonNeighbourPool P c U.1)
       omega
-  · simp only [if_neg hLive, originalCriticalSupport, hLive,
-        false_and, if_false]
+  · have hNotCrit : ¬ originalCriticalSupport E P c U v := by
+      intro hc
+      exact hLive hc.1
+    simp only [if_neg hLive, if_neg hNotCrit]
     rfl
 
 /-- For an actually K_ell-free enlarged original pool, truncation
