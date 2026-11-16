@@ -71,9 +71,10 @@ theorem finiteNumericH_real_positive_below_top_generations_ne
   by_cases hij : i < j
   · have hGate :
         q < m ∨ (q = k ∧ m = k) := by
-      exact ((hNumericBinary_real_forward_iff
+      have hRawGate := ((hNumericBinary_real_forward_iff
         (normalizedGraphModel E).binary k i j q m
         (0 : Fin 1) hij hqLe hmLe).mp hEdge).1
+      omega
     omega
   · have hji : j < i := by omega
     have hReverse :
@@ -85,9 +86,10 @@ theorem finiteNumericH_real_positive_below_top_generations_ne
         (hPosition k j m)).symm.trans hEdge
     have hGate :
         m < q ∨ (m = k ∧ q = k) := by
-      exact ((hNumericBinary_real_forward_iff
+      have hRawGate := ((hNumericBinary_real_forward_iff
         (normalizedGraphModel E).binary k j i m q
         (0 : Fin 1) hji hmLe hqLe).mp hReverse).1
+      omega
     omega
 
 /-- If an actual numerical-H clique in the EVEN old partial
@@ -137,9 +139,10 @@ theorem finiteNumericH_partial_current_clique_card_le_cut
     have hiLt : i < b := by omega
     have hGate :
         q < m ∨ (q = k ∧ m = k) := by
-      exact ((hNumericBinary_real_forward_iff
+      have hRawGate := ((hNumericBinary_real_forward_iff
         (normalizedGraphModel E).binary k i b q m
         (0 : Fin 1) hiLt hq hmLe).mp hEdge).1
+      omega
     have hqLt : q < m := by omega
     have hDecode :
         numericHRealGeneration k x = q := by
