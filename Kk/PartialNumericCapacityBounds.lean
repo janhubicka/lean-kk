@@ -113,7 +113,7 @@ theorem finiteNumericH_partial_actual_capacity_sandwich
       · have hPart :
             z ∈ (Finset.range g).image
               (fun q => hPosition k b q) := by
-          simpa [hEligible] using hCurrent
+          simpa only [if_pos hEligible] using hCurrent
         exact hCurrentSub hPart
       · simp [hEligible] at hCurrent
   have hLower := finiteDirectedCliqueCapacity_mono
