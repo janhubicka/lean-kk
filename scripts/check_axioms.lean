@@ -1911,3 +1911,29 @@ import Kk
 #print axioms Kk.kpt_twoIndex_offplan_iff_terminalFree_of_old_exact
 #check @Kk.actual_Kpt_old_boring_novelty_iff_terminal_or_missing_pair
 #print axioms Kk.actual_Kpt_old_boring_novelty_iff_terminal_or_missing_pair
+
+-- Track B: twelve finite all-support original/source-image endpoints
+#check @Kk.integerGraphSupportImage
+#print axioms Kk.integerGraphSupportImage
+#check @Kk.oldSupportCommonNeighbourPool_reindex
+#print axioms Kk.oldSupportCommonNeighbourPool_reindex
+#check @Kk.finiteOldColumnRawBound_reindex
+#print axioms Kk.finiteOldColumnRawBound_reindex
+#check @Kk.finiteOldColumnRawBound_reindex_after_insert
+#print axioms Kk.finiteOldColumnRawBound_reindex_after_insert
+#check @Kk.original_mutual_budget_reindex
+#print axioms Kk.original_mutual_budget_reindex
+#check @Kk.integerGraphAgeCanonical_next_prefix_neutral_reindex
+#print axioms Kk.integerGraphAgeCanonical_next_prefix_neutral_reindex
+#check @Kk.actual_original_neutral_interval_preserves_free_raw_canonical
+#print axioms Kk.actual_original_neutral_interval_preserves_free_raw_canonical
+#check @Kk.actual_original_neutral_interval_preserves_prior_age
+#print axioms Kk.actual_original_neutral_interval_preserves_prior_age
+#check @Kk.finiteDirectedCliqueCapacity_insert_one_jump
+#print axioms Kk.finiteDirectedCliqueCapacity_insert_one_jump
+#check @Kk.originalCriticalSupport
+#print axioms Kk.originalCriticalSupport
+#check @Kk.finiteOldColumnRawBound_insert_critical_exact
+#print axioms Kk.finiteOldColumnRawBound_insert_critical_exact
+#check @Kk.finiteOldColumnRawBound_insert_strict_drop_iff_critical_of_safe
+#print axioms Kk.finiteOldColumnRawBound_insert_strict_drop_iff_critical_of_safe

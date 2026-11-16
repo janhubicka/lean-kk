@@ -50,6 +50,11 @@ import Kk.K4NeighbourCertificate
 import Kk.FiniteNeighbourSchedule
 -- Track B: all-support literal original insertion and age-neutral stage
 import Kk.FullOriginalInsertionAge
+-- Track B: true finite neutral original intervals and arbitrary raw sort-image transport
+import Kk.SupportImageAge
+import Kk.NeutralOriginalInterval
+-- Track B: exact critical-support zero/one raw age jumps
+import Kk.OriginalCriticalSupport
 import Kk.K4NeighbourSchedule
 import Kk.NeighbourhoodCardinality
 import Kk.IsolatedCliqueBlocks
