@@ -1,0 +1,7 @@
+import Kk.TrackECoherentFinalIndexRetention
+
+#check @Kk.crossheight_coherent_old_final_index_embedding
+#print axioms Kk.crossheight_coherent_old_final_index_embedding
+
+#check @Kk.crossheight_coherent_final_index_embedding_unique
+#print axioms Kk.crossheight_coherent_final_index_embedding_unique
