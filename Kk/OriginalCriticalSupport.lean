@@ -74,6 +74,8 @@ theorem finiteOldColumnRawBound_insert_critical_exact
     finiteOldColumnRawBound E ell d (insert v P) c U =
       (by
         classical
+        -- This finite existential criticality predicate is Prop-valued;
+        -- supply its classical Decidable instance ONLY for the RHS ite.
         exact if originalCriticalSupport E P c U v then
           finiteOldColumnRawBound E ell d P c U - 1
         else finiteOldColumnRawBound E ell d P c U) := by
