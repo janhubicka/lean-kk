@@ -1,0 +1,47 @@
+name: KK Track D — full Kpt I2 excluded by old L-bit certificates
+
+on:
+  pull_request:
+    paths:
+      - 'Kk/FullKptOldLBitNoFork.lean'
+      - 'scripts/check_axioms_track_d_old_L_bit_I2.lean'
+      - '.github/workflows/track-d-old-L-bit-I2.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: kk-track-d-old-bit-I2-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  full-source-no-fork:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache Lean toolchain
+        uses: actions/cache@v4
+        with:
+          path: ~/.elan/toolchains
+          key: lean-toolchain-${{ runner.os }}-${{ hashFiles('lean-toolchain') }}
+      - name: Restore pinned Lake workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve pinned dependencies
+        run: lake update
+      - name: Obtain Mathlib cache
+        run: lake exe cache get
+      - name: Build actual full Kpt I2 certificate
+        run: lake build Kk.FullKptOldLBitNoFork
+      - name: Exact three-name strict transitive-axiom report
+        run: |
+          set -euo pipefail
+          lake env lean scripts/check_axioms_track_d_old_L_bit_I2.lean | tee track_d_old_L_bit_I2.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py scripts/check_axioms_track_d_old_L_bit_I2.lean track_d_old_L_bit_I2.log

@@ -1,0 +1,9 @@
+import Kk.FullKptOldLBitNoFork
+
+-- Track D: complete genuine Kpt no-I2 from earlier ordinary-L bit witnesses.
+#check @Kk.kpt_old_ordinary_bit_separation_forces_full_old_distinct
+#print axioms Kk.kpt_old_ordinary_bit_separation_forces_full_old_distinct
+#check @Kk.kpt_no_I2_of_all_upper_mismatches_have_old_L_bit
+#print axioms Kk.kpt_no_I2_of_all_upper_mismatches_have_old_L_bit
+#check @Kk.finiteNumericH_run_no_I2_of_indexed_old_L_bit_separators
+#print axioms Kk.finiteNumericH_run_no_I2_of_indexed_old_L_bit_separators
