@@ -1,0 +1,44 @@
+name: KK Track C bare/full final dependent source
+
+on:
+  pull_request:
+    paths:
+      - 'Kk/BareFullFinalSourceIdentity.lean'
+      - 'Kk/TrackCBareFullFinalSourceAxiomAudit.lean'
+      - 'docs/track_c_bare_full_final_source_english_audit.md'
+      - '.github/workflows/kk-track-c-bare-full-final.yml'
+  workflow_dispatch:
+
+jobs:
+  full-source-kernel:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache Lean toolchain
+        uses: actions/cache@v4
+        with:
+          path: ~/.elan/toolchains
+          key: lean-toolchain-${{ runner.os }}-${{ hashFiles('lean-toolchain') }}
+      - name: Restore Lean workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve dependencies
+        run: lake update
+      - name: Obtain Mathlib cache
+        run: lake exe cache get
+      - name: Build final full dependent source comparison
+        run: lake build Kk.BareFullFinalSourceIdentity
+      - name: Strict four-theorem standard-only axiom audit
+        run: |
+          set -euo pipefail
+          lake env lean Kk/TrackCBareFullFinalSourceAxiomAudit.lean | tee track-c-final-source-axioms.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py Kk/TrackCBareFullFinalSourceAxiomAudit.lean track-c-final-source-axioms.log
