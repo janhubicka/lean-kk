@@ -73,7 +73,7 @@ theorem actual_original_neutral_interval_preserves_free_raw_canonical
     induction n with
     | zero =>
       intro _ _
-      simpa only [Nat.add_zero, and_self] using hOld
+      simpa [Nat.add_zero] using hOld
     | succ n ih =>
       intro hChecksN hBudgetsN
       obtain ⟨hPrevFree, hPrevRaw, hPrevCanonical⟩ :=
