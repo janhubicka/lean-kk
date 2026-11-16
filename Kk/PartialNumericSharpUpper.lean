@@ -96,7 +96,7 @@ theorem finiteNumericH_partial_actual_capacity_le_sharp
       · have hPart :
             z ∈ (Finset.range g).image
               (fun q => hPosition k b q) := by
-          simpa [hEligible] using hCurrent
+          simpa only [if_pos hEligible] using hCurrent
         exact Finset.mem_union.mpr (Or.inr hPart)
       · simp [hEligible] at hCurrent
   obtain ⟨s,hs,hClique,hCard⟩ :=
