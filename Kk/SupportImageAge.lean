@@ -123,6 +123,12 @@ theorem original_mutual_budget_reindex
     obtain ⟨s, hs, rfl⟩ := Finset.mem_image.mp ht
     exact hLive s hs
   have h := hBudget (integerGraphSupportImage f U) hImage
+  change
+      1 + finiteDirectedCliqueCapacity E
+        (mutualLinkedNeighbours E
+          (oldSupportCommonNeighbourPool P c (U.1.image f)) v) ≤
+      finiteDirectedCliqueCapacity E
+        (oldSupportCommonNeighbourPool P c (U.1.image f)) at h
   simpa only [oldSupportCommonNeighbourPool_reindex] using h
 
 /-- Conditional reindexed finite age-neutral insertion: the
