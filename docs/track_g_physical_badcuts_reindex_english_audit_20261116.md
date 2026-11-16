@@ -100,6 +100,15 @@ by the elementary union and image cardinality bounds. **No
 injectivity of f or equality of finite source-index sizes is
 needed.** If `Extra=∅`, this becomes the original exact-image result.
 
+**Named sharper Lean consequence.** The stagewise statement
+`kptPhysicalBadCuts_card_le_reference_bad_add_extra` gives the
+direct recurrence `|Bad₂|≤|Bad₁|+|Extra|` without replacing the
+reference bad-cut count by its scan height. This is the bound one
+can telescope through a finite sequence of correctly aligned
+resolved-diary stages once their finite `Extra` sets are actually
+bounded. The weaker `|Bad₂|≤top₁+|Extra|` is a corollary, not
+the basic inductive estimate.
+
 This is preferable for an inductive resolved-diary construction:
 each legitimate microevent may add a bounded number of extra bad
 cuts. However, the theorem does **not** prove that the permitted
