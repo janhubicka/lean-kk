@@ -1911,3 +1911,34 @@ import Kk
 #print axioms Kk.kpt_twoIndex_offplan_iff_terminalFree_of_old_exact
 #check @Kk.actual_Kpt_old_boring_novelty_iff_terminal_or_missing_pair
 #print axioms Kk.actual_Kpt_old_boring_novelty_iff_terminal_or_missing_pair
+
+-- Track D: 14 independently exact-head checked finite physical and I1/I2 cut endpoints.
+-- No global selected-front age fidelity, bounded source orbit or BRD is certified.
+#check @Kk.henson_numericH_odd_cut_correctedB3
+#print axioms Kk.henson_numericH_odd_cut_correctedB3
+#check @Kk.henson_failed_selectedB3_forces_lower_real_generation
+#print axioms Kk.henson_failed_selectedB3_forces_lower_real_generation
+#check @Kk.henson_numericH_top_generation_cut_correctedB3
+#print axioms Kk.henson_numericH_top_generation_cut_correctedB3
+#check @Kk.henson_failed_selectedB3_has_higher_generation_clique
+#print axioms Kk.henson_failed_selectedB3_has_higher_generation_clique
+#check @Kk.henson_numericH_odd_cut_unselected_of_no_I1_I2
+#print axioms Kk.henson_numericH_odd_cut_unselected_of_no_I1_I2
+#check @Kk.henson_numericH_odd_selected_requires_structural_I1_or_I2
+#print axioms Kk.henson_numericH_odd_selected_requires_structural_I1_or_I2
+#check @Kk.henson_actualRun_odd_selected_has_indexed_I1_or_I2
+#print axioms Kk.henson_actualRun_odd_selected_has_indexed_I1_or_I2
+#check @Kk.henson_actualRun_odd_selected_has_constructed_indexed_I1_or_I2
+#print axioms Kk.henson_actualRun_odd_selected_has_constructed_indexed_I1_or_I2
+#check @Kk.henson_actualRun_nonstructural_selected_has_lower_real_cut
+#print axioms Kk.henson_actualRun_nonstructural_selected_has_lower_real_cut
+#check @Kk.henson_actualRun_selected_structural_or_lower_real_cut
+#print axioms Kk.henson_actualRun_selected_structural_or_lower_real_cut
+#check @Kk.henson_actualRun_selected_non_lower_real_requires_structural
+#print axioms Kk.henson_actualRun_selected_non_lower_real_requires_structural
+#check @Kk.physical_lower_real_cut_positive_generators
+#print axioms Kk.physical_lower_real_cut_positive_generators
+#check @Kk.physical_lower_real_cut_positive_iff
+#print axioms Kk.physical_lower_real_cut_positive_iff
+#check @Kk.finiteNumericH_eligible_lower_cut_neighbour_is_higher
+#print axioms Kk.finiteNumericH_eligible_lower_cut_neighbour_is_higher
