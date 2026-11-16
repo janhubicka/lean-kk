@@ -139,7 +139,62 @@ theorem finiteNumericH_old_zero_separates_top_from_negative
       A cut oldZero selectedTop auxCopy hEarlier hPos hNeg
   exact ⟨hEarlier,hTopLater,hAuxLater,hPos,hNeg,hFullNe⟩
 
+/-- The same separation for TWO ACTUAL named finite numerical-H
+originals, not just for out-of-carrier numeric-table addresses.
+
+A real numeric cut is inside the finite N carrier. The earlier
+generation-zero distinguishing coordinate is therefore also in the
+carrier. The selected and auxiliary endpoints are genuine Fin N
+originals with the prescribed exact physical generation positions.
+
+The theorem does NOT infer that these originals belong to the
+active pre-cut Kpt closure, have sufficient E free level, or are
+selected by an actual AlgorithmRun; those application facts must
+still be established separately for the full no-I2 argument. -/
+theorem finiteNumericH_old_zero_separates_named_future_originals
+    (E : Nat → Nat → Bool)
+    (k N old cutBase selected aux g m : Nat)
+    (hOldCut : old < cutBase)
+    (hCutSelected : cutBase < selected)
+    (hCutAux : cutBase < aux)
+    (hg : g ≤ k) (hm : m ≤ k)
+    (hPositive : E old selected = true)
+    (hNegative : E old aux = false)
+    (hCutIn : hPosition k cutBase g < N)
+    (selectedName auxName : Fin N)
+    (hSelectedName : selectedName.val = hPosition k selected k)
+    (hAuxName : auxName.val = hPosition k aux m) :
+    hPosition k old 0 < N ∧
+      (finiteNumericH (normalizedGraphModel E) k N).partialTypeAt
+        (hPosition k cutBase g) selectedName.val ≠
+      (finiteNumericH (normalizedGraphModel E) k N).partialTypeAt
+        (hPosition k cutBase g) auxName.val := by
+  have hNumeric :=
+    finiteNumericH_old_zero_separates_top_from_negative
+      E k N old cutBase selected aux g m
+      hOldCut hCutSelected hCutAux hg hm
+      hPositive hNegative
+  change
+      hPosition k old 0 < hPosition k cutBase g ∧
+      hPosition k cutBase g < hPosition k selected k ∧
+      hPosition k cutBase g < hPosition k aux m ∧
+      (finiteNumericHL (normalizedGraphModel E) k N).binary
+        (hPosition k old 0) (hPosition k selected k)
+        (0 : Fin 1) = true ∧
+      (finiteNumericHL (normalizedGraphModel E) k N).binary
+        (hPosition k old 0) (hPosition k aux m)
+        (0 : Fin 1) = false ∧
+      (finiteNumericH (normalizedGraphModel E) k N).partialTypeAt
+        (hPosition k cutBase g) (hPosition k selected k) ≠
+      (finiteNumericH (normalizedGraphModel E) k N).partialTypeAt
+        (hPosition k cutBase g) (hPosition k aux m) at hNumeric
+  rcases hNumeric with ⟨hOldBelow, _hSelLater, _hAuxLater,
+    _hPositive, _hNegative, hDistinct⟩
+  refine ⟨hOldBelow.trans hCutIn, ?_⟩
+  simpa only [hSelectedName,hAuxName] using hDistinct
+
 #print axioms finiteOldFullTypes_ne_of_distinguishing_L_bit
 #print axioms finiteNumericH_old_zero_separates_top_from_negative
+#print axioms finiteNumericH_old_zero_separates_named_future_originals
 
 end Kk
