@@ -1,0 +1,4 @@
+import Kk.TrackFRankOneTargetCompatibility
+
+#check @Kk.HensonOneType.sourceCodingFibre_continue_equal_rank_one
+#print axioms Kk.HensonOneType.sourceCodingFibre_continue_equal_rank_one
