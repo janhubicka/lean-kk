@@ -2086,5 +2086,9 @@ import Kk
 -- Track B: true typed-column preservation and conditional physical second cover.
 #check @Kk.supportBlockGappedColumn_eq_before_cut
 #print axioms Kk.supportBlockGappedColumn_eq_before_cut
+#check @Kk.oldSupportCommonNeighbourPool_eq_of_column_prefix
+#print axioms Kk.oldSupportCommonNeighbourPool_eq_of_column_prefix
+#check @Kk.integerGraphAgeCanonical_eq_of_column_prefix
+#print axioms Kk.integerGraphAgeCanonical_eq_of_column_prefix
 #check @Kk.henson_leftDense_second_cover_after_preserved_typed_neutral_gap
 #print axioms Kk.henson_leftDense_second_cover_after_preserved_typed_neutral_gap
