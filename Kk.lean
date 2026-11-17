@@ -304,6 +304,9 @@ import Kk.OriginalCriticalSupport
 
 -- Track B: exact finite chronology of critical-original raw age decreases.
 import Kk.OriginalCriticalCount
+-- Track B: critical-count conservation and one real physical Henson cover
+import Kk.CriticalCountSafeAge
+import Kk.CriticalNeutralPhysicalCover
 
 /-!
 The counting project imports the verified successor-tree library.
