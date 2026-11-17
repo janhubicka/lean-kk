@@ -67,7 +67,7 @@ theorem kpt_residual_iff_new_final_or_early_old
       right
       refine ⟨i,hi,?_⟩
       cases hOld : oldLive cut i with
-      | false => exact hOld
+      | false => rfl
       | true =>
         exact False.elim (hResidual ⟨i,hOld,hi⟩)
     · exact Or.inl hImage
