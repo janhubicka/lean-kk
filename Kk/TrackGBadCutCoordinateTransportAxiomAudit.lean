@@ -1,0 +1,20 @@
+import Kk.TrackGBadCutCoordinateTransport
+
+#check @Kk.KptPhysicalBadCutReindexCertificate
+
+#check @Kk.kptPhysicalBadCuts_eq_image_of_reindex_certificate
+#print axioms Kk.kptPhysicalBadCuts_eq_image_of_reindex_certificate
+
+#check @Kk.kptPhysicalBadCuts_card_le_reference_top_of_reindex
+#print axioms Kk.kptPhysicalBadCuts_card_le_reference_top_of_reindex
+
+#check @Kk.KptPhysicalBadCutReindexExtraCertificate
+
+#check @Kk.kptPhysicalBadCuts_subset_image_union_extra
+#print axioms Kk.kptPhysicalBadCuts_subset_image_union_extra
+
+#check @Kk.kptPhysicalBadCuts_card_le_reference_bad_add_extra
+#print axioms Kk.kptPhysicalBadCuts_card_le_reference_bad_add_extra
+
+#check @Kk.kptPhysicalBadCuts_card_le_reference_top_add_extra
+#print axioms Kk.kptPhysicalBadCuts_card_le_reference_top_add_extra
