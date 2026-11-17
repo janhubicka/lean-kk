@@ -40,7 +40,7 @@ jobs:
         run: lake exe cache get
       - name: Compile genuine boring-block Kpt monoid-factor module
         run: lake build Kk.TrackGGenuineBoringBlockFactor
-      - name: Strict two-name standard-only axioms
+      - name: Strict four-name standard-only axioms
         run: |
           set -euo pipefail
           lake env lean Kk/TrackGGenuineBoringBlockFactorAxiomAudit.lean | tee track-g-boring-block-axioms.log
