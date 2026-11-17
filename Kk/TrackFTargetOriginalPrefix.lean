@@ -61,7 +61,8 @@ theorem targetOldNeighbours_safe
     have hxy := hsOld y hys
     omega
   have hCard : (insert y s).card = ell := by
-    simp only [Finset.card_insert_of_not_mem hyNot, hsCard]
+    have hInsert : (insert y s).card = s.card + 1 := by
+      simp [hyNot]
     omega
   have hBound : ∀ x ∈ insert y s, x < y + 1 := by
     intro x hx
