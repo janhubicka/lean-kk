@@ -1,0 +1,13 @@
+import Kk.TrackFRankThreeActualTriangleRichness
+
+#check @Kk.HensonOneType.shared_neighbours_sub_root_of_disjoint_fresh
+#print axioms Kk.HensonOneType.shared_neighbours_sub_root_of_disjoint_fresh
+
+#check @Kk.HensonOneType.mutual_sub_root_from_disjoint_coding
+#print axioms Kk.HensonOneType.mutual_sub_root_from_disjoint_coding
+
+#check @Kk.HensonOneType.safe_insert_keeps_rank_one
+#print axioms Kk.HensonOneType.safe_insert_keeps_rank_one
+
+#check @Kk.HensonOneType.rank_two_large_actualCoding_contains_triangle
+#print axioms Kk.HensonOneType.rank_two_large_actualCoding_contains_triangle
