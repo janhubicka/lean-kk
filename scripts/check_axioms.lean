@@ -2082,3 +2082,9 @@ import Kk
 #print axioms Kk.henson_leftDense_exists_physical_cover_after_zeroTail
 #check @Kk.henson_leftDense_exists_two_physical_covers_with_zero_gap
 #print axioms Kk.henson_leftDense_exists_two_physical_covers_with_zero_gap
+
+-- Track B: true typed-column preservation and conditional physical second cover.
+#check @Kk.supportBlockGappedColumn_eq_before_cut
+#print axioms Kk.supportBlockGappedColumn_eq_before_cut
+#check @Kk.henson_leftDense_second_cover_after_preserved_typed_neutral_gap
+#print axioms Kk.henson_leftDense_second_cover_after_preserved_typed_neutral_gap
