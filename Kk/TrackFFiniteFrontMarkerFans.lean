@@ -96,9 +96,9 @@ theorem rank_large_finite_front_marker_fans
     | empty =>
         refine ⟨fun _ => ∅, ?_, ?_⟩
         · intro i hi
-          exact False.elim (Finset.not_mem_empty i hi)
+          simp at hi
         · intro i hi
-          exact False.elim (Finset.not_mem_empty i hi)
+          simp at hi
     | @insert i Q hi ih =>
         obtain ⟨G, hValidOld, hCrossOld⟩ := ih
         let old : Finset (Node × Node) :=
