@@ -1992,3 +1992,13 @@ import Kk
 #print axioms Kk.finiteOldColumnRawBound_insert_critical_exact
 #check @Kk.finiteOldColumnRawBound_insert_strict_drop_iff_critical_of_safe
 #print axioms Kk.finiteOldColumnRawBound_insert_strict_drop_iff_critical_of_safe
+
+-- Track B: exact finite critical-original count and raw-age telescope.
+#check @Kk.originalCriticalCount
+#print axioms Kk.originalCriticalCount
+#check @Kk.originalCriticalCount_zero
+#print axioms Kk.originalCriticalCount_zero
+#check @Kk.originalCriticalCount_succ
+#print axioms Kk.originalCriticalCount_succ
+#check @Kk.finiteOldColumnRawBound_eq_sub_criticalCount
+#print axioms Kk.finiteOldColumnRawBound_eq_sub_criticalCount
