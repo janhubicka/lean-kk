@@ -1,0 +1,55 @@
+name: KK Track A physical partial staircase lower witness
+
+on:
+  pull_request:
+    paths:
+      - 'Kk/PartialNumericStaircaseLower.lean'
+      - 'docs/partial_numeric_staircase_lower_english_audit.md'
+      - '.github/workflows/kk-track-a-partial-staircase-lower.yml'
+  push:
+    branches: [kk-track-a-partial-staircase-lower-20261115]
+  workflow_dispatch:
+
+concurrency:
+  group: kk-track-a-partial-staircase-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  exact-physical-lower:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore pinned Lake workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve pinned dependencies
+        run: lake update
+      - name: Restore Mathlib cache
+        run: lake exe cache get
+      - name: Independent 26,880-case exact numerical capacity regression
+        run: python3 scripts/check_partial_numeric_old_age.py
+      - name: Build full partial physical source stack
+        run: |
+          lake build Kk.PartialNumericOldColumns
+          lake build Kk.PartialNumericCommonPool
+          lake build Kk.PartialNumericGenerationHeight
+          lake build Kk.PartialNumericCurrentLinkUpper
+          lake build Kk.PartialNumericSharpUpper
+      - name: Explicitly compile physical staircase lower theorem
+        run: lake build Kk.PartialNumericStaircaseLower
+      - name: Strict exact standard-only qualified named axiom audit
+        run: |
+          set -euo pipefail
+          python3 scripts/check_axiom_report.py --self-test
+          lake env lean Kk/PartialNumericStaircaseLower.lean | tee staircase-lower-axioms.log
+          python3 scripts/check_axiom_report.py Kk/PartialNumericStaircaseLower.lean staircase-lower-axioms.log
+      - name: Complete repository Lake build
+        run: lake build
