@@ -1,0 +1,7 @@
+import Kk.TrackGArbitraryBlockFactor
+
+#check @Kk.actualAlgorithmRun_any_finite_block_unique_factor
+#print axioms Kk.actualAlgorithmRun_any_finite_block_unique_factor
+
+#check @Kk.actualAlgorithmRun_I_equal_iff_all_genuinely_boring
+#print axioms Kk.actualAlgorithmRun_I_equal_iff_all_genuinely_boring
