@@ -7,7 +7,7 @@
 - [PR #251](https://github.com/janhubicka/lean-kk/pull/251) exact head `1b6dc638d15d511c083a80ecbaa95019ab62470f`: four final full-source and all-cut complete dependent old/upper L+/E results; dedicated [44032643430](https://github.com/janhubicka/lean-kk/actions/runs/44032643430) and independent full [44032643403](https://github.com/janhubicka/lean-kk/actions/runs/44032643403) PASS. Merged.
 
 ## Scope
-All three source files and the checked exact theorem declarations are already present in merged main. Import ONLY these three modules and register ALL TWELVE distinct public endpoints with fully qualified `#check` and `#print axioms` statements in the central script. Expected exact count at a static base of 841 is 853, but concurrent main merges may increase the baseline; never replace or truncate another track's axiom reports.
+All three source files and the checked exact theorem declarations are already present in merged main. Import ONLY these three modules and register ALL FOURTEEN distinct public endpoints with fully qualified `#check` and `#print axioms` statements in the central script. Expected exact count at a static base of 841 is 855, but concurrent main merges may increase the baseline; never replace or truncate another track's axiom reports.
 
 The visible source theorem statements are **conditional**:
 - common underlying normalized Kpt successor tree;
@@ -26,3 +26,6 @@ The visible source theorem statements are **conditional**:
 - only standard `propext`, `Classical.choice`, `Quot.sound` axioms; no `sorryAx` or custom axioms;
 - recheck exact source tree, tested head and merge ancestry before merging;
 - if concurrent Track A/B/F/G merges move main, rebase by preserving the source-exact unchanged files and retest.
+
+## Additional independently verified physical construction (17 November)
+[Track C PR #277](https://github.com/janhubicka/lean-kk/pull/277) exact source head `8e63479195a42b1e2ab87ad9c4853104287d929e` passed both [dedicated run 44038394114](https://github.com/janhubicka/lean-kk/actions/runs/44038394114) (two named standard-only theorems) and [full run 44038393974](https://github.com/janhubicka/lean-kk/actions/runs/44038393974). It merged as `e5e14b983634a111225111e0627dcbd9636727bb`, now the source ancestry of this rebased central integration PR. The two exact new public names are `Kk.finiteNumericH_construct_bare_full_root_same_source` and `Kk.finiteNumericH_construct_bare_full_common_source_index`. Their geometric hypotheses include ACTUAL old/new H+ forbidden avoidance, complete old K/L binary/unary/diagonal agreement and genuine physical old seed representation. **This is not an unbounded macrodiary or occurrence-independent labelled orbit.**
