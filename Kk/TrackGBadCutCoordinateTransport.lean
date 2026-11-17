@@ -269,7 +269,7 @@ theorem kptPhysicalBadCuts_card_le_reference_bad_add_extra
     B2.card ≤ (B1.image f ∪ Extra).card :=
       Finset.card_le_card hSub
     _ ≤ (B1.image f).card + Extra.card :=
-      Finset.card_union_le
+      Finset.card_union_le (B1.image f) Extra
     _ ≤ B1.card + Extra.card :=
       Nat.add_le_add_right Finset.card_image_le _
 
