@@ -1,0 +1,53 @@
+name: KK Track A exact canonical-visible physical event
+
+on:
+  pull_request:
+    paths:
+      - 'Kk/PartialNumericCanonicalVisibleEvent.lean'
+      - 'docs/partial_numeric_canonical_visible_event_english_audit.md'
+      - 'scripts/check_partial_numeric_canonical_visible.py'
+      - '.github/workflows/kk-track-a-canonical-visible-event.yml'
+  push:
+    branches: [kk-track-a-canonical-visible-witness-20261117]
+  workflow_dispatch:
+
+concurrency:
+  group: kk-track-a-canonical-visible-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  physical-canonical-visible:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore pinned Lake workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve pinned dependencies
+        run: lake update
+      - name: Restore Mathlib cache
+        run: lake exe cache get
+      - name: Independent real-H 197120-case physical raw event regression
+        run: python3 scripts/check_partial_numeric_raw_support_events.py
+      - name: Independent all-vector canonical visibility regression
+        run: python3 scripts/check_partial_numeric_canonical_visible.py
+      - name: Explicit compile of verified canonical necessary raw certificate
+        run: lake build Kk.PartialNumericCanonicalEventWitness
+      - name: Explicit compile of exact canonical-visible event theorem
+        run: lake build Kk.PartialNumericCanonicalVisibleEvent
+      - name: Strict fully qualified standard-only named axiom audit
+        run: |
+          set -euo pipefail
+          python3 scripts/check_axiom_report.py --self-test
+          lake env lean Kk/PartialNumericCanonicalVisibleEvent.lean | tee canonical-visible-axioms.log
+          python3 scripts/check_axiom_report.py Kk/PartialNumericCanonicalVisibleEvent.lean canonical-visible-axioms.log
+      - name: Full repository Lake build
+        run: lake build
