@@ -83,6 +83,10 @@ theorem finiteNumericH_partial_actual_capacity_le_sharp
     have hPhysical :=
       finiteNumericH_partial_actual_common_pool_eq
         E hSym k b g M hg j hj U
+    change z ∈ oldSupportCommonNeighbourPool
+      (Finset.range (hPosition k b g))
+      (fun z t => (finiteNumericHL (normalizedGraphModel E) k M).binary
+        z (hPosition k (j t) k) (0 : Fin 1)) U.1 at hz
     rw [hPhysical] at hz
     exact (Finset.mem_filter.mp hz).1
   have hNFull :
