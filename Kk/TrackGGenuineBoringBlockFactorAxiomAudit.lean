@@ -1,0 +1,7 @@
+import Kk.TrackGGenuineBoringBlockFactor
+
+#check @Kk.actualAlgorithmRun_genuinely_boring_block_factors
+#print axioms Kk.actualAlgorithmRun_genuinely_boring_block_factors
+
+#check @Kk.k4Gadget_no_genuinely_boring_block_across_10_or_22
+#print axioms Kk.k4Gadget_no_genuinely_boring_block_across_10_or_22
