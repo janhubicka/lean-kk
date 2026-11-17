@@ -5,6 +5,8 @@ on:
     paths:
       - 'docs/k4_raw_event_canonical_redundancy_english_audit.md'
       - 'scripts/check_k4_raw_event_canonical_redundancy.py'
+      - 'docs/k4_physical_canonical_noncover_english_audit.md'
+      - 'scripts/check_k4_physical_canonical_noncover.py'
       - '.github/workflows/kk-track-a-k4-raw-redundancy.yml'
   push:
     branches: [kk-track-a-raw-redundancy-k4-example-20261117]
@@ -21,3 +23,5 @@ jobs:
       - uses: actions/checkout@v4
       - name: Independent literal numeric H K4-free graph and canonical raw-event check
         run: python3 scripts/check_k4_raw_event_canonical_redundancy.py
+      - name: Independently check five-vertex K4-free canonical non-cover with intermediate age
+        run: python3 scripts/check_k4_physical_canonical_noncover.py
