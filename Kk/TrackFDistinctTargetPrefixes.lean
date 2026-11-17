@@ -128,7 +128,6 @@ theorem target_prefix_types_distinct_of_source_old_bit
     (x y : HensonOneType ell Esrc)
     (hux : u ≤ x) (hvy : v ≤ y)
     (tX tY : HensonOneType ell Etgt)
-    (hSameLevel : tX.level = tY.level)
     (haTarget : e a < tX.level)
     (hxFibre : x ∈ sourceCodingFibre (E := Esrc) Etgt e tX)
     (hyFibre : y ∈ sourceCodingFibre (E := Esrc) Etgt e tY) :
