@@ -8,10 +8,10 @@ English proof and adversarial audit committed first:
 docs/track_b_critical_neutral_cover_english_audit.md
 
 The previously checked critical-count identity uses natural truncated
-subtraction. A genuinely K_ell-free final old ORIGINAL prefix makes
-every raw common-old-neighbour clique capacity < ell. Therefore the
-final raw bound on any nonempty support is strictly positive and
-truncation CANNOT hide an additional critical original.
+subtraction. The exact ORIGINAL clique capacity increases by exactly the critical
+original count, without truncation. A genuinely K_ell-free final old
+original prefix then bounds the final capacity by ell-1. This yields
+an exact raw-age conservation law EVEN WHEN the final raw bound is zero.
 
 This yields the exact nontruncated conservation identity:
   initial raw age = number of critical originals + final raw age.
@@ -24,16 +24,109 @@ neutral interval or that full dependent Kpt L+ events are matched.
 
 namespace Kk
 
-/-- A genuinely K_ell-free FINAL old original prefix has positive
-raw continuation age at EVERY admissible nonempty support. This
-uses the full physical old carrier, not the selected-front shadow. -/
-theorem finiteOldColumnRawBound_final_positive_of_safe
+/-- Exact one-original update of a TRUE common old-neighbour clique
+capacity. The capacity grows by exactly one iff the new original is
+critical on the WHOLE supported sort set U, otherwise stays unchanged.
+This holds in arbitrary directed graphs, without K_ell-free safety. -/
+theorem oldSupportCommonCapacity_insert_critical_exact
+    (E : Nat → Nat → Bool) (ell d : Nat)
+    (P : Finset Nat) (c : Nat → Fin d → Bool)
+    (U : IntegerGraphSupport d ell) (v : Nat) (hv : v ∉ P) :
+    finiteDirectedCliqueCapacity E
+        (oldSupportCommonNeighbourPool (insert v P) c U.1) =
+      finiteDirectedCliqueCapacity E
+        (oldSupportCommonNeighbourPool P c U.1) +
+      (by
+        classical
+        exact if originalCriticalSupport E P c U v then 1 else 0) := by
+  classical
+  change finiteDirectedCliqueCapacity E
+      (oldSupportCommonNeighbourPool (insert v P) c U.1) =
+    finiteDirectedCliqueCapacity E
+      (oldSupportCommonNeighbourPool P c U.1) +
+      (if originalCriticalSupport E P c U v then 1 else 0)
+  rw [oldSupportCommonNeighbourPool_insert_exact]
+  by_cases hLive : ∀ t ∈ U.1, c v t = true
+  · simp only [if_pos hLive]
+    have hvPool : v ∉ oldSupportCommonNeighbourPool P c U.1 := by
+      intro hx
+      exact hv (Finset.mem_filter.mp hx).1
+    rw [finiteDirectedCliqueCapacity_insert_one_jump
+      E (oldSupportCommonNeighbourPool P c U.1) v hvPool]
+    by_cases hEq : finiteDirectedCliqueCapacity E
+        (mutualLinkedNeighbours E
+          (oldSupportCommonNeighbourPool P c U.1) v) =
+        finiteDirectedCliqueCapacity E
+          (oldSupportCommonNeighbourPool P c U.1)
+    · have hCrit : originalCriticalSupport E P c U v := ⟨hLive, hEq⟩
+      simp only [if_pos hEq, if_pos hCrit]
+      omega
+    · have hNotCrit : ¬ originalCriticalSupport E P c U v := by
+        intro h
+        exact hEq h.2
+      simp only [if_neg hEq, if_neg hNotCrit]
+      omega
+  · have hNotCrit : ¬ originalCriticalSupport E P c U v := by
+      intro h
+      exact hLive h.1
+    simp only [if_neg hLive, if_neg hNotCrit]
+    omega
+
+/-- Exact finite chronological telescope for COMMON ORIGINAL CLIQUE
+CAPACITIES, before applying natural truncated subtraction.
+
+The final capacity equals initial capacity plus the number of
+critical original insertions at U. No K_ell-freeness is needed.
+This is stronger than the previously verified raw-bound telescope. -/
+theorem oldSupportCommonCapacity_eq_add_criticalCount
+    (E : Nat → Nat → Bool) (ell d b m : Nat)
+    (c : Nat → Fin d → Bool)
+    (U : IntegerGraphSupport d ell) :
+    finiteDirectedCliqueCapacity E
+        (oldSupportCommonNeighbourPool (Finset.range (b+m)) c U.1) =
+      finiteDirectedCliqueCapacity E
+        (oldSupportCommonNeighbourPool (Finset.range b) c U.1) +
+      originalCriticalCount E ell d b c U m := by
+  classical
+  induction m with
+  | zero =>
+      simp [originalCriticalCount]
+  | succ m ih =>
+      have hRange :
+          Finset.range (b+(m+1)) =
+            insert (b+m) (Finset.range (b+m)) := by
+        ext x
+        simp only [Finset.mem_range, Finset.mem_insert]
+        omega
+      rw [hRange]
+      have hFresh : b+m ∉ Finset.range (b+m) := by simp
+      rw [oldSupportCommonCapacity_insert_critical_exact
+        E ell d (Finset.range (b+m)) c U (b+m) hFresh]
+      rw [originalCriticalCount_succ]
+      change
+        finiteDirectedCliqueCapacity E
+          (oldSupportCommonNeighbourPool (Finset.range (b+m)) c U.1) +
+          (if originalCriticalSupport E (Finset.range (b+m))
+                c U (b+m) then 1 else 0) =
+        finiteDirectedCliqueCapacity E
+          (oldSupportCommonNeighbourPool (Finset.range b) c U.1) +
+        (originalCriticalCount E ell d b c U m +
+          (if originalCriticalSupport E (Finset.range (b+m))
+                c U (b+m) then 1 else 0))
+      omega
+
+/-- Genuine K_ell-free safety of the entire FINAL original prefix
+bounds its full common-old-neighbour clique capacity strictly below ell.
+
+NOTE: This does NOT assert a positive RAW bound: capacity ell-1 is
+allowed and the raw continuation bound can equal zero. -/
+theorem oldSupportCommonCapacity_lt_ell_of_safe
     (E : Nat → Nat → Bool) (ell d b m : Nat)
     (c : Nat → Fin d → Bool)
     (U : IntegerGraphSupport d ell)
     (hSafe : finitePoolCliqueCheck E ell (Finset.range (b+m)) = false) :
-    0 < finiteOldColumnRawBound E ell d
-      (Finset.range (b+m)) c U := by
+    finiteDirectedCliqueCapacity E
+      (oldSupportCommonNeighbourPool (Finset.range (b+m)) c U.1) < ell := by
   classical
   have hSub :
       oldSupportCommonNeighbourPool (Finset.range (b+m)) c U.1 ⊆
@@ -47,17 +140,13 @@ theorem finiteOldColumnRawBound_final_positive_of_safe
       finiteDirectedCliqueCapacity E (Finset.range (b+m)) < ell :=
     (finitePoolCliqueCheck_false_iff_capacity_lt
       E ell (Finset.range (b+m))).mp hSafe
-  change 0 < ell - 1 -
-    finiteDirectedCliqueCapacity E
-      (oldSupportCommonNeighbourPool (Finset.range (b+m)) c U.1)
   omega
 
-/-- Genuine final physical K_ell-freeness removes the truncation
-ambiguity in the verified exact raw-age telescope.
+/-- TRUE K_ell-free final original-prefix safety eliminates saturation
+ambiguity through the EXACT untruncated capacity telescope, even when
+the final raw continuation bound is zero.
 
-The number of truly critical ORIGINAL insertions, plus final raw age,
-is exactly the earlier raw age. All old gaps and parameter originals
-are counted because the interval traverses the actual index order. -/
+Therefore initial raw age equals critical count plus final raw age. -/
 theorem originalCriticalCount_add_final_raw_eq_initial_of_safe
     (E : Nat → Nat → Bool) (ell d b m : Nat)
     (c : Nat → Fin d → Bool)
@@ -66,10 +155,17 @@ theorem originalCriticalCount_add_final_raw_eq_initial_of_safe
     originalCriticalCount E ell d b c U m +
       finiteOldColumnRawBound E ell d (Finset.range (b+m)) c U =
       finiteOldColumnRawBound E ell d (Finset.range b) c U := by
-  have hTel := finiteOldColumnRawBound_eq_sub_criticalCount
+  have hCapTel := oldSupportCommonCapacity_eq_add_criticalCount
     E ell d b m c U
-  have hPos := finiteOldColumnRawBound_final_positive_of_safe
+  have hCapLt := oldSupportCommonCapacity_lt_ell_of_safe
     E ell d b m c U hSafe
+  change originalCriticalCount E ell d b c U m +
+    (ell - 1 -
+      finiteDirectedCliqueCapacity E
+        (oldSupportCommonNeighbourPool (Finset.range (b+m)) c U.1)) =
+    ell - 1 -
+      finiteDirectedCliqueCapacity E
+        (oldSupportCommonNeighbourPool (Finset.range b) c U.1)
   omega
 
 /-- Under genuine full-prefix safety, a support's literal RAW bound
@@ -162,7 +258,9 @@ theorem actual_prior_canonical_age_after_zero_critical_interval
   exact (integerGraphAgeCanonical_interval_eq_of_zero_critical_count
     E ell d b m c hZero).trans hPrior
 
-#print axioms Kk.finiteOldColumnRawBound_final_positive_of_safe
+#print axioms Kk.oldSupportCommonCapacity_insert_critical_exact
+#print axioms Kk.oldSupportCommonCapacity_eq_add_criticalCount
+#print axioms Kk.oldSupportCommonCapacity_lt_ell_of_safe
 #print axioms Kk.originalCriticalCount_add_final_raw_eq_initial_of_safe
 #print axioms Kk.originalCriticalCount_zero_iff_raw_eq_of_safe
 #print axioms Kk.finiteOldColumnRawBound_interval_eq_of_zero_critical_count
