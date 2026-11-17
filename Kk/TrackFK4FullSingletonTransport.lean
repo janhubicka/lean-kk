@@ -156,9 +156,14 @@ theorem k4_sourceCodingFibre_continue_drop_rank
     simpa only [hu] using hLarge
   obtain ⟨w, huw, hwRank, hwLarge⟩ :=
     hLargeSucc u (le_refl u) hu
+  have hwLargeAtRank :
+      RankLargeness.Large rank
+        (sourceCodingFibre (E := Esrc) Etgt e v0)
+        (rank w) w := by
+    simpa only [hwRank] using hwLarge
   obtain ⟨vH, uH, hV, hCut, hW, hURank, hVRank, hNewLarge⟩ :=
     k4_sourceCodingFibre_continue_equal_rank
-      Esrc Etgt hAvoid e he hInduced v0 B w hwLarge
+      Esrc Etgt hAvoid e he hInduced v0 B w hwLargeAtRank
   have hRankDrop : rank uH + 1 = rank u := by
     omega
   have hRanksEqual : rank vH = rank uH := by
