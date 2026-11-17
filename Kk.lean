@@ -309,3 +309,9 @@ import Kk.OriginalCriticalCount
 The counting project imports the verified successor-tree library.
 No local replacement of the Ramsey theorem is assumed.
 -/
+
+-- Track C: exact verified finite cut-visible dependent source, bare/full
+-- selected skeleton and literal final Kpt closure. NOT a global BRD theorem.
+import Kk.CutVisibleClosureAbsorption
+import Kk.BareFullRunSelectedEquivalence
+import Kk.BareFullFinalSourceIdentity

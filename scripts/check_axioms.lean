@@ -2002,3 +2002,31 @@ import Kk
 #print axioms Kk.originalCriticalCount_succ
 #check @Kk.finiteOldColumnRawBound_eq_sub_criticalCount
 #print axioms Kk.finiteOldColumnRawBound_eq_sub_criticalCount
+
+-- Track C: 12 exact verified finite conditional full Kpt source endpoints.
+-- Full dependent L+/E source, true I1/I2/I3, same-top bare/full I skeleton.
+-- Does NOT prove unbounded resolved diary or same-occurrence labelled orbit.
+#check @Kk.envelope_union_low_closed
+#print axioms Kk.envelope_union_low_closed
+#check @Kk.envelope_closure_high_mono_of_tail
+#print axioms Kk.envelope_closure_high_mono_of_tail
+#check @Kk.envelope_closure_high_absorbs_old_closure
+#print axioms Kk.envelope_closure_high_absorbs_old_closure
+#check @Kk.kpt_cut_visible_same_structural_and_full_crossing
+#print axioms Kk.kpt_cut_visible_same_structural_and_full_crossing
+#check @Kk.envelope_IsInterestingAt_iff_of_cut_visible
+#print axioms Kk.envelope_IsInterestingAt_iff_of_cut_visible
+#check @Kk.finiteNumericH_newRoot_run_cut_visible_absorption
+#print axioms Kk.finiteNumericH_newRoot_run_cut_visible_absorption
+#check @Kk.envelope_bare_full_new_runs_same_selected_levels
+#print axioms Kk.envelope_bare_full_new_runs_same_selected_levels
+#check @Kk.finiteNumericH_bare_and_full_new_runs_same_selected_levels
+#print axioms Kk.finiteNumericH_bare_and_full_new_runs_same_selected_levels
+#check @Kk.envelope_bare_full_runs_final_closure_eq
+#print axioms Kk.envelope_bare_full_runs_final_closure_eq
+#check @Kk.envelope_bare_full_runs_cut_visible_eq
+#print axioms Kk.envelope_bare_full_runs_cut_visible_eq
+#check @Kk.finiteNumericH_bare_full_runs_final_source_eq
+#print axioms Kk.finiteNumericH_bare_full_runs_final_source_eq
+#check @Kk.finiteNumericH_bare_full_runs_all_cut_events_eq
+#print axioms Kk.finiteNumericH_bare_full_runs_all_cut_events_eq
