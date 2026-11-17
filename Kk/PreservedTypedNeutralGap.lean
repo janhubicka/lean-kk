@@ -9,14 +9,15 @@ English mathematical proof and ten hostile scope checks were committed
 BEFORE this Lean file in
 docs/track_b_preserved_typed_gap_and_dedup_english_audit.md.
 
-The previously verified finite two-cover theorem can place its second
-physical reserved clique immediately after the first cutoff. Arbitrarily
-postponing it with \`oldColumnZeroTail\` is safe for the old-age equation,
-but can erase passing bits needed by previously realized selected future
-witnesses. This file isolates the strictly stronger conditional bridge:
+The previously verified finite two-cover theorem places a second
+physical reserved clique after the first cutoff. Delaying by an
+all-zero future tail is safe only for old-age equations, and can
+erase essential positive links of earlier selected witnesses.
+Here the continuation column cNext may have NEW positive bits above
+F0, but agrees with the first-stage column on the entire prefix:
 
-* the ENTIRE full typed column is held unchanged through the gap;
-* the actual critical-original count is ZERO on every nonempty support;
+* all old-to-future bits at p < F0 are preserved;
+* the actual critical-original count of cNext is ZERO on every support;
 * one real second Henson cover can then be made after any designated
   finite set of old original vertices W0;
 * the resulting complete updated column agrees at EVERY old vertex
@@ -116,9 +117,9 @@ certificate for such a set.
 All first-stage original E facts are kept; the second reserved clique
 Q1 is physically negative to all original indices below the later
 cut, and the new full future column is literally unchanged on W0.
-The complete canonical age at the later cut is DERIVED from the
-unmodified c1 and zero actual critical counts, not independently
-postulated or obtained by zero-tail rewriting. -/
+The canonical age at the later cut is DERIVED by combining
+old-prefix column agreement, then zero critical counts on cNext,
+NOT by leaving the first stage's automatically zero tail in place. -/
 theorem henson_leftDense_second_cover_after_preserved_typed_neutral_gap
     (d ell b F0 m k0 k1 r1 : Nat)
     (hell : 2 ≤ ell) (hd : 0 < d)
