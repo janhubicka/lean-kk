@@ -313,6 +313,8 @@ import Kk.TwoPhysicalCanonicalCovers
 import Kk.ZeroTailPhysicalCoverSpacing
 -- Track B: actual unchanged complete typed neutral-gap physical cover bridge
 import Kk.PreservedTypedNeutralGap
+-- Track B: genuine positive support-clique blocks that preserve whole old age
+import Kk.AnchoredPositiveNeutralBlock
 -- Track C: exact verified finite cut-visible dependent source, bare/full
 -- selected skeleton and literal final Kpt closure; NOT a global BRD.
 import Kk.CutVisibleClosureAbsorption
