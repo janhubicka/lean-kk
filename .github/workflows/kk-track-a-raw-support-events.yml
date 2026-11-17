@@ -1,0 +1,53 @@
+name: KK Track A exact physical raw support transitions
+
+on:
+  pull_request:
+    paths:
+      - 'Kk/PartialNumericRawSupportEvents.lean'
+      - 'docs/partial_numeric_raw_support_events_english_audit.md'
+      - 'scripts/check_partial_numeric_raw_support_events.py'
+      - '.github/workflows/kk-track-a-raw-support-events.yml'
+  push:
+    branches: [kk-track-a-raw-support-transitions-20261117]
+  workflow_dispatch:
+
+concurrency:
+  group: kk-track-a-raw-support-events-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  physical-raw-events:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore pinned Lake workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve pinned dependencies
+        run: lake update
+      - name: Restore Mathlib cache
+        run: lake exe cache get
+      - name: Independent physical 26,880-case numerical capacity gate
+        run: python3 scripts/check_partial_numeric_single_jump.py
+      - name: Independent 197,120-case raw event iff/unit/saturation regression
+        run: python3 scripts/check_partial_numeric_raw_support_events.py
+      - name: Explicit build of merged one-jump age source
+        run: lake build Kk.PartialNumericSingleJumpAge
+      - name: Explicit build of actual raw-support cut-event theorem
+        run: lake build Kk.PartialNumericRawSupportEvents
+      - name: Strict fully qualified named standard-only axiom audit
+        run: |
+          set -euo pipefail
+          python3 scripts/check_axiom_report.py --self-test
+          lake env lean Kk/PartialNumericRawSupportEvents.lean | tee raw-events-axioms.log
+          python3 scripts/check_axiom_report.py Kk/PartialNumericRawSupportEvents.lean raw-events-axioms.log
+      - name: Full repository Lake build
+        run: lake build
