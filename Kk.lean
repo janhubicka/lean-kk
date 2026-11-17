@@ -302,6 +302,9 @@ import Kk.SupportImageAge
 import Kk.NeutralOriginalInterval
 import Kk.OriginalCriticalSupport
 
+-- Track B: exact finite chronology of critical-original raw age decreases.
+import Kk.OriginalCriticalCount
+
 /-!
 The counting project imports the verified successor-tree library.
 No local replacement of the Ramsey theorem is assumed.
