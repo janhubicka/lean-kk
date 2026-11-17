@@ -269,8 +269,12 @@ theorem rank_two_large_actualCoding_contains_triangle
     change x.level ∈ bx.neighbours
     change x.level ∈ insert x.level b.neighbours
     exact Finset.mem_insert_self _ _
+  have hxLtBz : x.level < bz.level := by
+    change x.level < K
+    have hBxLevel : bx.level = x.level + 1 := rfl
+    omega
   have hxInY : x.level ∈ y.neighbours :=
-    (hbzy.2 x.level (by omega)).mp hxInBz
+    (hbzy.2 x.level hxLtBz).mp hxInBz
   have hXYTrue : E x.level y.level = true := by
     have h := (hyCoding x.level hxy).1
     simpa [hxInY] using h
@@ -369,6 +373,7 @@ theorem rank_two_large_actualCoding_contains_triangle
   have hzCoding : IsCodingNode z := hActual z hzS
   have hyz : y.level < z.level := by
     have htLevel : t.level = y.level + 1 := rfl
+    have hZAfter : t.level ≤ z.level := htz.1
     omega
   have hxCX : x.level ∈ cx.neighbours := by
     change x.level ∈ insert x.level c.neighbours
