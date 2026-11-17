@@ -1,0 +1,7 @@
+import Kk.ConstructedBareFullPhysicalSource
+
+#check @Kk.finiteNumericH_construct_bare_full_root_same_source
+#print axioms Kk.finiteNumericH_construct_bare_full_root_same_source
+
+#check @Kk.finiteNumericH_construct_bare_full_common_source_index
+#print axioms Kk.finiteNumericH_construct_bare_full_common_source_index
