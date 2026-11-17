@@ -1,0 +1,13 @@
+import Kk.BareFullFinalSourceIdentity
+
+#check @Kk.envelope_bare_full_runs_final_closure_eq
+#print axioms Kk.envelope_bare_full_runs_final_closure_eq
+
+#check @Kk.envelope_bare_full_runs_cut_visible_eq
+#print axioms Kk.envelope_bare_full_runs_cut_visible_eq
+
+#check @Kk.finiteNumericH_bare_full_runs_final_source_eq
+#print axioms Kk.finiteNumericH_bare_full_runs_final_source_eq
+
+#check @Kk.finiteNumericH_bare_full_runs_all_cut_events_eq
+#print axioms Kk.finiteNumericH_bare_full_runs_all_cut_events_eq
