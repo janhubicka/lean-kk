@@ -178,10 +178,14 @@ K4 fixture an essential regression for the classifier.
 4. A factorization `F low=F high∘D` does not imply `D=id`.
    Individual boring steps can act nontrivially on full Kpt
    parameters, even while selected levels are unchanged.
-5. The data `D_i` are existential choices from
-   `noninteresting_step`; **uniqueness** of the aggregate D
-   or its agreement across two independently realized diary
-   occurrences is NOT proved.
+5. The data `D_i` are existential witnesses from
+   `noninteresting_step`. For a FIXED run R and fixed endpoints
+   low/high, the aggregate D is nevertheless UNIQUE: if
+   `F low = F high ∘ D = F high ∘ D'`, injectivity of `F high`
+   gives `D x = D' x` for every node x, and MMap extensionality
+   gives `D = D'`. This cancellation does NOT establish a
+   canonical choice or equality across different runs or diary
+   occurrences, or any bound on the factor's complexity or labels.
 6. The theorem applies to ONE actual AlgorithmRun, not
    simultaneously to arbitrary two runs. Common labels and
    inverse source orbits remain open.
@@ -216,11 +220,11 @@ K4 fixture an essential regression for the classifier.
 
 ## Lean acceptance
 
-Formalize both items in an independent Kk module importing
+Formalize all four endpoints in an independent Kk module importing
 the actual checked `SuccessorTree.EnvelopeRun` and
 `Kk.K4ActualAlgorithmRunCut10` sources, with no new axioms
 or `sorry`. Strict exact-head direct compilation,
-`#check`/`#print axioms` of both statements and
+`#check`/`#print axioms` of all four statements and
 the standard-only parser self-test must pass before adding
 any blue manuscript validation mark.
 
