@@ -2102,3 +2102,7 @@ import Kk
 #print axioms Kk.supportBlockGappedRawAndCanonical_eq_of_anchor
 #check @Kk.henson_leftDense_exists_anchored_positive_neutral_block
 #print axioms Kk.henson_leftDense_exists_anchored_positive_neutral_block
+
+-- Track B: three physical cover/neutral/cover stages in one unchanged Henson E
+#check @Kk.henson_leftDense_two_physical_covers_with_positive_neutral_block
+#print axioms Kk.henson_leftDense_two_physical_covers_with_positive_neutral_block
