@@ -1,0 +1,7 @@
+import Kk.TrackGBadCutIntervalCover
+
+#check @Kk.kpt_actual_missing_pair_forces_novel_cross
+#print axioms Kk.kpt_actual_missing_pair_forces_novel_cross
+
+#check @Kk.kpt_actual_bad_cut_terminal_or_novel_interval
+#print axioms Kk.kpt_actual_bad_cut_terminal_or_novel_interval
