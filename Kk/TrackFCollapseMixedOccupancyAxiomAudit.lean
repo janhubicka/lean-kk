@@ -1,0 +1,7 @@
+import Kk.TrackFCollapseMixedOccupancy
+
+#check @Kk.trackFCollapse_singletonBounds_preserve_raw
+#print axioms Kk.trackFCollapse_singletonBounds_preserve_raw
+
+#check @Kk.trackFCollapse_split_untouched_preserve_raw
+#print axioms Kk.trackFCollapse_split_untouched_preserve_raw
