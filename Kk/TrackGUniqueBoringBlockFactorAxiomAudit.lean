@@ -1,0 +1,7 @@
+import Kk.TrackGUniqueBoringBlockFactor
+
+#check @Kk.kpt_MMap_comp_left_cancel
+#print axioms Kk.kpt_MMap_comp_left_cancel
+
+#check @Kk.actualAlgorithmRun_genuinely_boring_block_unique_factor
+#print axioms Kk.actualAlgorithmRun_genuinely_boring_block_unique_factor
