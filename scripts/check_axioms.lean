@@ -2036,3 +2036,25 @@ import Kk
 #print axioms Kk.finiteNumericH_construct_bare_full_root_same_source
 #check @Kk.finiteNumericH_construct_bare_full_common_source_index
 #print axioms Kk.finiteNumericH_construct_bare_full_common_source_index
+
+-- Track B: ten exact-head verified finite critical-capacity and one Henson cover components
+#check @Kk.oldSupportCommonCapacity_insert_critical_exact
+#print axioms Kk.oldSupportCommonCapacity_insert_critical_exact
+#check @Kk.oldSupportCommonCapacity_eq_add_criticalCount
+#print axioms Kk.oldSupportCommonCapacity_eq_add_criticalCount
+#check @Kk.oldSupportCommonCapacity_lt_ell_of_safe
+#print axioms Kk.oldSupportCommonCapacity_lt_ell_of_safe
+#check @Kk.originalCriticalCount_add_final_raw_eq_initial_of_safe
+#print axioms Kk.originalCriticalCount_add_final_raw_eq_initial_of_safe
+#check @Kk.originalCriticalCount_zero_iff_raw_eq_of_safe
+#print axioms Kk.originalCriticalCount_zero_iff_raw_eq_of_safe
+#check @Kk.finiteOldColumnRawBound_interval_eq_of_zero_critical_count
+#print axioms Kk.finiteOldColumnRawBound_interval_eq_of_zero_critical_count
+#check @Kk.all_critical_count_zero_iff_raw_interval_eq_of_safe
+#print axioms Kk.all_critical_count_zero_iff_raw_interval_eq_of_safe
+#check @Kk.integerGraphAgeCanonical_interval_eq_of_zero_critical_count
+#print axioms Kk.integerGraphAgeCanonical_interval_eq_of_zero_critical_count
+#check @Kk.actual_prior_canonical_age_after_zero_critical_interval
+#print axioms Kk.actual_prior_canonical_age_after_zero_critical_interval
+#check @Kk.henson_leftDense_physical_cover_after_zero_critical_interval
+#print axioms Kk.henson_leftDense_physical_cover_after_zero_critical_interval
