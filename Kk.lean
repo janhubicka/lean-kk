@@ -304,6 +304,14 @@ import Kk.OriginalCriticalSupport
 
 -- Track B: exact finite chronology of critical-original raw age decreases.
 import Kk.OriginalCriticalCount
+-- Track C: exact verified finite cut-visible dependent source, bare/full
+-- selected skeleton and literal final Kpt closure; NOT a global BRD.
+import Kk.CutVisibleClosureAbsorption
+import Kk.BareFullRunSelectedEquivalence
+import Kk.BareFullFinalSourceIdentity
+-- Track C: physical root construction and one common exact source index.
+-- All old-column and actual forbidden-family hypotheses remain explicit.
+import Kk.ConstructedBareFullPhysicalSource
 
 /-!
 The counting project imports the verified successor-tree library.
