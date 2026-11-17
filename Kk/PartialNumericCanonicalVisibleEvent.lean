@@ -177,6 +177,11 @@ theorem finiteNumericH_partial_canonical_change_iff_saturating_raw_event
           (integerCliqueOnSupport (d := d) (ell := ell)) New w := by
       intro hNew
       have hAt := hNew U
+      have hImpossible : New U + 1 ≤ New U := by
+        calc
+          New U + 1 = Old U := hUnit.symm
+          _ = integerCliqueOnSupport w U := hSat.symm
+          _ ≤ New U := hAt
       omega
     exact hLost.mpr ⟨w,hOld,hNotNew⟩
 
