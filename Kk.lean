@@ -311,6 +311,8 @@ import Kk.CriticalNeutralPhysicalCover
 import Kk.TwoPhysicalCanonicalCovers
 -- Track B: exact zero-tail old-age buffers and deliberately spaced physical covers
 import Kk.ZeroTailPhysicalCoverSpacing
+-- Track B: actual unchanged complete typed neutral-gap physical cover bridge
+import Kk.PreservedTypedNeutralGap
 -- Track C: exact verified finite cut-visible dependent source, bare/full
 -- selected skeleton and literal final Kpt closure; NOT a global BRD.
 import Kk.CutVisibleClosureAbsorption
