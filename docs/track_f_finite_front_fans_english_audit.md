@@ -8,7 +8,7 @@ Fix actual graph table E and ell≥2. Let I=Fin d be an arbitrary FINITE set of 
 
 ## Conclusion
 
-For every sort i select a finite family F_i of exactly k_i descendants g≥u_i of rank n_i with S_i n_i-large above g. Within F_i the future cones are pairwise incompatible and their positive fresh marker sets `g.neighbours\u_i.neighbours` are pairwise disjoint. For ANY two distinct sorts i≠j, any g∈F_i and h∈F_j, the fresh positive marker sets are also DISJOINT. In particular no newly used old coordinate is positive for two distinct selected daughter sorts.
+For every sort i select a finite family F_i of exactly k_i descendants g≥u_i of rank n_i with S_i n_i-large above g. Within F_i the future cones are pairwise incompatible and their positive fresh marker sets `g.neighbours\u_i.neighbours` are pairwise disjoint. For ANY two distinct sorts i≠j, any g∈F_i and h∈F_j, the fresh positive marker sets are also DISJOINT. In particular, no coordinate belongs to the fresh positive marker sets of two distinct selected daughter sorts. A coordinate fresh for one sort may already belong to another root's old positive neighbourhood when their original levels differ.
 
 ## Inductive proof
 
