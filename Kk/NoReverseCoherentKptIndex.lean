@@ -75,6 +75,43 @@ theorem no_reverse_of_strict_cardinality
         reverse.map reverse.map_injective)
   omega
 
+
+/-- If EVERY old Kpt source node lies at or below oldTop, and one
+actual new indexed Kpt source node has height newTop > oldTop,
+the new node has no old literal representative. Hence a coherent
+reverse index map is impossible at any finite cut horizon.
+
+The old bound and the genuinely indexed NEW node are EXPLICIT
+hypotheses; a formal AlgorithmRun's chosen scan top alone does
+not prove either one. -/
+theorem no_reverse_of_new_root_above_old_bound
+    {db du dd : Nat}
+    {family : List (NormalizedForbidden db du dd)}
+    {P Q : Nat}
+    {nodeOld : Fin P → AdmissibleKptNode family}
+    {nodeNew : Fin Q → AdmissibleKptNode family}
+    {oldLive : Nat → Fin P → Bool}
+    {newLive : Nat → Fin Q → Bool}
+    (oldTop newTop : Nat)
+    (hOldBound : ∀ i : Fin P,
+      LevelTree.lev (nodeOld i) ≤ oldTop)
+    (j : Fin Q) (hNewLevel : LevelTree.lev (nodeNew j) = newTop)
+    (hStrict : oldTop < newTop)
+    (horizon : Nat) :
+    ¬ CoherentKptIndex family nodeNew nodeOld
+        newLive oldLive horizon := by
+  apply no_reverse_of_fresh_source
+    (hFresh := ?_) horizon
+  refine ⟨j, ?_⟩
+  intro i hEq
+  have hLevels :
+      LevelTree.lev (nodeNew j) =
+        LevelTree.lev (nodeOld i) :=
+    congrArg LevelTree.lev hEq
+  rw [hNewLevel] at hLevels
+  have hOld := hOldBound i
+  omega
+
 end CoherentKptIndex
 
 end Kk
