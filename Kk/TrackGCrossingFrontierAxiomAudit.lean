@@ -1,0 +1,16 @@
+import Kk.TrackGCrossingFrontier
+
+#check @Kk.kpt_actual_run_node_upper_covered
+#check @Kk.kpt_actual_node_crossing_novel
+
+#check @Kk.kpt_LevelTree_lower_ancestors_eq_of_higher_eq
+#print axioms Kk.kpt_LevelTree_lower_ancestors_eq_of_higher_eq
+
+#check @Kk.kpt_actual_run_preCut_source_mono_down
+#print axioms Kk.kpt_actual_run_preCut_source_mono_down
+
+#check @Kk.kpt_actual_run_node_upper_covered_mono_down
+#print axioms Kk.kpt_actual_run_node_upper_covered_mono_down
+
+#check @Kk.kpt_actual_node_crossing_novel_order_convex
+#print axioms Kk.kpt_actual_node_crossing_novel_order_convex
