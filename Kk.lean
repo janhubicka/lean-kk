@@ -309,6 +309,8 @@ import Kk.CriticalCountSafeAge
 import Kk.CriticalNeutralPhysicalCover
 -- Track B: two real successive Henson canonical age covers
 import Kk.TwoPhysicalCanonicalCovers
+-- Track B: exact zero-tail old-age buffers and deliberately spaced physical covers
+import Kk.ZeroTailPhysicalCoverSpacing
 -- Track C: exact verified finite cut-visible dependent source, bare/full
 -- selected skeleton and literal final Kpt closure; NOT a global BRD.
 import Kk.CutVisibleClosureAbsorption
