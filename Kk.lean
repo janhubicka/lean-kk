@@ -307,6 +307,8 @@ import Kk.OriginalCriticalCount
 -- Track B: exact full critical-capacity conservation and one real Henson cover after neutral originals
 import Kk.CriticalCountSafeAge
 import Kk.CriticalNeutralPhysicalCover
+-- Track B: two real successive Henson canonical age covers
+import Kk.TwoPhysicalCanonicalCovers
 -- Track C: exact verified finite cut-visible dependent source, bare/full
 -- selected skeleton and literal final Kpt closure; NOT a global BRD.
 import Kk.CutVisibleClosureAbsorption
