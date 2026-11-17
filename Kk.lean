@@ -317,6 +317,8 @@ import Kk.PreservedTypedNeutralGap
 import Kk.AnchoredPositiveNeutralBlock
 -- Track B: actual first cover, positive-neutral anchor stage, second cover
 import Kk.AnchoredPositiveCoverChain
+-- Track B: exact post-cover common capacity and selected full-anchor criticality
+import Kk.PhysicalCoverAnchorCriticality
 -- Track C: exact verified finite cut-visible dependent source, bare/full
 -- selected skeleton and literal final Kpt closure; NOT a global BRD.
 import Kk.CutVisibleClosureAbsorption
