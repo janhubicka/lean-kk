@@ -2030,3 +2030,9 @@ import Kk
 #print axioms Kk.finiteNumericH_bare_full_runs_final_source_eq
 #check @Kk.finiteNumericH_bare_full_runs_all_cut_events_eq
 #print axioms Kk.finiteNumericH_bare_full_runs_all_cut_events_eq
+
+-- Track C: exact verified physical new-root existence and common finite source index.
+#check @Kk.finiteNumericH_construct_bare_full_root_same_source
+#print axioms Kk.finiteNumericH_construct_bare_full_root_same_source
+#check @Kk.finiteNumericH_construct_bare_full_common_source_index
+#print axioms Kk.finiteNumericH_construct_bare_full_common_source_index
