@@ -1,0 +1,4 @@
+import Kk.TrackFPhysicalCollapseFeasibility
+
+#check @Kk.trackFPhysicalCollapse_cliqueFeasible
+#print axioms Kk.trackFPhysicalCollapse_cliqueFeasible

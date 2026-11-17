@@ -1,0 +1,45 @@
+name: KK Track F physical mixed-occupancy collapse
+on:
+  pull_request:
+    paths:
+      - 'Kk/TrackFPhysicalCollapseFeasibility.lean'
+      - 'Kk/TrackFPhysicalCollapseFeasibilityAxiomAudit.lean'
+      - 'docs/track_f_physical_collapse_english_audit.md'
+      - '.github/workflows/kk-track-f-physical-collapse.yml'
+  workflow_dispatch:
+concurrency:
+  group: kk-track-f-physical-collapse-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+jobs:
+  physical-collapse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache Lean toolchain
+        uses: actions/cache@v4
+        with:
+          path: ~/.elan/toolchains
+          key: lean-toolchain-${{ runner.os }}-${{ hashFiles('lean-toolchain') }}
+      - name: Restore Lean workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve dependencies
+        run: lake update
+      - name: Obtain Mathlib build cache
+        run: lake exe cache get
+      - name: Build physical full-support mixed-occupancy transfer
+        run: lake build Kk.TrackFPhysicalCollapseFeasibility
+      - name: Strict physical transfer standard-only axiom gate
+        run: |
+          set -euo pipefail
+          lake env lean Kk/TrackFPhysicalCollapseFeasibilityAxiomAudit.lean | tee track-f-physical-collapse-axioms.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py Kk/TrackFPhysicalCollapseFeasibilityAxiomAudit.lean track-f-physical-collapse-axioms.log
