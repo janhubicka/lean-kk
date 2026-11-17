@@ -69,12 +69,10 @@ theorem k4_sourceCodingFibre_continue_equal_rank_exact_level
   have hV0L : v0 ≤ vL :=
     le_restrictPrefix_of_le v0 vH hV0H L
       hOldLevel hCutoff
-  have hVLRk : rank vL = rank vH := by
-    apply rank_restrictPrefix_eq_of_endpoint_eq
-      v0 vH hV0H
-    · exact hOldRank.trans hVRank.symm
-    · exact hOldLevel
-    · exact hCutoff
+  have hVLRk : rank vL = rank vH :=
+    rank_restrictPrefix_eq_of_endpoint_eq
+      v0 vH hV0H (hOldRank.trans hVRank.symm)
+      L hOldLevel hCutoff
   have hVLRkU : rank vL = rank u :=
     hVLRk.trans hVRank
   have hVHL : vL ≤ vH :=
