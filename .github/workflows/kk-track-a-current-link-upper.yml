@@ -1,0 +1,54 @@
+name: KK Track A actual current-b original-link upper capacity
+
+on:
+  pull_request:
+    paths:
+      - 'Kk/PartialNumericCurrentLinkUpper.lean'
+      - 'docs/partial_numeric_current_link_upper_english_audit.md'
+      - '.github/workflows/kk-track-a-current-link-upper.yml'
+  push:
+    branches: [kk-track-a-partial-current-link-upper-20261115]
+  workflow_dispatch:
+
+concurrency:
+  group: kk-track-a-current-link-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  exact-current-link:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore pinned Lake workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve pinned dependencies
+        run: lake update
+      - name: Restore Mathlib cache
+        run: lake exe cache get
+      - name: Independent 26,880-case sharp-capacity regression
+        run: python3 scripts/check_partial_numeric_old_age.py
+      - name: Compile previous physical partial-prefix modules
+        run: |
+          lake build Kk.PartialNumericOldColumns
+          lake build Kk.PartialNumericCommonPool
+          lake build Kk.PartialNumericCapacityBounds
+          lake build Kk.PartialNumericGenerationHeight
+      - name: Compile physical current-original link capacity theorem
+        run: lake build Kk.PartialNumericCurrentLinkUpper
+      - name: Strict exact standard-only named axiom check
+        run: |
+          set -euo pipefail
+          python3 scripts/check_axiom_report.py --self-test
+          lake env lean Kk/PartialNumericCurrentLinkUpper.lean | tee current-link-axioms.log
+          python3 scripts/check_axiom_report.py Kk/PartialNumericCurrentLinkUpper.lean current-link-axioms.log
+      - name: Full repository Lean build
+        run: lake build
