@@ -81,7 +81,8 @@ theorem kpt_actual_run_preCut_source_mono_down
     intro q hq
     rw [R.I_eq_final_tail_of_run (high+1) (by omega)] at hq
     rw [R.I_eq_final_tail_of_run (low+1) (by omega)]
-    exact ⟨hq.1, by omega⟩
+    exact ⟨hq.1,
+      le_trans (Nat.add_le_add_right hLowHigh 1) hq.2⟩
   exact envelope_closure_mono_seeds_and_levels
     (admissibleKptSTree family)
     (R.I (high+1)) (R.I (low+1)) X X hLevel
