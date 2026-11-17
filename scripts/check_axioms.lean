@@ -2092,3 +2092,13 @@ import Kk
 #print axioms Kk.integerGraphAgeCanonical_eq_of_column_prefix
 #check @Kk.henson_leftDense_second_cover_after_preserved_typed_neutral_gap
 #print axioms Kk.henson_leftDense_second_cover_after_preserved_typed_neutral_gap
+
+-- Track B: genuinely positive physically isolated anchored age-neutral block
+#check @Kk.supportBlockRawBound_eq_of_dominated_capacity
+#print axioms Kk.supportBlockRawBound_eq_of_dominated_capacity
+#check @Kk.anchored_old_clique_dominates_new_capacity
+#print axioms Kk.anchored_old_clique_dominates_new_capacity
+#check @Kk.supportBlockGappedRawAndCanonical_eq_of_anchor
+#print axioms Kk.supportBlockGappedRawAndCanonical_eq_of_anchor
+#check @Kk.henson_leftDense_exists_anchored_positive_neutral_block
+#print axioms Kk.henson_leftDense_exists_anchored_positive_neutral_block
