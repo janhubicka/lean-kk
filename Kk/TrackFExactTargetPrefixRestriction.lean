@@ -66,6 +66,7 @@ theorem restrictPrefix_le
     restrictPrefix w L hL ≤ w := by
   refine ⟨hL, ?_⟩
   intro x hx
+  change x < L at hx
   change (x ∈ w.neighbours.filter (fun y => y < L) ↔
     x ∈ w.neighbours)
   simp [Finset.mem_filter, hx]
