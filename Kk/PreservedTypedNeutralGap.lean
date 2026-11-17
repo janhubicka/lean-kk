@@ -51,6 +51,58 @@ theorem supportBlockGappedColumn_eq_before_cut
   simp [supportBlockGappedColumn, supportBlockOldColumn,
     delayedOldColumn, hp, hNotQ]
 
+/-- True full old common-neighbour pools depend only on typed columns below N. -/
+theorem oldSupportCommonNeighbourPool_eq_of_column_prefix
+    {d : Nat} (N : Nat)
+    (c cNext : Nat → Fin d → Bool)
+    (hSame : ∀ p, p < N → ∀ t, c p t = cNext p t)
+    (U : Finset (Fin d)) :
+    oldSupportCommonNeighbourPool (Finset.range N) c U =
+      oldSupportCommonNeighbourPool (Finset.range N) cNext U := by
+  classical
+  ext p
+  change
+    (p ∈ (Finset.range N).filter
+      (fun q => ∀ t ∈ U, c q t = true)) ↔
+    (p ∈ (Finset.range N).filter
+      (fun q => ∀ t ∈ U, cNext q t = true))
+  simp only [Finset.mem_filter, Finset.mem_range]
+  constructor
+  · rintro ⟨hp, hAll⟩
+    refine ⟨hp, ?_⟩
+    intro t ht
+    rw [← hSame p hp t]
+    exact hAll t ht
+  · rintro ⟨hp, hAll⟩
+    refine ⟨hp, ?_⟩
+    intro t ht
+    rw [hSame p hp t]
+    exact hAll t ht
+
+/-- Full raw and canonical ages depend only on the complete typed
+column on the actual original prefix, not later extensions. -/
+theorem integerGraphAgeCanonical_eq_of_column_prefix
+    (E : Nat → Nat → Bool) (ell d N : Nat)
+    (c cNext : Nat → Fin d → Bool)
+    (hSame : ∀ p, p < N → ∀ t, c p t = cNext p t) :
+    integerGraphAgeCanonical d ell
+      (finiteOldColumnRawBound E ell d (Finset.range N) c) =
+    integerGraphAgeCanonical d ell
+      (finiteOldColumnRawBound E ell d (Finset.range N) cNext) := by
+  have hRaw :
+      finiteOldColumnRawBound E ell d (Finset.range N) c =
+      finiteOldColumnRawBound E ell d (Finset.range N) cNext := by
+    funext U
+    change ell - 1 -
+      finiteDirectedCliqueCapacity E
+        (oldSupportCommonNeighbourPool (Finset.range N) c U.1) =
+      ell - 1 -
+      finiteDirectedCliqueCapacity E
+        (oldSupportCommonNeighbourPool (Finset.range N) cNext U.1)
+    rw [oldSupportCommonNeighbourPool_eq_of_column_prefix
+      N c cNext hSame U.1]
+  rw [hRaw]
+
 /-- Conditional finite passage from a GENUINE first positive-support
 stage to one later physical canonical-age cover without resetting
 the old typed future column to zero.
@@ -74,7 +126,7 @@ theorem henson_leftDense_second_cover_after_preserved_typed_neutral_gap
     (hAvoid : ∀ bad, bad ∈ hensonForbiddenFamily ell hell →
       bad.Avoids (normalizedGraphModel E))
     (hDense : OnePointLeftDense E ell)
-    (c : Nat → Fin d → Bool)
+    (c cNext : Nat → Fin d → Bool)
     (Q0 W0 : Finset Nat)
     (T0 T1 : IntegerGraphSupport d ell)
     (lower middle : IntegerGraphSupport d ell → Nat)
@@ -84,10 +136,11 @@ theorem henson_leftDense_second_cover_after_preserved_typed_neutral_gap
     (hFirstAge : integerGraphAgeCanonical d ell
       (finiteOldColumnRawBound E ell d (Finset.range F0)
         (supportBlockGappedColumn b Q0 T0.1 c)) = middle)
+    (hNextPrefix : ∀ p, p < F0 → ∀ t,
+      cNext p t = supportBlockGappedColumn b Q0 T0.1 c p t)
     (hWBefore : ∀ w ∈ W0, w < F0+m)
     (hZero : ∀ U : IntegerGraphSupport d ell,
-      originalCriticalCount E ell d F0
-        (supportBlockGappedColumn b Q0 T0.1 c) U m = 0)
+      originalCriticalCount E ell d F0 cNext U m = 0)
     (hCover1 : AgeCover (IsIntegerGraphAge d ell) lower middle)
     (hEll1 : ell = lower T1 + r1 + 1)
     (hAt1 : middle T1 = lower T1 + 1) :
@@ -103,22 +156,25 @@ theorem henson_leftDense_second_cover_after_preserved_typed_neutral_gap
         E w q = false ∧ E q w = false) ∧
       (∀ w ∈ W0, ∀ t : Fin d,
         supportBlockGappedColumn (F0+m) Q1 T1.1
-          (supportBlockGappedColumn b Q0 T0.1 c) w t =
-        supportBlockGappedColumn b Q0 T0.1 c w t) ∧
+          cNext w t = cNext w t) ∧
       integerGraphAgeCanonical d ell
         (finiteOldColumnRawBound E ell d (Finset.range F1)
-          (supportBlockGappedColumn (F0+m) Q1 T1.1
-            (supportBlockGappedColumn b Q0 T0.1 c))) = lower ∧
+          (supportBlockGappedColumn (F0+m) Q1 T1.1 cNext)) = lower ∧
       HasUniformPositiveSupportStage E d ell b F0 k0 hd c Q0 T0 ∧
       HasUniformPositiveSupportStage E d ell (F0+m) F1 k1 hd
-        (supportBlockGappedColumn b Q0 T0.1 c) Q1 T1 := by
+        cNext Q1 T1 := by
   classical
+  have hNextAge :
+      integerGraphAgeCanonical d ell
+        (finiteOldColumnRawBound E ell d (Finset.range F0) cNext) = middle :=
+    (integerGraphAgeCanonical_eq_of_column_prefix E ell d F0
+      cNext (supportBlockGappedColumn b Q0 T0.1 c)
+      hNextPrefix).trans hFirstAge
   obtain ⟨Q1, F1, hCard, hWithin, hClique, hIso,
       hAge, _hFeasible, hSecondStage⟩ :=
     henson_leftDense_physical_cover_after_zero_critical_interval
       d ell F0 m k1 r1 hell hd E hAvoid hDense
-      (supportBlockGappedColumn b Q0 T0.1 c)
-      T1 lower middle hCover1 hEll1 hAt1 hFirstAge hZero
+      cNext T1 lower middle hCover1 hEll1 hAt1 hNextAge hZero
   refine ⟨Q1, F1, hCard, hWithin, hClique, hIso,
     ?_, ?_, ?_, hAge, hFirstStage, hSecondStage⟩
   · intro q0 hq0 q1 hq1
@@ -131,11 +187,12 @@ theorem henson_leftDense_second_cover_after_preserved_typed_neutral_gap
   · intro w hw t
     exact supportBlockGappedColumn_eq_before_cut
       (F0+m) Q1 T1.1
-      (supportBlockGappedColumn b Q0 T0.1 c)
-      (fun q hq => (hWithin q hq).1)
+      cNext (fun q hq => (hWithin q hq).1)
       w (hWBefore w hw) t
 
 #print axioms Kk.supportBlockGappedColumn_eq_before_cut
+#print axioms Kk.oldSupportCommonNeighbourPool_eq_of_column_prefix
+#print axioms Kk.integerGraphAgeCanonical_eq_of_column_prefix
 #print axioms Kk.henson_leftDense_second_cover_after_preserved_typed_neutral_gap
 
 end Kk
