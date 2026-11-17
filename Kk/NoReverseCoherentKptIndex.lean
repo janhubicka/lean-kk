@@ -43,9 +43,9 @@ theorem no_reverse_of_fresh_source
     (hFresh : ∃ j : Fin Q,
       ∀ i : Fin P, nodeNew j ≠ nodeOld i)
     (horizon : Nat) :
-    ¬ CoherentKptIndex family nodeNew nodeOld
-        newLive oldLive horizon := by
-  intro reverse
+    ¬ Nonempty (CoherentKptIndex family nodeNew nodeOld
+        newLive oldLive horizon) := by
+  rintro ⟨reverse⟩
   obtain ⟨j, hNotOld⟩ := hFresh
   exact (hNotOld (reverse.map j))
     ((reverse.same_node j).symm)
@@ -66,9 +66,9 @@ theorem no_reverse_of_strict_cardinality
     {newLive : Nat → Fin Q → Bool}
     (hCard : P < Q)
     (horizon : Nat) :
-    ¬ CoherentKptIndex family nodeNew nodeOld
-        newLive oldLive horizon := by
-  intro reverse
+    ¬ Nonempty (CoherentKptIndex family nodeNew nodeOld
+        newLive oldLive horizon) := by
+  rintro ⟨reverse⟩
   have hImpossible : Q ≤ P := by
     simpa only [Fintype.card_fin] using
       (Fintype.card_le_of_injective
@@ -98,8 +98,8 @@ theorem no_reverse_of_new_root_above_old_bound
     (j : Fin Q) (hNewLevel : LevelTree.lev (nodeNew j) = newTop)
     (hStrict : oldTop < newTop)
     (horizon : Nat) :
-    ¬ CoherentKptIndex family nodeNew nodeOld
-        newLive oldLive horizon := by
+    ¬ Nonempty (CoherentKptIndex family nodeNew nodeOld
+        newLive oldLive horizon) := by
   have hFresh :
       ∃ k : Fin Q, ∀ i : Fin P, nodeNew k ≠ nodeOld i := by
     refine ⟨j, ?_⟩
