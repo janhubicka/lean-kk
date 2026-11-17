@@ -1,0 +1,10 @@
+import Kk.TrackFK4FullSingletonTransport
+
+#check @Kk.HensonOneType.k4_singleton_rank_le_two
+#print axioms Kk.HensonOneType.k4_singleton_rank_le_two
+
+#check @Kk.HensonOneType.k4_sourceCodingFibre_continue_equal_rank
+#print axioms Kk.HensonOneType.k4_sourceCodingFibre_continue_equal_rank
+
+#check @Kk.HensonOneType.k4_sourceCodingFibre_continue_drop_rank
+#print axioms Kk.HensonOneType.k4_sourceCodingFibre_continue_drop_rank
