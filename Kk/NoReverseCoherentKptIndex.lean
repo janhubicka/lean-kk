@@ -100,17 +100,18 @@ theorem no_reverse_of_new_root_above_old_bound
     (horizon : Nat) :
     ¬ CoherentKptIndex family nodeNew nodeOld
         newLive oldLive horizon := by
-  apply no_reverse_of_fresh_source
-    (hFresh := ?_) horizon
-  refine ⟨j, ?_⟩
-  intro i hEq
-  have hLevels :
-      LevelTree.lev (nodeNew j) =
-        LevelTree.lev (nodeOld i) :=
-    congrArg LevelTree.lev hEq
-  rw [hNewLevel] at hLevels
-  have hOld := hOldBound i
-  omega
+  have hFresh :
+      ∃ k : Fin Q, ∀ i : Fin P, nodeNew k ≠ nodeOld i := by
+    refine ⟨j, ?_⟩
+    intro i hEq
+    have hLevels :
+        LevelTree.lev (nodeNew j) =
+          LevelTree.lev (nodeOld i) :=
+      congrArg LevelTree.lev hEq
+    rw [hNewLevel] at hLevels
+    have hOld := hOldBound i
+    omega
+  exact no_reverse_of_fresh_source hFresh horizon
 
 end CoherentKptIndex
 
