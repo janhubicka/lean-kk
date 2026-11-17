@@ -1,0 +1,7 @@
+import Kk.TrackFFibreCliqueTargetRank
+
+#check @Kk.HensonOneType.fibre_clique_card_le_target_manuscript_rank
+#print axioms Kk.HensonOneType.fibre_clique_card_le_target_manuscript_rank
+
+#check @Kk.HensonOneType.target_rank_ge_of_fibre_clique
+#print axioms Kk.HensonOneType.target_rank_ge_of_fibre_clique
