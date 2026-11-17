@@ -20,6 +20,8 @@ force D=id, or prove a uniform BRD upper bound.
 
 namespace Kk
 
+universe u v
+
 open SuccessorTree
 open SuccessorTree.SMTree
 
@@ -65,7 +67,7 @@ theorem actualAlgorithmRun_genuinely_boring_block_factors
               intro z
               rfl
           · have hilt : i < high :=
-              Nat.lt_of_le_of_ne hi hieq
+              lt_of_le_of_ne hi hieq
             have hitop : i < top :=
               lt_of_lt_of_le hilt hHigh
             have hiLow : low ≤ i := hlow
