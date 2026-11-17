@@ -51,6 +51,38 @@ Q≤P by finite cardinality. This does NOT prove Q>P for
 every physical root extension; that numerical inequality
 requires separate hypotheses on the actual source universes.
 
+## Theorem C: physical height-separated source obstruction
+
+There is a clean numerical-tree criterion that implies the
+fresh-node premise in theorem A. Suppose all actual old
+indexed Kpt source nodes have level at most \`oldTop\`,
+and the new index contains one genuine new source node of
+level \`newTop>oldTop\`. Then that new node is literally
+absent from the old list, because equality of Kpt nodes
+preserves their levels. Applying theorem A proves the
+reverse map cannot exist.
+
+**Crucial quantifier:** the old finite source height bound
+is an EXPLICIT hypothesis on EVERY old indexed source
+node, not merely the existence of one old seed at
+\`oldTop\`. The latter does NOT rule out older-seeded
+nodes of greater height if a formal AlgorithmRun has
+an artificially chosen scan top. Likewise the new
+level must belong to a real indexed source node,
+not simply to the numerical carrier. The theorem
+does NOT show these two hypotheses for all actual
+physical root extensions; future applications must
+derive them from true bounded source representations
+and an exhaustive new source index.
+
+This criterion prevents an incorrect proof tactic:
+treating coherent source transport along root GROWTH
+as if it were a bijective reindexing. The desired
+common labelled inverse source across distinct
+same-diary occurrences requires a different
+normalization construction, not two-sided maps
+between consecutive nested physical stages.
+
 ## Adversarial cases
 
 1. The existence of ONE genuinely new source node, even if
@@ -102,7 +134,7 @@ requires separate hypotheses on the actual source universes.
 
 ## Integration
 
-Create a new Lean module with exactly two named theorems,
+Create a new Lean module with exactly three named theorems,
 a strict exact-head direct-build/axiom gate, and independent
 full project CI. If successful, annotate the existing
 Track C OLIVE TODO as a mathematically certified negative
