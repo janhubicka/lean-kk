@@ -95,6 +95,65 @@ theorem actualAlgorithmRun_genuinely_boring_block_factors
     exact main (high-i) i rfl hlow hi
   exact hStages low le_rfl hLowHigh
 
+/-- A genuinely BORING cut leaves I unchanged but strictly changes
+the TOTAL actual monoid embedding F, since its skip-only one-level
+map D is not identity and the outer shape map F(i+1) is injective.
+
+Thus "boring" is NOT "no monoid map change", even in one run. -/
+theorem actualAlgorithmRun_boring_step_strictly_changes_map
+    {T : Type u} {Label : Type v}
+    [PartialOrder T] [LevelTree T]
+    {S : STree T Label}
+    (H : SMTree S) (X : Set T)
+    (top i : Nat)
+    (R : SMTree.Envelope.AlgorithmRun H X top)
+    (hi : i < top)
+    (hBoring : ¬ SMTree.Envelope.IsInterestingAt H
+      (SMTree.Envelope.closure S (R.I (i+1)) X) i) :
+    R.F i ≠ R.F (i+1) := by
+  intro hEq
+  obtain ⟨D,hSkip,_hCross,_hI,hFi⟩ :=
+    R.noninteresting_step i hi hBoring
+  obtain ⟨x,hx⟩ := H.level_nonempty i
+  have hAt : (R.F (i+1)) (D x) = (R.F (i+1)) x := by
+    have hAtEq : (R.F i) x = (R.F (i+1)) x :=
+      congrArg (fun f : MMap H => f x) hEq
+    rw [hFi] at hAtEq
+    simpa only [MMap.comp_apply] using hAtEq
+  have hDx : D x = x :=
+    (R.F (i+1)).map.injective hAt
+  have hiRange : i ∈ D.map.levelRange := by
+    change ∃ a : T, LevelTree.lev (D a) = i
+    exact ⟨x, by rw [hDx]; exact hx⟩
+  have hNotRange : i ∉ D.map.levelRange := by
+    change D.map.levelRange = {n : Nat | n ≠ i} at hSkip
+    rw [hSkip]
+    simp
+  exact hNotRange hiRange
+
+/-- The exact one-stage polarity of Algorithm 5.4:
+interesting ⇔ the total monoid embedding F is UNCHANGED,
+boring ⇔ F genuinely CHANGES (while the selected I-set is
+unchanged). No equality of independent diary occurrences follows. -/
+theorem actualAlgorithmRun_map_unchanged_iff_interesting
+    {T : Type u} {Label : Type v}
+    [PartialOrder T] [LevelTree T]
+    {S : STree T Label}
+    (H : SMTree S) (X : Set T)
+    (top i : Nat)
+    (R : SMTree.Envelope.AlgorithmRun H X top)
+    (hi : i < top) :
+    (R.F i = R.F (i+1)) ↔
+      SMTree.Envelope.IsInterestingAt H
+        (SMTree.Envelope.closure S (R.I (i+1)) X) i := by
+  constructor
+  · intro hEq
+    by_contra hBoring
+    exact (actualAlgorithmRun_boring_step_strictly_changes_map
+      H X top i R hi hBoring) hEq
+  · intro hInteresting
+    exact (R.interesting_step i hi hInteresting).2
+
 /-- In the literal finite numerical-H K4 fixture, NO proposed block
 containing either auxiliary cut 10 or 22 can be genuinely boring:
 both are selected by every qualifying actual AlgorithmRun with
