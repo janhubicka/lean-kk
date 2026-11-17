@@ -2058,3 +2058,7 @@ import Kk
 #print axioms Kk.actual_prior_canonical_age_after_zero_critical_interval
 #check @Kk.henson_leftDense_physical_cover_after_zero_critical_interval
 #print axioms Kk.henson_leftDense_physical_cover_after_zero_critical_interval
+
+-- Track B: real two-step finite physical Henson age cover composition
+#check @Kk.henson_leftDense_exists_two_physical_canonical_cover_stages
+#print axioms Kk.henson_leftDense_exists_two_physical_canonical_cover_stages
