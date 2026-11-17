@@ -24,6 +24,7 @@ universe u v
 
 open SuccessorTree
 open SuccessorTree.SMTree
+open SuccessorTree.V10
 
 /-- Every cut of a *genuinely* boring block leaves the selected
 I-set unchanged, and its successive skip-only M-maps compose
