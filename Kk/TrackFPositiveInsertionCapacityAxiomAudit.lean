@@ -1,0 +1,13 @@
+import Kk.TrackFPositiveInsertionCapacity
+
+#check @Kk.finiteDirectedCliqueCapacity_insert_le_succ_actual
+#print axioms Kk.finiteDirectedCliqueCapacity_insert_le_succ_actual
+
+#check @Kk.finiteDirectedCliqueCapacity_insert_eq_of_safe_mutual
+#print axioms Kk.finiteDirectedCliqueCapacity_insert_eq_of_safe_mutual
+
+#check @Kk.HensonOneType.le_appendPositive
+#print axioms Kk.HensonOneType.le_appendPositive
+
+#check @Kk.HensonOneType.rank_appendPositive_eq_of_capacity
+#print axioms Kk.HensonOneType.rank_appendPositive_eq_of_capacity
