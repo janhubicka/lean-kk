@@ -2004,8 +2004,12 @@ import Kk
 #print axioms Kk.finiteOldColumnRawBound_eq_sub_criticalCount
 
 -- Track B: true finite critical-count conservation and one physical cover after neutral interval
-#check @Kk.finiteOldColumnRawBound_final_positive_of_safe
-#print axioms Kk.finiteOldColumnRawBound_final_positive_of_safe
+#check @Kk.oldSupportCommonCapacity_insert_critical_exact
+#print axioms Kk.oldSupportCommonCapacity_insert_critical_exact
+#check @Kk.oldSupportCommonCapacity_eq_add_criticalCount
+#print axioms Kk.oldSupportCommonCapacity_eq_add_criticalCount
+#check @Kk.oldSupportCommonCapacity_lt_ell_of_safe
+#print axioms Kk.oldSupportCommonCapacity_lt_ell_of_safe
 #check @Kk.originalCriticalCount_add_final_raw_eq_initial_of_safe
 #print axioms Kk.originalCriticalCount_add_final_raw_eq_initial_of_safe
 #check @Kk.originalCriticalCount_zero_iff_raw_eq_of_safe
