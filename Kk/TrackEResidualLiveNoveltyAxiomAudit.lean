@@ -1,0 +1,19 @@
+import Kk.TrackEResidualLiveNovelty
+
+#check @Kk.KptOldLiveImageAt
+#check @Kk.KptResidualQuietAtBoringCut
+
+#check @Kk.kpt_novel_full_crossing_has_residual_new_witness
+#print axioms Kk.kpt_novel_full_crossing_has_residual_new_witness
+
+#check @Kk.kpt_new_terminal_at_old_boring_cut_is_residual
+#print axioms Kk.kpt_new_terminal_at_old_boring_cut_is_residual
+
+#check @Kk.kpt_indexed_quiet_iff_residual_quiet_at_boring_cut
+#print axioms Kk.kpt_indexed_quiet_iff_residual_quiet_at_boring_cut
+
+#check @Kk.actual_Kpt_boring_run_exact_index_has_no_old_live_terminal
+#print axioms Kk.actual_Kpt_boring_run_exact_index_has_no_old_live_terminal
+
+#check @Kk.actual_Kpt_twoIndex_offplan_iff_residual_live_quiet
+#print axioms Kk.actual_Kpt_twoIndex_offplan_iff_residual_live_quiet
