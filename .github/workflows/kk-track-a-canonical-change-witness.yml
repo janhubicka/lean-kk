@@ -1,0 +1,50 @@
+name: KK Track A canonical partial age change requires raw certificate
+
+on:
+  pull_request:
+    paths:
+      - 'Kk/PartialNumericCanonicalEventWitness.lean'
+      - 'docs/partial_numeric_canonical_change_witness_english_audit.md'
+      - '.github/workflows/kk-track-a-canonical-change-witness.yml'
+  push:
+    branches: [kk-track-a-canonical-change-witness-20261117]
+  workflow_dispatch:
+
+concurrency:
+  group: kk-track-a-canonical-event-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  necessary-raw-certificate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore pinned Lake workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve pinned dependencies
+        run: lake update
+      - name: Restore Mathlib cache
+        run: lake exe cache get
+      - name: Independent literal-H raw event iff/unit/saturation regression
+        run: python3 scripts/check_partial_numeric_raw_support_events.py
+      - name: Explicit build of verified physical raw event theorem
+        run: lake build Kk.PartialNumericRawSupportEvents
+      - name: Explicit build of canonical-change raw certificate
+        run: lake build Kk.PartialNumericCanonicalEventWitness
+      - name: Strict exact qualified standard-only named axiom audit
+        run: |
+          set -euo pipefail
+          python3 scripts/check_axiom_report.py --self-test
+          lake env lean Kk/PartialNumericCanonicalEventWitness.lean | tee canonical-event-axioms.log
+          python3 scripts/check_axiom_report.py Kk/PartialNumericCanonicalEventWitness.lean canonical-event-axioms.log
+      - name: Full repository Lake build
+        run: lake build
