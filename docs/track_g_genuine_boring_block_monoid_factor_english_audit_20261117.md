@@ -91,6 +91,80 @@ If the cut were boring, the genuine
 the genuine complete source test, NOT a user-supplied
 age value or a new finite computation.
 
+## Stronger adversarial theorem: every genuinely boring cut changes F
+
+This is the correct mathematical warning against mistaking a
+boring block for **equality of total Kpt monoid maps**.
+
+For a real AlgorithmRun R at top t and cut i<t, write
+`Z_i=closure_(R.I(i+1))(X)`. If the genuine full
+`IsInterestingAt(H,Z_i,i)` is FALSE, the actual recursion
+supplies a skip-only map D_i with
+
+```
+R.F i = MMap.comp H (R.F (i+1)) D_i,
+D_i.map.SkipsOnly i.
+```
+
+**Theorem:** `R.F i ≠ R.F(i+1)`.
+For suppose equality held. For each tree node x, we
+would have
+`R.F(i+1)(D_i x)=R.F(i+1)(x)`. Since the genuine
+`ShapeMap` underlying `R.F(i+1)` is injective,
+`D_i x=x` for EVERY x. But `H.level_nonempty i`
+supplies a genuine Kpt node x of level i. Then
+`D_i x=x` puts i in `D_i.map.levelRange`,
+contradicting `D_i.map.SkipsOnly i`.
+
+Conversely at a genuinely **interesting** cut the
+recorded step law gives `R.F i=R.F(i+1)`.
+Therefore we have the **exact one-stage classification**
+
+```
+R.F i = R.F(i+1)
+   iff IsInterestingAt(H, closure_(R.I(i+1))(X), i).
+```
+
+Notice the polarity: **boring** ⇒ `I` unchanged and
+`F` changed; **interesting** ⇒ `I` adds the cut and
+`F` unchanged. This is a consequence of the actual
+Algorithm 5.4 step laws plus M-map injectivity, not an
+assumption about numerical-H source geometry.
+
+The previously proposed finite boring-block factorization
+remains correct but is much weaker as a *compression*
+principle than its name might suggest. Indeed the existence
+of some accumulated factor `D` would hold over **every**
+finite AlgorithmRun block, by using identity factors at
+interesting steps and the recorded skip-only factors at
+boring steps. The genuinely boring-block-specific conclusion
+is the equality of the SELECTED `I` sets. The composite
+`D` can remember arbitrarily much stage information and
+cannot simply be erased. A true source-label compression
+must compare the ASSIGNED full Kpt monoid maps or their
+restriction to the relevant finite labelled inverse
+carriers, not only the selected levels or an aggregate
+factorization. We explicitly reject "boring ⇒ F unchanged".
+
+The K4 actual cuts 10 and 22 are interesting, so there
+the total F map remains equal across the stage while the
+I-set changes. This consistent polarity makes the genuine
+K4 fixture an essential regression for the classifier.
+
+**Additional hostile checks:**
+- M2/M3 tree nonemptiness is used via `SMTree.level_nonempty`;
+  without a level-i node, skip-only might not prove a
+  pointwise map change at that coordinate.
+- The injectivity argument is for the TOTAL shape map
+  `(R.F (i+1)).map`, not an ordinary-L graph-age quotient.
+- If the cut is interesting then F equality follows
+  definitionally from the actual run, but it does not
+  imply a complete match of physical source labels
+  between two unrelated occurrences.
+- The exact iff is for a SINGLE genuine run at a fixed
+  cut `i<t`, and does not certify a global unbounded
+  Kpt diary source orbit.
+
 ## Hostile audit: limits and false shortcuts
 
 1. The hypothesis must be the actual full
