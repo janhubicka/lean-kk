@@ -1,0 +1,7 @@
+import Kk.TrackFColouredRankLargeFan
+
+#check @Kk.HensonOneType.rank_large_coloured_finite_fan
+#print axioms Kk.HensonOneType.rank_large_coloured_finite_fan
+
+#check @Kk.HensonOneType.rank_large_coloured_finite_fan_avoiding
+#print axioms Kk.HensonOneType.rank_large_coloured_finite_fan_avoiding
