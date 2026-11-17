@@ -2002,3 +2002,21 @@ import Kk
 #print axioms Kk.originalCriticalCount_succ
 #check @Kk.finiteOldColumnRawBound_eq_sub_criticalCount
 #print axioms Kk.finiteOldColumnRawBound_eq_sub_criticalCount
+
+-- Track B: true finite critical-count conservation and one physical cover after neutral interval
+#check @Kk.finiteOldColumnRawBound_final_positive_of_safe
+#print axioms Kk.finiteOldColumnRawBound_final_positive_of_safe
+#check @Kk.originalCriticalCount_add_final_raw_eq_initial_of_safe
+#print axioms Kk.originalCriticalCount_add_final_raw_eq_initial_of_safe
+#check @Kk.originalCriticalCount_zero_iff_raw_eq_of_safe
+#print axioms Kk.originalCriticalCount_zero_iff_raw_eq_of_safe
+#check @Kk.finiteOldColumnRawBound_interval_eq_of_zero_critical_count
+#print axioms Kk.finiteOldColumnRawBound_interval_eq_of_zero_critical_count
+#check @Kk.all_critical_count_zero_iff_raw_interval_eq_of_safe
+#print axioms Kk.all_critical_count_zero_iff_raw_interval_eq_of_safe
+#check @Kk.integerGraphAgeCanonical_interval_eq_of_zero_critical_count
+#print axioms Kk.integerGraphAgeCanonical_interval_eq_of_zero_critical_count
+#check @Kk.actual_prior_canonical_age_after_zero_critical_interval
+#print axioms Kk.actual_prior_canonical_age_after_zero_critical_interval
+#check @Kk.henson_leftDense_physical_cover_after_zero_critical_interval
+#print axioms Kk.henson_leftDense_physical_cover_after_zero_critical_interval
