@@ -65,7 +65,7 @@ theorem finiteNumericH_partial_current_clique_card_le_link_cap
           (finiteNumericHL (normalizedGraphModel E) k M).binary
             (hPosition k b q) (hPosition k b m)
             (0 : Fin 1) = true := by
-        rw [←hEq]
+        rw [hEq]
         exact hc z hzS v hv hzNe
       have hZero :
           (finiteNumericHL (normalizedGraphModel E) k M).binary
@@ -104,13 +104,13 @@ theorem finiteNumericH_partial_current_clique_card_le_link_cap
         (finiteNumericHL (normalizedGraphModel E) k M).binary
           (hPosition k i' q) (hPosition k b m)
           (0 : Fin 1) = true := by
-      rw [←hZ]
+      rw [hZ]
       exact hc z hzS v hv hzNe
     have hE :=
       (finiteNumericH_real_positive_projects_original
         E k M i' b q m hq hmLe hEdge).2
     have hiEq : i = i' := hIz.symm.trans hDecode
-    subst i
+    rw [hiEq]
     exact Finset.mem_filter.mpr ⟨hi',hE⟩
   have hCapBound := directedClique_card_le_capacity
     E (P.filter (fun i => E i b = true))
