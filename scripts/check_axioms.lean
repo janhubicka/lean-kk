@@ -1942,3 +1942,27 @@ import Kk
 #print axioms Kk.physical_lower_real_cut_positive_iff
 #check @Kk.finiteNumericH_eligible_lower_cut_neighbour_is_higher
 #print axioms Kk.finiteNumericH_eligible_lower_cut_neighbour_is_higher
+
+-- Track D 11 source-exact previously dedicated-tested finite results; not global BRDs.
+#check @Kk.henson_actualRun_I3_good_marked_has_unmarked_higher_same_clique
+#print axioms Kk.henson_actualRun_I3_good_marked_has_unmarked_higher_same_clique
+#check @Kk.henson_fullB3_of_lower_real_base_covered_marked_source
+#print axioms Kk.henson_fullB3_of_lower_real_base_covered_marked_source
+#check @Kk.henson_actualRun_lower_real_unselected_of_base_covered_marked_B3
+#print axioms Kk.henson_actualRun_lower_real_unselected_of_base_covered_marked_B3
+#check @Kk.finiteOldColumnRawBound_support_mono
+#print axioms Kk.finiteOldColumnRawBound_support_mono
+#check @Kk.k4TrackD_empty_old_pool_clique_capacity
+#print axioms Kk.k4TrackD_empty_old_pool_clique_capacity
+#check @Kk.k4_canonical_singleton_le_two_iff_old_neighbour
+#print axioms Kk.k4_canonical_singleton_le_two_iff_old_neighbour
+#check @Kk.kpt_old_ordinary_bit_separation_forces_full_old_distinct
+#print axioms Kk.kpt_old_ordinary_bit_separation_forces_full_old_distinct
+#check @Kk.kpt_no_I2_of_all_upper_mismatches_have_old_L_bit
+#print axioms Kk.kpt_no_I2_of_all_upper_mismatches_have_old_L_bit
+#check @Kk.finiteNumericH_run_no_I2_of_indexed_old_L_bit_separators
+#print axioms Kk.finiteNumericH_run_no_I2_of_indexed_old_L_bit_separators
+#check @Kk.kpt_old_ordinary_bit_certificate_of_named_numeric_originals
+#print axioms Kk.kpt_old_ordinary_bit_certificate_of_named_numeric_originals
+#check @Kk.kpt_old_raw_types_distinct_of_named_numeric_originals
+#print axioms Kk.kpt_old_raw_types_distinct_of_named_numeric_originals

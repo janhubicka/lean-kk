@@ -289,6 +289,14 @@ import Kk.ActualRunOddFiniteIndex
 import Kk.ActualRunStructuralOrLowerReal
 import Kk.PhysicalLowerRealCutNeighbour
 
+-- Track D: 11 exact tested finite source-closure, B3, and full I2 endpoints.
+import Kk.B3ActualI3UnmarkedHigherGeneration
+import Kk.B3LowerRealBaseCoverage
+import Kk.ActualRunLowerRealNoI3OfBaseCoverage
+import Kk.K4SingletonOldNeighbour
+import Kk.FullKptOldLBitNoFork
+import Kk.K4PhysicalOldBitToKptCertificate
+
 /-!
 The counting project imports the verified successor-tree library.
 No local replacement of the Ramsey theorem is assumed.
