@@ -2066,3 +2066,19 @@ import Kk
 -- Track C: exact one-way full physical Kpt source-name injection.
 #check @Kk.finiteNumericH_constructed_old_new_coherent_source_index
 #print axioms Kk.finiteNumericH_constructed_old_new_coherent_source_index
+
+-- Track B: zero-tail complete old support and arbitrarily spaced actual finite covers
+#check @Kk.oldColumnZeroTail
+#print axioms Kk.oldColumnZeroTail
+#check @Kk.oldSupportCommonNeighbourPool_zeroTail
+#print axioms Kk.oldSupportCommonNeighbourPool_zeroTail
+#check @Kk.finiteOldColumnRawBound_zeroTail
+#print axioms Kk.finiteOldColumnRawBound_zeroTail
+#check @Kk.finiteOldColumnRawBound_zeroTail_fun
+#print axioms Kk.finiteOldColumnRawBound_zeroTail_fun
+#check @Kk.integerGraphAgeCanonical_zeroTail
+#print axioms Kk.integerGraphAgeCanonical_zeroTail
+#check @Kk.henson_leftDense_exists_physical_cover_after_zeroTail
+#print axioms Kk.henson_leftDense_exists_physical_cover_after_zeroTail
+#check @Kk.henson_leftDense_exists_two_physical_covers_with_zero_gap
+#print axioms Kk.henson_leftDense_exists_two_physical_covers_with_zero_gap
