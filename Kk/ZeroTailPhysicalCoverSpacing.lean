@@ -22,16 +22,15 @@ inverse-source orbit is asserted.
 
 namespace Kk
 
-/-- Keep actual old full typed columns below b, zero EVERY future
-original's column from b onward. Does not alter the original E graph. -/
-def oldColumnZeroTail {d : Nat} (b : Nat)
-    (c : Nat → Fin d → Bool) (p : Nat) (t : Fin d) : Bool :=
-  if p < b then c p t else false
+/-- Backwards-compatible Track B name. This is EXACTLY the older
+\`delayedOldColumn\` function, not another neutralization operation. -/
+abbrev oldColumnZeroTail {d : Nat} (b : Nat)
+    (c : Nat → Fin d → Bool) : Nat → Fin d → Bool :=
+  delayedOldColumn b c
 
-/-- On a genuine nonempty support, the complete common-old-neighbour
-pool after zeroing every later column is literally fixed at the
-chosen original cut b. This includes every original (not just a
-selected macrodiary subsequence). -/
+/-- Common neighbour-pool equality for the same zero-tail operation
+already verified in \`CofinalNeutralOldColumnAge\`. The support is
+admissible/nonempty; the empty-support assertion would be false. -/
 theorem oldSupportCommonNeighbourPool_zeroTail
     (d ell b N : Nat)
     (c : Nat → Fin d → Bool)
@@ -40,31 +39,10 @@ theorem oldSupportCommonNeighbourPool_zeroTail
     oldSupportCommonNeighbourPool (Finset.range N)
       (oldColumnZeroTail b c) U.1 =
     oldSupportCommonNeighbourPool (Finset.range b) c U.1 := by
-  classical
-  ext p
-  change
-    p ∈ (Finset.range N).filter
-      (fun q => ∀ t ∈ U.1, oldColumnZeroTail b c q t = true) ↔
-    p ∈ (Finset.range b).filter
-      (fun q => ∀ t ∈ U.1, c q t = true)
-  simp only [Finset.mem_filter, Finset.mem_range]
-  constructor
-  · rintro ⟨hPN, hAll⟩
-    have hPB : p < b := by
-      by_contra hNot
-      obtain ⟨t, ht⟩ := U.2.1
-      have hColumn := hAll t ht
-      simp [oldColumnZeroTail, hNot] at hColumn
-    refine ⟨hPB, ?_⟩
-    intro t ht
-    simpa [oldColumnZeroTail, hPB] using hAll t ht
-  · rintro ⟨hPB, hAll⟩
-    refine ⟨lt_of_lt_of_le hPB hBN, ?_⟩
-    intro t ht
-    simpa [oldColumnZeroTail, hPB] using hAll t ht
+  exact delayedOldCommonNeighbourPool_eq b N hBN c U
 
-/-- Exact literal RAW support equality after any finite zero-column
-gap. No graph symmetry, Henson avoidance or other safety is needed. -/
+/-- Compatibility wrapper for the literal RAW support equality.
+No extra original or Henson hypothesis is introduced. -/
 theorem finiteOldColumnRawBound_zeroTail
     (E : Nat → Nat → Bool) (ell d b N : Nat)
     (c : Nat → Fin d → Bool)
@@ -73,17 +51,9 @@ theorem finiteOldColumnRawBound_zeroTail
     finiteOldColumnRawBound E ell d (Finset.range N)
       (oldColumnZeroTail b c) U =
     finiteOldColumnRawBound E ell d (Finset.range b) c U := by
-  change ell - 1 -
-      finiteDirectedCliqueCapacity E
-        (oldSupportCommonNeighbourPool (Finset.range N)
-          (oldColumnZeroTail b c) U.1) =
-    ell - 1 -
-      finiteDirectedCliqueCapacity E
-        (oldSupportCommonNeighbourPool (Finset.range b) c U.1)
-  rw [oldSupportCommonNeighbourPool_zeroTail d ell b N c U hBN]
+  exact congrFun (delayedOldRawBound_eq E ell d b N hBN c) U
 
-/-- Pointwise equality of the entire RAW old age, as a function on
-ALL admissible nonempty future-sort supports. -/
+/-- Whole RAW age, reusing the already verified delayed-column theorem. -/
 theorem finiteOldColumnRawBound_zeroTail_fun
     (E : Nat → Nat → Bool) (ell d b N : Nat)
     (c : Nat → Fin d → Bool)
@@ -91,13 +61,9 @@ theorem finiteOldColumnRawBound_zeroTail_fun
     finiteOldColumnRawBound E ell d (Finset.range N)
         (oldColumnZeroTail b c) =
       finiteOldColumnRawBound E ell d (Finset.range b) c := by
-  funext U
-  exact finiteOldColumnRawBound_zeroTail E ell d b N c U hBN
+  exact delayedOldRawBound_eq E ell d b N hBN c
 
-/-- The WHOLE integer-witness CANONICAL reference age is fixed
-through arbitrarily long later original intervals with true ZERO
-future columns. This is an age-level statement, not a preservation
-theorem for earlier positive selected witnesses beyond the cut. -/
+/-- Whole canonical age, by the earlier physical zero-padding theorem. -/
 theorem integerGraphAgeCanonical_zeroTail
     (E : Nat → Nat → Bool) (ell d b N : Nat)
     (c : Nat → Fin d → Bool)
@@ -107,7 +73,7 @@ theorem integerGraphAgeCanonical_zeroTail
         (oldColumnZeroTail b c)) =
     integerGraphAgeCanonical d ell
       (finiteOldColumnRawBound E ell d (Finset.range b) c) := by
-  rw [finiteOldColumnRawBound_zeroTail_fun E ell d b N c hBN]
+  exact delayedOldCanonicalAge_eq E ell d b N hBN c
 
 /-- A GENUINE physical Henson canonical cover can be placed beyond
 ANY prescribed later original cutoff N≥b by zeroing the chosen
