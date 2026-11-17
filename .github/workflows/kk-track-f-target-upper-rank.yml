@@ -1,0 +1,45 @@
+name: KK Track F source old clique certificate target rank
+on:
+  pull_request:
+    paths:
+      - 'Kk/TrackFTargetUpperRankCertificate.lean'
+      - 'Kk/TrackFTargetUpperRankCertificateAxiomAudit.lean'
+      - 'docs/track_f_target_upper_rank_certificate_english_audit.md'
+      - '.github/workflows/kk-track-f-target-upper-rank.yml'
+  workflow_dispatch:
+concurrency:
+  group: kk-track-f-target-upper-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+jobs:
+  source-certificate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache Lean toolchain
+        uses: actions/cache@v4
+        with:
+          path: ~/.elan/toolchains
+          key: lean-toolchain-${{ runner.os }}-${{ hashFiles('lean-toolchain') }}
+      - name: Restore Lean workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve dependencies
+        run: lake update
+      - name: Obtain Mathlib build cache
+        run: lake exe cache get
+      - name: Build transported old-clique target rank comparison
+        run: lake build Kk.TrackFTargetUpperRankCertificate
+      - name: Strict three-theorem standard-only axiom gate
+        run: |
+          set -euo pipefail
+          lake env lean Kk/TrackFTargetUpperRankCertificateAxiomAudit.lean | tee track-f-target-upper-axioms.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py Kk/TrackFTargetUpperRankCertificateAxiomAudit.lean track-f-target-upper-axioms.log
