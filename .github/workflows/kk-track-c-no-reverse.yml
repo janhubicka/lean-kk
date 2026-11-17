@@ -36,7 +36,7 @@ jobs:
         run: lake exe cache get
       - name: Compile reverse-source obstruction module
         run: lake build Kk.NoReverseCoherentKptIndex
-      - name: Strict two-theorem standard-only axiom audit
+      - name: Strict three-theorem standard-only axiom audit
         run: |
           set -euo pipefail
           lake env lean Kk/TrackCNoReverseIndexAxiomAudit.lean | tee track-c-no-reverse-axioms.log
