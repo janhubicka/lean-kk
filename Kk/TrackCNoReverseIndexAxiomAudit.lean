@@ -5,3 +5,6 @@ import Kk.NoReverseCoherentKptIndex
 
 #check @Kk.CoherentKptIndex.no_reverse_of_strict_cardinality
 #print axioms Kk.CoherentKptIndex.no_reverse_of_strict_cardinality
+
+#check @Kk.CoherentKptIndex.no_reverse_of_new_root_above_old_bound
+#print axioms Kk.CoherentKptIndex.no_reverse_of_new_root_above_old_bound
