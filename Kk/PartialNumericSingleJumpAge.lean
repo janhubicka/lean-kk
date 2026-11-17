@@ -46,14 +46,14 @@ theorem partialNumeric_max_min_eq_single_jump
           min_eq_right (by omega)
         have hMax : max p (1+p) = 1+p :=
           max_eq_right (by omega)
-        simp [hEligible,hPg,hMin,hMax]
+        simp [hEligible,hPg,hMin,hMax] <;> omega
       · have hLe : min g (1+p) ≤ p := by
           have hBound := min_le_left g (1+p)
           omega
         have hMax : max p (min g (1+p)) = p :=
           max_eq_left hLe
         simp [hEligible,hPg,hMax]
-    · have hStrict : c+1 ≤ p := by omega
+    · have hStrict : 1+c ≤ p := by omega
       have hLe : min g (1+c) ≤ p :=
         (min_le_right g (1+c)).trans hStrict
       have hMax : max p (min g (1+c)) = p :=
