@@ -1,0 +1,44 @@
+name: KK Track C constructed old/new source injection
+
+on:
+  pull_request:
+    paths:
+      - 'Kk/ConstructedPhysicalOldNewSourceIndex.lean'
+      - 'Kk/TrackCConstructedOldNewIndexAxiomAudit.lean'
+      - 'docs/track_c_constructed_physical_old_new_index_english_audit.md'
+      - '.github/workflows/kk-track-c-physical-old-new-index.yml'
+  workflow_dispatch:
+
+jobs:
+  physical-old-new-kernel:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache Lean toolchain
+        uses: actions/cache@v4
+        with:
+          path: ~/.elan/toolchains
+          key: lean-toolchain-${{ runner.os }}-${{ hashFiles('lean-toolchain') }}
+      - name: Restore Lean workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve dependencies
+        run: lake update
+      - name: Obtain Mathlib build cache
+        run: lake exe cache get
+      - name: Compile genuine physical source-name injection
+        run: lake build Kk.ConstructedPhysicalOldNewSourceIndex
+      - name: Strict one-theorem standard-only axiom gate
+        run: |
+          set -euo pipefail
+          lake env lean Kk/TrackCConstructedOldNewIndexAxiomAudit.lean | tee track-c-old-new-index-axioms.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py Kk/TrackCConstructedOldNewIndexAxiomAudit.lean track-c-old-new-index-axioms.log
