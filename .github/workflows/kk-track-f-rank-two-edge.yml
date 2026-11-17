@@ -1,0 +1,45 @@
+name: KK Track F actual rank-two edge richness
+on:
+  pull_request:
+    paths:
+      - 'Kk/TrackFRankTwoActualEdgeRichness.lean'
+      - 'Kk/TrackFRankTwoActualEdgeRichnessAxiomAudit.lean'
+      - 'docs/track_f_rank_two_rich_edge_english_audit.md'
+      - '.github/workflows/kk-track-f-rank-two-edge.yml'
+  workflow_dispatch:
+concurrency:
+  group: kk-track-f-edge-richness-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+jobs:
+  rank-two-edge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache Lean toolchain
+        uses: actions/cache@v4
+        with:
+          path: ~/.elan/toolchains
+          key: lean-toolchain-${{ runner.os }}-${{ hashFiles('lean-toolchain') }}
+      - name: Restore Lean workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve dependencies
+        run: lake update
+      - name: Obtain Mathlib build cache
+        run: lake exe cache get
+      - name: Build actual rank-two edge richness
+        run: lake build Kk.TrackFRankTwoActualEdgeRichness
+      - name: Strict actual edge richness standard-only axiom gate
+        run: |
+          set -euo pipefail
+          lake env lean Kk/TrackFRankTwoActualEdgeRichnessAxiomAudit.lean | tee track-f-rank-two-edge-axioms.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py Kk/TrackFRankTwoActualEdgeRichnessAxiomAudit.lean track-f-rank-two-edge-axioms.log
