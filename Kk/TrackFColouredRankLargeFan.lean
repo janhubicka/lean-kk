@@ -112,7 +112,7 @@ theorem rank_large_coloured_finite_fan_avoiding
   have hDiff' :
       RankLargeness.Large rank
         (S \ (↑bad : Set (HensonOneType ell E))) (n + 1) u' := by
-    simpa only [hu'] using hDiff
+    simpa only [hu] using hDiff
   obtain ⟨j, w, F, hu'w, hHeight, hwRank,
     _hwFibre, hCard, hMembers, hSeparated⟩ :=
     rank_large_coloured_finite_fan
@@ -128,10 +128,9 @@ theorem rank_large_coloured_finite_fan_avoiding
         x ∈ (S \ (↑bad : Set (HensonOneType ell E))) ∧
         colour x = j}
       n d hRankD hLargeD
-  have hxParts := Set.mem_diff.mp hx.1
+  have hxS : x ∈ S := hx.1.1
   have hxBad : x ∉ bad := by
-    intro hbad
-    exact hxParts.2 (by simpa using hbad)
-  exact ⟨x, hdx, hxParts.1, hxBad, hx.2⟩
+    simpa using hx.1.2
+  exact ⟨x, hdx, hxS, hxBad, hx.2⟩
 
 end Kk.HensonOneType
