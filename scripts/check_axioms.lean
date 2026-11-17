@@ -2106,3 +2106,9 @@ import Kk
 -- Track B: three physical cover/neutral/cover stages in one unchanged Henson E
 #check @Kk.henson_leftDense_two_physical_covers_with_positive_neutral_block
 #print axioms Kk.henson_leftDense_two_physical_covers_with_positive_neutral_block
+
+-- Track B: saturated real cover anchor and critical full-anchor-linked positive original
+#check @Kk.real_cover_anchor_common_capacity_exact
+#print axioms Kk.real_cover_anchor_common_capacity_exact
+#check @Kk.real_cover_later_full_anchor_link_is_critical
+#print axioms Kk.real_cover_later_full_anchor_link_is_critical
