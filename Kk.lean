@@ -315,3 +315,7 @@ No local replacement of the Ramsey theorem is assumed.
 import Kk.CutVisibleClosureAbsorption
 import Kk.BareFullRunSelectedEquivalence
 import Kk.BareFullFinalSourceIdentity
+
+-- Track C: real physical construction and one shared exact full Kpt source index.
+-- All old-column and actual forbidden-family hypotheses stay explicit.
+import Kk.ConstructedBareFullPhysicalSource
