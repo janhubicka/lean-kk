@@ -14,21 +14,29 @@ For the full chronological original interval [b,b+m), let C_{b,m}(U) be the **ac
  B_{b+m}(U)=B_b(U)\mathbin{\dot-}C_{b,m}(U).
 \]
 
-## New theorem A — physical forbidden-free prefixes eliminate saturation
+## New theorem A — physical forbidden-free prefixes give nonsaturated capacity counting
 
-Assume the **actual final original prefix** [0,b+m) has no K_ell, expressed by the executable complete finite pool test
+**Important correction found by the first Lean audit.** A K_ell-free old prefix may already contain a K_(ell-1). For example, a triangle is allowed in a K4-free original graph; if all three vertices are future neighbours at a support U, its raw bound is already 3-3=0. Therefore it is FALSE that every full future-support raw bound of a K_ell-free old prefix is positive, and the first proposed proof was invalid. The corrected argument uses clique capacities directly, not a positive raw bound.
+
+The exact criticality recurrence yields the stronger **untruncated capacity telescope**
+\[
+ \rho_E(X_{b+m}(U))=\rho_E(X_b(U))+C_{b,m}(U).
+\]
+**Proof:** Induct on m. At each original n the actual common pool either stays fixed (if the full column at n does not see all of U), or acquires the fresh vertex n. By the verified one-vertex maximum-clique formula, the capacity increases by exactly one iff the true full old mutual-neighbour clique capacity equals the old maximum; that is precisely the definition of criticality. The finite critical count has the same successor recursion. Compose the two recurrences. This is a pure directed finite-graph theorem, with NO forbidden-free assumption.
+
+Now assume the **actual final original prefix** [0,b+m) has no K_ell, expressed by the executable complete finite pool test
 \[
  \mathrm{finitePoolCliqueCheck}(E,\ell,[0,b+m))=\mathrm{false}.
 \]
-The genuine old common-neighbour pool X_{b+m}(U) is a subset of that final original prefix, so its clique capacity is < ell. Therefore B_{b+m}(U) >= 1. Combine this with the exact telescope:
+The genuine common-old-neighbour pool X_{b+m}(U) is a subset of that final prefix. Thus \(\rho_E(X_{b+m}(U))<\ell\), equivalently \(\rho_E(X_{b+m}(U))\le\ell-1\), including the equality case. Combining this with the untruncated capacity telescope yields
 \[
  B_b(U)=C_{b,m}(U)+B_{b+m}(U).
 \]
-This is an ordinary natural-number equality, not truncated subtraction, because the final raw age is strictly positive and truncation cannot have saturated. In particular C_{b,m}(U) < B_b(U) and
+This is an ordinary natural-number equality even when **the final raw bound is zero**, because both capacities are below ell and the critical count is exactly their difference. In particular \(C_{b,m}(U)\le B_b(U)\) and
 \[
  C_{b,m}(U)=0\quad\Longleftrightarrow\quad B_{b+m}(U)=B_b(U).
 \]
-All statements are pointwise for **each admissible nonempty support**. The prefix test may equivalently be obtained from the already proved cliqueFree_prefix_iff_all_finite_neighbour_certificates when the graph is symmetric loop-free and every actual previous original step passed its complete negative neighbourhood test. Neither direction is assumed from a selected-front shadow.
+The prefix test may equivalently come from previously certified complete original-neighbourhood stage checks in a symmetric loop-free graph. No selected-front shadow or unsupported raw positivity is used.
 
 ## New theorem B — global neutral reference age from the count
 
@@ -55,7 +63,7 @@ This is a valid **finite neutral stretch + one cover** composition. It assumes t
 
 1. The count is over every **actual original** in the interval, including split/coding-parameter originals and skipped gaps; not just selected tops.
 2. The same entire typed column c is used at the initial and final cuts. A diary split that changes its sort dimension cannot be hidden inside this theorem.
-3. Raw age positivity requires the true final original pool to be K_ell-free; without it, saturated truncated subtraction can hide critical events.
+3. A genuine K_ell-free final pool bounds every common-neighbour clique capacity by ell-1; it does NOT force every raw continuation bound positive. The corrected nontruncated conservation follows from the independent capacity telescope, including raw bound zero.
 4. Zero critical counts imply literal raw equality **even in unsafe graphs**. The converse needs physical safety, and it is false for canonical-age equality alone.
 5. Every admissible support must be checked, not only the support of the next intended cover.
 6. The Henson cover stage takes the real hPrior=upper invariant; it does not infer this merely from an abstract age-cover identity.
