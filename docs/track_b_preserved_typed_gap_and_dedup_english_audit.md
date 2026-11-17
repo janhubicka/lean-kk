@@ -46,3 +46,29 @@ This is a finite **conditional** bridge. It does **not** generate (*), construct
 ## Manuscript boundary
 
 If this branch passes full Lean checks, only the exact finite wrapper and conditional physical bridge receive their narrow GREEN/BLUE source annotations. Keep \`Lem:Kk_Resolved_Copy\`, its full (I1)–(I3)/(B3) condition and the final BRD upper/lower bounds PENDING. Frozen black prose is not edited; if it asserts a global schedule from finite cover composition, attach a TODO to the precise inference. The old circulation-cleanup TODO about an abandoned recurrence should not be reintroduced merely to describe this new bridge.
+
+
+## Further adversarial finding: the real witness-preserving interface needs a NEW continuation column
+
+The first draft bridge accepted only \`c_1=\mathrm{supportBlockGappedColumn}(b,Q_0,T_0,c)\` through the entire later interval. This is **too weak for the intended application**: by definition, \`c_1(p,t)=0\` for every \`p\ge F_0\` because \`Q_0\subseteq[ b,F_0 )\`. The allegedly nontrivial zero-critical-count hypothesis is then automatic; the next typed links to newly selected top witnesses are artificially all zero. This is another age-level zero-tail argument in disguise, not witness-preserving diary progress.
+
+**Corrected English statement, replacing the restricted interface above:** after the first actual finite stage, prescribe a *fresh* entire typed column \(c_\mathrm{next}:\mathbb N\times \mathrm{Fin}(d)\to\{0,1\}\) with
+\[
+  c_\mathrm{next}(p,t)=c_1(p,t)\quad\text{for every }p<F_0,\ t\in \mathrm{Fin}(d).
+\]
+Beyond \(F_0\), the values of \(c_\mathrm{next}\) are completely free and may retain **positive bits on already chosen selected original witnesses**. Old-prefix locality gives \(G_{B_{[0,F_0),c_\mathrm{next}}}=G_{B_{[0,F_0),c_1}}=\mathrm{middle}\) without an extra original-graph condition. For \(N=F_0+m\), require the **genuinely nontrivial** certificate
+\[
+ \forall U\ \operatorname{originalCriticalCount}
+ (E,\ell,d,F_0,c_\mathrm{next},U,m)=0.
+ \tag{**}
+\]
+Apply the verified neutral-interval theorem to \(c_\mathrm{next}\) itself and derive \(G_{B_{[0,N),c_\mathrm{next}}}=\mathrm{middle}\). Then the second genuine physical cover at \(N\) uses the *same* full \(c_\mathrm{next}\). Its new column \(c_2\) agrees with \(c_\mathrm{next}\) at **every** \(p<N\), so required positive old-to-future passing bits on the retained first-stage original witness set \(W_0\subseteq[0,N)\) are actually preserved, not reset.
+
+This is conditional and finite. The original first-stage universal top witness has type relative to the original first-stage finite sorts, and the new theorem does not prove how its physical image is embedded into the evolving future-sort set, nor guarantee (**). The theorem may be useful as a strict interface precisely because its neutrality premise now carries the real combinatorial obstruction. No global validation mark.
+
+**Added hostile checks:**
+- The unchanged first-stage \`c_1\` is zero for every \(p\ge F_0\), so any theorem only preserving that column after \(F_0\) should be marked as an age-only result, not a positive-witness-preserving construction.
+- Do not infer (**) from first-stage realization, from the \(K_\ell\)-free graph assumption, or from a finite upper-age equality at \(F_0\).
+- Equality of old-prefix columns is needed on the *entire* original prefix \([0,F_0)\), including parameters, reserved blocks and unused gaps, not only selected originals.
+- Keep \`W_0\` actual original indices below \(N\); if a future sort dimension changes, prove transport separately. A typed-column identity without a common sort dimension is ill-typed.
+- The second stage preserves the newly specified \(c_\mathrm{next}\), not the all-zero tail of \(c_1\). This is a meaningful semantic strengthening despite similar surface proof steps.
