@@ -1,4 +1,4 @@
-# Track G — cover all intrinsic bad cuts by terminals or single-node crossing frontiers
+# Track G — cover intrinsic bad cuts in the common scan range by terminals or single-node crossing frontiers
 
 **17 November 2026. English proof and adversarial audit committed BEFORE the Lean module.**
 
@@ -34,30 +34,40 @@ the existential w is the genuine physical source witness.
 If z also belongs to the NEW pre-cut source, then it satisfies
 `kpt_actual_node_crossing_novel` at c.
 
-## Lemma 2 — actual BAD cut has terminal or one-node interval witness
+## Lemma 2 — an actual BAD cut in the common scan range has a terminal or one-node interval witness
 
 Let Rold,Rnew be two genuine Kpt AlgorithmRuns (same normalized family,
 possibly different tops), and take source families
 `Zold(c) = closure_(Rold.I(c+1))(X)`,
 `Znew(c) = closure_(Rnew.I(c+1))(Y)`.
-Assume `c ∈ kptPhysicalBadCuts family Rold.I oldTop Zold Znew`.
+Assume `c ∈ kptPhysicalBadCuts family Rold.I oldTop Zold Znew`
+and explicitly `c<newTop`. Bad membership supplies `c<oldTop`,
+so the cut lies in the common scan range `c<min(oldTop,newTop)`.
 
 G278 yields c<oldTop, c∉Rold.I(c), and a genuine new-only
 physical Kpt node z at that cut. If z is a level-c terminal,
 we are in the first case. Otherwise it has an actual full pair
 p missing from the old crossing relation. Lemma 1 shows
 z belongs to the G294 single-node `NovelCross_z(c)` interval.
-This is a covering of ALL actual bad cuts by terminal levels and
-fixed-node crossing-novelty intervals; it does not require that the
+This covers every actual bad cut in the common scan range by terminal
+levels and fixed-node crossing-novelty intervals; it does not require that the
 bad cut was newly selected by Rnew, and does not assume Rold.X⊆Rnew.Y.
 
-The corollary is a literal logical union statement:
+Put `CommonRange={c : c<min(oldTop,newTop)}` and restrict the
+terminal and crossing-interval sets to this range. The corollary is
+the literal logical union statement:
 ```
-Bad(Rold,Rnew) ⊆ TerminalDifference ∪
+Bad(Rold,Rnew) ∩ CommonRange ⊆ TerminalDifference ∪
   ⋃_{z in actual Kpt nodes} NovelCrossingInterval(z).
 ```
 The Lean theorem can express this via an existential z rather than
 constructing an infinite union or choosing one global finite node set.
+
+**All-bad-cuts corollary under ordered heights.** If additionally
+`oldTop≤newTop`, every Bad cut satisfies `c<newTop` because it
+already satisfies `c<oldTop`. Hence `Bad⊆CommonRange`, and the
+displayed covering applies to all Bad cuts. Without this height
+condition, only the common-range covering is asserted.
 
 ## Hostile non-implications
 
