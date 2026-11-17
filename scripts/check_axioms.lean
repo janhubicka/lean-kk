@@ -1966,3 +1966,29 @@ import Kk
 #print axioms Kk.kpt_old_ordinary_bit_certificate_of_named_numeric_originals
 #check @Kk.kpt_old_raw_types_distinct_of_named_numeric_originals
 #print axioms Kk.kpt_old_raw_types_distinct_of_named_numeric_originals
+
+-- Track B: twelve finite original support-image, neutral-interval, and critical-jump components.
+#check @Kk.integerGraphSupportImage
+#print axioms Kk.integerGraphSupportImage
+#check @Kk.oldSupportCommonNeighbourPool_reindex
+#print axioms Kk.oldSupportCommonNeighbourPool_reindex
+#check @Kk.finiteOldColumnRawBound_reindex
+#print axioms Kk.finiteOldColumnRawBound_reindex
+#check @Kk.finiteOldColumnRawBound_reindex_after_insert
+#print axioms Kk.finiteOldColumnRawBound_reindex_after_insert
+#check @Kk.original_mutual_budget_reindex
+#print axioms Kk.original_mutual_budget_reindex
+#check @Kk.integerGraphAgeCanonical_next_prefix_neutral_reindex
+#print axioms Kk.integerGraphAgeCanonical_next_prefix_neutral_reindex
+#check @Kk.actual_original_neutral_interval_preserves_free_raw_canonical
+#print axioms Kk.actual_original_neutral_interval_preserves_free_raw_canonical
+#check @Kk.actual_original_neutral_interval_preserves_prior_age
+#print axioms Kk.actual_original_neutral_interval_preserves_prior_age
+#check @Kk.finiteDirectedCliqueCapacity_insert_one_jump
+#print axioms Kk.finiteDirectedCliqueCapacity_insert_one_jump
+#check @Kk.originalCriticalSupport
+#print axioms Kk.originalCriticalSupport
+#check @Kk.finiteOldColumnRawBound_insert_critical_exact
+#print axioms Kk.finiteOldColumnRawBound_insert_critical_exact
+#check @Kk.finiteOldColumnRawBound_insert_strict_drop_iff_critical_of_safe
+#print axioms Kk.finiteOldColumnRawBound_insert_strict_drop_iff_critical_of_safe

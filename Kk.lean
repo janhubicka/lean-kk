@@ -297,6 +297,11 @@ import Kk.K4SingletonOldNeighbour
 import Kk.FullKptOldLBitNoFork
 import Kk.K4PhysicalOldBitToKptCertificate
 
+-- Track B: actual original critical supports, neutral intervals, source sort-image transport
+import Kk.SupportImageAge
+import Kk.NeutralOriginalInterval
+import Kk.OriginalCriticalSupport
+
 /-!
 The counting project imports the verified successor-tree library.
 No local replacement of the Ramsey theorem is assumed.
