@@ -1,0 +1,7 @@
+import Kk.TrackFNonrootActualTargetFibre
+
+#check @Kk.HensonOneType.targetTypeOfOriginal_extends_old
+#print axioms Kk.HensonOneType.targetTypeOfOriginal_extends_old
+
+#check @Kk.HensonOneType.sourceCodingFibre_extend_target_prefix_large
+#print axioms Kk.HensonOneType.sourceCodingFibre_extend_target_prefix_large
