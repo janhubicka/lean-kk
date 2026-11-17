@@ -1,0 +1,13 @@
+import Kk.TrackEOldPhysicalIndexRetention
+
+#check @Kk.crossheight_actual_preCut_Kpt_source_subset
+#print axioms Kk.crossheight_actual_preCut_Kpt_source_subset
+
+#check @Kk.crossheight_old_live_index_has_same_new_Kpt_node
+#print axioms Kk.crossheight_old_live_index_has_same_new_Kpt_node
+
+#check @Kk.crossheight_old_live_Kpt_full_Lplus_records_retained
+#print axioms Kk.crossheight_old_live_Kpt_full_Lplus_records_retained
+
+#check @Kk.crossheight_old_physical_full_crossing_subset_new
+#print axioms Kk.crossheight_old_physical_full_crossing_subset_new
