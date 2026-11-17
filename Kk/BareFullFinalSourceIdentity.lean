@@ -172,7 +172,7 @@ theorem finiteNumericH_bare_full_runs_final_source_eq
       (SMTree.Envelope.closure (admissibleKptSTree family)
         (Rold.I 0) X ∪
         ((fun w : Fin M =>
-          (finiteNumericH L k M).kptOriginal family hAvoid w) '' W) := by
+          (finiteNumericH L k M).kptOriginal family hAvoid w) '' W)) := by
   exact envelope_bare_full_runs_final_closure_eq
     (normalizedKptSMTree family)
     X ((fun w : Fin M =>
