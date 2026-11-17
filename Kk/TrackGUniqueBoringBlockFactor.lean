@@ -70,7 +70,7 @@ theorem actualAlgorithmRun_genuinely_boring_block_unique_factor
   · exact hI
   · refine ⟨D, hD, ?_⟩
     intro E hE
-    exact kpt_MMap_comp_left_cancel H (R.F high) D E
-      (hD.symm.trans hE)
+    exact (kpt_MMap_comp_left_cancel H (R.F high) D E
+      (hD.symm.trans hE)).symm
 
 end Kk
