@@ -1,0 +1,53 @@
+name: KK Track A one-jump actual partial old-age normal form
+
+on:
+  pull_request:
+    paths:
+      - 'Kk/PartialNumericSingleJumpAge.lean'
+      - 'docs/partial_numeric_single_jump_english_audit.md'
+      - 'scripts/check_partial_numeric_single_jump.py'
+      - '.github/workflows/kk-track-a-single-jump-age.yml'
+  push:
+    branches: [kk-track-a-single-jump-physical-age-20261117]
+  workflow_dispatch:
+
+concurrency:
+  group: kk-track-a-one-jump-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  actual-one-jump:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore pinned Lake workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve pinned dependencies
+        run: lake update
+      - name: Restore Mathlib cache
+        run: lake exe cache get
+      - name: Original 26,880-case exact full numerical capacity regression
+        run: python3 scripts/check_partial_numeric_old_age.py
+      - name: Independent exact one-jump and ineligible numerical regression
+        run: python3 scripts/check_partial_numeric_single_jump.py
+      - name: Explicit compile of verified sharp partial capacity theorem
+        run: lake build Kk.PartialNumericSharpLower
+      - name: Explicit compile of one-jump raw/canonical/feasible theorem
+        run: lake build Kk.PartialNumericSingleJumpAge
+      - name: Strict fully qualified standard-only named axiom audit
+        run: |
+          set -euo pipefail
+          python3 scripts/check_axiom_report.py --self-test
+          lake env lean Kk/PartialNumericSingleJumpAge.lean | tee single-jump-axioms.log
+          python3 scripts/check_axiom_report.py Kk/PartialNumericSingleJumpAge.lean single-jump-axioms.log
+      - name: Full repository Lake build
+        run: lake build
