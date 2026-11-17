@@ -136,7 +136,7 @@ theorem sourceCodingFibre_continue_equal_rank_one
     (finitePoolCliqueCheck_false_iff_capacity_lt
       Etgt (ell - 1) vH.neighbours).mp vH.safe
   have hTargetGE : 1 ≤ rank vH := by
-    dsimp [rank, finiteHensonTypeRank]
+    change 1 ≤ finiteHensonTypeRank ell Etgt vH.neighbours - 1
     rw [hWCard] at hRankLowerRaw
     omega
   have hTargetEQ : rank vH = 1 := by
