@@ -65,7 +65,7 @@ theorem finiteNumericH_partial_current_clique_card_le_link_cap
           (finiteNumericHL (normalizedGraphModel E) k M).binary
             (hPosition k b q) (hPosition k b m)
             (0 : Fin 1) = true := by
-        rw [←hEq]
+        rw [hEq]
         exact hc z hzS v hv hzNe
       have hZero :
           (finiteNumericHL (normalizedGraphModel E) k M).binary
