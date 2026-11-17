@@ -3,5 +3,11 @@ import Kk.TrackGGenuineBoringBlockFactor
 #check @Kk.actualAlgorithmRun_genuinely_boring_block_factors
 #print axioms Kk.actualAlgorithmRun_genuinely_boring_block_factors
 
+#check @Kk.actualAlgorithmRun_boring_step_strictly_changes_map
+#print axioms Kk.actualAlgorithmRun_boring_step_strictly_changes_map
+
+#check @Kk.actualAlgorithmRun_map_unchanged_iff_interesting
+#print axioms Kk.actualAlgorithmRun_map_unchanged_iff_interesting
+
 #check @Kk.k4Gadget_no_genuinely_boring_block_across_10_or_22
 #print axioms Kk.k4Gadget_no_genuinely_boring_block_across_10_or_22
