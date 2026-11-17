@@ -2062,3 +2062,7 @@ import Kk
 -- Track B: real two-step finite physical Henson age cover composition
 #check @Kk.henson_leftDense_exists_two_physical_canonical_cover_stages
 #print axioms Kk.henson_leftDense_exists_two_physical_canonical_cover_stages
+
+-- Track C: exact one-way full physical Kpt source-name injection.
+#check @Kk.finiteNumericH_constructed_old_new_coherent_source_index
+#print axioms Kk.finiteNumericH_constructed_old_new_coherent_source_index

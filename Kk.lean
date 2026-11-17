@@ -317,6 +317,8 @@ import Kk.BareFullFinalSourceIdentity
 -- Track C: physical root construction and one common exact source index.
 -- All old-column and actual forbidden-family hypotheses remain explicit.
 import Kk.ConstructedBareFullPhysicalSource
+-- Track C: source-exact physical one-way OLD->NEW Kpt name transport.
+import Kk.ConstructedPhysicalOldNewSourceIndex
 
 /-!
 The counting project imports the verified successor-tree library.
