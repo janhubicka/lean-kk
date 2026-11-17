@@ -1,0 +1,7 @@
+import Kk.TrackFDistinctTargetPrefixes
+
+#check @Kk.HensonOneType.different_source_bits_prevent_same_target_fibre
+#print axioms Kk.HensonOneType.different_source_bits_prevent_same_target_fibre
+
+#check @Kk.HensonOneType.target_prefix_types_distinct_of_source_old_bit
+#print axioms Kk.HensonOneType.target_prefix_types_distinct_of_source_old_bit
