@@ -1,0 +1,4 @@
+import Kk.TrackFFiniteHistoryFan
+
+#check @Kk.HensonOneType.rank_large_new_fan_after_finite_history
+#print axioms Kk.HensonOneType.rank_large_new_fan_after_finite_history
