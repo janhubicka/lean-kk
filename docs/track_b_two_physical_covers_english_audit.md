@@ -27,7 +27,7 @@ G_{B_{[0,F_1),c_2}}=\mathrm{lower}.
 \]
 The second theorem's actual original E nonedge clause applies to every p<F0, including EVERY first-block vertex q0∈Q0. Thus Q0 and Q1 are physically cross-nonadjacent in BOTH directed orientations; no fictional retroactive old-original edge edit has occurred. The first stage's output Q0, F0, c1 and its full age remains valid in the unchanged E even after the second stage is selected.
 
-The output therefore contains actual two finite reserved cliques and cutoffs, all true old-to-reserved and cross-block nonedges, and two consecutive canonical age transitions in ONE physical Henson original enumeration. Crucially, the intermediate hPrior=middle is DERIVED from the first physical stage, not postulated as an independent new hypothesis.
+The proof constructs full old-to-reserved isolation at both stages. The stated conclusion retains the cross-block nonedges, both finite reserved cliques and cutoffs, and the two consecutive canonical age identities in the same Henson original enumeration; it does not export the two full isolation clauses. Crucially, the intermediate hPrior=middle is DERIVED from the first physical stage, not postulated as an independent new hypothesis.
 
 ## Adversarial limits
 
