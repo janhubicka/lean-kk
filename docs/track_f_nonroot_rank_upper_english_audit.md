@@ -30,9 +30,9 @@ of ranks.
 
 ## Proof
 
-First pick H larger than the requested cutoff B, the old target
-level v0.level, and EVERY image e(c) of the finitely many old
-source neighbour vertices c∈u.neighbours. Formally take
+First pick H at least the requested cutoff B and the old target
+level v0.level, and strictly larger than EVERY image e(c) of the
+finitely many old source neighbours c∈u.neighbours. Formally take
 H=max(B,v0.level,1+sup{e(c):c∈u.neighbours}).
 
 The verified non-root continuation theorem PR #296 constructs
@@ -82,7 +82,7 @@ nor the finite-fan theorem on its own proves it.
 4. The certificate applies to the ORIGINAL u. Its extension
    uH may have extra old neighbours whose images occur
    after the chosen target H.
-5. Source and target ranks are actual maximum-clique
+5. Source and target ranks are defined from maximum-clique
    capacities on their genuine finite old-neighbour sets.
 6. The target graph's Henson avoidance is used for the
    construction of vH, not for the pure induced-image
