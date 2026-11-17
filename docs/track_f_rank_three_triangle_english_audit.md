@@ -24,7 +24,7 @@ Use rank1 largeness of S at c_x itself to choose a rank0 descendant c0≥c_x whe
 
 Zero-pad b_x beyond c0.level and choose an ACTUAL coding y∈S from its rank1-large cone, using Large.has_member. Hence y.level> x.level and y sees x. Its complete bit column at every source index smaller than c0.level agrees with b_x: positive old neighbours exactly b.neighbours∪{x.level}; all intervening markers are negative.
 
-The crucial intersection identity is c0.neighbours∩b.neighbours ⊆ U. Indeed b's marker indices all lie before H<x.level, and c0 extends c_x whose old bits below x.level agree with c; b and c share only root-positive U by pairwise marker disjointness. Thus every member of c0.neighbours adjacent to y belongs to U∪{x.level}. Its maximum clique capacity is at most cap(U∪{x.level})≤cap(U)+1=ell-3.
+The crucial intersection identity is c0.neighbours∩b.neighbours ⊆ U. Indeed b's marker indices all lie before H≤x.level, and c0 extends c_x whose old bits below x.level agree with c; b and c share only root-positive U by pairwise marker disjointness. Thus every member of c0.neighbours adjacent to y belongs to U∪{x.level}. Its maximum clique capacity is at most cap(U∪{x.level})≤cap(U)+1=ell-3.
 
 ## Keep c0 at rank0 after inserting y
 
