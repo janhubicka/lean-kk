@@ -1,0 +1,4 @@
+import Kk.ConstructedPhysicalOldNewSourceIndex
+
+#check @Kk.finiteNumericH_constructed_old_new_coherent_source_index
+#print axioms Kk.finiteNumericH_constructed_old_new_coherent_source_index
