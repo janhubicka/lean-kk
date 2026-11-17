@@ -1,0 +1,48 @@
+name: KK Track G physical bad-cut novel node witness
+
+on:
+  pull_request:
+    paths:
+      - 'Kk/TrackGBadCutNovelNodeWitness.lean'
+      - 'Kk/TrackGBadCutNovelNodeWitnessAxiomAudit.lean'
+      - 'docs/track_g_badcut_novel_node_witness_english_audit_20261117.md'
+      - '.github/workflows/kk-track-g-badcut-novel-node.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: kk-track-g-badcut-novel-node-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  direct-build-and-axioms:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache Lean toolchain
+        uses: actions/cache@v4
+        with:
+          path: ~/.elan/toolchains
+          key: lean-toolchain-${{ runner.os }}-${{ hashFiles('lean-toolchain') }}
+      - name: Restore Lean workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve pinned dependencies
+        run: lake update
+      - name: Obtain Mathlib build cache
+        run: lake exe cache get
+      - name: Compile actual new-only physical Kpt source witness
+        run: lake build Kk.TrackGBadCutNovelNodeWitness
+      - name: Strict two-endpoint named standard-only axiom gate
+        run: |
+          set -euo pipefail
+          lake env lean Kk/TrackGBadCutNovelNodeWitnessAxiomAudit.lean | tee track-g-badcut-novel-axioms.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py Kk/TrackGBadCutNovelNodeWitnessAxiomAudit.lean track-g-badcut-novel-axioms.log
