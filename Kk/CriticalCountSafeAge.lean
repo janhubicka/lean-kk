@@ -60,7 +60,6 @@ theorem oldSupportCommonCapacity_insert_critical_exact
           (oldSupportCommonNeighbourPool P c U.1)
     · have hCrit : originalCriticalSupport E P c U v := ⟨hLive, hEq⟩
       simp only [if_pos hEq, if_pos hCrit]
-      omega
     · have hNotCrit : ¬ originalCriticalSupport E P c U v := by
         intro h
         exact hEq h.2
