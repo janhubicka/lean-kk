@@ -43,19 +43,19 @@ theorem actualAlgorithmRun_genuinely_boring_block_factors
     R.I low = R.I high ∧
     ∃ D : MMap H, R.F low = MMap.comp H (R.F high) D := by
   have hStages :
-      ∀ i : Nat, i ≤ high →
+      ∀ i : Nat, low ≤ i → i ≤ high →
         R.I i = R.I high ∧
           ∃ D : MMap H,
             R.F i = MMap.comp H (R.F high) D := by
     have main :
-        ∀ d : Nat, ∀ i : Nat, high - i = d → i ≤ high →
+        ∀ d : Nat, ∀ i : Nat, high - i = d → low ≤ i → i ≤ high →
           R.I i = R.I high ∧
             ∃ D : MMap H,
               R.F i = MMap.comp H (R.F high) D := by
       intro d
       induction d using Nat.strong_induction_on with
       | h d ih =>
-          intro i hdi hi
+          intro i hdi hlow hi
           by_cases hieq : i = high
           · subst i
             constructor
@@ -68,12 +68,11 @@ theorem actualAlgorithmRun_genuinely_boring_block_factors
               Nat.lt_of_le_of_ne hi hieq
             have hitop : i < top :=
               lt_of_lt_of_le hilt hHigh
-            have hiLow : low ≤ i := by
-              omega
+            have hiLow : low ≤ i := hlow
             obtain ⟨Di, _hSkip, _hCross, hIi, hFi⟩ :=
               R.noninteresting_step i hitop (hBoring i hiLow hilt)
             obtain ⟨hNextI, Drest, hNextF⟩ :=
-              ih (high - (i+1)) (by omega) (i+1) rfl (by omega)
+              ih (high - (i+1)) (by omega) (i+1) rfl (by omega) (by omega)
             constructor
             · calc
                 R.I i = R.I (i+1) := hIi
@@ -89,9 +88,9 @@ theorem actualAlgorithmRun_genuinely_boring_block_factors
                         apply MMap.ext_apply
                         intro z
                         rfl
-    intro i hi
-    exact main (high-i) i rfl hi
-  exact hStages low hLowHigh
+    intro i hlow hi
+    exact main (high-i) i rfl hlow hi
+  exact hStages low le_rfl hLowHigh
 
 /-- In the literal finite numerical-H K4 fixture, NO proposed block
 containing either auxiliary cut 10 or 22 can be genuinely boring:
