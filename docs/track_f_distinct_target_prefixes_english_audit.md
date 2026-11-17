@@ -33,3 +33,5 @@ For a FINITE tuple of pairwise distinct source types at a COMMON source level m,
 ## Lean acceptance
 
 Formalize the basic contradiction via exact IsCodingNode old columns, HensonOneType.Extends, induced graph edge equality, and literal sourceCodingFibre prefix conditions. Derive the equal-target-level distinctness corollary. Strict targeted Lean and named transitive-axiom reports; no global BRD or multi-sort validation marker is promoted.
+
+**Proof simplification discovered before Lean certification.** The second theorem's explicit assumption that target types have equal levels is unnecessary: if two target types were literally equal, their levels and exact old bits would already coincide, and the first contradiction would apply. Thus the Lean theorem proves distinctness *without* assuming equal target levels; the same-level use in the manuscript follows as a special case. This removes a dead hypothesis rather than strengthening any unverified graph-age assertion.
