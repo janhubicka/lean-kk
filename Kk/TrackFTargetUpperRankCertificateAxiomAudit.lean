@@ -1,0 +1,10 @@
+import Kk.TrackFTargetUpperRankCertificate
+
+#check @Kk.HensonOneType.old_source_neighbour_images_in_target
+#print axioms Kk.HensonOneType.old_source_neighbour_images_in_target
+
+#check @Kk.HensonOneType.target_rank_le_source_of_old_neighbours
+#print axioms Kk.HensonOneType.target_rank_le_source_of_old_neighbours
+
+#check @Kk.HensonOneType.target_rank_le_source_of_large_fibre
+#print axioms Kk.HensonOneType.target_rank_le_source_of_large_fibre
