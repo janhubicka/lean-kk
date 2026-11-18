@@ -76,3 +76,22 @@ It repeats the physical constructor hypotheses literally and returns
 canonical finite source indexes plus the three-way classification at
 all cuts less than oldTop. No new existence assumptions on the new
 AlgorithmRun or new index are allowed.
+
+## Verification gate and manuscript intervention
+
+The new source file is explicitly imported into `Kk.lean`, so an
+ordinary complete `lake build` cannot silently omit the proof.
+Its fully-qualified theorem name is also included in the central
+`scripts/check_axioms.lean` transitive-axiom report. This is different
+from the earlier green project build that had not imported Track C.
+
+**Not yet certified:** the current branch has no reported exact-head
+success at the time of this audit. In particular, the theorem is only
+a proof candidate and should not receive a manuscript validation mark
+or be merged before the strict build/axiom gate succeeds.
+
+**Olive manuscript edit after certification:** describe the true
+finite-stage *three-way source classification*, without claiming
+elimination or uniform boundedness of the two residual classes.
+**Frozen black text:** unchanged; its unsupported implications should
+receive existing TODO annotations rather than editorial rewrites.
