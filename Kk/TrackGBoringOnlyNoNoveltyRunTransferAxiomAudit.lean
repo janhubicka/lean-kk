@@ -1,0 +1,13 @@
+import Kk.TrackGBoringOnlyNoNoveltyRunTransfer
+
+#check @Kk.kpt_generic_IsInterestingAt_mono_of_source_subset
+#print axioms Kk.kpt_generic_IsInterestingAt_mono_of_source_subset
+
+#check @Kk.kpt_noNovelty_iff_full_profile_eq_of_source_subset
+#print axioms Kk.kpt_noNovelty_iff_full_profile_eq_of_source_subset
+
+#check @Kk.kpt_transport_actualRun_of_boring_only_noNovelty
+#print axioms Kk.kpt_transport_actualRun_of_boring_only_noNovelty
+
+#check @Kk.kpt_transport_actualRun_of_boring_only_indexed_quiet
+#print axioms Kk.kpt_transport_actualRun_of_boring_only_indexed_quiet
