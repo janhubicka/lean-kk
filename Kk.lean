@@ -346,6 +346,9 @@ import Kk.TrackDIndexedLowerRealBoring
 import Kk.PointedContinuationColumn
 import Kk.PhysicalPointedContinuation
 import Kk.PointedCliqueUnitLoss
+-- Track B: verified arbitrary nonzero protected active gap columns
+import Kk.ProtectedActivePivotCapacity
+import Kk.ProtectedActivePivotRealization
 
 
 -- Track D: genuine local pre-cut source, full dependent B3 stage/final agreement.
