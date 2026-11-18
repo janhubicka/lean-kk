@@ -323,6 +323,8 @@ import Kk.ConstructedBareFullPhysicalSource
 import Kk.ConstructedPhysicalOldNewSourceIndex
 -- Track C: exact cut-live source-image criterion and residual index classes.
 import Kk.CoherentKptLiveImage
+-- Track C: genuine physical finite H+ live full-Kpt source trichotomy.
+import Kk.PhysicalLiveSourceResidual
 
 /-!
 The counting project imports the verified successor-tree library.
