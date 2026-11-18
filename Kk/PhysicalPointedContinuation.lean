@@ -129,6 +129,7 @@ theorem finiteNumericStageWitness_original_columns
   rcases hStage with ⟨_hFix, _hMono, _hGraph, _hGap, hAfter,
     _hCut, _hOldCarrier, _hGapCarrier, _hTopCarrier, _hProfile,
     hColumns, _hGapNumeric, _hDummy⟩
+  dsimp only
   intro p hp w hw
   have hBefore : p < f w := lt_of_lt_of_le hp (hAfter w hw)
   have hNumeric := finiteNumericH_top_exact_original_edge
@@ -217,9 +218,10 @@ theorem henson_leftDense_constructs_pointed_continuation
     simpa only [C, pointedContinuationColumn, if_pos hp] using
       hColumns p hpH w hw q hq
   · intro w hw q hq
-    have hNotOld : ¬ v < b := Nat.not_lt.mpr hbv
-    simpa only [C, pointedContinuationColumn, if_neg hNotOld, if_pos rfl] using
-      hColumns v hvH w hw q hq
+    have hPivotColumn : C v (tau w) = beta (tau w) :=
+      pointedContinuationColumn_pivot b v c pi beta hbv (tau w)
+    exact ⟨(hColumns v hvH w hw q hq).1.trans hPivotColumn,
+      (hColumns v hvH w hw q hq).2.trans hPivotColumn⟩
   · intro p hbp hpH hpv w hw q hq
     have hNotOld : ¬ p < b := Nat.not_lt.mpr hbp
     simpa only [C, pointedContinuationColumn, if_neg hNotOld, if_neg hpv] using
