@@ -1,0 +1,48 @@
+name: KK Track G full Kpt I1 I2 I3 source-profile transport across different sources
+
+on:
+  pull_request:
+    paths:
+      - 'Kk/TrackGFullEventProfileTransport.lean'
+      - 'Kk/TrackGFullEventProfileTransportAxiomAudit.lean'
+      - 'docs/track_g_full_event_profile_english_audit_20261118.md'
+      - '.github/workflows/kk-track-g-full-event-profile.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: kk-track-g-full-event-profile-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  direct-build-and-axioms:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache Lean toolchain
+        uses: actions/cache@v4
+        with:
+          path: ~/.elan/toolchains
+          key: lean-toolchain-${{ runner.os }}-${{ hashFiles('lean-toolchain') }}
+      - name: Restore Lean workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve pinned dependencies
+        run: lake update
+      - name: Obtain Mathlib build cache
+        run: lake exe cache get
+      - name: Compile full Kpt different-source local event-profile transport
+        run: lake build Kk.TrackGFullEventProfileTransport
+      - name: Strict four-name standard-only transitive axiom gate
+        run: |
+          set -euo pipefail
+          lake env lean Kk/TrackGFullEventProfileTransportAxiomAudit.lean | tee track-g-full-event-profile-axioms.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py Kk/TrackGFullEventProfileTransportAxiomAudit.lean track-g-full-event-profile-axioms.log
