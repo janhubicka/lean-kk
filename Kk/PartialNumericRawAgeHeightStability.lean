@@ -105,7 +105,6 @@ theorem finiteNumericH_partial_last_two_raw_cuts_equal
   · exact le_refl _
   · omega
   · exact le_refl _
-  · exact j
   · exact hj
 
 #print axioms Kk.finiteNumericH_partial_raw_age_stable_after_ell_pred
