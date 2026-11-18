@@ -77,8 +77,8 @@ theorem protectedPivot_common_pool {e : Nat}
           insert v (oldSupportCommonNeighbourPool P a U)
         else oldSupportCommonNeighbourPool P a U := by
           rw [oldSupportCommonNeighbourPool_insert_exact]
-          simp only [protectedPivotColumn, if_pos rfl]
           rw [hBase]
+          simp [protectedPivotColumn]
 
 theorem protectedPivot_capacity {e : Nat}
     (E : Nat → Nat → Bool) (v H : Nat) (hvH : v < H)
