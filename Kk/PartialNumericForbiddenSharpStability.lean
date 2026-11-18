@@ -107,8 +107,8 @@ theorem trackA_linked_clique_capacity_two_vertex_budget
           · exact hClique x hxC y hyC hxy
   have hCardD : D.card = C.card + 2 := by
     dsimp [D]
-    rw [Finset.card_insert_of_not_mem]
-    · rw [Finset.card_insert_of_not_mem hbNot]
+    rw [Finset.card_insert_of_notMem]
+    · rw [Finset.card_insert_of_notMem hbNot]
       omega
     · simp [htNot, hBt.symm]
   have hCapacity :=
@@ -180,6 +180,7 @@ theorem trackA_partial_raw_stable_of_two_vertex_free
     hLinkB hLinkT (hEligible t ht) hFree
   change finiteDirectedCliqueCapacity E S =
     finiteDirectedCliqueCapacity E P at hCapacity
+  change g ≤ finiteDirectedCliqueCapacity E P at hCut
   omega
 
 /-- Canonical ordinary-L ages inherit the sharp source-local
