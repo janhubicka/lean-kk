@@ -152,3 +152,76 @@ equal capacity syntax. These were patched in the PR branch. Subsequent
 GitHub queries have not exposed an exact-head Actions run for the
 newest commits. Do not mark these endpoints validated until the
 current head is actually built and standard-only axioms reported.
+
+
+## Canonical visibility over genuine Henson ordinary-L ages (continuation)
+
+**Theorem, English-first.** Let ell>=2, let the symmetric loopless
+original E avoid the genuine normalized Henson forbidden family, and
+fix the SAME current original b, numeric H height k, Boolean carrier
+M, and later-top family j. For 0<=g<=h<=k the canonical integer
+ordinary-L ages at h and g differ if and only if there is a normalized
+integer clique-multiplicity vector w and nonempty admissible support U
+such that:
+
+1. **Whole-vector old feasibility:** w respects the old RAW bound
+   B_g(V) for EVERY admissible support V (not merely V=U).
+2. **Saturation at U:** sum_(t in U) w_t = B_g(U).
+3. **Physical raw event:** b is U-eligible; c_U=p_U; g<=p_U<h.
+
+No separate `p_U<ell-1` assumption is needed: the genuine original
+K_ell-free graph already forces `p_U+2<ell` by taking a maximum
+original clique C in S_U and appending distinct real originals
+b and j(t0) for any t0 in U.
+
+**Proof.** Apply the already established universal canonical
+visibility criterion
+`finiteNumericH_partial_canonical_change_iff_saturating_raw_event`.
+The forward direction drops its redundant `p_U<ell-1` clause. In
+the reverse direction, the new genuine-Henson raw-event iff gives
+a literal strict raw decrease, and the older general raw-event
+criterion recovers the positivity clause. Now apply the universal
+canonical criterion with the globally feasible saturating witness.
+No reliance on a diary classification or on Definition 3.1 occurs.
+
+**Adversarial checks.**
+
+- Requiring only `w(U)=B_g(U)` without ALL-support old feasibility
+  is false: a simultaneous stronger support bound may eliminate
+  w before the proposed event.
+- Mere raw-age loss does NOT force canonical-age loss; the genuine
+  seven-original K4-free counterexample from Track A PR #323 applies.
+- The conclusion is inequality of full canonical age functions,
+  not a claim that the old/new ages are adjacent (a cover) in the
+  graph-age poset.
+- Different U can activate at different generations even though
+  every fixed U has at most one raw event. No uniqueness of a global
+  interesting level is concluded.
+- A single Henson original graph and identical given later tops
+  are fixed throughout; no reindexing of Kpt sources is performed.
+- Ordinary-L stability does not imply (B3) or the absence of
+  dependent I1/I2/I3 events.
+- Nonempty U is indispensable for the real extra vertex j(t0).
+- The new theorem uses `finiteNumericHPartialActualRawAt`; the
+  older canonical theorem uses
+  `finiteNumericHPhysicalPartialOldRaw`. Both definitions unfold
+  to the IDENTICAL literal numbered old-prefix bound. This is a
+  definitional equality, not a conjectural graphical comparison.
+- Genuine Henson forbidden-family avoidance supplies symmetry,
+  looplessness, and forbidden K_ell; it is not sufficient to
+  prove the global BRD theorem.
+
+**Lean integration:** new endpoint
+`trackA_henson_canonical_change_iff_saturating_event` in
+`Kk/PartialNumericForbiddenSharpStability.lean`, with a qualified
+`#check` / `#print axioms` registration. It remains UNVERIFIED
+until an exact-head full Lake build and standard-only axiom gate pass.
+The original two proof-engineering failures from the first workflow
+are patched but no corrected-head CI run was visible at this audit.
+Frozen black manuscript and validation marks remain unchanged.
+
+**Next bridge for Track A:** construct a finite support-event *schedule*
+from `U -> p_U`, then overlay the actual Kpt terminal and
+old/upper crossing predicates. A bare ordinary-L event schedule
+cannot classify full algorithmically interesting levels: any such
+claim must state extra parameter-closed source hypotheses explicitly.
