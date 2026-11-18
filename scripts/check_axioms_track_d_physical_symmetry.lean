@@ -1,0 +1,6 @@
+import Kk.TrackDPhysicalHSymmetry
+
+#check @Kk.hNumericBinary_symm_of_base_symm
+#print axioms Kk.hNumericBinary_symm_of_base_symm
+#check @Kk.finiteNumericH_graph_ordinary_L_symmetric
+#print axioms Kk.finiteNumericH_graph_ordinary_L_symmetric
