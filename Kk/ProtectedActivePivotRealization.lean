@@ -76,9 +76,10 @@ theorem henson_leftDense_realizes_activeGap_pointed
       _hColumns, _hZero, _hDummy⟩
   refine ⟨hRaw, f, M, hStage, hFix, ?_, ?_, ?_⟩
   · intro p hp w hw
-    have h := hActual p (lt_trans hp (Nat.le_of_lt hvH)) w hw
-    simpa only [C, activeGapPointedColumn_old b v c pi beta gap p hp (tau w)]
-      using h
+    have hpH : p < H := by omega
+    have h := hActual p hpH w hw
+    have hOld := activeGapPointedColumn_old b v c pi beta gap p hp (tau w)
+    exact ⟨h.1.trans hOld, h.2.trans hOld⟩
   · intro w hw
     have h := hActual v hvH w hw
     have hPivot := activeGapPointedColumn_pivot b v c pi beta gap hbv (tau w)
