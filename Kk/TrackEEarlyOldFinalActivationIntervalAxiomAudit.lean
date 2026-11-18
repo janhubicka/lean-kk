@@ -1,0 +1,15 @@
+import Kk.TrackEEarlyOldFinalActivationInterval
+
+#check @Kk.KptEarlyOldFinalLiveAt
+
+#check @Kk.kpt_earlyOldFinalLive_mid_of_low_early_high_new
+#print axioms Kk.kpt_earlyOldFinalLive_mid_of_low_early_high_new
+
+#check @Kk.kpt_earlyOldFinalLive_orderConvex_of_monotone_masks
+#print axioms Kk.kpt_earlyOldFinalLive_orderConvex_of_monotone_masks
+
+#check @Kk.kpt_actual_runs_earlyOldFinalLive_orderConvex
+#print axioms Kk.kpt_actual_runs_earlyOldFinalLive_orderConvex
+
+#check @Kk.kpt_abstract_earlyOldFinalLive_arbitrarily_long
+#print axioms Kk.kpt_abstract_earlyOldFinalLive_arbitrarily_long
