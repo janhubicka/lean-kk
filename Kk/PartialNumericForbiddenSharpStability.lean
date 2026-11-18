@@ -1,6 +1,7 @@
 import Kk.PartialNumericLateAgeStability
 import Kk.FiniteOldColumnAge
 import Kk.HensonEncoding
+import Kk.PartialNumericCanonicalVisibleEvent
 import Mathlib.Tactic
 
 /-!
@@ -414,6 +415,74 @@ theorem trackA_henson_partial_raw_at_most_one_single_step
   have hEq₂ := hSecondStep.2.2
   omega
 
+
+/-- Exact visibility of genuine Henson canonical ordinary-L age changes:
+a globally OLD-feasible normalized clique-weight vector must saturate
+a physical U-support whose linked original capacity is critical at
+a cut between g and h. Unlike the general raw-event theorem, there is
+NO independent Nat-subtraction saturation premise because genuine
+K_ell-freeness supplies p_U+2<ell. This is not a cover assertion. -/
+theorem trackA_henson_canonical_change_iff_saturating_event
+    {d : Nat} (E : Nat → Nat → Bool)
+    (ell : Nat) (hell : 2 ≤ ell)
+    (hAvoid : ∀ bad, bad ∈ hensonForbiddenFamily ell hell →
+      bad.Avoids (normalizedGraphModel E))
+    (k b g h M : Nat) (hgh : g ≤ h) (hh : h ≤ k)
+    (j : Fin d → Nat) (hj : ∀ t, b < j t) :
+    integerGraphAgeCanonical d ell
+      (finiteNumericHPartialActualRawAt E ell k b h M j) ≠
+    integerGraphAgeCanonical d ell
+      (finiteNumericHPartialActualRawAt E ell k b g M j) ↔
+    ∃ w : IntegerCliqueWeights d ell,
+    ∃ U : IntegerGraphSupport d ell,
+      WitnessRespects
+        (integerCliqueOnSupport (d := d) (ell := ell))
+        (finiteNumericHPartialActualRawAt E ell k b g M j) w ∧
+      integerCliqueOnSupport w U =
+        finiteNumericHPartialActualRawAt E ell k b g M j U ∧
+      (∀ t ∈ U.1, E b (j t) = true) ∧
+      finiteDirectedCliqueCapacity E
+        ((oldSupportCommonNeighbourPool (Finset.range b)
+          (fun i t => E i (j t)) U.1).filter
+            (fun i => E i b = true)) =
+      finiteDirectedCliqueCapacity E
+        (oldSupportCommonNeighbourPool (Finset.range b)
+          (fun i t => E i (j t)) U.1) ∧
+      g ≤ finiteDirectedCliqueCapacity E
+        (oldSupportCommonNeighbourPool (Finset.range b)
+          (fun i t => E i (j t)) U.1) ∧
+      finiteDirectedCliqueCapacity E
+        (oldSupportCommonNeighbourPool (Finset.range b)
+          (fun i t => E i (j t)) U.1) < h := by
+  classical
+  have hSym := hensonForbiddenFamily_symmetric ell hell E hAvoid
+  have hGeneral :=
+    finiteNumericH_partial_canonical_change_iff_saturating_raw_event
+      E hSym ell k b g h M hgh hh j hj
+  constructor
+  · intro h
+    have hChange :
+        integerGraphAgeCanonical d ell
+          (finiteNumericHPhysicalPartialOldRaw E ell k b h M j) ≠
+        integerGraphAgeCanonical d ell
+          (finiteNumericHPhysicalPartialOldRaw E ell k b g M j) := h
+    obtain ⟨w,U,hOld,hSat,hEligible,hCap,hCut,hLater,_⟩ :=
+      hGeneral.mp hChange
+    exact ⟨w,U,hOld,hSat,hEligible,hCap,hCut,hLater⟩
+  · rintro ⟨w,U,hOld,hSat,hEligible,hCap,hCut,hLater⟩
+    have hPhysicalEvent :
+        finiteNumericHPartialActualRawAt E ell k b h M j U <
+          finiteNumericHPartialActualRawAt E ell k b g M j U :=
+      (trackA_henson_partial_raw_event_iff_simple
+        E ell hell hAvoid k b g h M hgh hh j hj U).2
+        ⟨hEligible,hCap,hCut,hLater⟩
+    have hEvent :=
+      (finiteNumericH_partial_actual_raw_support_event_iff
+        E hSym ell k b g h M hgh hh j hj U).1 hPhysicalEvent
+    exact hGeneral.mpr
+      ⟨w,U,hOld,hSat,hEligible,hCap,hCut,hLater,hEvent.2.2.2.2⟩
+
+#print axioms Kk.trackA_henson_canonical_change_iff_saturating_event
 #print axioms Kk.trackA_henson_partial_raw_at_most_one_single_step
 #print axioms Kk.trackA_henson_partial_raw_single_step_iff
 #print axioms Kk.trackA_henson_partial_raw_event_iff_simple
