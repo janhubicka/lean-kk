@@ -58,9 +58,9 @@ theorem trackFLabelledSourceClique_target_raw_bound
       label (f i) = σ i := by
     dsimp [label]
     split_ifs with h
-    · obtain ⟨j, hj, hji⟩ := Classical.choose_spec h
+    · have hSpec := Classical.choose_spec h
       have hEq : Classical.choose h = i :=
-        hfInj (hCSub hj) (hCSub hi) hji
+        hfInj (hCSub hSpec.1) (hCSub hi) hSpec.2
       simpa only [hEq]
     · exact False.elim (h ⟨i, hi, rfl⟩)
   have hSort : ∀ w ∈ W, label w ∈ C.image σ := by
