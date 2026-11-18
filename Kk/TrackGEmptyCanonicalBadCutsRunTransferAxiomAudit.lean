@@ -1,0 +1,7 @@
+import Kk.TrackGEmptyCanonicalBadCutsRunTransfer
+
+#check @Kk.kpt_wholeRun_transport_of_twoIndex_noOffPlan
+#print axioms Kk.kpt_wholeRun_transport_of_twoIndex_noOffPlan
+
+#check @Kk.kpt_wholeRun_transport_of_empty_canonical_BadCuts
+#print axioms Kk.kpt_wholeRun_transport_of_empty_canonical_BadCuts
