@@ -159,7 +159,8 @@ theorem real_cover_uniform_stage_has_selected_T_witness_forcing_loss
     intro q hq
     have hBits := hColumn q hq w hw
     have hDec : decide (tau w ∈ T.1) = true := by
-      simp [hwSort]
+      simp only [decide_eq_true_eq]
+      exact hwSort
     exact ⟨hBits.1.trans hDec, hBits.2.trans hDec⟩
   refine ⟨f, M, w, hw, hwSort, hAfter w hw, hLinks, ?_⟩
   intro cNext hPrefix hVPositive
