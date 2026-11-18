@@ -321,6 +321,8 @@ import Kk.AnchoredPositiveCoverChain
 import Kk.PhysicalCoverAnchorCriticality
 -- Track B: a real fully linked T-positive original forces strict canonical T-age loss
 import Kk.PhysicalCoverStrictCanonicalLoss
+-- Track B: the real finite selected top stage has actual reserved-to-selected E columns
+import Kk.UniformStageOriginalCoverLoss
 -- Track C: exact verified finite cut-visible dependent source, bare/full
 -- selected skeleton and literal final Kpt closure; NOT a global BRD.
 import Kk.CutVisibleClosureAbsorption
