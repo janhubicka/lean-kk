@@ -168,7 +168,7 @@ theorem trackFPrivate_rank_zero_raw_transfer
     rw [hNeighbourEq]
     exact trackFCommonRawAge_disjoint_collapse
       d p ell m H hmH E π oldU fresh
-      hOld hNew hDisjoint Q hTwo
+      (fun i x hx => hOld (π i) x hx) hNew hDisjoint Q hTwo
   · intro i
     exact trackFPrivate_singleton_raw_positive
       d H g (fun j => (hValid j).1) i
