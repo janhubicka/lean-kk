@@ -1,0 +1,10 @@
+import Kk.TrackGDistinctSeedProfileScan
+
+#check @Kk.actualAlgorithmRuns_selected_levels_eq_of_stagewise_decisions
+#print axioms Kk.actualAlgorithmRuns_selected_levels_eq_of_stagewise_decisions
+
+#check @Kk.kpt_actual_runs_selected_levels_eq_of_full_cut_profiles
+#print axioms Kk.kpt_actual_runs_selected_levels_eq_of_full_cut_profiles
+
+#check @Kk.kpt_actual_runs_selected_levels_eq_of_independent_indexed_profiles
+#print axioms Kk.kpt_actual_runs_selected_levels_eq_of_independent_indexed_profiles
