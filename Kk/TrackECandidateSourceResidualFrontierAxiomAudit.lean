@@ -1,0 +1,15 @@
+import Kk.TrackECandidateSourceResidualFrontier
+
+#check @Kk.kpt_candidate_residual_boring_crossing_cuts
+
+#check @Kk.mem_kpt_candidate_residual_boring_crossing_cuts
+#print axioms Kk.mem_kpt_candidate_residual_boring_crossing_cuts
+
+#check @Kk.kpt_actual_run_upper_cover_gives_full_old_crossing_pair
+#print axioms Kk.kpt_actual_run_upper_cover_gives_full_old_crossing_pair
+
+#check @Kk.kpt_actual_candidate_crossing_covered_of_max
+#print axioms Kk.kpt_actual_candidate_crossing_covered_of_max
+
+#check @Kk.kpt_transport_actualRun_of_candidate_residual_frontier
+#print axioms Kk.kpt_transport_actualRun_of_candidate_residual_frontier
