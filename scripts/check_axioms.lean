@@ -2134,3 +2134,39 @@ import Kk
 #print axioms Kk.finiteTaggedFuture_exists_T_sort_of_positive_canonical
 #check @Kk.real_cover_uniform_stage_has_selected_T_witness_forcing_loss
 #print axioms Kk.real_cover_uniform_stage_has_selected_T_witness_forcing_loss
+
+-- Track B: constructed pointed columns, full shared certificates and exact clique loss
+#check @Kk.pointedContinuation_common_pool
+#print axioms Kk.pointedContinuation_common_pool
+#check @Kk.pointedContinuation_raw_eq_insert
+#print axioms Kk.pointedContinuation_raw_eq_insert
+#check @Kk.pointedContinuation_mutual_pool
+#print axioms Kk.pointedContinuation_mutual_pool
+#check @Kk.pointedContinuation_capacity
+#print axioms Kk.pointedContinuation_capacity
+#check @Kk.pointedContinuation_raw_bound
+#print axioms Kk.pointedContinuation_raw_bound
+#check @Kk.pointedContinuation_singleton_safe_iff
+#print axioms Kk.pointedContinuation_singleton_safe_iff
+#check @Kk.pointedContinuation_canonical_is_age_of_safe_children
+#print axioms Kk.pointedContinuation_canonical_is_age_of_safe_children
+#check @Kk.finiteOldColumn_one_vertex_feasible_iff
+#print axioms Kk.finiteOldColumn_one_vertex_feasible_iff
+#check @Kk.pointedContinuation_one_vertex_feasible_iff
+#print axioms Kk.pointedContinuation_one_vertex_feasible_iff
+#check @Kk.henson_leftDense_finite_numeric_stage_witness
+#print axioms Kk.henson_leftDense_finite_numeric_stage_witness
+#check @Kk.finiteNumericStageWitness_original_columns
+#print axioms Kk.finiteNumericStageWitness_original_columns
+#check @Kk.henson_leftDense_constructs_pointed_continuation
+#print axioms Kk.henson_leftDense_constructs_pointed_continuation
+#check @Kk.henson_leftDense_two_coherent_pointed_stages
+#print axioms Kk.henson_leftDense_two_coherent_pointed_stages
+#check @Kk.pointedContinuation_canonical_ge_clique_pred
+#print axioms Kk.pointedContinuation_canonical_ge_clique_pred
+#check @Kk.pointedContinuation_raw_on_pivot_support
+#print axioms Kk.pointedContinuation_raw_on_pivot_support
+#check @Kk.pointedContinuation_canonical_eq_clique_pred_of_raw_tight
+#print axioms Kk.pointedContinuation_canonical_eq_clique_pred_of_raw_tight
+#check @Kk.finiteNumericStageWitness_extends_pointed
+#print axioms Kk.finiteNumericStageWitness_extends_pointed
