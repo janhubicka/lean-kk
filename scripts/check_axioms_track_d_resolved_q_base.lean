@@ -1,0 +1,8 @@
+import Kk.TrackDResolvedQBaseRoles
+
+#check @Kk.resolvedQ_omitted_aux_later_retained_aux_nonedge
+#print axioms Kk.resolvedQ_omitted_aux_later_retained_aux_nonedge
+#check @Kk.resolvedQ_omitted_base_positive_retained_is_selected_coding
+#print axioms Kk.resolvedQ_omitted_base_positive_retained_is_selected_coding
+#check @Kk.resolvedQ_selected_coded_has_no_later_retained_neighbour
+#print axioms Kk.resolvedQ_selected_coded_has_no_later_retained_neighbour
