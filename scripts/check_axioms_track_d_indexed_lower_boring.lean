@@ -1,0 +1,7 @@
+import Kk.TrackDIndexedLowerRealBoring
+
+#check @Kk.finiteNumericH_run_no_I1_I2_of_complete_index_checks
+#print axioms Kk.finiteNumericH_run_no_I1_I2_of_complete_index_checks
+
+#check @Kk.henson_actualRun_lower_real_unselected_of_indexed_full_checks
+#print axioms Kk.henson_actualRun_lower_real_unselected_of_indexed_full_checks
