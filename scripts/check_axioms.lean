@@ -2118,3 +2118,9 @@ import Kk
 #print axioms Kk.positive_clique_and_later_full_link_raw_upper_bound
 #check @Kk.real_cover_later_full_link_forces_strict_canonical_T_drop
 #print axioms Kk.real_cover_later_full_link_forces_strict_canonical_T_drop
+
+-- Track B: one finite selected Henson top stage, true original E reserved columns
+#check @Kk.uniform_positive_stage_reserved_original_E_column
+#print axioms Kk.uniform_positive_stage_reserved_original_E_column
+#check @Kk.uniform_positive_stage_selected_full_T_successor_canonical_drop
+#print axioms Kk.uniform_positive_stage_selected_full_T_successor_canonical_drop
