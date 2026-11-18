@@ -2160,3 +2160,7 @@ import Kk
 -- Track A: exact genuine Henson one-generation event characterization.
 #check @Kk.trackA_henson_partial_raw_single_step_iff
 #print axioms Kk.trackA_henson_partial_raw_single_step_iff
+
+-- Track A: one raw-support change per actual Henson numerical H block.
+#check @Kk.trackA_henson_partial_raw_at_most_one_single_step
+#print axioms Kk.trackA_henson_partial_raw_at_most_one_single_step
