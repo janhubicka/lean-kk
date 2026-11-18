@@ -323,6 +323,8 @@ import Kk.PhysicalCoverAnchorCriticality
 import Kk.PhysicalCoverStrictCanonicalLoss
 -- Track B: the real finite selected top stage has actual reserved-to-selected E columns
 import Kk.UniformStageOriginalCoverLoss
+-- Track B: positive canonical age guarantees an actual selected T-witness in the finite universal future
+import Kk.UniformStageNonvacuousSortWitness
 -- Track C: exact verified finite cut-visible dependent source, bare/full
 -- selected skeleton and literal final Kpt closure; NOT a global BRD.
 import Kk.CutVisibleClosureAbsorption
