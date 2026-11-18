@@ -1,0 +1,13 @@
+import Kk.TrackFRankZeroFiniteGraphRealization
+
+#check @Kk.trackFRankZeroRealizedPrefix_empty
+#print axioms Kk.trackFRankZeroRealizedPrefix_empty
+
+#check @Kk.trackFRankZeroRealizedPrefix_succ
+#print axioms Kk.trackFRankZeroRealizedPrefix_succ
+
+#check @Kk.trackFRankZeroRealizedPrefix_of_global
+#print axioms Kk.trackFRankZeroRealizedPrefix_of_global
+
+#check @Kk.trackFRankZero_realizes_all_feasible_sorted_graph
+#print axioms Kk.trackFRankZero_realizes_all_feasible_sorted_graph
