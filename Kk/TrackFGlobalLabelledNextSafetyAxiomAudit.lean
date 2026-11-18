@@ -1,0 +1,10 @@
+import Kk.TrackFGlobalLabelledNextSafety
+
+#check @Kk.trackFNextPositivePast_raw_feasible_of_global
+#print axioms Kk.trackFNextPositivePast_raw_feasible_of_global
+
+#check @Kk.trackFNextPositivePast_safe_of_global
+#print axioms Kk.trackFNextPositivePast_safe_of_global
+
+#check @Kk.HensonOneType.rank_zero_dense_actualCoding_realizes_global_next
+#print axioms Kk.HensonOneType.rank_zero_dense_actualCoding_realizes_global_next
