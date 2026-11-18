@@ -277,6 +277,76 @@ theorem trackA_henson_partial_feasible_stable_after_ell_sub_two
   rw [trackA_henson_partial_raw_stable_after_ell_sub_two
     E ell hell hAvoid k b g h M hLate hgh hh j hj]
 
+
+/-- On a genuine Henson original graph, the old raw-event criterion
+has no independent truncation clause: an eligible equal-capacity
+support forces the strictly stronger p+2<ell by a real two-vertex
+clique extension. This is still the literal finite ordinary-L age. -/
+theorem trackA_henson_partial_raw_event_iff_simple
+    {d : Nat} (E : Nat → Nat → Bool)
+    (ell : Nat) (hell : 2 ≤ ell)
+    (hAvoid : ∀ bad, bad ∈ hensonForbiddenFamily ell hell →
+      bad.Avoids (normalizedGraphModel E))
+    (k b g h M : Nat) (hgh : g ≤ h) (hh : h ≤ k)
+    (j : Fin d → Nat) (hj : ∀ t, b < j t)
+    (U : IntegerGraphSupport d ell) :
+    finiteNumericHPartialActualRawAt E ell k b h M j U <
+      finiteNumericHPartialActualRawAt E ell k b g M j U ↔
+    (∀ t ∈ U.1, E b (j t) = true) ∧
+      finiteDirectedCliqueCapacity E
+        ((oldSupportCommonNeighbourPool (Finset.range b)
+          (fun i t => E i (j t)) U.1).filter
+            (fun i => E i b = true)) =
+      finiteDirectedCliqueCapacity E
+        (oldSupportCommonNeighbourPool (Finset.range b)
+          (fun i t => E i (j t)) U.1) ∧
+      g ≤ finiteDirectedCliqueCapacity E
+        (oldSupportCommonNeighbourPool (Finset.range b)
+          (fun i t => E i (j t)) U.1) ∧
+      finiteDirectedCliqueCapacity E
+        (oldSupportCommonNeighbourPool (Finset.range b)
+          (fun i t => E i (j t)) U.1) < h := by
+  classical
+  have hSym := hensonForbiddenFamily_symmetric ell hell E hAvoid
+  have hFull :=
+    finiteNumericH_partial_actual_raw_support_event_iff
+      E hSym ell k b g h M hgh hh j hj U
+  constructor
+  · intro hStrict
+    obtain ⟨he,hc,hg,hh',_⟩ := hFull.mp hStrict
+    exact ⟨he,hc,hg,hh'⟩
+  · rintro ⟨hEligible,hCapacity,hCut,hLater⟩
+    let P : Finset Nat :=
+      oldSupportCommonNeighbourPool (Finset.range b)
+        (fun i t => E i (j t)) U.1
+    let S : Finset Nat := P.filter (fun i => E i b = true)
+    obtain ⟨t,ht⟩ := U.2.1
+    have hBefore : ∀ x ∈ S, x < b := by
+      intro x hx
+      exact Finset.mem_range.mp
+        (Finset.mem_filter.mp
+          ((Finset.mem_filter.mp hx).1)).1
+    have hLinkB : ∀ x ∈ S, E x b = true := by
+      intro x hx
+      exact (Finset.mem_filter.mp hx).2
+    have hLinkT : ∀ x ∈ S, E x (j t) = true := by
+      intro x hx
+      exact (Finset.mem_filter.mp
+        ((Finset.mem_filter.mp hx).1)).2 t ht
+    have hFree : finitePoolCliqueCheck E ell
+        (insert (j t) (insert b S)) = false :=
+      trackA_finite_pool_free_of_henson ell hell E hAvoid _
+    have hBound :=
+      trackA_linked_clique_capacity_two_vertex_budget
+        E hSym ell b (j t) S hBefore (hj t)
+        hLinkB hLinkT (hEligible t ht) hFree
+    have hPositive : finiteDirectedCliqueCapacity E P < ell - 1 := by
+      change finiteDirectedCliqueCapacity E S =
+        finiteDirectedCliqueCapacity E P at hCapacity
+      omega
+    exact hFull.mpr ⟨hEligible,hCapacity,hCut,hLater,hPositive⟩
+
+#print axioms Kk.trackA_henson_partial_raw_event_iff_simple
 #print axioms Kk.trackA_finite_pool_free_of_henson
 #print axioms Kk.trackA_linked_clique_capacity_two_vertex_budget
 #print axioms Kk.trackA_partial_raw_stable_of_two_vertex_free
