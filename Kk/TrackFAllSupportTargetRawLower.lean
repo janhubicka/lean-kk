@@ -129,57 +129,63 @@ theorem trackFCommonRawAge_target_ge_sorted_source_clique
   rw [← hCardImage]
   exact hRankTarget
 
-/-- The REVERSE all-support target raw bound is reduced to
-an explicit FINITE-SORTED JOINT CLIQUE REALIZATION premise.
+/-- Every finite ACTUAL source clique C whose original vertices
+are assigned to genuine target coding-node fibres satisfies
+ALL NONEMPTY raw target clique support inequalities, including
+those for subcliques supported on pairs and triples.
 
-For every nonempty support S, suppose the source fibres can
-jointly provide a real source clique C_S whose size is the
-actual raw source bound on S, and whose original vertices
-have genuine source coding-node membership in their assigned
-target fibres. Then raw_source(S) ≤ raw_target(S) for ALL S.
+On each support S, restrict C to the source originals whose
+sort belongs to S; it remains an actual directed clique.
+The one-support physical target clique obstruction proves
+its cardinality is bounded by the actual target raw age on S.
 
-The hypothesis is exactly the unproved mixed-fibre richness
-obligation: previous disjoint-marker fan and finite-gluing
-theorems do NOT themselves assert these real joint cliques. -/
-theorem trackFCommonRawAge_target_ge_source_of_joint_cliques
-    (d ell m H : Nat) (hell : 2 ≤ ell)
+This is the correct feasible-pattern implication for the
+manuscript's eventual CANONICAL profile equality. It does NOT
+claim equality of numerical RAW ages: those may differ when
+raw constraints are redundant under singleton bounds.
+
+Source-fibre JOINT REALIZATION of each feasible finite clique
+pattern remains an explicit separate geometric obligation. -/
+theorem trackFCommonRawAge_target_feasible_of_joint_source_clique
+    (d ell H : Nat) (hell : 2 ≤ ell)
     (Esrc Etgt : Nat → Nat → Bool)
     (hAvoid : ∀ bad, bad ∈ hensonForbiddenFamily ell hell →
       bad.Avoids (normalizedGraphModel Etgt))
     (e : Nat → Nat) (he : Function.Injective e)
     (hInduced : ∀ a b : Nat, a ≠ b →
       Esrc a b = Etgt (e a) (e b))
-    (u : Fin d → HensonOneType ell Esrc)
     (v : Fin d → HensonOneType ell Etgt)
     (hVLevel : ∀ i, (v i).level = H)
-    (hJoint : ∀ S : Finset (Fin d), S.Nonempty →
-      ∃ C : Finset Nat, ∃ sort : Nat → Fin d,
-        IsDirectedCliqueOn Esrc C ∧
-        C.card = trackFCommonRawAge d ell m Esrc
-          (fun i => (u i).neighbours) S ∧
-        (∀ c ∈ C, sort c ∈ S) ∧
-        (∀ c ∈ C,
-          ∃ t : HensonOneType ell Esrc,
-            t.level = c ∧
-            t ∈ HensonOneType.sourceCodingFibre
-              (E := Esrc) Etgt e (v (sort c)))) :
+    (C : Finset Nat) (sort : Nat → Fin d)
+    (hClique : IsDirectedCliqueOn Esrc C)
+    (hFibre : ∀ c ∈ C,
+      ∃ t : HensonOneType ell Esrc,
+        t.level = c ∧
+        t ∈ HensonOneType.sourceCodingFibre
+          (E := Esrc) Etgt e (v (sort c))) :
     ∀ S : Finset (Fin d), S.Nonempty →
-      trackFCommonRawAge d ell m Esrc
-        (fun i => (u i).neighbours) S ≤
-      trackFCommonRawAge d ell H Etgt
-        (fun i => (v i).neighbours) S := by
+      (C.filter (fun c => sort c ∈ S)).card ≤
+        trackFCommonRawAge d ell H Etgt
+          (fun i => (v i).neighbours) S := by
   classical
-  intro S hS
-  obtain ⟨C, sort, hClique, hCard, hSort, hFibre⟩ :=
-    hJoint S hS
-  calc
-    trackFCommonRawAge d ell m Esrc
-        (fun i => (u i).neighbours) S =
-        C.card := hCard.symm
-    _ ≤ trackFCommonRawAge d ell H Etgt
-        (fun i => (v i).neighbours) S :=
-      trackFCommonRawAge_target_ge_sorted_source_clique
-        d ell H hell Esrc Etgt hAvoid e he hInduced
-        v hVLevel S C sort hSort hClique hFibre
+  intro S _hS
+  let C_S : Finset Nat := C.filter (fun c => sort c ∈ S)
+  have hSub : C_S ⊆ C := Finset.filter_subset _ _
+  have hCliqueS : IsDirectedCliqueOn Esrc C_S := by
+    intro a ha b hb hab
+    exact hClique a (hSub ha) b (hSub hb) hab
+  have hSortS : ∀ c ∈ C_S, sort c ∈ S := by
+    intro c hc
+    exact (Finset.mem_filter.mp hc).2
+  have hFibreS : ∀ c ∈ C_S,
+      ∃ t : HensonOneType ell Esrc,
+        t.level = c ∧
+        t ∈ HensonOneType.sourceCodingFibre
+          (E := Esrc) Etgt e (v (sort c)) := by
+    intro c hc
+    exact hFibre c (hSub hc)
+  exact trackFCommonRawAge_target_ge_sorted_source_clique
+    d ell H hell Esrc Etgt hAvoid e he hInduced
+    v hVLevel S C_S sort hSortS hCliqueS hFibreS
 
 end Kk
