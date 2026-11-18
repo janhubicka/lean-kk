@@ -2124,3 +2124,9 @@ import Kk
 #print axioms Kk.uniform_positive_stage_reserved_original_E_column
 #check @Kk.uniform_positive_stage_selected_full_T_successor_canonical_drop
 #print axioms Kk.uniform_positive_stage_selected_full_T_successor_canonical_drop
+
+-- Track B: non-vacuity of actual finite selected T-sort source, linked original stage
+#check @Kk.finiteTaggedFuture_exists_T_sort_of_positive_canonical
+#print axioms Kk.finiteTaggedFuture_exists_T_sort_of_positive_canonical
+#check @Kk.real_cover_uniform_stage_has_selected_T_witness_forcing_loss
+#print axioms Kk.real_cover_uniform_stage_has_selected_T_witness_forcing_loss
