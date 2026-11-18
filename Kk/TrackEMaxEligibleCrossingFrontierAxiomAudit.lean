@@ -1,0 +1,12 @@
+import Kk.TrackEMaxEligibleCrossingFrontier
+
+#check @Kk.kpt_actual_offplan_node_eligible_crossing_cuts
+
+#check @Kk.mem_kpt_actual_offplan_node_eligible_crossing_cuts
+#print axioms Kk.mem_kpt_actual_offplan_node_eligible_crossing_cuts
+
+#check @Kk.kpt_actual_eligible_crossings_all_covered_iff_max
+#print axioms Kk.kpt_actual_eligible_crossings_all_covered_iff_max
+
+#check @Kk.kpt_actual_eligible_missing_crossing_iff_max
+#print axioms Kk.kpt_actual_eligible_missing_crossing_iff_max
