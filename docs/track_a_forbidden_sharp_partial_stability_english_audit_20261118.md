@@ -225,3 +225,47 @@ from `U -> p_U`, then overlay the actual Kpt terminal and
 old/upper crossing predicates. A bare ordinary-L event schedule
 cannot classify full algorithmically interesting levels: any such
 claim must state extra parameter-closed source hypotheses explicitly.
+
+
+## Whole raw profile event criterion (same H block)
+
+Define B_g as the genuine ordinary-L raw support function for a
+fixed original graph E, current original b, numeric H height k,
+Boolean carrier M and GIVEN later original family j. Under Henson
+forbidden-family avoidance, for g<=h<=k:
+
+    B_h != B_g
+
+**iff** there is an actual nonempty support U such that
+
+    b U-eligible, c_U=p_U, and g<=p_U<h.
+
+**English proof.** If B_h and B_g differ, choose U where they
+differ. The previously established pointwise antitonicity gives
+B_h(U)<B_g(U); the new Henson raw-event iff provides the certificate.
+Conversely the certificate produces a strict decrease at the named U,
+so the full support functions cannot be equal.
+
+No singleton-support shortcut is possible: the event U may involve
+two or more target sorts with genuine common-neighbour clique capacity
+different from every singleton capacity. The theorem is NOT an exact
+canonical event characterization: that needs the global old-feasible
+saturating integer witness in the previous section.
+
+This proves that a raw ordinary-L event schedule within an H block is
+entirely encoded by the finite data
+
+    (U, b U-eligible, c_U=p_U, p_U),
+
+with all actual event times restricted to p_U<ell-2 by genuine
+forbidden-clique avoidance. Different supports may share p_U, so the
+number of event **times** is at most ell-2 for ell>=2.
+This is a bound only for ordinary-L raw support profile changes;
+full Kpt E/I1/I2/I3/B3 interesting levels can occur outside it.
+
+**Lean:** `trackA_henson_raw_function_change_iff_exists_support`
+has been added with a qualified named axiom gate. It reuses actual
+finite-numbered physical bounds, not invented diary types or
+abstract shadow ages. The source is unverified until an exact-head
+kernel build and axiom gate pass. No changes to frozen black TeX or
+existing validated marks.
