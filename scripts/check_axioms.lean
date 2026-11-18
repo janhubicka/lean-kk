@@ -2188,3 +2188,15 @@ import Kk
 #print axioms Kk.resolvedQ_omitted_base_positive_retained_is_selected_coding
 #check @Kk.resolvedQ_selected_coded_has_no_later_retained_neighbour
 #print axioms Kk.resolvedQ_selected_coded_has_no_later_retained_neighbour
+
+-- Track B: arbitrary protected nonzero gap/pivot capacity and real finite numeric stage
+#check @Kk.protectedPivot_common_pool
+#print axioms Kk.protectedPivot_common_pool
+#check @Kk.protectedPivot_capacity
+#print axioms Kk.protectedPivot_capacity
+#check @Kk.protectedPivotRaw_eq_actual
+#print axioms Kk.protectedPivotRaw_eq_actual
+#check @Kk.activeGapPointedRaw_eq_actual
+#print axioms Kk.activeGapPointedRaw_eq_actual
+#check @Kk.henson_leftDense_realizes_activeGap_pointed
+#print axioms Kk.henson_leftDense_realizes_activeGap_pointed
