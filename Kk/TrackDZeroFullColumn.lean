@@ -27,6 +27,32 @@ both sides and reverse E is FALSE. There are no other new atoms.
 
 This is a complete L+/E raw-type uniqueness assertion, not a
 selected-front graph-age comparison. -/
+/-- Explicit extensionality of the SIX fields of a complete new
+L+/E column. The upstream library has a structure but does not
+register an extensionality theorem for it. No new axioms. -/
+private theorem completeNextColumn_eq_of_fields
+    {ell db du dd : Nat}
+    (S T : CompleteNextColumn ell db du dd)
+    (hTo : S.toNew = T.toNew)
+    (hFrom : S.fromNew = T.fromNew)
+    (hETo : S.eToNew = T.eToNew)
+    (hEFrom : S.eFromNew = T.eFromNew)
+    (hUnary : S.unaryNew = T.unaryNew)
+    (hDiagonal : S.diagonalNew = T.diagonalNew) :
+    S = T := by
+  cases S with
+  | mk t f et ef u d =>
+    cases T with
+    | mk t' f' et' ef' u' d' =>
+      dsimp at hTo hFrom hETo hEFrom hUnary hDiagonal
+      cases hTo
+      cases hFrom
+      cases hETo
+      cases hEFrom
+      cases hUnary
+      cases hDiagonal
+      rfl
+
 theorem full_zero_ordinary_cut_column_determines_next_type
     (A : EnumeratedPartialStructure 1 0 1)
     (hSym : ∀ i j : Nat,
@@ -71,44 +97,52 @@ theorem full_zero_ordinary_cut_column_determines_next_type
     (A.E_iff_freeLevel cut v.val).2 (by omega)
   have hForwardW : A.E cut w.val = true :=
     (A.E_iff_freeLevel cut w.val).2 (by omega)
-  have hNextColumn : Q.nextColumn = R.nextColumn := by
-    apply CompleteNextColumn.ext
-    · funext x r
-      cases x with
-      | none =>
-        fin_cases r
-        change A.L.binary v.val cut (0 : Fin 1) =
-          A.L.binary w.val cut (0 : Fin 1)
-        rw [hSym v.val cut, hSym w.val cut, hZeroV, hZeroW]
-      | some x =>
-        rfl
-    · funext x r
-      cases x with
-      | none =>
-        fin_cases r
-        change A.L.binary cut v.val (0 : Fin 1) =
-          A.L.binary cut w.val (0 : Fin 1)
-        rw [hZeroV, hZeroW]
-      | some x =>
-        rfl
-    · funext x
-      cases x with
-      | none =>
-        change A.E v.val cut = A.E w.val cut
-        rw [hReverseV, hReverseW]
-      | some x =>
-        rfl
-    · funext x
-      cases x with
-      | none =>
-        change A.E cut v.val = A.E cut w.val
-        rw [hForwardV, hForwardW]
-      | some x =>
-        rfl
-    · funext r
-      exact Fin.elim0 r
-    · funext r
+  have hNewTo : Q.nextColumn.toNew = R.nextColumn.toNew := by
+    funext x r
+    cases x with
+    | none =>
+      fin_cases r
+      change A.L.binary v.val cut (0 : Fin 1) =
+        A.L.binary w.val cut (0 : Fin 1)
+      rw [hSym v.val cut, hSym w.val cut, hZeroV, hZeroW]
+    | some x =>
       rfl
+  have hNewFrom : Q.nextColumn.fromNew = R.nextColumn.fromNew := by
+    funext x r
+    cases x with
+    | none =>
+      fin_cases r
+      change A.L.binary cut v.val (0 : Fin 1) =
+        A.L.binary cut w.val (0 : Fin 1)
+      rw [hZeroV, hZeroW]
+    | some x =>
+      rfl
+  have hNewETo : Q.nextColumn.eToNew = R.nextColumn.eToNew := by
+    funext x
+    cases x with
+    | none =>
+      change A.E v.val cut = A.E w.val cut
+      rw [hReverseV, hReverseW]
+    | some x =>
+      rfl
+  have hNewEFrom : Q.nextColumn.eFromNew = R.nextColumn.eFromNew := by
+    funext x
+    cases x with
+    | none =>
+      change A.E cut v.val = A.E cut w.val
+      rw [hForwardV, hForwardW]
+    | some x =>
+      rfl
+  have hNewUnary : Q.nextColumn.unaryNew = R.nextColumn.unaryNew := by
+    funext r
+    exact Fin.elim0 r
+  have hNewDiagonal : Q.nextColumn.diagonalNew = R.nextColumn.diagonalNew := by
+    funext r
+    rfl
+  have hNextColumn : Q.nextColumn = R.nextColumn :=
+    completeNextColumn_eq_of_fields
+      Q.nextColumn R.nextColumn
+      hNewTo hNewFrom hNewETo hNewEFrom hNewUnary hNewDiagonal
   exact completeNextColumn_determines_type Q R
     hOldRestriction hNextColumn
 
