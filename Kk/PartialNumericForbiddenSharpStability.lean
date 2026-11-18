@@ -11,8 +11,8 @@ English proof and hostile audit:
 
 This module uses an actual finite forbidden-clique certificate at the
 relevant original pool, not an invented abstract graph-age assumption.
-A bridge from Henson's normalized hensonForbiddenFamily avoidance
-to that certificate is a separate forthcoming integration lemma.
+The module derives each finite no-clique certificate directly from
+Henson's normalized forbidden-family avoidance.
 No dependent Kpt E/B3 or global BRD claim.
 -/
 
