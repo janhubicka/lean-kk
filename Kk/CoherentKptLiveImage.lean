@@ -17,6 +17,9 @@ No new physical root-stage completeness or BRD bound is asserted.
 
 namespace Kk
 
+open SuccessorTree
+open SuccessorTree.V10
+
 namespace CoherentKptIndex
 
 /-- Exact criterion for equality of indexed live names at one cut.
