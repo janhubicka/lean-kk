@@ -71,6 +71,69 @@ theorem live_image_iff_coverage_and_reflection
       rw [← hij]
       exact h.live_forward cut hcut i hi
 
+
+/-- Every newly live target index not transported from an old *live*
+index has exactly one of two explanations at the source-name level:
+either it is the image of an old index which was inactive at this
+cut, or it is outside the entire old index image.
+
+This is a finite-index logical decomposition, not a physical
+classification of Kpt novelty into diary microevents. -/
+theorem new_live_untransported_is_activation_or_outside
+    {db du dd : Nat}
+    {family : List (NormalizedForbidden db du dd)}
+    {P Q : Nat}
+    {oldNode : Fin P → AdmissibleKptNode family}
+    {newNode : Fin Q → AdmissibleKptNode family}
+    {oldLive : Nat → Fin P → Bool}
+    {newLive : Nat → Fin Q → Bool}
+    {horizon : Nat}
+    (h : CoherentKptIndex family oldNode newNode
+      oldLive newLive horizon)
+    (cut : Nat) (j : Fin Q)
+    (_hnew : newLive cut j = true)
+    (hnot : ¬ ∃ i : Fin P,
+      oldLive cut i = true ∧ h.map i = j) :
+    (∃ i : Fin P,
+      oldLive cut i ≠ true ∧ h.map i = j) ∨
+      (∀ i : Fin P, h.map i ≠ j) := by
+  classical
+  by_cases hpre : ∃ i : Fin P, h.map i = j
+  · obtain ⟨i, hij⟩ := hpre
+    left
+    refine ⟨i, ?_, hij⟩
+    intro hi
+    exact hnot ⟨i, hi, hij⟩
+  · right
+    intro i hij
+    exact hpre ⟨i, hij⟩
+
+/-- In particular, if a new live target index has an old
+representative and no old-inactive name becomes new-live, then the
+index must be transported from an old live name. -/
+theorem transported_of_coverage_and_no_activation
+    {db du dd : Nat}
+    {family : List (NormalizedForbidden db du dd)}
+    {P Q : Nat}
+    {oldNode : Fin P → AdmissibleKptNode family}
+    {newNode : Fin Q → AdmissibleKptNode family}
+    {oldLive : Nat → Fin P → Bool}
+    {newLive : Nat → Fin Q → Bool}
+    {horizon : Nat}
+    (h : CoherentKptIndex family oldNode newNode
+      oldLive newLive horizon)
+    (cut : Nat) (j : Fin Q)
+    (hj : newLive cut j = true)
+    (hcover : ∃ i : Fin P, h.map i = j)
+    (hreflect : ∀ i : Fin P,
+      newLive cut (h.map i) = true → oldLive cut i = true) :
+    ∃ i : Fin P, oldLive cut i = true ∧ h.map i = j := by
+  obtain ⟨i, hij⟩ := hcover
+  refine ⟨i, ?_, hij⟩
+  apply hreflect i
+  rw [hij]
+  exact hj
+
 /-- A one-element index can retain the identical literal source map
 while its live mask changes from false to true. This is a pure Boolean
 interface countermodel; no physical Kpt realizability is claimed. -/
@@ -89,5 +152,9 @@ end Kk
 -- Direct named axiom audit, intentionally local until the exact-head build passes.
 #check Kk.CoherentKptIndex.live_image_iff_coverage_and_reflection
 #print axioms Kk.CoherentKptIndex.live_image_iff_coverage_and_reflection
+#check Kk.CoherentKptIndex.new_live_untransported_is_activation_or_outside
+#print axioms Kk.CoherentKptIndex.new_live_untransported_is_activation_or_outside
+#check Kk.CoherentKptIndex.transported_of_coverage_and_no_activation
+#print axioms Kk.CoherentKptIndex.transported_of_coverage_and_no_activation
 #check Kk.CoherentKptIndex.forward_live_does_not_imply_reflection
 #print axioms Kk.CoherentKptIndex.forward_live_does_not_imply_reflection
