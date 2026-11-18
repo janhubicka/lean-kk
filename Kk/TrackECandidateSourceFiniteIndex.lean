@@ -274,10 +274,15 @@ theorem finiteNumericH_oldRun_candidate_coherent_source_index
         (R.I (cut+1)) (R.I (cut+1)) X Y
         (by intro q hq; exact hq) hXY) hOldMember
     apply (hNewPresent cut (φ i)).2
+    change newNode (φ i) ∈ SMTree.Envelope.closure
+      (admissibleKptSTree family) (R.I (cut+1)) Y
     rw [hNames i]
     exact hNewMember
   · intro cut _hCut i
-    rw [hNames i]
-    exact ⟨rfl,rfl⟩
+    change kptFullOldAtCut (newNode (φ i)) cut =
+        kptFullOldAtCut (oldNode i) cut ∧
+      kptFullUpperAtCut (newNode (φ i)) cut =
+        kptFullUpperAtCut (oldNode i) cut
+    simp only [hNames i]
 
 end Kk
