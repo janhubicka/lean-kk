@@ -59,16 +59,7 @@ theorem protectedPivot_common_pool {e : Nat}
   classical
   let P := (Finset.range H).erase v
   have hRange : insert v P = Finset.range H := by
-    ext p
-    simp only [Finset.mem_insert, Finset.mem_erase, Finset.mem_range]
-    constructor
-    · rintro (rfl | ⟨_, hp⟩)
-      · exact hvH
-      · exact hp
-    · intro hp
-      by_cases hpv : p = v
-      · exact Or.inl hpv
-      · exact Or.inr ⟨hpv, hp⟩
+    exact Finset.insert_erase (Finset.mem_range.mpr hvH)
   have hBase :
       oldSupportCommonNeighbourPool P (protectedPivotColumn v a beta) U =
       oldSupportCommonNeighbourPool P a U := by
@@ -77,9 +68,17 @@ theorem protectedPivot_common_pool {e : Nat}
     · subst p
       simp [oldSupportCommonNeighbourPool, P]
     · simp [oldSupportCommonNeighbourPool, protectedPivotColumn, hpv]
-  rw [← hRange, oldSupportCommonNeighbourPool_insert_exact]
-  simp only [protectedPivotColumn, if_pos rfl]
-  rw [hBase]
+  calc
+    oldSupportCommonNeighbourPool (Finset.range H)
+        (protectedPivotColumn v a beta) U =
+      oldSupportCommonNeighbourPool (insert v P)
+        (protectedPivotColumn v a beta) U := by rw [hRange]
+    _ = if ∀ u ∈ U, beta u = true then
+          insert v (oldSupportCommonNeighbourPool P a U)
+        else oldSupportCommonNeighbourPool P a U := by
+          rw [oldSupportCommonNeighbourPool_insert_exact]
+          simp only [protectedPivotColumn, if_pos rfl]
+          rw [hBase]
 
 theorem protectedPivot_capacity {e : Nat}
     (E : Nat → Nat → Bool) (v H : Nat) (hvH : v < H)
@@ -146,8 +145,10 @@ theorem activeGapPointedColumn_eq_protectedPivot {d e : Nat}
   by_cases hp : p < b
   · have hpv : p ≠ v := by omega
     simp [activeGapPointedColumn, protectedPivotColumn, hp, hpv]
-  · simp [activeGapPointedColumn, protectedPivotColumn, hp]
-    by_cases hpv : p = v <;> simp [hpv]
+  · by_cases hpv : p = v
+    · subst p
+      simp [activeGapPointedColumn, protectedPivotColumn, Nat.not_lt.mpr hbv]
+    · simp [activeGapPointedColumn, protectedPivotColumn, hp, hpv]
 
 theorem activeGapPointedRaw_eq_actual {d e : Nat}
     (E : Nat → Nat → Bool) (ell b v H : Nat)
