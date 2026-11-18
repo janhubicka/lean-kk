@@ -112,3 +112,43 @@ lemma and a missing definitionally equal capacity normalization).
 Both are patched in the submitted branch. No full successful exact-head
 gate has yet been observed for this continuation; no manuscript green
 mark or black-text edit is justified.
+
+
+## Local generation transitions and uniqueness (further Track A continuation)
+
+Under genuine Henson avoidance, fix the original graph E, b, k, M,
+the SAME labelled later originals j and a nonempty support U.
+Write p_U=cap_E(P_U), c_U=cap_E(S_U).
+For a single step g→g+1 with g+1≤k, the simplified physical raw
+event iff reduces to
+
+  Raw_(g+1)(U)<Raw_g(U)
+    iff b is U-eligible, c_U=p_U, and p_U=g.
+
+The arithmetic is exact: g≤p_U<g+1 iff p_U=g. In particular any
+two different steps g1<g2 cannot both lower the same support, as that
+would force p_U=g1 and p_U=g2. No global assumptions about other
+supports or canonical integer ages enter this proof.
+
+This is **not** a statement that the entire canonical age experiences
+at most one event: distinct supports may have different p_U, and
+some raw events are canonically redundant. It also does not limit the
+number of genuine auxiliary Kpt I1/I2/I3/B3 levels.
+
+New Lean endpoints:
+- `trackA_henson_partial_raw_single_step_iff`
+- `trackA_henson_partial_raw_at_most_one_single_step`
+
+Both were added after the English proof and registered for the strict
+named standard-only axiom gate. Their exact-head kernel result remains
+unchecked: no passing post-repair workflow result was returned.
+
+### Validation blocker
+
+A prior GitHub Actions head #44400174911 FAILED on two local Lean
+script issues, while preceding Track A modules compiled: old
+`Finset.card_insert_of_not_mem` name and unsimplified but definitionally
+equal capacity syntax. These were patched in the PR branch. Subsequent
+GitHub queries have not exposed an exact-head Actions run for the
+newest commits. Do not mark these endpoints validated until the
+current head is actually built and standard-only axioms reported.
