@@ -22,11 +22,40 @@ The verified physical target clique obstruction (PR #275) applies directly to P=
 
 No target one-type with the hypothetical pool Q is required: the future-clique inequality applies to any finite target old pool below H and actual K_ell-free graph. Hence the statement is valid even when Q itself has a clique of size ell−1, in which case C must be empty.
 
-## Conditional reverse all-support comparison
+## Adversarial correction: preserve feasible clique vectors, NOT raw numerical equality
 
-For each nonempty S, assume a finite ACTUAL source directed clique C_S of size exactly raw_source(S), with an assignment σ_S:C_S→S and a genuine coding-node target-fibre witness for every c∈C_S. The preceding inequality gives raw_source(S)≤raw_target(S) for EVERY nonempty S, including all triple supports.
+**The raw numerical reverse inequality is the wrong target and may be false.**
+Consider two sorts with raw singleton bounds 1 and 1, and raw mixed
+bound 3. This is realised in an actual K4 graph by choosing two disjoint
+old edges as their separate old neighbour sets, with no common old
+neighbour. The canonical mixed bound is then only 2: any feasible
+three-vertex clique supported on two sorts would contain at least two
+vertices in one sort, violating its singleton bound. Thus no actual
+source clique can attain the raw mixed bound 3. A target with raw mixed
+bound 2 can define the EXACT SAME feasible clique vectors, even though
+the two raw mixed bounds differ.
 
-Combining this with the separately proposed and independently audited source-old-clique inequality raw_target(S)≤raw_source(S) from PR #332 would establish raw equality on all supports. The remaining genuine mathematical obstruction is constructing these **jointly supported future cliques in the selected actual coding-node fibres**, not a finite capacity identity.
+**Correct second theorem.** Take any finite ACTUAL source directed
+clique C whose original vertices are assigned a sort by σ and each has
+a genuine coding-node witness in its assigned target fibre. For EVERY
+nonempty support S, the subclique
+C_S={c in C : σ(c) in S} is itself a directed clique, all of its original
+vertices lie in target fibres indexed by S, and the one-support physical
+bound gives
+
+    |C_S| ≤ raw_target(S).
+
+This is the COMPLETE target feasibility test for the labelled clique
+vector actually realised by C. No raw numerical reverse equality is
+claimed. The remaining genuine mathematical obligation is now stated
+precisely: every SOURCE-FEASIBLE finite labelled clique vector must be
+JOINTLY realised by actual coding originals from the selected large
+source-to-target fibres. Once that is proved, the second theorem shows
+the source feasible vectors are included among the target feasible
+vectors. Companion #332's old-clique obstruction inequality supplies
+the opposite inclusion. The verified canonicalizer can then identify
+the CANONICAL sorted graph classes, without requiring equality of
+redundant raw inequalities.
 
 ## Hostile checks
 
@@ -39,10 +68,10 @@ Combining this with the separately proposed and independently audited source-old
 7. The source clique must be directed in both orientations, and the fibre joins are both directed; the target Henson forbidden family supplies actual K_ell-free exclusion.
 8. The actual target Henson-type safety is used only to interpret fibre column equalities. The future clique inequality works for ANY old finite pool Q⊆[0,H).
 9. If S is empty, an assignment σ:C→S forces C empty, so the inequality is trivial. The application specifically concerns NONEMPTY supports (the empty support is not an age constraint).
-10. The conditional reverse inequality is NOT proved by finite-fan marker disjointness alone. It needs an actual finite graph B (here a clique) jointly realized by chosen coding vertices in different large source fibres.
-11. Canonicalized mixed capacities may change under singleton constraints; these theorems speak only about the true raw old common-neighbour clique bounds.
+10. The simultaneous source-fibre REALISATION hypothesis cannot be replaced by finite-fan marker disjointness. A genuine labelled clique must be chosen across the selected fibres, not merely separate daughter types.
+11. Even an exact source and target canonical class match does NOT force raw numerical equality on redundant supports. The second theorem preserves all raw support inequalities of each ACTUALLY realised labelled clique, which is the correct canonicalization interface.
 12. No diary-history lower colouring or exact big Ramsey degree is concluded.
 
 ## Lean acceptance
 
-Prove a genuine future target clique/join lemma and the resulting one-support raw target lower bound, then a conditional all-support lower statement given explicit finite source clique witness for each nonempty support. Use the verified finite clique physical obstruction and exact sourceCodingFibre. Strict named theorem and standard-only transitive-axiom gate. Keep the complete tuple profile synchronization, joint richness, diary unavoidability and direct BRDs PENDING.
+Prove a genuine future target clique/join lemma and the resulting one-support raw target lower bound. Then prove the ALL-SUPPORT target feasibility of any actual labelled source clique by restricting it to each source support separately. Do not require a witness attaining each raw source bound. Use the verified finite clique physical obstruction and exact sourceCodingFibre. Strict named theorem and standard-only transitive-axiom gate. Keep the complete tuple profile synchronization, joint richness, diary unavoidability and direct BRDs PENDING.
