@@ -1,0 +1,13 @@
+import Kk.TrackGFullEventProfileTransport
+
+#check @Kk.kpt_full_crossing_eq_has_physical_ancestor_mate
+#print axioms Kk.kpt_full_crossing_eq_has_physical_ancestor_mate
+
+#check @Kk.kpt_actual_skipLaw_iff_of_full_crossing_eq
+#print axioms Kk.kpt_actual_skipLaw_iff_of_full_crossing_eq
+
+#check @Kk.kpt_IsInterestingAt_iff_of_terminal_and_full_crossing_eq
+#print axioms Kk.kpt_IsInterestingAt_iff_of_terminal_and_full_crossing_eq
+
+#check @Kk.kpt_two_independent_indices_same_full_event_profile_implies_interesting
+#print axioms Kk.kpt_two_independent_indices_same_full_event_profile_implies_interesting
