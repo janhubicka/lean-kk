@@ -203,6 +203,49 @@ theorem new_live_residual_old_inactive_or_literal_fresh
   · right
     exact (h.outside_image_iff_literal_new_source hNewInjective j).mp hOutside
 
+
+/-- The canonical Fin-index enumeration of an actual finite Kpt source
+set is injective: unlike an arbitrary list, it cannot contain
+duplicate names for the same full dependent Kpt node. -/
+theorem canonical_source_index_injective
+    {db du dd : Nat}
+    {family : List (NormalizedForbidden db du dd)}
+    (newParams : Finset (AdmissibleKptNode family)) :
+    Function.Injective
+      (fun j : Fin newParams.card =>
+        (newParams.equivFin.symm j).val) := by
+  classical
+  intro i j hij
+  apply (newParams.equivFin.symm).injective
+  exact Subtype.ext hij
+
+/-- Consequently, the node-level residual dichotomy applies to
+every coherent source index whose target enumeration is the canonical
+Fin-indexing of an actual physical finite source Finset. -/
+theorem canonical_new_live_residual_old_inactive_or_fresh
+    {db du dd : Nat}
+    {family : List (NormalizedForbidden db du dd)}
+    {P : Nat}
+    {oldNode : Fin P → AdmissibleKptNode family}
+    (newParams : Finset (AdmissibleKptNode family))
+    {oldLive : Nat → Fin P → Bool}
+    {newLive : Nat → Fin newParams.card → Bool}
+    {horizon : Nat}
+    (h : CoherentKptIndex family oldNode
+      (fun j : Fin newParams.card => (newParams.equivFin.symm j).val)
+      oldLive newLive horizon)
+    (cut : Nat) (j : Fin newParams.card)
+    (hj : newLive cut j = true)
+    (hNotOldLive : ¬ ∃ i : Fin P,
+      oldLive cut i = true ∧ h.map i = j) :
+    (∃ i : Fin P,
+      oldLive cut i ≠ true ∧
+        oldNode i = (newParams.equivFin.symm j).val) ∨
+      (∀ i : Fin P,
+        oldNode i ≠ (newParams.equivFin.symm j).val) := by
+  exact h.new_live_residual_old_inactive_or_literal_fresh
+    (canonical_source_index_injective newParams) cut j hj hNotOldLive
+
 /-- A one-element index can retain the identical literal source map
 while its live mask changes from false to true. This is a pure Boolean
 interface countermodel; no physical Kpt realizability is claimed. -/
@@ -229,5 +272,9 @@ end Kk
 #print axioms Kk.CoherentKptIndex.outside_image_iff_literal_new_source
 #check Kk.CoherentKptIndex.new_live_residual_old_inactive_or_literal_fresh
 #print axioms Kk.CoherentKptIndex.new_live_residual_old_inactive_or_literal_fresh
+#check Kk.CoherentKptIndex.canonical_source_index_injective
+#print axioms Kk.CoherentKptIndex.canonical_source_index_injective
+#check Kk.CoherentKptIndex.canonical_new_live_residual_old_inactive_or_fresh
+#print axioms Kk.CoherentKptIndex.canonical_new_live_residual_old_inactive_or_fresh
 #check Kk.CoherentKptIndex.forward_live_does_not_imply_reflection
 #print axioms Kk.CoherentKptIndex.forward_live_does_not_imply_reflection
