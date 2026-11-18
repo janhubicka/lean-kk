@@ -2164,3 +2164,7 @@ import Kk
 -- Track A: one raw-support change per actual Henson numerical H block.
 #check @Kk.trackA_henson_partial_raw_at_most_one_single_step
 #print axioms Kk.trackA_henson_partial_raw_at_most_one_single_step
+
+-- Track A: genuine Henson canonical change iff globally feasible saturated raw event.
+#check @Kk.trackA_henson_canonical_change_iff_saturating_event
+#print axioms Kk.trackA_henson_canonical_change_iff_saturating_event
