@@ -2188,3 +2188,23 @@ import Kk
 #print axioms Kk.resolvedQ_omitted_base_positive_retained_is_selected_coding
 #check @Kk.resolvedQ_selected_coded_has_no_later_retained_neighbour
 #print axioms Kk.resolvedQ_selected_coded_has_no_later_retained_neighbour
+
+-- Track C: full finite source-live residual family on current main (9 exact endpoints).
+#check @Kk.CoherentKptIndex.live_image_iff_coverage_and_reflection
+#print axioms Kk.CoherentKptIndex.live_image_iff_coverage_and_reflection
+#check @Kk.CoherentKptIndex.new_live_untransported_is_activation_or_outside
+#print axioms Kk.CoherentKptIndex.new_live_untransported_is_activation_or_outside
+#check @Kk.CoherentKptIndex.transported_of_coverage_and_no_activation
+#print axioms Kk.CoherentKptIndex.transported_of_coverage_and_no_activation
+#check @Kk.CoherentKptIndex.forward_live_does_not_imply_reflection
+#print axioms Kk.CoherentKptIndex.forward_live_does_not_imply_reflection
+#check @Kk.CoherentKptIndex.outside_image_iff_literal_new_source
+#print axioms Kk.CoherentKptIndex.outside_image_iff_literal_new_source
+#check @Kk.CoherentKptIndex.new_live_residual_old_inactive_or_literal_fresh
+#print axioms Kk.CoherentKptIndex.new_live_residual_old_inactive_or_literal_fresh
+#check @Kk.CoherentKptIndex.canonical_source_index_injective
+#print axioms Kk.CoherentKptIndex.canonical_source_index_injective
+#check @Kk.CoherentKptIndex.canonical_new_live_residual_old_inactive_or_fresh
+#print axioms Kk.CoherentKptIndex.canonical_new_live_residual_old_inactive_or_fresh
+#check @Kk.finiteNumericH_constructed_live_source_trichotomy
+#print axioms Kk.finiteNumericH_constructed_live_source_trichotomy
