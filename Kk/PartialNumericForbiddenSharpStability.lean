@@ -346,6 +346,44 @@ theorem trackA_henson_partial_raw_event_iff_simple
       omega
     exact hFull.mpr ⟨hEligible,hCapacity,hCut,hLater,hPositive⟩
 
+
+/-- For genuine K_ell-free Henson original graphs, the raw support
+event at ONE partial generation step g -> g+1 occurs precisely when
+the original common-neighbour capacity equals g and the actual
+linked-old capacity does too. In particular each fixed support has
+at most one raw event in the entire current-original block. -/
+theorem trackA_henson_partial_raw_single_step_iff
+    {d : Nat} (E : Nat → Nat → Bool)
+    (ell : Nat) (hell : 2 ≤ ell)
+    (hAvoid : ∀ bad, bad ∈ hensonForbiddenFamily ell hell →
+      bad.Avoids (normalizedGraphModel E))
+    (k b g M : Nat) (hg : g + 1 ≤ k)
+    (j : Fin d → Nat) (hj : ∀ t, b < j t)
+    (U : IntegerGraphSupport d ell) :
+    finiteNumericHPartialActualRawAt E ell k b (g + 1) M j U <
+      finiteNumericHPartialActualRawAt E ell k b g M j U ↔
+    (∀ t ∈ U.1, E b (j t) = true) ∧
+      finiteDirectedCliqueCapacity E
+        ((oldSupportCommonNeighbourPool (Finset.range b)
+          (fun i t => E i (j t)) U.1).filter
+            (fun i => E i b = true)) =
+      finiteDirectedCliqueCapacity E
+        (oldSupportCommonNeighbourPool (Finset.range b)
+          (fun i t => E i (j t)) U.1) ∧
+      finiteDirectedCliqueCapacity E
+        (oldSupportCommonNeighbourPool (Finset.range b)
+          (fun i t => E i (j t)) U.1) = g := by
+  have hIff := trackA_henson_partial_raw_event_iff_simple
+    E ell hell hAvoid k b g (g + 1) M (by omega) hg j hj U
+  constructor
+  · intro h
+    obtain ⟨he,hc,hLe,hLt⟩ := hIff.mp h
+    exact ⟨he,hc,by omega⟩
+  · rintro ⟨he,hc,hEq⟩
+    apply hIff.mpr
+    refine ⟨he,hc,?_,?_⟩ <;> omega
+
+#print axioms Kk.trackA_henson_partial_raw_single_step_iff
 #print axioms Kk.trackA_henson_partial_raw_event_iff_simple
 #print axioms Kk.trackA_finite_pool_free_of_henson
 #print axioms Kk.trackA_linked_clique_capacity_two_vertex_budget
