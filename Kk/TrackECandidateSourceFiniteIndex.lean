@@ -283,6 +283,6 @@ theorem finiteNumericH_oldRun_candidate_coherent_source_index
         kptFullOldAtCut (oldNode i) cut ∧
       kptFullUpperAtCut (newNode (φ i)) cut =
         kptFullUpperAtCut (oldNode i) cut
-    simp only [hNames i]
+    simp [hNames i]
 
 end Kk
