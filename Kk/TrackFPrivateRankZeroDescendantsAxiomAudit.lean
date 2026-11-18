@@ -1,0 +1,13 @@
+import Kk.TrackFPrivateRankZeroDescendants
+
+#check @Kk.HensonOneType.rank_large_has_rank_zero_descendant
+#print axioms Kk.HensonOneType.rank_large_has_rank_zero_descendant
+
+#check @Kk.HensonOneType.rank_large_rank_zero_after_padding
+#print axioms Kk.HensonOneType.rank_large_rank_zero_after_padding
+
+#check @Kk.HensonOneType.rank_large_private_rank_zero_families
+#print axioms Kk.HensonOneType.rank_large_private_rank_zero_families
+
+#check @Kk.HensonOneType.rank_large_private_rank_zero_common_front
+#print axioms Kk.HensonOneType.rank_large_private_rank_zero_common_front
