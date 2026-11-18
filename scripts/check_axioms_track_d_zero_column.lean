@@ -1,0 +1,4 @@
+import Kk.TrackDZeroFullColumn
+
+#check @Kk.full_zero_ordinary_cut_column_determines_next_type
+#print axioms Kk.full_zero_ordinary_cut_column_determines_next_type
