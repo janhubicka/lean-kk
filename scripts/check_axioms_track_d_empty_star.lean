@@ -1,0 +1,8 @@
+import Kk.TrackDEmptyPhysicalCutStar
+
+#check @Kk.henson_actualRun_lower_real_unselected_of_empty_stage_cutStar
+#print axioms Kk.henson_actualRun_lower_real_unselected_of_empty_stage_cutStar
+#check @Kk.henson_actualRun_isolated_dummy_lower_real_unselected
+#print axioms Kk.henson_actualRun_isolated_dummy_lower_real_unselected
+#check @Kk.henson_actualRun_selected_coded_lower_real_unselected
+#print axioms Kk.henson_actualRun_selected_coded_lower_real_unselected
