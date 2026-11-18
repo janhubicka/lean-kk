@@ -1,0 +1,7 @@
+import Kk.TrackFOnePointGluingSafety
+
+#check @Kk.trackFOnePointPool_safe_of_sorted_clique_inequalities
+#print axioms Kk.trackFOnePointPool_safe_of_sorted_clique_inequalities
+
+#check @Kk.HensonOneType.rank_zero_dense_actualCoding_realizes_feasible_past
+#print axioms Kk.HensonOneType.rank_zero_dense_actualCoding_realizes_feasible_past
