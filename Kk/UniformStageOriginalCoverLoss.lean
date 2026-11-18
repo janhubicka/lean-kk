@@ -55,6 +55,11 @@ theorem uniform_positive_stage_reserved_original_E_column
         E q (f w) = decide (tau w ∈ T.1) ∧
         E (f w) q = decide (tau w ∈ T.1)) := by
   classical
+  let tau : Nat → Fin d :=
+    finiteTaggedFutureSort hd
+      (relativeUniversalTaggedSort d ell
+        (finiteOldColumnRawBound E ell d
+          (Finset.range b ∪ Q) (supportBlockOldColumn Q T.1 c))) F
   unfold HasUniformPositiveSupportStage at hStage
   obtain ⟨f, M, _hFix, _hMono, _hGraph, hAfter, _hCut,
       _hProfile, _hOldCol, hReservedCol, _hGapCol,
@@ -123,6 +128,11 @@ theorem uniform_positive_stage_selected_full_T_successor_canonical_drop
             (finiteOldColumnRawBound E ell d
               (Finset.range F) cNext) T) := by
   classical
+  let tau : Nat → Fin d :=
+    finiteTaggedFutureSort hd
+      (relativeUniversalTaggedSort d ell
+        (finiteOldColumnRawBound E ell d
+          (Finset.range b ∪ Q) (supportBlockOldColumn Q T.1 c))) F
   obtain ⟨f, M, hAfter, hColumn⟩ :=
     uniform_positive_stage_reserved_original_E_column
       E hSym d ell b F k hd c Q T hWithin hStage
