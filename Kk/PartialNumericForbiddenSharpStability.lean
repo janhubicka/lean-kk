@@ -383,6 +383,38 @@ theorem trackA_henson_partial_raw_single_step_iff
     apply hIff.mpr
     refine ⟨he,hc,?_,?_⟩ <;> omega
 
+
+/-- Different generations cannot both strictly lower the same genuine
+Henson raw support. This is a SAME original-graph, SAME top-family,
+SAME named support claim: the two genuine event witnesses would
+identify their capacities with two different generation indices. -/
+theorem trackA_henson_partial_raw_at_most_one_single_step
+    {d : Nat} (E : Nat → Nat → Bool)
+    (ell : Nat) (hell : 2 ≤ ell)
+    (hAvoid : ∀ bad, bad ∈ hensonForbiddenFamily ell hell →
+      bad.Avoids (normalizedGraphModel E))
+    (k b g₁ g₂ M : Nat)
+    (hSep : g₁ < g₂) (hFinal : g₂ + 1 ≤ k)
+    (j : Fin d → Nat) (hj : ∀ t, b < j t)
+    (U : IntegerGraphSupport d ell)
+    (hFirst :
+      finiteNumericHPartialActualRawAt E ell k b (g₁ + 1) M j U <
+        finiteNumericHPartialActualRawAt E ell k b g₁ M j U) :
+    ¬ finiteNumericHPartialActualRawAt E ell k b (g₂ + 1) M j U <
+        finiteNumericHPartialActualRawAt E ell k b g₂ M j U := by
+  have hFirstStep :=
+    (trackA_henson_partial_raw_single_step_iff
+      E ell hell hAvoid k b g₁ M
+        (by omega) j hj U).mp hFirst
+  intro hSecond
+  have hSecondStep :=
+    (trackA_henson_partial_raw_single_step_iff
+      E ell hell hAvoid k b g₂ M hFinal j hj U).mp hSecond
+  have hEq₁ := hFirstStep.2.2
+  have hEq₂ := hSecondStep.2.2
+  omega
+
+#print axioms Kk.trackA_henson_partial_raw_at_most_one_single_step
 #print axioms Kk.trackA_henson_partial_raw_single_step_iff
 #print axioms Kk.trackA_henson_partial_raw_event_iff_simple
 #print axioms Kk.trackA_finite_pool_free_of_henson
