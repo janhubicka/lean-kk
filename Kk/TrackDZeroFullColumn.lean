@@ -19,14 +19,6 @@ namespace Kk
 open SuccessorTree
 open SuccessorTree.V10
 
-/-- Two genuinely eligible original future vertices in ONE enumerated
-L+/E graph structure with symmetric ordinary L, equal complete old
-dependent types and both ordinary cut bits ZERO have identical
-complete next dependent types. The auxiliary E cut bit is TRUE on
-both sides and reverse E is FALSE. There are no other new atoms.
-
-This is a complete L+/E raw-type uniqueness assertion, not a
-selected-front graph-age comparison. -/
 /-- Explicit extensionality of the SIX fields of a complete new
 L+/E column. The upstream library has a structure but does not
 register an extensionality theorem for it. No new axioms. -/
@@ -53,6 +45,14 @@ private theorem completeNextColumn_eq_of_fields
       cases hDiagonal
       rfl
 
+/-- Two genuinely eligible original future vertices in ONE enumerated
+L+/E graph structure with symmetric ordinary L, equal complete old
+dependent types and both ordinary cut bits ZERO have identical
+complete next dependent types. The auxiliary E cut bit is TRUE on
+both sides and reverse E is FALSE. There are no other new atoms.
+
+This is a complete L+/E raw-type uniqueness assertion, not a
+selected-front graph-age comparison. -/
 theorem full_zero_ordinary_cut_column_determines_next_type
     (A : EnumeratedPartialStructure 1 0 1)
     (hSym : ∀ i j : Nat,
