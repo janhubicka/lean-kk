@@ -2168,3 +2168,7 @@ import Kk
 -- Track A: genuine Henson canonical change iff globally feasible saturated raw event.
 #check @Kk.trackA_henson_canonical_change_iff_saturating_event
 #print axioms Kk.trackA_henson_canonical_change_iff_saturating_event
+
+-- Track A: whole literal ordinary-L raw profile change iff some actual support threshold.
+#check @Kk.trackA_henson_raw_function_change_iff_exists_support
+#print axioms Kk.trackA_henson_raw_function_change_iff_exists_support
