@@ -482,6 +482,66 @@ theorem trackA_henson_canonical_change_iff_saturating_event
     exact hGeneral.mpr
       ⟨w,U,hOld,hSat,hEligible,hCap,hCut,hLater,hEvent.2.2.2.2⟩
 
+
+/-- The ENTIRE genuine Henson raw ordinary-L support function changes
+across two partial cuts iff SOME nonempty support has the original
+clique-capacity threshold between them. It is not enough to check
+only singleton supports, and it makes no canonical-cover claim. -/
+theorem trackA_henson_raw_function_change_iff_exists_support
+    {d : Nat} (E : Nat → Nat → Bool)
+    (ell : Nat) (hell : 2 ≤ ell)
+    (hAvoid : ∀ bad, bad ∈ hensonForbiddenFamily ell hell →
+      bad.Avoids (normalizedGraphModel E))
+    (k b g h M : Nat) (hgh : g ≤ h) (hh : h ≤ k)
+    (j : Fin d → Nat) (hj : ∀ t, b < j t) :
+    finiteNumericHPartialActualRawAt E ell k b h M j ≠
+      finiteNumericHPartialActualRawAt E ell k b g M j ↔
+    ∃ U : IntegerGraphSupport d ell,
+      (∀ t ∈ U.1, E b (j t) = true) ∧
+      finiteDirectedCliqueCapacity E
+        ((oldSupportCommonNeighbourPool (Finset.range b)
+          (fun i t => E i (j t)) U.1).filter
+            (fun i => E i b = true)) =
+      finiteDirectedCliqueCapacity E
+        (oldSupportCommonNeighbourPool (Finset.range b)
+          (fun i t => E i (j t)) U.1) ∧
+      g ≤ finiteDirectedCliqueCapacity E
+        (oldSupportCommonNeighbourPool (Finset.range b)
+          (fun i t => E i (j t)) U.1) ∧
+      finiteDirectedCliqueCapacity E
+        (oldSupportCommonNeighbourPool (Finset.range b)
+          (fun i t => E i (j t)) U.1) < h := by
+  classical
+  have hSym := hensonForbiddenFamily_symmetric ell hell E hAvoid
+  constructor
+  · intro hDifferent
+    by_contra hNone
+    apply hDifferent
+    funext U
+    have hMono :
+        finiteNumericHPartialActualRawAt E ell k b h M j U ≤
+          finiteNumericHPartialActualRawAt E ell k b g M j U :=
+      finiteNumericH_partial_actual_raw_age_antitone
+        E ell k b M g h hgh j U
+    by_contra hUnequal
+    have hStrict :
+        finiteNumericHPartialActualRawAt E ell k b h M j U <
+          finiteNumericHPartialActualRawAt E ell k b g M j U := by
+      omega
+    exact hNone ⟨U,
+      (trackA_henson_partial_raw_event_iff_simple
+        E ell hell hAvoid k b g h M hgh hh j hj U).mp hStrict⟩
+  · rintro ⟨U,hEligible,hCap,hCut,hLater⟩ hEq
+    have hStrict :
+        finiteNumericHPartialActualRawAt E ell k b h M j U <
+          finiteNumericHPartialActualRawAt E ell k b g M j U :=
+      (trackA_henson_partial_raw_event_iff_simple
+        E ell hell hAvoid k b g h M hgh hh j hj U).mpr
+          ⟨hEligible,hCap,hCut,hLater⟩
+    rw [hEq] at hStrict
+    exact (Nat.lt_irrefl _) hStrict
+
+#print axioms Kk.trackA_henson_raw_function_change_iff_exists_support
 #print axioms Kk.trackA_henson_canonical_change_iff_saturating_event
 #print axioms Kk.trackA_henson_partial_raw_at_most_one_single_step
 #print axioms Kk.trackA_henson_partial_raw_single_step_iff
