@@ -345,6 +345,12 @@ import Kk.PhysicalPointedContinuation
 import Kk.PointedCliqueUnitLoss
 
 
+-- Track D: genuine local pre-cut source, full dependent B3 stage/final agreement.
+import Kk.TrackDPreCutStageSource
+-- Track D: finite chronological Q original base-neighbour separation.
+import Kk.TrackDResolvedQBaseRoles
+
+
 /-!
 The counting project imports the verified successor-tree library.
 No local replacement of the Ramsey theorem is assumed.
