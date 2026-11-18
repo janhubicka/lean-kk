@@ -339,6 +339,11 @@ import Kk.ConstructedPhysicalOldNewSourceIndex
 -- Marked full-B3 and represented complete source remain explicit assumptions.
 import Kk.TrackDIndexedLowerRealBoring
 
+-- Track B: constructed same-pivot continuation, exact branches and clique unit loss.
+import Kk.PointedContinuationColumn
+import Kk.PhysicalPointedContinuation
+import Kk.PointedCliqueUnitLoss
+
 
 /-!
 The counting project imports the verified successor-tree library.
