@@ -2092,3 +2092,9 @@ import Kk
 #print axioms Kk.CoherentKptIndex.transported_of_coverage_and_no_activation
 #check @Kk.CoherentKptIndex.forward_live_does_not_imply_reflection
 #print axioms Kk.CoherentKptIndex.forward_live_does_not_imply_reflection
+
+-- Track C: literal Kpt novelty under injective target enumeration (two endpoints).
+#check @Kk.CoherentKptIndex.outside_image_iff_literal_new_source
+#print axioms Kk.CoherentKptIndex.outside_image_iff_literal_new_source
+#check @Kk.CoherentKptIndex.new_live_residual_old_inactive_or_literal_fresh
+#print axioms Kk.CoherentKptIndex.new_live_residual_old_inactive_or_literal_fresh
