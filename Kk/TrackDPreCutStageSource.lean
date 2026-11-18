@@ -212,7 +212,11 @@ theorem finiteNumericH_run_stage_and_final_pool_exhaust_same_closure
     let i : Fin Stage.card := Stage.equivFin ⟨v,hv⟩
     have hName : hOriginalName Stage i = v := by
       simp [hOriginalName,i]
-    exact ⟨i,by simpa only [hName] using hBelow⟩
+    refine ⟨i,?_⟩
+    change z ≤ (finiteNumericH K k N).kptOriginal family hAvoid
+      (hOriginalName _ i)
+    rw [hName]
+    exact hBelow
   have hFinalExhaust :
       ∀ z : AdmissibleKptNode family, z ∈ Z →
         ∃ i : Fin Final.card,
@@ -226,7 +230,11 @@ theorem finiteNumericH_run_stage_and_final_pool_exhaust_same_closure
     let i : Fin Final.card := Final.equivFin ⟨v,hFin⟩
     have hName : hOriginalName Final i = v := by
       simp [hOriginalName,i]
-    exact ⟨i,by simpa only [hName] using hBelow⟩
+    refine ⟨i,?_⟩
+    change z ≤ (finiteNumericH K k N).kptOriginal family hAvoid
+      (hOriginalName _ i)
+    rw [hName]
+    exact hBelow
   exact ⟨hStageFinal,hStageExhaust,hFinalExhaust⟩
 
 /-- The ACTUAL pre-cut and final original-name lists give the same
