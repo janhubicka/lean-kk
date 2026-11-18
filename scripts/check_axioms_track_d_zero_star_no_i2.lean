@@ -1,0 +1,6 @@
+import Kk.TrackDZeroStarFullI2
+
+#check @Kk.full_kpt_cut_fork_false_of_zero_full_physical_star
+#print axioms Kk.full_kpt_cut_fork_false_of_zero_full_physical_star
+#check @Kk.full_kpt_no_i2_of_no_i1_and_zero_full_physical_star
+#print axioms Kk.full_kpt_no_i2_of_no_i1_and_zero_full_physical_star
