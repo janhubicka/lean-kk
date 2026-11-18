@@ -1,0 +1,7 @@
+import Kk.TrackGLocalProfileNotSourceIdentity
+
+#check @Kk.kpt_all_cut_full_event_profile_ignores_covered_ancestor
+#print axioms Kk.kpt_all_cut_full_event_profile_ignores_covered_ancestor
+
+#check @Kk.kpt_distinct_source_sets_equal_all_cut_profiles_and_decisions
+#print axioms Kk.kpt_distinct_source_sets_equal_all_cut_profiles_and_decisions
