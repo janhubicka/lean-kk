@@ -2134,3 +2134,21 @@ import Kk
 #print axioms Kk.finiteTaggedFuture_exists_T_sort_of_positive_canonical
 #check @Kk.real_cover_uniform_stage_has_selected_T_witness_forcing_loss
 #print axioms Kk.real_cover_uniform_stage_has_selected_T_witness_forcing_loss
+
+-- Track A: actual Henson K_ell-free sharp physical raw/canonical/feasible stability.
+#check @Kk.trackA_finite_pool_free_of_henson
+#print axioms Kk.trackA_finite_pool_free_of_henson
+#check @Kk.trackA_linked_clique_capacity_two_vertex_budget
+#print axioms Kk.trackA_linked_clique_capacity_two_vertex_budget
+#check @Kk.trackA_partial_raw_stable_of_two_vertex_free
+#print axioms Kk.trackA_partial_raw_stable_of_two_vertex_free
+#check @Kk.trackA_partial_canonical_stable_of_two_vertex_free
+#print axioms Kk.trackA_partial_canonical_stable_of_two_vertex_free
+#check @Kk.trackA_partial_feasible_stable_of_two_vertex_free
+#print axioms Kk.trackA_partial_feasible_stable_of_two_vertex_free
+#check @Kk.trackA_henson_partial_raw_stable_after_ell_sub_two
+#print axioms Kk.trackA_henson_partial_raw_stable_after_ell_sub_two
+#check @Kk.trackA_henson_partial_canonical_stable_after_ell_sub_two
+#print axioms Kk.trackA_henson_partial_canonical_stable_after_ell_sub_two
+#check @Kk.trackA_henson_partial_feasible_stable_after_ell_sub_two
+#print axioms Kk.trackA_henson_partial_feasible_stable_after_ell_sub_two
