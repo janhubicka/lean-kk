@@ -52,3 +52,44 @@ For an injective map f, the restriction f : Fin P ≃ range(f) is a bijection of
 Prove the iff criterion in a small standalone Lean file, parameterized by the existing `CoherentKptIndex` and `cut < horizon`. For instance use `Set.image h.map {i | oldLive cut i = true} = {j | newLive cut j = true}`; keep the two hypotheses exactly as (a) and (b). Also formalize the one-index activation countermodel. Run an exact-head build, a named `#print axioms` audit, and a full repository build before promoting any manuscript validation mark. Apply the resulting criterion only when the physical construction supplies (a) and (b), rather than assuming it from forward coherence.
 
 **Editorial scope:** no black text changes, no replacement of previous validation markers, no obsolete reverse-map argument reinstated.
+
+
+## 18 November continuation: two classes of untransported live *indices*
+
+Let (f:P\to Q) be the coherent OLD→NEW name injection. For a new live
+index (j\in B_c\setminus f(A_c)), classical finite case analysis gives
+exactly the following **alternative at the level of old index images**:
+
+- **Activation:** (j=f(i)) for some old *inactive* index (i\notin A_c).
+- **Outside image:** (j\notin f(P)), so no old name represents this new index.
+
+**Proof.** Decide whether (j\in f(P)). If not, the second alternative holds.
+If yes, choose (i) with (f(i)=j). The hypothesis (j\notin f(A_c))
+implies (i\notin A_c), establishing activation. The alternatives are disjoint
+because (j\notin f(P)) excludes all preimages. The proof does **not**
+assume a reversed live implication, global index surjectivity, or equality of
+successor-tree monoid orbits.
+
+This refines the earlier two-condition criterion: live-image equality holds
+iff **neither** residual class occurs at cut (c). Indeed coverage rules
+out outside-image names, while reflection rules out newly activated
+old-image names. Conversely, if neither class occurs, the forward
+live-preserving map covers all new live names.
+
+**Crucial audit limitation.** An outside-image *index* is not by itself a
+genuinely novel *Kpt node* unless the finite indexing is injective and
+old-node enumeration is exhaustive. A new index may duplicate an old
+literal node. The verified fresh-node obstruction in PR #308 is a
+stronger statement about actual Kpt nodes, and cannot be inferred from
+the pure indexing disjunction. Similarly the activation case may be a
+change of cutoff membership rather than a new node at the final source.
+No claim is made that the residual classes are uniformly bounded,
+canonically diary-encoded, or eliminated by the physical construction.
+
+### New Lean endpoints
+
+The branch adds `new_live_untransported_is_activation_or_outside` and
+`transported_of_coverage_and_no_activation`, with direct named axiom
+reports. These theorem *sources* are committed but still await exact-head
+Lean compilation; there is no current Actions run for the latest SHA.
+Do not register a new GREEN or BLUE manuscript validation mark yet.
