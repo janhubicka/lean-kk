@@ -2152,3 +2152,7 @@ import Kk
 #print axioms Kk.trackA_henson_partial_canonical_stable_after_ell_sub_two
 #check @Kk.trackA_henson_partial_feasible_stable_after_ell_sub_two
 #print axioms Kk.trackA_henson_partial_feasible_stable_after_ell_sub_two
+
+-- Track A: exact Henson raw-event iff with automatic no-saturation.
+#check @Kk.trackA_henson_partial_raw_event_iff_simple
+#print axioms Kk.trackA_henson_partial_raw_event_iff_simple
