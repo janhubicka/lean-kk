@@ -93,3 +93,59 @@ The branch adds `new_live_untransported_is_activation_or_outside` and
 reports. These theorem *sources* are committed but still await exact-head
 Lean compilation; there is no current Actions run for the latest SHA.
 Do not register a new GREEN or BLUE manuscript validation mark yet.
+
+
+## 18 November evening: exact index-to-node upgrade
+
+The previous index split is insufficient to identify **genuinely fresh full
+Kpt nodes** unless the NEW index enumeration is injective. We now add exactly
+this hypothesis (satisfied by enumerating an actual finite Kpt-node set with
+its canonical `Finset.equivFin`, but not by arbitrary repeated lists).
+
+**Lemma (literal novelty criterion).** Suppose (f:P\to Q) preserves the
+literal Kpt nodes, i.e. (n_Q(f(i))=n_P(i)), and (n_Q) is injective.
+For every new index (j),
+[
+  j\notin f(P) \quad\Longleftrightarrow\quad
+  n_Q(j)\notin n_P(P).
+]
+**Proof.** If (n_Q(j)=n_P(i)=n_Q(f(i))), injectivity gives (j=f(i)).
+Conversely if (j=f(i)), literal preservation gives
+(n_Q(j)=n_P(i)). Both implications prove the equivalence. The
+old enumeration need not independently be injective for this lemma.
+
+**Corollary (complete live residual dichotomy under target uniqueness).**
+For (j\in B_c\setminus f(A_c)) there are two mutually exclusive
+cases:
+(a) (j=f(i)) for a formerly inactive old index (i\notin A_c),
+and therefore (n_Q(j)=n_P(i)); or
+(b) (n_Q(j)\notin n_P(P)), i.e. the NEW live index denotes a literally
+new Kpt node.
+
+Use the previous index dichotomy. In its second case apply the lemma.
+The alternatives cannot overlap: literal novelty in (b) forbids
+an old representative. In a physical finite-source application this
+requires that `newParams` really is a `Finset` of full dependent Kpt
+nodes and is enumerated without duplication; equality of selected
+ordinary graph shadows would be insufficient.
+
+**Adversarial boundary:** Even in case (b), novelty is relative to the
+full old source *index*, not automatically relative to every earlier
+source in a different occurrence. The theorem does not identify a
+finite prescribed set of diary microevents, prove off-plan residual
+exclusion, or show that old-inactive activation cannot occur. The
+genuine physical source-index constructor in
+`Kk/ConstructedCoherentIndexAdapter.lean` produces precisely such
+canonical finite-source enumerations, so this is a suitable next
+**adapter** target; however, no new physical adapter is claimed verified
+by the generic lemma alone.
+
+### Additional Lean candidates and status
+
+Added `outside_image_iff_literal_new_source` and
+`new_live_residual_old_inactive_or_literal_fresh`, plus two strict
+qualified source reports and the central Kk import for this module.
+These are proof bodies submitted for **exact-head checking**, not yet
+promoted as kernel-verified or a new manuscript marker. In particular,
+do not interpret the previous successful project CI (which did not
+import this module) as proof of these declarations.
