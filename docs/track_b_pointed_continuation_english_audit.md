@@ -198,13 +198,14 @@ directly, avoiding any extra normalization assumption.
 
 ## 6. Two constructed finite stages with common actual vertices
 
-Assume G_B(T)>0 for the actual old-prefix raw function B at (b,c). Take the
-first full numerical-stage certificate f,M from the existing constructive
-theorem. Positivity supplies a genuine tagged w in its universal future W
+Assume G_B(T)>0 for the actual old-prefix raw function B at (b,c). Start with
+ANY supplied full numerical-stage certificate f,M; the existing constructive
+theorem can supply one if it is not already given. Positivity supplies a
+genuine tagged w in its universal future W
 with tau(w) in T, using the already checked tagged nonvacuity theorem.
 This is an actual member of W, not the default value of its sort decoder.
 
-Let H=max(b,1+max f[W]), with the empty finite maximum interpreted as zero
+Let H=max(M+1,max(b,1+max f[W])), with the empty finite maximum interpreted as zero
 (W is nonempty here). Every first-stage image is strictly below H. The
 original-column clause for the SAME first certificate identifies the complete
 old type of v=f(w) as tau(w); its chronological clause gives b<=v.
@@ -213,6 +214,10 @@ Return BOTH full certificates, the actual tagged w, the cutoff inequalities,
 and the exact raw formula. Since g fixes [0,H), it fixes f(x) for EVERY x in W,
 including the selected v. Thus the two finite realizations are coherent on
 their actual original graph vertices, not merely separately existential.
+The new numerical cutoff may also be chosen strictly larger than M: the
+second certificate bounds the real top-generation address of the original
+with index M (which is below H) by M', and that address is at least M.
+This numerical inequality is not a claim of full auxiliary-source coherence.
 
 The main agent audited this addendum before implementation: the finite supremum
 strict bound, nonvacuity, same-certificate full old columns, and simultaneous
@@ -221,3 +226,30 @@ nonempty ambient sort domain is only an encoding condition. The caveat about
 active future roles remains unchanged: other first-stage witnesses receive
 zero incidence to the new future. This does not yet justify a prescribed
 infinite diary schedule or its complete dependent source records.
+The factorization for any supplied first certificate and the ordered-cutoff
+choice were also audited before their implementation.
+
+## 7. Audit example: individual live children do not settle their joint age
+
+For ell=4 take old sorts s,a,b. The old graph consists of three disjoint
+edges Q_s,Q_a,Q_b and one further isolated vertex z. Both vertices of Q_t
+have positive columns only on sort t; z is positive on all three sorts.
+Then the old common-neighbour capacity is 2 on singletons and 1 on every
+pair and on {s,a,b}. Its raw and canonical ages are therefore 1 on singletons
+and 2 on pairs and the triple. The canonical equalities are witnessed by
+single vertices and pairs of distinct sorts, while the raw bounds give the
+opposite inequalities.
+
+A genuine pivot of old sort s is adjacent to Q_s and z. Consider positive
+children of a and b. Each is individually live: its old singleton capacity is
+2, and its common capacity with s is 1. But the common new neighbourhood for
+the pair {a,b} contains the edge {z,v}, so its new raw and canonical pair
+value is 1. An edge between two such future vertices would complete a K4
+with z,v. Thus checking that both children exist, the pairwise passing
+equalities F({s,t})=F({t})+1, and F({a,b})<=ell-2 is still insufficient to
+preserve the old pair profile around an actual pivot.
+
+Two independent mathematical reviews checked this example. It is recorded
+as an obstruction to those INSUFFICIENT hypotheses, not as a contradiction
+to any theorem whose full hypotheses also impose the joint pointed-clique
+constraints. No separate Lean validation mark is assigned to this example.
