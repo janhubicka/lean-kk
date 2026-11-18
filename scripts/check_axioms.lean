@@ -2104,3 +2104,7 @@ import Kk
 #print axioms Kk.CoherentKptIndex.canonical_source_index_injective
 #check @Kk.CoherentKptIndex.canonical_new_live_residual_old_inactive_or_fresh
 #print axioms Kk.CoherentKptIndex.canonical_new_live_residual_old_inactive_or_fresh
+
+-- Track C: genuine numerical-H+ constructed physical live-source trichotomy.
+#check @Kk.finiteNumericH_constructed_live_source_trichotomy
+#print axioms Kk.finiteNumericH_constructed_live_source_trichotomy
