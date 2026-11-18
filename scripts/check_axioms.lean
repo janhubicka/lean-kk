@@ -2098,3 +2098,9 @@ import Kk
 #print axioms Kk.CoherentKptIndex.outside_image_iff_literal_new_source
 #check @Kk.CoherentKptIndex.new_live_residual_old_inactive_or_literal_fresh
 #print axioms Kk.CoherentKptIndex.new_live_residual_old_inactive_or_literal_fresh
+
+-- Track C: actual finite physical Finset node enumeration, two endpoints.
+#check @Kk.CoherentKptIndex.canonical_source_index_injective
+#print axioms Kk.CoherentKptIndex.canonical_source_index_injective
+#check @Kk.CoherentKptIndex.canonical_new_live_residual_old_inactive_or_fresh
+#print axioms Kk.CoherentKptIndex.canonical_new_live_residual_old_inactive_or_fresh
