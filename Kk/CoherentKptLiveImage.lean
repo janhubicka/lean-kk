@@ -82,3 +82,9 @@ theorem forward_live_does_not_imply_reflection (cut : Nat) :
 end CoherentKptIndex
 
 end Kk
+
+-- Direct named axiom audit, intentionally local until the exact-head build passes.
+#check Kk.CoherentKptIndex.live_image_iff_coverage_and_reflection
+#print axioms Kk.CoherentKptIndex.live_image_iff_coverage_and_reflection
+#check Kk.CoherentKptIndex.forward_live_does_not_imply_reflection
+#print axioms Kk.CoherentKptIndex.forward_live_does_not_imply_reflection
