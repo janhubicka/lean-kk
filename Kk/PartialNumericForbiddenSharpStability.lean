@@ -1,5 +1,6 @@
 import Kk.PartialNumericLateAgeStability
 import Kk.FiniteOldColumnAge
+import Kk.HensonEncoding
 import Mathlib.Tactic
 
 /-!
@@ -18,6 +19,30 @@ No dependent Kpt E/B3 or global BRD claim.
 namespace Kk
 
 open SuccessorTree.V10
+
+
+/-- Every finite original pool really is K_ell-free if the actual
+normalized graph avoids the full Henson forbidden family. Convert a
+candidate unordered finite clique to its increasing enumeration. -/
+theorem trackA_finite_pool_free_of_henson
+    (ell : Nat) (hell : 2 ≤ ell)
+    (E : Nat → Nat → Bool)
+    (hAvoid : ∀ bad, bad ∈ hensonForbiddenFamily ell hell →
+      bad.Avoids (normalizedGraphModel E))
+    (P : Finset Nat) :
+    finitePoolCliqueCheck E ell P = false := by
+  classical
+  have hNoClique :=
+    hensonForbiddenFamily_no_cliques ell hell E hAvoid
+  apply (finitePoolCliqueCheck_false_iff E ell P).2
+  rintro ⟨s, hsP, hsCard, hsClique⟩
+  let f : Fin ell ↪o Nat := s.orderEmbOfFin hsCard
+  apply hNoClique
+  refine ⟨f, f.strictMono, ?_⟩
+  intro a b hab
+  exact hsClique (f a) (s.orderEmbOfFin_mem hsCard a)
+    (f b) (s.orderEmbOfFin_mem hsCard b)
+    (f.injective.ne hab)
 
 /-- A finite set S of original vertices all before b, linked to b
 and to one later vertex t, with b linked to t, has capacity at most
@@ -202,9 +227,62 @@ theorem trackA_partial_feasible_stable_of_two_vertex_free
   rw [trackA_partial_raw_stable_of_two_vertex_free
     E hSym ell k b g h M hLate hgh hh j hj hPoolsFree]
 
+
+/-- The sharp stability theorem directly in the original Henson
+forbidden-family interface. No separate pool-freeness premise. -/
+theorem trackA_henson_partial_raw_stable_after_ell_sub_two
+    {d : Nat} (E : Nat → Nat → Bool)
+    (ell : Nat) (hell : 2 ≤ ell)
+    (hAvoid : ∀ bad, bad ∈ hensonForbiddenFamily ell hell →
+      bad.Avoids (normalizedGraphModel E))
+    (k b g h M : Nat)
+    (hLate : ell - 2 ≤ g) (hgh : g ≤ h) (hh : h ≤ k)
+    (j : Fin d → Nat) (hj : ∀ t, b < j t) :
+    finiteNumericHPartialActualRawAt E ell k b h M j =
+      finiteNumericHPartialActualRawAt E ell k b g M j := by
+  have hSym := hensonForbiddenFamily_symmetric ell hell E hAvoid
+  apply trackA_partial_raw_stable_of_two_vertex_free
+    E hSym ell k b g h M hLate hgh hh j hj
+  intro U t _
+  exact trackA_finite_pool_free_of_henson ell hell E hAvoid _
+
+theorem trackA_henson_partial_canonical_stable_after_ell_sub_two
+    {d : Nat} (E : Nat → Nat → Bool)
+    (ell : Nat) (hell : 2 ≤ ell)
+    (hAvoid : ∀ bad, bad ∈ hensonForbiddenFamily ell hell →
+      bad.Avoids (normalizedGraphModel E))
+    (k b g h M : Nat)
+    (hLate : ell - 2 ≤ g) (hgh : g ≤ h) (hh : h ≤ k)
+    (j : Fin d → Nat) (hj : ∀ t, b < j t) :
+    integerGraphAgeCanonical d ell
+      (finiteNumericHPartialActualRawAt E ell k b h M j) =
+    integerGraphAgeCanonical d ell
+      (finiteNumericHPartialActualRawAt E ell k b g M j) := by
+  rw [trackA_henson_partial_raw_stable_after_ell_sub_two
+    E ell hell hAvoid k b g h M hLate hgh hh j hj]
+
+theorem trackA_henson_partial_feasible_stable_after_ell_sub_two
+    {d : Nat} (E : Nat → Nat → Bool)
+    (ell : Nat) (hell : 2 ≤ ell)
+    (hAvoid : ∀ bad, bad ∈ hensonForbiddenFamily ell hell →
+      bad.Avoids (normalizedGraphModel E))
+    (k b g h M : Nat)
+    (hLate : ell - 2 ≤ g) (hgh : g ≤ h) (hh : h ≤ k)
+    (j : Fin d → Nat) (hj : ∀ t, b < j t) :
+    feasibleIntegerCliqueVectors d ell
+      (finiteNumericHPartialActualRawAt E ell k b h M j) =
+    feasibleIntegerCliqueVectors d ell
+      (finiteNumericHPartialActualRawAt E ell k b g M j) := by
+  rw [trackA_henson_partial_raw_stable_after_ell_sub_two
+    E ell hell hAvoid k b g h M hLate hgh hh j hj]
+
+#print axioms Kk.trackA_finite_pool_free_of_henson
 #print axioms Kk.trackA_linked_clique_capacity_two_vertex_budget
 #print axioms Kk.trackA_partial_raw_stable_of_two_vertex_free
 #print axioms Kk.trackA_partial_canonical_stable_of_two_vertex_free
 #print axioms Kk.trackA_partial_feasible_stable_of_two_vertex_free
+#print axioms Kk.trackA_henson_partial_raw_stable_after_ell_sub_two
+#print axioms Kk.trackA_henson_partial_canonical_stable_after_ell_sub_two
+#print axioms Kk.trackA_henson_partial_feasible_stable_after_ell_sub_two
 
 end Kk
