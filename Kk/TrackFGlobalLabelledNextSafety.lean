@@ -225,4 +225,159 @@ theorem trackFNextPositivePast_safe_of_global
       d ell m n E B U f σ sort
       hInj hInduced hNewSym hSort hGlobal)
 
+namespace HensonOneType
+
+/-- NEXT ACTUAL source coding vertex of a globally feasible finite
+labelled graph B, selected from a rank-zero dense source fibre S.
+
+The prior n source ORIGINAL vertices have been realized by f with
+the correct induced B-edge table and actual old-prefix source-sort
+columns. The global B RAW clique feasibility predicates imply
+the exact one-point safety certificate (proved above); the
+verified density theorem then gives a GENUINE new coding original.
+
+The conclusion preserves ALL three induction invariants at once:
+- the source fibre and chronological bound;
+- the exact actual E column on the original common prefix m;
+- BOTH directed actual B edges to all n previously chosen originals.
+
+The finite iteration over n remains a separate theorem. -/
+theorem rank_zero_dense_actualCoding_realizes_global_next
+    (d ell m n : Nat) (E B : Nat → Nat → Bool)
+    (U : Fin d → Finset Nat)
+    (σ : Nat → Fin d) (sort : Nat → Fin d)
+    (S : Set (HensonOneType ell E))
+    (u : HensonOneType ell E)
+    (huLevel : u.level = m)
+    (huRoot : U (σ n) = u.neighbours)
+    (huRank : rank u = 0)
+    (hLarge : RankLargeness.Large rank S 0 u)
+    (hActual : ∀ x : HensonOneType ell E,
+      x ∈ S → IsCodingNode x)
+    (hOld : ∀ i x, x ∈ U i → x < m)
+    (f : Nat → Nat)
+    (hInj : Set.InjOn f (↑(Finset.range n) : Set Nat))
+    (hInduced : ∀ i : Nat, i < n →
+      ∀ j : Nat, j < n → i ≠ j →
+        E (f i) (f j) = B i j)
+    (hNewSym : ∀ i : Nat, i < n → B n i = B i n)
+    (hSort : ∀ i : Nat, i < n → sort (f i) = σ i)
+    (hColumn : ∀ i : Nat, i < n →
+      ∀ p : Nat, p < m →
+        E p (f i) = decide (p ∈ U (σ i)))
+    (front : Nat) (hFront : m ≤ front)
+    (hPastBounds : ∀ i : Nat, i < n →
+      m ≤ f i ∧ f i < front)
+    (hGlobal : ∀ T : Finset Nat,
+      T ⊆ Finset.range (n + 1) → T.Nonempty →
+      IsDirectedCliqueOn B T →
+      T.card ≤ trackFCommonRawAge d ell m E U (T.image σ)) :
+    ∃ x : HensonOneType ell E,
+      u ≤ x ∧ x ∈ S ∧ front ≤ x.level ∧ rank x = 0 ∧
+      (∀ p : Nat, p < m →
+        E p x.level = decide (p ∈ U (σ n))) ∧
+      (∀ i : Nat, i < n →
+        E (f i) x.level = B i n ∧
+        E x.level (f i) = B n i) := by
+  classical
+  let past : Finset Nat := (Finset.range n).image f
+  let positive : Finset Nat := trackFNextPositivePast B f n
+  have hPosSubset : positive ⊆ past := by
+    exact Finset.image_subset_image (Finset.filter_subset _ _)
+  have hPastActual : ∀ c ∈ past,
+      u.level ≤ c ∧ c < front := by
+    intro c hc
+    obtain ⟨i, hi, hic⟩ := Finset.mem_image.mp hc
+    have hiN := Finset.mem_range.mp hi
+    have hb := hPastBounds i hiN
+    constructor
+    · rw [huLevel]
+      exact hic ▸ hb.1
+    · exact hic ▸ hb.2
+  have hSafeU :
+      finitePoolCliqueCheck E (ell - 1)
+        (U (σ n) ∪ positive) = false :=
+    trackFNextPositivePast_safe_of_global
+      d ell m n E B U hOld f σ sort
+      hInj hInduced hNewSym hSort
+      (fun i hi => (hPastBounds i hi).1)
+      hColumn hGlobal
+  have hSafe :
+      finitePoolCliqueCheck E (ell - 1)
+        (u.neighbours ∪ positive) = false := by
+    simpa only [huRoot] using hSafeU
+  obtain ⟨x, hUX, hxS, hxFront, hxRank, hxPast⟩ :=
+    rank_zero_dense_actualCoding_realizes_safe_past
+      S u huRank hLarge hActual front
+      (by simpa only [huLevel] using hFront)
+      past positive hPastActual hPosSubset hSafe
+  have hOldColumn : ∀ p : Nat, p < m →
+      E p x.level = decide (p ∈ U (σ n)) := by
+    intro p hp
+    have hpU : p < u.level := by simpa only [huLevel] using hp
+    have hpX : p < x.level := lt_of_lt_of_le hpU hUX.1
+    have hMem : (p ∈ x.neighbours) ↔ (p ∈ u.neighbours) :=
+      (hUX.2 p hpU).symm
+    have hCode := (hActual x hxS p hpX).1
+    have hDecide :
+        decide (p ∈ x.neighbours) =
+          decide (p ∈ u.neighbours) := by
+      by_cases h : p ∈ u.neighbours
+      · have hX : p ∈ x.neighbours := hMem.mpr h
+        simp [h,hX]
+      · have hX : p ∉ x.neighbours := by
+          intro hX
+          exact h (hMem.mp hX)
+        simp [h,hX]
+    calc
+      E p x.level = decide (p ∈ x.neighbours) := hCode
+      _ = decide (p ∈ u.neighbours) := hDecide
+      _ = decide (p ∈ U (σ n)) := by
+        rw [huRoot]
+  have hFutureBits : ∀ i : Nat, i < n →
+      E (f i) x.level = B i n ∧
+      E x.level (f i) = B n i := by
+    intro i hi
+    have hiPast : f i ∈ past :=
+      Finset.mem_image.mpr ⟨i, Finset.mem_range.mpr hi, rfl⟩
+    have hxBits := hxPast (f i) hiPast
+    have hPositiveAt : (f i ∈ positive) ↔ B i n = true := by
+      constructor
+      · intro hPos
+        obtain ⟨j, hj, hjImage⟩ := Finset.mem_image.mp hPos
+        have hjN : j < n :=
+          Finset.mem_range.mp (Finset.mem_filter.mp hj).1
+        have hji : j = i :=
+          hInj (Finset.mem_range.mpr hjN)
+            (Finset.mem_range.mpr hi) hjImage
+        subst j
+        exact (Finset.mem_filter.mp hj).2
+      · intro hBit
+        exact Finset.mem_image.mpr
+          ⟨i, Finset.mem_filter.mpr
+            ⟨Finset.mem_range.mpr hi, hBit⟩, rfl⟩
+    have hDecide :
+        decide (f i ∈ positive) = B i n := by
+      cases hBit : B i n with
+      | false =>
+          have hNot : f i ∉ positive := by
+            intro hp
+            have he := hPositiveAt.mp hp
+            rw [hBit] at he
+            cases he
+          simp [hNot, hBit]
+      | true =>
+          have hYes : f i ∈ positive := hPositiveAt.mpr hBit
+          simp [hYes, hBit]
+    constructor
+    · exact hxBits.1.trans hDecide
+    · calc
+        E x.level (f i) = decide (f i ∈ positive) := hxBits.2
+        _ = B i n := hDecide
+        _ = B n i := (hNewSym i hi).symm
+  exact ⟨x, hUX, hxS, hxFront, hxRank,
+    hOldColumn, hFutureBits⟩
+
+end HensonOneType
+
 end Kk
