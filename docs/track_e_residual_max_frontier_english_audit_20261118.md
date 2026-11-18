@@ -6,7 +6,7 @@
 
 E63 builds one coherent old-final to new-final physical Kpt index for two genuine nested numerical-H+ runs. E64 says that at an old-boring cut, any genuinely NEW terminal or unmatched complete old/upper L+ crossing must have a NEW-LIVE index outside the image of OLD-LIVE indices. E65 distinguishes (a) new final index names from (b) old-final names newly active at the cut. E67 proves that for ONE fixed actual new Kpt node, complete old crossing coverage at its maximal eligible source cut implies coverage at every earlier eligible cut.
 
-The missing elementary composition is to eliminate all OLD-LIVE image names **before** computing the E67 maximal frontier. Otherwise a maximal eligible cut may be harmless because the name is old-live there, even though there are smaller cuts at which the same name is newly active. That would make an unfiltered maximal test poorly targeted. The correct source-dependent filter is given below.
+An initial temptation was to remove OLD-LIVE image names before computing the E67 frontier, on the theory that a higher cut could be harmless (old-live) but a lower cut still newly active. **Adversarial correction:** in the genuine exact old-live index this situation is impossible: old pre-cut source membership, hence the exact old-live mask, grows as source cuts decrease. In particular an old-live higher cut cannot be followed by a residual lower cut. The filtered certificate below is valid already with one-way old-live soundness, but **is not a stronger geometric certificate than E67**. The more useful new observation, proved in E68.4, is that exact physical masks make the residual eligible support upward-closed and force its maximum to equal the unfiltered maximum whenever nonempty.
 
 ## Exact data
 
@@ -49,7 +49,7 @@ Proof of (B) => (A): fix j and c in E_j.
 * If j is an old-live image at c, apply E68.1: w=newNode(j) is already a physical old source witness.
 * Otherwise c is in R_j, so R_j is nonempty and c <= m=max R_j. By (B), the old full crossing pair of newNode(j) has one old physical witness at m. Since m belongs to E_j, m<oldTop. The verified G294 monotone-down lemma restricts this SAME old witness to cut c, preserving exact upper ancestor equality. Thus Covered(newNode j,c).
 
-This equivalence is **stronger as a testing procedure** than E67 alone: an old-live maximal eligible cut never hides the need to test an earlier residual cut. The maximal residual cut may occur at a different source level from the maximal unrestricted eligible cut.
+This equivalence is a useful factorization through residual names even when only one-way old-live soundness is known. **It does not strengthen the physical E67 crossing criterion.** If the old-live mask is exact and downward monotone, a maximal eligible old-live cut means ALL lower eligible cuts are old-live too, so the residual set is empty. If the residual set is nonempty, its maximum equals the unfiltered maximum. The apparent possibility of a harmless higher cut hiding a genuinely uncovered lower residual cut is therefore a DEAD END, not a new obstruction.
 
 ## Corollary E68.3 — the two genuine E65 residual kinds remain
 
@@ -59,6 +59,31 @@ If phi is additionally injective, each c in R_j satisfies precisely the E65 dich
 * j is a matched old FINAL name whose old pre-cut live flag is false at c.
 
 The second possibility must NOT be discarded as harmless. In particular an old-final node may have a long early activation interval (E66), so one residual maximum does not mean one interesting cut or one diary event.
+
+## Theorem E68.4 — exact live-mask monotonicity collapses both frontiers
+
+Add the genuine old-mask downward monotonicity assumption:
+
+    (H3) low <= high < oldTop and oldLive(high,i)=true
+         imply oldLive(low,i)=true.
+
+H3 is not a new global diary hypothesis: it follows from the verified G294 old pre-cut closure monotonicity when oldLive is an **exact per-index** representation of the actual physical old source, as in E63 (and is proved for exact actual runs in E66). Mere soundness H2 does NOT suffice for H3.
+
+**Claim A (relative upper closure).** If c is residual eligible for j, d is eligible for the same j and c <= d, then d is residual too.
+
+Proof. Suppose instead that some old name i has oldLive(d,i)=true and phi(i)=j. Eligibility gives d<oldTop. By H3, oldLive(c,i)=true, contradicting the residual definition at c. Hence d is residual.
+
+**Claim B (coincident maxima).** If R_j is nonempty, then E_j is nonempty and
+
+    max R_j = max E_j.
+
+Proof. R_j is contained in E_j. Let c=max R_j and d=max E_j; then c<=d. Claim A implies d is residual. Thus d<=max R_j=c, so d=c.
+
+**Claim C (vacuous alternative).** If E_j is nonempty but max E_j is old-live matched, then R_j is empty. The same witness is old-live at every lower eligible cut by H3, so all E_j crossings are physically covered by E68.1.
+
+This identifies a genuine simplification: in the actual E63 setting there is **no need to maintain two different cut frontiers**. One can use E67's original maximal eligible cut; E64/E65 tell us whether its test is automatic (old-live image) or remains an actual residual geometric obligation. Early old-final activation windows (E66) can still be long; the theorem says nothing about how often their original Kpt nodes cross eligible cuts or whether they are covered.
+
+**Hostile regression.** Under soundness H2 alone, one could deliberately set an old-live mask to false at a low cut even when its physical node is genuinely old-live there, and true at a high cut. Then the algebraic residual filter can exhibit a different maximum, but ALL physical crossings below the matched high cut are already covered by G294. This is an **inaccurate finite mask**, not a valid exact E63 index and not a counterexample to the diary theorem.
 
 ## Explicit limitations
 
@@ -87,8 +112,8 @@ There is still NO uniform bound on the number of names Q, the size of R_j, its h
 17. Downward OLD coverage is applied in the correct direction, max to smaller cut.
 18. The old-live status at c and m can differ; the theorem never assumes constant liveness.
 19. Injectivity of phi is not used in E68.1/E68.2; it IS required for the E65 two-class converse.
-20. No numerical-H+ diary realization, arbitrary-occurrence normalized orbit, global Ramsey upper bound or sharp BRD is claimed.
+20. No numerical-H+ diary realization, arbitrary-occurrence normalized orbit, global Ramsey upper bound or sharp BRD is claimed.\n21. H3 must be obtained from exact old-live masks; one-way old-live soundness H2 does NOT imply H3.\n22. Under H3 the residual support is relatively upward-closed and its maximal cut is the SAME eligible maximum; a purported separate earlier physical residual frontier is spurious.
 
 ## Acceptance gate
 
-Create a standalone Lean module importing the merged E67 and E65 statements. Verify the three formal endpoints: (1) old-live node self-witness; (2) exact residual-frontier maximal-cut equivalence; (3) E65 classification of the frontier under injectivity. Use a dedicated 3-name standard-only axiom audit with parser negative self-test and an independent full Lake build. Keep PR draft until exact-head green. Do not edit frozen black manuscript prose or promote global validation marks.
+Create a standalone Lean module importing the merged E67 and E65 statements. Verify the original three formal endpoints, then add (4) residual support upward closure under monotone old-live masks and (5) equality of the two maxima when the residual set is nonempty. Audit both the weak one-way soundness and the stronger exact-mask hypothesis separately. Use a dedicated 3-name standard-only axiom audit with parser negative self-test and an independent full Lake build. Keep PR draft until exact-head green. Do not edit frozen black manuscript prose or promote global validation marks.
