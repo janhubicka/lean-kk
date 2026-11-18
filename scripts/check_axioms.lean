@@ -2212,3 +2212,17 @@ import Kk
 -- Track C: constructed physical off-plan reduction; no quietness assumption.
 #check @Kk.finiteNumericH_constructed_offplan_iff_residual_quiet
 #print axioms Kk.finiteNumericH_constructed_offplan_iff_residual_quiet
+
+-- Track B: exact active-gap original source and target-age preservation budgets
+#check @Kk.protectedPivot_common_pool
+#print axioms Kk.protectedPivot_common_pool
+#check @Kk.protectedPivot_capacity
+#print axioms Kk.protectedPivot_capacity
+#check @Kk.protectedPivotRaw_eq_actual
+#print axioms Kk.protectedPivotRaw_eq_actual
+#check @Kk.activeGapPointedRaw_eq_actual
+#print axioms Kk.activeGapPointedRaw_eq_actual
+#check @Kk.henson_leftDense_realizes_activeGap_pointed
+#print axioms Kk.henson_leftDense_realizes_activeGap_pointed
+#check @Kk.protectedPivot_targetAge_le_canonical_iff_budgets
+#print axioms Kk.protectedPivot_targetAge_le_canonical_iff_budgets
