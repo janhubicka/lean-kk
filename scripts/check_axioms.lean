@@ -2220,3 +2220,7 @@ import Kk
 #print axioms Kk.activeGapPointedRaw_eq_actual
 #check @Kk.henson_leftDense_realizes_activeGap_pointed
 #print axioms Kk.henson_leftDense_realizes_activeGap_pointed
+
+-- Track B: exact necessary and sufficient active-pivot age-preservation budgets
+#check @Kk.protectedPivot_targetAge_le_canonical_iff_budgets
+#print axioms Kk.protectedPivot_targetAge_le_canonical_iff_budgets
