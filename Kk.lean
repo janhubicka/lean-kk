@@ -340,6 +340,9 @@ import Kk.ConstructedPhysicalOldNewSourceIndex
 import Kk.TrackDIndexedLowerRealBoring
 
 
+-- Track A: sharpened finite two-original clique-budget stability (pending exact-head gate).
+import Kk.PartialNumericForbiddenSharpStability
+
 /-!
 The counting project imports the verified successor-tree library.
 No local replacement of the Ramsey theorem is assumed.
