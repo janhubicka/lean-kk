@@ -248,4 +248,178 @@ theorem kpt_actual_residual_cut_new_final_or_early_old
   exact (kpt_residual_iff_new_final_or_early_old
     φ hInjective oldLive cut j).mp hResidual
 
+
+/-- Exact exhaustive physical Kpt source indexes with distinct old
+names have a DOWNWARD monotone old-live mask. This is a consequence
+of genuine AlgorithmRun closure monotonicity, not an assumption about
+an arbitrary Boolean index. It discharges H3 of the E68 audit for
+the E63 finite numerical-H+ source index. -/
+theorem kpt_actual_old_live_down_of_exact_index
+    {db du dd P : Nat}
+    (family : List (NormalizedForbidden db du dd))
+    (X : Set (AdmissibleKptNode family))
+    (oldTop : Nat)
+    (RunOld : SMTree.Envelope.AlgorithmRun
+      (normalizedKptSMTree family) X oldTop)
+    (oldNode : Fin P → AdmissibleKptNode family)
+    (oldLive : Nat → Fin P → Bool)
+    (hInjective : Function.Injective oldNode)
+    (hExact : ∀ cut : Nat, cut < oldTop →
+      ∀ z : AdmissibleKptNode family,
+        z ∈ SMTree.Envelope.closure
+          (admissibleKptSTree family) (RunOld.I (cut+1)) X ↔
+        ∃ i : Fin P, oldNode i = z ∧ oldLive cut i = true)
+    (low high : Nat) (i : Fin P)
+    (hLe : low ≤ high) (hHigh : high < oldTop)
+    (hHighLive : oldLive high i = true) :
+    oldLive low i = true := by
+  have hHighMember :
+      oldNode i ∈ SMTree.Envelope.closure
+        (admissibleKptSTree family) (RunOld.I (high+1)) X :=
+    (hExact high hHigh (oldNode i)).mpr ⟨i,rfl,hHighLive⟩
+  have hLowMember :
+      oldNode i ∈ SMTree.Envelope.closure
+        (admissibleKptSTree family) (RunOld.I (low+1)) X :=
+    (kpt_actual_run_preCut_source_mono_down
+      family X oldTop low high RunOld hLe hHigh) hHighMember
+  obtain ⟨k,hNode,hLive⟩ :=
+    (hExact low (lt_of_le_of_lt hLe hHigh) (oldNode i)).mp hLowMember
+  have hki : k = i := hInjective hNode
+  rw [hki] at hLive
+  exact hLive
+
+/-- Every old-LIVE image at a HIGHER actual source cut remains
+old-live at all LOWER cuts, for any fixed map of finite names.
+No injectivity of the map is required. -/
+theorem kpt_old_live_image_mono_down
+    {P Q : Nat}
+    (φ : Fin P → Fin Q)
+    (oldLive : Nat → Fin P → Bool)
+    (oldTop : Nat)
+    (hOldDown : ∀ (low high : Nat) (i : Fin P),
+      low ≤ high → high < oldTop →
+      oldLive high i = true → oldLive low i = true)
+    (low high : Nat) (hLe : low ≤ high)
+    (hHigh : high < oldTop) (j : Fin Q)
+    (hImage : KptOldLiveImageAt φ oldLive high j) :
+    KptOldLiveImageAt φ oldLive low j := by
+  obtain ⟨i,hLive,hName⟩ := hImage
+  exact ⟨i,hOldDown low high i hLe hHigh hLive,hName⟩
+
+/-- Under a monotone OLD-LIVE name mask, being a residual name is
+UPWARD CLOSED relative to the actual eligible crossing cut set.
+In particular, a HIGHER matched old-live cut cannot hide a LOWER
+genuinely residual cut in an exact E63 source index. -/
+theorem kpt_actual_residual_eligible_upward_closed
+    {db du dd P Q : Nat}
+    (family : List (NormalizedForbidden db du dd))
+    (X Y : Set (AdmissibleKptNode family))
+    (oldTop newTop : Nat)
+    (RunOld : SMTree.Envelope.AlgorithmRun
+      (normalizedKptSMTree family) X oldTop)
+    (RunNew : SMTree.Envelope.AlgorithmRun
+      (normalizedKptSMTree family) Y newTop)
+    (Allowed : Set Nat)
+    (newNode : Fin Q → AdmissibleKptNode family)
+    (oldLive : Nat → Fin P → Bool)
+    (φ : Fin P → Fin Q)
+    (hOldDown : ∀ (low high : Nat) (i : Fin P),
+      low ≤ high → high < oldTop →
+      oldLive high i = true → oldLive low i = true)
+    (j : Fin Q) (low high : Nat)
+    (hLowResidual : low ∈ kpt_actual_offplan_residual_node_cuts
+      family X Y oldTop newTop RunOld RunNew Allowed
+      newNode oldLive φ j)
+    (hHighEligible : high ∈ kpt_actual_offplan_node_eligible_crossing_cuts
+      family X Y oldTop newTop RunOld RunNew Allowed (newNode j))
+    (hLe : low ≤ high) :
+    high ∈ kpt_actual_offplan_residual_node_cuts
+      family X Y oldTop newTop RunOld RunNew Allowed
+      newNode oldLive φ j := by
+  have hLowNotImage :=
+    ((mem_kpt_actual_offplan_residual_node_cuts
+      family X Y oldTop newTop RunOld RunNew Allowed
+      newNode oldLive φ j low).mp hLowResidual).2
+  have hHighData :=
+    (mem_kpt_actual_offplan_node_eligible_crossing_cuts
+      family X Y oldTop newTop RunOld RunNew Allowed
+      (newNode j) high).mp hHighEligible
+  have hHighOld : high < oldTop :=
+    lt_of_lt_of_le hHighData.1
+      (Nat.min_le_left oldTop newTop)
+  have hHighNotImage : ¬ KptOldLiveImageAt φ oldLive high j := by
+    intro hHighImage
+    exact hLowNotImage
+      (kpt_old_live_image_mono_down
+        φ oldLive oldTop hOldDown
+        low high hLe hHighOld j hHighImage)
+  exact (mem_kpt_actual_offplan_residual_node_cuts
+    family X Y oldTop newTop RunOld RunNew Allowed
+    newNode oldLive φ j high).mpr ⟨hHighEligible,hHighNotImage⟩
+
+/-- With genuinely monotone old-live masks, a nonempty residual
+frontier has EXACTLY THE SAME MAXIMUM as the unrestricted E67
+eligible frontier. There are not two different physical frontier
+cuts to control. E68.2 is a useful residual factorization but not
+a stronger geometric old-crossing theorem than E67 itself. -/
+theorem kpt_actual_residual_max_eq_eligible_max
+    {db du dd P Q : Nat}
+    (family : List (NormalizedForbidden db du dd))
+    (X Y : Set (AdmissibleKptNode family))
+    (oldTop newTop : Nat)
+    (RunOld : SMTree.Envelope.AlgorithmRun
+      (normalizedKptSMTree family) X oldTop)
+    (RunNew : SMTree.Envelope.AlgorithmRun
+      (normalizedKptSMTree family) Y newTop)
+    (Allowed : Set Nat)
+    (newNode : Fin Q → AdmissibleKptNode family)
+    (oldLive : Nat → Fin P → Bool)
+    (φ : Fin P → Fin Q)
+    (hOldDown : ∀ (low high : Nat) (i : Fin P),
+      low ≤ high → high < oldTop →
+      oldLive high i = true → oldLive low i = true)
+    (j : Fin Q)
+    (hResidualNonempty :
+      (kpt_actual_offplan_residual_node_cuts
+        family X Y oldTop newTop RunOld RunNew Allowed
+        newNode oldLive φ j).Nonempty) :
+    ∃ (hEligibleNonempty :
+      (kpt_actual_offplan_node_eligible_crossing_cuts
+        family X Y oldTop newTop RunOld RunNew Allowed
+        (newNode j)).Nonempty),
+      (kpt_actual_offplan_residual_node_cuts
+        family X Y oldTop newTop RunOld RunNew Allowed
+        newNode oldLive φ j).max' hResidualNonempty =
+      (kpt_actual_offplan_node_eligible_crossing_cuts
+        family X Y oldTop newTop RunOld RunNew Allowed
+        (newNode j)).max' hEligibleNonempty := by
+  let R := kpt_actual_offplan_residual_node_cuts
+    family X Y oldTop newTop RunOld RunNew Allowed
+    newNode oldLive φ j
+  let E := kpt_actual_offplan_node_eligible_crossing_cuts
+    family X Y oldTop newTop RunOld RunNew Allowed (newNode j)
+  have hRmaxMem : R.max' hResidualNonempty ∈ R :=
+    Finset.max'_mem R hResidualNonempty
+  have hRmaxEligible : R.max' hResidualNonempty ∈ E :=
+    ((mem_kpt_actual_offplan_residual_node_cuts
+      family X Y oldTop newTop RunOld RunNew Allowed
+      newNode oldLive φ j _).mp hRmaxMem).1
+  have hEligibleNonempty : E.Nonempty :=
+    ⟨R.max' hResidualNonempty,hRmaxEligible⟩
+  refine ⟨hEligibleNonempty,?_⟩
+  have hEmaxMem : E.max' hEligibleNonempty ∈ E :=
+    Finset.max'_mem E hEligibleNonempty
+  have hLe : R.max' hResidualNonempty ≤ E.max' hEligibleNonempty :=
+    Finset.le_max' E _ hRmaxEligible
+  have hEmaxResidual : E.max' hEligibleNonempty ∈ R :=
+    kpt_actual_residual_eligible_upward_closed
+      family X Y oldTop newTop RunOld RunNew Allowed
+      newNode oldLive φ hOldDown j
+      (R.max' hResidualNonempty) (E.max' hEligibleNonempty)
+      hRmaxMem hEmaxMem hLe
+  have hLeReverse :
+      E.max' hEligibleNonempty ≤ R.max' hResidualNonempty :=
+    Finset.le_max' R _ hEmaxResidual
+  exact le_antisymm hLe hLeReverse
+
 end Kk
