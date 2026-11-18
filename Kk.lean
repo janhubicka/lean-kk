@@ -321,6 +321,9 @@ import Kk.AnchoredPositiveCoverChain
 import Kk.PhysicalCoverAnchorCriticality
 -- Track B: a real fully linked T-positive original forces strict canonical T-age loss
 import Kk.PhysicalCoverStrictCanonicalLoss
+-- Track B: actual selected finite Henson top source and nonvacuous T-sort witness
+import Kk.UniformStageOriginalCoverLoss
+import Kk.UniformStageNonvacuousSortWitness
 -- Track C: exact verified finite cut-visible dependent source, bare/full
 -- selected skeleton and literal final Kpt closure; NOT a global BRD.
 import Kk.CutVisibleClosureAbsorption
