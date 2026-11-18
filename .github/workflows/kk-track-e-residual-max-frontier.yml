@@ -40,7 +40,7 @@ jobs:
         run: lake exe cache get
       - name: Compile physical Kpt residual maximal crossing certificate
         run: lake build Kk.TrackEResidualMaxFrontier
-      - name: Strict four-endpoint transitive-axiom gate
+      - name: Strict eight-endpoint transitive-axiom gate
         run: |
           set -euo pipefail
           lake env lean Kk/TrackEResidualMaxFrontierAxiomAudit.lean | tee track-e-residualfrontier-axioms.log
