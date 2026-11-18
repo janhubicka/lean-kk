@@ -134,6 +134,75 @@ theorem transported_of_coverage_and_no_activation
   rw [hij]
   exact hj
 
+
+/-- Under injective enumeration of the NEW actual source nodes,
+being outside the name-map image is precisely the same as being
+a literal Kpt node with no OLD indexed representative.
+
+Without target enumeration injectivity this is false: an unused
+new index could duplicate a transported old Kpt node. -/
+theorem outside_image_iff_literal_new_source
+    {db du dd : Nat}
+    {family : List (NormalizedForbidden db du dd)}
+    {P Q : Nat}
+    {oldNode : Fin P → AdmissibleKptNode family}
+    {newNode : Fin Q → AdmissibleKptNode family}
+    {oldLive : Nat → Fin P → Bool}
+    {newLive : Nat → Fin Q → Bool}
+    {horizon : Nat}
+    (h : CoherentKptIndex family oldNode newNode
+      oldLive newLive horizon)
+    (hNewInjective : Function.Injective newNode)
+    (j : Fin Q) :
+    (∀ i : Fin P, h.map i ≠ j) ↔
+      (∀ i : Fin P, oldNode i ≠ newNode j) := by
+  constructor
+  · intro hOutside i hEqual
+    apply hOutside i
+    apply hNewInjective
+    calc
+      newNode (h.map i) = oldNode i := h.same_node i
+      _ = newNode j := hEqual
+  · intro hAbsent i hMaps
+    apply hAbsent i
+    calc
+      oldNode i = newNode (h.map i) := (h.same_node i).symm
+      _ = newNode j := congrArg newNode hMaps
+
+/-- At a genuine injective target enumeration, every new live index
+not transported from an old live name is either a formerly inactive
+OLD Kpt node, or a genuinely absent-from-old Kpt node. This is the
+exact node-level refinement of the earlier index-level disjunction. -/
+theorem new_live_residual_old_inactive_or_literal_fresh
+    {db du dd : Nat}
+    {family : List (NormalizedForbidden db du dd)}
+    {P Q : Nat}
+    {oldNode : Fin P → AdmissibleKptNode family}
+    {newNode : Fin Q → AdmissibleKptNode family}
+    {oldLive : Nat → Fin P → Bool}
+    {newLive : Nat → Fin Q → Bool}
+    {horizon : Nat}
+    (h : CoherentKptIndex family oldNode newNode
+      oldLive newLive horizon)
+    (hNewInjective : Function.Injective newNode)
+    (cut : Nat) (j : Fin Q)
+    (hj : newLive cut j = true)
+    (hNotOldLive : ¬ ∃ i : Fin P,
+      oldLive cut i = true ∧ h.map i = j) :
+    (∃ i : Fin P,
+      oldLive cut i ≠ true ∧ oldNode i = newNode j) ∨
+      (∀ i : Fin P, oldNode i ≠ newNode j) := by
+  rcases h.new_live_untransported_is_activation_or_outside
+      cut j hj hNotOldLive with hActive | hOutside
+  · left
+    obtain ⟨i, hInactive, hMap⟩ := hActive
+    refine ⟨i, hInactive, ?_⟩
+    calc
+      oldNode i = newNode (h.map i) := (h.same_node i).symm
+      _ = newNode j := congrArg newNode hMap
+  · right
+    exact (h.outside_image_iff_literal_new_source hNewInjective j).mp hOutside
+
 /-- A one-element index can retain the identical literal source map
 while its live mask changes from false to true. This is a pure Boolean
 interface countermodel; no physical Kpt realizability is claimed. -/
@@ -156,5 +225,9 @@ end Kk
 #print axioms Kk.CoherentKptIndex.new_live_untransported_is_activation_or_outside
 #check Kk.CoherentKptIndex.transported_of_coverage_and_no_activation
 #print axioms Kk.CoherentKptIndex.transported_of_coverage_and_no_activation
+#check Kk.CoherentKptIndex.outside_image_iff_literal_new_source
+#print axioms Kk.CoherentKptIndex.outside_image_iff_literal_new_source
+#check Kk.CoherentKptIndex.new_live_residual_old_inactive_or_literal_fresh
+#print axioms Kk.CoherentKptIndex.new_live_residual_old_inactive_or_literal_fresh
 #check Kk.CoherentKptIndex.forward_live_does_not_imply_reflection
 #print axioms Kk.CoherentKptIndex.forward_live_does_not_imply_reflection
