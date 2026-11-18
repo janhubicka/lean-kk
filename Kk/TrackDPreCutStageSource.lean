@@ -213,7 +213,7 @@ theorem finiteNumericH_run_stage_and_final_pool_exhaust_same_closure
     let originalStage : Fin Stage.card →
         Fin (finiteNumericH K k N).size := hOriginalName Stage
     have hName : originalStage i = v := by
-      simp [originalStage, hOriginalName, i]
+      simp [originalStage, hOriginalName, i] <;> rfl
     refine ⟨i,?_⟩
     change z ≤ (finiteNumericH K k N).kptOriginal family hAvoid
       (originalStage i)
@@ -232,7 +232,7 @@ theorem finiteNumericH_run_stage_and_final_pool_exhaust_same_closure
     let originalFinal : Fin Final.card →
         Fin (finiteNumericH K k N).size := hOriginalName Final
     have hName : originalFinal i = v := by
-      simp [originalFinal, hOriginalName, i]
+      simp [originalFinal, hOriginalName, i] <;> rfl
     refine ⟨i,?_⟩
     change z ≤ (finiteNumericH K k N).kptOriginal family hAvoid
       (originalFinal i)
