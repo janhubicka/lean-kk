@@ -1,0 +1,10 @@
+import Kk.TrackECandidateSourceFiniteIndex
+
+#check @Kk.finiteNumericH_oldRun_candidate_finalClosure_finite
+#print axioms Kk.finiteNumericH_oldRun_candidate_finalClosure_finite
+
+#check @Kk.finiteNumericH_oldRun_candidate_uniform_exhaustive_source_index
+#print axioms Kk.finiteNumericH_oldRun_candidate_uniform_exhaustive_source_index
+
+#check @Kk.finiteNumericH_oldRun_candidate_coherent_source_index
+#print axioms Kk.finiteNumericH_oldRun_candidate_coherent_source_index
