@@ -1,0 +1,7 @@
+import Kk.TrackGConstructTargetIndexWithoutRun
+
+#check @Kk.finiteNumericH_any_I_tails_uniform_Kpt_source_index
+#print axioms Kk.finiteNumericH_any_I_tails_uniform_Kpt_source_index
+
+#check @Kk.finiteNumericH_construct_full_indices_and_transport_if_zero_Bad
+#print axioms Kk.finiteNumericH_construct_full_indices_and_transport_if_zero_Bad
