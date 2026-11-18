@@ -1,0 +1,4 @@
+import Kk.TrackGRunChoiceAncestor
+
+#check @Kk.actualAlgorithmRuns_same_seeds_boring_action_choice_independent
+#print axioms Kk.actualAlgorithmRuns_same_seeds_boring_action_choice_independent
