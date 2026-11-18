@@ -319,6 +319,8 @@ import Kk.AnchoredPositiveNeutralBlock
 import Kk.AnchoredPositiveCoverChain
 -- Track B: exact post-cover common capacity and selected full-anchor criticality
 import Kk.PhysicalCoverAnchorCriticality
+-- Track B: a real fully linked T-positive original forces strict canonical T-age loss
+import Kk.PhysicalCoverStrictCanonicalLoss
 -- Track C: exact verified finite cut-visible dependent source, bare/full
 -- selected skeleton and literal final Kpt closure; NOT a global BRD.
 import Kk.CutVisibleClosureAbsorption
