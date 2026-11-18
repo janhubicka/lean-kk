@@ -1,0 +1,12 @@
+import Kk.TrackDPlannedStageRoles
+
+#check @Kk.resolvedQ_stage_name_shape_of_planned_levels
+#print axioms Kk.resolvedQ_stage_name_shape_of_planned_levels
+#check @Kk.resolvedQ_stage_omitted_positive_name_is_selected_top
+#print axioms Kk.resolvedQ_stage_omitted_positive_name_is_selected_top
+#check @Kk.resolvedQ_stage_selected_base_has_no_retained_neighbour
+#print axioms Kk.resolvedQ_stage_selected_base_has_no_retained_neighbour
+#check @Kk.resolvedQ_stage_full_base_coverage_of_planned_levels
+#print axioms Kk.resolvedQ_stage_full_base_coverage_of_planned_levels
+#check @Kk.henson_actualRun_lower_real_unselected_of_planned_stage_markedB3
+#print axioms Kk.henson_actualRun_lower_real_unselected_of_planned_stage_markedB3
