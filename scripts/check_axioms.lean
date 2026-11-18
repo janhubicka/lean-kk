@@ -2156,3 +2156,7 @@ import Kk
 -- Track A: exact Henson raw-event iff with automatic no-saturation.
 #check @Kk.trackA_henson_partial_raw_event_iff_simple
 #print axioms Kk.trackA_henson_partial_raw_event_iff_simple
+
+-- Track A: exact genuine Henson one-generation event characterization.
+#check @Kk.trackA_henson_partial_raw_single_step_iff
+#print axioms Kk.trackA_henson_partial_raw_single_step_iff
