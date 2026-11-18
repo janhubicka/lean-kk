@@ -321,6 +321,8 @@ import Kk.BareFullFinalSourceIdentity
 import Kk.ConstructedBareFullPhysicalSource
 -- Track C: source-exact physical one-way OLD->NEW Kpt name transport.
 import Kk.ConstructedPhysicalOldNewSourceIndex
+-- Track C: exact cut-live source-image criterion and residual index classes.
+import Kk.CoherentKptLiveImage
 
 /-!
 The counting project imports the verified successor-tree library.
