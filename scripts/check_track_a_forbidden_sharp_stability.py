@@ -22,7 +22,7 @@ for n in range(2, 6):
         for q, (i, j) in enumerate(edge_list):
             if (mask >> q) & 1:
                 adj[i][j] = adj[j][i] = True
-        for ell in range(3, min(n + 1, 6)):
+        for ell in range(2, min(n + 1, 6)):
             if capacity(adj, range(n)) >= ell:
                 continue
             for b in range(n - 1):
@@ -49,3 +49,18 @@ for n in range(2, 6):
 print(f"PASS: {checked} support instances, {equal_cap} "
       f"eligible equal-capacity instances, "
       f"{checked_stability} late-cut comparisons")
+
+# Uniform sharpness: the original K_(ell-1) demonstrates a raw drop
+# from generation ell-3 to ell-2 for every ell>=3.
+for ell in range(3, 9):
+    n = ell - 1
+    adj = [[i != j for j in range(n)] for i in range(n)]
+    b, t = ell - 3, ell - 2
+    P = {i for i in range(b) if adj[i][t]}
+    S = {i for i in P if adj[i][b]}
+    p, c = capacity(adj, P), capacity(adj, S)
+    assert p == c == ell - 3
+    before = ell - 1 - (p + int(p < ell - 3))
+    after = ell - 1 - (p + int(p < ell - 2))
+    assert (before, after) == (2, 1), (ell, before, after)
+print("PASS: sharp raw drop at ell-3 -> ell-2 for ell=3..8")
