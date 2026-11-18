@@ -1,0 +1,10 @@
+import Kk.TrackGWholeRunProfileTransfer
+
+#check @Kk.kpt_transport_whole_actualRun_of_full_profile_eq
+#print axioms Kk.kpt_transport_whole_actualRun_of_full_profile_eq
+
+#check @Kk.kpt_any_target_actualRun_selected_levels_eq_of_source_profile
+#print axioms Kk.kpt_any_target_actualRun_selected_levels_eq_of_source_profile
+
+#check @Kk.kpt_transport_whole_actualRun_of_indexed_full_profiles
+#print axioms Kk.kpt_transport_whole_actualRun_of_indexed_full_profiles

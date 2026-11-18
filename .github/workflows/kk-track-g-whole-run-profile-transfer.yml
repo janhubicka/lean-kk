@@ -1,0 +1,48 @@
+name: KK Track G whole Kpt AlgorithmRun I-F transport across different source seeds
+
+on:
+  pull_request:
+    paths:
+      - 'Kk/TrackGWholeRunProfileTransfer.lean'
+      - 'Kk/TrackGWholeRunProfileTransferAxiomAudit.lean'
+      - 'docs/track_g_whole_run_transport_full_profile_english_audit_20261118.md'
+      - '.github/workflows/kk-track-g-whole-run-profile-transfer.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: kk-track-g-whole-run-profile-transfer-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  direct-build-and-axioms:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache Lean toolchain
+        uses: actions/cache@v4
+        with:
+          path: ~/.elan/toolchains
+          key: lean-toolchain-${{ runner.os }}-${{ hashFiles('lean-toolchain') }}
+      - name: Restore Lean workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve pinned dependencies
+        run: lake update
+      - name: Obtain Mathlib build cache
+        run: lake exe cache get
+      - name: Compile whole Kpt AlgorithmRun transport preserving I and F
+        run: lake build Kk.TrackGWholeRunProfileTransfer
+      - name: Strict three-name standard-only transitive axiom gate
+        run: |
+          set -euo pipefail
+          lake env lean Kk/TrackGWholeRunProfileTransferAxiomAudit.lean | tee track-g-whole-run-profile-transfer-axioms.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py Kk/TrackGWholeRunProfileTransferAxiomAudit.lean track-g-whole-run-profile-transfer-axioms.log
