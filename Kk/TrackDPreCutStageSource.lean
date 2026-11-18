@@ -210,10 +210,14 @@ theorem finiteNumericH_run_stage_and_final_pool_exhaust_same_closure
       finiteNumericH_stage_closure_represented_by_stage_originals
         family K k N hAvoid U X hX (Run.I (cut+1)) z hz
     let i : Fin Stage.card := Stage.equivFin ⟨v,hv⟩
-    have hName : hOriginalName Stage i = v := by
-      simp [hOriginalName,i]
+    let originalStage : Fin Stage.card →
+        Fin (finiteNumericH K k N).size := hOriginalName Stage
+    have hName : originalStage i = v := by
+      simp [originalStage, hOriginalName, i]
     refine ⟨i,?_⟩
-    simpa [hOriginalName, i] using hBelow
+    change z ≤ (finiteNumericH K k N).kptOriginal family hAvoid
+      (originalStage i)
+    simpa only [hName] using hBelow
   have hFinalExhaust :
       ∀ z : AdmissibleKptNode family, z ∈ Z →
         ∃ i : Fin Final.card,
@@ -225,10 +229,14 @@ theorem finiteNumericH_run_stage_and_final_pool_exhaust_same_closure
         family K k N hAvoid U X hX (Run.I (cut+1)) z hz
     have hFin : v ∈ Final := hStageFinal hv
     let i : Fin Final.card := Final.equivFin ⟨v,hFin⟩
-    have hName : hOriginalName Final i = v := by
-      simp [hOriginalName,i]
+    let originalFinal : Fin Final.card →
+        Fin (finiteNumericH K k N).size := hOriginalName Final
+    have hName : originalFinal i = v := by
+      simp [originalFinal, hOriginalName, i]
     refine ⟨i,?_⟩
-    simpa [hOriginalName, i] using hBelow
+    change z ≤ (finiteNumericH K k N).kptOriginal family hAvoid
+      (originalFinal i)
+    simpa only [hName] using hBelow
   exact ⟨hStageFinal,hStageExhaust,hFinalExhaust⟩
 
 /-- The ACTUAL pre-cut and final original-name lists give the same
