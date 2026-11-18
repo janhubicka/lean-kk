@@ -1,0 +1,27 @@
+import Kk.TrackEResidualMaxFrontier
+
+#check @Kk.kpt_actual_offplan_residual_node_cuts
+
+#check @Kk.mem_kpt_actual_offplan_residual_node_cuts
+#print axioms Kk.mem_kpt_actual_offplan_residual_node_cuts
+
+#check @Kk.kpt_actual_old_live_image_upper_covered
+#print axioms Kk.kpt_actual_old_live_image_upper_covered
+
+#check @Kk.kpt_actual_all_eligible_crossings_iff_residual_max
+#print axioms Kk.kpt_actual_all_eligible_crossings_iff_residual_max
+
+#check @Kk.kpt_actual_residual_cut_new_final_or_early_old
+#print axioms Kk.kpt_actual_residual_cut_new_final_or_early_old
+
+#check @Kk.kpt_actual_old_live_down_of_exact_index
+#print axioms Kk.kpt_actual_old_live_down_of_exact_index
+
+#check @Kk.kpt_old_live_image_mono_down
+#print axioms Kk.kpt_old_live_image_mono_down
+
+#check @Kk.kpt_actual_residual_eligible_upward_closed
+#print axioms Kk.kpt_actual_residual_eligible_upward_closed
+
+#check @Kk.kpt_actual_residual_max_eq_eligible_max
+#print axioms Kk.kpt_actual_residual_max_eq_eligible_max
