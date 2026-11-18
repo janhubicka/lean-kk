@@ -337,6 +337,8 @@ import Kk.ConstructedPhysicalOldNewSourceIndex
 -- Track C: exact live image and genuine physical full-Kpt source trichotomy.
 import Kk.CoherentKptLiveImage
 import Kk.PhysicalLiveSourceResidual
+-- Track C: genuine physical H+ off-plan no-novelty iff residual-source quietness.
+import Kk.ConstructedPhysicalOffPlanResidual
 
 -- Track D: actual finite-index no-I1/no-I2 and one physical boring lower-real cut.
 -- Marked full-B3 and represented complete source remain explicit assumptions.

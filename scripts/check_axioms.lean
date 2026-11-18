@@ -2208,3 +2208,7 @@ import Kk
 #print axioms Kk.CoherentKptIndex.canonical_new_live_residual_old_inactive_or_fresh
 #check @Kk.finiteNumericH_constructed_live_source_trichotomy
 #print axioms Kk.finiteNumericH_constructed_live_source_trichotomy
+
+-- Track C: constructed physical off-plan reduction; no quietness assumption.
+#check @Kk.finiteNumericH_constructed_offplan_iff_residual_quiet
+#print axioms Kk.finiteNumericH_constructed_offplan_iff_residual_quiet
