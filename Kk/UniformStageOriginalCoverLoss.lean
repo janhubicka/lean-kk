@@ -143,7 +143,8 @@ theorem uniform_positive_stage_selected_full_T_successor_canonical_drop
     intro q hq
     have hColumnBits := hColumn q hq w hw
     have hDec : decide (tau w ∈ T.1) = true := by
-      simp [hwSort]
+      simp only [decide_eq_true_eq]
+      exact hwSort
     exact ⟨hColumnBits.1.trans hDec, hColumnBits.2.trans hDec⟩
   exact (real_cover_later_full_link_forces_strict_canonical_T_drop
     E ell d b F r c cNext T Q lower upper
