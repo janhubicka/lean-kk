@@ -112,9 +112,10 @@ theorem kpt_actual_old_live_image_upper_covered
 source name is equivalent to only ONE old complete L+ crossing-cover
 test at the MAXIMAL RESIDUAL cut of each name.
 
-The maximal eligible cut without residual filtering is insufficiently
-targeted: a matched old-LIVE node at that cut could conceal an EARLIER
-newly activated old-FINAL residual source event.
+The residual formulation isolates old-LIVE image names whose crossing
+test has a trivial same-node physical witness. With exact old-live masks
+these maximal cuts DO NOT differ from E67's unfiltered maxima whenever
+the residual cut set is nonempty (see E68.4 below).
 
 Both AlgorithmRuns are genuine, and the old-live name soundness
 premise is physical closure membership, not selected-graph-age
