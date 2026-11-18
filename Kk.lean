@@ -336,3 +336,7 @@ import Kk.ConstructedPhysicalOldNewSourceIndex
 The counting project imports the verified successor-tree library.
 No local replacement of the Ramsey theorem is assumed.
 -/
+
+-- Track D: actual finite-index no-I1/no-I2 and one physical boring lower-real cut.
+-- Marked full-B3 and represented complete source remain explicit assumptions.
+import Kk.TrackDIndexedLowerRealBoring

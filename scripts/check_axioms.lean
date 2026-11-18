@@ -2118,3 +2118,9 @@ import Kk
 #print axioms Kk.positive_clique_and_later_full_link_raw_upper_bound
 #check @Kk.real_cover_later_full_link_forces_strict_canonical_T_drop
 #print axioms Kk.real_cover_later_full_link_forces_strict_canonical_T_drop
+
+-- Track D: finite full index and chosen full-B3 single-cut certificate
+#check @Kk.finiteNumericH_run_no_I1_I2_of_complete_index_checks
+#print axioms Kk.finiteNumericH_run_no_I1_I2_of_complete_index_checks
+#check @Kk.henson_actualRun_lower_real_unselected_of_indexed_full_checks
+#print axioms Kk.henson_actualRun_lower_real_unselected_of_indexed_full_checks
