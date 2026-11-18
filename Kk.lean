@@ -348,6 +348,10 @@ import Kk.TrackDIndexedLowerRealBoring
 import Kk.PointedContinuationColumn
 import Kk.PhysicalPointedContinuation
 import Kk.PointedCliqueUnitLoss
+-- Track B: new source-only merged exact active pivot and budget criteria
+import Kk.ProtectedActivePivotCapacity
+import Kk.ProtectedActivePivotRealization
+import Kk.ProtectedActivePivotBudget
 
 
 -- Track D: genuine local pre-cut source, full dependent B3 stage/final agreement.
