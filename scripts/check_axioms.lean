@@ -2112,3 +2112,9 @@ import Kk
 #print axioms Kk.real_cover_anchor_common_capacity_exact
 #check @Kk.real_cover_later_full_anchor_link_is_critical
 #print axioms Kk.real_cover_later_full_anchor_link_is_critical
+
+-- Track B: any full-positive clique after a real cover forces strict CANONICAL T loss
+#check @Kk.positive_clique_and_later_full_link_raw_upper_bound
+#print axioms Kk.positive_clique_and_later_full_link_raw_upper_bound
+#check @Kk.real_cover_later_full_link_forces_strict_canonical_T_drop
+#print axioms Kk.real_cover_later_full_link_forces_strict_canonical_T_drop
