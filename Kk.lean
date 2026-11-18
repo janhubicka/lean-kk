@@ -343,6 +343,9 @@ import Kk.TrackDIndexedLowerRealBoring
 import Kk.PointedContinuationColumn
 import Kk.PhysicalPointedContinuation
 import Kk.PointedCliqueUnitLoss
+-- Track B: preserve arbitrary protected active ordinary-L gap columns
+import Kk.ProtectedActivePivotCapacity
+import Kk.ProtectedActivePivotRealization
 
 
 /-!
