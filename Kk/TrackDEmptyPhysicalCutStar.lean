@@ -166,7 +166,11 @@ theorem henson_actualRun_isolated_dummy_lower_real_unselected
     ell hell k hK E hLoops hSym hClique
     N U hAvoidA X hX top Run hTop
     idx g hg hPos hBelow hCut hNoI1 hNoI2
-  intro cut Stage original Z Full v hFull hFree hPositive
+  intro v hFull hFree hPositive
+  let cut : Nat := hPosition k idx g
+  let Stage : Finset (Fin N) :=
+    hStageOriginals (normalizedGraphModel E) k N U (Run.I (cut+1))
+  let original : Fin Stage.card → Fin N := hOriginalName Stage
   obtain ⟨j,m,hij,hgm,hm,hAddress,hBase⟩ :=
     finiteNumericH_eligible_lower_cut_neighbour_is_higher
       E k N idx g hg hCut (original v) hFree hPositive
@@ -247,7 +251,11 @@ theorem henson_actualRun_selected_coded_lower_real_unselected
     ell hell k hK E hLoops hSym hClique
     N U hAvoidA X hX top Run hTop
     idx g hg hPos hBelow hCut hNoI1 hNoI2
-  intro cut Stage original Z Full v hFull hFree hPositive
+  intro v hFull hFree hPositive
+  let cut : Nat := hPosition k idx g
+  let Stage : Finset (Fin N) :=
+    hStageOriginals (normalizedGraphModel E) k N U (Run.I (cut+1))
+  let original : Fin Stage.card → Fin N := hOriginalName Stage
   obtain ⟨j,m,hij,hgm,hm,hAddress,hBase⟩ :=
     finiteNumericH_eligible_lower_cut_neighbour_is_higher
       E k N idx g hg hCut (original v) hFree hPositive
