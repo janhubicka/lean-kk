@@ -1,0 +1,17 @@
+name: Track A forbidden sharp age referee
+
+on:
+  pull_request:
+    paths:
+      - 'Kk/PartialNumericForbiddenSharpStability.lean'
+      - 'scripts/check_track_a_forbidden_sharp_stability.py'
+      - '.github/workflows/track_a_forbidden_sharp.yml'
+  workflow_dispatch:
+
+jobs:
+  finite-referee:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Independently check all small K-free raw age transitions
+        run: python3 scripts/check_track_a_forbidden_sharp_stability.py
