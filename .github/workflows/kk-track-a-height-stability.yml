@@ -1,0 +1,52 @@
+name: KK Track A partial old-age stability above ell minus one
+
+on:
+  pull_request:
+    paths:
+      - 'Kk/PartialNumericRawAgeHeightStability.lean'
+      - 'docs/partial_numeric_raw_age_height_stability_english_audit.md'
+      - '.github/workflows/kk-track-a-height-stability.yml'
+  push:
+    branches: [kk-track-a-partial-raw-age-height-stability-20261118]
+  workflow_dispatch:
+
+concurrency:
+  group: kk-track-a-height-stability-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  physical-height-stability:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore pinned Lake workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve pinned dependencies
+        run: lake update
+      - name: Restore Mathlib cache
+        run: lake exe cache get
+      - name: Physical 197120-case raw-event iff/saturation regression
+        run: python3 scripts/check_partial_numeric_raw_support_events.py
+      - name: Build verified parent raw/canonical certificate modules
+        run: |
+          lake build Kk.PartialNumericRawSupportEvents
+          lake build Kk.PartialNumericCanonicalEventWitness
+      - name: Explicit build of stable raw canonical and feasible age module
+        run: lake build Kk.PartialNumericRawAgeHeightStability
+      - name: Strict exact qualified standard-only named axiom gate
+        run: |
+          set -euo pipefail
+          python3 scripts/check_axiom_report.py --self-test
+          lake env lean Kk/PartialNumericRawAgeHeightStability.lean | tee height-stability-axioms.log
+          python3 scripts/check_axiom_report.py Kk/PartialNumericRawAgeHeightStability.lean height-stability-axioms.log
+      - name: Full Lean repository build
+        run: lake build
