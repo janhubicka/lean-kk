@@ -118,11 +118,13 @@ theorem kpt_actual_eligible_crossings_all_covered_iff_max
   · intro hMax cut hCut
     have hMaxMem : C.max' hNonempty ∈ C :=
       Finset.max'_mem C hNonempty
-    have hMaxWithin :
-        C.max' hNonempty < min oldTop newTop :=
+    have hMaxConditions :=
       (mem_kpt_actual_offplan_node_eligible_crossing_cuts
         family X Y oldTop newTop Rold Rnew Allowed z
-        (C.max' hNonempty)).mp hMaxMem |>.1
+        (C.max' hNonempty)).mp hMaxMem
+    have hMaxWithin :
+        C.max' hNonempty < min oldTop newTop :=
+      hMaxConditions.1
     have hMaxOld : C.max' hNonempty < oldTop :=
       lt_of_lt_of_le hMaxWithin (Nat.min_le_left oldTop newTop)
     have hCutLe : cut ≤ C.max' hNonempty :=
