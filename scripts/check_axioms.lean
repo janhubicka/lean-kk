@@ -2124,3 +2124,13 @@ import Kk
 #print axioms Kk.finiteNumericH_run_no_I1_I2_of_complete_index_checks
 #check @Kk.henson_actualRun_lower_real_unselected_of_indexed_full_checks
 #print axioms Kk.henson_actualRun_lower_real_unselected_of_indexed_full_checks
+
+-- Track B: true selected original E links and non-vacuous positive T witness
+#check @Kk.uniform_positive_stage_reserved_original_E_column
+#print axioms Kk.uniform_positive_stage_reserved_original_E_column
+#check @Kk.uniform_positive_stage_selected_full_T_successor_canonical_drop
+#print axioms Kk.uniform_positive_stage_selected_full_T_successor_canonical_drop
+#check @Kk.finiteTaggedFuture_exists_T_sort_of_positive_canonical
+#print axioms Kk.finiteTaggedFuture_exists_T_sort_of_positive_canonical
+#check @Kk.real_cover_uniform_stage_has_selected_T_witness_forcing_loss
+#print axioms Kk.real_cover_uniform_stage_has_selected_T_witness_forcing_loss
