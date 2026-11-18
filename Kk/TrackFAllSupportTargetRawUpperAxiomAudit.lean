@@ -1,0 +1,10 @@
+import Kk.TrackFAllSupportTargetRawUpper
+
+#check @Kk.trackFCommonNeighbourPool_image_subset
+#print axioms Kk.trackFCommonNeighbourPool_image_subset
+
+#check @Kk.trackFCommonRawAge_target_le_source_of_images
+#print axioms Kk.trackFCommonRawAge_target_le_source_of_images
+
+#check @Kk.trackFCommonRawAge_target_le_source_of_large_fibres
+#print axioms Kk.trackFCommonRawAge_target_le_source_of_large_fibres
