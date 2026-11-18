@@ -78,3 +78,37 @@ New independent `Kk/PartialNumericForbiddenSharpStability.lean`, imported only a
 - compile with full Lake, named `#print axioms` with the exact-head strict parser, and retain an independent physical E/L regression.
 
 This note is an English proof and adversarial audit, **not a claim that Lean compiled**. All frozen black manuscript text and existing validation registry marks remain untouched.
+
+
+## 19 November continuation: simplified Henson raw-event iff
+
+The new theorem `trackA_henson_partial_raw_event_iff_simple` sharpens the
+existing exact raw-event criterion. Under genuine avoidance of
+`hensonForbiddenFamily ell hell`, for every nonempty support U and
+partial cuts g<=h<=k, **strict raw support loss is equivalent to
+exactly three source properties and the cut condition**:
+
+- current original b is adjacent to all given future tops in U;
+- c_U = p_U (the linked-old maximum clique attains the full old capacity);
+- g <= p_U < h.
+
+The separate general raw-event condition p_U < ell-1 follows
+automatically: choose one t in U and an actual C subset S_U of size
+p_U. Then C union {b,j(t)} is a real clique of size p_U+2, so
+p_U+2<ell under K_ell-freeness. Consequently p_U<ell-1 is redundant,
+and the event cannot occur when g>=ell-2.
+
+**Scope:** this iff concerns RAW ordinary-L support events, not
+canonical covers (some raw events are invisible to canonical age),
+and not auxiliary Kpt I1/I2/I3/B3. The counterpart without genuine
+K_ell-freeness must retain its p_U<ell-1 clause.
+
+**Lean source and audit:** the theorem has been added to
+`Kk/PartialNumericForbiddenSharpStability.lean` with a named
+standard-only axiom report. It is unverified until the exact-head
+Lake build passes. A preceding CI build of the initial module failed
+at two local proof-script steps (a renamed Finset insertion-cardinality
+lemma and a missing definitionally equal capacity normalization).
+Both are patched in the submitted branch. No full successful exact-head
+gate has yet been observed for this continuation; no manuscript green
+mark or black-text edit is justified.
