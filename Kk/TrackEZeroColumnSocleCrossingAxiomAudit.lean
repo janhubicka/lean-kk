@@ -1,0 +1,10 @@
+import Kk.TrackEZeroColumnSocleCrossing
+
+#check @Kk.finiteNumericH_candidate_zero_column_old_socle_upper_covered
+#print axioms Kk.finiteNumericH_candidate_zero_column_old_socle_upper_covered
+
+#check @Kk.finiteNumericH_candidate_zero_stage_old_socle_covers_full_crossings
+#print axioms Kk.finiteNumericH_candidate_zero_stage_old_socle_covers_full_crossings
+
+#check @Kk.finiteNumericH_candidate_zero_stage_noNovelty_of_socle_and_noI1
+#print axioms Kk.finiteNumericH_candidate_zero_stage_noNovelty_of_socle_and_noI1
