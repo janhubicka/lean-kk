@@ -102,16 +102,9 @@ theorem finiteNumericH_even_real_candidate_noNovelty_of_zero_socle
       · exact Or.inr hParam
     have hStage :
         v ∈ hStageOriginals K k N U (R.I (cut+1)) := by
-      letI : DecidablePred (fun q : Fin N =>
-          q ∈ U ∨
-            (q.val ∈ R.I (cut+1) ∧
-              0 < (finiteNumericH K k N).freeLevel q.val)) :=
-        Classical.decPred _
-      change v ∈ Finset.univ.filter (fun q : Fin N =>
-        q ∈ U ∨ (q.val ∈ R.I (cut+1) ∧
-          0 < (finiteNumericH K k N).freeLevel q.val))
-      exact Finset.mem_filter.mpr
-        ⟨Finset.mem_univ v, by simpa only [A] using hMember⟩
+      unfold hStageOriginals
+      apply Finset.mem_filter.mpr
+      exact ⟨Finset.mem_univ v, by simpa only [A] using hMember⟩
     exact hZeroStage v hStage hFree
   have hNoI1 :
       ¬ KptI1AtCut family
