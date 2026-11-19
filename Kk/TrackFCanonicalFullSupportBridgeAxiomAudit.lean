@@ -1,0 +1,8 @@
+import Kk.TrackFCanonicalFullSupportBridge
+
+#check @Kk.trackFCommonRawAge_mono_support
+#print axioms Kk.trackFCommonRawAge_mono_support
+#check @Kk.trackFExactClique_iff_fullRawIntegerSupport
+#print axioms Kk.trackFExactClique_iff_fullRawIntegerSupport
+#check @Kk.trackFAllRanks_source_target_canonical_full_support_iff
+#print axioms Kk.trackFAllRanks_source_target_canonical_full_support_iff
