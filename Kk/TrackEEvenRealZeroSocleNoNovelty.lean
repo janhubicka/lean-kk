@@ -101,6 +101,7 @@ theorem finiteNumericH_even_real_candidate_noNovelty_of_zero_socle
       · exact Or.inr hParam
     have hStage :
         v ∈ hStageOriginals K k N U (R.I (cut+1)) := by
+      classical
       change v ∈ Finset.univ.filter (fun q : Fin N =>
         q ∈ U ∨
           (q.val ∈ R.I (cut+1) ∧
