@@ -81,6 +81,7 @@ theorem finiteNumericH_even_real_candidate_noNovelty_of_zero_socle
       (SMTree.Envelope.closure (admissibleKptSTree family)
         (R.I (hPosition k idx g+1)) Y)
       (hPosition k idx g) := by
+  classical
   let cut : Nat := hPosition k idx g
   let A : EnumeratedPartialStructure 1 0 1 := finiteNumericH K k N
   have hZeroAmbient :
@@ -101,15 +102,12 @@ theorem finiteNumericH_even_real_candidate_noNovelty_of_zero_socle
       · exact Or.inr hParam
     have hStage :
         v ∈ hStageOriginals K k N U (R.I (cut+1)) := by
-      classical
       have hMember' :
           v ∈ U ∨
             (v.val ∈ R.I (cut+1) ∧
               0 < (finiteNumericH K k N).freeLevel v.val) := by
         simpa only [A] using hMember
-      simpa only [hStageOriginals, Finset.mem_filter,
-        Finset.mem_univ, true_and, Set.mem_ofPred_eq]
-        using hMember'
+      simpa [hStageOriginals] using hMember'
     exact hZeroStage v hStage hFree
   have hNoI1 :
       ¬ KptI1AtCut family
