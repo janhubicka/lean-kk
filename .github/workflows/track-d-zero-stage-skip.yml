@@ -1,0 +1,47 @@
+name: KK Track D — genuine zero-stage no-I1/no-I2/no-I3, dummy and selected lower
+
+on:
+  pull_request:
+    paths:
+      - 'Kk/TrackDZeroStageActualRunSkip.lean'
+      - 'scripts/check_axioms_track_d_zero_stage_skip.lean'
+      - '.github/workflows/track-d-zero-stage-skip.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: kk-track-d-zero-stage-skip-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  zero-stage-skip:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache Lean toolchain
+        uses: actions/cache@v4
+        with:
+          path: ~/.elan/toolchains
+          key: lean-toolchain-${{ runner.os }}-${{ hashFiles('lean-toolchain') }}
+      - name: Restore pinned Lake workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve pinned dependencies
+        run: lake update
+      - name: Obtain Mathlib cache
+        run: lake exe cache get
+      - name: Build actual zero-stage skip and two physical corollaries
+        run: lake build Kk.TrackDZeroStageActualRunSkip
+      - name: Strict three-declaration transitive axiom gate
+        run: |
+          set -euo pipefail
+          lake env lean scripts/check_axioms_track_d_zero_stage_skip.lean | tee track_d_zero_stage_skip.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py scripts/check_axioms_track_d_zero_stage_skip.lean track_d_zero_stage_skip.log
