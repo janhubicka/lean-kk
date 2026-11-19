@@ -40,7 +40,7 @@ jobs:
         run: lake exe cache get
       - name: Compile exact old-boring source monoid compatibility criterion
         run: lake build Kk.TrackGExactBoringRunTransport
-      - name: Strict two-name standard-only transitive axiom gate
+      - name: Strict three-name standard-only transitive axiom gate
         run: |
           set -euo pipefail
           lake env lean Kk/TrackGExactBoringRunTransportAxiomAudit.lean | tee track-g-exact-boring-run-transport-axioms.log
