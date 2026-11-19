@@ -2172,3 +2172,9 @@ import Kk
 -- Track A: whole literal ordinary-L raw profile change iff some actual support threshold.
 #check @Kk.trackA_henson_raw_function_change_iff_exists_support
 #print axioms Kk.trackA_henson_raw_function_change_iff_exists_support
+
+-- Track A: finite raw critical-generation schedule and exact interval theorem.
+#check @Kk.mem_trackACriticalGenerations_iff
+#print axioms Kk.mem_trackACriticalGenerations_iff
+#check @Kk.trackA_henson_raw_change_iff_critical_generation
+#print axioms Kk.trackA_henson_raw_change_iff_critical_generation
