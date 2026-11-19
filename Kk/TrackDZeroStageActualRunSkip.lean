@@ -88,20 +88,18 @@ theorem henson_actualRun_lower_real_unselected_of_no_seed_and_zero_stage
     finiteNumericH_graph_ordinary_L_symmetric E hSym k N
   have hStageAmbient :
       ∀ v : Fin A.size,
-        v ∈ ambientStagePool A (U : Set (Fin A.size)) J →
+        v ∈ ambientStagePool A (U : Set (Fin N)) J →
         v ∈ Stage := by
     intro v hv
     have hvOr : v ∈ U ∨
         (v.val ∈ J ∧ 0 < A.freeLevel v.val) := by
-      change v ∈ (U : Set (Fin N)) ∪
-        {i : Fin N | i.val ∈ J ∧ 0 < A.freeLevel i.val} at hv
-      exact hv
-    simpa only [Stage, hStageOriginals, Finset.mem_filter,
-      Finset.mem_univ, true_and, Set.mem_ofPred_eq]
-      using hvOr
+      rcases hv with hu | hSelected
+      · exact Or.inl (Finset.mem_coe.mp hu)
+      · exact Or.inr hSelected
+    simpa [Stage, hStageOriginals, A, K] using hvOr
   have hStageZero :
       ∀ v : Fin A.size,
-        v ∈ ambientStagePool A (U : Set (Fin A.size)) J →
+        v ∈ ambientStagePool A (U : Set (Fin N)) J →
         cut+1 ≤ A.freeLevel v.val →
         A.L.binary cut v.val (0 : Fin 1) = false := by
     intro v hv hFree
@@ -111,7 +109,7 @@ theorem henson_actualRun_lower_real_unselected_of_no_seed_and_zero_stage
         z ∈ Z ∧ LevelTree.lev z = cut :=
     finiteNumericH_even_real_no_full_I1_of_zero_stage
       family K k N hAvoidA hSymA
-      J X (U : Set (Fin A.size)) hX
+      J X (U : Set (Fin N)) hX
       idx g hPos hNoSeedAt hStageZero
   obtain ⟨_hPoolSub,hPool,_hPoolFinal⟩ :=
     finiteNumericH_run_stage_and_final_pool_exhaust_same_closure
@@ -121,19 +119,7 @@ theorem henson_actualRun_lower_real_unselected_of_no_seed_and_zero_stage
       cut+1 ≤ A.freeLevel (original v).val →
       A.L.binary cut (original v).val (0 : Fin 1) = false := by
     intro v _ hFree
-    have hv : original v ∈ Stage := hOriginalName_mem Stage v
-    have hvAmbient :
-        original v ∈ ambientStagePool A
-          (U : Set (Fin A.size)) J := by
-      have hvOr : original v ∈ U ∨
-          ((original v).val ∈ J ∧
-            0 < A.freeLevel (original v).val) := by
-        simpa only [Stage, hStageOriginals, Finset.mem_filter,
-          Finset.mem_univ, true_and, Set.mem_ofPred_eq] using hv
-      change original v ∈ (U : Set (Fin N)) ∪
-        {i : Fin N | i.val ∈ J ∧ 0 < A.freeLevel i.val}
-      exact hvOr
-    exact hStageZero (original v) hvAmbient hFree
+    exact hZeroStage (original v) (hOriginalName_mem Stage v) hFree
   have hNoI2 :
       ¬ ∃ a : AdmissibleKptNode family, a ∈ Z ∧
         ∃ b : AdmissibleKptNode family, b ∈ Z ∧
@@ -146,6 +132,7 @@ theorem henson_actualRun_lower_real_unselected_of_no_seed_and_zero_stage
     top Run hTop idx g hg hPos hBelow hCut hNoI1 hNoI2
   intro v hFull hFree hPositive
   have hFalse := hZeroFull v hFull hFree
+  change A.L.binary cut (original v).val (0 : Fin 1) = true at hPositive
   rw [hFalse] at hPositive
   cases hPositive
 
