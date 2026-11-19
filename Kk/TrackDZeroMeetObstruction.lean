@@ -92,6 +92,16 @@ theorem actual_zero_cut_originals_meet_level_ne_cut
     have hLev := LevelTree.level_le_of_le hCommon
     have hAncLev := LevelTree.level_ancestor
       a (cut+1) (Nat.succ_le_iff.mpr hLevA)
+    have hMeetLevel : LevelTree.lev (LevelTree.meet a b) = cut := by
+      simpa only [a, b] using hMeet
+    have hImpossible : cut + 1 ≤ cut := by
+      calc
+        cut + 1 =
+            LevelTree.lev
+              (LevelTree.ancestor a (cut+1)
+                (Nat.succ_le_iff.mpr hLevA)) := hAncLev.symm
+        _ ≤ LevelTree.lev (LevelTree.meet a b) := hLev
+        _ = cut := hMeetLevel
     omega
   have hOldA :
       (LevelTree.ancestor a cut (Nat.le_of_lt hLevA)).val =
