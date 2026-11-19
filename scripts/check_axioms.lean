@@ -2212,3 +2212,11 @@ import Kk
 -- Track C: constructed physical off-plan reduction; no quietness assumption.
 #check @Kk.finiteNumericH_constructed_offplan_iff_residual_quiet
 #print axioms Kk.finiteNumericH_constructed_offplan_iff_residual_quiet
+
+-- Track C: exact dependent I1/full old-upper L+/E residual two-class quietness.
+#check @Kk.kpt_residual_quiet_iff_two_classes
+#print axioms Kk.kpt_residual_quiet_iff_two_classes
+
+-- Track C: true physical numerical-H+ off-plan iff TWO full dependent residual classes.
+#check @Kk.finiteNumericH_constructed_offplan_iff_two_residual_classes
+#print axioms Kk.finiteNumericH_constructed_offplan_iff_two_residual_classes
