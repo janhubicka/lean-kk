@@ -1,6 +1,6 @@
 # Track A — finite genuine Henson raw critical-generation schedule
 
-19 November 2026. English mathematical proof and adversarial audit written before the Lean module `Kk/PartialNumericCriticalGenerations.lean` was submitted.
+19 November 2026. English mathematical proof and adversarial audit of the Lean module `Kk/PartialNumericCriticalGenerations.lean`. The audit was committed after the initial source file; the mathematical dependencies were already proved in the earlier English audits.
 
 ## Definition and exact interval theorem
 
@@ -51,3 +51,29 @@ They should be compiled with their imported eleven theorem endpoints from `Kk/Pa
 ## Next bridge to the dependent source
 
 At each cut cut, add the actual Kpt terminal-presence flag, the full physical old/upper L+/E crossing relation (not an L-only projection), and the I3 skip check. Existing Track E/G modules formalize these physical interfaces for finite indexed sources. The ordinary C schedule is only one part of this combined record. To show an off-plan level boring, one must still prove the remaining dependent Kpt components absent/covered; emptiness of C is insufficient.
+
+## Sharp upper bound on number of raw event generations
+
+For each p in the critical schedule C, the membership lemma supplies a
+nonempty critical support U satisfying p=cap_E(P_U) and c_U=p.
+Choose any named top j(t) with t in U. Let S_U be the linked original
+pool. Its actual maximum clique of size p, together with the distinct
+originals b,j(t), is a directed complete original clique of size p+2.
+Genuine forbidden-family avoidance gives p+2<ell, hence p<ell-2.
+
+Therefore
+
+    C subset {0,...,ell-3},
+    |C| <= ell-2.
+
+The bound is independent of the number of target sorts and of the
+numerical gadget height. It counts **different raw transition indices**,
+not the number of critical supports and not the number of canonical
+covers or full Kpt interesting levels. It also holds for ell=2
+(vacuously: C is empty because a critical support would produce an edge).
+
+New Lean source endpoints:
+- `trackA_henson_critical_generation_lt_ell_sub_two`;
+- `trackA_henson_critical_generation_card_le`.
+
+Both are source-level proofs pending an exact-head Lean build.
