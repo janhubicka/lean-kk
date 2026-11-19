@@ -1,0 +1,8 @@
+import Kk.TrackFOriginalRefinedAgeSandwich
+
+#check @Kk.trackFCommonRawAge_target_le_original_of_refined_fibres
+#print axioms Kk.trackFCommonRawAge_target_le_original_of_refined_fibres
+#check @Kk.trackFOriginalRefined_source_target_clique_feasibility_iff
+#print axioms Kk.trackFOriginalRefined_source_target_clique_feasibility_iff
+#check @Kk.trackFOriginalRefined_source_target_canonical_full_support_iff
+#print axioms Kk.trackFOriginalRefined_source_target_canonical_full_support_iff
