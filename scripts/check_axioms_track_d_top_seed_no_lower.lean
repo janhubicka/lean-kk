@@ -1,0 +1,4 @@
+import Kk.TrackDTopSeedNoLowerReal
+
+#check @Kk.numericHTopGenerationSeeds_noPositiveLowerReal
+#print axioms Kk.numericHTopGenerationSeeds_noPositiveLowerReal
