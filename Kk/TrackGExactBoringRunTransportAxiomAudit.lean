@@ -5,3 +5,6 @@ import Kk.TrackGExactBoringRunTransport
 
 #check @Kk.actualRun_transport_of_old_boring_explicit_physical_compatible
 #print axioms Kk.actualRun_transport_of_old_boring_explicit_physical_compatible
+
+#check @Kk.actualRun_transport_iff_old_boring_original_factor_extends
+#print axioms Kk.actualRun_transport_iff_old_boring_original_factor_extends
