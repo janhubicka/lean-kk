@@ -106,6 +106,75 @@ theorem trackA_henson_raw_change_iff_critical_generation
     · change trackAOldCapacity E b j U < h
       omega
 
+
+/-- Under genuine normalized Henson K_ell-freeness, EVERY critical
+ordinary-L event generation is strictly before ell-2. The proof
+adjoins two distinct real original vertices to an actual capacity-
+attaining old original clique, not to a graph-age shadow. -/
+theorem trackA_henson_critical_generation_lt_ell_sub_two
+    {d : Nat} (E : Nat → Nat → Bool)
+    (ell : Nat) (hell : 2 ≤ ell)
+    (hAvoid : ∀ bad, bad ∈ hensonForbiddenFamily ell hell →
+      bad.Avoids (normalizedGraphModel E))
+    (b : Nat) (j : Fin d → Nat)
+    (hj : ∀ t, b < j t)
+    (p : Nat) (hp : p ∈ trackACriticalGenerations E b j) :
+    p < ell - 2 := by
+  classical
+  obtain ⟨U,hCrit,hEq⟩ :=
+    (mem_trackACriticalGenerations_iff E b j p).1 hp
+  let P : Finset Nat :=
+    oldSupportCommonNeighbourPool (Finset.range b)
+      (fun i t => E i (j t)) U.1
+  let S : Finset Nat := P.filter (fun i => E i b = true)
+  obtain ⟨t,ht⟩ := U.2.1
+  have hBefore : ∀ x ∈ S, x < b := by
+    intro x hx
+    exact Finset.mem_range.mp
+      (Finset.mem_filter.mp
+        ((Finset.mem_filter.mp hx).1)).1
+  have hLinkB : ∀ x ∈ S, E x b = true := by
+    intro x hx
+    exact (Finset.mem_filter.mp hx).2
+  have hLinkT : ∀ x ∈ S, E x (j t) = true := by
+    intro x hx
+    exact (Finset.mem_filter.mp
+      ((Finset.mem_filter.mp hx).1)).2 t ht
+  have hFree : finitePoolCliqueCheck E ell
+      (insert (j t) (insert b S)) = false :=
+    trackA_finite_pool_free_of_henson ell hell E hAvoid _
+  have hBudget := trackA_linked_clique_capacity_two_vertex_budget
+    E (hensonForbiddenFamily_symmetric ell hell E hAvoid)
+    ell b (j t) S hBefore (hj t)
+    hLinkB hLinkT (hCrit.1 t ht) hFree
+  have hCap : finiteDirectedCliqueCapacity E S =
+      finiteDirectedCliqueCapacity E P := hCrit.2
+  have hP : finiteDirectedCliqueCapacity E P = p := hEq
+  omega
+
+/-- The number of distinct ordinary-L raw event generations
+inside a genuine Henson original block is at most ell-2,
+independently of the number d of labelled future sorts. -/
+theorem trackA_henson_critical_generation_card_le
+    {d : Nat} (E : Nat → Nat → Bool)
+    (ell : Nat) (hell : 2 ≤ ell)
+    (hAvoid : ∀ bad, bad ∈ hensonForbiddenFamily ell hell →
+      bad.Avoids (normalizedGraphModel E))
+    (b : Nat) (j : Fin d → Nat)
+    (hj : ∀ t, b < j t) :
+    (trackACriticalGenerations E b j).card ≤ ell - 2 := by
+  classical
+  have hSub : trackACriticalGenerations E b j ⊆
+      Finset.range (ell - 2) := by
+    intro p hp
+    exact Finset.mem_range.mpr
+      (trackA_henson_critical_generation_lt_ell_sub_two
+        E ell hell hAvoid b j hj p hp)
+  have hCard := Finset.card_le_card hSub
+  simpa using hCard
+
+#print axioms Kk.trackA_henson_critical_generation_lt_ell_sub_two
+#print axioms Kk.trackA_henson_critical_generation_card_le
 #print axioms Kk.mem_trackACriticalGenerations_iff
 #print axioms Kk.trackA_henson_raw_change_iff_critical_generation
 
