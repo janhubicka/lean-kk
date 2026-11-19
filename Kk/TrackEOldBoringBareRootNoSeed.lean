@@ -131,8 +131,11 @@ theorem finiteNumericH_oldUnselected_bare_root_no_positive_real_seed
         (R.I (hPosition k idx g+1)) X)
       (hPosition k idx g) := by
     intro hInteresting
-    exact hNotSelected
-      (R.interesting_step (hPosition k idx g) hCut hInteresting)
+    have hStep :=
+      (R.interesting_step (hPosition k idx g) hCut hInteresting).1
+    apply hNotSelected
+    rw [hStep]
+    simp
   exact finiteNumericH_oldBoring_bare_root_no_positive_real_seed
     family K k N hAvoid X top R newV idx g
     hPositive hBoring
