@@ -1,0 +1,10 @@
+import Kk.TrackEBareOriginalNoEvenSeed
+
+#check @Kk.finiteNumericH_bare_original_no_positive_real_level
+#print axioms Kk.finiteNumericH_bare_original_no_positive_real_level
+
+#check @Kk.finiteNumericH_bare_original_set_no_positive_real_seed
+#print axioms Kk.finiteNumericH_bare_original_set_no_positive_real_seed
+
+#check @Kk.finiteNumericH_bare_one_root_growth_no_positive_real_seed
+#print axioms Kk.finiteNumericH_bare_one_root_growth_no_positive_real_seed
