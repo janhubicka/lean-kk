@@ -1,0 +1,10 @@
+import Kk.TrackFPrivateMarkerFullRawProfile
+
+#check @Kk.trackFSameRank_oldNeighbourCapacity_eq
+#print axioms Kk.trackFSameRank_oldNeighbourCapacity_eq
+#check @Kk.trackFCommonNeighbourPool_eq_of_private_new_markers
+#print axioms Kk.trackFCommonNeighbourPool_eq_of_private_new_markers
+#check @Kk.trackFCommonRawAge_eq_of_same_rank_private_markers
+#print axioms Kk.trackFCommonRawAge_eq_of_same_rank_private_markers
+#check @Kk.trackFOriginalRefined_canonical_iff_of_private_markers
+#print axioms Kk.trackFOriginalRefined_canonical_iff_of_private_markers
