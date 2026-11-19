@@ -17,7 +17,7 @@ Fix one genuine successor-tree SMTree H, actual nested seeds X⊆Y, finite top t
     - for ALL z∈D_i with lev(z)>i, Q_i(ancestor(z,i))=ancestor(z,i+1);
     - RX.F(i) = MMap.comp H (RX.F(i+1)) Q_i.
 
-Importantly Q_i need not be the exact skip map chosen by RX. This criterion is potentially weaker than physical no-novelty. Conversely, it is a TRUE equivalence, not merely one more sufficient hypothesis.
+**Strengthening after hostile audit:** the old actual skip factor at a boring cut is UNIQUE. If two total maps D,E both satisfy RX.F(i)=RX.F(i+1)∘D=RX.F(i+1)∘E, the verified `kpt_MMap_comp_left_cancel` proves D=E because RX.F(i+1) is injective. Thus Q_i is necessarily the old run's skip factor, not an independent choice. The exact transfer condition can be reduced to checking that very factor on the enlarged source. This is potentially weaker than physical no-novelty, and it is an equivalence.
 
 ## Proof of (1)→(2)
 
@@ -42,7 +42,7 @@ Then the full target I1 and I2 disjuncts are false and (Q) defeats I3's no-skip 
 3. The target closure at i uses RX.I(i+1), not selected levels from an assumed arbitrary Y-run.
 4. Existence of one synchronized Y-run is a choice of run, not uniqueness of arbitrary target F functions.
 5. An old-boring step can change total F; preserving I alone does NOT make the old F equation automatically valid.
-6. The compatible Q_i may differ from RX's original skip map while yielding the same old total F(i); left cancellation might imply uniqueness when suitable, but the criterion does not need that simplification.
+6. The compatible Q_i CANNOT differ from RX's original skip factor: left cancellation by injective RX.F(i+1) proves uniqueness. Requiring the original factor's action on new crossings is therefore exact.
 7. Complete same-node crossing equations must include all dependent L+/E auxiliary records, no selected-front ordinary graph-age proxy.
 8. At an old interesting cut no Q_i certificate is needed; monotonicity ensures it remains interesting.
 9. The old-selected bound rules out an actual interesting Y-step that leaves the same selected I; it is crucial for necessity.
@@ -57,3 +57,11 @@ Then the full target I1 and I2 disjuncts are false and (Q) defeats I3's no-skip 
 ## Lean plan
 
 Formalize theorem A with exact iff, and theorem B with explicit terminal/meet/compatible-skip premises, both as standalone generic successor-tree statements importing verified G365. Direct exact-head Lake build, standard-only two-name qualified #print axioms gate and full Lean CI. Do not promote black manuscript.
+
+## Theorem C — sharp old-factor physical criterion (after adversarial simplification)
+
+In the setting of Theorem A, whole-run I/F transport exists **if and only if** at each old-boring cut (i) the enlarged source has no terminal node at the cut, (ii) it has no competing same-component meet at the cut, and (iii) **every** skip-only old factor D satisfying the actual old crossing law and old F-step factorization also satisfies the complete enlarged-source crossing law. Since the old factor exists by RX.noninteresting_step and is unique by G309, the universal quantifier is exactly a test of the *one* old factor, not an extra choice principle.
+
+Forward: a synchronized target run must be boring and provides a target factor Q. Left cancellation identifies Q with any actual old factor D, so D also satisfies all target equations. Backward: take the actual old factor D; the stated extension certifies its Y-crossing equations. Absence of I1/I2 plus D's skip law defeats I3. The exact criterion from Theorem A builds a synchronized run.
+
+This is a genuine tightening of the geometric critical path: **the corrected target condition is absence of new I1/I2 plus preservation of the unique old skip map's actual full Kpt crossing equations, not equality of entire physical crossing relations**. It allows new crossing pairs with the same specified continuation. Whether the resolved diary provides those equations remains open.
