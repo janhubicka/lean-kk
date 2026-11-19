@@ -1,0 +1,10 @@
+import Kk.TrackEOldBoringBareRootNoSeed
+
+#check @Kk.kpt_old_actual_boring_no_initial_seed_at_cut
+#print axioms Kk.kpt_old_actual_boring_no_initial_seed_at_cut
+
+#check @Kk.finiteNumericH_oldBoring_bare_root_no_positive_real_seed
+#print axioms Kk.finiteNumericH_oldBoring_bare_root_no_positive_real_seed
+
+#check @Kk.finiteNumericH_oldUnselected_bare_root_no_positive_real_seed
+#print axioms Kk.finiteNumericH_oldUnselected_bare_root_no_positive_real_seed
