@@ -1,0 +1,4 @@
+import Kk.TrackDEvenRealNoI1
+
+#check @Kk.finiteNumericH_even_real_no_full_I1_of_zero_stage
+#print axioms Kk.finiteNumericH_even_real_no_full_I1_of_zero_stage
