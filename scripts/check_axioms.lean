@@ -2178,3 +2178,9 @@ import Kk
 #print axioms Kk.mem_trackACriticalGenerations_iff
 #check @Kk.trackA_henson_raw_change_iff_critical_generation
 #print axioms Kk.trackA_henson_raw_change_iff_critical_generation
+
+-- Track A: genuine Henson critical-generation cutoff and d-independent card bound.
+#check @Kk.trackA_henson_critical_generation_lt_ell_sub_two
+#print axioms Kk.trackA_henson_critical_generation_lt_ell_sub_two
+#check @Kk.trackA_henson_critical_generation_card_le
+#print axioms Kk.trackA_henson_critical_generation_card_le
