@@ -86,7 +86,7 @@ theorem finiteNumericH_even_real_candidate_noNovelty_of_zero_socle
   have hZeroAmbient :
       ∀ v : Fin A.size,
         v ∈ ambientStagePool A
-          (U : Set (Fin A.size)) (R.I (cut+1)) →
+          (U : Set (Fin N)) (R.I (cut+1)) →
         cut+1 ≤ A.freeLevel v.val →
         A.L.binary cut v.val (0 : Fin 1) = false := by
     intro v hv hFree
@@ -94,9 +94,12 @@ theorem finiteNumericH_even_real_candidate_noNovelty_of_zero_socle
         v ∈ (U : Set (Fin N)) ∨
           (v.val ∈ R.I (cut+1) ∧ 0 < A.freeLevel v.val) := by
       simpa only [ambientStagePool, Set.mem_union,
-        Set.mem_setOf_eq] using hv
+        Set.mem_ofPred_eq] using hv
     have hStage :
         v ∈ hStageOriginals K k N U (R.I (cut+1)) := by
+      change v ∈ U ∨
+        (v.val ∈ R.I (cut+1) ∧
+          0 < (finiteNumericH K k N).freeLevel v.val) at hMember
       simpa only [hStageOriginals, Finset.mem_filter,
         Finset.mem_univ, true_and, Set.mem_ofPred_eq]
         using hMember
@@ -111,7 +114,7 @@ theorem finiteNumericH_even_real_candidate_noNovelty_of_zero_socle
       LevelTree.lev z = cut
     exact finiteNumericH_even_real_no_full_I1_of_zero_stage
       family K k N hAvoid hSym (R.I (cut+1)) Y
-      (U : Set (Fin A.size)) hY idx g hPositive
+      (U : Set (Fin N)) hY idx g hPositive
       hNoYSeedAt hZeroAmbient
   exact finiteNumericH_candidate_zero_stage_noNovelty_of_socle_and_noI1
     family K k N hAvoid hSym U X Y hXY hY top R
