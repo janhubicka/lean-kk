@@ -1,0 +1,7 @@
+import Kk.TrackEOriginalPrefixSocleCover
+
+#check @Kk.finiteNumericH_candidate_old_socle_of_active_original_prefixes
+#print axioms Kk.finiteNumericH_candidate_old_socle_of_active_original_prefixes
+
+#check @Kk.finiteNumericH_candidate_zero_stage_original_prefixes_cover_full_crossings
+#print axioms Kk.finiteNumericH_candidate_zero_stage_original_prefixes_cover_full_crossings
