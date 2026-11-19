@@ -100,7 +100,8 @@ theorem trackFExactClique_iff_fullRawIntegerSupport
             d ell front E U (D.image σ) T.1 hSortSub
     · have hDZero : D = ∅ :=
         Finset.not_nonempty_iff_eq_empty.mp hDNonempty
-      simp only [hDZero, Finset.card_empty]
+      change D.card ≤ trackFCommonRawAge d ell front E U T.1
+      rw [hDZero]
       exact Nat.zero_le _
   · intro hFull C hCSub hCNonempty hClique
     have hSmall : C.card < ell :=
