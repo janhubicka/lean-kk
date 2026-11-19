@@ -1,0 +1,7 @@
+import Kk.TrackEEvenRealZeroSocleNoNovelty
+
+#check @Kk.finiteNumericH_even_real_candidate_noNovelty_of_zero_socle
+#print axioms Kk.finiteNumericH_even_real_candidate_noNovelty_of_zero_socle
+
+#check @Kk.finiteNumericH_graph_even_real_candidate_noNovelty_of_zero_socle
+#print axioms Kk.finiteNumericH_graph_even_real_candidate_noNovelty_of_zero_socle
