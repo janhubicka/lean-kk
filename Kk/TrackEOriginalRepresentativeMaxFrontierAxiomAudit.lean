@@ -1,0 +1,15 @@
+import Kk.TrackEOriginalRepresentativeMaxFrontier
+
+#check @Kk.kpt_candidate_original_boring_crossing_cuts
+
+#check @Kk.mem_kpt_candidate_original_boring_crossing_cuts
+#print axioms Kk.mem_kpt_candidate_original_boring_crossing_cuts
+
+#check @Kk.kpt_actual_upper_cover_transfer_from_representing_original
+#print axioms Kk.kpt_actual_upper_cover_transfer_from_representing_original
+
+#check @Kk.finiteNumericH_oldRun_candidate_crossing_covered_of_original_max
+#print axioms Kk.finiteNumericH_oldRun_candidate_crossing_covered_of_original_max
+
+#check @Kk.finiteNumericH_transport_actualRun_of_original_max_crossings
+#print axioms Kk.finiteNumericH_transport_actualRun_of_original_max_crossings
