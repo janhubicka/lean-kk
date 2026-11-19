@@ -1,4 +1,5 @@
 import Kk.TrackGBoringOnlyNoNoveltyRunTransfer
+import Kk.TrackGUniqueBoringBlockFactor
 import Mathlib.Tactic
 
 /-!
@@ -182,5 +183,100 @@ theorem actualRun_transport_of_old_boring_explicit_physical_compatible
     · exact hNoMeet hMeet
     · exact hNoSkip ⟨D,hSkip,hCross⟩
   exact ⟨hNewBoring,D,hSkip,hCross,hF⟩
+
+/-- Sharp geometric characterization of EXACT same-I same-total-F
+actual run transport, using the UNIQUE old boring-step factor.
+
+At an old-boring cut, the target complete source must have no
+terminal I1 and no genuine same-component I2 meet; each actual
+old step factor (which is unique by total monoid left cancellation)
+must satisfy all new complete crossing equations. Equality of
+old/new full physical crossing RELATIONS is not required. -/
+theorem actualRun_transport_iff_old_boring_original_factor_extends
+    {T : Type u} {Label : Type v}
+    [PartialOrder T] [LevelTree T]
+    {S : STree T Label}
+    (H : SMTree S)
+    (X Y : Set T) (hXY : X ⊆ Y)
+    (top : Nat)
+    (RX : SMTree.Envelope.AlgorithmRun H X top) :
+    (∃ RY : SMTree.Envelope.AlgorithmRun H Y top,
+      RY.I = RX.I ∧ RY.F = RX.F) ↔
+    (∀ cut : Nat, cut < top →
+      ¬ SMTree.Envelope.IsInterestingAt H
+        (SMTree.Envelope.closure S (RX.I (cut+1)) X) cut →
+      (¬ ∃ z : T,
+        z ∈ SMTree.Envelope.closure S (RX.I (cut+1)) Y ∧
+        LevelTree.lev z = cut) ∧
+      (¬ ∃ a : T,
+        a ∈ SMTree.Envelope.closure S (RX.I (cut+1)) Y ∧
+        ∃ b : T,
+          b ∈ SMTree.Envelope.closure S (RX.I (cut+1)) Y ∧
+          SMTree.Envelope.SameComponent a b ∧
+          LevelTree.lev (LevelTree.meet a b) = cut) ∧
+      ∀ (D : MMap H),
+        D.map.SkipsOnly cut →
+        (∀ ⦃z : T⦄,
+          z ∈ SMTree.Envelope.closure S (RX.I (cut+1)) X →
+          ∀ (hCross : cut < LevelTree.lev z),
+            D (LevelTree.ancestor z cut (Nat.le_of_lt hCross)) =
+              LevelTree.ancestor z (cut+1)
+                (Nat.succ_le_iff.mpr hCross)) →
+        RX.F cut = MMap.comp H (RX.F (cut+1)) D →
+        (∀ ⦃z : T⦄,
+          z ∈ SMTree.Envelope.closure S (RX.I (cut+1)) Y →
+          ∀ (hCross : cut < LevelTree.lev z),
+            D (LevelTree.ancestor z cut (Nat.le_of_lt hCross)) =
+              LevelTree.ancestor z (cut+1)
+                (Nat.succ_le_iff.mpr hCross))) := by
+  constructor
+  · intro hTransfer cut hCut hOldBoring
+    have hCertified :=
+      (actualRun_transport_iff_old_boring_compatible
+        H X Y hXY top RX).mp hTransfer
+        cut hCut hOldBoring
+    obtain ⟨hNewBoring,Q,_hSkipQ,hNewCrossQ,hFactorQ⟩ :=
+      hCertified
+    have hNoI1 :
+        ¬ ∃ z : T,
+          z ∈ SMTree.Envelope.closure S (RX.I (cut+1)) Y ∧
+          LevelTree.lev z = cut := by
+      intro hI1
+      exact hNewBoring (Or.inl hI1)
+    have hNoI2 :
+        ¬ ∃ a : T,
+          a ∈ SMTree.Envelope.closure S (RX.I (cut+1)) Y ∧
+          ∃ b : T,
+            b ∈ SMTree.Envelope.closure S (RX.I (cut+1)) Y ∧
+            SMTree.Envelope.SameComponent a b ∧
+            LevelTree.lev (LevelTree.meet a b) = cut := by
+      intro hI2
+      exact hNewBoring (Or.inr (Or.inl hI2))
+    refine ⟨hNoI1,hNoI2,?_⟩
+    intro D _hSkipD _hOldCrossD hFactorD
+    have hDQ : D = Q :=
+      kpt_MMap_comp_left_cancel H (RX.F (cut+1)) D Q
+        (hFactorD.symm.trans hFactorQ)
+    simpa only [hDQ] using hNewCrossQ
+  · intro hPhysical
+    apply (actualRun_transport_iff_old_boring_compatible
+      H X Y hXY top RX).mpr
+    intro cut hCut hOldBoring
+    obtain ⟨hNoI1,hNoI2,hFactorExtension⟩ :=
+      hPhysical cut hCut hOldBoring
+    obtain ⟨D,hSkipD,hOldCrossD,_hOldI,hFactorD⟩ :=
+      RX.noninteresting_step cut hCut hOldBoring
+    have hNewCrossD :=
+      hFactorExtension D hSkipD hOldCrossD hFactorD
+    have hNewBoring :
+        ¬ SMTree.Envelope.IsInterestingAt H
+          (SMTree.Envelope.closure S (RX.I (cut+1)) Y) cut := by
+      intro hInteresting
+      unfold SMTree.Envelope.IsInterestingAt at hInteresting
+      rcases hInteresting with hI1 | hI2 | hNoSkip
+      · exact hNoI1 hI1
+      · exact hNoI2 hI2
+      · exact hNoSkip ⟨D,hSkipD,hNewCrossD⟩
+    exact ⟨hNewBoring,D,hSkipD,hNewCrossD,hFactorD⟩
 
 end Kk
