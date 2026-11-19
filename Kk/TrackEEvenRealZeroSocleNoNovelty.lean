@@ -91,18 +91,17 @@ theorem finiteNumericH_even_real_candidate_noNovelty_of_zero_socle
         A.L.binary cut v.val (0 : Fin 1) = false := by
     intro v hv hFree
     have hMember :
-        v ∈ (U : Set (Fin N)) ∨
+        v ∈ U ∨
           (v.val ∈ R.I (cut+1) ∧ 0 < A.freeLevel v.val) := by
-      simpa only [ambientStagePool, Set.mem_union,
-        Set.mem_ofPred_eq] using hv
+      change v ∈ (U : Set (Fin N)) ∪
+        {i : Fin N | i.val ∈ R.I (cut+1) ∧
+          0 < A.freeLevel i.val} at hv
+      rcases hv with hRoot | hParam
+      · exact Or.inl (Finset.mem_coe.mp hRoot)
+      · exact Or.inr hParam
     have hStage :
         v ∈ hStageOriginals K k N U (R.I (cut+1)) := by
-      change v ∈ U ∨
-        (v.val ∈ R.I (cut+1) ∧
-          0 < (finiteNumericH K k N).freeLevel v.val) at hMember
-      simpa only [hStageOriginals, Finset.mem_filter,
-        Finset.mem_univ, true_and, Set.mem_ofPred_eq]
-        using hMember
+      simpa [hStageOriginals, A] using hMember
     exact hZeroStage v hStage hFree
   have hNoI1 :
       ¬ KptI1AtCut family
