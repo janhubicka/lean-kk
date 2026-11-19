@@ -100,17 +100,12 @@ theorem finiteNumericH_even_real_candidate_noNovelty_of_zero_socle
       rcases hv with hRoot | hParam
       · exact Or.inl (Finset.mem_coe.mp hRoot)
       · exact Or.inr hParam
-    have hStage :
-        v ∈ hStageOriginals K k N U (R.I (cut+1)) := by
-      have hMember' :
-          v ∈ U ∨
-            (v.val ∈ R.I (cut+1) ∧
-              0 < (finiteNumericH K k N).freeLevel v.val) := by
-        simpa only [A] using hMember
-      simpa only [hStageOriginals, Finset.mem_filter,
-        Finset.mem_univ, true_and, Set.mem_setOf_eq,
-        Set.mem_ofPred_eq] using hMember'
-    exact hZeroStage v hStage hFree
+    let V : Finset (Fin N) :=
+      hStageOriginals K k N U (R.I (cut+1))
+    have hvV : v ∈ V := by
+      exact Finset.mem_filter.mpr
+        ⟨Finset.mem_univ v, by simpa only [A] using hMember⟩
+    exact hZeroStage v hvV hFree
   have hNoI1 :
       ¬ KptI1AtCut family
         (SMTree.Envelope.closure
