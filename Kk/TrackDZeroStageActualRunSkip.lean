@@ -96,7 +96,10 @@ theorem henson_actualRun_lower_real_unselected_of_no_seed_and_zero_stage
       rcases hv with hu | hSelected
       · exact Or.inl (Finset.mem_coe.mp hu)
       · exact Or.inr hSelected
-    simpa [Stage, hStageOriginals, A, K] using hvOr
+    change v ∈ {x : Fin N |
+      x ∈ U ∨ (x.val ∈ J ∧
+        0 < (finiteNumericH K k N).freeLevel x.val)}
+    exact hvOr
   have hStageZero :
       ∀ v : Fin A.size,
         v ∈ ambientStagePool A (U : Set (Fin N)) J →
