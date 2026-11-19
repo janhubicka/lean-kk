@@ -1,0 +1,4 @@
+import Kk.TrackGZeroColumnSocleRun
+
+#check @Kk.finiteNumericH_graph_zero_columns_old_socle_transport_whole_run
+#print axioms Kk.finiteNumericH_graph_zero_columns_old_socle_transport_whole_run
