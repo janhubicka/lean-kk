@@ -187,53 +187,54 @@ theorem kpt_exact_factor_BadCuts_empty_iff_wholeRun_transport
     intro cut
     constructor
     · intro hBad
-    obtain ⟨hCut,hOldBoring,hNotCompat⟩ :=
-      (mem_kptExactOldFactorBadCuts
-        family X top RX newNode newLive cut).mp hBad
-    apply hNotCompat
-    have hPhysical :=
-      (actualRun_transport_iff_old_boring_original_factor_extends
-        (normalizedKptSMTree family) X Y hXY top RX).mp
-        hTransport cut hCut hOldBoring
-    obtain ⟨hNoI1,hNoI2,hOldFactorExtension⟩ := hPhysical
-    refine ⟨?_,?_,?_⟩
-    · intro j hLive hLev
-      have hj :
-          newNode j ∈ SMTree.Envelope.closure
-            (admissibleKptSTree family) (RX.I (cut+1)) Y :=
-        (hExactY cut hCut (newNode j)).mpr
-          ⟨j,rfl,hLive⟩
-      exact hNoI1 ⟨newNode j,hj,hLev⟩
-    · intro j k hjLive hkLive hMeetData
-      have hj :
-          newNode j ∈ SMTree.Envelope.closure
-            (admissibleKptSTree family) (RX.I (cut+1)) Y :=
-        (hExactY cut hCut (newNode j)).mpr
-          ⟨j,rfl,hjLive⟩
-      have hk :
-          newNode k ∈ SMTree.Envelope.closure
-            (admissibleKptSTree family) (RX.I (cut+1)) Y :=
-        (hExactY cut hCut (newNode k)).mpr
-          ⟨k,rfl,hkLive⟩
-      exact hNoI2
-        ⟨newNode j,hj,newNode k,hk,
-          hMeetData.1,hMeetData.2⟩
-    · intro D hFactorD j hLive hCross
-      obtain ⟨E,hSkipE,hCrossE,_hOldI,hFactorE⟩ :=
-        RX.noninteresting_step cut hCut hOldBoring
-      have hDE : D = E :=
-        kpt_MMap_comp_left_cancel
-          (normalizedKptSMTree family) (RX.F (cut+1)) D E
-          (hFactorD.symm.trans hFactorE)
-      have hj :
-          newNode j ∈ SMTree.Envelope.closure
-            (admissibleKptSTree family) (RX.I (cut+1)) Y :=
-        (hExactY cut hCut (newNode j)).mpr
-          ⟨j,rfl,hLive⟩
-      have hE :=
-        hOldFactorExtension E hSkipE hCrossE hFactorE
-          (newNode j) hj hCross
-      simpa only [hDE] using hE
+      exfalso
+      obtain ⟨hCut,hOldBoring,hNotCompat⟩ :=
+        (mem_kptExactOldFactorBadCuts
+          family X top RX newNode newLive cut).mp hBad
+      apply hNotCompat
+      have hPhysical :=
+        (actualRun_transport_iff_old_boring_original_factor_extends
+          (normalizedKptSMTree family) X Y hXY top RX).mp
+          hTransport cut hCut hOldBoring
+      obtain ⟨hNoI1,hNoI2,hOldFactorExtension⟩ := hPhysical
+      refine ⟨?_,?_,?_⟩
+      · intro j hLive hLev
+        have hj :
+            newNode j ∈ SMTree.Envelope.closure
+              (admissibleKptSTree family) (RX.I (cut+1)) Y :=
+          (hExactY cut hCut (newNode j)).mpr
+            ⟨j,rfl,hLive⟩
+        exact hNoI1 ⟨newNode j,hj,hLev⟩
+      · intro j k hjLive hkLive hMeetData
+        have hj :
+            newNode j ∈ SMTree.Envelope.closure
+              (admissibleKptSTree family) (RX.I (cut+1)) Y :=
+          (hExactY cut hCut (newNode j)).mpr
+            ⟨j,rfl,hjLive⟩
+        have hk :
+            newNode k ∈ SMTree.Envelope.closure
+              (admissibleKptSTree family) (RX.I (cut+1)) Y :=
+          (hExactY cut hCut (newNode k)).mpr
+            ⟨k,rfl,hkLive⟩
+        exact hNoI2
+          ⟨newNode j,hj,newNode k,hk,
+            hMeetData.1,hMeetData.2⟩
+      · intro D hFactorD j hLive hCross
+        obtain ⟨E,hSkipE,hCrossE,_hOldI,hFactorE⟩ :=
+          RX.noninteresting_step cut hCut hOldBoring
+        have hDE : D = E :=
+          kpt_MMap_comp_left_cancel
+            (normalizedKptSMTree family) (RX.F (cut+1)) D E
+            (hFactorD.symm.trans hFactorE)
+        have hj :
+            newNode j ∈ SMTree.Envelope.closure
+              (admissibleKptSTree family) (RX.I (cut+1)) Y :=
+          (hExactY cut hCut (newNode j)).mpr
+            ⟨j,rfl,hLive⟩
+        have hE :=
+          hOldFactorExtension E hSkipE hCrossE hFactorE
+            (newNode j) hj hCross
+        simpa only [hDE] using hE
     · intro hEmpty
       simpa using hEmpty
 
