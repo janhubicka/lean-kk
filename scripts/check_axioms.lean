@@ -2224,3 +2224,7 @@ import Kk
 -- Track C: physical old-boring bare-root even real ZERO source no-novelty, full Kpt L+/E.
 #check @Kk.finiteNumericH_oldBoring_oneBare_real_zero_noNovelty
 #print axioms Kk.finiteNumericH_oldBoring_oneBare_real_zero_noNovelty
+
+-- Track C: genuine K/L physical base-extension constructs finite W; real-zero candidate source quiet.
+#check @Kk.finiteNumericH_constructed_bare_root_real_zero_stage_quiet
+#print axioms Kk.finiteNumericH_constructed_bare_root_real_zero_stage_quiet
