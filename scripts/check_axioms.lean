@@ -2220,3 +2220,7 @@ import Kk
 -- Track C: true physical numerical-H+ off-plan iff TWO full dependent residual classes.
 #check @Kk.finiteNumericH_constructed_offplan_iff_two_residual_classes
 #print axioms Kk.finiteNumericH_constructed_offplan_iff_two_residual_classes
+
+-- Track C: physical old-boring bare-root even real ZERO source no-novelty, full Kpt L+/E.
+#check @Kk.finiteNumericH_oldBoring_oneBare_real_zero_noNovelty
+#print axioms Kk.finiteNumericH_oldBoring_oneBare_real_zero_noNovelty
