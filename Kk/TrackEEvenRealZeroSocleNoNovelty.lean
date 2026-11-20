@@ -85,11 +85,12 @@ theorem finiteNumericH_even_real_candidate_noNovelty_of_zero_socle
   let cut : Nat := hPosition k idx g
   let A : EnumeratedPartialStructure 1 0 1 := finiteNumericH K k N
   have hZeroAmbient :
-      ∀ v : Fin A.size,
-        v ∈ ambientStagePool A
+      ∀ v : Fin N,
+        v ∈ ambientStagePool (finiteNumericH K k N)
           (U : Set (Fin N)) (R.I (cut+1)) →
-        cut+1 ≤ A.freeLevel v.val →
-        A.L.binary cut v.val (0 : Fin 1) = false := by
+        cut+1 ≤ (finiteNumericH K k N).freeLevel v.val →
+        (finiteNumericH K k N).L.binary
+          cut v.val (0 : Fin 1) = false := by
     intro v hv hFree
     have hMember :
         v ∈ U ∨
