@@ -69,8 +69,9 @@ theorem henson_topSeeds_isolated_dummy_lower_real_skip
   let U : Finset (Fin N) := {cap}
   have hX :
       X ⊆ ambientPrefixPool family A hAvoid (U : Set (Fin N)) := by
-    exact numericHTopGenerationSeeds_subset_rootPool
-      family K k N hAvoid cap blocks hWithin
+    simpa only [X, U, A, Finset.coe_singleton] using
+      (numericHTopGenerationSeeds_subset_rootPool
+        family K k N hAvoid cap blocks hWithin)
   have hRootIn : A.kptOriginal family hAvoid cap ∈ X := by
     simp [X, numericHTopGenerationSeeds, A]
   have hTopSeed : ∃ x ∈ X, LevelTree.lev x = top := by
@@ -145,9 +146,10 @@ theorem henson_topSeeds_selected_coded_lower_real_skip
   let top : Nat := A.freeLevel cap.val
   let U : Finset (Fin N) := {cap}
   have hX :
-      X ⊆ ambientPrefixPool family A hAvoid (U : Set (Fin N)) :=
-    numericHTopGenerationSeeds_subset_rootPool
-      family K k N hAvoid cap blocks hWithin
+      X ⊆ ambientPrefixPool family A hAvoid (U : Set (Fin N)) := by
+    simpa only [X, U, A, Finset.coe_singleton] using
+      (numericHTopGenerationSeeds_subset_rootPool
+        family K k N hAvoid cap blocks hWithin)
   have hRootIn : A.kptOriginal family hAvoid cap ∈ X := by
     simp [X, numericHTopGenerationSeeds, A]
   have hTopSeed : ∃ x ∈ X, LevelTree.lev x = top := by
