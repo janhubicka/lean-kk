@@ -343,6 +343,8 @@ import Kk.ConstructedPhysicalOffPlanResidual
 import Kk.ResidualTwoClassQuiet
 -- Track C: genuinely constructed physical H+ two residual class reduction.
 import Kk.PhysicalTwoClassResidual
+-- Track C: one genuine bare original, zero stage and full old Kpt prefixes imply true no-novelty.
+import Kk.TrackCOneBareEvenRealZeroQuiet
 
 -- Track D: actual finite-index no-I1/no-I2 and one physical boring lower-real cut.
 -- Marked full-B3 and represented complete source remain explicit assumptions.
