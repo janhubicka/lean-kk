@@ -130,8 +130,8 @@ theorem finiteNumericH_old_boring_one_bare_root_even_real_noNovelty
       hAvoid (U : Set (Fin N)))
     (newV : Fin N) (hNewInU : newV ∈ U)
     (hBare : Y = X ∪
-      ({(finiteNumericH (normalizedGraphModel E) k N).kptOriginal
-        family hAvoid newV} : Set (AdmissibleKptNode family)))
+      ({(finiteNumericH (normalizedGraphModel E) k N).kptOriginal family hAvoid newV} :
+        Set (AdmissibleKptNode family)))
     (top : Nat)
     (R : SMTree.Envelope.AlgorithmRun
       (normalizedKptSMTree family) X top)
@@ -208,8 +208,8 @@ theorem finiteNumericH_old_unselected_one_bare_root_even_real_noNovelty
       hAvoid (U : Set (Fin N)))
     (newV : Fin N) (hNewInU : newV ∈ U)
     (hBare : Y = X ∪
-      ({(finiteNumericH (normalizedGraphModel E) k N).kptOriginal
-        family hAvoid newV} : Set (AdmissibleKptNode family)))
+      ({(finiteNumericH (normalizedGraphModel E) k N).kptOriginal family hAvoid newV} :
+        Set (AdmissibleKptNode family)))
     (top : Nat)
     (R : SMTree.Envelope.AlgorithmRun
       (normalizedKptSMTree family) X top)
