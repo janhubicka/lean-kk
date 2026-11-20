@@ -2190,3 +2190,7 @@ import Kk
 #print axioms Kk.trackA_finite_old_column_canonical_singleton_eq_raw
 #check @Kk.trackA_physical_partial_canonical_singleton_eq_raw
 #print axioms Kk.trackA_physical_partial_canonical_singleton_eq_raw
+
+-- Track A: genuine Henson canonical singleton one-step iff critical physical capacity.
+#check @Kk.trackA_henson_partial_canonical_singleton_step_iff
+#print axioms Kk.trackA_henson_partial_canonical_singleton_step_iff
