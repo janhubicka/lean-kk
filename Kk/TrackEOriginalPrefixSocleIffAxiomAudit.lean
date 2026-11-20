@@ -1,0 +1,4 @@
+import Kk.TrackEOriginalPrefixSocleIff
+
+#check @Kk.finiteNumericH_candidate_old_socle_iff_active_original_prefixes
+#print axioms Kk.finiteNumericH_candidate_old_socle_iff_active_original_prefixes
