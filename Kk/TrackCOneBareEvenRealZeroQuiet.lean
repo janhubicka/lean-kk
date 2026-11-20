@@ -121,25 +121,25 @@ theorem finiteNumericH_oldBoring_oneBare_real_zero_noNovelty
           (U : Set (Fin N)) (R.I (cut+1)) →
         cut+1 ≤ A.freeLevel v.val →
         A.L.binary cut v.val (0 : Fin 1) = false := by
-    intro v hv hFree
-    have hMember :
-        v ∈ U ∨
-          (v.val ∈ R.I (cut+1) ∧ 0 < A.freeLevel v.val) := by
-      change v ∈ (U : Set (Fin N)) ∪
+    -- Reduce the actual carrier size BEFORE introducing v, so its
+    -- Fin index and the finite stage original membership share the
+    -- same type and the same DecidablePred instance.
+    change ∀ v : Fin N,
+      v ∈ (U : Set (Fin N)) ∪
         {i : Fin N | i.val ∈ R.I (cut+1) ∧
-          0 < A.freeLevel i.val} at hv
-      rcases hv with hRoot | hParam
-      · exact Or.inl (Finset.mem_coe.mp hRoot)
-      · exact Or.inr hParam
-    let V : Finset (Fin N) :=
-      hStageOriginals K k N U (R.I (cut+1))
-    have hvV : v ∈ V := by
+          0 < (finiteNumericH K k N).freeLevel i.val} →
+      cut+1 ≤ (finiteNumericH K k N).freeLevel v.val →
+      (finiteNumericH K k N).L.binary cut v.val (0 : Fin 1) = false
+    intro v hv hFree
+    have hvStage :
+        v ∈ hStageOriginals K k N U (R.I (cut+1)) := by
       change v ∈ Finset.univ.filter
         (fun x : Fin N => x ∈ U ∨
-          (x.val ∈ R.I (cut+1) ∧ 0 < A.freeLevel x.val))
+          (x.val ∈ R.I (cut+1) ∧
+            0 < (finiteNumericH K k N).freeLevel x.val))
       simp only [Finset.mem_filter, Finset.mem_univ, true_and]
-      exact hMember
-    exact hZeroStage v hvV hFree
+      exact hv
+    exact hZeroStage v hvStage hFree
   have hNoI1 :
       ¬ KptI1AtCut family
         (SMTree.Envelope.closure
