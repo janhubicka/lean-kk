@@ -35,7 +35,7 @@ Because z≤O_v and c<lev(z), the LevelTree uniqueness of ancestors gives
 
     ancestor_c(z)=ancestor_c(O_v).
 
-By transitivity, ancestor_c(z)=ancestor_c(w). This supplies **exactly** E72's full old-Kpt socle coverage hypothesis for EVERY new-live crossing node, without enumerating the auxiliary closure and without assuming a new run. It is a logically stronger *sufficient testing criterion* than E72's source-level coverage, and is finite-stage bounded by N, which is not a diary bound.
+By transitivity, ancestor_c(z)=ancestor_c(w). This supplies **exactly** E72's full old-Kpt socle coverage hypothesis for EVERY new-live crossing node, without enumerating the auxiliary closure and without assuming a new run. This direction supplies a sufficient test; the reverse implication is also valid **for precisely the active-original condition stated here**. Indeed, each active v represents a crossing z with the same complete old Kpt ancestor, so an old-socle witness for z also witnesses v. E78 records the full equivalence and its independent Lean acceptance gate. The physical test universe has size at most N in this finite stage, but N is not a diary bound.
 
 ## E74.2 — complete dependent crossing coverage at zero-column cuts
 
@@ -67,7 +67,7 @@ It does not establish that those original prefix matches exist for the resolved 
 11. `LevelTree.eq_ancestor_of_le` verifies restriction of a physical full original to a represented prefix.
 12. No constraints on h>c are needed for the local geometric lemma, except using R's genuine level-tail function as defined.
 13. The stage pool is at most N originals for this particular finite H+ carrier, but N is NOT uniformly controlled by diary.
-14. E74.1 does not claim the finite original criterion is NECESSARY; a node can have an old match even if an unrelated representing original does not.
+14. **Adversarial correction (20 November):** for a truly ACTIVE original v representing a crossing z, the complete old ancestors coincide, so source-level old-socle coverage also gives original-prefix coverage. The two criteria are equivalent under actual stage representation (E78 English proof); an original not representing any crossing z is vacuous.
 15. E74.2 requires whole-stage zero ordinary L, not merely zero selected-front L.
 16. Physical ordinary L symmetry includes fake H coordinates; E remains directed.
 17. E72 supplies full L+/E upper matching from complete old source type plus zero L, not from bare graph adjacency.
