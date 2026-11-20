@@ -5,6 +5,7 @@ on:
     paths:
       - 'Kk/PartialNumericForbiddenSharpStability.lean'
       - 'scripts/check_track_a_forbidden_sharp_stability.py'
+      - 'scripts/check_track_a_canonical_singleton_sharpness.py'
       - '.github/workflows/track_a_forbidden_sharp.yml'
   workflow_dispatch:
 
@@ -14,4 +15,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Independently check all small K-free raw age transitions
-        run: python3 scripts/check_track_a_forbidden_sharp_stability.py
+        run: |
+          python3 scripts/check_track_a_forbidden_sharp_stability.py
+          python3 scripts/check_track_a_canonical_singleton_sharpness.py
