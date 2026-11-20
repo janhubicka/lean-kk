@@ -1,0 +1,48 @@
+name: KK Track G intrinsic exact factor Bad source-index independence and finite H+ stage
+
+on:
+  pull_request:
+    paths:
+      - 'Kk/TrackGIntrinsicExactFactorBad.lean'
+      - 'Kk/TrackGIntrinsicExactFactorBadAxiomAudit.lean'
+      - 'docs/track_g_intrinsic_factor_bad_finite_stage_english_audit_20261120.md'
+      - '.github/workflows/kk-track-g-intrinsic-exact-factor-bad.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: kk-track-g-intrinsic-exact-factor-bad-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  direct-build-and-axioms:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache Lean toolchain
+        uses: actions/cache@v4
+        with:
+          path: ~/.elan/toolchains
+          key: lean-toolchain-${{ runner.os }}-${{ hashFiles('lean-toolchain') }}
+      - name: Restore Lean workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve pinned dependencies
+        run: lake update
+      - name: Obtain Mathlib build cache
+        run: lake exe cache get
+      - name: Compile intrinsic Kpt factor Bad support and finite H+ target-index construction
+        run: lake build Kk.TrackGIntrinsicExactFactorBad
+      - name: Strict four-name standard-only transitive axiom gate
+        run: |
+          set -euo pipefail
+          lake env lean Kk/TrackGIntrinsicExactFactorBadAxiomAudit.lean | tee track-g-intrinsic-exact-factor-bad-axioms.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py Kk/TrackGIntrinsicExactFactorBadAxiomAudit.lean track-g-intrinsic-exact-factor-bad-axioms.log
