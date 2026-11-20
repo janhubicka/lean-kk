@@ -134,8 +134,11 @@ theorem finiteNumericH_oldBoring_oneBare_real_zero_noNovelty
     let V : Finset (Fin N) :=
       hStageOriginals K k N U (R.I (cut+1))
     have hvV : v ∈ V := by
-      exact Finset.mem_filter.mpr
-        ⟨Finset.mem_univ v, by simpa only [A] using hMember⟩
+      change v ∈ Finset.univ.filter
+        (fun x : Fin N => x ∈ U ∨
+          (x.val ∈ R.I (cut+1) ∧ 0 < A.freeLevel x.val))
+      simp only [Finset.mem_filter, Finset.mem_univ, true_and]
+      exact hMember
     exact hZeroStage v hvV hFree
   have hNoI1 :
       ¬ KptI1AtCut family
@@ -159,7 +162,10 @@ theorem finiteNumericH_oldBoring_oneBare_real_zero_noNovelty
     exact finiteNumericH_candidate_zero_stage_original_prefixes_cover_full_crossings
       family K k N hAvoid hSym U X Y hXY hY
       top R cut hZeroStage hOriginalPrefix
-  exact ⟨hNoI1, hCross⟩
+  constructor
+  · intro hNewI1
+    exact (hNoI1 hNewI1).elim
+  · exact hCross
 
 end Kk
 
