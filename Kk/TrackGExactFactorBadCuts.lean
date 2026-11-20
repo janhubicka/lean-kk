@@ -233,7 +233,7 @@ theorem kpt_exact_factor_BadCuts_empty_iff_wholeRun_transport
             ⟨j,rfl,hLive⟩
         have hE :=
           hOldFactorExtension E hSkipE hCrossE hFactorE
-            (newNode j) hj hCross
+            hj hCross
         simpa only [hDE] using hE
     · intro hEmpty
       simpa using hEmpty
