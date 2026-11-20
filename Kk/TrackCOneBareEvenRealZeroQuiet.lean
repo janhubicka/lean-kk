@@ -86,7 +86,7 @@ theorem finiteNumericH_oldBoring_oneBare_real_zero_noNovelty
             ((finiteNumericH K k N).kptOriginal family hAvoid v)
             (hPosition k idx g) (Nat.le_of_lt hV) =
           LevelTree.ancestor w (hPosition k idx g)
-            (Nat.le_of_lt hW))) :
+            (Nat.le_of_lt hW)) :
     NewRootNoNoveltyAtCut family
       (SMTree.Envelope.closure (admissibleKptSTree family)
         (R.I (hPosition k idx g+1)) X)
