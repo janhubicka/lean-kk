@@ -158,7 +158,7 @@ theorem kpt_exact_factor_BadCuts_empty_iff_wholeRun_transport
           family X top RX newNode newLive cut).mpr
           ⟨hCut,hOldBoring,hNot⟩
       rw [hEmpty] at hBad
-      exact Finset.not_mem_empty cut hBad
+      simp at hBad
     obtain ⟨hNoTerminal,hNoMeet,hFactor⟩ := hCompatible
     refine ⟨?_,?_,?_⟩
     · rintro ⟨z,hz,hLev⟩
@@ -183,8 +183,10 @@ theorem kpt_exact_factor_BadCuts_empty_iff_wholeRun_transport
       have hAt := hFactor D hFactorD j hLive hCrossJ
       simpa only [hName] using hAt
   · intro hTransport
-    apply Finset.eq_empty_iff_forall_not_mem.mpr
-    intro cut hBad
+    apply Finset.ext
+    intro cut
+    constructor
+    · intro hBad
     obtain ⟨hCut,hOldBoring,hNotCompat⟩ :=
       (mem_kptExactOldFactorBadCuts
         family X top RX newNode newLive cut).mp hBad
@@ -232,5 +234,7 @@ theorem kpt_exact_factor_BadCuts_empty_iff_wholeRun_transport
         hOldFactorExtension E hSkipE hCrossE hFactorE
           (newNode j) hj hCross
       simpa only [hDE] using hE
+    · intro hEmpty
+      simpa using hEmpty
 
 end Kk
