@@ -31,7 +31,7 @@ theorem eq_of_level_neighbours
   cases x with
   | mk lx nx bx sx =>
     cases y with
-    | mk ly ny by sy =>
+    | mk ly ny bY sY =>
       change lx = ly at hLevel
       change nx = ny at hNeigh
       subst ly
@@ -72,7 +72,8 @@ theorem distinct_same_level_source_types_have_old_bit_separator
         have hLt := (u j).below a haj
         rw [hLevel j] at hLt
         exact ha hLt
-      exact iff_of_false hNotI hNotJ
+      exact ⟨(fun hai => False.elim (hNotI hai)),
+        (fun haj => False.elim (hNotJ haj))⟩
   have hSame : u i = u j :=
     eq_of_level_neighbours (u i) (u j)
       ((hLevel i).trans (hLevel j).symm) hNeigh
