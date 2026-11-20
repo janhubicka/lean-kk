@@ -50,4 +50,20 @@ column. The pivot is newly constructed, and every newly skipped gap row is
 explicitly zero. This is the ordinary-L age component of a free split. It does
 not provide the auxiliary Kpt source, full corrected B3 or labelled orbit.
 
-Verification is pending compilation and the named standard-only axiom audit.
+## Verification completed: 20 November 2026
+
+The exact sources of `Kk/CanonicalAgeExtraBound.lean` and
+`Kk/PhysicalFreeSplitRestriction.lean` passed the full hosted gate in
+[PR #414](https://github.com/janhubicka/lean-kk/pull/414),
+[run 44778772393](https://github.com/janhubicka/lean-kk/actions/runs/44778772393),
+at head `a433ad84f3881da535ee3e7164ff32e3337d2c3c`: the complete
+**9,709-job build**, parser self-test, and **953 exact named transitive-axiom
+reports** all passed. Only `propext`, `Classical.choice`, and `Quot.sound`
+are permitted; no `sorryAx` or custom axiom is accepted. The proof, imports,
+and audit scripts are unchanged from that tested snapshot.
+
+The [dated evidence record](audits/2026-11-20-track-b-canonical-splits.json)
+lists hashes and endpoint names. This is hosted verification; the optional
+local cold build was stopped after hosted success and is not claimed as a
+completed local full gate. The theorem is an exact finite ordinary-L split
+step; the selected-pivot coding and full Kpt/orbit obligations remain open.

@@ -1,3 +1,53 @@
+# Track B — canonical sort transport and constructed free splits (20 November 2026, verified)
+
+**Hosted full gate passed:** [PR #414](https://github.com/janhubicka/lean-kk/pull/414),
+[run 44778772393](https://github.com/janhubicka/lean-kk/actions/runs/44778772393),
+tested source head `a433ad84f3881da535ee3e7164ff32e3337d2c3c`; CI tested
+merge checkout `d9a2cff3638040a51cc4a4aed166bfdfb2a93f9c` over main base
+`d028f1fedcb172e45ea7001e2896938e6295fb32`. The complete **9,709-job build**,
+parser self-test, and **953 exact named transitive-axiom reports** passed,
+with only `propext`, `Classical.choice`, and `Quot.sound` allowed. This
+retains all **930** baseline reports and adds **17 new endpoints plus six
+previously verified protected-pivot endpoints restored to the central
+imports/registry**. The 23 scoped names are listed in
+`scripts/check_track_b_canonical_split.lean`; all are in the full registry.
+No proof, import, or audit-script changes were made after the tested snapshot.
+The [evidence record](audits/2026-11-20-track-b-canonical-splits.json) contains
+their Git blob and SHA-256 hashes, endpoint names, and dependency revisions.
+
+**Finite steps closed:** canonicalization now commutes with arbitrary
+parent maps, including deletion and noninjective splitting; genuine graph
+ages pull back with their witnesses. For physical complete passing columns,
+raw support monotonicity is derived from the actual original pool. Repeated
+sort changes and a certified neutral insertion consequently identify the
+correct old canonical age. A newly constructed isolated marker gives a
+complete finite Henson stage for a free split, retaining every protected
+old column with one shared embedding and cutoff. The nonmaximal-parent
+case preserves the whole pulled-back age. For any parent, including a
+maximal one, the exact result is the canonical restriction of that age at
+the positive daughter's singleton to `ell - 2`; zero-capacity daughters
+are allowed rather than silently declared inhabited. See the
+[sort proof](track_b_canonical_sort_pullback_english_audit.md),
+[physical transport](track_b_physical_canonical_sort_transport_english_audit.md),
+[free-stage construction](track_b_physical_free_split_english_audit.md), and
+[exact restriction](track_b_exact_free_split_restriction_english_audit.md).
+
+**Next gap:** controlled coding must use the same already selected pivot,
+with its actual old neighbours and arbitrary retained active columns. Its
+full joint continuation age must be derived from the linked-neighbour
+capacity formula, not from separate child/pair tests or the free-marker
+case. The subsequent parameter-closed Kpt source, complete auxiliary E,
+(I1)–(I3)/corrected-(B3) records, common labelled inverse-source orbit, and
+prescribed infinite diary schedule remain open. No global BRD conclusion
+or completion percentage follows from the endpoint count.
+
+The local pinned Lean toolchain and dependency cache were prepared. The
+optional cold local build was cancelled after hosted success; **no completed
+local full gate is claimed**. Entries below are dated historical records;
+their old pending counts are not the current Track B status.
+
+---
+
 # Track B — FINITE real base OLD L support and two real-run cut-star B3 (14 Nov 2026, PENDING 717-report exact-head gate)
 
 **English FIRST + adversarial audits**: [finite real generation base-pair support proof](track_b_relevant_base_old_socle_english_audit.md) and [two actual Henson runs live Kpt cut-star transfer](track_b_two_runs_relevant_base_live_transfer_english_audit.md). Both audited English proofs were committed before Lean in their original branches and again BEFORE the two new proof modules on this reconciled branch. The branch starts from newest Track G verified main **708** registry, retaining its 52 additional independently audited Track A/C/D/E theorems. The exact first parent Track B candidate #198 failed one Boolean-case *tactic* due to a redundant rewrite after `cases`; the mathematical proof is unchanged and the localized repair `exact hf.symm` is included here. No sorryAx/custom axioms are accepted.

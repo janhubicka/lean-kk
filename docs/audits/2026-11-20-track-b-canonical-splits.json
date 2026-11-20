@@ -1,0 +1,248 @@
+{
+  "schema_version": 1,
+  "recorded_date": "2026-11-20",
+  "project": "Kk free graphs",
+  "track": "B",
+  "kind": "completed hosted full build and strict named transitive-axiom audit",
+  "is_remote_ci_result": true,
+  "repository": "janhubicka/lean-kk",
+  "pull_request": 414,
+  "pull_request_url": "https://github.com/janhubicka/lean-kk/pull/414",
+  "tested_source_head": "a433ad84f3881da535ee3e7164ff32e3337d2c3c",
+  "tested_source_tree": "b6d4c742475c9709eb9419c6f20e0af828ccf1ae",
+  "ci_merge_checkout": "d9a2cff3638040a51cc4a4aed166bfdfb2a93f9c",
+  "main_base": "d028f1fedcb172e45ea7001e2896938e6295fb32",
+  "ci": {
+    "run_id": 44778772393,
+    "run_url": "https://github.com/janhubicka/lean-kk/actions/runs/44778772393",
+    "conclusion": "success",
+    "full_lake_build": "passed",
+    "full_build_job_count": 9709,
+    "axiom_parser_self_test": "passed",
+    "strict_named_transitive_axiom_audit": "passed",
+    "baseline_report_count": 930,
+    "final_report_count": 953,
+    "new_endpoint_count": 17,
+    "restored_endpoint_count": 6,
+    "scoped_endpoint_count": 23,
+    "baseline_reports_removed": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "sorryAx_accepted": false,
+    "custom_axioms_accepted": false,
+    "gate_output": "PASS: 953 exact transitive-axiom reports; only Classical.choice, Quot.sound, propext"
+  },
+  "new_endpoint_names": [
+    "Kk.integerCliquePushforward_feasible",
+    "Kk.integerClique_exists_lift_along_sortMap",
+    "Kk.integerGraphAgeCanonical_pullback_mono",
+    "Kk.isIntegerGraphAge_pullback",
+    "Kk.finiteOldColumnCanonical_reindex",
+    "Kk.finiteOldColumnCanonical_reindex_twice",
+    "Kk.finiteOldColumnCanonical_neutral_reindex",
+    "Kk.protectedPivot_pulledBackAge_iff_budgets",
+    "Kk.freePointedContinuation_raw_eq",
+    "Kk.freePointedContinuation_canonical_eq",
+    "Kk.freeSplit_canonical_eq",
+    "Kk.henson_leftDense_constructs_freePointed_stage",
+    "Kk.henson_leftDense_constructs_freeSplit_stage",
+    "Kk.integerGraphAgeCanonical_lowerAt_canonical",
+    "Kk.freeSplit_raw_eq_lowerAt",
+    "Kk.freeSplit_canonical_eq_restriction",
+    "Kk.henson_leftDense_constructs_exactFreeSplit_stage"
+  ],
+  "restored_endpoint_names": [
+    "Kk.protectedPivot_common_pool",
+    "Kk.protectedPivot_capacity",
+    "Kk.protectedPivotRaw_eq_actual",
+    "Kk.activeGapPointedRaw_eq_actual",
+    "Kk.henson_leftDense_realizes_activeGap_pointed",
+    "Kk.protectedPivot_targetAge_le_canonical_iff_budgets"
+  ],
+  "scoped_names_source": "scripts/check_track_b_canonical_split.lean",
+  "all_scoped_names_registered_in_full_gate": true,
+  "source_integrity": {
+    "proof_import_gate_sources_unchanged_after_test": true,
+    "checked_file_count": 15,
+    "comparison": "Every listed working file was compared byte-for-byte with git show at the tested source head; Git blob SHA-1 and SHA-256 were computed independently.",
+    "documentation_updated_after_verification": true,
+    "files": {
+      "Kk/CanonicalAgeSortPullback.lean": {
+        "kind": "new_proof_module",
+        "git_blob_sha1": "998bea0806ea3f0f3bf355d8f75032e04beebc49",
+        "sha256": "014ef0f8447b108c7afe7ef2ddc56febb5358cb6531881c891a9dad932fdf457",
+        "bytes": 12083,
+        "matches_tested_head": true
+      },
+      "Kk/PhysicalCanonicalSortTransport.lean": {
+        "kind": "new_proof_module",
+        "git_blob_sha1": "64fade621cc53d00d615d7bd9c0c8022c2d31a66",
+        "sha256": "c2a7ecf14934fc8a1e8822c33e5c638dd80cd3f0920d943b0166c4d23f4c569a",
+        "bytes": 5499,
+        "matches_tested_head": true
+      },
+      "Kk/PhysicalFreeSplitAge.lean": {
+        "kind": "new_proof_module",
+        "git_blob_sha1": "099812da153b67127b4aca8acaa6e86668d61fef",
+        "sha256": "50648a208ec1d966e2860fa112b8be0312f2de79130158e36c026768ba68ad30",
+        "bytes": 12064,
+        "matches_tested_head": true
+      },
+      "Kk/CanonicalAgeExtraBound.lean": {
+        "kind": "new_proof_module",
+        "git_blob_sha1": "df9c7009e602182a0b442f0b7a73e8ba575199cd",
+        "sha256": "946699d2f04c47ec72be640c3d48517da9063908467afbc984fda50d62ffd10a",
+        "bytes": 2579,
+        "matches_tested_head": true
+      },
+      "Kk/PhysicalFreeSplitRestriction.lean": {
+        "kind": "new_proof_module",
+        "git_blob_sha1": "550a88963a08c8fa782a8de3fda0f74380021c5d",
+        "sha256": "9672703954791103f9d566e5a7a8e11e6736860e81fb202c75c17022e4b90407",
+        "bytes": 6547,
+        "matches_tested_head": true
+      },
+      "Kk/ProtectedActivePivotCapacity.lean": {
+        "kind": "restored_proof_module",
+        "git_blob_sha1": "9b4ca945b905fadbcc2bdd8a5faed8229a1f047f",
+        "sha256": "c4721cc48456a31b14c6904569e6d696384f50e01a139cda68d13824c74100de",
+        "bytes": 6949,
+        "matches_tested_head": true
+      },
+      "Kk/ProtectedActivePivotRealization.lean": {
+        "kind": "restored_proof_module",
+        "git_blob_sha1": "f7fc15bfecdd7d67b531e265d43e2befc8eaf20a",
+        "sha256": "a12c73df36d301d06b2815d4ee6f319678f84f06c3fcb898f65cada6379456cf",
+        "bytes": 4140,
+        "matches_tested_head": true
+      },
+      "Kk/ProtectedActivePivotBudget.lean": {
+        "kind": "restored_proof_module",
+        "git_blob_sha1": "09c7c91cc725fa4f8a8a7ec4a3caca302bff007d",
+        "sha256": "86827fcedf12505f0a669c78d628c03190fa69065f5eaf8972b159453664fe2c",
+        "bytes": 3661,
+        "matches_tested_head": true
+      },
+      "Kk.lean": {
+        "kind": "central_imports",
+        "git_blob_sha1": "1b783de72c66a6816a6827d846552028fb1aa27f",
+        "sha256": "26078064506c9c1588d5caa97a8e861233f3c3ab5a89ca0e1b87754d726830c5",
+        "bytes": 14735,
+        "matches_tested_head": true
+      },
+      "scripts/check_axioms.lean": {
+        "kind": "central_axiom_registry",
+        "git_blob_sha1": "b2714877902676275f85129a509671ae13ba4622",
+        "sha256": "7b797977375372ea2efc2d67f27569c7e10a3e0315da242acb5310d4578117cc",
+        "bytes": 122715,
+        "matches_tested_head": true
+      },
+      "scripts/check_track_b_canonical_split.lean": {
+        "kind": "scoped_axiom_registry",
+        "git_blob_sha1": "74525b6b74595c2cdbc01fe0275f6655af4100d3",
+        "sha256": "282bce48ffc351b991b7b17ad08138756ce5be42ab04a100880b86e085026e7e",
+        "bytes": 2542,
+        "matches_tested_head": true
+      },
+      "scripts/check_axiom_report.py": {
+        "kind": "strict_axiom_parser",
+        "git_blob_sha1": "3adecc73086374137cd0ae5cad4fef456d452175",
+        "sha256": "1aca9c49e724a8c933f0b2b92ef89b8564ee250db4d98c8a25c9088545ad4492",
+        "bytes": 3137,
+        "matches_tested_head": true
+      },
+      "lakefile.toml": {
+        "kind": "package_configuration",
+        "git_blob_sha1": "54447d7cb953b779f89885736f6a2a2c194674b7",
+        "sha256": "8c06968c126a593d7d43e880182ddab5c75f98806acff98c40d14434a8329f6c",
+        "bytes": 230,
+        "matches_tested_head": true
+      },
+      "lean-toolchain": {
+        "kind": "toolchain_pin",
+        "git_blob_sha1": "f0e00b3338bac0d6f050d9a64e277314a9f7830f",
+        "sha256": "bc84812c94489d1e3e191baa1dc10d5eb684382d7fe9d2a5ab085e72c1c67e47",
+        "bytes": 29,
+        "matches_tested_head": true
+      },
+      ".github/workflows/lean.yml": {
+        "kind": "hosted_gate_workflow",
+        "git_blob_sha1": "f97dd4533eeed569a1640133c329ad04e682629f",
+        "sha256": "d0820a0af154df63bb5686d310aaef6fa652699707cf2b34c4caf4fdf240df8e",
+        "bytes": 1913,
+        "matches_tested_head": true
+      }
+    }
+  },
+  "lean": {
+    "toolchain": "leanprover/lean4:v4.35.0-rc3",
+    "version": "4.35.0-rc3",
+    "commit": "470d5ce1400764999581fd26d5d72b00d990b0f4"
+  },
+  "dependency_manifest": {
+    "source": "local lake-manifest.json resolved from the pinned project configuration",
+    "sha256": "15a86f440706c088492b655ecbab9a42c9678eb5b7c70f5a2c6b804547b299ba",
+    "tracked_in_tested_head": false,
+    "note": "The revisions below are read from the local resolved manifest; the successful validation claim is the hosted gate above."
+  },
+  "dependency_revisions": {
+    "\u00absuccessor-tree-lean\u00bb": "a74c10761303a18649053f2af3a1a1697f032e13",
+    "\u00abramsey-space-todorcevic\u00bb": "bb29d1f3f36ff37a35857247ca9fae581fa1fa43",
+    "mathlib": "5bd58ac291422a21f412ae354c91e7d172255a2c",
+    "plausible": "b7fb2b866d25bd937a2069931f9733197521cb27",
+    "LeanSearchClient": "c35806f43135ab3f254429d0c00bd13fc0123f77",
+    "importGraph": "103cd9a46972ee39d9defb2f54ae49823b1228eb",
+    "proofwidgets": "87dfe779d5dfd03142ee4fe158911b8eb553ec98",
+    "aesop": "a92ed98e694702934d40d12f24a1a449144db43e",
+    "Qq": "37b0ba0b26109cf9f9c541f0f9557e50cfa1a3b9",
+    "batteries": "950339ce0fd0cc0673a22d87036075737586aed2",
+    "Cli": "843844fa601dd56767b1eb22b7ada5b64d5e567a"
+  },
+  "dependency_urls": {
+    "\u00absuccessor-tree-lean\u00bb": "https://github.com/janhubicka/lean-successors",
+    "\u00abramsey-space-todorcevic\u00bb": "https://github.com/janhubicka/lean-ramsey-space-todorcevic",
+    "mathlib": "https://github.com/leanprover-community/mathlib4",
+    "plausible": "https://github.com/leanprover-community/plausible",
+    "LeanSearchClient": "https://github.com/leanprover-community/LeanSearchClient",
+    "importGraph": "https://github.com/leanprover-community/import-graph",
+    "proofwidgets": "https://github.com/leanprover-community/ProofWidgets4",
+    "aesop": "https://github.com/leanprover-community/aesop",
+    "Qq": "https://github.com/leanprover-community/quote4",
+    "batteries": "https://github.com/leanprover-community/batteries",
+    "Cli": "https://github.com/leanprover/lean4-cli"
+  },
+  "local_validation": {
+    "pinned_toolchain_prepared": true,
+    "dependency_cache_prepared": true,
+    "full_local_gate_completed": false,
+    "status": "optional cold baseline build cancelled after successful hosted verification",
+    "cancelled_build_exit_code": 130,
+    "completed_jobs_at_cancellation": 9373,
+    "scheduled_jobs_at_cancellation": 9425,
+    "note": "Local preparation and preliminary checks are not claimed as a completed local full build or a substitute for hosted validation."
+  },
+  "proved_scope": [
+    "Canonical normalized integer graph ages commute with arbitrary parent-image pullbacks for support-monotone raw bounds, including noninjective splitting and deletion.",
+    "Genuine positive integer graph ages pull back with explicit normalized witness transport.",
+    "Complete physical old-column raw bounds supply support monotonicity; repeated sort changes and certified neutral insertion identify the original canonical age on support images.",
+    "The existing protected-active-pivot target-age budget equivalence applies after arbitrary changes of sorts, retaining every prescribed protected background column.",
+    "A new isolated marker and a shared finite numerical Henson stage realize a nonmaximal free split with unchanged complete pulled-back canonical age.",
+    "For every free split, including a maximal parent, the complete canonical age is the canonical restriction at the positive singleton to ell minus 2; zero-capacity daughters are permitted."
+  ],
+  "not_proved": [
+    "The controlled-coding transition around the same already selected nonfree pivot with its prescribed old neighbours and arbitrary retained active columns.",
+    "Derivation of full joint selected-pivot continuation constraints from a valid diary rather than individual child or pair tests.",
+    "Complete parameter-closed Kpt source and auxiliary E synchronization, actual I1/I2/I3 and corrected B3 records, and a common labelled inverse-source orbit.",
+    "The prescribed infinite resolved diary schedule or unconditional global upper/lower big Ramsey degree theorem."
+  ],
+  "english_audit_files": [
+    "docs/track_b_canonical_sort_pullback_english_audit.md",
+    "docs/track_b_physical_canonical_sort_transport_english_audit.md",
+    "docs/track_b_physical_free_split_english_audit.md",
+    "docs/track_b_exact_free_split_restriction_english_audit.md"
+  ],
+  "historical_gap_superseded": "The canonical sort-map limitation in docs/track_b_neutral_interval_sort_image_english_audit.md is closed for support-monotone raw bounds and therefore for complete physical old-column raw bounds; the historical text is preserved with a dated pointer."
+}

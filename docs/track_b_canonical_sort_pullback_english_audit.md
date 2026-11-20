@@ -87,9 +87,20 @@ The review confirmed the following necessary details.
 12. No auxiliary E, parameter-closed Kpt source, corrected B3, common
     labelled orbit, infinite diary schedule, or BRD claim is inferred.
 
-## Verification scope
+## Verification completed: 20 November 2026
 
-The new Lean module is `Kk/CanonicalAgeSortPullback.lean`. Its exact
-source must pass a Lean build and named standard-only axiom reports
-before these results receive manuscript validation markers. Existing
-frozen black prose and retired TODO notes are not changed here.
+The exact source of `Kk/CanonicalAgeSortPullback.lean` passed the full hosted
+gate in [PR #414](https://github.com/janhubicka/lean-kk/pull/414),
+[run 44778772393](https://github.com/janhubicka/lean-kk/actions/runs/44778772393),
+at head `a433ad84f3881da535ee3e7164ff32e3337d2c3c`: the complete
+**9,709-job build**, parser self-test, and **953 exact named transitive-axiom
+reports** all passed. Only `propext`, `Classical.choice`, and `Quot.sound`
+are permitted; no `sorryAx` or custom axiom is accepted. The proof, imports,
+and audit scripts are unchanged from that tested snapshot.
+
+The [dated evidence record](audits/2026-11-20-track-b-canonical-splits.json)
+contains source hashes, the 23 Track B endpoint names, and dependency pins.
+This is hosted verification. The local pinned toolchain and cache were
+prepared, but the optional cold build was stopped after hosted success;
+no completed local full gate is claimed. The finite scope above remains in
+force, and no global Kpt, resolved-copy, or BRD conclusion is promoted.
