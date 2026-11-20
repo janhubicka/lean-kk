@@ -82,3 +82,25 @@ A separate pure-Python test reconstructs the explicit source graph for ell=3..8,
 Import `Kk.FiniteOldColumnAge` and `Kk.FiniteCliqueIntegerWitness`. Use `integerCliqueWeightsOfFinset` with `s=Finset.range(B({t}))`, constant sort function `fun _ => t`, and `integerCliqueOnSupport_of_finset`. For every support containing `t`, derive `B({t})<=B(T)` by the existing `finiteDirectedCliqueCapacity_mono` on actual common-neighbour pools; otherwise the weight sum is zero. Close with `witnessValue_le_canonical` and `integerGraphAgeCanonical_le_raw`. A companion Henson application uses `trackA_henson_partial_raw_single_step_iff`.
 
 Do not add validation marks or alter frozen black manuscript text until exact-head Lean compilation and strictly standard-only axiom inspection succeed.
+
+## Additional adversarial brute-force audit: arbitrary directed old columns
+
+The independent Python referee also exhausts **12,495** configurations
+of finite old directed Boolean edge tables (0--3 old vertices), arbitrary
+old-to-future bit columns for two sorts, and ell=2,3,4. It compares
+the canonical supremum over **all** globally feasible normalized integer
+weight vectors with the two singleton raw bounds in each case. Exactly
+**8,652** singleton raw bounds in this audit are zero. No disagreement
+appeared.
+
+A first draft of the Python referee incorrectly represented Lean's
+`Nat.sub` using potentially negative Python subtraction; that regression
+caught empty feasible sets and was corrected to `max(0, ell-1-capacity)`.
+The final exhaustive test explicitly includes the saturated-zero case.
+This was a test-harness correction, not a change of mathematical claim.
+
+The new single-step Lean corollary
+`trackA_henson_partial_canonical_singleton_step_iff`
+reduces its conclusion to the existing real physical raw-event iff via
+the generic singleton exactness lemma. All three new Lean endpoints
+are still awaiting exact-head kernel and standard-only axiom verification.
