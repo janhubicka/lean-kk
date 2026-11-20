@@ -105,7 +105,7 @@ theorem finiteNumericH_odd_no_full_I1_of_no_seed_or_stage_free
         (0 : Fin 1) = false
       exact hNumericBinary_odd_left_false K.binary k a w.val (0 : Fin 1)
     exact (actual_zero_cut_originals_meet_level_ne_cut
-      family A hSymA hAvoid v w hFreeV hFreeW
+      family A hSymA hAvoid cut v w hFreeV hFreeW
       hZeroV hZeroW hComp) hMeetLev
 
 /-- The genuine numerical-H Henson AlgorithmRun SKIPS an odd cut if
