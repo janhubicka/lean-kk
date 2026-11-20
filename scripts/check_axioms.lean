@@ -2184,3 +2184,9 @@ import Kk
 #print axioms Kk.trackA_henson_critical_generation_lt_ell_sub_two
 #check @Kk.trackA_henson_critical_generation_card_le
 #print axioms Kk.trackA_henson_critical_generation_card_le
+
+-- Track A: generic raw singleton tightness and literal physical numerical-H application.
+#check @Kk.trackA_finite_old_column_canonical_singleton_eq_raw
+#print axioms Kk.trackA_finite_old_column_canonical_singleton_eq_raw
+#check @Kk.trackA_physical_partial_canonical_singleton_eq_raw
+#print axioms Kk.trackA_physical_partial_canonical_singleton_eq_raw
