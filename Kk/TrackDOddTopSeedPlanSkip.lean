@@ -75,9 +75,10 @@ theorem henson_topSeeds_odd_omitted_of_closed_plan
   let top : Nat := A.freeLevel root.val
   let U : Finset (Fin N) := {root}
   have hX : X ⊆ ambientPrefixPool family A hAvoid
-      (U : Set (Fin N)) :=
-    numericHTopGenerationSeeds_subset_rootPool
-      family K k N hAvoid root blocks hWithin
+      (U : Set (Fin N)) := by
+    simpa only [X, U, A, Finset.coe_singleton] using
+      (numericHTopGenerationSeeds_subset_rootPool
+        family K k N hAvoid root blocks hWithin)
   have hRootSeed : A.kptOriginal family hAvoid root ∈ X := by
     simp [X, numericHTopGenerationSeeds, A]
   have hTopSeed : ∃ z ∈ X, LevelTree.lev z = top := by
