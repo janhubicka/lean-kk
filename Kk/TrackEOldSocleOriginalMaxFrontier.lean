@@ -201,8 +201,8 @@ theorem kpt_actual_original_socle_allowed_cuts_iff_max
   have hBase :
       cut ∈ kpt_candidate_original_boring_crossing_cuts
         family K k N hAvoid U X Y top R v :=
-    (mem_kpt_actual_original_socle_allowed_cuts
-      family K k N hAvoid U X Y top R Allowed v cut).mp hCut |>.1
+    ((mem_kpt_actual_original_socle_allowed_cuts
+      family K k N hAvoid U X Y top R Allowed v cut).mp hCut).1
   exact ((mem_kpt_candidate_original_boring_crossing_cuts
     family K k N hAvoid U X Y top R v cut).mp hBase).1
 
