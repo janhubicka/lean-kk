@@ -79,3 +79,37 @@ if __name__ == '__main__':
         n, ns, nw, cuts = check(ell)
         print(f'ell={ell}: PASS n={n}, supports={ns}, weights={nw}, '
               f'cuts={cuts}, canonical_changes={ell-2}')
+
+
+def check_generic_directed_columns():
+    """Exhaust arbitrary directed old edges and columns, including age-zero."""
+    total = zero_bounds = 0
+    for n in range(4):
+        oriented = [(i, j) for i in range(n) for j in range(n) if i != j]
+        for edge_mask in range(1 << len(oriented)):
+            a = [[False] * n for _ in range(n)]
+            for k, (i, j) in enumerate(oriented):
+                a[i][j] = bool(edge_mask & (1 << k))
+            for col_mask in range(1 << (2 * n)):
+                col = [[bool(col_mask & (1 << (2*i+t)))
+                        for t in range(2)] for i in range(n)]
+                for ell in (2, 3, 4):
+                    supports = [U for U in ((0,), (1,), (0, 1))
+                                if len(U) <= ell-1]
+                    # Nat subtraction is TRUNCATED: raw bound never negative.
+                    B = {U: max(0, ell-1-capacity(a,
+                        [i for i in range(n) if all(col[i][t] for t in U)]))
+                        for U in supports}
+                    feasible = [w for w in normalized_weights(2, ell) if all(
+                        sum(w[t] for t in U) <= B[U] for U in supports)]
+                    assert feasible
+                    for t in range(2):
+                        assert max(w[t] for w in feasible) == B[(t,)]
+                        zero_bounds += int(B[(t,)] == 0)
+                    total += 1
+    return total, zero_bounds
+
+if __name__ == '__main__':
+    total, zeros = check_generic_directed_columns()
+    print(f'PASS generic directed old columns: {total} profiles, '
+          f'{zeros} raw singleton zero bounds')
