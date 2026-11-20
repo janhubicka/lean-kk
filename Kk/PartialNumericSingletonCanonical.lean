@@ -39,7 +39,8 @@ theorem trackA_finite_old_column_canonical_singleton_eq_raw
   let B := finiteOldColumnRawBound E ell d P c
   let r : Nat := B T
   have hrLe : r ≤ ell - 1 := by
-    dsimp [r, B, finiteOldColumnRawBound]
+    change ell - 1 - finiteDirectedCliqueCapacity E
+      (oldSupportCommonNeighbourPool P c T.1) ≤ ell - 1
     omega
   have hrSmall : r < ell := by omega
   let s : Finset Nat := Finset.range r
@@ -78,7 +79,10 @@ theorem trackA_finite_old_column_canonical_singleton_eq_raw
     have hCap := finiteDirectedCliqueCapacity_mono E
       (oldSupportCommonNeighbourPool P c U.1)
       (oldSupportCommonNeighbourPool P c T.1) hPool
-    dsimp [r, B, finiteOldColumnRawBound]
+    change ell - 1 - finiteDirectedCliqueCapacity E
+      (oldSupportCommonNeighbourPool P c T.1) ≤
+        ell - 1 - finiteDirectedCliqueCapacity E
+          (oldSupportCommonNeighbourPool P c U.1)
     omega
   have hFeasible :
       WitnessRespects (integerCliqueOnSupport (d := d) (ell := ell))
