@@ -107,3 +107,7 @@ This isolates the genuinely missing resolved-diary geometry as `(Z)+(P)`, both e
 ## Acceptance gate
 
 After E73 exact-head green and merge, formalize a theorem for actual numerical-H+ graph models in a separate source importing E73, E74 and E76; prove true Y prefix-pool representation, OLD-BORING no-seed, active-original old-socle transfer, and the final full `NewRootNoNoveltyAtCut`. Optionally add the c∉R.I(c) formulation. Use exact named strict transitive-axiom gate and independent full Lean build. No frozen black manuscript edits, no global validation marker until this conditional source theorem is verified.
+
+## Verification checkpoint (20 November 2026, before E77 Lean code)
+
+E73's source has now passed the dedicated **two-name strict axiom gate** [run 44777166825](https://github.com/janhubicka/lean-kk/actions/runs/44777166825) and the independent full Lean [run 44777166666](https://github.com/janhubicka/lean-kk/actions/runs/44777166666), at exact source head `cc26b7b92372c74d5145ccfad4451581da042bb2`, and was merged in PR #394. Its only source-level compile repair changed the `Fin A.size` versus `Fin N` stage-pool adapter; it did **not** change any theorem hypotheses. E74 (#396) and E76 (#402) have previously passed independent exact-head Lean and axioms. The present E77 theorem is still conditional on (Z)+(P) and must pass its OWN exact-head gate before any manuscript marker.
