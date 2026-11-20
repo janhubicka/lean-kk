@@ -345,6 +345,8 @@ import Kk.ResidualTwoClassQuiet
 import Kk.PhysicalTwoClassResidual
 -- Track C: one genuine bare original, zero stage and full old Kpt prefixes imply true no-novelty.
 import Kk.TrackCOneBareEvenRealZeroQuiet
+-- Track C: construct one physical original prefix pool for all old-boring even-real candidate cuts.
+import Kk.TrackCConstructedBareRealZeroQuiet
 
 -- Track D: actual finite-index no-I1/no-I2 and one physical boring lower-real cut.
 -- Marked full-B3 and represented complete source remain explicit assumptions.
