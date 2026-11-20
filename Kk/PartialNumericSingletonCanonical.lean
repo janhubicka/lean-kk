@@ -1,6 +1,7 @@
 import Kk.FiniteOldColumnAge
 import Kk.FiniteCliqueIntegerWitness
 import Kk.PartialNumericLateAgeStability
+import Kk.PartialNumericForbiddenSharpStability
 import Mathlib.Tactic
 
 /-!
@@ -130,6 +131,44 @@ theorem trackA_physical_partial_canonical_singleton_eq_raw
         z (hPosition k (j t) k) (0 : Fin 1))
     t T hT
 
+
+/-- Exact CANONICAL singleton age drop at a genuine Henson numerical-H
+partial-generation step: it happens precisely when the current original
+is singleton-eligible and its linked common-old clique capacity equals
+the full original capacity AND the current generation. This is an age
+change, not an assertion that the age forms a COVER in the full poset. -/
+theorem trackA_henson_partial_canonical_singleton_step_iff
+    {d : Nat} (E : Nat → Nat → Bool)
+    (ell : Nat) (hell : 2 ≤ ell)
+    (hAvoid : ∀ bad, bad ∈ hensonForbiddenFamily ell hell →
+      bad.Avoids (normalizedGraphModel E))
+    (k b g M : Nat) (hg : g+1 ≤ k)
+    (j : Fin d → Nat) (hj : ∀ u, b < j u)
+    (t : Fin d) (T : IntegerGraphSupport d ell)
+    (hT : T.1 = ({t} : Finset (Fin d))) :
+    integerGraphAgeCanonical d ell
+      (finiteNumericHPartialActualRawAt E ell k b (g+1) M j) T <
+    integerGraphAgeCanonical d ell
+      (finiteNumericHPartialActualRawAt E ell k b g M j) T ↔
+    (∀ u ∈ T.1, E b (j u) = true) ∧
+      finiteDirectedCliqueCapacity E
+        ((oldSupportCommonNeighbourPool (Finset.range b)
+          (fun i u => E i (j u)) T.1).filter
+            (fun i => E i b = true)) =
+      finiteDirectedCliqueCapacity E
+        (oldSupportCommonNeighbourPool (Finset.range b)
+          (fun i u => E i (j u)) T.1) ∧
+      finiteDirectedCliqueCapacity E
+        (oldSupportCommonNeighbourPool (Finset.range b)
+          (fun i u => E i (j u)) T.1) = g := by
+  rw [trackA_physical_partial_canonical_singleton_eq_raw
+        E ell hell k b (g+1) M j t T hT,
+      trackA_physical_partial_canonical_singleton_eq_raw
+        E ell hell k b g M j t T hT]
+  exact trackA_henson_partial_raw_single_step_iff
+    E ell hell hAvoid k b g M hg j hj T
+
+#print axioms Kk.trackA_henson_partial_canonical_singleton_step_iff
 #print axioms Kk.trackA_finite_old_column_canonical_singleton_eq_raw
 #print axioms Kk.trackA_physical_partial_canonical_singleton_eq_raw
 
