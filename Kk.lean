@@ -343,6 +343,7 @@ import Kk.TrackDIndexedLowerRealBoring
 -- Track A: sharpened finite two-original clique-budget stability (pending exact-head gate).
 import Kk.PartialNumericForbiddenSharpStability
 import Kk.PartialNumericCriticalGenerations
+import Kk.PartialNumericSingletonCanonical
 
 /-!
 The counting project imports the verified successor-tree library.
