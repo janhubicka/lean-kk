@@ -65,8 +65,9 @@ theorem henson_actualRun_lower_real_unselected_of_no_seed_and_zero_stage
       (hensonForbiddenFamily ell hell),
       z ∈ X ∧ LevelTree.lev z = hPosition k idx g)
     (hZeroStage : ∀ v : Fin N,
-      v ∈ hStageOriginals (normalizedGraphModel E) k N U
-        (Run.I (hPosition k idx g+1)) →
+      v ∈ ambientStagePool
+        (finiteNumericH (normalizedGraphModel E) k N)
+        (U : Set (Fin N)) (Run.I (hPosition k idx g+1)) →
       hPosition k idx g+1 ≤
         (finiteNumericH (normalizedGraphModel E) k N).freeLevel v.val →
       (finiteNumericH (normalizedGraphModel E) k N).L.binary
@@ -86,27 +87,13 @@ theorem henson_actualRun_lower_real_unselected_of_no_seed_and_zero_stage
       A.L.binary a b (0 : Fin 1) =
         A.L.binary b a (0 : Fin 1) :=
     finiteNumericH_graph_ordinary_L_symmetric E hSym k N
-  have hStageAmbient :
-      ∀ v : Fin A.size,
-        v ∈ ambientStagePool A (U : Set (Fin N)) J →
-        v ∈ Stage := by
-    intro v hv
-    have hvOr : v ∈ U ∨
-        (v.val ∈ J ∧
-         0 < (finiteNumericH K k N).freeLevel v.val) := by
-      rcases hv with hu | hSelected
-      · exact Or.inl (Finset.mem_coe.mp hu)
-      · exact Or.inr hSelected
-    change v ∈ hStageOriginals K k N U J
-    simpa only [hStageOriginals, Finset.mem_filter,
-      Finset.mem_univ, true_and, Set.mem_setOf_eq] using hvOr
   have hStageZero :
       ∀ v : Fin A.size,
         v ∈ ambientStagePool A (U : Set (Fin N)) J →
         cut+1 ≤ A.freeLevel v.val →
         A.L.binary cut v.val (0 : Fin 1) = false := by
     intro v hv hFree
-    exact hZeroStage v (hStageAmbient v hv) hFree
+    exact hZeroStage v hv hFree
   have hNoI1 :
       ¬ ∃ z : AdmissibleKptNode family,
         z ∈ Z ∧ LevelTree.lev z = cut :=
@@ -122,7 +109,18 @@ theorem henson_actualRun_lower_real_unselected_of_no_seed_and_zero_stage
       cut+1 ≤ A.freeLevel (original v).val →
       A.L.binary cut (original v).val (0 : Fin 1) = false := by
     intro v _ hFree
-    exact hZeroStage (original v) (hOriginalName_mem Stage v) hFree
+    have hv : original v ∈ Stage := hOriginalName_mem Stage v
+    have hvOr : original v ∈ U ∨
+        ((original v).val ∈ J ∧
+          0 < (finiteNumericH K k N).freeLevel (original v).val) := by
+      simpa only [Stage, hStageOriginals, Finset.mem_filter,
+        Finset.mem_univ, true_and, Set.mem_setOf_eq] using hv
+    have hvAmbient :
+        original v ∈ ambientStagePool A (U : Set (Fin N)) J := by
+      rcases hvOr with hRoot | hSelected
+      · exact Or.inl (Finset.mem_coe.mpr hRoot)
+      · exact Or.inr hSelected
+    exact hStageZero (original v) hvAmbient hFree
   have hNoI2 :
       ¬ ∃ a : AdmissibleKptNode family, a ∈ Z ∧
         ∃ b : AdmissibleKptNode family, b ∈ Z ∧
@@ -254,24 +252,23 @@ theorem henson_actualRun_selected_coded_lower_real_skip_of_no_seed
   intro v hv hFree
   let cut : Nat := hPosition k idx g
   let K : AgeTestModel 1 0 1 := normalizedGraphModel E
-  let Stage : Finset (Fin N) :=
-    hStageOriginals K k N U (Run.I (cut+1))
   by_cases hp :
       (finiteNumericH K k N).L.binary cut v.val (0 : Fin 1) = true
   · obtain ⟨j,m,hij,_hgm,_hm,hAddr,hBase⟩ :=
       finiteNumericH_eligible_lower_cut_neighbour_is_higher
         E k N idx g hg hCut v hFree hp
-    let i : Fin Stage.card := Stage.equivFin ⟨v,hv⟩
-    have hName : hOriginalName Stage i = v := by
-      simp [hOriginalName,i] <;> rfl
-    have hAddrName :
-        (hOriginalName Stage i).val = hPosition k j m := by
-      simpa only [hName] using hAddr
+    have hRetained : ResolvedQRetainedBase (role j) := by
+      rcases hv with hRoot | ⟨hSelected,hPositive⟩
+      · exact Or.inl
+          (hRootDummy v (Finset.mem_coe.mp hRoot) j m hAddr)
+      · rcases hPlanShape v (hAbove hSelected) hPositive
+          j m hAddr with hCode | ⟨block,hAux⟩
+        · exact Or.inr (Or.inl hCode.1)
+        · exact Or.inr (Or.inr ⟨block,hAux⟩)
     have hNo : E idx j = false :=
-      resolvedQ_stage_selected_base_has_no_retained_neighbour
-        K k N U (Run.I (cut+1)) Plan hAbove
-        role E hQ hIndependent hRootDummy hPlanShape
-        idx j m hij hSelectedBase i hAddrName
+      resolvedQ_selected_coded_has_no_later_retained_neighbour
+        role E hQ.sym hQ.dummy hQ.codedAux hIndependent
+        idx j hij hSelectedBase hRetained
     rw [hNo] at hBase
     cases hBase
   · cases h : (finiteNumericH K k N).L.binary
