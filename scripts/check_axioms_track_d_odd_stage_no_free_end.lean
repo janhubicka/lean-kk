@@ -1,0 +1,6 @@
+import Kk.TrackDOddStageNoFreeEnd
+
+#check @Kk.finiteNumericH_odd_no_full_I1_of_no_seed_or_stage_free
+#print axioms Kk.finiteNumericH_odd_no_full_I1_of_no_seed_or_stage_free
+#check @Kk.henson_actualRun_odd_unselected_of_no_seed_or_stage_free
+#print axioms Kk.henson_actualRun_odd_unselected_of_no_seed_or_stage_free
