@@ -92,7 +92,8 @@ theorem henson_actualRun_lower_real_unselected_of_no_seed_and_zero_stage
         v ∈ Stage := by
     intro v hv
     have hvOr : v ∈ U ∨
-        (v.val ∈ J ∧ 0 < A.freeLevel v.val) := by
+        (v.val ∈ J ∧
+         0 < (finiteNumericH K k N).freeLevel v.val) := by
       rcases hv with hu | hSelected
       · exact Or.inl (Finset.mem_coe.mp hu)
       · exact Or.inr hSelected
