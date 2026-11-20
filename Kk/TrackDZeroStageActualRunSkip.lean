@@ -98,8 +98,8 @@ theorem henson_actualRun_lower_real_unselected_of_no_seed_and_zero_stage
       · exact Or.inr hSelected
     change v ∈ hStageOriginals K k N U J
     unfold hStageOriginals
-    simpa only [Finset.mem_filter, Finset.mem_univ, true_and]
-      using hvOr
+    apply Finset.mem_filter.mpr
+    exact ⟨Finset.mem_univ _, hvOr⟩
   have hStageZero :
       ∀ v : Fin A.size,
         v ∈ ambientStagePool A (U : Set (Fin N)) J →
