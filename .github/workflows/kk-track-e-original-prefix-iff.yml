@@ -1,0 +1,48 @@
+name: KK Track E exact active-original prefix iff full old Kpt source socle
+
+on:
+  pull_request:
+    paths:
+      - 'Kk/TrackEOriginalPrefixSocleIff.lean'
+      - 'Kk/TrackEOriginalPrefixSocleIffAxiomAudit.lean'
+      - 'docs/track_e_exact_original_prefix_socle_iff_english_audit_20261120.md'
+      - '.github/workflows/kk-track-e-original-prefix-iff.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: kk-track-e-origiff-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  direct-build-and-axioms:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache Lean toolchain
+        uses: actions/cache@v4
+        with:
+          path: ~/.elan/toolchains
+          key: lean-toolchain-${{ runner.os }}-${{ hashFiles('lean-toolchain') }}
+      - name: Restore Lean workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve dependencies
+        run: lake update
+      - name: Obtain Mathlib build cache
+        run: lake exe cache get
+      - name: Compile exact source old Kpt socle iff original stage prefix matches
+        run: lake build Kk.TrackEOriginalPrefixSocleIff
+      - name: Strict one-endpoint transitive-axiom gate
+        run: |
+          set -euo pipefail
+          lake env lean Kk/TrackEOriginalPrefixSocleIffAxiomAudit.lean | tee track-e-origiff-axioms.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py Kk/TrackEOriginalPrefixSocleIffAxiomAudit.lean track-e-origiff-axioms.log

@@ -1,0 +1,10 @@
+import Kk.TrackFPairwiseTargetSeparation
+
+#check @Kk.HensonOneType.eq_of_level_neighbours
+#print axioms Kk.HensonOneType.eq_of_level_neighbours
+#check @Kk.HensonOneType.distinct_same_level_source_types_have_old_bit_separator
+#print axioms Kk.HensonOneType.distinct_same_level_source_types_have_old_bit_separator
+#check @Kk.HensonOneType.target_finite_family_injective_of_old_separators
+#print axioms Kk.HensonOneType.target_finite_family_injective_of_old_separators
+#check @Kk.HensonOneType.target_finite_family_injective_of_distinct_source_roots
+#print axioms Kk.HensonOneType.target_finite_family_injective_of_distinct_source_roots

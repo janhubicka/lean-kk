@@ -1,0 +1,12 @@
+import Kk.TrackEOneBareRootEvenRealNoNovelty
+
+#check @Kk.KptCandidateOriginalOldPrefixCovered
+
+#check @Kk.finiteNumericH_one_bare_root_stays_in_original_prefix_pool
+#print axioms Kk.finiteNumericH_one_bare_root_stays_in_original_prefix_pool
+
+#check @Kk.finiteNumericH_old_boring_one_bare_root_even_real_noNovelty
+#print axioms Kk.finiteNumericH_old_boring_one_bare_root_even_real_noNovelty
+
+#check @Kk.finiteNumericH_old_unselected_one_bare_root_even_real_noNovelty
+#print axioms Kk.finiteNumericH_old_unselected_one_bare_root_even_real_noNovelty

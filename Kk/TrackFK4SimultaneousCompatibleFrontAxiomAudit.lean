@@ -1,0 +1,4 @@
+import Kk.TrackFK4SimultaneousCompatibleFront
+
+#check @Kk.HensonOneType.k4_private_exact_target_common_source_front
+#print axioms Kk.HensonOneType.k4_private_exact_target_common_source_front

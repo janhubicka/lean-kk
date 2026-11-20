@@ -1,5 +1,54 @@
 import Kk
 
+-- Track B: protected pivots and canonical split transport.
+#check @Kk.protectedPivot_common_pool
+#print axioms Kk.protectedPivot_common_pool
+#check @Kk.protectedPivot_capacity
+#print axioms Kk.protectedPivot_capacity
+#check @Kk.protectedPivotRaw_eq_actual
+#print axioms Kk.protectedPivotRaw_eq_actual
+#check @Kk.activeGapPointedRaw_eq_actual
+#print axioms Kk.activeGapPointedRaw_eq_actual
+#check @Kk.henson_leftDense_realizes_activeGap_pointed
+#print axioms Kk.henson_leftDense_realizes_activeGap_pointed
+#check @Kk.protectedPivot_targetAge_le_canonical_iff_budgets
+#print axioms Kk.protectedPivot_targetAge_le_canonical_iff_budgets
+#check @Kk.integerCliquePushforward_feasible
+#print axioms Kk.integerCliquePushforward_feasible
+#check @Kk.integerClique_exists_lift_along_sortMap
+#print axioms Kk.integerClique_exists_lift_along_sortMap
+#check @Kk.integerGraphAgeCanonical_pullback_mono
+#print axioms Kk.integerGraphAgeCanonical_pullback_mono
+#check @Kk.isIntegerGraphAge_pullback
+#print axioms Kk.isIntegerGraphAge_pullback
+#check @Kk.finiteOldColumnCanonical_reindex
+#print axioms Kk.finiteOldColumnCanonical_reindex
+#check @Kk.finiteOldColumnCanonical_reindex_twice
+#print axioms Kk.finiteOldColumnCanonical_reindex_twice
+#check @Kk.finiteOldColumnCanonical_neutral_reindex
+#print axioms Kk.finiteOldColumnCanonical_neutral_reindex
+#check @Kk.protectedPivot_pulledBackAge_iff_budgets
+#print axioms Kk.protectedPivot_pulledBackAge_iff_budgets
+#check @Kk.freePointedContinuation_raw_eq
+#print axioms Kk.freePointedContinuation_raw_eq
+#check @Kk.freePointedContinuation_canonical_eq
+#print axioms Kk.freePointedContinuation_canonical_eq
+#check @Kk.freeSplit_canonical_eq
+#print axioms Kk.freeSplit_canonical_eq
+#check @Kk.henson_leftDense_constructs_freePointed_stage
+#print axioms Kk.henson_leftDense_constructs_freePointed_stage
+#check @Kk.henson_leftDense_constructs_freeSplit_stage
+#print axioms Kk.henson_leftDense_constructs_freeSplit_stage
+#check @Kk.integerGraphAgeCanonical_lowerAt_canonical
+#print axioms Kk.integerGraphAgeCanonical_lowerAt_canonical
+#check @Kk.freeSplit_raw_eq_lowerAt
+#print axioms Kk.freeSplit_raw_eq_lowerAt
+#check @Kk.freeSplit_canonical_eq_restriction
+#print axioms Kk.freeSplit_canonical_eq_restriction
+#check @Kk.henson_leftDense_constructs_exactFreeSplit_stage
+#print axioms Kk.henson_leftDense_constructs_exactFreeSplit_stage
+
+
 #check @SuccessorTree.V10.normalizedKpt_typeRespectingRamsey
 #check @SuccessorTree.V10.TypeRespectingEmbedding.exists_extension
 #check @SuccessorTree.V10.TypeRespectingEmbedding.act_apply
@@ -2221,50 +2270,10 @@ import Kk
 #check @Kk.finiteNumericH_constructed_offplan_iff_two_residual_classes
 #print axioms Kk.finiteNumericH_constructed_offplan_iff_two_residual_classes
 
--- Track B: restore protected pivot checks and validate canonical splits.
-#check @Kk.protectedPivot_common_pool
-#print axioms Kk.protectedPivot_common_pool
-#check @Kk.protectedPivot_capacity
-#print axioms Kk.protectedPivot_capacity
-#check @Kk.protectedPivotRaw_eq_actual
-#print axioms Kk.protectedPivotRaw_eq_actual
-#check @Kk.activeGapPointedRaw_eq_actual
-#print axioms Kk.activeGapPointedRaw_eq_actual
-#check @Kk.henson_leftDense_realizes_activeGap_pointed
-#print axioms Kk.henson_leftDense_realizes_activeGap_pointed
-#check @Kk.protectedPivot_targetAge_le_canonical_iff_budgets
-#print axioms Kk.protectedPivot_targetAge_le_canonical_iff_budgets
-#check @Kk.integerCliquePushforward_feasible
-#print axioms Kk.integerCliquePushforward_feasible
-#check @Kk.integerClique_exists_lift_along_sortMap
-#print axioms Kk.integerClique_exists_lift_along_sortMap
-#check @Kk.integerGraphAgeCanonical_pullback_mono
-#print axioms Kk.integerGraphAgeCanonical_pullback_mono
-#check @Kk.isIntegerGraphAge_pullback
-#print axioms Kk.isIntegerGraphAge_pullback
-#check @Kk.finiteOldColumnCanonical_reindex
-#print axioms Kk.finiteOldColumnCanonical_reindex
-#check @Kk.finiteOldColumnCanonical_reindex_twice
-#print axioms Kk.finiteOldColumnCanonical_reindex_twice
-#check @Kk.finiteOldColumnCanonical_neutral_reindex
-#print axioms Kk.finiteOldColumnCanonical_neutral_reindex
-#check @Kk.protectedPivot_pulledBackAge_iff_budgets
-#print axioms Kk.protectedPivot_pulledBackAge_iff_budgets
-#check @Kk.freePointedContinuation_raw_eq
-#print axioms Kk.freePointedContinuation_raw_eq
-#check @Kk.freePointedContinuation_canonical_eq
-#print axioms Kk.freePointedContinuation_canonical_eq
-#check @Kk.freeSplit_canonical_eq
-#print axioms Kk.freeSplit_canonical_eq
-#check @Kk.henson_leftDense_constructs_freePointed_stage
-#print axioms Kk.henson_leftDense_constructs_freePointed_stage
-#check @Kk.henson_leftDense_constructs_freeSplit_stage
-#print axioms Kk.henson_leftDense_constructs_freeSplit_stage
-#check @Kk.integerGraphAgeCanonical_lowerAt_canonical
-#print axioms Kk.integerGraphAgeCanonical_lowerAt_canonical
-#check @Kk.freeSplit_raw_eq_lowerAt
-#print axioms Kk.freeSplit_raw_eq_lowerAt
-#check @Kk.freeSplit_canonical_eq_restriction
-#print axioms Kk.freeSplit_canonical_eq_restriction
-#check @Kk.henson_leftDense_constructs_exactFreeSplit_stage
-#print axioms Kk.henson_leftDense_constructs_exactFreeSplit_stage
+-- Track C: physical old-boring bare-root even real ZERO source no-novelty, full Kpt L+/E.
+#check @Kk.finiteNumericH_oldBoring_oneBare_real_zero_noNovelty
+#print axioms Kk.finiteNumericH_oldBoring_oneBare_real_zero_noNovelty
+
+-- Track C: genuine K/L physical base-extension constructs finite W; real-zero candidate source quiet.
+#check @Kk.finiteNumericH_constructed_bare_root_real_zero_stage_quiet
+#print axioms Kk.finiteNumericH_constructed_bare_root_real_zero_stage_quiet

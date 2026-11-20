@@ -1,0 +1,13 @@
+import Kk.TrackGIntrinsicExactFactorBad
+
+#check @Kk.KptPhysicalOldFactorCompatibleAt
+#print axioms Kk.KptPhysicalOldFactorCompatibleAt
+
+#check @Kk.kptIndexedOldFactorCompatibleAt_iff_physical
+#print axioms Kk.kptIndexedOldFactorCompatibleAt_iff_physical
+
+#check @Kk.kptExactOldFactorBadCuts_index_independent
+#print axioms Kk.kptExactOldFactorBadCuts_index_independent
+
+#check @Kk.finiteNumericH_construct_target_exact_factor_Bad_iff_transport
+#print axioms Kk.finiteNumericH_construct_target_exact_factor_Bad_iff_transport

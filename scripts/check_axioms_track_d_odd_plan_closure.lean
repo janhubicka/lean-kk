@@ -1,0 +1,8 @@
+import Kk.TrackDOddPlanFreeClosure
+
+#check @Kk.finiteNumericH_stage_free_cut_not_omitted_of_plan_closed
+#print axioms Kk.finiteNumericH_stage_free_cut_not_omitted_of_plan_closed
+#check @Kk.numericHTopGenerationSeeds_noOddBelowRoot
+#print axioms Kk.numericHTopGenerationSeeds_noOddBelowRoot
+#check @Kk.henson_actualRun_odd_omitted_of_closed_plan
+#print axioms Kk.henson_actualRun_odd_omitted_of_closed_plan

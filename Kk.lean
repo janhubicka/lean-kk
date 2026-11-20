@@ -1,3 +1,14 @@
+-- Track B: complete protected-pivot columns and canonical split transport.
+-- Verified source and audit evidence: docs/audits/2026-11-20-track-b-canonical-splits.json.
+import Kk.ProtectedActivePivotCapacity
+import Kk.ProtectedActivePivotRealization
+import Kk.ProtectedActivePivotBudget
+import Kk.CanonicalAgeSortPullback
+import Kk.PhysicalCanonicalSortTransport
+import Kk.PhysicalFreeSplitAge
+import Kk.CanonicalAgeExtraBound
+import Kk.PhysicalFreeSplitRestriction
+
 import Kk.TypeRespecting
 import Kk.DiaryTransfer
 import Kk.RepresentedVertices
@@ -343,6 +354,10 @@ import Kk.ConstructedPhysicalOffPlanResidual
 import Kk.ResidualTwoClassQuiet
 -- Track C: genuinely constructed physical H+ two residual class reduction.
 import Kk.PhysicalTwoClassResidual
+-- Track C: one genuine bare original, zero stage and full old Kpt prefixes imply true no-novelty.
+import Kk.TrackCOneBareEvenRealZeroQuiet
+-- Track C: constructed physical original support for all old-boring real-zero candidate cuts.
+import Kk.TrackCConstructedBareRealZeroQuiet
 
 -- Track D: actual finite-index no-I1/no-I2 and one physical boring lower-real cut.
 -- Marked full-B3 and represented complete source remain explicit assumptions.
@@ -358,17 +373,6 @@ import Kk.PointedCliqueUnitLoss
 import Kk.TrackDPreCutStageSource
 -- Track D: finite chronological Q original base-neighbour separation.
 import Kk.TrackDResolvedQBaseRoles
-
--- Track B: complete protected-pivot columns and canonical split transport.
--- Restore source-only validated pivot modules to the normal build as well.
-import Kk.ProtectedActivePivotCapacity
-import Kk.ProtectedActivePivotRealization
-import Kk.ProtectedActivePivotBudget
-import Kk.CanonicalAgeSortPullback
-import Kk.PhysicalCanonicalSortTransport
-import Kk.PhysicalFreeSplitAge
-import Kk.CanonicalAgeExtraBound
-import Kk.PhysicalFreeSplitRestriction
 
 
 /-!

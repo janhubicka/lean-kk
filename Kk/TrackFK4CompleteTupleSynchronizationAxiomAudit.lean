@@ -1,0 +1,5 @@
+import Kk.TrackFK4CompleteTupleSynchronization
+
+#check @Kk.k4CanonicalSortedFiniteTest
+#check @Kk.k4_sync_complete_tuple_canonical_class
+#print axioms Kk.k4_sync_complete_tuple_canonical_class

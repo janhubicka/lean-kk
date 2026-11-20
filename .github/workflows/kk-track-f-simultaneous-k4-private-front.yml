@@ -1,0 +1,45 @@
+name: KK Track F simultaneous K4 private front
+on:
+  pull_request:
+    paths:
+      - 'Kk/TrackFK4SimultaneousCompatibleFront.lean'
+      - 'Kk/TrackFK4SimultaneousCompatibleFrontAxiomAudit.lean'
+      - 'docs/track_f_simultaneous_k4_private_front_english_audit_20261120.md'
+      - '.github/workflows/kk-track-f-simultaneous-k4-private-front.yml'
+  workflow_dispatch:
+concurrency:
+  group: kk-track-f-simultaneous-private-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+jobs:
+  simultaneous-front:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache Lean toolchain
+        uses: actions/cache@v4
+        with:
+          path: ~/.elan/toolchains
+          key: lean-toolchain-${{ runner.os }}-${{ hashFiles('lean-toolchain') }}
+      - name: Restore Lean workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve dependencies
+        run: lake update
+      - name: Obtain Mathlib build cache
+        run: lake exe cache get
+      - name: Build simultaneous compatible front module
+        run: lake build Kk.TrackFK4SimultaneousCompatibleFront
+      - name: Strict named standard-only axiom gate
+        run: |
+          set -euo pipefail
+          lake env lean Kk/TrackFK4SimultaneousCompatibleFrontAxiomAudit.lean | tee track-f-simultaneous-front-axioms.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py Kk/TrackFK4SimultaneousCompatibleFrontAxiomAudit.lean track-f-simultaneous-front-axioms.log
