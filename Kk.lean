@@ -1,3 +1,14 @@
+-- Track B: complete protected-pivot columns and canonical split transport.
+-- Verified source and audit evidence: docs/audits/2026-11-20-track-b-canonical-splits.json.
+import Kk.ProtectedActivePivotCapacity
+import Kk.ProtectedActivePivotRealization
+import Kk.ProtectedActivePivotBudget
+import Kk.CanonicalAgeSortPullback
+import Kk.PhysicalCanonicalSortTransport
+import Kk.PhysicalFreeSplitAge
+import Kk.CanonicalAgeExtraBound
+import Kk.PhysicalFreeSplitRestriction
+
 import Kk.TypeRespecting
 import Kk.DiaryTransfer
 import Kk.RepresentedVertices
