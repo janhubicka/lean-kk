@@ -117,3 +117,42 @@ theorems with all three event obstructions actually discharged.
 Global plan correctness, all other omitted real microcuts and all
 potential odd I1/I2 cuts still require separate work. Do not
 promote the global lemma to verified.
+
+
+## 20 November source-representation refactor (English audit before code)
+
+The same actual finite stage original pool is exposed by TWO proved
+presentations:
+  ambientStagePool(A,U,J), as a Set of true physical original names,
+  hStageOriginals(K,k,N,U,J), as a Finset enumeration of those names.
+
+The first presentation is the literal input to the already verified
+full I1 closure normal-form theorem. The second is needed only to
+enumerate ALL complete full Kpt original-name representatives for
+the full I2 and corrected B3 theorems. These are extensionally the
+same physical addresses, but their noncomputable Lean DecidablePred
+instances are not definitionally equal; we must not force them
+definitionally equal by a change tactic applied to filtered Finsets.
+
+Minimal trustworthy proof repair:
+1. State the physical zero-star premise on ambientStagePool,
+   exactly matching the full I1 theorem.
+2. For each canonical finite stage name given by hOriginalName,
+   use hOriginalName_mem and the established verified direction of
+   Finset.mem_filter to extract the root-or-selected disjunction.
+   That gives ambientStagePool membership without comparing
+   DecidablePred implementations.
+3. The dummy original Q case proves zero ordinary L for every
+   physically eligible original, independent of either carrier.
+4. For an independent selected coding base, inspect the same
+   root-or-selected disjunction directly in ambientStagePool; verified
+   original-Q retained-role axioms and the literal descending Plan
+   ensure its later physical base has no ordinary Q adjacency.
+   No selected diary shadow, inverse Kpt orbit, or guessed final
+   original pool is introduced.
+
+This alters only Lean proof-interface packaging, not the mathematical
+hypotheses or scope of the result. All three AlgorithmRun
+obstructions remain independently excluded by proved source lemmas.
+The resulting PR must pass its strict named standard-only axiom
+report before any manuscript status promotion.
