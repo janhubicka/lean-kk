@@ -3,7 +3,7 @@
   "recorded_date": "2026-11-20",
   "project": "Kk free graphs",
   "track": "B",
-  "kind": "completed hosted full build and strict named transitive-axiom audit",
+  "kind": "completed hosted proof checkpoint and subsequent full integration verification",
   "is_remote_ci_result": true,
   "repository": "janhubicka/lean-kk",
   "pull_request": 414,
@@ -175,7 +175,9 @@
         "bytes": 1913,
         "matches_tested_head": true
       }
-    }
+    },
+    "scope": "Historical original 953-report checkpoint at a433ad84f3881da535ee3e7164ff32e3337d2c3c only. These byte comparisons were made before the integration; they do not assert that current central imports or registry bytes equal that original checkpoint.",
+    "record_status": "historical_preserved"
   },
   "lean": {
     "toolchain": "leanprover/lean4:v4.35.0-rc3",
@@ -244,5 +246,225 @@
     "docs/track_b_physical_free_split_english_audit.md",
     "docs/track_b_exact_free_split_restriction_english_audit.md"
   ],
-  "historical_gap_superseded": "The canonical sort-map limitation in docs/track_b_neutral_interval_sort_image_english_audit.md is closed for support-monotone raw bounds and therefore for complete physical old-column raw bounds; the historical text is preserved with a dated pointer."
+  "historical_gap_superseded": "The canonical sort-map limitation in docs/track_b_neutral_interval_sort_image_english_audit.md is closed for support-monotone raw bounds and therefore for complete physical old-column raw bounds; the historical text is preserved with a dated pointer.",
+  "historical_checkpoint_scope": "The top-level tested_source_head, tested_source_tree, ci_merge_checkout, main_base, ci, and original source_integrity fields describe the historical 953-report proof checkpoint. The latest completed gate is recorded separately in integration_verification.",
+  "latest_verified_source_head": "4a275de622617da97a132ab8b8adf17cbb989c7b",
+  "latest_verification_section": "integration_verification",
+  "integration_verification": {
+    "recorded_date": "2026-11-20",
+    "status": "passed",
+    "is_remote_ci_result": true,
+    "pull_request": 414,
+    "source_head": "4a275de622617da97a132ab8b8adf17cbb989c7b",
+    "source_tree": "c5a2333b246d441bdea350398987a22083f08ebb",
+    "branch_merge_main_parent": "36f6000eefc0c3375d03346e49a84e58f1b0d982",
+    "ci_merge_checkout": "0792d8f297325eb5c80f807c2010a702789f77ac",
+    "ci_merge_tree": "f9309db6a1c35465243024acfe87dd00436c04ac",
+    "ci_newer_main_base": "ddf60ae5ddba9fbc846dd3072dabc44fdc829ea5",
+    "ci_merge_parents_in_order": [
+      "ddf60ae5ddba9fbc846dd3072dabc44fdc829ea5",
+      "4a275de622617da97a132ab8b8adf17cbb989c7b"
+    ],
+    "ci": {
+      "run_id": 44781646067,
+      "run_url": "https://github.com/janhubicka/lean-kk/actions/runs/44781646067",
+      "job_id": 136445580605,
+      "job_url": "https://github.com/janhubicka/lean-kk/actions/runs/44781646067/job/136445580605",
+      "conclusion": "success",
+      "full_lake_build": "passed",
+      "full_build_job_count": 9727,
+      "axiom_parser_self_test": "passed",
+      "strict_named_transitive_axiom_audit": "passed",
+      "baseline_report_count": 932,
+      "final_report_count": 955,
+      "new_endpoint_count": 17,
+      "restored_endpoint_count": 6,
+      "scoped_endpoint_count": 23,
+      "all_23_scoped_names_present_in_actual_complete_log": true,
+      "allowed_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "sorryAx_accepted": false,
+      "custom_axioms_accepted": false,
+      "gate_output": "PASS: 955 exact transitive-axiom reports; only Classical.choice, Quot.sound, propext",
+      "evidence_note": "The parent agent independently read the complete successful job log; the actual CI checkout and source preservation were separately checked read-only here."
+    },
+    "source_integrity": {
+      "comparison": "Every listed proof/import/gate/configuration file was compared byte-for-byte between the actual checked CI merge, the integration branch head, and the local integrated source.",
+      "checked_file_count": 15,
+      "ci_checkout_vs_head_or_local_differences": [],
+      "five_new_proof_modules_unchanged_from_original_953_checkpoint": true,
+      "central_files_updated_since_original_953_checkpoint": [
+        "Kk.lean",
+        "scripts/check_axioms.lean"
+      ],
+      "files": {
+        "Kk/CanonicalAgeSortPullback.lean": {
+          "kind": "new_proof_module",
+          "git_blob_sha1": "998bea0806ea3f0f3bf355d8f75032e04beebc49",
+          "sha256": "014ef0f8447b108c7afe7ef2ddc56febb5358cb6531881c891a9dad932fdf457",
+          "bytes": 12083,
+          "matches_ci_checkout_and_head_and_local": true,
+          "unchanged_from_original_953_checkpoint": true
+        },
+        "Kk/PhysicalCanonicalSortTransport.lean": {
+          "kind": "new_proof_module",
+          "git_blob_sha1": "64fade621cc53d00d615d7bd9c0c8022c2d31a66",
+          "sha256": "c2a7ecf14934fc8a1e8822c33e5c638dd80cd3f0920d943b0166c4d23f4c569a",
+          "bytes": 5499,
+          "matches_ci_checkout_and_head_and_local": true,
+          "unchanged_from_original_953_checkpoint": true
+        },
+        "Kk/PhysicalFreeSplitAge.lean": {
+          "kind": "new_proof_module",
+          "git_blob_sha1": "099812da153b67127b4aca8acaa6e86668d61fef",
+          "sha256": "50648a208ec1d966e2860fa112b8be0312f2de79130158e36c026768ba68ad30",
+          "bytes": 12064,
+          "matches_ci_checkout_and_head_and_local": true,
+          "unchanged_from_original_953_checkpoint": true
+        },
+        "Kk/CanonicalAgeExtraBound.lean": {
+          "kind": "new_proof_module",
+          "git_blob_sha1": "df9c7009e602182a0b442f0b7a73e8ba575199cd",
+          "sha256": "946699d2f04c47ec72be640c3d48517da9063908467afbc984fda50d62ffd10a",
+          "bytes": 2579,
+          "matches_ci_checkout_and_head_and_local": true,
+          "unchanged_from_original_953_checkpoint": true
+        },
+        "Kk/PhysicalFreeSplitRestriction.lean": {
+          "kind": "new_proof_module",
+          "git_blob_sha1": "550a88963a08c8fa782a8de3fda0f74380021c5d",
+          "sha256": "9672703954791103f9d566e5a7a8e11e6736860e81fb202c75c17022e4b90407",
+          "bytes": 6547,
+          "matches_ci_checkout_and_head_and_local": true,
+          "unchanged_from_original_953_checkpoint": true
+        },
+        "Kk/ProtectedActivePivotCapacity.lean": {
+          "kind": "restored_proof_module",
+          "git_blob_sha1": "9b4ca945b905fadbcc2bdd8a5faed8229a1f047f",
+          "sha256": "c4721cc48456a31b14c6904569e6d696384f50e01a139cda68d13824c74100de",
+          "bytes": 6949,
+          "matches_ci_checkout_and_head_and_local": true,
+          "unchanged_from_original_953_checkpoint": true
+        },
+        "Kk/ProtectedActivePivotRealization.lean": {
+          "kind": "restored_proof_module",
+          "git_blob_sha1": "f7fc15bfecdd7d67b531e265d43e2befc8eaf20a",
+          "sha256": "a12c73df36d301d06b2815d4ee6f319678f84f06c3fcb898f65cada6379456cf",
+          "bytes": 4140,
+          "matches_ci_checkout_and_head_and_local": true,
+          "unchanged_from_original_953_checkpoint": true
+        },
+        "Kk/ProtectedActivePivotBudget.lean": {
+          "kind": "restored_proof_module",
+          "git_blob_sha1": "09c7c91cc725fa4f8a8a7ec4a3caca302bff007d",
+          "sha256": "86827fcedf12505f0a669c78d628c03190fa69065f5eaf8972b159453664fe2c",
+          "bytes": 3661,
+          "matches_ci_checkout_and_head_and_local": true,
+          "unchanged_from_original_953_checkpoint": true
+        },
+        "Kk.lean": {
+          "kind": "central_imports",
+          "git_blob_sha1": "c85e31cab7e714293a64ca9c5e9e60abd359757a",
+          "sha256": "ea1ce6b6e8fa8508cf9082245b9b1ce8955fa8874e80c03f2e6fff56803f4d42",
+          "bytes": 15032,
+          "matches_ci_checkout_and_head_and_local": true,
+          "unchanged_from_original_953_checkpoint": false
+        },
+        "scripts/check_axioms.lean": {
+          "kind": "central_axiom_registry",
+          "git_blob_sha1": "0be91622ddb1a10a320f0170f63ef1cbba992bb1",
+          "sha256": "22cf33d29312e3a72af84a784fde41631df64c0c174d3c817c9f809f0862ffa1",
+          "bytes": 123178,
+          "matches_ci_checkout_and_head_and_local": true,
+          "unchanged_from_original_953_checkpoint": false
+        },
+        "scripts/check_track_b_canonical_split.lean": {
+          "kind": "scoped_axiom_registry",
+          "git_blob_sha1": "74525b6b74595c2cdbc01fe0275f6655af4100d3",
+          "sha256": "282bce48ffc351b991b7b17ad08138756ce5be42ab04a100880b86e085026e7e",
+          "bytes": 2542,
+          "matches_ci_checkout_and_head_and_local": true,
+          "unchanged_from_original_953_checkpoint": true
+        },
+        "scripts/check_axiom_report.py": {
+          "kind": "strict_axiom_parser",
+          "git_blob_sha1": "3adecc73086374137cd0ae5cad4fef456d452175",
+          "sha256": "1aca9c49e724a8c933f0b2b92ef89b8564ee250db4d98c8a25c9088545ad4492",
+          "bytes": 3137,
+          "matches_ci_checkout_and_head_and_local": true,
+          "unchanged_from_original_953_checkpoint": true
+        },
+        "lakefile.toml": {
+          "kind": "package_configuration",
+          "git_blob_sha1": "54447d7cb953b779f89885736f6a2a2c194674b7",
+          "sha256": "8c06968c126a593d7d43e880182ddab5c75f98806acff98c40d14434a8329f6c",
+          "bytes": 230,
+          "matches_ci_checkout_and_head_and_local": true,
+          "unchanged_from_original_953_checkpoint": true
+        },
+        "lean-toolchain": {
+          "kind": "toolchain_pin",
+          "git_blob_sha1": "f0e00b3338bac0d6f050d9a64e277314a9f7830f",
+          "sha256": "bc84812c94489d1e3e191baa1dc10d5eb684382d7fe9d2a5ab085e72c1c67e47",
+          "bytes": 29,
+          "matches_ci_checkout_and_head_and_local": true,
+          "unchanged_from_original_953_checkpoint": true
+        },
+        ".github/workflows/lean.yml": {
+          "kind": "hosted_gate_workflow",
+          "git_blob_sha1": "f97dd4533eeed569a1640133c329ad04e682629f",
+          "sha256": "d0820a0af154df63bb5686d310aaef6fa652699707cf2b34c4caf4fdf240df8e",
+          "bytes": 1913,
+          "matches_ci_checkout_and_head_and_local": true,
+          "unchanged_from_original_953_checkpoint": true
+        }
+      }
+    },
+    "latest_main_preservation": {
+      "main_base": "ddf60ae5ddba9fbc846dd3072dabc44fdc829ea5",
+      "main_import_count": 281,
+      "integration_import_count": 289,
+      "main_report_count": 932,
+      "integration_report_count": 955,
+      "all_main_imports_preserved_in_exact_order": true,
+      "all_main_report_names_preserved_in_exact_order": true,
+      "added_import_count": 8,
+      "added_report_count": 23,
+      "added_reports_exactly_the_scoped_track_b_names": true,
+      "removed_imports": [],
+      "removed_reports": [],
+      "duplicate_report_names": []
+    },
+    "scoped_endpoint_names": [
+      "Kk.protectedPivot_common_pool",
+      "Kk.protectedPivot_capacity",
+      "Kk.protectedPivotRaw_eq_actual",
+      "Kk.activeGapPointedRaw_eq_actual",
+      "Kk.henson_leftDense_realizes_activeGap_pointed",
+      "Kk.protectedPivot_targetAge_le_canonical_iff_budgets",
+      "Kk.integerCliquePushforward_feasible",
+      "Kk.integerClique_exists_lift_along_sortMap",
+      "Kk.integerGraphAgeCanonical_pullback_mono",
+      "Kk.isIntegerGraphAge_pullback",
+      "Kk.finiteOldColumnCanonical_reindex",
+      "Kk.finiteOldColumnCanonical_reindex_twice",
+      "Kk.finiteOldColumnCanonical_neutral_reindex",
+      "Kk.protectedPivot_pulledBackAge_iff_budgets",
+      "Kk.freePointedContinuation_raw_eq",
+      "Kk.freePointedContinuation_canonical_eq",
+      "Kk.freeSplit_canonical_eq",
+      "Kk.henson_leftDense_constructs_freePointed_stage",
+      "Kk.henson_leftDense_constructs_freeSplit_stage",
+      "Kk.integerGraphAgeCanonical_lowerAt_canonical",
+      "Kk.freeSplit_raw_eq_lowerAt",
+      "Kk.freeSplit_canonical_eq_restriction",
+      "Kk.henson_leftDense_constructs_exactFreeSplit_stage"
+    ],
+    "manuscript_source_pin_still_valid": "a433ad84f3881da535ee3e7164ff32e3337d2c3c",
+    "completed_local_full_gate_claimed": false,
+    "mathematical_scope_changed_by_integration": false
+  }
 }

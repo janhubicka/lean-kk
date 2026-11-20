@@ -87,18 +87,31 @@ sort domain, not a discharge of the displayed inequalities for diary choices.
    E relations, dependent Kpt source identities, I1/I2/I3, corrected B3, the
    prescribed infinite diary schedule and the global BRD theorem remain open.
 
-## Verification completed: 20 November 2026
+## Hosted integration verification: 20 November 2026
 
-The exact source of `Kk/PhysicalCanonicalSortTransport.lean` passed the full
-hosted gate in [PR #414](https://github.com/janhubicka/lean-kk/pull/414),
-[run 44778772393](https://github.com/janhubicka/lean-kk/actions/runs/44778772393),
-at head `a433ad84f3881da535ee3e7164ff32e3337d2c3c`: the complete
-**9,709-job build**, parser self-test, and **953 exact named transitive-axiom
-reports** all passed, allowing only `propext`, `Classical.choice`, and
-`Quot.sound`. No `sorryAx` or custom axiom is accepted. The proof, imports,
-and audit scripts are unchanged from that tested snapshot.
+The full hosted integration gate in [PR #414](https://github.com/janhubicka/lean-kk/pull/414),
+[run 44781646067](https://github.com/janhubicka/lean-kk/actions/runs/44781646067),
+passed for head `4a275de622617da97a132ab8b8adf17cbb989c7b`. CI actually
+checked merge `0792d8f297325eb5c80f807c2010a702789f77ac` over the newer
+main `ddf60ae5ddba9fbc846dd3072dabc44fdc829ea5`. The complete
+**9,727-job build**, parser self-test, and **955 exact named transitive-axiom
+reports** passed, allowing only `propext`, `Classical.choice`, and `Quot.sound`.
+No `sorryAx` or custom axiom is accepted; all 23 scoped Track B names occur
+in the actual successful audit log.
 
-See the [dated evidence record](audits/2026-11-20-track-b-canonical-splits.json)
-for hashes and endpoint names. This is a hosted result; the optional local
-cold build was stopped after it passed, so no local full gate is claimed.
-These finite transport results do not justify a global manuscript mark.
+All five new proof modules are byte-for-byte unchanged from the original
+verified head `a433ad84f3881da535ee3e7164ff32e3337d2c3c`, which remains a
+valid manuscript proof pin. Its earlier [run 44778772393](https://github.com/janhubicka/lean-kk/actions/runs/44778772393)
+(9,709 build jobs and 953 reports) is the **historical proof checkpoint**.
+The integration updated the central imports and registry, preserving all
+932 names from the newer main and adding exactly the same 23 Track B names
+(17 new endpoints and six restored protected-pivot checks). Every main
+import and report name is retained in its original order.
+
+The [dated evidence record](audits/2026-11-20-track-b-canonical-splits.json)
+preserves the original checkpoint hashes and separately records the successful
+integration, its actual CI checkout, and current source hashes. This is
+hosted verification: the optional local cold build was stopped after hosted
+success, and **no completed local full gate is claimed**. The finite scope
+above is unchanged; selected-pivot coding, full Kpt/source synchronization,
+the prescribed infinite diary, and global BRD conclusions remain open.

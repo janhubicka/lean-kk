@@ -6,12 +6,17 @@ is now closed for support-monotone raw bounds, hence for every actual complete
 old-column raw bound, even under noninjective sort maps. The
 [arbitrary-map proof](track_b_canonical_sort_pullback_english_audit.md) and
 [physical transport proof](track_b_physical_canonical_sort_transport_english_audit.md)
-passed the full hosted [PR #414 gate](https://github.com/janhubicka/lean-kk/actions/runs/44778772393)
-at head `a433ad84f3881da535ee3e7164ff32e3337d2c3c` (9,709 build jobs,
-parser self-test, 953 exact standard-only reports). The earlier text is
-preserved as the 15 November audit record. Arbitrary nonmonotone raw tables
-still do not satisfy canonical transport; selected-pivot coding and full
-parameter-closed Kpt source synchronization remain separate obligations.
+passed the completed [PR #414 integration gate](https://github.com/janhubicka/lean-kk/actions/runs/44781646067)
+for head `4a275de622617da97a132ab8b8adf17cbb989c7b` (9,727 build jobs,
+parser self-test, 955 exact standard-only reports). CI checked merge
+`0792d8f297325eb5c80f807c2010a702789f77ac` over the newer main
+`ddf60ae5ddba9fbc846dd3072dabc44fdc829ea5`: all 932 main names plus the
+23 Track B names are retained. The five proof modules are unchanged from
+the historical 953-report checkpoint `a433ad84f3881da535ee3e7164ff32e3337d2c3c`,
+which remains a valid proof pin. The earlier 15 November text is preserved
+below. Arbitrary nonmonotone raw tables still do not satisfy canonical
+transport; selected-pivot coding and full parameter-closed Kpt source
+synchronization remain separate obligations. No local full gate is claimed.
 
 ## Scope
 

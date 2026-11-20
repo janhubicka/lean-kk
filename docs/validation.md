@@ -1,19 +1,39 @@
 # Track B — canonical sort transport and constructed free splits (20 November 2026, verified)
 
-**Hosted full gate passed:** [PR #414](https://github.com/janhubicka/lean-kk/pull/414),
-[run 44778772393](https://github.com/janhubicka/lean-kk/actions/runs/44778772393),
-tested source head `a433ad84f3881da535ee3e7164ff32e3337d2c3c`; CI tested
-merge checkout `d9a2cff3638040a51cc4a4aed166bfdfb2a93f9c` over main base
-`d028f1fedcb172e45ea7001e2896938e6295fb32`. The complete **9,709-job build**,
-parser self-test, and **953 exact named transitive-axiom reports** passed,
-with only `propext`, `Classical.choice`, and `Quot.sound` allowed. This
-retains all **930** baseline reports and adds **17 new endpoints plus six
-previously verified protected-pivot endpoints restored to the central
-imports/registry**. The 23 scoped names are listed in
-`scripts/check_track_b_canonical_split.lean`; all are in the full registry.
-No proof, import, or audit-script changes were made after the tested snapshot.
-The [evidence record](audits/2026-11-20-track-b-canonical-splits.json) contains
-their Git blob and SHA-256 hashes, endpoint names, and dependency revisions.
+**Latest hosted integration gate passed:** [PR #414](https://github.com/janhubicka/lean-kk/pull/414),
+[run 44781646067](https://github.com/janhubicka/lean-kk/actions/runs/44781646067),
+[job 136445580605](https://github.com/janhubicka/lean-kk/actions/runs/44781646067/job/136445580605),
+source head `4a275de622617da97a132ab8b8adf17cbb989c7b` (tree
+`c5a2333b246d441bdea350398987a22083f08ebb`). CI actually tested merge
+`0792d8f297325eb5c80f807c2010a702789f77ac` over the newer main
+`ddf60ae5ddba9fbc846dd3072dabc44fdc829ea5`, not merely the branch's earlier
+main parent `36f6000eefc0c3375d03346e49a84e58f1b0d982`. The complete
+**9,727-job build**, parser self-test, and **955 exact named transitive-axiom
+reports** passed. The complete log contains all 23 scoped Track B reports
+and the exact acceptance line:
+
+    PASS: 955 exact transitive-axiom reports; only Classical.choice, Quot.sound, propext
+
+The integrated imports and registry preserve all **281 imports and 932
+report names** from the newer main, in their original order. They add eight
+imports and exactly **17 new endpoints plus six previously verified
+protected-pivot endpoints restored to the central imports/registry**,
+for 289 imports and 955 distinct report names, with no removals or duplicates.
+The 23 names are listed in `scripts/check_track_b_canonical_split.lean`.
+All 15 recorded proof/import/gate/configuration files match the actual CI
+checkout, the integration head, and the local integrated source.
+
+**Historical proof checkpoint:** the five new proof modules remain
+byte-for-byte unchanged from `a433ad84f3881da535ee3e7164ff32e3337d2c3c`,
+so that manuscript proof pin remains valid. Its [earlier run 44778772393](https://github.com/janhubicka/lean-kk/actions/runs/44778772393)
+passed 9,709 build jobs, the parser self-test, and 953 reports (930 baseline
+plus the same 23 Track B names). That run checked merge
+`d9a2cff3638040a51cc4a4aed166bfdfb2a93f9c` over main
+`d028f1fedcb172e45ea7001e2896938e6295fb32`. Its original hashes are preserved
+as historical evidence; the central import and audit files were subsequently
+updated for integration. The [evidence record](audits/2026-11-20-track-b-canonical-splits.json)
+separates both completed gates, their actual checkouts, source hashes,
+endpoint names, and dependency revisions.
 
 **Finite steps closed:** canonicalization now commutes with arbitrary
 parent maps, including deletion and noninjective splitting; genuine graph

@@ -50,20 +50,31 @@ column. The pivot is newly constructed, and every newly skipped gap row is
 explicitly zero. This is the ordinary-L age component of a free split. It does
 not provide the auxiliary Kpt source, full corrected B3 or labelled orbit.
 
-## Verification completed: 20 November 2026
+## Hosted integration verification: 20 November 2026
 
-The exact sources of `Kk/CanonicalAgeExtraBound.lean` and
-`Kk/PhysicalFreeSplitRestriction.lean` passed the full hosted gate in
-[PR #414](https://github.com/janhubicka/lean-kk/pull/414),
-[run 44778772393](https://github.com/janhubicka/lean-kk/actions/runs/44778772393),
-at head `a433ad84f3881da535ee3e7164ff32e3337d2c3c`: the complete
-**9,709-job build**, parser self-test, and **953 exact named transitive-axiom
-reports** all passed. Only `propext`, `Classical.choice`, and `Quot.sound`
-are permitted; no `sorryAx` or custom axiom is accepted. The proof, imports,
-and audit scripts are unchanged from that tested snapshot.
+The full hosted integration gate in [PR #414](https://github.com/janhubicka/lean-kk/pull/414),
+[run 44781646067](https://github.com/janhubicka/lean-kk/actions/runs/44781646067),
+passed for head `4a275de622617da97a132ab8b8adf17cbb989c7b`. CI actually
+checked merge `0792d8f297325eb5c80f807c2010a702789f77ac` over the newer
+main `ddf60ae5ddba9fbc846dd3072dabc44fdc829ea5`. The complete
+**9,727-job build**, parser self-test, and **955 exact named transitive-axiom
+reports** passed, allowing only `propext`, `Classical.choice`, and `Quot.sound`.
+No `sorryAx` or custom axiom is accepted; all 23 scoped Track B names occur
+in the actual successful audit log.
+
+All five new proof modules are byte-for-byte unchanged from the original
+verified head `a433ad84f3881da535ee3e7164ff32e3337d2c3c`, which remains a
+valid manuscript proof pin. Its earlier [run 44778772393](https://github.com/janhubicka/lean-kk/actions/runs/44778772393)
+(9,709 build jobs and 953 reports) is the **historical proof checkpoint**.
+The integration updated the central imports and registry, preserving all
+932 names from the newer main and adding exactly the same 23 Track B names
+(17 new endpoints and six restored protected-pivot checks). Every main
+import and report name is retained in its original order.
 
 The [dated evidence record](audits/2026-11-20-track-b-canonical-splits.json)
-lists hashes and endpoint names. This is hosted verification; the optional
-local cold build was stopped after hosted success and is not claimed as a
-completed local full gate. The theorem is an exact finite ordinary-L split
-step; the selected-pivot coding and full Kpt/orbit obligations remain open.
+preserves the original checkpoint hashes and separately records the successful
+integration, its actual CI checkout, and current source hashes. This is
+hosted verification: the optional local cold build was stopped after hosted
+success, and **no completed local full gate is claimed**. The finite scope
+above is unchanged; selected-pivot coding, full Kpt/source synchronization,
+the prescribed infinite diary, and global BRD conclusions remain open.
