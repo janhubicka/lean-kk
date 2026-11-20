@@ -1,0 +1,7 @@
+import Kk.TrackGExactBadSubsetCanonical
+
+#check @Kk.kpt_exact_factor_BadCuts_subset_canonical_noNovelty
+#print axioms Kk.kpt_exact_factor_BadCuts_subset_canonical_noNovelty
+
+#check @Kk.kpt_exact_factor_BadCuts_card_le_canonical_noNovelty
+#print axioms Kk.kpt_exact_factor_BadCuts_card_le_canonical_noNovelty
