@@ -2,6 +2,13 @@
 
 ## Status and scope
 
+**Section 6 is now Lean-verified.** [PR #422](https://github.com/janhubicka/lean-kk/pull/422)
+passed [hosted run 44911987872](https://github.com/janhubicka/lean-kk/actions/runs/44911987872)
+with the complete 9,729-job build, parser self-test, and 961 exact named
+standard-only transitive-axiom reports. The general residual-vector theorem,
+residual-age formula, and occurrence comparison in **Sections 1–5 remain
+English-only**. The detailed verification record appears below.
+
 This English proof was written before its Lean implementation on 21 November
 2026. It addresses the remaining ordinary-graph step identified after the
 canonical sort transport and free-split results: determine the **whole joint
@@ -420,14 +427,58 @@ The following are explicit checks on the proposed statement and proof.
     I1/I2/I3, corrected B3, a common labelled inverse-source orbit, or an
     infinite prescribed diary schedule.
 
-## Implementation obligations
+## Verification of Section 6: 21 November 2026
 
-First formalize Section 6: derive the missing linked budgets from the
-controlled inequalities, prove equality of the complete canonical ages, and
-instantiate the existing same-pivot finite Henson realization. Its hypotheses
-must not already assert the desired joint budget. The more general residual
-operation in Sections 1--5 is a separately justified extension and need not
-delay that controlled-coding result. The arbitrary-active-column specialization
-must use the complete prefix and the actual pivot type. A central build and
-named standard-only axiom audit are needed before assigning Lean validation
-marks. Until those run, this note is an English proof and audit record only.
+The English proof and independent adversarial audit were committed before Lean
+at [`5f34e9015dd0943a02054118b2d018fdf68dc3c2`](https://github.com/janhubicka/lean-kk/commit/5f34e9015dd0943a02054118b2d018fdf68dc3c2).
+[PR #422](https://github.com/janhubicka/lean-kk/pull/422) passed the full hosted
+[run 44911987872](https://github.com/janhubicka/lean-kk/actions/runs/44911987872),
+[job 136869546564](https://github.com/janhubicka/lean-kk/actions/runs/44911987872/job/136869546564),
+at source `9292e833366cb5f113f300b6cbbf6f10eb0864d4`.
+The actual tested merge was `b4db7c2a9be750427dc8918616d5a35f0a738069`;
+both checkouts have tree `2d730ed5e85f3c54e059c7912538c47eb6a84b5b`.
+The 9,729-job Lean build, parser self-test, and all **961 exact named
+transitive-axiom reports** passed, permitting only `propext`, `Classical.choice`,
+and `Quot.sound`. All 955 earlier names remain in their original order.
+The six added endpoints are:
+
+| Endpoint | Verified content |
+| --- | --- |
+| `Kk.integerGraphAge_controlled_support_witness` | A nonempty saturating support small enough to adjoin one sort |
+| `Kk.oldSupportCommonNeighbourPool_mutual_pivot` | Exact linked pools from the same pivot's complete bilateral type |
+| `Kk.controlledPivot_linked_budget` | All linked budgets derived from controlled cap and growth |
+| `Kk.protectedPivot_canonical_eq_of_controlled` | Complete protected-prefix canonical continuation equality |
+| `Kk.controlledCoding_next_prefix_canonical_eq` | Exact coding equality at old prefix `[0,v)` and next prefix `[0,v+1)` |
+| `Kk.henson_leftDense_realizes_controlledPivot_stage` | One finite numerical Henson stage with fixed pivot and all protected columns |
+
+The source modules are `Kk/ControlledPivotBudget.lean` and
+`Kk/PhysicalControlledCoding.lean`. The
+[evidence record](audits/2026-11-21-track-b-controlled-pivot.json) identifies the
+tested source hashes, dependencies, actual checkout, and every named report.
+The local toolchain and cache were prepared, but the optional cold dependency
+build was stopped after hosted success; **no completed local gate is claimed**.
+
+The [independent finite referee](../scripts/verify_track_b_controlled_pivot.py)
+also passes 10,591 ordinary survivor-age comparisons and 10,591 comparisons
+with repeated parents and mixed passing bits. These include 3,915 genuinely
+nonfree pivots with positive children, 220 oversized-support cases, and 2,335
+full manuscript controlled pairs. Separate counterexamples reject omission
+of the positive-support cap and replacement of joint growth by pair tests.
+The finite results are recorded in
+[their own JSON](audits/2026-11-21-track-b-controlled-pivot-finite.json).
+
+## Remaining implementation obligations
+
+Section 6 derives the linked budgets and proves the physical controlled-coding
+step. The next gap is preparation of the controlled pre-age `C ≤ P` around
+the intended pivot with the correct physical chronology and retained history.
+That preparation must preserve all active protected columns and supply the
+complete controlled age used by the new theorem; neither the algebraic
+pre-age inequality nor a deterministic selected-front prescription proves
+the full history invariant.
+
+The general residual operation in Sections 1–5 remains an English proof and
+has not been formalized here. Complete parameter-closed Kpt/auxiliary E data,
+(I1)–(I3)/corrected-(B3) transport, a common labelled inverse-source orbit,
+and the prescribed infinite diary also remain open. The verified finite
+controlled step does not certify these global conclusions.

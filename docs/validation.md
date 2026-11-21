@@ -1,3 +1,71 @@
+# Track B — controlled coding at the same nonfree pivot (21 November 2026, verified)
+
+**Latest hosted gate passed:** [PR #422](https://github.com/janhubicka/lean-kk/pull/422),
+[run 44911987872](https://github.com/janhubicka/lean-kk/actions/runs/44911987872),
+[job 136869546564](https://github.com/janhubicka/lean-kk/actions/runs/44911987872/job/136869546564).
+The source head is `9292e833366cb5f113f300b6cbbf6f10eb0864d4`.
+CI checked merge `b4db7c2a9be750427dc8918616d5a35f0a738069` over main
+`8a11fa5729d5dc86cb2a9e225214149aba648cf4`; source and tested checkout have
+the same tree `2d730ed5e85f3c54e059c7912538c47eb6a84b5b`.
+The complete **9,729-job Lean build**, parser self-test, and **961 exact named
+transitive-axiom reports** passed. Every report uses only `propext`,
+`Classical.choice`, and `Quot.sound`; no `sorryAx` or custom axiom is accepted.
+All 289 earlier imports and 955 earlier report names are preserved in order;
+two modules and six report names are added. The
+[evidence record](audits/2026-11-21-track-b-controlled-pivot.json) contains
+the source hashes, dependency pins, actual checkout, and all 961 named reports.
+
+**English proof and independent audit preceded Lean** in commit
+[`5f34e9015dd0943a02054118b2d018fdf68dc3c2`](https://github.com/janhubicka/lean-kk/commit/5f34e9015dd0943a02054118b2d018fdf68dc3c2).
+The verified application is [Section 6 of the proof note](track_b_nonfree_pivot_residual_english_audit_20261121.md#6-controlled-coding-derives-every-physical-budget).
+The general residual-vector results in Sections 1–5 of that note remain
+**English-only** and are not included in the Lean verification claim.
+
+**Finite step closed:** the controlled positive-support cap and insertion-growth
+conditions derive every linked-neighbour budget at the same actual nonfree
+pivot. For a largest admissible support, a proper saturating sub-support makes
+insertion of the pivot sort admissible; no out-of-domain age value is used.
+The complete next canonical age is the old age pulled back along the parent
+map, including noninjective maps and mixed passing bits. Every protected old
+column is retained. The chronological specialization uses precisely the old
+prefix `[0,v)` and next prefix `[0,v+1)`; the more general protected-prefix
+statement uses `[0,H)` minus the pivot as its old pool. One finite Henson
+stage realizes the resulting age with one embedding and cutoff, fixing the
+same pivot and all protected originals. The desired all-support budget is
+proved, not an extra hypothesis.
+
+| Verified endpoint | Result |
+| --- | --- |
+| `Kk.integerGraphAge_controlled_support_witness` | A saturating nonempty support with room to adjoin the pivot sort |
+| `Kk.oldSupportCommonNeighbourPool_mutual_pivot` | The exact linked pool from the pivot's complete bilateral old type |
+| `Kk.controlledPivot_linked_budget` | All linked-neighbour budgets from controlled cap and growth |
+| `Kk.protectedPivot_canonical_eq_of_controlled` | Equality of the complete canonical continuation age |
+| `Kk.controlledCoding_next_prefix_canonical_eq` | The same equality at the genuine chronological coding cut |
+| `Kk.henson_leftDense_realizes_controlledPivot_stage` | A common finite numerical Henson stage retaining all protected columns |
+
+The [independent finite referee](../scripts/verify_track_b_controlled_pivot.py)
+passes 10,591 survivor-age equalities and 10,591 repeated-parent equalities,
+including 3,915 configurations with a nonfree pivot and positive children and
+220 oversized-support cases. It also checks counterexamples to omitting the
+positive-support cap or replacing joint growth by pair tests. These finite
+checks are recorded [separately](audits/2026-11-21-track-b-controlled-pivot-finite.json).
+
+**Next gap:** construct the controlled pre-age `C ≤ P` with the correct
+physical chronology and retained history, and prepare it around the intended
+pivot while preserving all active protected columns. The newly proved result
+then performs the coding step; it does not establish that preparation or the
+full scheduling invariant. Complete parameter-closed Kpt/auxiliary E records,
+(I1)–(I3)/corrected-(B3) transport, the common labelled inverse-source orbit,
+and the prescribed infinite diary remain open. The count of checked endpoints
+does not imply a global BRD conclusion or completion percentage.
+
+The local pinned toolchain and dependency cache were prepared; the optional
+cold dependency build was stopped after hosted success. **No completed local
+gate is claimed.** Entries below retain their dated historical status; their
+older pending counts and next-step descriptions are superseded by this entry.
+
+---
+
 # Track B — canonical sort transport and constructed free splits (20 November 2026, verified)
 
 **Latest hosted integration gate passed:** [PR #414](https://github.com/janhubicka/lean-kk/pull/414),
