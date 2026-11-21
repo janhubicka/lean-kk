@@ -373,6 +373,8 @@ import Kk.TrackCOddTerminalReflection
 import Kk.TrackCUnifiedSafeRealOdd
 -- Track C: explicit full numerical partialTypeAt old-prefix witness from genuine old source seed.
 import Kk.TrackCRawOriginalOldSocle
+-- Track C: literal old seed above cut automatically witnesses complete Kpt old prefix.
+import Kk.TrackCSeedPrefixOldSocle
 
 -- Track D: actual finite-index no-I1/no-I2 and one physical boring lower-real cut.
 -- Marked full-B3 and represented complete source remain explicit assumptions.
