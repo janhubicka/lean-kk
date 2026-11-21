@@ -367,6 +367,8 @@ import Kk.TrackCSameHeightRealZeroTransport
 import Kk.TrackCChronologicalOddSourceQuiet
 -- Track C: actual finite final original free-end obstruction support for safe odd cuts.
 import Kk.TrackCOddFinalFreeEndSupport
+-- Track C: new-to-old full I1 terminal reflection at safe odd cuts without old prefix matches.
+import Kk.TrackCOddTerminalReflection
 -- Track C: one maximal full OLD Kpt prefix over real-zero and safe odd cuts.
 import Kk.TrackCUnifiedSafeRealOdd
 
