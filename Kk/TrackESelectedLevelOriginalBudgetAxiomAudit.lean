@@ -1,0 +1,15 @@
+import Kk.TrackESelectedLevelOriginalBudget
+
+#check @Kk.kpt_old_actual_selected_levels
+
+#check @Kk.mem_kpt_old_actual_selected_levels_iff
+#print axioms Kk.mem_kpt_old_actual_selected_levels_iff
+
+#check @Kk.finiteNumericH_old_run_final_stage_originals_card_le_root_add_selected
+#print axioms Kk.finiteNumericH_old_run_final_stage_originals_card_le_root_add_selected
+
+#check @Kk.kpt_originals_needing_max_old_socle_test_card_le_root_add_selected
+#print axioms Kk.kpt_originals_needing_max_old_socle_test_card_le_root_add_selected
+
+#check @Kk.kpt_old_actual_selected_levels_card_le_top_add_one
+#print axioms Kk.kpt_old_actual_selected_levels_card_le_top_add_one
