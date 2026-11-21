@@ -371,6 +371,8 @@ import Kk.TrackCOddFinalFreeEndSupport
 import Kk.TrackCOddTerminalReflection
 -- Track C: one maximal full OLD Kpt prefix over real-zero and safe odd cuts.
 import Kk.TrackCUnifiedSafeRealOdd
+-- Track C: explicit full numerical partialTypeAt old-prefix witness from genuine old source seed.
+import Kk.TrackCRawOriginalOldSocle
 
 -- Track D: actual finite-index no-I1/no-I2 and one physical boring lower-real cut.
 -- Marked full-B3 and represented complete source remain explicit assumptions.
