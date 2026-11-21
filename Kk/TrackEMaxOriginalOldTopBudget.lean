@@ -207,7 +207,8 @@ theorem finiteNumericH_old_run_final_stage_originals_card_le_root_add_top
           (Finset.mem_filter.mp hv).2
         have hLe : v.val ≤ top :=
           (R.I_mem_bounds 0 (Nat.zero_le top) v.val hSelected).2
-        exact Finset.mem_range.mpr (by omega)
+        change v.val ∈ Finset.range (top+1)
+        exact Finset.mem_range.mpr (Nat.lt_succ_of_le hLe)
       · intro v _hv w _hw heq
         exact Fin.ext heq
     simpa only [Finset.card_range] using hTBound'
