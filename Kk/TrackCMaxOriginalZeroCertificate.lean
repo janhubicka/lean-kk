@@ -85,7 +85,7 @@ theorem finiteNumericH_constructed_bare_root_real_zero_of_max_socle
       ∃ W : Finset (Fin M),
         Y ⊆ ambientPrefixPool family
           (finiteNumericH L k M) hAvoidL (W : Set (Fin M)) ∧
-        (∀ (v : Fin M),
+        ((∀ (v : Fin M),
           ∀ (hNonempty :
             (kpt_actual_original_socle_allowed_cuts
               family L k M hAvoidL W X Y oldTop Rold
@@ -113,7 +113,7 @@ theorem finiteNumericH_constructed_bare_root_real_zero_of_max_socle
               (Rold.I (hPosition k idx g+1)) X)
             (SMTree.Envelope.closure (admissibleKptSTree family)
               (Rold.I (hPosition k idx g+1)) Y)
-            (hPosition k idx g) := by
+            (hPosition k idx g)) := by
   classical
   let Y : Set (AdmissibleKptNode family) :=
     finiteNumericH_bareTopRootSeeds
