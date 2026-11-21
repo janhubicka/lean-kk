@@ -2,13 +2,59 @@
 
 ## Status and scope
 
-English proof written before Lean on 21 November 2026. Three independent
-reviews accepted the finite normalization argument; two separately checked
+English proof written before Lean on 21 November 2026 and committed at
+[`69dafd21dfbeb2923d204a106d860e2c2910657a`](https://github.com/janhubicka/lean-kk/commit/69dafd21dfbeb2923d204a106d860e2c2910657a).
+Three independent reviews accepted the finite normalization argument; two separately checked
 the late-pivot neighbourhood and chronology argument before implementation.
-This note addresses finite ordinary
-graph ages over the entire protected original prefix. It does not assert a
-prescribed saturated-cover diary, full parameter-closed Kpt history, corrected
-(B3), a common labelled inverse source, or an infinite construction.
+This note addresses finite ordinary graph ages over the entire protected
+original prefix.
+
+**Verification status: complete hosted gate passed.**
+[Run 44920690130](https://github.com/janhubicka/lean-kk/actions/runs/44920690130),
+[job 136895846770](https://github.com/janhubicka/lean-kk/actions/runs/44920690130/job/136895846770),
+passed the 9,738-job Lean build, parser self-test, and **990 exact named
+transitive-axiom reports**, with seven axiom-free reports and all other axioms
+drawn from `propext`, `Classical.choice`, and `Quot.sound`. The immutable source
+is `69983310fc1acd65a31c9d99cbc6f56ffb796532`; the actual tested merge is
+`147bd10c6372839c77bc0df52ffeb0583dea3b90`. Their trees differ because of newer
+main additions, but all Track B proof files and pinned dependencies are
+identical. The source's 989 report names remain in order; one independent main
+endpoint gives the tested total of 990. The
+[evidence record](audits/2026-11-21-track-b-controlled-preage.json) records the
+exact trees, changed integration files, dependencies and all reports.
+
+The three modules
+`FiniteTargetAgeNormalization`, `LateControlledPivot`, and
+`FiniteControlledNormalization` register nine endpoints: actual support-block
+normalization, a complete-neighborhood certificate, a later actual pivot,
+and a shared finite coding stage. The companion
+[controlled-pre-age/prospective construction](track_b_controlled_preage_english_audit_20261121.md)
+adds 19 endpoints and discharges the target construction and domination
+premises for its computed prospective age. The combined addition therefore
+has **28 new endpoints** beyond the previous 961-report checkpoint. The pure
+constructor module passed a direct local check; no completed local
+full-project gate is claimed.
+
+The strongest final interfaces no longer require a supplied target `C`,
+prepared-age equality, desired `C ≤ P`, pointed budget, or numerical pivot.
+They compute the prospective survivor age, derive its controlled pre-age,
+construct raw equality, and only then select the actual coding original.
+The [independent finite referee](../scripts/verify_track_b_controlled_preage.py)
+separately reports 4,330 actual graph normalizations and 12,744 complete raw
+support equalities in its stated finite domains, including a specified
+nonzero-edge, zero-column gap pattern. This is finite regression evidence,
+not a replacement for the Lean gate.
+
+No prescribed saturated-cover diary, full parameter-closed Kpt/auxiliary E
+history, (I1)–(I3)/corrected-(B3) transport, common labelled inverse-source orbit,
+or infinite construction is asserted. The earlier general residual-vector
+operation remains English-only. The finite normalization may create extra
+selected-front events; preserving the required history through those events
+is still an open task.
+
+The physical theorems explicitly assume the Boolean `OnePointLeftDense`
+property. The adapter identifying that hypothesis with the manuscript's
+abstract enumeration/density formulation is not established here.
 
 The fixed Boolean graph E is a normalized K_ell-free Henson graph with the
 explicit OnePointLeftDense property already used by the existing physical

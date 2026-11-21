@@ -1,3 +1,138 @@
+# Track B — constructed prospective pre-age and finite coding preparation (21 November 2026, verified)
+
+**The complete hosted gate passed:** [PR #422](https://github.com/janhubicka/lean-kk/pull/422),
+[run 44920690130](https://github.com/janhubicka/lean-kk/actions/runs/44920690130),
+[job 136895846770](https://github.com/janhubicka/lean-kk/actions/runs/44920690130/job/136895846770).
+The **9,738-job Lean build**, parser self-test, and **990 exact named
+transitive-axiom reports** passed. Seven reports are axiom-free; every axiom
+appearing in the others is one of `propext`, `Classical.choice`, and `Quot.sound`.
+No `sorryAx` or custom axiom is accepted.
+
+The immutable Track B source is
+[`69983310fc1acd65a31c9d99cbc6f56ffb796532`](https://github.com/janhubicka/lean-kk/commit/69983310fc1acd65a31c9d99cbc6f56ffb796532),
+with tree `9214dcaa189461e905a0fb8bddb214aea7ff1532`. CI actually tested merge
+`147bd10c6372839c77bc0df52ffeb0583dea3b90`, tree
+`b66b305216668da22c8e4d077ce8aaec2c05f2c6`, over main
+`2baa707e31b1c5b483acdcb2891c3814446a48e6`. **These source and tested trees
+differ.** Newer main contributes 22 independent files and changes only
+`Kk.lean` and `scripts/check_axioms.lean` among existing files. Every Track B
+proof file and pinned dependency is unchanged. The source registry has 989
+names: the prior 961 plus **28 new endpoints in six modules**. All 989 occur in
+the tested registry in the same order; its one additional main endpoint is
+`Kk.finiteNumericH_constructed_bare_root_real_zero_of_max_socle`.
+The [evidence record](audits/2026-11-21-track-b-controlled-preage.json) records
+the complete source/tested comparison, file hashes, dependency pins, and all
+990 reports. The exact 28 new names are also listed in
+[`scripts/check_track_b_controlled_preage.lean`](../scripts/check_track_b_controlled_preage.lean).
+
+**English proof and independent adversarial review came first.** The finite
+normalization/late-pivot proof was committed at
+[`69dafd21dfbeb2923d204a106d860e2c2910657a`](https://github.com/janhubicka/lean-kk/commit/69dafd21dfbeb2923d204a106d860e2c2910657a),
+the controlled-pre-age constructor and prospective event at
+[`69dafd21dfbeb2923d204a106d860e2c2910657a`](https://github.com/janhubicka/lean-kk/commit/69dafd21dfbeb2923d204a106d860e2c2910657a),
+and the stronger direct prospective raw-capacity proof at
+[`528c4f14f06071f087e550db323c5ce88cb3b85b`](https://github.com/janhubicka/lean-kk/commit/528c4f14f06071f087e550db323c5ce88cb3b85b).
+See the [constructor/prospective audit](track_b_controlled_preage_english_audit_20261121.md)
+and [finite normalization/late-pivot audit](track_b_finite_normalization_late_pivot_english_audit_20261121.md).
+
+## Verified finite construction
+
+The new final interfaces compute the survivor age `R` from the literal complete
+old column table and an abstract pivot event. For survivor front `E = D \ {j}`,
+positive passing set `X ⊆ E`, and `Rbar(empty) = 0`, they construct
+
+    C(T) = R(T)                                      if j notin T,
+    C(T) = max(Rbar(T \ {j}),
+               1 + Rbar((T \ {j}) intersect X))      if j in T.
+
+Here `R` is represented on the ambient sort set `D` and restricted to survivor
+supports in `E`. Its parent pullback is the literal reduced-sort prospective
+post-age: first use `prospectivePivotRaw_eq_abstract_extension` to identify the
+complete physical column table, then `finiteOldColumnCanonical_reindex` for
+that table. This is the established physical reindexing theorem, not a claim
+that canonicalization commutes with deletion for arbitrary raw bounds.
+
+Explicit integer witnesses establish that `C` is a genuine age. The code proves
+its pivot singleton, survivor restriction, positive cap and growth, pair-based
+passing-set recovery, final controlled maximum identity, uniqueness, and exact
+minimality criterion. For the actual prospective canonical `R`, positivity on
+every computed survivor support derives consistency and the all-support cap.
+The complete prospective raw formula then derives `C ≤ B_old`, and canonical
+maximality gives `C ≤ P`.
+The old pivot singleton's positivity also certifies legality of the literal
+abstract one-point graph extension. No desired pointed budget is assumed.
+
+The same lower-bound conclusion applies to a given actual chronological
+ordinary-graph event whose pivot has the complete bilateral old column:
+`protectedPivotRaw_eq_actual` and `oldSupportCommonNeighbourPool_mutual_pivot`
+identify its next-prefix raw age with the prospective formula. This composition
+uses the same positivity hypotheses on every survivor support and the old pivot
+singleton; it does not require that the pivot was produced by the later
+construction. It is distinct from the still-unformalized general residual-vector operation.
+
+Finite isolated support cliques next produce an actual cutoff `F` at which the
+**complete raw age is exactly `C`**, preserving every original column below the
+initial cutoff `b`. The numerical pivot `v` is chosen only afterwards, with
+`F ≤ v` and above any requested delay. Zero columns on intervening originals
+preserve the chronological pre-age. Coding this same `v` gives exactly
+`R(pi[U])` on every new support, for arbitrary parent maps, including repeated
+parents and mixed passing bits. A further endpoint supplies one complete finite
+numerical Henson stage, with a shared embedding and cutoff that fix the entire
+prefix through `v`.
+
+The two strongest public endpoints are
+`Kk.henson_leftDense_normalizes_prospective_coding` and
+`Kk.henson_leftDense_prospective_controlled_stage`. They take **no target `C`,
+prepared-age equality, `C ≤ P`, pointed budget, or numerical pivot as input**.
+They require the existing Henson freeness/density hypotheses, the complete old
+table, positivity on every computed survivor support and at the old pivot
+singleton, and the stated parent/passing-set conditions. All already committed selected,
+reserved, and parameter originals must lie below `b`; the separate delay bound
+does not extend that protected domain. The age statement allows an empty new
+front; the numerical-stage API requires a nonempty new sort set.
+
+| New module | Registered endpoints | Verified scope |
+| --- | ---: | --- |
+| `ControlledPreAge` | 11 | Genuine constructor, canonical relative consistency, all controlled identities, uniqueness and minimality |
+| `ProspectiveControlledPreAge` | 6 | Literal abstract-pivot raw formula, legal extension, derived cap, `C ≤ B_old` and `C ≤ P` |
+| `FiniteTargetAgeNormalization` | 3 | One support block, finite induction, exact all-support raw/canonical target realization |
+| `LateControlledPivot` | 4 | Complete-neighborhood certificate, a later actual pivot, exact coding and common finite stage |
+| `FiniteControlledNormalization` | 2 | Actual preparation of a genuine lower controlled target followed by coding |
+| `PhysicalProspectiveControlledCoding` | 2 | The full construction from the computed prospective `R` and `C`, including one common stage |
+
+**Separate verification evidence:** `ControlledPreAge.lean` passed its direct
+local Lean check, including the genuine-age constructor and canonical positivity
+helper. This is not a completed local full-project gate. The independent
+[finite referee](../scripts/verify_track_b_controlled_preage.py) reports PASS for
+687 eligible constructors, 4,218 minimality-iff comparisons, 29,959 literal
+prospective raw identities/restrictions, and 4,330 actual graph normalizations.
+Its [finite evidence](audits/2026-11-21-track-b-controlled-preage-finite.json)
+states the bounded domains, rejected strengthenings, and noisy zero-column-gap
+pattern; it is not Lean kernel evidence or an exhaustive test of every ambient
+gap graph.
+
+**Remaining scope:** finite preparation need not follow a prescribed saturated
+cover order and can create extra selected-front events. The open task is to
+derive and preserve the required chronological history through those events,
+including full parameter-closed Kpt and auxiliary E records, (I1)–(I3) and
+corrected-(B3) transport, common labelled inverse-source orbits, and the
+prescribed infinite resolved diary. The general residual-vector theorem,
+residual-age operation, and occurrence comparison in Sections 1–5 of the
+[earlier residual note](track_b_nonfree_pivot_residual_english_audit_20261121.md)
+remain **English-only**; this construction uses the separately verified
+controlled-coding step. Identification of the manuscript's abstract enumeration
+and density formulation with the explicit Boolean `OnePointLeftDense` input
+also remains a separate adapter. The current physical theorems state that
+Boolean hypothesis explicitly. The endpoint count makes no global BRD or
+completion-percentage claim.
+
+The entries below preserve their historical evidence and dated scope. Their
+older descriptions of controlled-pre-age construction as the next task refer to
+those checkpoints; the new verified finite construction and its exact tested
+scope are recorded above. No completed local full-project gate is claimed.
+
+---
+
 # Track B — controlled coding at the same nonfree pivot (21 November 2026, verified)
 
 **Latest hosted gate passed:** [PR #422](https://github.com/janhubicka/lean-kk/pull/422),

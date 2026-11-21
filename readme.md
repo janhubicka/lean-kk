@@ -10,6 +10,57 @@ The counterexample modules (`GraphAgeShadow`, `K4AuxiliaryShadow`, `UniformAuxil
 
 See [the current status and dated evidence](docs/validation.md) for the exact theorem interfaces, counterexamples, open obligations, and CI run links.
 
+**21 November Track B continuation — verified:** [PR #422](https://github.com/janhubicka/lean-kk/pull/422)
+passed [hosted run 44920690130](https://github.com/janhubicka/lean-kk/actions/runs/44920690130):
+**9,738 Lean build jobs**, parser self-test, and **990 exact named axiom reports**,
+including seven axiom-free reports. Every remaining axiom is `propext`,
+`Classical.choice`, or `Quot.sound`. The immutable source
+`69983310fc1acd65a31c9d99cbc6f56ffb796532` adds **28 endpoints in six modules**,
+retaining all 961 earlier names for a source total of 989. The tested merge
+`147bd10c6372839c77bc0df52ffeb0583dea3b90` also includes one independent new
+main-branch endpoint, giving the verified 990. Source and tested trees differ;
+all Track B proof files and pinned dependencies are unchanged, and every
+source report name is retained in order. The
+[evidence record](docs/audits/2026-11-21-track-b-controlled-preage.json)
+identifies the exact trees, main additions, source hashes and every report.
+
+The new finite construction computes the prospective survivor age from the
+complete old columns, explicitly constructs its genuine controlled pre-age
+`C`, and derives `C ≤ B_old` and `C ≤ P`. Actual isolated support cliques then
+make the complete raw age equal to `C` while retaining every old column.
+Only afterwards is a numerical pivot selected; its chronological coding step
+has exactly the computed survivor age pulled back along the parent map, even
+with repeated parents and mixed passing bits. One further endpoint supplies a
+common finite numerical Henson stage fixing the prefix through that same pivot.
+The final interfaces assume no prepared-age equality, target `C ≤ P`, pointed
+budget, or previously chosen numerical pivot.
+
+The ambient-domain `R` restricts to the literal reduced-sort prospective age
+through the existing complete-column canonical reindexing theorem; no
+unrestricted canonicalization/deletion identity is assumed.
+
+The [controlled-pre-age/prospective proof](docs/track_b_controlled_preage_english_audit_20261121.md)
+and [finite-normalization/late-pivot proof](docs/track_b_finite_normalization_late_pivot_english_audit_20261121.md)
+were written and independently audited before their Lean implementations.
+The pure constructor module also passed its direct local check; no completed
+local full-project gate is claimed. The independent
+[finite referee](scripts/verify_track_b_controlled_preage.py) separately checks
+687 constructors, 4,218 minimality comparisons, 29,959 prospective events and
+4,330 actual normalizations in its recorded finite domains.
+
+**The remaining mathematical gap concerns prescribed history:** these finite
+support blocks need not follow the required saturated-cover order or preserve
+the full event records. Parameter-closed Kpt/auxiliary E histories,
+(I1)–(I3)/corrected-(B3) transport, common labelled inverse-source orbits, and
+the prescribed infinite resolved diary remain open. The earlier general
+residual operation in Sections 1–5 of the residual audit remains English-only.
+The adapter from the manuscript's abstract enumeration/density formulation to
+the explicit Boolean `OnePointLeftDense` hypothesis also remains separate.
+See [the current validation entry](docs/validation.md) for the six-module scope
+and [the exact 28 endpoint names](scripts/check_track_b_controlled_preage.lean).
+The completed checkpoints below retain their historical verification and
+then-current next-task descriptions.
+
 **21 November Track B verification:** [PR #422](https://github.com/janhubicka/lean-kk/pull/422)
 passed the [complete hosted gate](https://github.com/janhubicka/lean-kk/actions/runs/44911987872):
 **9,729 Lean build jobs**, parser self-test, and **961 exact named transitive-axiom

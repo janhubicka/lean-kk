@@ -2,11 +2,70 @@
 
 ## Status and exact scope
 
-This English argument and adversarial audit precede any new Lean implementation.
-They concern the manuscript's `Lem:Kk_Controlled_PreAge` and the finite ordinary
-graph-age preparation of a controlled coding event. They do not prove a
-prescribed chronological cover schedule, a full parameter-closed `Kpt` source
-comparison, corrected (B3), or the infinite resolved-copy construction.
+This English argument and independent adversarial audit were committed before
+the corresponding Lean implementation at
+[`69dafd21dfbeb2923d204a106d860e2c2910657a`](https://github.com/janhubicka/lean-kk/commit/69dafd21dfbeb2923d204a106d860e2c2910657a).
+The stronger direct raw-capacity argument in Section 5 was also committed first,
+at [`528c4f14f06071f087e550db323c5ce88cb3b85b`](https://github.com/janhubicka/lean-kk/commit/528c4f14f06071f087e550db323c5ce88cb3b85b).
+They concern the manuscript's `Lem:Kk_Controlled_PreAge` and finite ordinary
+graph-age preparation of a controlled coding event.
+
+**Verification status: complete hosted gate passed.**
+[Run 44920690130](https://github.com/janhubicka/lean-kk/actions/runs/44920690130),
+[job 136895846770](https://github.com/janhubicka/lean-kk/actions/runs/44920690130/job/136895846770),
+checked source `69983310fc1acd65a31c9d99cbc6f56ffb796532` through the actual merge
+`147bd10c6372839c77bc0df52ffeb0583dea3b90`. The 9,738-job build, parser
+self-test and **990 exact named transitive-axiom reports** passed, permitting
+only `propext`, `Classical.choice`, and `Quot.sound`; seven reports are
+axiom-free. The source registry has 989 names, and the tested merge adds one
+independent main endpoint. All source names remain in order, and all Track B
+proof files and pinned dependencies are identical. Source and tested trees
+are different; their exact comparison and all reports appear in the
+[evidence record](audits/2026-11-21-track-b-controlled-preage.json).
+
+`ControlledPreAge` contains 11 registered endpoints for the genuine constructor, controlled
+identities, uniqueness, minimality, and canonical relative consistency;
+the module also passed its direct local Lean check. `ProspectiveControlledPreAge`
+adds six endpoints deriving the literal abstract-event formula, legality,
+cap and lower bound. `PhysicalProspectiveControlledCoding` adds two final
+interfaces combining the computed `R` and `C` with actual finite preparation
+and coding at a later numerical pivot. Together with the nine normalization
+and late-pivot endpoints described in the companion note, these are **28 new
+endpoints** beyond the previous 961-report checkpoint. No completed local
+full-project gate is claimed.
+
+The final interfaces take no desired `C ≤ P`, prepared-age equality, pointed
+budget, or previously chosen numerical pivot as inputs. The general
+residual-vector operation in Sections 1–5 of the earlier residual note remains
+English-only; the present formal route uses the direct raw-capacity argument
+and the verified controlled-coding theorem. The exact residual-vector
+calculation in Section 3 here is an English explanation, not a separately
+registered general residual theorem.
+
+The same-domain representation of `R` causes no hidden deletion assumption.
+`prospectivePivotRaw_eq_abstract_extension` identifies its raw table with the
+literal abstract pivot's complete columns. The existing
+`finiteOldColumnCanonical_reindex` theorem then identifies `R(pi[U])` with
+the canonical age of those columns on the reduced survivor sorts. This uses
+physical complete-column reindexing and its derived support monotonicity;
+it does not assert deletion locality for arbitrary raw functions.
+
+For a given actual chronological ordinary-graph coding event with the complete
+bilateral old pivot column, `protectedPivotRaw_eq_actual` and
+`oldSupportCommonNeighbourPool_mutual_pivot` rewrite its next-prefix raw age
+to the same prospective formula. Under the same positivity hypotheses on every
+survivor support and the old pivot singleton, the lower bound `C ≤ P` therefore
+also applies to such a given event, independently of how that pivot was selected.
+This is a composition of the checked raw identities and the prospective
+theorem, not a separate general residual-vector theorem.
+
+These finite results do not prove a prescribed chronological saturated-cover
+schedule, full parameter-closed `Kpt`/auxiliary E history, (I1)–(I3) or corrected
+(B3) transport, a common labelled inverse-source orbit, or the infinite
+resolved-copy construction. Identification of the manuscript's abstract
+enumeration/density formulation with the explicit Boolean `OnePointLeftDense`
+input also remains a separate adapter. See [the current validation entry](validation.md)
+for the gate and finite-regression scope.
 
 The key distinction is between an **abstract finite pivot extension**, used to
 calculate a prospective post-age, and the **later numerical original**, chosen
@@ -206,8 +265,8 @@ For survivor sort `x in E`, preserve its full column over `A` and assign its
 bit at `nu` to be `1` exactly when `x in X`.
 
 Let `Bplus` be the raw common-neighbour bound over `A union {nu}` on the
-survivor sorts, and **define** `R=G_Bplus`. Assume these survivor sorts are
-positive, so this is a genuine graph age. This is the normal “all listed
+survivor sorts, and **define** `R=G_Bplus`. Assume positivity on every
+computed survivor support, so this is a genuine graph age. This is the normal “all listed
 sorts survive” qualification, not an assumption that `C<=P` or a desired
 post-age is achieved.
 
@@ -293,8 +352,8 @@ The raw formula follows from the exact clique-capacity insertion identity:
 the new common-neighbour pool either omits the pivot, or contains it and
 has capacity equal to the maximum of the old pool capacity and one plus
 the old pool capacity linked to its full type. One may take `R` to be the
-prospective canonical age restricted to `E`, with positivity of its listed
-survivor sorts checked separately. The result derives `C<=B` and then
+prospective canonical age restricted to `E`, with positivity on every
+computed survivor support checked separately. The result derives `C<=B` and then
 `C<=G_B` by the greatest-age property; it does not assume a pointed-budget
 criterion or reverse the general inequality `G_B<=B`.
 
@@ -426,20 +485,36 @@ parameter levels are uninteresting. These distinctions must remain explicit.
     corrected-(B3) source equivalence, or construct a common labelled
     inverse source. No global validation colour follows from this note.
 
-## 8. Concrete formalization targets
+## 8. Implemented formalization and remaining scope
 
-The immediate pure-age module can prove the constructor, its singleton,
-survivor restriction and positive growth identities, recovery of the passing
-set for `ell>=3`, the final controlled identity, uniqueness, and the exact
-lower-bound criterion in Section 4. These are unconditional mathematical
-consequences of the genuine relative age and the stated positive cap.
+`Kk/ControlledPreAge.lean` implements the genuine constructor, pivot singleton,
+survivor restriction, positive cap and growth, passing-set recovery on
+admissible pairs, final controlled maximum identity, uniqueness, and the exact
+lower-bound criterion of Section 4. Its canonical-positivity helper constructs
+the relative consistency witnesses, so a computed canonical post-age does not
+need a separate assumed age-consistency hypothesis.
 
-The strongest useful prospective follow-up defines the post-age from the
-complete finite abstract pivot table and proves its positive cap and
-`C(R,X)<=P`. This should not be weakened to a theorem which assumes the
-pointed inequalities it is meant to derive. Its proof may use either the
-finite graph gluing characterization or the general residual-vector theorem.
+`Kk/ProspectiveControlledPreAge.lean` defines the literal prospective raw
+formula, proves its equality to the abstract one-point graph's raw bound,
+derives legality from the old positive pivot singleton, and proves the cap
+and `C(R,X) <= B_old`, hence `C(R,X) <= P`. The final prospective theorem
+defines `R` by canonicalization and assumes only positivity on every computed
+survivor support and at the old pivot singleton. It uses the direct capacity
+proof in Section 5, without assuming the desired pointed inequalities or
+formalizing the general residual-vector operation.
 
-The independent direct-normalization/late-pivot module can then consume this
-actual target `C`. Its finite conclusion and any later proof of a prescribed
-cover schedule must remain separate.
+`Kk/PhysicalProspectiveControlledCoding.lean` then consumes this computed target,
+constructs the complete actual raw equality through finitely many isolated
+support cliques, and selects the actual pivot afterwards. Its post-age is
+exactly `R(pi[U])`; a second endpoint supplies one complete finite numerical
+Henson stage fixing the entire prefix through the same pivot. Arbitrary parent
+maps are allowed, provided every parent is a survivor and every positive
+child has its parent in `X`. All already committed originals must be in the
+initial protected prefix. These modules passed the complete hosted gate
+recorded above; the exact new endpoint list is in
+[`scripts/check_track_b_controlled_preage.lean`](../scripts/check_track_b_controlled_preage.lean).
+
+Their finite conclusion does not settle a prescribed saturated-cover order or
+the full dependent chronological history. The remaining Kpt/auxiliary E,
+(I1)–(I3)/corrected-(B3), common-orbit and infinite-diary obligations remain
+separate.

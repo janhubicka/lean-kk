@@ -9,6 +9,24 @@ standard-only transitive-axiom reports. The general residual-vector theorem,
 residual-age formula, and occurrence comparison in **Sections 1–5 remain
 English-only**. The detailed verification record appears below.
 
+**Subsequent finite preparation is also Lean-verified.** The
+[controlled-pre-age/prospective audit](track_b_controlled_preage_english_audit_20261121.md)
+and [normalization/late-pivot audit](track_b_finite_normalization_late_pivot_english_audit_20261121.md)
+have six modules with 28 new registered endpoints. Source
+`69983310fc1acd65a31c9d99cbc6f56ffb796532` passed
+[run 44920690130](https://github.com/janhubicka/lean-kk/actions/runs/44920690130):
+9,738 build jobs, parser self-test, and **990 exact standard-only reports**,
+seven of them axiom-free. The source registry has 989 names; the actual tested
+merge adds one independent main endpoint while preserving all source names in
+order and leaving every Track B proof file and pinned dependency unchanged.
+The distinct source/tested trees and all reports are recorded in the
+[new evidence record](audits/2026-11-21-track-b-controlled-preage.json).
+These finite modules compute `R`, construct `C`, derive
+`C ≤ B_old` and `C ≤ P`, normalize the actual raw age to `C`, and then choose
+and code a later numerical pivot while retaining every initial protected
+column. This does not promote the general residual operation in Sections 1–5
+to Lean verification.
+
 This English proof was written before its Lean implementation on 21 November
 2026. It addresses the remaining ordinary-graph step identified after the
 canonical sort transport and free-split results: determine the **whole joint
@@ -23,10 +41,11 @@ existing sorts do not include that type, one additional reference sort records
 it. The full auxiliary E relation, parameter-closed Kpt source, event records,
 corrected B3, and the prescribed infinite diary are separate obligations.
 
-**The immediate formalization target is Section 6:** the manuscript's
-controlled-coding inequalities themselves imply all actual pivot budgets,
-and hence preserve the complete canonical survivor age. Its proof is direct
-and does not depend on formalizing the more general residual operation first.
+**The original formalization target was Section 6, now verified:** the
+manuscript's controlled-coding inequalities themselves imply all actual pivot
+budgets, and hence preserve the complete canonical survivor age. Its proof is
+direct and does not depend on formalizing the more general residual operation
+first. The later preparation modules use this verified controlled step.
 
 ## 1. Physical data and residual vectors
 
@@ -470,15 +489,26 @@ The finite results are recorded in
 ## Remaining implementation obligations
 
 Section 6 derives the linked budgets and proves the physical controlled-coding
-step. The next gap is preparation of the controlled pre-age `C ≤ P` around
-the intended pivot with the correct physical chronology and retained history.
-That preparation must preserve all active protected columns and supply the
-complete controlled age used by the new theorem; neither the algebraic
-pre-age inequality nor a deterministic selected-front prescription proves
-the full history invariant.
+step. The subsequent finite preparation is now verified in the separate
+constructor/prospective and normalization/late-pivot modules, with the full
+hosted gate recorded above. Its strongest interfaces derive the target
+from a literal prospective event, construct actual raw equality, and choose
+the numerical pivot only after preparation. They assume neither a prepared
+pre-age equality nor the desired `C ≤ P`, and they preserve all columns of
+the initial protected prefix.
+
+The remaining chronological obligation is a **prescribed saturated-cover
+schedule and its full history invariant**. Direct support blocks may cause
+larger canonical drops or extra selected-front events; their correct final
+ordinary age does not classify those intermediate cuts or prove the required
+dependent event records. An already selected numerical pivot is not delayed
+or replaced by the late-pivot construction: that construction applies to the
+next uncommitted original after all earlier protected originals.
 
 The general residual operation in Sections 1–5 remains an English proof and
 has not been formalized here. Complete parameter-closed Kpt/auxiliary E data,
 (I1)–(I3)/corrected-(B3) transport, a common labelled inverse-source orbit,
-and the prescribed infinite diary also remain open. The verified finite
-controlled step does not certify these global conclusions.
+and the prescribed infinite diary also remain open. The adapter from the
+manuscript's abstract enumeration/density formulation to the explicit Boolean
+`OnePointLeftDense` hypothesis is separate too. Neither the verified controlled
+step nor the finite preparation certifies these global conclusions.
