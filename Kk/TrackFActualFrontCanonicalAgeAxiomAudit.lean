@@ -1,0 +1,6 @@
+import Kk.TrackFActualFrontCanonicalAge
+
+#check @Kk.trackFActualFront_raw_positive
+#print axioms Kk.trackFActualFront_raw_positive
+#check @Kk.trackFActualFront_canonical_is_integer_graph_age
+#print axioms Kk.trackFActualFront_canonical_is_integer_graph_age
