@@ -1,0 +1,1387 @@
+{
+  "actual_all_support_normalization": {
+    "counts": {
+      "actual_clique_blocks": 9938,
+      "actual_graph_normalizations": 4330,
+      "candidate_genuine_targets": 760,
+      "complete_old_column_tables": 135,
+      "complete_raw_support_equalities": 12744,
+      "labelled_old_graphs_enumerated": 36,
+      "legal_old_graphs": 33,
+      "lower_target_configurations": 407,
+      "nonzero_edge_zero_column_gaps": 4969,
+      "support_orders": 2165,
+      "zero_size_blocks_skipped": 2806
+    },
+    "exhaustive_domain": {
+      "active_sorts": [
+        0,
+        1,
+        2
+      ],
+      "columns": "all Boolean columns on the complete old graph",
+      "ell": [
+        2,
+        3,
+        4
+      ],
+      "gap_limitation": "the specified noisy pattern is tested, not every possible ambient gap graph",
+      "gap_variants": [
+        "no gaps",
+        "one zero-column gap adjacent to the entire immediately preceding nonempty block"
+      ],
+      "graphs": "all labelled simple old graphs filtered by K_ell-freeness",
+      "maximum_actual_graph_vertices": 11,
+      "old_originals": [
+        0,
+        1,
+        2
+      ],
+      "support_orders": "every permutation of all admissible nonempty supports",
+      "targets": "every genuine age below the exact old canonical age"
+    },
+    "per_domain": [
+      {
+        "active_sorts": 0,
+        "counts": {
+          "actual_graph_normalizations": 2,
+          "candidate_genuine_targets": 1,
+          "complete_old_column_tables": 1,
+          "complete_raw_support_equalities": 0,
+          "labelled_old_graphs_enumerated": 1,
+          "legal_old_graphs": 1,
+          "lower_target_configurations": 1,
+          "support_orders": 1
+        },
+        "ell": 2,
+        "old_originals": 0
+      },
+      {
+        "active_sorts": 1,
+        "counts": {
+          "actual_graph_normalizations": 2,
+          "candidate_genuine_targets": 1,
+          "complete_old_column_tables": 1,
+          "complete_raw_support_equalities": 2,
+          "labelled_old_graphs_enumerated": 1,
+          "legal_old_graphs": 1,
+          "lower_target_configurations": 1,
+          "support_orders": 1,
+          "zero_size_blocks_skipped": 2
+        },
+        "ell": 2,
+        "old_originals": 0
+      },
+      {
+        "active_sorts": 2,
+        "counts": {
+          "actual_graph_normalizations": 4,
+          "candidate_genuine_targets": 1,
+          "complete_old_column_tables": 1,
+          "complete_raw_support_equalities": 8,
+          "labelled_old_graphs_enumerated": 1,
+          "legal_old_graphs": 1,
+          "lower_target_configurations": 1,
+          "support_orders": 2,
+          "zero_size_blocks_skipped": 8
+        },
+        "ell": 2,
+        "old_originals": 0
+      },
+      {
+        "active_sorts": 0,
+        "counts": {
+          "actual_graph_normalizations": 2,
+          "candidate_genuine_targets": 1,
+          "complete_old_column_tables": 1,
+          "complete_raw_support_equalities": 0,
+          "labelled_old_graphs_enumerated": 1,
+          "legal_old_graphs": 1,
+          "lower_target_configurations": 1,
+          "support_orders": 1
+        },
+        "ell": 2,
+        "old_originals": 1
+      },
+      {
+        "active_sorts": 1,
+        "counts": {
+          "actual_graph_normalizations": 2,
+          "candidate_genuine_targets": 2,
+          "complete_old_column_tables": 2,
+          "complete_raw_support_equalities": 2,
+          "labelled_old_graphs_enumerated": 1,
+          "legal_old_graphs": 1,
+          "lower_target_configurations": 1,
+          "support_orders": 1,
+          "zero_size_blocks_skipped": 2
+        },
+        "ell": 2,
+        "old_originals": 1
+      },
+      {
+        "active_sorts": 2,
+        "counts": {
+          "actual_graph_normalizations": 4,
+          "candidate_genuine_targets": 4,
+          "complete_old_column_tables": 4,
+          "complete_raw_support_equalities": 8,
+          "labelled_old_graphs_enumerated": 1,
+          "legal_old_graphs": 1,
+          "lower_target_configurations": 1,
+          "support_orders": 2,
+          "zero_size_blocks_skipped": 8
+        },
+        "ell": 2,
+        "old_originals": 1
+      },
+      {
+        "active_sorts": 0,
+        "counts": {
+          "actual_graph_normalizations": 2,
+          "candidate_genuine_targets": 1,
+          "complete_old_column_tables": 1,
+          "complete_raw_support_equalities": 0,
+          "labelled_old_graphs_enumerated": 2,
+          "legal_old_graphs": 1,
+          "lower_target_configurations": 1,
+          "support_orders": 1
+        },
+        "ell": 2,
+        "old_originals": 2
+      },
+      {
+        "active_sorts": 1,
+        "counts": {
+          "actual_graph_normalizations": 2,
+          "candidate_genuine_targets": 4,
+          "complete_old_column_tables": 4,
+          "complete_raw_support_equalities": 2,
+          "labelled_old_graphs_enumerated": 2,
+          "legal_old_graphs": 1,
+          "lower_target_configurations": 1,
+          "support_orders": 1,
+          "zero_size_blocks_skipped": 2
+        },
+        "ell": 2,
+        "old_originals": 2
+      },
+      {
+        "active_sorts": 2,
+        "counts": {
+          "actual_graph_normalizations": 4,
+          "candidate_genuine_targets": 16,
+          "complete_old_column_tables": 16,
+          "complete_raw_support_equalities": 8,
+          "labelled_old_graphs_enumerated": 2,
+          "legal_old_graphs": 1,
+          "lower_target_configurations": 1,
+          "support_orders": 2,
+          "zero_size_blocks_skipped": 8
+        },
+        "ell": 2,
+        "old_originals": 2
+      },
+      {
+        "active_sorts": 0,
+        "counts": {
+          "actual_graph_normalizations": 2,
+          "candidate_genuine_targets": 1,
+          "complete_old_column_tables": 1,
+          "complete_raw_support_equalities": 0,
+          "labelled_old_graphs_enumerated": 1,
+          "legal_old_graphs": 1,
+          "lower_target_configurations": 1,
+          "support_orders": 1
+        },
+        "ell": 3,
+        "old_originals": 0
+      },
+      {
+        "active_sorts": 1,
+        "counts": {
+          "actual_clique_blocks": 2,
+          "actual_graph_normalizations": 4,
+          "candidate_genuine_targets": 2,
+          "complete_old_column_tables": 1,
+          "complete_raw_support_equalities": 4,
+          "labelled_old_graphs_enumerated": 1,
+          "legal_old_graphs": 1,
+          "lower_target_configurations": 2,
+          "nonzero_edge_zero_column_gaps": 1,
+          "support_orders": 2,
+          "zero_size_blocks_skipped": 2
+        },
+        "ell": 3,
+        "old_originals": 0
+      },
+      {
+        "active_sorts": 2,
+        "counts": {
+          "actual_clique_blocks": 84,
+          "actual_graph_normalizations": 60,
+          "candidate_genuine_targets": 5,
+          "complete_old_column_tables": 1,
+          "complete_raw_support_equalities": 180,
+          "labelled_old_graphs_enumerated": 1,
+          "legal_old_graphs": 1,
+          "lower_target_configurations": 5,
+          "nonzero_edge_zero_column_gaps": 42,
+          "support_orders": 30,
+          "zero_size_blocks_skipped": 96
+        },
+        "ell": 3,
+        "old_originals": 0
+      },
+      {
+        "active_sorts": 0,
+        "counts": {
+          "actual_graph_normalizations": 2,
+          "candidate_genuine_targets": 1,
+          "complete_old_column_tables": 1,
+          "complete_raw_support_equalities": 0,
+          "labelled_old_graphs_enumerated": 1,
+          "legal_old_graphs": 1,
+          "lower_target_configurations": 1,
+          "support_orders": 1
+        },
+        "ell": 3,
+        "old_originals": 1
+      },
+      {
+        "active_sorts": 1,
+        "counts": {
+          "actual_clique_blocks": 4,
+          "actual_graph_normalizations": 6,
+          "candidate_genuine_targets": 4,
+          "complete_old_column_tables": 2,
+          "complete_raw_support_equalities": 6,
+          "labelled_old_graphs_enumerated": 1,
+          "legal_old_graphs": 1,
+          "lower_target_configurations": 3,
+          "nonzero_edge_zero_column_gaps": 2,
+          "support_orders": 3,
+          "zero_size_blocks_skipped": 2
+        },
+        "ell": 3,
+        "old_originals": 1
+      },
+      {
+        "active_sorts": 2,
+        "counts": {
+          "actual_clique_blocks": 264,
+          "actual_graph_normalizations": 144,
+          "candidate_genuine_targets": 20,
+          "complete_old_column_tables": 4,
+          "complete_raw_support_equalities": 432,
+          "labelled_old_graphs_enumerated": 1,
+          "legal_old_graphs": 1,
+          "lower_target_configurations": 12,
+          "nonzero_edge_zero_column_gaps": 132,
+          "support_orders": 72,
+          "zero_size_blocks_skipped": 168
+        },
+        "ell": 3,
+        "old_originals": 1
+      },
+      {
+        "active_sorts": 0,
+        "counts": {
+          "actual_graph_normalizations": 4,
+          "candidate_genuine_targets": 2,
+          "complete_old_column_tables": 2,
+          "complete_raw_support_equalities": 0,
+          "labelled_old_graphs_enumerated": 2,
+          "legal_old_graphs": 2,
+          "lower_target_configurations": 2,
+          "support_orders": 2
+        },
+        "ell": 3,
+        "old_originals": 2
+      },
+      {
+        "active_sorts": 1,
+        "counts": {
+          "actual_clique_blocks": 14,
+          "actual_graph_normalizations": 18,
+          "candidate_genuine_targets": 16,
+          "complete_old_column_tables": 8,
+          "complete_raw_support_equalities": 18,
+          "labelled_old_graphs_enumerated": 2,
+          "legal_old_graphs": 2,
+          "lower_target_configurations": 9,
+          "nonzero_edge_zero_column_gaps": 7,
+          "support_orders": 9,
+          "zero_size_blocks_skipped": 4
+        },
+        "ell": 3,
+        "old_originals": 2
+      },
+      {
+        "active_sorts": 2,
+        "counts": {
+          "actual_clique_blocks": 1452,
+          "actual_graph_normalizations": 684,
+          "candidate_genuine_targets": 160,
+          "complete_old_column_tables": 32,
+          "complete_raw_support_equalities": 2052,
+          "labelled_old_graphs_enumerated": 2,
+          "legal_old_graphs": 2,
+          "lower_target_configurations": 57,
+          "nonzero_edge_zero_column_gaps": 726,
+          "support_orders": 342,
+          "zero_size_blocks_skipped": 600
+        },
+        "ell": 3,
+        "old_originals": 2
+      },
+      {
+        "active_sorts": 0,
+        "counts": {
+          "actual_graph_normalizations": 2,
+          "candidate_genuine_targets": 1,
+          "complete_old_column_tables": 1,
+          "complete_raw_support_equalities": 0,
+          "labelled_old_graphs_enumerated": 1,
+          "legal_old_graphs": 1,
+          "lower_target_configurations": 1,
+          "support_orders": 1
+        },
+        "ell": 4,
+        "old_originals": 0
+      },
+      {
+        "active_sorts": 1,
+        "counts": {
+          "actual_clique_blocks": 4,
+          "actual_graph_normalizations": 6,
+          "candidate_genuine_targets": 3,
+          "complete_old_column_tables": 1,
+          "complete_raw_support_equalities": 6,
+          "labelled_old_graphs_enumerated": 1,
+          "legal_old_graphs": 1,
+          "lower_target_configurations": 3,
+          "nonzero_edge_zero_column_gaps": 2,
+          "support_orders": 3,
+          "zero_size_blocks_skipped": 2
+        },
+        "ell": 4,
+        "old_originals": 0
+      },
+      {
+        "active_sorts": 2,
+        "counts": {
+          "actual_clique_blocks": 300,
+          "actual_graph_normalizations": 156,
+          "candidate_genuine_targets": 13,
+          "complete_old_column_tables": 1,
+          "complete_raw_support_equalities": 468,
+          "labelled_old_graphs_enumerated": 1,
+          "legal_old_graphs": 1,
+          "lower_target_configurations": 13,
+          "nonzero_edge_zero_column_gaps": 150,
+          "support_orders": 78,
+          "zero_size_blocks_skipped": 168
+        },
+        "ell": 4,
+        "old_originals": 0
+      },
+      {
+        "active_sorts": 0,
+        "counts": {
+          "actual_graph_normalizations": 2,
+          "candidate_genuine_targets": 1,
+          "complete_old_column_tables": 1,
+          "complete_raw_support_equalities": 0,
+          "labelled_old_graphs_enumerated": 1,
+          "legal_old_graphs": 1,
+          "lower_target_configurations": 1,
+          "support_orders": 1
+        },
+        "ell": 4,
+        "old_originals": 1
+      },
+      {
+        "active_sorts": 1,
+        "counts": {
+          "actual_clique_blocks": 8,
+          "actual_graph_normalizations": 10,
+          "candidate_genuine_targets": 6,
+          "complete_old_column_tables": 2,
+          "complete_raw_support_equalities": 10,
+          "labelled_old_graphs_enumerated": 1,
+          "legal_old_graphs": 1,
+          "lower_target_configurations": 5,
+          "nonzero_edge_zero_column_gaps": 4,
+          "support_orders": 5,
+          "zero_size_blocks_skipped": 2
+        },
+        "ell": 4,
+        "old_originals": 1
+      },
+      {
+        "active_sorts": 2,
+        "counts": {
+          "actual_clique_blocks": 1032,
+          "actual_graph_normalizations": 456,
+          "candidate_genuine_targets": 52,
+          "complete_old_column_tables": 4,
+          "complete_raw_support_equalities": 1368,
+          "labelled_old_graphs_enumerated": 1,
+          "legal_old_graphs": 1,
+          "lower_target_configurations": 38,
+          "nonzero_edge_zero_column_gaps": 516,
+          "support_orders": 228,
+          "zero_size_blocks_skipped": 336
+        },
+        "ell": 4,
+        "old_originals": 1
+      },
+      {
+        "active_sorts": 0,
+        "counts": {
+          "actual_graph_normalizations": 4,
+          "candidate_genuine_targets": 2,
+          "complete_old_column_tables": 2,
+          "complete_raw_support_equalities": 0,
+          "labelled_old_graphs_enumerated": 2,
+          "legal_old_graphs": 2,
+          "lower_target_configurations": 2,
+          "support_orders": 2
+        },
+        "ell": 4,
+        "old_originals": 2
+      },
+      {
+        "active_sorts": 1,
+        "counts": {
+          "actual_clique_blocks": 30,
+          "actual_graph_normalizations": 34,
+          "candidate_genuine_targets": 24,
+          "complete_old_column_tables": 8,
+          "complete_raw_support_equalities": 34,
+          "labelled_old_graphs_enumerated": 2,
+          "legal_old_graphs": 2,
+          "lower_target_configurations": 17,
+          "nonzero_edge_zero_column_gaps": 15,
+          "support_orders": 17,
+          "zero_size_blocks_skipped": 4
+        },
+        "ell": 4,
+        "old_originals": 2
+      },
+      {
+        "active_sorts": 2,
+        "counts": {
+          "actual_clique_blocks": 6744,
+          "actual_graph_normalizations": 2712,
+          "candidate_genuine_targets": 416,
+          "complete_old_column_tables": 32,
+          "complete_raw_support_equalities": 8136,
+          "labelled_old_graphs_enumerated": 2,
+          "legal_old_graphs": 2,
+          "lower_target_configurations": 226,
+          "nonzero_edge_zero_column_gaps": 3372,
+          "support_orders": 1356,
+          "zero_size_blocks_skipped": 1392
+        },
+        "ell": 4,
+        "old_originals": 2
+      }
+    ]
+  },
+  "constructor_and_minimality": {
+    "counts": {
+      "age_passing_pairs": 1067,
+      "candidate_positive_tables": 2297,
+      "eligible_constructors": 687,
+      "exact_residual_vector_tests": 12223,
+      "genuine_survivor_ages": 150,
+      "growth_identities_including_empty": 1660,
+      "minimality_iff_comparisons": 4218,
+      "minimality_iff_false": 2556,
+      "minimality_iff_true": 1662,
+      "pair_defined_passing_sets": 683,
+      "pointed_normalization_rejections": 1228,
+      "positive_support_caps": 1010,
+      "supported_witnesses_and_maximum_identities": 8804,
+      "survivor_domination_without_pointed_domination": 289
+    },
+    "exhaustive_domain": {
+      "age_enumeration": "all positive support tables retained exactly when canonical(table)=table",
+      "ambient_comparisons": "all genuine ages on e+1 sorts, for e=0,1,2",
+      "ell": [
+        2,
+        3,
+        4
+      ],
+      "passing_sets": "all subsets, filtered by the full positive-support cap",
+      "residual_vectors": "all nonnegative vectors of total at most ell-1",
+      "survivor_sorts": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "per_domain": [
+      {
+        "counts": {
+          "age_passing_pairs": 1,
+          "candidate_positive_tables": 1,
+          "eligible_constructors": 1,
+          "exact_residual_vector_tests": 1,
+          "genuine_survivor_ages": 1,
+          "growth_identities_including_empty": 1,
+          "minimality_iff_comparisons": 1,
+          "minimality_iff_true": 1,
+          "supported_witnesses_and_maximum_identities": 1
+        },
+        "ell": 2,
+        "survivor_sorts": 0
+      },
+      {
+        "counts": {
+          "age_passing_pairs": 2,
+          "candidate_positive_tables": 1,
+          "eligible_constructors": 1,
+          "exact_residual_vector_tests": 2,
+          "genuine_survivor_ages": 1,
+          "growth_identities_including_empty": 1,
+          "minimality_iff_comparisons": 1,
+          "minimality_iff_true": 1,
+          "supported_witnesses_and_maximum_identities": 2
+        },
+        "ell": 2,
+        "survivor_sorts": 1
+      },
+      {
+        "counts": {
+          "age_passing_pairs": 4,
+          "candidate_positive_tables": 1,
+          "eligible_constructors": 1,
+          "exact_residual_vector_tests": 3,
+          "genuine_survivor_ages": 1,
+          "growth_identities_including_empty": 1,
+          "minimality_iff_comparisons": 1,
+          "minimality_iff_true": 1,
+          "supported_witnesses_and_maximum_identities": 3
+        },
+        "ell": 2,
+        "survivor_sorts": 2
+      },
+      {
+        "counts": {
+          "age_passing_pairs": 8,
+          "candidate_positive_tables": 1,
+          "eligible_constructors": 1,
+          "exact_residual_vector_tests": 4,
+          "genuine_survivor_ages": 1,
+          "growth_identities_including_empty": 1,
+          "supported_witnesses_and_maximum_identities": 4
+        },
+        "ell": 2,
+        "survivor_sorts": 3
+      },
+      {
+        "counts": {
+          "age_passing_pairs": 1,
+          "candidate_positive_tables": 1,
+          "eligible_constructors": 1,
+          "exact_residual_vector_tests": 1,
+          "genuine_survivor_ages": 1,
+          "growth_identities_including_empty": 1,
+          "minimality_iff_comparisons": 2,
+          "minimality_iff_true": 2,
+          "pair_defined_passing_sets": 1,
+          "supported_witnesses_and_maximum_identities": 1
+        },
+        "ell": 3,
+        "survivor_sorts": 0
+      },
+      {
+        "counts": {
+          "age_passing_pairs": 4,
+          "candidate_positive_tables": 2,
+          "eligible_constructors": 3,
+          "exact_residual_vector_tests": 9,
+          "genuine_survivor_ages": 2,
+          "growth_identities_including_empty": 4,
+          "minimality_iff_comparisons": 15,
+          "minimality_iff_false": 4,
+          "minimality_iff_true": 11,
+          "pair_defined_passing_sets": 3,
+          "pointed_normalization_rejections": 1,
+          "positive_support_caps": 1,
+          "supported_witnesses_and_maximum_identities": 9,
+          "survivor_domination_without_pointed_domination": 1
+        },
+        "ell": 3,
+        "survivor_sorts": 1
+      },
+      {
+        "counts": {
+          "age_passing_pairs": 20,
+          "candidate_positive_tables": 8,
+          "eligible_constructors": 12,
+          "exact_residual_vector_tests": 72,
+          "genuine_survivor_ages": 5,
+          "growth_identities_including_empty": 20,
+          "minimality_iff_comparisons": 216,
+          "minimality_iff_false": 109,
+          "minimality_iff_true": 107,
+          "pair_defined_passing_sets": 12,
+          "pointed_normalization_rejections": 9,
+          "positive_support_caps": 9,
+          "supported_witnesses_and_maximum_identities": 72,
+          "survivor_domination_without_pointed_domination": 26
+        },
+        "ell": 3,
+        "survivor_sorts": 2
+      },
+      {
+        "counts": {
+          "age_passing_pairs": 144,
+          "candidate_positive_tables": 64,
+          "eligible_constructors": 73,
+          "exact_residual_vector_tests": 730,
+          "genuine_survivor_ages": 18,
+          "growth_identities_including_empty": 145,
+          "pair_defined_passing_sets": 73,
+          "pointed_normalization_rejections": 90,
+          "positive_support_caps": 90,
+          "supported_witnesses_and_maximum_identities": 730
+        },
+        "ell": 3,
+        "survivor_sorts": 3
+      },
+      {
+        "counts": {
+          "age_passing_pairs": 1,
+          "candidate_positive_tables": 1,
+          "eligible_constructors": 1,
+          "exact_residual_vector_tests": 1,
+          "genuine_survivor_ages": 1,
+          "growth_identities_including_empty": 1,
+          "minimality_iff_comparisons": 3,
+          "minimality_iff_true": 3,
+          "pair_defined_passing_sets": 1,
+          "supported_witnesses_and_maximum_identities": 1
+        },
+        "ell": 4,
+        "survivor_sorts": 0
+      },
+      {
+        "counts": {
+          "age_passing_pairs": 6,
+          "candidate_positive_tables": 3,
+          "eligible_constructors": 5,
+          "exact_residual_vector_tests": 20,
+          "genuine_survivor_ages": 3,
+          "growth_identities_including_empty": 7,
+          "minimality_iff_comparisons": 65,
+          "minimality_iff_false": 23,
+          "minimality_iff_true": 42,
+          "pair_defined_passing_sets": 5,
+          "pointed_normalization_rejections": 2,
+          "positive_support_caps": 2,
+          "supported_witnesses_and_maximum_identities": 15,
+          "survivor_domination_without_pointed_domination": 3
+        },
+        "ell": 4,
+        "survivor_sorts": 1
+      },
+      {
+        "counts": {
+          "age_passing_pairs": 52,
+          "candidate_positive_tables": 27,
+          "eligible_constructors": 38,
+          "exact_residual_vector_tests": 380,
+          "genuine_survivor_ages": 13,
+          "growth_identities_including_empty": 73,
+          "minimality_iff_comparisons": 3914,
+          "minimality_iff_false": 2420,
+          "minimality_iff_true": 1494,
+          "pair_defined_passing_sets": 38,
+          "pointed_normalization_rejections": 40,
+          "positive_support_caps": 35,
+          "supported_witnesses_and_maximum_identities": 266,
+          "survivor_domination_without_pointed_domination": 259
+        },
+        "ell": 4,
+        "survivor_sorts": 2
+      },
+      {
+        "counts": {
+          "age_passing_pairs": 824,
+          "candidate_positive_tables": 2187,
+          "eligible_constructors": 550,
+          "exact_residual_vector_tests": 11000,
+          "genuine_survivor_ages": 103,
+          "growth_identities_including_empty": 1405,
+          "pair_defined_passing_sets": 550,
+          "pointed_normalization_rejections": 1086,
+          "positive_support_caps": 873,
+          "supported_witnesses_and_maximum_identities": 7700
+        },
+        "ell": 4,
+        "survivor_sorts": 3
+      }
+    ]
+  },
+  "date": "2026-11-21",
+  "negative_fixtures": {
+    "legal_pivot_can_kill_a_survivor": {
+      "edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "ell": 3,
+      "old_canonical_age": [
+        1,
+        1,
+        1
+      ],
+      "old_pivot_and_survivor_columns": [
+        [
+          1,
+          1
+        ]
+      ],
+      "old_vertices": [
+        0
+      ],
+      "pivot": 1,
+      "positive_survivor_bit": 1,
+      "post_singleton_age": 0,
+      "rejected_conclusion": "all listed survivors remain positive"
+    },
+    "proper_support_cap_is_insufficient": {
+      "ell": 4,
+      "full_positive_support_value": 3,
+      "passing_set": "all three sorts",
+      "rejected_conclusion": "constructor is controlled and coding preserves R",
+      "survivor_age": "R(U)=|U|",
+      "survivor_sorts": 3
+    },
+    "singleton_cap_is_insufficient": {
+      "constructor_value_on_all_three_sorts": 4,
+      "ell": 4,
+      "passing_set": "both sorts",
+      "rejected_conclusion": "constructor values are at most ell-1",
+      "survivor_age_on_masks_1_2_3": [
+        2,
+        2,
+        3
+      ]
+    },
+    "survivor_domination_without_pointed_test": {
+      "controlled_preage_on_masks_1_2_3": [
+        1,
+        1,
+        2
+      ],
+      "ell": 3,
+      "old_age_on_masks_1_2_3": [
+        1,
+        1,
+        1
+      ],
+      "rejected_conclusion": "C <= P; failure at the joint pivot/survivor support",
+      "survivor_age": [
+        1
+      ]
+    }
+  },
+  "not_checked": [
+    "all ell, all finite sort counts, or all finite graph sizes",
+    "a prescribed saturated-cover or infinite diary schedule",
+    "numerical Henson left-density or existence beyond the enumerated finite graphs",
+    "full parameter-closed Kpt history, corrected B3, or a common labelled inverse source"
+  ],
+  "prospective_full_column_events": {
+    "counts": {
+      "complete_old_column_tables": 8045,
+      "controlled_age_below_raw_and_canonical": 20863,
+      "events_with_dead_survivor": 9096,
+      "events_with_positive_survivors": 20863,
+      "exact_prospective_raw_formulas_and_survivor_restrictions": 29959,
+      "labelled_graphs_enumerated": 675,
+      "legal_old_plus_pivot_graphs": 387,
+      "noncanonical_post_raw_events": 90,
+      "nonfree_pivot_events": 17334,
+      "prospective_events": 29959
+    },
+    "exhaustive_domain": {
+      "ell": [
+        2,
+        3,
+        4
+      ],
+      "graphs": "all labelled simple graphs on old_size+1 vertices, filtered by K_ell-freeness",
+      "old_originals": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "passing_sets": "all subsets of survivor sorts",
+      "pivot": "last vertex; pivot old column is exactly its full actual graph neighbourhood",
+      "positive_survivors": "required for the positive graph-age conclusion; rejected cases counted",
+      "survivor_columns": "all Boolean columns on the entire old graph",
+      "survivor_sorts": [
+        0,
+        1,
+        2
+      ]
+    },
+    "per_domain": [
+      {
+        "counts": {
+          "complete_old_column_tables": 1,
+          "controlled_age_below_raw_and_canonical": 1,
+          "events_with_positive_survivors": 1,
+          "exact_prospective_raw_formulas_and_survivor_restrictions": 1,
+          "labelled_graphs_enumerated": 1,
+          "legal_old_plus_pivot_graphs": 1,
+          "prospective_events": 1
+        },
+        "ell": 2,
+        "old_originals": 0,
+        "survivor_sorts": 0
+      },
+      {
+        "counts": {
+          "complete_old_column_tables": 1,
+          "controlled_age_below_raw_and_canonical": 1,
+          "events_with_dead_survivor": 1,
+          "events_with_positive_survivors": 1,
+          "exact_prospective_raw_formulas_and_survivor_restrictions": 2,
+          "labelled_graphs_enumerated": 1,
+          "legal_old_plus_pivot_graphs": 1,
+          "prospective_events": 2
+        },
+        "ell": 2,
+        "old_originals": 0,
+        "survivor_sorts": 1
+      },
+      {
+        "counts": {
+          "complete_old_column_tables": 1,
+          "controlled_age_below_raw_and_canonical": 1,
+          "events_with_dead_survivor": 3,
+          "events_with_positive_survivors": 1,
+          "exact_prospective_raw_formulas_and_survivor_restrictions": 4,
+          "labelled_graphs_enumerated": 1,
+          "legal_old_plus_pivot_graphs": 1,
+          "prospective_events": 4
+        },
+        "ell": 2,
+        "old_originals": 0,
+        "survivor_sorts": 2
+      },
+      {
+        "counts": {
+          "complete_old_column_tables": 1,
+          "controlled_age_below_raw_and_canonical": 1,
+          "events_with_positive_survivors": 1,
+          "exact_prospective_raw_formulas_and_survivor_restrictions": 1,
+          "labelled_graphs_enumerated": 2,
+          "legal_old_plus_pivot_graphs": 1,
+          "prospective_events": 1
+        },
+        "ell": 2,
+        "old_originals": 1,
+        "survivor_sorts": 0
+      },
+      {
+        "counts": {
+          "complete_old_column_tables": 2,
+          "controlled_age_below_raw_and_canonical": 1,
+          "events_with_dead_survivor": 3,
+          "events_with_positive_survivors": 1,
+          "exact_prospective_raw_formulas_and_survivor_restrictions": 4,
+          "labelled_graphs_enumerated": 2,
+          "legal_old_plus_pivot_graphs": 1,
+          "prospective_events": 4
+        },
+        "ell": 2,
+        "old_originals": 1,
+        "survivor_sorts": 1
+      },
+      {
+        "counts": {
+          "complete_old_column_tables": 4,
+          "controlled_age_below_raw_and_canonical": 1,
+          "events_with_dead_survivor": 15,
+          "events_with_positive_survivors": 1,
+          "exact_prospective_raw_formulas_and_survivor_restrictions": 16,
+          "labelled_graphs_enumerated": 2,
+          "legal_old_plus_pivot_graphs": 1,
+          "prospective_events": 16
+        },
+        "ell": 2,
+        "old_originals": 1,
+        "survivor_sorts": 2
+      },
+      {
+        "counts": {
+          "complete_old_column_tables": 1,
+          "controlled_age_below_raw_and_canonical": 1,
+          "events_with_positive_survivors": 1,
+          "exact_prospective_raw_formulas_and_survivor_restrictions": 1,
+          "labelled_graphs_enumerated": 8,
+          "legal_old_plus_pivot_graphs": 1,
+          "prospective_events": 1
+        },
+        "ell": 2,
+        "old_originals": 2,
+        "survivor_sorts": 0
+      },
+      {
+        "counts": {
+          "complete_old_column_tables": 4,
+          "controlled_age_below_raw_and_canonical": 1,
+          "events_with_dead_survivor": 7,
+          "events_with_positive_survivors": 1,
+          "exact_prospective_raw_formulas_and_survivor_restrictions": 8,
+          "labelled_graphs_enumerated": 8,
+          "legal_old_plus_pivot_graphs": 1,
+          "prospective_events": 8
+        },
+        "ell": 2,
+        "old_originals": 2,
+        "survivor_sorts": 1
+      },
+      {
+        "counts": {
+          "complete_old_column_tables": 16,
+          "controlled_age_below_raw_and_canonical": 1,
+          "events_with_dead_survivor": 63,
+          "events_with_positive_survivors": 1,
+          "exact_prospective_raw_formulas_and_survivor_restrictions": 64,
+          "labelled_graphs_enumerated": 8,
+          "legal_old_plus_pivot_graphs": 1,
+          "prospective_events": 64
+        },
+        "ell": 2,
+        "old_originals": 2,
+        "survivor_sorts": 2
+      },
+      {
+        "counts": {
+          "complete_old_column_tables": 1,
+          "controlled_age_below_raw_and_canonical": 1,
+          "events_with_positive_survivors": 1,
+          "exact_prospective_raw_formulas_and_survivor_restrictions": 1,
+          "labelled_graphs_enumerated": 64,
+          "legal_old_plus_pivot_graphs": 1,
+          "prospective_events": 1
+        },
+        "ell": 2,
+        "old_originals": 3,
+        "survivor_sorts": 0
+      },
+      {
+        "counts": {
+          "complete_old_column_tables": 8,
+          "controlled_age_below_raw_and_canonical": 1,
+          "events_with_dead_survivor": 15,
+          "events_with_positive_survivors": 1,
+          "exact_prospective_raw_formulas_and_survivor_restrictions": 16,
+          "labelled_graphs_enumerated": 64,
+          "legal_old_plus_pivot_graphs": 1,
+          "prospective_events": 16
+        },
+        "ell": 2,
+        "old_originals": 3,
+        "survivor_sorts": 1
+      },
+      {
+        "counts": {
+          "complete_old_column_tables": 64,
+          "controlled_age_below_raw_and_canonical": 1,
+          "events_with_dead_survivor": 255,
+          "events_with_positive_survivors": 1,
+          "exact_prospective_raw_formulas_and_survivor_restrictions": 256,
+          "labelled_graphs_enumerated": 64,
+          "legal_old_plus_pivot_graphs": 1,
+          "prospective_events": 256
+        },
+        "ell": 2,
+        "old_originals": 3,
+        "survivor_sorts": 2
+      },
+      {
+        "counts": {
+          "complete_old_column_tables": 1,
+          "controlled_age_below_raw_and_canonical": 1,
+          "events_with_positive_survivors": 1,
+          "exact_prospective_raw_formulas_and_survivor_restrictions": 1,
+          "labelled_graphs_enumerated": 1,
+          "legal_old_plus_pivot_graphs": 1,
+          "prospective_events": 1
+        },
+        "ell": 3,
+        "old_originals": 0,
+        "survivor_sorts": 0
+      },
+      {
+        "counts": {
+          "complete_old_column_tables": 1,
+          "controlled_age_below_raw_and_canonical": 2,
+          "events_with_positive_survivors": 2,
+          "exact_prospective_raw_formulas_and_survivor_restrictions": 2,
+          "labelled_graphs_enumerated": 1,
+          "legal_old_plus_pivot_graphs": 1,
+          "prospective_events": 2
+        },
+        "ell": 3,
+        "old_originals": 0,
+        "survivor_sorts": 1
+      },
+      {
+        "counts": {
+          "complete_old_column_tables": 1,
+          "controlled_age_below_raw_and_canonical": 4,
+          "events_with_positive_survivors": 4,
+          "exact_prospective_raw_formulas_and_survivor_restrictions": 4,
+          "labelled_graphs_enumerated": 1,
+          "legal_old_plus_pivot_graphs": 1,
+          "prospective_events": 4
+        },
+        "ell": 3,
+        "old_originals": 0,
+        "survivor_sorts": 2
+      },
+      {
+        "counts": {
+          "complete_old_column_tables": 2,
+          "controlled_age_below_raw_and_canonical": 2,
+          "events_with_positive_survivors": 2,
+          "exact_prospective_raw_formulas_and_survivor_restrictions": 2,
+          "labelled_graphs_enumerated": 2,
+          "legal_old_plus_pivot_graphs": 2,
+          "nonfree_pivot_events": 1,
+          "prospective_events": 2
+        },
+        "ell": 3,
+        "old_originals": 1,
+        "survivor_sorts": 0
+      },
+      {
+        "counts": {
+          "complete_old_column_tables": 4,
+          "controlled_age_below_raw_and_canonical": 7,
+          "events_with_dead_survivor": 1,
+          "events_with_positive_survivors": 7,
+          "exact_prospective_raw_formulas_and_survivor_restrictions": 8,
+          "labelled_graphs_enumerated": 2,
+          "legal_old_plus_pivot_graphs": 2,
+          "nonfree_pivot_events": 3,
+          "prospective_events": 8
+        },
+        "ell": 3,
+        "old_originals": 1,
+        "survivor_sorts": 1
+      },
+      {
+        "counts": {
+          "complete_old_column_tables": 8,
+          "controlled_age_below_raw_and_canonical": 25,
+          "events_with_dead_survivor": 7,
+          "events_with_positive_survivors": 25,
+          "exact_prospective_raw_formulas_and_survivor_restrictions": 32,
+          "labelled_graphs_enumerated": 2,
+          "legal_old_plus_pivot_graphs": 2,
+          "nonfree_pivot_events": 9,
+          "prospective_events": 32
+        },
+        "ell": 3,
+        "old_originals": 1,
+        "survivor_sorts": 2
+      },
+      {
+        "counts": {
+          "complete_old_column_tables": 7,
+          "controlled_age_below_raw_and_canonical": 7,
+          "events_with_positive_survivors": 7,
+          "exact_prospective_raw_formulas_and_survivor_restrictions": 7,
+          "labelled_graphs_enumerated": 8,
+          "legal_old_plus_pivot_graphs": 7,
+          "nonfree_pivot_events": 5,
+          "prospective_events": 7
+        },
+        "ell": 3,
+        "old_originals": 2,
+        "survivor_sorts": 0
+      },
+      {
+        "counts": {
+          "complete_old_column_tables": 28,
+          "controlled_age_below_raw_and_canonical": 41,
+          "events_with_dead_survivor": 15,
+          "events_with_positive_survivors": 41,
+          "exact_prospective_raw_formulas_and_survivor_restrictions": 56,
+          "labelled_graphs_enumerated": 8,
+          "legal_old_plus_pivot_graphs": 7,
+          "nonfree_pivot_events": 27,
+          "prospective_events": 56
+        },
+        "ell": 3,
+        "old_originals": 2,
+        "survivor_sorts": 1
+      },
+      {
+        "counts": {
+          "complete_old_column_tables": 112,
+          "controlled_age_below_raw_and_canonical": 247,
+          "events_with_dead_survivor": 201,
+          "events_with_positive_survivors": 247,
+          "exact_prospective_raw_formulas_and_survivor_restrictions": 448,
+          "labelled_graphs_enumerated": 8,
+          "legal_old_plus_pivot_graphs": 7,
+          "nonfree_pivot_events": 147,
+          "prospective_events": 448
+        },
+        "ell": 3,
+        "old_originals": 2,
+        "survivor_sorts": 2
+      },
+      {
+        "counts": {
+          "complete_old_column_tables": 41,
+          "controlled_age_below_raw_and_canonical": 41,
+          "events_with_positive_survivors": 41,
+          "exact_prospective_raw_formulas_and_survivor_restrictions": 41,
+          "labelled_graphs_enumerated": 64,
+          "legal_old_plus_pivot_graphs": 41,
+          "nonfree_pivot_events": 34,
+          "prospective_events": 41
+        },
+        "ell": 3,
+        "old_originals": 3,
+        "survivor_sorts": 0
+      },
+      {
+        "counts": {
+          "complete_old_column_tables": 328,
+          "controlled_age_below_raw_and_canonical": 388,
+          "events_with_dead_survivor": 268,
+          "events_with_positive_survivors": 388,
+          "exact_prospective_raw_formulas_and_survivor_restrictions": 656,
+          "labelled_graphs_enumerated": 64,
+          "legal_old_plus_pivot_graphs": 41,
+          "nonfree_pivot_events": 306,
+          "prospective_events": 656
+        },
+        "ell": 3,
+        "old_originals": 3,
+        "survivor_sorts": 1
+      },
+      {
+        "counts": {
+          "complete_old_column_tables": 2624,
+          "controlled_age_below_raw_and_canonical": 3802,
+          "events_with_dead_survivor": 6694,
+          "events_with_positive_survivors": 3802,
+          "exact_prospective_raw_formulas_and_survivor_restrictions": 10496,
+          "labelled_graphs_enumerated": 64,
+          "legal_old_plus_pivot_graphs": 41,
+          "nonfree_pivot_events": 2814,
+          "prospective_events": 10496
+        },
+        "ell": 3,
+        "old_originals": 3,
+        "survivor_sorts": 2
+      },
+      {
+        "counts": {
+          "complete_old_column_tables": 1,
+          "controlled_age_below_raw_and_canonical": 1,
+          "events_with_positive_survivors": 1,
+          "exact_prospective_raw_formulas_and_survivor_restrictions": 1,
+          "labelled_graphs_enumerated": 1,
+          "legal_old_plus_pivot_graphs": 1,
+          "prospective_events": 1
+        },
+        "ell": 4,
+        "old_originals": 0,
+        "survivor_sorts": 0
+      },
+      {
+        "counts": {
+          "complete_old_column_tables": 1,
+          "controlled_age_below_raw_and_canonical": 2,
+          "events_with_positive_survivors": 2,
+          "exact_prospective_raw_formulas_and_survivor_restrictions": 2,
+          "labelled_graphs_enumerated": 1,
+          "legal_old_plus_pivot_graphs": 1,
+          "prospective_events": 2
+        },
+        "ell": 4,
+        "old_originals": 0,
+        "survivor_sorts": 1
+      },
+      {
+        "counts": {
+          "complete_old_column_tables": 1,
+          "controlled_age_below_raw_and_canonical": 4,
+          "events_with_positive_survivors": 4,
+          "exact_prospective_raw_formulas_and_survivor_restrictions": 4,
+          "labelled_graphs_enumerated": 1,
+          "legal_old_plus_pivot_graphs": 1,
+          "prospective_events": 4
+        },
+        "ell": 4,
+        "old_originals": 0,
+        "survivor_sorts": 2
+      },
+      {
+        "counts": {
+          "complete_old_column_tables": 2,
+          "controlled_age_below_raw_and_canonical": 2,
+          "events_with_positive_survivors": 2,
+          "exact_prospective_raw_formulas_and_survivor_restrictions": 2,
+          "labelled_graphs_enumerated": 2,
+          "legal_old_plus_pivot_graphs": 2,
+          "nonfree_pivot_events": 1,
+          "prospective_events": 2
+        },
+        "ell": 4,
+        "old_originals": 1,
+        "survivor_sorts": 0
+      },
+      {
+        "counts": {
+          "complete_old_column_tables": 4,
+          "controlled_age_below_raw_and_canonical": 8,
+          "events_with_positive_survivors": 8,
+          "exact_prospective_raw_formulas_and_survivor_restrictions": 8,
+          "labelled_graphs_enumerated": 2,
+          "legal_old_plus_pivot_graphs": 2,
+          "nonfree_pivot_events": 4,
+          "prospective_events": 8
+        },
+        "ell": 4,
+        "old_originals": 1,
+        "survivor_sorts": 1
+      },
+      {
+        "counts": {
+          "complete_old_column_tables": 8,
+          "controlled_age_below_raw_and_canonical": 32,
+          "events_with_positive_survivors": 32,
+          "exact_prospective_raw_formulas_and_survivor_restrictions": 32,
+          "labelled_graphs_enumerated": 2,
+          "legal_old_plus_pivot_graphs": 2,
+          "nonfree_pivot_events": 16,
+          "prospective_events": 32
+        },
+        "ell": 4,
+        "old_originals": 1,
+        "survivor_sorts": 2
+      },
+      {
+        "counts": {
+          "complete_old_column_tables": 8,
+          "controlled_age_below_raw_and_canonical": 8,
+          "events_with_positive_survivors": 8,
+          "exact_prospective_raw_formulas_and_survivor_restrictions": 8,
+          "labelled_graphs_enumerated": 8,
+          "legal_old_plus_pivot_graphs": 8,
+          "nonfree_pivot_events": 6,
+          "prospective_events": 8
+        },
+        "ell": 4,
+        "old_originals": 2,
+        "survivor_sorts": 0
+      },
+      {
+        "counts": {
+          "complete_old_column_tables": 32,
+          "controlled_age_below_raw_and_canonical": 63,
+          "events_with_dead_survivor": 1,
+          "events_with_positive_survivors": 63,
+          "exact_prospective_raw_formulas_and_survivor_restrictions": 64,
+          "labelled_graphs_enumerated": 8,
+          "legal_old_plus_pivot_graphs": 8,
+          "nonfree_pivot_events": 47,
+          "prospective_events": 64
+        },
+        "ell": 4,
+        "old_originals": 2,
+        "survivor_sorts": 1
+      },
+      {
+        "counts": {
+          "complete_old_column_tables": 128,
+          "controlled_age_below_raw_and_canonical": 497,
+          "events_with_dead_survivor": 15,
+          "events_with_positive_survivors": 497,
+          "exact_prospective_raw_formulas_and_survivor_restrictions": 512,
+          "labelled_graphs_enumerated": 8,
+          "legal_old_plus_pivot_graphs": 8,
+          "nonfree_pivot_events": 369,
+          "prospective_events": 512
+        },
+        "ell": 4,
+        "old_originals": 2,
+        "survivor_sorts": 2
+      },
+      {
+        "counts": {
+          "complete_old_column_tables": 63,
+          "controlled_age_below_raw_and_canonical": 63,
+          "events_with_positive_survivors": 63,
+          "exact_prospective_raw_formulas_and_survivor_restrictions": 63,
+          "labelled_graphs_enumerated": 64,
+          "legal_old_plus_pivot_graphs": 63,
+          "nonfree_pivot_events": 55,
+          "prospective_events": 63
+        },
+        "ell": 4,
+        "old_originals": 3,
+        "survivor_sorts": 0
+      },
+      {
+        "counts": {
+          "complete_old_column_tables": 504,
+          "controlled_age_below_raw_and_canonical": 958,
+          "events_with_dead_survivor": 50,
+          "events_with_positive_survivors": 958,
+          "exact_prospective_raw_formulas_and_survivor_restrictions": 1008,
+          "labelled_graphs_enumerated": 64,
+          "legal_old_plus_pivot_graphs": 63,
+          "nonfree_pivot_events": 832,
+          "prospective_events": 1008
+        },
+        "ell": 4,
+        "old_originals": 3,
+        "survivor_sorts": 1
+      },
+      {
+        "counts": {
+          "complete_old_column_tables": 4032,
+          "controlled_age_below_raw_and_canonical": 14646,
+          "events_with_dead_survivor": 1482,
+          "events_with_positive_survivors": 14646,
+          "exact_prospective_raw_formulas_and_survivor_restrictions": 16128,
+          "labelled_graphs_enumerated": 64,
+          "legal_old_plus_pivot_graphs": 63,
+          "noncanonical_post_raw_events": 90,
+          "nonfree_pivot_events": 12658,
+          "prospective_events": 16128
+        },
+        "ell": 4,
+        "old_originals": 3,
+        "survivor_sorts": 2
+      }
+    ]
+  },
+  "scope": "independent finite exhaustive referee within the separately listed domains; not Lean kernel verification",
+  "script_sha256": "32a3144a181537cadc743990b4d78a929cf5a759eb26b56d8f29f4a8f0b71e8c",
+  "status": "PASS"
+}

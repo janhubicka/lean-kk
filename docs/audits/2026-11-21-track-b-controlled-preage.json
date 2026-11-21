@@ -1,0 +1,8266 @@
+{
+  "date": "2026-11-21",
+  "status": "PASS",
+  "repository": "janhubicka/lean-kk",
+  "pull_request": 422,
+  "english_first_commits": [
+    {
+      "commit": "69dafd21dfbeb2923d204a106d860e2c2910657a",
+      "scope": "Finite normalization, late pivot, controlled pre-age constructor and prospective-event English proofs, independently audited before their Lean implementations"
+    },
+    {
+      "commit": "528c4f14f06071f087e550db323c5ce88cb3b85b",
+      "scope": "Stronger direct proof of controlled pre-age below the old raw bound, before its formalization"
+    }
+  ],
+  "source_commit": "69983310fc1acd65a31c9d99cbc6f56ffb796532",
+  "source_tree": "9214dcaa189461e905a0fb8bddb214aea7ff1532",
+  "tested_checkout": "147bd10c6372839c77bc0df52ffeb0583dea3b90",
+  "tested_tree": "b66b305216668da22c8e4d077ce8aaec2c05f2c6",
+  "base_commit": "2baa707e31b1c5b483acdcb2891c3814446a48e6",
+  "workflow": {
+    "run_id": 44920690130,
+    "job_id": 136895846770,
+    "url": "https://github.com/janhubicka/lean-kk/actions/runs/44920690130",
+    "conclusion": "success",
+    "build_jobs": 9738,
+    "parser_self_test": "PASS",
+    "acceptance": "PASS: 990 exact transitive-axiom reports; only Classical.choice, Quot.sound, propext"
+  },
+  "integration": {
+    "source_commit": "69983310fc1acd65a31c9d99cbc6f56ffb796532",
+    "source_tree": "9214dcaa189461e905a0fb8bddb214aea7ff1532",
+    "tested_checkout": "147bd10c6372839c77bc0df52ffeb0583dea3b90",
+    "tested_tree": "b66b305216668da22c8e4d077ce8aaec2c05f2c6",
+    "tested_parents": [
+      "2baa707e31b1c5b483acdcb2891c3814446a48e6",
+      "69983310fc1acd65a31c9d99cbc6f56ffb796532"
+    ],
+    "source_tree_equals_tested_tree": false,
+    "modified_existing_files": [
+      "Kk.lean",
+      "scripts/check_axioms.lean"
+    ],
+    "added_main_files": [
+      ".github/workflows/kk-track-e-isolated-dummy-full-zero.yml",
+      ".github/workflows/kk-track-e-partitioned-whole-run.yml",
+      ".github/workflows/kk-track-f-actual-independent-code.yml",
+      ".github/workflows/kk-track-f-zero-code-preprofile.yml",
+      ".github/workflows/kk-track-g-factor-bad-index-independent.yml",
+      "Kk/TrackCMaxOriginalZeroCertificate.lean",
+      "Kk/TrackEIsolatedDummyFullZeroStage.lean",
+      "Kk/TrackEIsolatedDummyFullZeroStageAxiomAudit.lean",
+      "Kk/TrackEPartitionedOriginalMaxWholeRun.lean",
+      "Kk/TrackEPartitionedOriginalMaxWholeRunAxiomAudit.lean",
+      "Kk/TrackFActualIndependentCode.lean",
+      "Kk/TrackFActualIndependentCodeAxiomAudit.lean",
+      "Kk/TrackFZeroCodePreprofileRigidity.lean",
+      "Kk/TrackFZeroCodePreprofileRigidityAxiomAudit.lean",
+      "Kk/TrackGFactorBadIndexIndependent.lean",
+      "Kk/TrackGFactorBadIndexIndependentAxiomAudit.lean",
+      "docs/track_c_max_original_zero_certificate_audit_20261121.md",
+      "docs/track_e_isolated_dummy_zero_stage_transport_english_audit_20261121.md",
+      "docs/track_e_partitioned_max_old_socle_whole_run_english_audit_20261121.md",
+      "docs/track_f_rankzero_actual_independent_code_english_audit_20261121.md",
+      "docs/track_f_zero_code_preprofile_rigidity_english_audit_20261121.md",
+      "docs/track_g_factor_bad_index_independence_english_audit_20261121.md"
+    ],
+    "track_b_proof_files_and_pinned_dependencies_identical": true,
+    "source_registry_count": 989,
+    "tested_registry_count": 990,
+    "source_registry_order_preserved_in_tested": true,
+    "extra_tested_endpoints": [
+      "Kk.finiteNumericH_constructed_bare_root_real_zero_of_max_socle"
+    ],
+    "all_reports_match_tested_registry_in_order": true,
+    "axiom_free_reports": 7
+  },
+  "preserved": {
+    "imports": 291,
+    "axiom_reports": 961,
+    "order_preserved": true
+  },
+  "added": {
+    "imports": 6,
+    "axiom_reports": 28,
+    "names": [
+      "Kk.integerGraphAgeCanonical_is_subfront_of_positive",
+      "Kk.controlledPreAge_is_age",
+      "Kk.controlledPreAge_survivor",
+      "Kk.controlledPreAge_singleton",
+      "Kk.controlledPreAge_positive_cap",
+      "Kk.controlledPreAge_positive_growth",
+      "Kk.controlledPreAge_passing_iff",
+      "Kk.controlledPreAge_max_decomposition",
+      "Kk.controlledPreAge_unique",
+      "Kk.controlledPreAge_le_iff",
+      "Kk.controlledPreAge_le_iff_of_age",
+      "Kk.prospectivePivotRaw_eq_abstract_extension",
+      "Kk.prospectivePivotGraph_safe_of_positive_singleton",
+      "Kk.prospectivePivotRaw_le_old",
+      "Kk.prospectivePivotRaw_positive_cap",
+      "Kk.controlledPreAge_le_old_raw_of_prospective",
+      "Kk.prospective_controlledPreAge_is_age_and_below",
+      "Kk.henson_leftDense_normalizes_prospective_coding",
+      "Kk.henson_leftDense_prospective_controlled_stage",
+      "Kk.henson_leftDense_cap_finite_target_support",
+      "Kk.henson_leftDense_normalizes_finite_supports",
+      "Kk.henson_leftDense_normalizes_finite_target_age",
+      "Kk.finiteNeighbourCliqueCheck_false_of_positive_old_singleton",
+      "Kk.henson_leftDense_realizes_late_positive_sort",
+      "Kk.henson_leftDense_realizes_late_controlledCoding",
+      "Kk.henson_leftDense_constructs_late_controlledCoding_stage",
+      "Kk.henson_leftDense_prepares_and_codes_controlled_age",
+      "Kk.henson_leftDense_prepares_controlled_age_stage"
+    ]
+  },
+  "source_total": {
+    "imports": 297,
+    "axiom_reports": 989
+  },
+  "source_sha256": {
+    "Kk/FiniteTargetAgeNormalization.lean": "a9e2b015aa43d59665262ccc0a346f8253351b14b47b489a8cf76851c4ae6217",
+    "Kk/LateControlledPivot.lean": "ae3c2ba22a8578365e032c716da474c7ccaf63c51d985f64d949cded02b26ac3",
+    "Kk/FiniteControlledNormalization.lean": "d8b8f41269bb4bfea4243c9b204eb48c9ab8bbe6ccfff368c222e8026b40abea",
+    "Kk/ControlledPreAge.lean": "800f49eb13a3e2ca1d72247b320b4df374d3f21448bd5be0fead8d84cf0d5b6b",
+    "Kk/ProspectiveControlledPreAge.lean": "4916e76a9880c52aa5a1d7a99511f44a821f2d6bbf3b5f1bb10e71abde565ec8",
+    "Kk/PhysicalProspectiveControlledCoding.lean": "375638ae2d7bcfdbb9db39db1ea7979cf35120c7c497fc6e48a6ae3e7c55f3c0",
+    "Kk.lean": "5ccc3a25a19b66a36f486ceb9f8629c14b753d10b090255f0a670b60389cb20a",
+    "scripts/check_axioms.lean": "a07e3049d6df6f4b5d26369a3852483ccc743d56d79586bf4cbd8c3cd857adc5",
+    "scripts/check_track_b_controlled_preage.lean": "e6cf73b8cc734a378151ed81ac1b3af2695069422c305e2d0a832e787a42e64f",
+    "scripts/check_axiom_report.py": "1aca9c49e724a8c933f0b2b92ef89b8564ee250db4d98c8a25c9088545ad4492",
+    "scripts/verify_track_b_controlled_preage.py": "32a3144a181537cadc743990b4d78a929cf5a759eb26b56d8f29f4a8f0b71e8c",
+    "lakefile.toml": "8c06968c126a593d7d43e880182ddab5c75f98806acff98c40d14434a8329f6c",
+    "lean-toolchain": "bc84812c94489d1e3e191baa1dc10d5eb684382d7fe9d2a5ab085e72c1c67e47",
+    ".github/workflows/lean.yml": "d0820a0af154df63bb5686d310aaef6fa652699707cf2b34c4caf4fdf240df8e"
+  },
+  "toolchain": "leanprover/lean4:v4.35.0-rc3",
+  "dependencies": [
+    {
+      "name": "«successor-tree-lean»",
+      "url": "https://github.com/janhubicka/lean-successors",
+      "rev": "a74c10761303a18649053f2af3a1a1697f032e13"
+    },
+    {
+      "name": "«ramsey-space-todorcevic»",
+      "url": "https://github.com/janhubicka/lean-ramsey-space-todorcevic",
+      "rev": "bb29d1f3f36ff37a35857247ca9fae581fa1fa43"
+    },
+    {
+      "name": "mathlib",
+      "url": "https://github.com/leanprover-community/mathlib4",
+      "rev": "5bd58ac291422a21f412ae354c91e7d172255a2c"
+    },
+    {
+      "name": "plausible",
+      "url": "https://github.com/leanprover-community/plausible",
+      "rev": "b7fb2b866d25bd937a2069931f9733197521cb27"
+    },
+    {
+      "name": "LeanSearchClient",
+      "url": "https://github.com/leanprover-community/LeanSearchClient",
+      "rev": "c35806f43135ab3f254429d0c00bd13fc0123f77"
+    },
+    {
+      "name": "importGraph",
+      "url": "https://github.com/leanprover-community/import-graph",
+      "rev": "103cd9a46972ee39d9defb2f54ae49823b1228eb"
+    },
+    {
+      "name": "proofwidgets",
+      "url": "https://github.com/leanprover-community/ProofWidgets4",
+      "rev": "87dfe779d5dfd03142ee4fe158911b8eb553ec98"
+    },
+    {
+      "name": "aesop",
+      "url": "https://github.com/leanprover-community/aesop",
+      "rev": "a92ed98e694702934d40d12f24a1a449144db43e"
+    },
+    {
+      "name": "Qq",
+      "url": "https://github.com/leanprover-community/quote4",
+      "rev": "37b0ba0b26109cf9f9c541f0f9557e50cfa1a3b9"
+    },
+    {
+      "name": "batteries",
+      "url": "https://github.com/leanprover-community/batteries",
+      "rev": "950339ce0fd0cc0673a22d87036075737586aed2"
+    },
+    {
+      "name": "Cli",
+      "url": "https://github.com/leanprover/lean4-cli",
+      "rev": "843844fa601dd56767b1eb22b7ada5b64d5e567a"
+    }
+  ],
+  "named_axiom_reports": [
+    {
+      "name": "Kk.integerGraphAgeCanonical_is_subfront_of_positive",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.controlledPreAge_is_age",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.controlledPreAge_survivor",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.controlledPreAge_singleton",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.controlledPreAge_positive_cap",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.controlledPreAge_positive_growth",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.controlledPreAge_passing_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.controlledPreAge_max_decomposition",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.controlledPreAge_unique",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.controlledPreAge_le_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.controlledPreAge_le_iff_of_age",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.prospectivePivotRaw_eq_abstract_extension",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.prospectivePivotGraph_safe_of_positive_singleton",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.prospectivePivotRaw_le_old",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.prospectivePivotRaw_positive_cap",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.controlledPreAge_le_old_raw_of_prospective",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.prospective_controlledPreAge_is_age_and_below",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_leftDense_normalizes_prospective_coding",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_leftDense_prospective_controlled_stage",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_leftDense_cap_finite_target_support",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_leftDense_normalizes_finite_supports",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_leftDense_normalizes_finite_target_age",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNeighbourCliqueCheck_false_of_positive_old_singleton",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_leftDense_realizes_late_positive_sort",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_leftDense_realizes_late_controlledCoding",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_leftDense_constructs_late_controlledCoding_stage",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_leftDense_prepares_and_codes_controlled_age",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_leftDense_prepares_controlled_age_stage",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerGraphAge_controlled_support_witness",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.oldSupportCommonNeighbourPool_mutual_pivot",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.controlledPivot_linked_budget",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.protectedPivot_canonical_eq_of_controlled",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.controlledCoding_next_prefix_canonical_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_leftDense_realizes_controlledPivot_stage",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.protectedPivot_common_pool",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.protectedPivot_capacity",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.protectedPivotRaw_eq_actual",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.activeGapPointedRaw_eq_actual",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_leftDense_realizes_activeGap_pointed",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.protectedPivot_targetAge_le_canonical_iff_budgets",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerCliquePushforward_feasible",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerClique_exists_lift_along_sortMap",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerGraphAgeCanonical_pullback_mono",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.isIntegerGraphAge_pullback",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteOldColumnCanonical_reindex",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteOldColumnCanonical_reindex_twice",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteOldColumnCanonical_neutral_reindex",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.protectedPivot_pulledBackAge_iff_budgets",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.freePointedContinuation_raw_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.freePointedContinuation_canonical_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.freeSplit_canonical_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_leftDense_constructs_freePointed_stage",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_leftDense_constructs_freeSplit_stage",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerGraphAgeCanonical_lowerAt_canonical",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.freeSplit_raw_eq_lowerAt",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.freeSplit_canonical_eq_restriction",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_leftDense_constructs_exactFreeSplit_stage",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finite_family_type_respecting_ramsey",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.diary_colouring_constant",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.diary_colouring_factors",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.FiniteRepresentingPair.labelled_image_act",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.FiniteRepresentingPair.imageVertex_binary",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.LabelledGPlusCopy.map_fromPairs",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.LabelledGPlusCopy.colour_factors_through_diary",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.LabelledGPlusCopy.colour_factors_through_diary_of_orbits",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.LabelledGPlusCopy.labelled_copy_lifts_of_envelope",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.FiniteRepresentingPair.fromCommonUpper_vertex",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.countable_labelled_carrier",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.countable_labelled_carrier_full_atoms",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.countable_labelled_carrier_all_images",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.LabelledGOmegaCopy.map_fromPairs",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.LabelledGOmegaCopy.colour_factors_through_diary",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.LabelledGOmegaCopy.map_lt_of_prefix_in_fixed_enumeration",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.countableSourceCopy_finite_representation",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.countable_source_orbits_colour_factors",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.hensonForbiddenFamily_no_loops",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.hensonForbiddenFamily_no_cliques",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.hensonForbiddenFamily_symmetric",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.hensonForbiddenFamily_avoids_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.common_source_pairs_of_equal_labelled_preimages",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.common_labelled_copy_of_equal_endpoint_preimages",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.prefixChain_finite_representation",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.prefix_chain_orbits_colour_factors",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.labelled_prefix_preimages_of_range",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.labelled_prefix_sources_of_Kpt_envelope",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.labelled_envelope_produces_intrinsic_source",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.labelled_prefix_sources_eq_of_unlabelled_range",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.source_range_eq_inverse_image",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.labelled_prefix_sources_eq_of_inverse_image_sets",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.common_labelled_source_iff_inverse_image_sets_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.rawCliqueBlockBound_eq_upper_of_lt",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.ageLe_final_rawCliqueBlockBound",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.canonical_cover_block_final",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteWitnessCanonical_le_raw",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteWitnessCanonical_greatest",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteWitnessCanonical_is_age",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerCliqueOnSupport_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerGraphAgeCanonical_le_raw",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerGraphAgeCanonical_is_age",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerGraphAgeCanonical_greatest",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerGraphAge_canonical_cover_block",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.normalize_raw_integer_clique_witness",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.rawIntegerGraphAge_iff_normalized",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.rawIntegerGraphAgeCanonical_eq_normalized",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerGraphAge_monotone",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.rawIntegerGraphAge_monotone",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerGraphAge_small_support_witness",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerGraphAge_small_function",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.rawIntegerGraphAge_small_function",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerAgeLowerAt_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerGraphAgeCanonical_single_bound_locality",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerGraphAgeCanonical_single_bound_disjoint",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerGraphAgeCover_minimal_changed_unique",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerGraphAgeCanonical_preserves_clique_vectors",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerGraphAgeCanonical_fixed_of_age",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerGraphAgeCanonical_idempotent_above_age",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.canonical_cover_block_all_stages",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.fullAfter_covers_fullBefore",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.selected_shadow_does_not_detect_cover",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.vertex_eq_of_common_top_and_size",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.labelled_sources_eq_of_common_top_and_cuts",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.numericH_preserves_original_nonedge",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_preserves_original_nonedge",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.reserved_H_clique_one_block",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.numericH_designated_reserved_pair_positive",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.numericH_designated_reserved_to_top_positive",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.numericH_designated_reserved_to_top_both",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.numericH_designated_clique_of_finite_set",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.mixed_neighbourClique_subset_interaction_pool",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNeighbourCliqueCheck_false_of_mixing_pools",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.onePointGraph_safe_of_mixing_pools",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_leftDense_realizes_later_selected_of_mixing_pools",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finitePoolCliqueCheck_true_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finitePoolCliqueCheck_false_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.mixedBlockInteractionPool_subset_full_neighbourhood",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNeighbourCliqueCheck_false_iff_exact_mixing_pools",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.onePointGraph_cliqueFree_iff_exact_mixing_pools",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_leftDense_realizes_later_selected_of_exact_mixing",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.k4NoisyMixedPool_small",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.k4NoisyOldNeighbourhood_certified",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.reserved_H_aux_selected_clique_support",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.reserved_H_clique_one_block_and_selected_support",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_failedAmbientB3_lower_generation",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_top_generation_ambientB3",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_failedSelectedB3_has_higher_original",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_selectedB3_of_no_higher_original",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_selected_top_generation_B3",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_represented_top_I3_correctedB3",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_algorithm_top_generation_no_I3",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_algorithmRun_top_generation_no_I3",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_failedSelectedB3_higher_original_anyK",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_algorithmRun_lower_I3_requires_higher_selected_original",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_algorithmRun_lower_I3_levels_card_le_higher_capacity",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_failedSelectedB3_generation_below_clique_margin",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_selectedB3_of_generation_ge_clique_margin",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_algorithmRun_lower_I3_generation_below_clique_margin",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_forbidden_pattern_large_is_clique",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_positive_generation_B3_has_clique_witness",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_algorithmRun_positive_I3_has_clique_witness",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.i3Levels_card_le_fixedPattern_capacity",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_positive_generation_B3_has_clique_signature",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_algorithmRun_positive_I3_levels_card_le_clique_capacity",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_positive_generation_B3_has_clique_higher_signature",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_algorithmRun_positive_I3_levels_card_le_higher_clique_capacity",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.two_point_B3_cross_symmetric",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.B3_avoids_both_asym_patterns",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.hNumericBinary_symmetric_of_base",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_finiteNumericH_binary_symmetric",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_selectedB3_failure_has_clique_witness",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_any_generation_B3_has_clique_higher_signature",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_algorithmRun_all_I3_levels_card_le_higher_clique_capacity",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.correctedB3_of_Lprofile_dominance",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.failed_markedB3_of_Lprofile_dominance",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.correctedB3_iff_of_equal_Lprofiles",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.normalized_avoid_without_of_future_restriction",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_selectedB3_failure_has_small_clique_core",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.clique_core_upper_name_adjacent_to_cut",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.clique_core_upper_names_local_of_cut_nonedges",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_failed_selectedB3_has_cut_local_small_core",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_next_generation_one_freeLevel",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_next_original_is_freeCut_eligible",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_later_generation_one_is_freeCut_eligible",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.kpt_closure_contains_positive_parameter_of_seed",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.numericH_first_gadget_second_original_in_closure",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.beforeK4_valid",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.afterK4_valid",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.afterK4_covers_beforeK4",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.selected_K4_shadow_does_not_detect_cover",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.kpt_gap_boundary_class_correctedB3",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.correctedB3_of_genuine_kpt_gap_Lprofile",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.correctedB3_of_genuine_kpt_gap_subprofile",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.genuine_gap_boundary_one_target_B3",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.genuine_gap_crossing_one_target_B3",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.uniformBefore_valid",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.uniformAfter_valid",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.uniformAfter_covers_before",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.uniform_auxiliary_shadow_cover",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.skipsOnly_crossing_requires_single_upper_B3",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.bad_single_upper_precludes_onegap_crossing",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.bad_single_upper_forces_actual_interesting",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.fourCliqueCore_deleted_avoids",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.fourCliqueCore_singleUpper_B3_fails",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.k4Cut22_deleted_avoids",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.k4Cut22_singleUpper_B3_fails",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.k4FourOriginalEdge_cliqueFree",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.k4H_old_binary_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.k4H_upper_edge_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.k4H_upper_edge_reverse_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.k4H_full_old_L_socle",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.k4H_full_upper_L_type",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.k4H_actual_cut22_singleUpper_B3_failure",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.algorithmRun_selects_actual_failed_single_upper_B3",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.k4Cut10_deleted_avoids",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.k4Cut10_twoUpper_B3_fails",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.genuine_gap_boundary_two_targets_B3",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.bad_two_upper_precludes_genuine_gap",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.k4GadgetH_avoids",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.k4GadgetH_top_freeLevel_above22",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.k4Gadget_algorithmRun_selects_cut22",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.k4Gadget_algorithmRun_q2_in_cut10_closure",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.k4H_cut10_full_old_L_socle",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.k4H_cut10_full_q2_upper_type",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.k4H_cut10_full_x_upper_type",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.k4H_actual_cut10_twoUpper_B3_failure",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.genuine_gap_two_ambient_targets_B3",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.bad_two_ambient_targets_contradicts_genuine_gap",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.bad_two_ambient_upper_forces_actual_interesting",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.algorithmRun_selects_actual_failed_two_upper_B3",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.k4GadgetH_q2_freeLevel_eq_11",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.k4Gadget_algorithmRun_selects_cut10",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.k4Gadget_algorithmRun_selects_cuts10_22",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.no_new_K4_of_earlier_clone",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.k4Gadget_cut10_x_only_B3_good",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.k4Gadget_q2_and_x_have_same_old_L_socle",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.k4Gadget_cut10_selected_only_B3_good_on_full_socle",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.k4Gadget_cut10_full_B3_does_not_project_to_selected",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.k4Gadget_cut10_selected_only_cannot_certify_full_B3",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.k4Gadget_full_upper_not_subset_x_only",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.k4Gadget_q2_upper_L_reduct_ne_x",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.onePointGraph_hasClique_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.onePointGraph_cliqueFree_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.clique_reserved_blocks_agree",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.clique_unreserved_or_one_block",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.onePointGraph_cliqueFree_of_block_checks",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNeighbourCliqueCandidates_nonempty_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNeighbourCliqueCheck_true_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNeighbourCliqueCheck_false_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.no_clique_below_of_small_carrier",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.onePointGraph_cliqueFree_iff_finite_certificate",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.k4Seed_full_neighbourhood_certificate",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.k4Seed_safe_onePoint_extension",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.k4MixedParameter_triangle_certificate",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.k4MixedParameter_forbidden_onePoint_extension",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.hasCliqueBelow_congr_on_prefix",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.onePointGraphEdge_agrees_on_prefix",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.hasCliqueBelow_succ_iff_old_or_neighbour",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.cliqueFree_prefix_iff_all_finite_neighbour_certificates",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.k4FourOriginal_all_stage_certificates",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.k4FourOriginal_initial_prefix_cliqueFree",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.no_neighbourClique_of_small_neighbour_set",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNeighbourCliqueCheck_false_of_small_neighbour_set",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.onePointGraph_safe_of_small_neighbour_set",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.onePointGraph_safe_of_prescribed_neighbour_carrier",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.appendIsolatedCliqueBlock_old",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.appendIsolatedCliqueBlock_old_new_nonedge",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.appendIsolatedCliqueBlock_new_clique",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.appendIsolatedCliqueBlock_next_neighbour_card",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.appendIsolatedCliqueBlock_cliqueFree",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.smallCliqueLeftDense_build_reserved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.smallCliqueLeftDense_exists_reserved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.emptyGraph_not_smallCliqueLeftDense",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.onePointLeftDense_realizes_finite_certificate",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.smallCliqueLeftDense_of_onePointLeftDense",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.reserved_originals_of_onePointLeftDense",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.no_prefix_clique_of_no_increasing_clique",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.hensonForbiddenFamily_no_prefix_cliques",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_leftDense_realizes_certified_original",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_leftDense_exists_reserved_originals",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_leftDense_exists_reserved_of_graph_axioms",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.neighbourClique_iff_prior_of_isolated_reserved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNeighbourCliqueCheck_false_iff_prior_isolated",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_leftDense_first_selected_after_isolated_reserved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.k4_mixed_parameter_isolation_necessary",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_leftDense_reserve_and_first_selected",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.onePointGraphEdge_symmetric_of_base",
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "name": "Kk.onePointGraphEdge_irreflexive_of_base",
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "name": "Kk.appendIsolatedCliqueBlock_symmetric",
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "name": "Kk.appendIsolatedCliqueBlock_irreflexive",
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "name": "Kk.appendIsolatedCliqueBlock_old_new_both_nonedges",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.appendIsolatedCliqueBlock_graph_valid_prefix",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_leftDense_ordered_reserved_blocks",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.ordered_reserved_block_cross_nonedges_of_lt",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.full_reserved_block_forbids_selected_column",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNeighbourCliqueCheck_false_of_last_isolated",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.mem_reservedBlocksUnion",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_leftDense_selected_after_fresh_block_family",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.directedClique_card_le_capacity",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finitePoolCliqueCheck_false_of_reserved_plus_link_capacity",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNeighbourCliqueCheck_false_of_link_capacity",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_leftDense_realizes_later_selected_of_link_capacity",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.k4OldLinks_capacity_regression",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.k4OldLinks_safe_by_capacity",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.k4OldLinks_bad_triangle_regression",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_leftDense_later_selected_after_fresh_blocks_of_link_capacity",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteDirectedCliqueCapacity_mono",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteDirectedCliqueCapacity_insert_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteDirectedCliqueCapacity_succ_mutual_le_insert",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteDirectedCliqueCapacity_insert_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteDirectedCliqueCapacity_empty",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteDirectedCliqueCapacity_insert_no_growth",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finitePoolCliqueCheck_false_of_one_new_link_budget",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.k4LinkedCapacity_insert_no_growth_regression",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.k4LinkedCapacity_insert_growth_regression",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.linkedOriginalsTo_union_candidates",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.linkedOriginalsTo_union_reserved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.linkedOriginalsTo_four_quadrants",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.linkedUnreserved_eq_updatedActualLinkedPool",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNeighbourCliqueCheck_false_of_updatedActualLinkedPool_budget",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_leftDense_realizes_of_updatedActualLinkedPool_budget",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.stale_reserved_link_disappears",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.activated_reserve_and_gap_links",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.linkedOriginalsTo_mono",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.linkedOriginals_deactivation_budget_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finitePoolCliqueCheck_false_of_deactivation_budget",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNeighbourCliqueCheck_false_of_neighbour_subset",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_leftDense_realizes_deactivated_column",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.k4_neighbour_deactivation_rescues_forbidden_column",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.k4_safe_star_neighbour_deactivation",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerGraphAge_cover_final_raw_eq_single_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerGraphAge_cover_event_preserves_support_of_overlap",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerGraphAge_cover_event_preserves_disjoint_support",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerGraphAge_cover_event_preserves_disjoint_subfront",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerGraphAge_cover_event_preserves_without_full_support",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerGraphAge_cover_event_preserves_subfront_omitting_support",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerGraphAge_is_subfront_age",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.subfrontMixedRawBound_between",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.subfrontWitness_respects_mixed_raw",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerGraphAgeCanonical_mixed_raw_restrict_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerGraphAge_cover_no_relative_intermediate",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerGraphAge_cover_restrict_eq_or_cover",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.numericH_older_generation_to_top_exact",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.numericH_henson_top_full_column_both",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.numericH_henson_nonedges_all_generations_both",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_leftDense_linked_fresh_stage_numericH_complete_L",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.numericH_top_auxE_true_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_top_auxE_true_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.numericH_top_auxE_all_earlier_real",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_top_freeLevel_exact",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_leftDense_linked_fresh_stage_finiteNumericH_complete_LE",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_earlier_generation_one_positive_freeLevel",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_generation_one_before_top_freeLevel",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_top_seed_forces_genOne_parameter",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_numericH_top_seed_forces_genOne_parameter",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_run_selected_genOne_in_lower_closure",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.envelope_closure_mono_levels",
+      "axioms": [
+        "Classical.choice"
+      ]
+    },
+    {
+      "name": "Kk.kpt_closure_contains_positive_parameter_of_original_mem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.algorithmRun_selected_positive_parameter_in_lower_closure",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.algorithmRun_selects_two_step_B3_parameter_propagation",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteDirectedCliqueCapacity_attained",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finitePoolCliqueCheck_false_iff_capacity_lt",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteDirectedCliqueCapacity_complete_join",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finitePoolCliqueCheck_isolated_block_gluing_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.reservedPrefixClique_card_le_label_of_generation_lt",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.reservedPrefixCapacity_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.reservedPrefixCapacity_eq_of_height",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.reservedPrefixCapacity_image_transport",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.reservedImageCliqueCapacity_eq_of_gate",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.reservedBlockNumericPos_injOn",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.hNumericBinary_same_original_false",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_reserved_block_exact_gate",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.reservedImageCliqueCapacity_eq_finiteDirectedCliqueCapacity",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_reserved_block_prefix_capacity",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.reservedBlockNumericPrefix_inside_carrier",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.reservedBlockNumericPrefix_mem_finiteH",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_reserved_prefix_gluing_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.numericHTopPos_injective",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.numericHTopPool_mem_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.numericHTopPool_mono",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.reservedBlockNumericPrefix_disjoint_topPool",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_reserved_prefix_top_support",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteCliqueSupportCapacity_iff_all_witnesses",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteCliqueSupportCapacity_raw_iff_all_witnesses",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finitePoolCliqueCheck_gluing_all_support_witnesses",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_reserved_prefix_gluing_all_support_witnesses",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteCliqueSortCount_sum_support",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteCliqueSortCount_sum_univ",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerCliqueWeightsOfFinset_total_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerCliqueWeights_exists_of_finset",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerCliqueOnSupport_of_finset",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerCliqueWeightsOfFinset_respects_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteCliqueSortConstraints_canonical_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteCliqueSortConstraints_all_canonical_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.oneSortOneWeight_not_from_empty",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteCliqueSortConstraints_integerCanonical_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteClique_card_lt_of_pool_cliqueFree",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteClique_all_constraints_integerCanonical_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finitePoolCliqueCheck_oldFuture_implies_future_false",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteClique_oldFuture_all_constraints_canonical_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finitePoolCliqueCheck_freeAmalgam_two",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finitePoolCliqueCheck_freeAmalgam_subset_false",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finitePoolCliqueCheck_freeAmalgam_two_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finitePoolCliqueCheck_freeAmalgam_family",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerWitnessVertex_total",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerWitnessVertex_card_lt",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerWitnessVertex_fiber_card",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerWitnessVertex_support_card",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerWitnessVertex_support_eq_integerCliqueOnSupport",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerWitnessCompleteEdge_symm",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerWitnessCompleteEdge_clique",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerWitnessCompleteEdge_clique_small",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerWitnessVertex_respects_raw_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerGraphAge_eq_sup_feasible_vectors",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerGraphAgeCanonical_eq_of_same_feasible_vectors",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerGraphAge_eq_of_same_feasible_vectors",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerGraphAge_eq_iff_same_feasible_vectors",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerGraphAge_eq_iff_faithful_relative_profiles",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerGraphAge_ne_iff_lost_relative_witness",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.faithful_relative_noB3_iff_age_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.relative_triangle_from_full_old_column",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.relative_triangle_blocks_two_neighbours",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.zeroIntegerCliqueWeight_respects",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.feasibleIntegerCliqueVectors_nonempty",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerGraphAgeCanonical_has_feasible_maximizer",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerGraphAgeCanonical_has_concrete_clique_maximizer",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerWitnessComponent_subclique_respects_raw",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerGraphAge_has_concrete_clique_attaining_support",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.universalWitnessEdge_symmetric",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.universalWitnessEdge_irreflexive",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.universalWitness_mem_component_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.universalWitnessComponent_card",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.universalWitnessComponent_support_card",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.universalWitnessComponent_clique",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.universalWitnessClique_single_component",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.universalWitnessFuture_clique_in_feasible_component",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.universalWitnessFuture_clique_card_lt",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.universalWitnessFuture_clique_respects_raw",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.universalWitnessFuture_realizes_every_feasible",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNeighbourCliqueCheck_membership_iff_pool",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.onePointLeftDense_realizes_exact_finite_neighbour_set",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_leftDense_realizes_exact_finite_neighbour_set",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.universalWitnessFuture_exact_profile_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.universalWitnessFuture_clique_support_le_canonical",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.universalWitnessFuture_clique_attains_canonical",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.universalWitnessFuture_support_capacity_eq_canonical",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.rawSupportBlock_add_clique_below",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.universalWitnessFuture_raw_support_block_budget",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finitePoolCliqueCheck_gluing_of_raw_support_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteDirectedCliqueCapacity_induced_image_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finitePoolCliqueCheck_false_iff_induced_image",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finitePoolCliqueCheck_false_iff_strictMono_image",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.onePointLeftDense_extend_finite_induced_copy",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_leftDense_extend_finite_induced_copy",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.onePointLeftDense_embeds_finite_KFree_pattern",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_leftDense_embeds_finite_KFree_pattern",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.singleReservedFutureEdge_symmetric",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.singleReservedFutureEdge_irreflexive",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.singleReservedFuture_no_forbidden_clique",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.allSupportFutureEdge_symmetric",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.allSupportFutureEdge_irreflexive",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.allSupportFuture_no_forbidden_clique",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.fullB3_failure_good_marked_profile_gap",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.fullB3_failure_good_marked_missing_upper",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.fullB3_failure_good_marked_missing_socle",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.ambientPool_full_to_marked_Lsocle_coverage",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.ambientPool_fullB3_failure_requires_extra_upperL",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.selectedStagePool_full_to_marked_Lsocle_coverage",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.selectedStagePool_fullB3_failure_has_extra_original",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.represented_nonstructural_I3_has_extra_upper_original",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.algorithmRun_nonstructural_I3_has_extra_upper_original",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.numericH_algorithmRun_nonstructural_I3_has_extra_upper_original",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.selectedStagePool_correctedB3_of_upperL_coverage",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.selectedStagePool_correctedB3_iff_equal_upperL_profiles",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.closureSelectedBoringData_correctedB3_of_marked_upperL_coverage",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.selectedStagePool_correctedB3_of_named_upper_target_cover",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finitePoolCliqueCheck_false_iff_reference",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finite_marked_front_gluing_iff_reference",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_marked_front_prefix_age_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackAP4_one_target_not_whole_front",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.orderedReservedNumericPos_injOn",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_ordered_reserved_exact_gate",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_ordered_reserved_prefix_capacity",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.orderedReservedNumericPrefix_inside_carrier",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.orderedReservedNumericPrefix_mem_finiteH",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_ordered_marked_front_prefix_age_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.onePointLeftDense_embeds_finite_KFree_over_fixed_prefix",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_leftDense_embeds_finite_over_fixed_prefix",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.orderedReservedNumericPrefix_disjoint_topPool",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_ordered_prefix_all_top_support",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.numericHTopPool_mem_finiteH_of_cut",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_ordered_top_marked_front_age_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_top_full_original_source_record",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_top_fake_E_positive_not_real",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_top_fake_full_L_plus",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_all_closure_nodes_seed_parameter_or_meet",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_even_real_level_nonseed_is_original_meet",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_run_selected_genOne_full_source_eligibility",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_positive_freeLevel_has_real_target",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_full_cut_crossing_and_upper_types",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_run_cut_crossing_and_upper_types",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_topSeeds_closure_inside_root_stage_pool",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_topSeeds_full_cut_crossing_and_upper_types",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_topSeeds_run_cut_crossing_and_upper_types",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_named_pool_cut_crossing_and_upper_types",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_run_final_pool_crossing_and_upper_types",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_fullB3_of_cut_visible_complete_outputs",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_cut_visible_fullB3_failure_implies_marked_failure",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_fullB3_of_marked_cut_neighbours_and_fibre_coherence",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_selectedStageB3_iff_cut_visible_output_equivalence",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.kpt_marked_next_full_type_eq_of_no_meet",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_fullB3_of_no_i2_marked_closure_cut_neighbours",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.fullLabelledSourceRecord_ext",
+      "axioms": []
+    },
+    {
+      "name": "Kk.full_source_records_eq_of_inverse_comparison",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.common_labelled_orbit_of_full_record_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.full_source_coherence_implies_diary_colour_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.pairwise_full_source_comparison_implies_diary_colour_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.fullEventIndexedSourceRecord_ext",
+      "axioms": []
+    },
+    {
+      "name": "Kk.KptClosureRecipe.evaluate_congr",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.KptClosureRecipe.wellFormed_congr",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.full_event_source_eq_of_inverse_sets_and_recipes",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.full_event_source_coherence_implies_diary_colour_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.event_kind_does_not_determine_inputs",
+      "axioms": []
+    },
+    {
+      "name": "Kk.assigned_upper_type_requires_event_indexing",
+      "axioms": []
+    },
+    {
+      "name": "Kk.full_event_source_eq_of_local_reconstruction",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.full_event_source_common_selected_and_parameter_targets",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.full_record_and_coverage_identify_source_closures",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.diaryCoverColumnRaw_le_upper",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.diaryCoverColumnCanonical_exact",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.diaryCoverColumn_feasible_iff_lower",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackF_card_labelled_diaries",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_represented_I3_requires_unmarked_cut_neighbour",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_algorithmRun_I3_requires_unmarked_cut_neighbour",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_numericH_algorithmRun_I3_requires_unmarked_cut_neighbour",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_closureB3_iff_cutStarB3",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_algorithmRun_B3_iff_cutStarB3",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_numericH_run_finalPool_cutStar_B3_equivalence",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.numericCoordinate_odd_or_real",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_odd_dummy_to_top_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_real_gap_to_top_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_all_gap_to_marked_top_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.numericPrefixGapPool_subset_range",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.numericPrefix_union_gap_exact",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.orderedReserved_numeric_cut_before_all_selected",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_whole_prefix_and_top_in_carrier",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_ordered_whole_prefix_marked_age_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteOldFuture_free_implies_raw_support",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteOldFuture_free_of_all_raw_support",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteOldFuture_free_iff_raw_support",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteOldFuture_free_iff_canonical_support",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerGraphAge_const_one_is_age",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteOldColumnRawBound_positive_of_singleton_safe",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteOldColumnCanonical_is_age_of_singleton_safe",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteClique_full_constraints_raw_block_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteClique_full_constraints_canonical_block_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteClique_full_constraints_cover_step_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_multiRoot_seeds_in_original_pool",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_multiRoot_nextSeed_pool_preserved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_actualRun_finalClosure_finite",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_actualRun_uniform_exhaustive_source_index",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.kpt_full_old_upper_types_of_crossing",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.kpt_full_old_upper_none_of_no_crossing",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_indexed_cut_full_old_upper_types",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.closure_crossing_source_target_le_of_cover_graph",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.closure_crossing_graph_unique_of_two_sided_coverage",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_full_crossing_independent_of_original_pool",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.correctedB3_iff_of_identical_full_crossing_graph",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_correctedB3_independent_of_original_pool",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.full_physical_crossing_nonfunctional_forces_I2",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.full_physical_crossing_functional_of_no_I2",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.prescribed_full_graph_eq_physical_crossing",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_full_crossing_graph_is_physical_relation",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.full_prescribed_graph_eq_implies_source_and_target_eq",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.two_closures_full_crossings_and_B3_of_equal_physical_relation",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.two_numericH_closures_B3_of_equal_full_crossing_relation",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFCodingRaw_le_original",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFCodingColumn_canonical_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFCodingColumn_feasible_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFCodingRaw_witness_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFCanonical_eq_of_feasible_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFCanonical_add_cap_congr",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFRawCoverColumn_exact",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFRawCoverColumn_feasible_iff_lower",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFCover_exists_minimal_changed",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFCover_unique_minimal_changed",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackF_integerWitness_drop_one",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFCover_drop_one_at_changed",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFCover_drop_at_most_one",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFCover_single_support_canonical",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFCover_changed_values_of_containment",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFCover_essential_contained_in_changed",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFCover_all_changed_upper_eq_essential",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_failedSelectedB3_has_eligible_cut_neighbour",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_fullB3_iff_cut_star_of_no_i2",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.selectedStagePool_crossAmbient_socle_coverage_of_upperL",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.selectedStagePool_crossAmbient_B3_of_upperL",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.selectedStagePool_crossAmbient_B3_iff_equal_upperL",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.HensonCutOccurrence.full_B3_crossAmbient_iff_of_cutStar_profiles",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.HensonCutOccurrence.failing_full_B3_has_unmatched_cutStar_original",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.HensonCutOccurrence.star_name_complete_upperL_permitted",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.HensonCutOccurrence.star_upperL_inclusion_of_physical_name_cover",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.HensonCutOccurrence.full_B3_crossAmbient_iff_of_physical_cutStar_name_cover",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.HensonCutOccurrence.failing_full_B3_has_unmatchable_physical_cutStar_name",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.HensonCutOccurrence.fullProfile_graph_eq_physical_of_exhaustive",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.HensonCutOccurrence.starProfile_upperL_iff_physical_of_exhaustive",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.HensonCutOccurrence.full_B3_crossAmbient_iff_of_intrinsic_physical_cutStar",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.orderedReservedCapacity_reaches_full_iff",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.orderedReservedCapacity_before_full_iff",
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "name": "Kk.orderedReservedCapacity_cover_age_normal_form",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteDirectedCliqueCapacity_eq_of_offDiagonal_agreement",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_whole_prefix_raw_canonical_block_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteClique_canonical_cover_of_reference_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_whole_prefix_cover_step_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.kpt_full_cut_fork_forces_I2_meet",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.kpt_I2_meet_forces_full_cut_fork_of_no_I1",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.kpt_I2_meet_implies_I1_or_full_fork",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.kpt_no_I1_I2_iff_complete_full_fork",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.kpt_full_fork_iff_finite_active_indices",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_run_no_I1_I2_iff_indexed_full_fork",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.kpt_actual_crossing_has_physical_full_pair",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.kpt_full_fork_forces_physical_crossing_nonfunctional",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.kpt_no_I1_I2_iff_physical_crossing_nonfunctional",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_run_indexed_I2_iff_physical_nonfunctional",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.kpt_I1_or_I2_iff_I1_or_complete_full_fork",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.kpt_I1_or_I2_iff_I1_or_physical_nonfunctional",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_run_structural_I1I2_iff_active_node_or_fork",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_run_no_indexed_structural_event_fails_full_B3",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_run_selected_full_B3_implies_indexed_I1_or_I2",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.indexed_physical_crossing_eq_full_closure_relation",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.numericH_actual_run_all_cuts_indexed_physical_crossing",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.indexed_physical_crossings_eq_of_two_sided_pair_matching",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.two_physical_closures_crossing_eq_of_indexed_pair_matching",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.full_physical_crossing_ignores_redundant_terminal_ancestor",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.distinct_kpt_node_sets_same_all_full_crossings",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.physical_I1_I2_iff_indexed_active_nodes",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.numericH_actual_run_all_cuts_full_structural_trace",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFColumnRepresentative_mem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFColumnCommon_pos_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFColumnCommon_antitone",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFNewColumnCommon",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFWordRaw_eq_sub_max",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFWordRaw_monotone",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFWordRaw_append",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFWordRaw_append_as_coding_cap",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFWord_cover_symbol_valid",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFWordRaw_age_cover_exact",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFWordRaw_coding_preserves_age",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFZeroOutside_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFZeroOutside_T_mass",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFZeroOutside_inter_sum",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFZeroOutside_feasible_of_agree",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFCanonical_locality_of_monotone",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFWordRaw_locality",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.clique_core_every_upper_has_exact_cut_neighbour_label",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_failed_selectedB3_has_exact_full_cut_star_core",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.actualHensonRunCutOccurrence_fullExact",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.actualHensonRunCutOccurrence_poolExhaustive",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.actualHensonRunCutOccurrence_fullGraph_and_starSpectrum",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericHL_same_base_old_socle",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.HensonCutOccurrence.same_base_old_socle",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.HensonCutOccurrence.full_B3_iff_same_base_intrinsic_cutStar",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.indexedCutStar_has_live_physical_node",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.indexedCutStar_iff_physical_of_exact",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.numericH_actual_run_all_cuts_indexed_cutStar",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.two_closures_physical_cutStar_eq_of_indexed_projection",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.selected_named_nextL_permitted_of_no_I2",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_fullB3_failure_iff_physical_cut_star_bad_core_of_no_I2",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFPair_mass_first",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFPair_mass_second",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFPair_mass_both",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFPair_canonical_capacity",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFCanonical_singleton_eq_raw",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFPair_canonical_true_singletons",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFPair_word_capacity",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFPair_passing_arithmetic",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFColumnCommon_reindex",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFWordRaw_restrict_columns",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFWordRaw_pullback",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFRestrictWeights_mass",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFExtendCoordinate_selected",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFExtendCoordinate_outside",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFExtendWeights_mass",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFRestrictWeights_feasible",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFSelectedPreimage_image",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFExtendWeights_preimage_mass",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFExtendWeights_feasible",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFCanonical_reindex_mono",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFWordCanonical_reindex",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFGraphAge_reindex",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFWordCanonical_delete_at",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFWordRaw_coding_after_delete_exact",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFSeenSymbol_append",
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "name": "Kk.trackFBranchInitial_append",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFAllBranchInitial_append",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFWordSpectrum_age_cover",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFWordSpectrum_coding_column",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_actualRun_complete_fullB3_failure_iff_physical_bad_core",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.HensonRunCutData.occurrence_full_source_exhaustive",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.HensonRunCutData.two_runs_full_B3_iff_of_intrinsic_spectra",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.HensonRunCutData.two_runs_finite_indexed_cutStar_controls_full_B3",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.indexed_cutStar_upperL_of_live_cover",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.indexed_cutStar_iff_of_bilateral_live_cover",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.HensonRunCutData.two_runs_finite_live_cutStar_cover_controls_full_B3",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.indexed_cutStar_live_cover_iff_upperL_inclusion",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.indexed_cutStar_bilateral_live_cover_iff_spectra_equal",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_failed_fullB3_good_marked_has_missing_type_inside_one_core",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.missing_nextL_type_of_marked_closure_implies_unmarked_noI2",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_failed_fullB3_good_marked_has_unmarked_inside_same_core_of_noI2",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.HensonRunCutData.bad_good_has_missing_indexed_cutStar_type",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.HensonRunCutData.bad_good_has_unmatched_live_Kpt_node",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.HensonRunCutData.two_runs_bad_good_has_finite_unmatched_live_Kpt_node",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.HensonPhysicalRunCutData.occurrence_full_source_exhaustive",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.HensonPhysicalRunCutData.two_runs_full_B3_iff_of_old_socle_and_physical_cutStar",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.HensonPhysicalRunCutData.two_runs_finite_live_cutStar_cover_controls_full_B3",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.HensonPhysicalRunCutData.two_runs_bad_good_has_finite_unmatched_live_Kpt_node",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_top_exact_original_edge",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_top_clique_iff_original",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_top_supported_count_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_top_profile_iff_original",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_top_carrier_of_sup_cut",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_leftDense_realizes_all_finite_numericTop_profiles",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_pinned_old_generation_column_both",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_pinned_gap_generation_zero_both",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_leftDense_uniform_finite_numericH_complete_columns",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_leftDense_realizes_all_finite_numericH_L_columns_and_profiles",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.delayedOldColumn_old",
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "name": "Kk.delayedOldColumn_padding_zero",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.delayedOldCommonNeighbourPool_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.delayedOldRawBound_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.delayedOldCanonicalAge_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.delayedOldFeasibleVectors_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_leftDense_uniform_numericH_after_neutral_delay",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteDirectedCliqueCapacity_isolated_union_max",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.supportBlockOldColumn_on_reserved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.supportBlockOldColumn_off_reserved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.supportBlockCommonNeighbourPool_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.supportBlockRawBound_exact",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.supportBlockRawBound_le_old",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.supportBlockRawBound_unchanged_off_support",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_baseExtension_old_named_source_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_baseExtension_same_closure_full_source_B3_stable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.numericH_two_actual_runs_baseExtension_full_source_B3_stable",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_baseExtension_constructed_nextSeeds_represented",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_baseExtension_construct_actual_run_from_new_root",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_baseExtension_actual_top_root_run",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_baseExtension_actual_top_root_run_bounded",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.hPosition_old_real_below_previous_top_cut",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.hPosition_previous_top_chronological_bounds",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_chronological_top_root_bounded_run",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_newRootOnly_seed_levels_exact",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_rootOnly_lower_initial_I1_iff_old_closure",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.physical_clique_upper_indices_have_normalized_sort_weights",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_actualRun_I3_good_marked_has_unmarked_inside_same_clique",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.envelope_closure_mono_both",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.actual_IsInterestingAt_mono_full_source",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.actual_AlgorithmRun_selected_levels_mono_of_seed_growth",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.actual_AlgorithmRun_final_levels_mono_of_seed_growth",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.actual_Kpt_new_roots_preserve_old_interesting_levels",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.full_physical_crossing_mono_of_source_subset",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.new_selected_Kpt_cut_has_new_terminal_or_full_crossing",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.actual_Kpt_new_root_extra_cut_has_physical_witness",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.new_selected_Kpt_cut_has_indexed_physical_witness",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_actual_extra_cut_has_finite_source_witness",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.two_actual_Kpt_runs_levels_eq_of_one_sided_no_novelty",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.two_actual_Kpt_runs_levels_eq_of_finite_indexed_quiet_source",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.two_actual_Kpt_runs_levels_eq_of_two_finite_index_cover",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.canonical_Kpt_new_roots_selected_levels_mono",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.relevant_base_pair_base_indices_bounded",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.numericalH_old_binary_eq_of_relevant_base_pairs",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.numericalH_old_socle_eq_of_relevant_base_pairs",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.HensonCutOccurrence.old_socle_of_relevant_base_pair_agreement",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.HensonCutOccurrence.full_B3_iff_of_relevant_base_and_intrinsic_cutStar",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.HensonPhysicalRunCutData.old_socle_of_relevant_base_pairs",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.HensonPhysicalRunCutData.full_B3_iff_of_relevant_base_and_intrinsic_cutStar",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.HensonPhysicalRunCutData.full_B3_iff_of_relevant_base_and_live_cover",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.HensonPhysicalRunCutData.bad_good_has_missing_intrinsic_cutStar_type_of_relevant_base",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.isolatedSupportWitnessRespects_iff_old_and_threshold",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerWitnessRespects_rawCliqueBlock_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.isolatedSupportWitnessRespects_iff_ideal",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerGraphAgeCanonical_eq_of_respects_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.isolatedSupportCanonicalAge_eq_ideal",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerGraphAgeCanonical_idealBlock_congr",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.isolatedSupportCanonicalAge_cover_step",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.isolatedReservedClique_capacity_eq_card",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerCliqueFeasible_eq_of_canonical_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_leftDense_exists_physical_finite_canonical_cover_stage",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_leftDense_uniform_finite_stage_after_support_block",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_leftDense_exists_uniform_finite_support_stage",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.supportBlockGappedColumn_agrees_on_old_and_Q",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.supportBlockGappedCommonNeighbourPool_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.supportBlockGappedRawBound_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.supportBlockGappedCanonicalAge_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.envelope_closure_absorbs_old_closure_of_levels",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_newRoot_closure_absorption",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_newRoot_run_preCut_structural_profile_absorbs",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_newRoot_run_preCut_absorbs_of_retained_above",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.envelope_IsInterestingAt_mono_nodes",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.envelope_closure_mono_seeds_and_levels",
+      "axioms": [
+        "Classical.choice"
+      ]
+    },
+    {
+      "name": "Kk.envelope_algorithmRun_selected_levels_mono_seeds",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_newRoot_run_retains_same_height_old_levels",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_newRoot_preCut_absorbs_retained_old_run",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.envelope_algorithmRun_selected_levels_mono_seed_height",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_newRoot_run_retains_old_levels_larger_top",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_newRoot_preCut_absorbs_old_run_larger_top",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.kpt_full_prefix_seeds_force_all_levels",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.kpt_full_prefix_seeds_final_levels_all",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.kpt_physical_full_prefix_pool_forces_all_levels",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.actual_two_run_preCut_absorption_of_old_higher_levels",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.numericH_two_runs_preCut_full_profile_absorbs_of_old_higher",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.numericH_canonical_new_root_old_tail_preCut_full_profile_absorbs",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.numericH_new_selected_cut_has_bare_original_source_witness",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.actual_two_runs_lower_levels_eq_after_old_closure_absorption",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.actual_three_runs_lower_levels_eq_of_old_selected_generators",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFConcreteEdgePair_iff_no_top",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFWordMax_lt_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFWordMax_pair_lt_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFConcreteEdgePair_iff_commonMax_lt",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFWordMax_pair_le_height",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFConcreteEdgePair_iff_abstractPassing",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFSeenSymbol_reindex",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFWordDifferent_reindex",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFPairSimultaneous_reindex",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFConcreteEdgePair_reindex",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFMapSpectrumSingleton",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFWordSpectrumMatches_reindex",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFConcreteEdgeAt_iff_abstractPassing",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFConcretePassingSet_eq_abstract",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFWordRaw_coding_by_literal_E_exact",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.trackFWordRaw_coding_by_abstractSet_exact",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.crossheight_new_selected_Kpt_cut_has_new_terminal_or_full_crossing",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.numericH_crossheight_extra_cut_has_bare_original_witness",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.crossheight_new_selected_Kpt_cut_has_indexed_physical_witness",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_crossheight_extra_cut_has_finite_source_witness",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.crossheight_runs_final_old_range_eq_of_no_novelty",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.crossheight_runs_all_old_range_levels_eq_of_no_novelty",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.crossheight_runs_old_range_eq_of_two_finite_index_cover",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_old_physical_top_le_new_chronological_top",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_constructed_growing_runs_extra_cuts_have_finite_witness",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_bareTopRoot_seeds_represented_bounded",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_bareTopRoot_construct_exhaustive_run",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_old_and_bare_new_runs_extra_cuts_have_finite_witness",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.oldSupportCommonNeighbourPool_insert_exact",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteOldColumnRawBound_insert_exact",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteOldColumnRawBound_insert_off",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteOldColumnRawBound_insert_no_growth",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteOldColumnRawBound_insert_eq_iff_mutual_budget_of_cap_lt",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteOldColumnRawBound_insert_eq_iff_mutual_budget_of_safe_pool",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteOldColumnRawBound_antitone_old_pool",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteOldColumnRawBound_next_prefix_exact",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteOldColumnRawBound_next_prefix_eq_of_mutual_budgets",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerGraphAgeCanonical_next_prefix_eq_of_mutual_budgets",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.actual_original_stage_preserves_free_and_all_support_age",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_fullB3_of_no_eligible_cut_neighbour",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_fullB3_of_cut_visible_complete_outputs_no_nonempty",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_cut_visible_fullB3_failure_implies_marked_failure_no_nonempty",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_fullB3_of_no_i2_marked_closure_cut_neighbours_no_nonempty",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.actual_Kpt_old_boring_cut_no_terminal",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.kpt_twoIndex_offplan_iff_terminalFree_of_old_exact",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.actual_Kpt_old_boring_novelty_iff_terminal_or_missing_pair",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_numericH_odd_cut_correctedB3",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_failed_selectedB3_forces_lower_real_generation",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_numericH_top_generation_cut_correctedB3",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_failed_selectedB3_has_higher_generation_clique",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_numericH_odd_cut_unselected_of_no_I1_I2",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_numericH_odd_selected_requires_structural_I1_or_I2",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_actualRun_odd_selected_has_indexed_I1_or_I2",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_actualRun_odd_selected_has_constructed_indexed_I1_or_I2",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_actualRun_nonstructural_selected_has_lower_real_cut",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_actualRun_selected_structural_or_lower_real_cut",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_actualRun_selected_non_lower_real_requires_structural",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.physical_lower_real_cut_positive_generators",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.physical_lower_real_cut_positive_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_eligible_lower_cut_neighbour_is_higher",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_actualRun_I3_good_marked_has_unmarked_higher_same_clique",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_fullB3_of_lower_real_base_covered_marked_source",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_actualRun_lower_real_unselected_of_base_covered_marked_B3",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteOldColumnRawBound_support_mono",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.k4TrackD_empty_old_pool_clique_capacity",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.k4_canonical_singleton_le_two_iff_old_neighbour",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.kpt_old_ordinary_bit_separation_forces_full_old_distinct",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.kpt_no_I2_of_all_upper_mismatches_have_old_L_bit",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_run_no_I2_of_indexed_old_L_bit_separators",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.kpt_old_ordinary_bit_certificate_of_named_numeric_originals",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.kpt_old_raw_types_distinct_of_named_numeric_originals",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerGraphSupportImage",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.oldSupportCommonNeighbourPool_reindex",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteOldColumnRawBound_reindex",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteOldColumnRawBound_reindex_after_insert",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.original_mutual_budget_reindex",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerGraphAgeCanonical_next_prefix_neutral_reindex",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.actual_original_neutral_interval_preserves_free_raw_canonical",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.actual_original_neutral_interval_preserves_prior_age",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteDirectedCliqueCapacity_insert_one_jump",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.originalCriticalSupport",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteOldColumnRawBound_insert_critical_exact",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteOldColumnRawBound_insert_strict_drop_iff_critical_of_safe",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.originalCriticalCount",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.originalCriticalCount_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.originalCriticalCount_succ",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteOldColumnRawBound_eq_sub_criticalCount",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.envelope_union_low_closed",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.envelope_closure_high_mono_of_tail",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.envelope_closure_high_absorbs_old_closure",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.kpt_cut_visible_same_structural_and_full_crossing",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.envelope_IsInterestingAt_iff_of_cut_visible",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_newRoot_run_cut_visible_absorption",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.envelope_bare_full_new_runs_same_selected_levels",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_bare_and_full_new_runs_same_selected_levels",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.envelope_bare_full_runs_final_closure_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.envelope_bare_full_runs_cut_visible_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_bare_full_runs_final_source_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_bare_full_runs_all_cut_events_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_construct_bare_full_root_same_source",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_construct_bare_full_common_source_index",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.oldSupportCommonCapacity_insert_critical_exact",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.oldSupportCommonCapacity_eq_add_criticalCount",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.oldSupportCommonCapacity_lt_ell_of_safe",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.originalCriticalCount_add_final_raw_eq_initial_of_safe",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.originalCriticalCount_zero_iff_raw_eq_of_safe",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteOldColumnRawBound_interval_eq_of_zero_critical_count",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.all_critical_count_zero_iff_raw_interval_eq_of_safe",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerGraphAgeCanonical_interval_eq_of_zero_critical_count",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.actual_prior_canonical_age_after_zero_critical_interval",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_leftDense_physical_cover_after_zero_critical_interval",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_leftDense_exists_two_physical_canonical_cover_stages",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_constructed_old_new_coherent_source_index",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.oldColumnZeroTail",
+      "axioms": []
+    },
+    {
+      "name": "Kk.oldSupportCommonNeighbourPool_zeroTail",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteOldColumnRawBound_zeroTail",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteOldColumnRawBound_zeroTail_fun",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerGraphAgeCanonical_zeroTail",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_leftDense_exists_physical_cover_after_zeroTail",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_leftDense_exists_two_physical_covers_with_zero_gap",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.supportBlockGappedColumn_eq_before_cut",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.oldSupportCommonNeighbourPool_eq_of_column_prefix",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.integerGraphAgeCanonical_eq_of_column_prefix",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_leftDense_second_cover_after_preserved_typed_neutral_gap",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.supportBlockRawBound_eq_of_dominated_capacity",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.anchored_old_clique_dominates_new_capacity",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.supportBlockGappedRawAndCanonical_eq_of_anchor",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_leftDense_exists_anchored_positive_neutral_block",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_leftDense_two_physical_covers_with_positive_neutral_block",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.real_cover_anchor_common_capacity_exact",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.real_cover_later_full_anchor_link_is_critical",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.positive_clique_and_later_full_link_raw_upper_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.real_cover_later_full_link_forces_strict_canonical_T_drop",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_run_no_I1_I2_of_complete_index_checks",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_actualRun_lower_real_unselected_of_indexed_full_checks",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.uniform_positive_stage_reserved_original_E_column",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.uniform_positive_stage_selected_full_T_successor_canonical_drop",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteTaggedFuture_exists_T_sort_of_positive_canonical",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.real_cover_uniform_stage_has_selected_T_witness_forcing_loss",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.pointedContinuation_common_pool",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.pointedContinuation_raw_eq_insert",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.pointedContinuation_mutual_pool",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.pointedContinuation_capacity",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.pointedContinuation_raw_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.pointedContinuation_singleton_safe_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.pointedContinuation_canonical_is_age_of_safe_children",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteOldColumn_one_vertex_feasible_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.pointedContinuation_one_vertex_feasible_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_leftDense_finite_numeric_stage_witness",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericStageWitness_original_columns",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_leftDense_constructs_pointed_continuation",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_leftDense_two_coherent_pointed_stages",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.pointedContinuation_canonical_ge_clique_pred",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.pointedContinuation_raw_on_pivot_support",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.pointedContinuation_canonical_eq_clique_pred_of_raw_tight",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericStageWitness_extends_pointed",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_stage_closure_represented_by_stage_originals",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_stage_name_preserves_one_crossing_full_types",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_run_stage_and_final_pool_exhaust_same_closure",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_run_stage_final_full_source_and_B3_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.henson_actualRun_lower_real_unselected_of_stage_covered_marked_B3",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.resolvedQ_omitted_aux_later_retained_aux_nonedge",
+      "axioms": []
+    },
+    {
+      "name": "Kk.resolvedQ_omitted_base_positive_retained_is_selected_coding",
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "name": "Kk.resolvedQ_selected_coded_has_no_later_retained_neighbour",
+      "axioms": []
+    },
+    {
+      "name": "Kk.CoherentKptIndex.live_image_iff_coverage_and_reflection",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.CoherentKptIndex.new_live_untransported_is_activation_or_outside",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.CoherentKptIndex.transported_of_coverage_and_no_activation",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.CoherentKptIndex.forward_live_does_not_imply_reflection",
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "name": "Kk.CoherentKptIndex.outside_image_iff_literal_new_source",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.CoherentKptIndex.new_live_residual_old_inactive_or_literal_fresh",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.CoherentKptIndex.canonical_source_index_injective",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.CoherentKptIndex.canonical_new_live_residual_old_inactive_or_fresh",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_constructed_live_source_trichotomy",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_constructed_offplan_iff_residual_quiet",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.kpt_residual_quiet_iff_two_classes",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_constructed_offplan_iff_two_residual_classes",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_oldBoring_oneBare_real_zero_noNovelty",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_constructed_bare_root_real_zero_stage_quiet",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Kk.finiteNumericH_constructed_bare_root_real_zero_of_max_socle",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "independent_finite_check": {
+    "status": "PASS",
+    "path": "docs/audits/2026-11-21-track-b-controlled-preage-finite.json",
+    "sha256": "059df49c9b6d9cd9ea160ee1e3aee8904d8422b58455d4ad12b59d721d5a2d9a",
+    "script": "scripts/verify_track_b_controlled_preage.py",
+    "script_sha256": "32a3144a181537cadc743990b4d78a929cf5a759eb26b56d8f29f4a8f0b71e8c",
+    "constructor_and_minimality": {
+      "counts": {
+        "age_passing_pairs": 1067,
+        "candidate_positive_tables": 2297,
+        "eligible_constructors": 687,
+        "exact_residual_vector_tests": 12223,
+        "genuine_survivor_ages": 150,
+        "growth_identities_including_empty": 1660,
+        "minimality_iff_comparisons": 4218,
+        "minimality_iff_false": 2556,
+        "minimality_iff_true": 1662,
+        "pair_defined_passing_sets": 683,
+        "pointed_normalization_rejections": 1228,
+        "positive_support_caps": 1010,
+        "supported_witnesses_and_maximum_identities": 8804,
+        "survivor_domination_without_pointed_domination": 289
+      },
+      "exhaustive_domain": {
+        "age_enumeration": "all positive support tables retained exactly when canonical(table)=table",
+        "ambient_comparisons": "all genuine ages on e+1 sorts, for e=0,1,2",
+        "ell": [
+          2,
+          3,
+          4
+        ],
+        "passing_sets": "all subsets, filtered by the full positive-support cap",
+        "residual_vectors": "all nonnegative vectors of total at most ell-1",
+        "survivor_sorts": [
+          0,
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    "prospective_full_column_events": {
+      "counts": {
+        "complete_old_column_tables": 8045,
+        "controlled_age_below_raw_and_canonical": 20863,
+        "events_with_dead_survivor": 9096,
+        "events_with_positive_survivors": 20863,
+        "exact_prospective_raw_formulas_and_survivor_restrictions": 29959,
+        "labelled_graphs_enumerated": 675,
+        "legal_old_plus_pivot_graphs": 387,
+        "noncanonical_post_raw_events": 90,
+        "nonfree_pivot_events": 17334,
+        "prospective_events": 29959
+      },
+      "exhaustive_domain": {
+        "ell": [
+          2,
+          3,
+          4
+        ],
+        "graphs": "all labelled simple graphs on old_size+1 vertices, filtered by K_ell-freeness",
+        "old_originals": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "passing_sets": "all subsets of survivor sorts",
+        "pivot": "last vertex; pivot old column is exactly its full actual graph neighbourhood",
+        "positive_survivors": "required for the positive graph-age conclusion; rejected cases counted",
+        "survivor_columns": "all Boolean columns on the entire old graph",
+        "survivor_sorts": [
+          0,
+          1,
+          2
+        ]
+      }
+    },
+    "actual_all_support_normalization": {
+      "counts": {
+        "actual_clique_blocks": 9938,
+        "actual_graph_normalizations": 4330,
+        "candidate_genuine_targets": 760,
+        "complete_old_column_tables": 135,
+        "complete_raw_support_equalities": 12744,
+        "labelled_old_graphs_enumerated": 36,
+        "legal_old_graphs": 33,
+        "lower_target_configurations": 407,
+        "nonzero_edge_zero_column_gaps": 4969,
+        "support_orders": 2165,
+        "zero_size_blocks_skipped": 2806
+      },
+      "exhaustive_domain": {
+        "active_sorts": [
+          0,
+          1,
+          2
+        ],
+        "columns": "all Boolean columns on the complete old graph",
+        "ell": [
+          2,
+          3,
+          4
+        ],
+        "gap_limitation": "the specified noisy pattern is tested, not every possible ambient gap graph",
+        "gap_variants": [
+          "no gaps",
+          "one zero-column gap adjacent to the entire immediately preceding nonempty block"
+        ],
+        "graphs": "all labelled simple old graphs filtered by K_ell-freeness",
+        "maximum_actual_graph_vertices": 11,
+        "old_originals": [
+          0,
+          1,
+          2
+        ],
+        "support_orders": "every permutation of all admissible nonempty supports",
+        "targets": "every genuine age below the exact old canonical age"
+      }
+    },
+    "negative_fixtures": {
+      "legal_pivot_can_kill_a_survivor": {
+        "edges": [
+          [
+            0,
+            1
+          ]
+        ],
+        "ell": 3,
+        "old_canonical_age": [
+          1,
+          1,
+          1
+        ],
+        "old_pivot_and_survivor_columns": [
+          [
+            1,
+            1
+          ]
+        ],
+        "old_vertices": [
+          0
+        ],
+        "pivot": 1,
+        "positive_survivor_bit": 1,
+        "post_singleton_age": 0,
+        "rejected_conclusion": "all listed survivors remain positive"
+      },
+      "proper_support_cap_is_insufficient": {
+        "ell": 4,
+        "full_positive_support_value": 3,
+        "passing_set": "all three sorts",
+        "rejected_conclusion": "constructor is controlled and coding preserves R",
+        "survivor_age": "R(U)=|U|",
+        "survivor_sorts": 3
+      },
+      "singleton_cap_is_insufficient": {
+        "constructor_value_on_all_three_sorts": 4,
+        "ell": 4,
+        "passing_set": "both sorts",
+        "rejected_conclusion": "constructor values are at most ell-1",
+        "survivor_age_on_masks_1_2_3": [
+          2,
+          2,
+          3
+        ]
+      },
+      "survivor_domination_without_pointed_test": {
+        "controlled_preage_on_masks_1_2_3": [
+          1,
+          1,
+          2
+        ],
+        "ell": 3,
+        "old_age_on_masks_1_2_3": [
+          1,
+          1,
+          1
+        ],
+        "rejected_conclusion": "C <= P; failure at the joint pivot/survivor support",
+        "survivor_age": [
+          1
+        ]
+      }
+    },
+    "scope": "independent finite exhaustive referee within the separately listed domains; not Lean kernel verification",
+    "not_checked": [
+      "all ell, all finite sort counts, or all finite graph sizes",
+      "a prescribed saturated-cover or infinite diary schedule",
+      "numerical Henson left-density or existence beyond the enumerated finite graphs",
+      "full parameter-closed Kpt history, corrected B3, or a common labelled inverse source"
+    ]
+  },
+  "independent_audits": [
+    "English-first finite normalization reviewed independently by all three collaborators: full prefix, all support side effects, natural subtraction, zero-sized blocks and empty fronts",
+    "English-first controlled constructor reviewed for explicit supported witnesses, passing-set recovery, maximal supports, minimality and the ell=2 boundary",
+    "Prospective formula and derived C<=old raw reviewed for no circular target premise, genuine relative-age derivation, raw zero cases, and survivor positivity",
+    "Final physical source interfaces independently audited for same eventual pivot, full original-column retention, survivor parent maps, mixed bits, one shared finite embedding and cutoff"
+  ],
+  "local": {
+    "constructor_module_direct_compile": "PASS",
+    "completed_full_gate": false,
+    "partial_baseline_build": "Stopped after authoritative hosted success at 9345/9431 scheduled jobs; no proof errors; retained dependency caches",
+    "source_declaration_scan": "No sorry, unsafe declaration, or custom axiom declaration in the six new modules",
+    "finite_referee": "PASS within the exact recorded domains"
+  },
+  "verified_scope": [
+    "Explicit genuine controlled pre-age with all controlled identities, uniqueness and exact lower-bound criterion",
+    "Computed prospective survivor canonical age yields genuine controlled C below both the complete old raw bound and old canonical age; no C<=P or pointed budget assumed",
+    "Every genuine target below the complete old raw bound is realized exactly as a final raw age by finitely many actual isolated support cliques, retaining every initial column",
+    "Positive complete singleton age certifies the full prescribed neighbourhood; the actual numerical pivot is selected only after preparation and above any requested cutoff",
+    "Exact chronological pre-age and post-age at the same actual pivot, for arbitrary survivor parent maps and compatible passing bits",
+    "One common finite numerical stage with a shared embedding and cutoff under the explicit fixed-Henson and OnePointLeftDense hypotheses"
+  ],
+  "not_formalized_here": [
+    "Prescribed saturated-cover order and the exclusion or required classification of extra interesting cuts during direct normalization",
+    "Full parameter-closed Kpt/L+/E histories and I1/I2/I3/corrected-B3 transport",
+    "Occurrence-independent common labelled inverse-source orbit and prescribed infinite diary",
+    "General residual-vector theorem and residual-age operation in Sections 1-5 of the earlier nonfree-pivot audit",
+    "Identification of the manuscript abstract enumeration/density formulation with the explicit Boolean OnePointLeftDense input"
+  ]
+}

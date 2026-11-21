@@ -1,0 +1,81 @@
+{
+  "clique_parameters": [
+    2,
+    3,
+    4
+  ],
+  "counts": {
+    "configurations_with_positive_children": 5128,
+    "controlled_capacity_configurations": 10591,
+    "derived_linked_budgets": 6800,
+    "exact_repeated_parent_canonical_equalities": 10591,
+    "exact_survivor_canonical_equalities": 10591,
+    "full_manuscript_controlled_pairs": 2335,
+    "nonfree_pivot_with_positive_children": 3915,
+    "original_graphs": 105,
+    "oversized_insert_supports": 220,
+    "positive_physical_profiles": 5463
+  },
+  "date": "2026-11-21",
+  "hypotheses_checked": [
+    "original graph including pivot is K_ell-free",
+    "pivot old column equals its actual bilateral original edges",
+    "old canonical age is positive on every admissible support",
+    "controlled condition (2): positive support cap and admissible insertion growth"
+  ],
+  "negative_fixtures": {
+    "pair_tests_without_joint_growth": "rejected: K4 positive-pair age drops 2 to 1",
+    "without_positive_support_cap": "rejected: K3 positive-pair age drops 2 to 1"
+  },
+  "old_sorts": [
+    0,
+    1,
+    2
+  ],
+  "original_vertices": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "per_ell": {
+    "2": {
+      "controlled_capacity_configurations": 1,
+      "exact_repeated_parent_canonical_equalities": 1,
+      "exact_survivor_canonical_equalities": 1,
+      "original_graphs": 1,
+      "positive_physical_profiles": 1
+    },
+    "3": {
+      "configurations_with_positive_children": 1424,
+      "controlled_capacity_configurations": 2959,
+      "derived_linked_budgets": 1864,
+      "exact_repeated_parent_canonical_equalities": 2959,
+      "exact_survivor_canonical_equalities": 2959,
+      "full_manuscript_controlled_pairs": 1246,
+      "nonfree_pivot_with_positive_children": 906,
+      "original_graphs": 41,
+      "oversized_insert_supports": 220,
+      "positive_physical_profiles": 1535
+    },
+    "4": {
+      "configurations_with_positive_children": 3704,
+      "controlled_capacity_configurations": 7631,
+      "derived_linked_budgets": 4936,
+      "exact_repeated_parent_canonical_equalities": 7631,
+      "exact_survivor_canonical_equalities": 7631,
+      "full_manuscript_controlled_pairs": 1089,
+      "nonfree_pivot_with_positive_children": 3009,
+      "original_graphs": 63,
+      "positive_physical_profiles": 3927
+    }
+  },
+  "pivot_old_sort": 0,
+  "same_selected_pivot": 3,
+  "scope": "finite exhaustive referee; not Lean kernel verification",
+  "status": "PASS",
+  "unused_controlled_hypotheses": [
+    "pivot singleton equals one",
+    "maximum decomposition axiom"
+  ]
+}

@@ -1,5 +1,79 @@
 import Kk
 
+-- Track B: explicit controlled pre-age, derived prospective bound, actual normalization.
+#check @Kk.integerGraphAgeCanonical_is_subfront_of_positive
+#print axioms Kk.integerGraphAgeCanonical_is_subfront_of_positive
+#check @Kk.controlledPreAge_is_age
+#print axioms Kk.controlledPreAge_is_age
+#check @Kk.controlledPreAge_survivor
+#print axioms Kk.controlledPreAge_survivor
+#check @Kk.controlledPreAge_singleton
+#print axioms Kk.controlledPreAge_singleton
+#check @Kk.controlledPreAge_positive_cap
+#print axioms Kk.controlledPreAge_positive_cap
+#check @Kk.controlledPreAge_positive_growth
+#print axioms Kk.controlledPreAge_positive_growth
+#check @Kk.controlledPreAge_passing_iff
+#print axioms Kk.controlledPreAge_passing_iff
+#check @Kk.controlledPreAge_max_decomposition
+#print axioms Kk.controlledPreAge_max_decomposition
+#check @Kk.controlledPreAge_unique
+#print axioms Kk.controlledPreAge_unique
+#check @Kk.controlledPreAge_le_iff
+#print axioms Kk.controlledPreAge_le_iff
+#check @Kk.controlledPreAge_le_iff_of_age
+#print axioms Kk.controlledPreAge_le_iff_of_age
+#check @Kk.prospectivePivotRaw_eq_abstract_extension
+#print axioms Kk.prospectivePivotRaw_eq_abstract_extension
+#check @Kk.prospectivePivotGraph_safe_of_positive_singleton
+#print axioms Kk.prospectivePivotGraph_safe_of_positive_singleton
+#check @Kk.prospectivePivotRaw_le_old
+#print axioms Kk.prospectivePivotRaw_le_old
+#check @Kk.prospectivePivotRaw_positive_cap
+#print axioms Kk.prospectivePivotRaw_positive_cap
+#check @Kk.controlledPreAge_le_old_raw_of_prospective
+#print axioms Kk.controlledPreAge_le_old_raw_of_prospective
+#check @Kk.prospective_controlledPreAge_is_age_and_below
+#print axioms Kk.prospective_controlledPreAge_is_age_and_below
+#check @Kk.henson_leftDense_normalizes_prospective_coding
+#print axioms Kk.henson_leftDense_normalizes_prospective_coding
+#check @Kk.henson_leftDense_prospective_controlled_stage
+#print axioms Kk.henson_leftDense_prospective_controlled_stage
+
+-- Track B: constructed finite target age, late pivot, and common controlled stage.
+#check @Kk.henson_leftDense_cap_finite_target_support
+#print axioms Kk.henson_leftDense_cap_finite_target_support
+#check @Kk.henson_leftDense_normalizes_finite_supports
+#print axioms Kk.henson_leftDense_normalizes_finite_supports
+#check @Kk.henson_leftDense_normalizes_finite_target_age
+#print axioms Kk.henson_leftDense_normalizes_finite_target_age
+#check @Kk.finiteNeighbourCliqueCheck_false_of_positive_old_singleton
+#print axioms Kk.finiteNeighbourCliqueCheck_false_of_positive_old_singleton
+#check @Kk.henson_leftDense_realizes_late_positive_sort
+#print axioms Kk.henson_leftDense_realizes_late_positive_sort
+#check @Kk.henson_leftDense_realizes_late_controlledCoding
+#print axioms Kk.henson_leftDense_realizes_late_controlledCoding
+#check @Kk.henson_leftDense_constructs_late_controlledCoding_stage
+#print axioms Kk.henson_leftDense_constructs_late_controlledCoding_stage
+#check @Kk.henson_leftDense_prepares_and_codes_controlled_age
+#print axioms Kk.henson_leftDense_prepares_and_codes_controlled_age
+#check @Kk.henson_leftDense_prepares_controlled_age_stage
+#print axioms Kk.henson_leftDense_prepares_controlled_age_stage
+
+-- Track B: derive controlled nonfree-pivot budgets and the actual finite stage.
+#check @Kk.integerGraphAge_controlled_support_witness
+#print axioms Kk.integerGraphAge_controlled_support_witness
+#check @Kk.oldSupportCommonNeighbourPool_mutual_pivot
+#print axioms Kk.oldSupportCommonNeighbourPool_mutual_pivot
+#check @Kk.controlledPivot_linked_budget
+#print axioms Kk.controlledPivot_linked_budget
+#check @Kk.protectedPivot_canonical_eq_of_controlled
+#print axioms Kk.protectedPivot_canonical_eq_of_controlled
+#check @Kk.controlledCoding_next_prefix_canonical_eq
+#print axioms Kk.controlledCoding_next_prefix_canonical_eq
+#check @Kk.henson_leftDense_realizes_controlledPivot_stage
+#print axioms Kk.henson_leftDense_realizes_controlledPivot_stage
+
 -- Track B: protected pivots and canonical split transport.
 #check @Kk.protectedPivot_common_pool
 #print axioms Kk.protectedPivot_common_pool

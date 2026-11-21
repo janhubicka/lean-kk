@@ -1,4 +1,13 @@
 import Kk.TrackAGExceptionSelected
+import Kk.ControlledPivotBudget
+import Kk.PhysicalControlledCoding
+import Kk.FiniteTargetAgeNormalization
+import Kk.LateControlledPivot
+import Kk.FiniteControlledNormalization
+import Kk.ControlledPreAge
+import Kk.ProspectiveControlledPreAge
+import Kk.PhysicalProspectiveControlledCoding
+
 -- Track B: complete protected-pivot columns and canonical split transport.
 -- Verified source and audit evidence: docs/audits/2026-11-20-track-b-canonical-splits.json.
 import Kk.ProtectedActivePivotCapacity
