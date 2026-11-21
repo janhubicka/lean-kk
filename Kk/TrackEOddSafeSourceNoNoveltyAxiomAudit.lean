@@ -1,0 +1,10 @@
+import Kk.TrackEOddSafeSourceNoNovelty
+
+#check @Kk.finiteNumericH_odd_full_original_stage_zero
+#print axioms Kk.finiteNumericH_odd_full_original_stage_zero
+
+#check @Kk.finiteNumericH_old_boring_one_bare_root_odd_no_initial_seed
+#print axioms Kk.finiteNumericH_old_boring_one_bare_root_odd_no_initial_seed
+
+#check @Kk.finiteNumericH_old_boring_one_bare_root_odd_noNovelty
+#print axioms Kk.finiteNumericH_old_boring_one_bare_root_odd_noNovelty
