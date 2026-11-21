@@ -1,0 +1,6 @@
+import Kk.TrackFZeroCodeSurvivorSynchronization
+
+#check @Kk.trackFActualFibre_target_old_zero_of_source_zero
+#print axioms Kk.trackFActualFibre_target_old_zero_of_source_zero
+#check @Kk.k4_survivor_sync_after_zero_code
+#print axioms Kk.k4_survivor_sync_after_zero_code
