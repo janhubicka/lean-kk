@@ -2311,3 +2311,9 @@ import Kk
 #print axioms Kk.finiteNumericH_one_bare_odd_terminal_reflects_of_no_stage_end
 #check @Kk.finiteNumericH_constructed_odd_terminal_reflects_outside_freeends
 #print axioms Kk.finiteNumericH_constructed_odd_terminal_reflects_outside_freeends
+
+-- Track C: old seed prefix automatically supplies complete OLD raw Kpt socle at cut and max.
+#check @Kk.kpt_actual_original_old_socle_covered_of_seed_prefix
+#print axioms Kk.kpt_actual_original_old_socle_covered_of_seed_prefix
+#check @Kk.kpt_actual_original_max_socle_of_seed_prefix
+#print axioms Kk.kpt_actual_original_max_socle_of_seed_prefix
