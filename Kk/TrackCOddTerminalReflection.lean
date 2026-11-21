@@ -165,8 +165,10 @@ theorem finiteNumericH_constructed_odd_terminal_reflects_outside_freeends
   let Y : Set (AdmissibleKptNode family) :=
     finiteNumericH_bareTopRootSeeds
       family L k M j hAvoidL hTarget X
+  have hPhysicalCopy : HasPhysicalExhaustiveKptRun
+      family X oldTop := hOldPhysical
   obtain ⟨_Rtrue,hOldTopSeed,_oldParams,_oldLive,
-      _oldFinal,_oldInj,_oldPresent,_oldExact⟩ := hOldPhysical
+      _oldFinal,_oldInj,_oldPresent,_oldExact⟩ := hPhysicalCopy
   have hOldTopLe : oldTop ≤ hPosition k (j-1) k+1 :=
     finiteNumericH_old_physical_top_le_new_chronological_top
       family K k N j oldTop hNTop hAvoidK U X hSeeds hOldTopSeed
