@@ -404,8 +404,16 @@ import Kk.TrackDResolvedQBaseRoles
 -- Track B: arbitrary finite sequence of genuine physical canonical cover stages.
 import Kk.FinitePhysicalCoverChain
 
+-- Track F: source-verified actual independent-code and canonical-age components.
+-- No complete history-realization or global BRD lower bound is asserted.
+import Kk.TrackFActualIndependentCode
+import Kk.TrackFZeroCodePreprofileRigidity
+import Kk.TrackFZeroCodeSurvivorSynchronization
+import Kk.TrackFActualFrontCanonicalAge
+import Kk.TrackFTypePrefixCanonicalAgeSandwich
+
 -- Track A: genuine Henson finite raw/canonical critical-generation analysis.
--- Does not classify Kpt E/B3 events or global BRDs.
+-- These do not classify dependent Kpt E/B3 or global BRDs.
 import Kk.PartialNumericForbiddenSharpStability
 import Kk.PartialNumericCriticalGenerations
 import Kk.PartialNumericSingletonCanonical
