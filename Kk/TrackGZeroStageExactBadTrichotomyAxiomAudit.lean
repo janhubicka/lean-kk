@@ -1,0 +1,4 @@
+import Kk.TrackGZeroStageExactBadTrichotomy
+
+#check @Kk.finiteNumericH_zero_stage_exact_factor_bad_has_three_physical_witnesses
+#print axioms Kk.finiteNumericH_zero_stage_exact_factor_bad_has_three_physical_witnesses
