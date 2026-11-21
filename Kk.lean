@@ -401,6 +401,9 @@ import Kk.TrackDPreCutStageSource
 import Kk.TrackDResolvedQBaseRoles
 
 
+-- Track B: arbitrary finite sequence of genuine physical canonical cover stages.
+import Kk.FinitePhysicalCoverChain
+
 /-!
 The counting project imports the verified successor-tree library.
 No local replacement of the Ramsey theorem is assumed.
