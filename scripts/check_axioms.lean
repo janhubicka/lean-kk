@@ -2281,3 +2281,7 @@ import Kk
 -- Track C: one maximal full OLD prefix per actual original suffices at physical real-zero cuts.
 #check @Kk.finiteNumericH_constructed_bare_root_real_zero_of_max_socle
 #print axioms Kk.finiteNumericH_constructed_bare_root_real_zero_of_max_socle
+
+-- Track C: actual same-height total I/F transport from max source-zero prefixes and off-zero quietness.
+#check @Kk.finiteNumericH_constructed_sameHeight_run_of_max_zero_and_offzero
+#print axioms Kk.finiteNumericH_constructed_sameHeight_run_of_max_zero_and_offzero
