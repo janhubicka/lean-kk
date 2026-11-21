@@ -1,0 +1,49 @@
+import Kk.PartialNumericForbiddenSharpStability
+import Kk.PartialNumericCriticalGenerations
+import Kk.PartialNumericSingletonCanonical
+
+/-! Strict 20-name exact qualified standard-only axiom audit of
+Track A's genuine Henson finite raw and canonical event results.
+No conclusion about the full dependent Kpt E/B3 or global BRD.
+-/
+
+#check @Kk.trackA_finite_pool_free_of_henson
+#print axioms Kk.trackA_finite_pool_free_of_henson
+#check @Kk.trackA_linked_clique_capacity_two_vertex_budget
+#print axioms Kk.trackA_linked_clique_capacity_two_vertex_budget
+#check @Kk.trackA_partial_raw_stable_of_two_vertex_free
+#print axioms Kk.trackA_partial_raw_stable_of_two_vertex_free
+#check @Kk.trackA_partial_canonical_stable_of_two_vertex_free
+#print axioms Kk.trackA_partial_canonical_stable_of_two_vertex_free
+#check @Kk.trackA_partial_feasible_stable_of_two_vertex_free
+#print axioms Kk.trackA_partial_feasible_stable_of_two_vertex_free
+#check @Kk.trackA_henson_partial_raw_stable_after_ell_sub_two
+#print axioms Kk.trackA_henson_partial_raw_stable_after_ell_sub_two
+#check @Kk.trackA_henson_partial_canonical_stable_after_ell_sub_two
+#print axioms Kk.trackA_henson_partial_canonical_stable_after_ell_sub_two
+#check @Kk.trackA_henson_partial_feasible_stable_after_ell_sub_two
+#print axioms Kk.trackA_henson_partial_feasible_stable_after_ell_sub_two
+#check @Kk.trackA_henson_partial_raw_event_iff_simple
+#print axioms Kk.trackA_henson_partial_raw_event_iff_simple
+#check @Kk.trackA_henson_partial_raw_single_step_iff
+#print axioms Kk.trackA_henson_partial_raw_single_step_iff
+#check @Kk.trackA_henson_partial_raw_at_most_one_single_step
+#print axioms Kk.trackA_henson_partial_raw_at_most_one_single_step
+#check @Kk.trackA_henson_canonical_change_iff_saturating_event
+#print axioms Kk.trackA_henson_canonical_change_iff_saturating_event
+#check @Kk.trackA_henson_raw_function_change_iff_exists_support
+#print axioms Kk.trackA_henson_raw_function_change_iff_exists_support
+#check @Kk.mem_trackACriticalGenerations_iff
+#print axioms Kk.mem_trackACriticalGenerations_iff
+#check @Kk.trackA_henson_raw_change_iff_critical_generation
+#print axioms Kk.trackA_henson_raw_change_iff_critical_generation
+#check @Kk.trackA_henson_critical_generation_lt_ell_sub_two
+#print axioms Kk.trackA_henson_critical_generation_lt_ell_sub_two
+#check @Kk.trackA_henson_critical_generation_card_le
+#print axioms Kk.trackA_henson_critical_generation_card_le
+#check @Kk.trackA_finite_old_column_canonical_singleton_eq_raw
+#print axioms Kk.trackA_finite_old_column_canonical_singleton_eq_raw
+#check @Kk.trackA_physical_partial_canonical_singleton_eq_raw
+#print axioms Kk.trackA_physical_partial_canonical_singleton_eq_raw
+#check @Kk.trackA_henson_partial_canonical_singleton_step_iff
+#print axioms Kk.trackA_henson_partial_canonical_singleton_step_iff
