@@ -2277,3 +2277,7 @@ import Kk
 -- Track C: genuine K/L physical base-extension constructs finite W; real-zero candidate source quiet.
 #check @Kk.finiteNumericH_constructed_bare_root_real_zero_stage_quiet
 #print axioms Kk.finiteNumericH_constructed_bare_root_real_zero_stage_quiet
+
+-- Track C: one maximal full OLD prefix per actual original suffices at physical real-zero cuts.
+#check @Kk.finiteNumericH_constructed_bare_root_real_zero_of_max_socle
+#print axioms Kk.finiteNumericH_constructed_bare_root_real_zero_of_max_socle
