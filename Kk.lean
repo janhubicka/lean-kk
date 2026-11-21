@@ -369,6 +369,8 @@ import Kk.TrackCChronologicalOddSourceQuiet
 import Kk.TrackCOddFinalFreeEndSupport
 -- Track C: one maximal full OLD Kpt prefix over real-zero and safe odd cuts.
 import Kk.TrackCUnifiedSafeRealOdd
+-- Track C: automatic complete OLD Kpt prefix witnesses from sufficiently long real seed prefixes.
+import Kk.TrackCSeedPrefixOldSocle
 
 -- Track D: actual finite-index no-I1/no-I2 and one physical boring lower-real cut.
 -- Marked full-B3 and represented complete source remain explicit assumptions.
