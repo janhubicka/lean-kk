@@ -65,11 +65,6 @@ theorem mem_trackACriticalGenerations_iff
   classical
   simp only [trackACriticalGenerations, Finset.mem_image,
     Finset.mem_filter, Finset.mem_univ, true_and]
-  constructor
-  · rintro ⟨U,hCritical,hEq⟩
-    exact ⟨U,hCritical,hEq⟩
-  · rintro ⟨U,hCritical,hEq⟩
-    exact ⟨U,hCritical,hEq⟩
 
 /-- The complete ACTUAL ordinary-L raw profile changes across
 two partial cuts precisely when the finite critical-generation
