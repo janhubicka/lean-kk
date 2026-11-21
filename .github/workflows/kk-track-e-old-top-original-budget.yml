@@ -1,0 +1,48 @@
+name: KK Track E physical max old-Kpt prefix obligations bounded by old source top
+
+on:
+  pull_request:
+    paths:
+      - 'Kk/TrackEMaxOriginalOldTopBudget.lean'
+      - 'Kk/TrackEMaxOriginalOldTopBudgetAxiomAudit.lean'
+      - 'docs/track_e_max_original_budget_old_run_top_english_audit_20261121.md'
+      - '.github/workflows/kk-track-e-old-top-original-budget.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: kk-track-e-oldtopbudget-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  direct-build-and-axioms:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache Lean toolchain
+        uses: actions/cache@v4
+        with:
+          path: ~/.elan/toolchains
+          key: lean-toolchain-${{ runner.os }}-${{ hashFiles('lean-toolchain') }}
+      - name: Restore Lean workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve dependencies
+        run: lake update
+      - name: Obtain Mathlib build cache
+        run: lake exe cache get
+      - name: Compile old-run-top bound on physical original maximal-prefix tests
+        run: lake build Kk.TrackEMaxOriginalOldTopBudget
+      - name: Strict five-endpoint transitive-axiom gate
+        run: |
+          set -euo pipefail
+          lake env lean Kk/TrackEMaxOriginalOldTopBudgetAxiomAudit.lean | tee track-e-oldtopbudget-axioms.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py Kk/TrackEMaxOriginalOldTopBudgetAxiomAudit.lean track-e-oldtopbudget-axioms.log
