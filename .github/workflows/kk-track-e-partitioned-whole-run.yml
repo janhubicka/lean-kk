@@ -1,0 +1,48 @@
+name: KK Track E partitioned maximal old-Kpt-socle whole-run transport
+
+on:
+  pull_request:
+    paths:
+      - 'Kk/TrackEPartitionedOriginalMaxWholeRun.lean'
+      - 'Kk/TrackEPartitionedOriginalMaxWholeRunAxiomAudit.lean'
+      - 'docs/track_e_partitioned_max_old_socle_whole_run_english_audit_20261121.md'
+      - '.github/workflows/kk-track-e-partitioned-whole-run.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: kk-track-e-partwhole-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  direct-build-and-axioms:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache Lean toolchain
+        uses: actions/cache@v4
+        with:
+          path: ~/.elan/toolchains
+          key: lean-toolchain-${{ runner.os }}-${{ hashFiles('lean-toolchain') }}
+      - name: Restore Lean workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve dependencies
+        run: lake update
+      - name: Obtain Mathlib build cache
+        run: lake exe cache get
+      - name: Compile partitioned maximal old-socle actual whole-run transport
+        run: lake build Kk.TrackEPartitionedOriginalMaxWholeRun
+      - name: Strict two-endpoint transitive-axiom gate
+        run: |
+          set -euo pipefail
+          lake env lean Kk/TrackEPartitionedOriginalMaxWholeRunAxiomAudit.lean | tee track-e-partwhole-axioms.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py Kk/TrackEPartitionedOriginalMaxWholeRunAxiomAudit.lean track-e-partwhole-axioms.log
