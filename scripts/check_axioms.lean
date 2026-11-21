@@ -1,5 +1,25 @@
 import Kk
 
+-- Track B: constructed finite target age, late pivot, and common controlled stage.
+#check @Kk.henson_leftDense_cap_finite_target_support
+#print axioms Kk.henson_leftDense_cap_finite_target_support
+#check @Kk.henson_leftDense_normalizes_finite_supports
+#print axioms Kk.henson_leftDense_normalizes_finite_supports
+#check @Kk.henson_leftDense_normalizes_finite_target_age
+#print axioms Kk.henson_leftDense_normalizes_finite_target_age
+#check @Kk.finiteNeighbourCliqueCheck_false_of_positive_old_singleton
+#print axioms Kk.finiteNeighbourCliqueCheck_false_of_positive_old_singleton
+#check @Kk.henson_leftDense_realizes_late_positive_sort
+#print axioms Kk.henson_leftDense_realizes_late_positive_sort
+#check @Kk.henson_leftDense_realizes_late_controlledCoding
+#print axioms Kk.henson_leftDense_realizes_late_controlledCoding
+#check @Kk.henson_leftDense_constructs_late_controlledCoding_stage
+#print axioms Kk.henson_leftDense_constructs_late_controlledCoding_stage
+#check @Kk.henson_leftDense_prepares_and_codes_controlled_age
+#print axioms Kk.henson_leftDense_prepares_and_codes_controlled_age
+#check @Kk.henson_leftDense_prepares_controlled_age_stage
+#print axioms Kk.henson_leftDense_prepares_controlled_age_stage
+
 -- Track B: derive controlled nonfree-pivot budgets and the actual finite stage.
 #check @Kk.integerGraphAge_controlled_support_witness
 #print axioms Kk.integerGraphAge_controlled_support_witness
