@@ -1,0 +1,10 @@
+import Kk.TrackGFactorBadIndexIndependent
+
+#check @Kk.kptIndexedOldFactorCompatibleAt_iff_physical
+#print axioms Kk.kptIndexedOldFactorCompatibleAt_iff_physical
+
+#check @Kk.kptExactOldFactorBadCuts_index_independent
+#print axioms Kk.kptExactOldFactorBadCuts_index_independent
+
+#check @Kk.finiteNumericH_construct_target_index_exact_factorBad_iff_transport
+#print axioms Kk.finiteNumericH_construct_target_index_exact_factorBad_iff_transport
