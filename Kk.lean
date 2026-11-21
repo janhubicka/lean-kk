@@ -404,6 +404,14 @@ import Kk.TrackDResolvedQBaseRoles
 -- Track B: arbitrary finite sequence of genuine physical canonical cover stages.
 import Kk.FinitePhysicalCoverChain
 
+-- Track F: source-verified actual independent-code and canonical-age components.
+-- No complete history-realization or global BRD lower bound is asserted.
+import Kk.TrackFActualIndependentCode
+import Kk.TrackFZeroCodePreprofileRigidity
+import Kk.TrackFZeroCodeSurvivorSynchronization
+import Kk.TrackFActualFrontCanonicalAge
+import Kk.TrackFTypePrefixCanonicalAgeSandwich
+
 /-!
 The counting project imports the verified successor-tree library.
 No local replacement of the Ramsey theorem is assumed.
