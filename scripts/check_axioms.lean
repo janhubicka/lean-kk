@@ -2397,3 +2397,30 @@ import Kk
 #print axioms Kk.kpt_actual_original_old_socle_covered_of_seed_prefix
 #check @Kk.kpt_actual_original_max_socle_of_seed_prefix
 #print axioms Kk.kpt_actual_original_max_socle_of_seed_prefix
+
+-- Track F: 12 independently gated actual zero-code and complete finite-age components.
+-- No global independent-code diary occurrence or BRD conclusion.
+#check @Kk.HensonOneType.sourceCodingFibre_large_zeroPad_avoids_past
+#print axioms Kk.HensonOneType.sourceCodingFibre_large_zeroPad_avoids_past
+#check @Kk.HensonOneType.sourceCodingFibre_large_actual_future_zero_past
+#print axioms Kk.HensonOneType.sourceCodingFibre_large_actual_future_zero_past
+#check @Kk.HensonOneType.sourceCodingFibre_rank_zero_independent_code
+#print axioms Kk.HensonOneType.sourceCodingFibre_rank_zero_independent_code
+#check @Kk.integerGraphAge_zeroCode_preprofile_rigidity
+#print axioms Kk.integerGraphAge_zeroCode_preprofile_rigidity
+#check @Kk.trackFActualFibre_target_old_zero_of_source_zero
+#print axioms Kk.trackFActualFibre_target_old_zero_of_source_zero
+#check @Kk.k4_survivor_sync_after_zero_code
+#print axioms Kk.k4_survivor_sync_after_zero_code
+#check @Kk.trackFActualFront_raw_positive
+#print axioms Kk.trackFActualFront_raw_positive
+#check @Kk.trackFActualFront_canonical_is_integer_graph_age
+#print axioms Kk.trackFActualFront_canonical_is_integer_graph_age
+#check @Kk.integerGraphAgeCanonical_mono_raw
+#print axioms Kk.integerGraphAgeCanonical_mono_raw
+#check @Kk.trackFActualFront_raw_antitone_of_extension
+#print axioms Kk.trackFActualFront_raw_antitone_of_extension
+#check @Kk.trackFActualFront_canonical_antitone_of_extension
+#print axioms Kk.trackFActualFront_canonical_antitone_of_extension
+#check @Kk.trackFActualFront_canonical_sandwich_eq
+#print axioms Kk.trackFActualFront_canonical_sandwich_eq
