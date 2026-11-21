@@ -1,0 +1,58 @@
+name: KK Track A exact-head sharp Henson age verification
+
+on:
+  pull_request:
+    paths:
+      - 'Kk/PartialNumericForbiddenSharpStability.lean'
+      - 'Kk/PartialNumericCriticalGenerations.lean'
+      - 'Kk/PartialNumericSingletonCanonical.lean'
+      - 'Kk/TrackASharpAxiomAudit.lean'
+      - 'Kk.lean'
+      - 'scripts/check_track_a_forbidden_sharp_stability.py'
+      - 'scripts/check_track_a_canonical_singleton_sharpness.py'
+      - '.github/workflows/kk-track-a-sharp.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: kk-track-a-sharp-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache Lean toolchain
+        uses: actions/cache@v4
+        with:
+          path: ~/.elan/toolchains
+          key: lean-toolchain-${{ runner.os }}-${{ hashFiles('lean-toolchain') }}
+      - name: Restore Lean workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve pinned dependencies
+        run: lake update
+      - name: Obtain Mathlib build cache
+        run: lake exe cache get
+      - name: Independent raw/canonical finite regressions
+        run: |
+          python3 scripts/check_track_a_forbidden_sharp_stability.py
+          python3 scripts/check_track_a_canonical_singleton_sharpness.py
+      - name: Compile exact three Track A modules
+        run: lake build Kk.PartialNumericForbiddenSharpStability Kk.PartialNumericCriticalGenerations Kk.PartialNumericSingletonCanonical
+      - name: Full dependent Lean project build
+        run: lake build
+      - name: Strict twenty-name standard-only transitive axiom gate
+        run: |
+          set -euo pipefail
+          lake env lean Kk/TrackASharpAxiomAudit.lean | tee track-a-sharp-axioms.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py Kk/TrackASharpAxiomAudit.lean track-a-sharp-axioms.log
