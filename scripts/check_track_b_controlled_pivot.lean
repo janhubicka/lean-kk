@@ -1,0 +1,12 @@
+import Kk.PhysicalControlledCoding
+
+#check @Kk.integerGraphAge_controlled_support_witness
+#print axioms Kk.integerGraphAge_controlled_support_witness
+#check @Kk.oldSupportCommonNeighbourPool_mutual_pivot
+#print axioms Kk.oldSupportCommonNeighbourPool_mutual_pivot
+#check @Kk.controlledPivot_linked_budget
+#print axioms Kk.controlledPivot_linked_budget
+#check @Kk.protectedPivot_canonical_eq_of_controlled
+#print axioms Kk.protectedPivot_canonical_eq_of_controlled
+#check @Kk.henson_leftDense_realizes_controlledPivot_stage
+#print axioms Kk.henson_leftDense_realizes_controlledPivot_stage
