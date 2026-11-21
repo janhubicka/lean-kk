@@ -194,6 +194,82 @@ theorem kpt_actual_runs_selected_agree_off_full_profiles
       (RY.I (cut+1)) Y)
     cut (hTerminal cut hCut hOff) (hCrossing cut hCut hOff)
 
+
+/-- The number of DISTINCT final selected-level disagreements is
+bounded by the number of exceptional cut coordinates, for a finite
+exception set. No assumption that the selected levels themselves
+are all exceptional or finite-by-structure is needed: both
+finiteness and the bound follow from their symmetric difference
+being contained in a finite set. -/
+theorem actualAlgorithmRuns_selected_disagreement_card_le
+    {T : Type u} {Label : Type v}
+    [PartialOrder T] [LevelTree T]
+    {S : STree T Label}
+    (H : SMTree S) (X Y : Set T) (top : Nat)
+    (RX : SMTree.Envelope.AlgorithmRun H X top)
+    (RY : SMTree.Envelope.AlgorithmRun H Y top)
+    (Exceptional : Finset Nat)
+    (hDecision : ∀ i : Nat, i < top →
+      i ∉ (Exceptional : Set Nat) →
+      (SMTree.Envelope.IsInterestingAt H
+        (SMTree.Envelope.closure S (RX.I (i+1)) X) i ↔
+       SMTree.Envelope.IsInterestingAt H
+        (SMTree.Envelope.closure S (RY.I (i+1)) Y) i)) :
+    ((RX.I 0 \\ RY.I 0) ∪ (RY.I 0 \\ RX.I 0)).ncard ≤
+      Exceptional.card := by
+  have hSub := actualAlgorithmRuns_selected_diff_subset_exception
+    H X Y top RX RY (Exceptional : Set Nat) hDecision
+  have hBound :=
+    Set.ncard_le_ncard hSub (Finset.finite_toSet Exceptional)
+  simpa only [Set.ncard_coe_finset] using hBound
+
+/-- Full terminal I1 and dependent old/upper L+/E crossing
+equality outside a FINITE set of cuts bounds the number of
+actual selected-level disagreements for two different-seed
+Kpt scans by the size of that set. This is conditional on
+matching the actual pre-cut closure profiles, not ordinary-L
+graph ages or an unverified diary-derived transfer. -/
+theorem kpt_actual_runs_selected_disagreement_card_le_of_full_profiles
+    {db du dd : Nat}
+    (family : List (NormalizedForbidden db du dd))
+    (X Y : Set (AdmissibleKptNode family))
+    (top : Nat)
+    (RX : SMTree.Envelope.AlgorithmRun
+      (normalizedKptSMTree family) X top)
+    (RY : SMTree.Envelope.AlgorithmRun
+      (normalizedKptSMTree family) Y top)
+    (Exceptional : Finset Nat)
+    (hTerminal : ∀ cut : Nat, cut < top →
+      cut ∉ (Exceptional : Set Nat) →
+      (KptI1AtCut family
+        (SMTree.Envelope.closure (admissibleKptSTree family)
+          (RX.I (cut+1)) X) cut ↔
+       KptI1AtCut family
+        (SMTree.Envelope.closure (admissibleKptSTree family)
+          (RY.I (cut+1)) Y) cut))
+    (hCrossing : ∀ cut : Nat, cut < top →
+      cut ∉ (Exceptional : Set Nat) →
+      FullPhysicalClosureCrossing family
+        (SMTree.Envelope.closure (admissibleKptSTree family)
+          (RX.I (cut+1)) X) cut =
+      FullPhysicalClosureCrossing family
+        (SMTree.Envelope.closure (admissibleKptSTree family)
+          (RY.I (cut+1)) Y) cut) :
+    ((RX.I 0 \\ RY.I 0) ∪ (RY.I 0 \\ RX.I 0)).ncard ≤
+      Exceptional.card := by
+  apply actualAlgorithmRuns_selected_disagreement_card_le
+    (normalizedKptSMTree family) X Y top RX RY Exceptional
+  intro cut hCut hOff
+  exact kpt_IsInterestingAt_iff_of_terminal_and_full_crossing_eq
+    family
+    (SMTree.Envelope.closure (admissibleKptSTree family)
+      (RX.I (cut+1)) X)
+    (SMTree.Envelope.closure (admissibleKptSTree family)
+      (RY.I (cut+1)) Y)
+    cut (hTerminal cut hCut hOff) (hCrossing cut hCut hOff)
+
+#print axioms Kk.actualAlgorithmRuns_selected_disagreement_card_le
+#print axioms Kk.kpt_actual_runs_selected_disagreement_card_le_of_full_profiles
 #print axioms Kk.actualAlgorithmRuns_selected_agree_off_exception
 #print axioms Kk.actualAlgorithmRuns_selected_diff_subset_exception
 #print axioms Kk.kpt_actual_runs_selected_agree_off_full_profiles
