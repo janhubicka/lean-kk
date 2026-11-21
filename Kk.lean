@@ -367,6 +367,8 @@ import Kk.TrackCSameHeightRealZeroTransport
 import Kk.TrackCChronologicalOddSourceQuiet
 -- Track C: actual finite final original free-end obstruction support for safe odd cuts.
 import Kk.TrackCOddFinalFreeEndSupport
+-- Track C: candidate odd full I1 terminal reflection outside finite free-end support, no prefixes.
+import Kk.TrackCOddTerminalReflection
 
 -- Track D: actual finite-index no-I1/no-I2 and one physical boring lower-real cut.
 -- Marked full-B3 and represented complete source remain explicit assumptions.
