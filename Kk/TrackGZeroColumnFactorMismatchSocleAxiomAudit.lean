@@ -1,0 +1,4 @@
+import Kk.TrackGZeroColumnFactorMismatchSocle
+
+#check @Kk.finiteNumericH_zero_stage_old_factor_mismatch_has_no_old_socle
+#print axioms Kk.finiteNumericH_zero_stage_old_factor_mismatch_has_no_old_socle
