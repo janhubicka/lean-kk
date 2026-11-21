@@ -401,6 +401,12 @@ import Kk.TrackDPreCutStageSource
 import Kk.TrackDResolvedQBaseRoles
 
 
+-- Track A: genuine Henson finite raw/canonical critical-generation analysis.
+-- No Kpt E/B3 or global BRD conclusions are inferred.
+import Kk.PartialNumericForbiddenSharpStability
+import Kk.PartialNumericCriticalGenerations
+import Kk.PartialNumericSingletonCanonical
+
 /-!
 The counting project imports the verified successor-tree library.
 No local replacement of the Ramsey theorem is assumed.
