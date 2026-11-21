@@ -198,17 +198,19 @@ theorem finiteNumericH_old_run_final_stage_originals_card_le_root_add_top
       exact (Finset.mem_filter.mpr
         ⟨Finset.mem_univ v,hSelected⟩)
   have hTBound : T.card ≤ top+1 := by
-    apply Finset.card_le_card_of_injOn
-      (s := T) (t := Finset.range (top+1))
-      (fun v : Fin N => v.val)
-    · intro v hv
-      have hSelected : v.val ∈ R.I 0 :=
-        (Finset.mem_filter.mp hv).2
-      have hLe : v.val ≤ top :=
-        (R.I_mem_bounds 0 (Nat.zero_le top) v.val hSelected).2
-      exact Finset.mem_range.mpr (by omega)
-    · intro v _hv w _hw heq
-      exact Fin.ext heq
+    have hTBound' : T.card ≤ (Finset.range (top+1)).card := by
+      apply Finset.card_le_card_of_injOn
+        (s := T) (t := Finset.range (top+1))
+        (fun v : Fin N => v.val)
+      · intro v hv
+        have hSelected : v.val ∈ R.I 0 :=
+          (Finset.mem_filter.mp hv).2
+        have hLe : v.val ≤ top :=
+          (R.I_mem_bounds 0 (Nat.zero_le top) v.val hSelected).2
+        exact Finset.mem_range.mpr (by omega)
+      · intro v _hv w _hw heq
+        exact Fin.ext heq
+    simpa only [Finset.card_range] using hTBound'
   have hVCard : V.card ≤ (U ∪ T).card :=
     Finset.card_le_card hSub
   have hUnionCard : (U ∪ T).card ≤ U.card + T.card :=
