@@ -416,13 +416,14 @@ theorem trackA_henson_partial_raw_at_most_one_single_step
   omega
 
 
+set_option maxHeartbeats 1000000
+
 /-- Exact visibility of genuine Henson canonical ordinary-L age changes:
 a globally OLD-feasible normalized clique-weight vector must saturate
 a physical U-support whose linked original capacity is critical at
 a cut between g and h. Unlike the general raw-event theorem, there is
 NO independent Nat-subtraction saturation premise because genuine
 K_ell-freeness supplies p_U+2<ell. This is not a cover assertion. -/
-set_option maxHeartbeats 1000000 in
 theorem trackA_henson_canonical_change_iff_saturating_event
     {d : Nat} (E : Nat → Nat → Bool)
     (ell : Nat) (hell : 2 ≤ ell)
@@ -483,6 +484,8 @@ theorem trackA_henson_canonical_change_iff_saturating_event
     exact hGeneral.mpr
       ⟨w,U,hOld,hSat,hEligible,hCap,hCut,hLater,hEvent.2.2.2.2⟩
 
+
+set_option maxHeartbeats 200000
 
 /-- The ENTIRE genuine Henson raw ordinary-L support function changes
 across two partial cuts iff SOME nonempty support has the original
