@@ -380,3 +380,7 @@ The counting project imports the verified successor-tree library.
 No local replacement of the Ramsey theorem is assumed.
 -/
 
+
+-- Track A/G: actual Kpt selected scans agree outside full-profile exceptions.
+-- Conditional on complete dependent terminal and crossing equality.
+import Kk.TrackAGExceptionSelected
