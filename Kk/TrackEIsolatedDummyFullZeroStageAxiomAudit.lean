@@ -1,0 +1,7 @@
+import Kk.TrackEIsolatedDummyFullZeroStage
+
+#check @Kk.finiteNumericH_isolated_base_all_eligible_lower_real_L_zero
+#print axioms Kk.finiteNumericH_isolated_base_all_eligible_lower_real_L_zero
+
+#check @Kk.finiteNumericH_isolated_base_full_stage_zero
+#print axioms Kk.finiteNumericH_isolated_base_full_stage_zero
