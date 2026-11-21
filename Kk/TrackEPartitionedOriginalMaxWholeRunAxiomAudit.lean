@@ -1,0 +1,9 @@
+import Kk.TrackEPartitionedOriginalMaxWholeRun
+
+#check @Kk.KptActualPositiveEvenRealZeroStage
+
+#check @Kk.finiteNumericH_old_boring_allowed_zero_stage_quiet_of_original_max
+#print axioms Kk.finiteNumericH_old_boring_allowed_zero_stage_quiet_of_original_max
+
+#check @Kk.finiteNumericH_one_bare_root_run_of_partitioned_original_max
+#print axioms Kk.finiteNumericH_one_bare_root_run_of_partitioned_original_max

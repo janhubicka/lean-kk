@@ -1,0 +1,7 @@
+import Kk.TrackGExactFactorBadWitness
+
+#check @Kk.kpt_exact_factor_bad_has_terminal_meet_or_mismatch
+#print axioms Kk.kpt_exact_factor_bad_has_terminal_meet_or_mismatch
+
+#check @Kk.kpt_old_boring_factor_mismatch_has_no_old_full_pair
+#print axioms Kk.kpt_old_boring_factor_mismatch_has_no_old_full_pair
