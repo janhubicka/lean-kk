@@ -365,6 +365,8 @@ import Kk.TrackCMaxOriginalZeroCertificate
 import Kk.TrackCSameHeightRealZeroTransport
 -- Track C: genuinely chronological odd source quietness, preserving complete auxiliary E records.
 import Kk.TrackCChronologicalOddSourceQuiet
+-- Track C: unified full-Kpt physical quietness at real-zero and safe odd cuts.
+import Kk.TrackCUnifiedSafeRealOdd
 
 -- Track D: actual finite-index no-I1/no-I2 and one physical boring lower-real cut.
 -- Marked full-B3 and represented complete source remain explicit assumptions.
