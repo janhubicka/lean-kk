@@ -1,0 +1,45 @@
+name: KK Track F actual front canonical age
+on:
+  pull_request:
+    paths:
+      - 'Kk/TrackFActualFrontCanonicalAge.lean'
+      - 'Kk/TrackFActualFrontCanonicalAgeAxiomAudit.lean'
+      - 'docs/track_f_actual_one_type_front_canonical_age_english_audit_20261121.md'
+      - '.github/workflows/kk-track-f-actual-front-canonical-age.yml'
+  workflow_dispatch:
+concurrency:
+  group: kk-track-f-actual-front-age-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+jobs:
+  actual-front-age:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache Lean toolchain
+        uses: actions/cache@v4
+        with:
+          path: ~/.elan/toolchains
+          key: lean-toolchain-${{ runner.os }}-${{ hashFiles('lean-toolchain') }}
+      - name: Restore Lean workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve dependencies
+        run: lake update
+      - name: Obtain Mathlib build cache
+        run: lake exe cache get
+      - name: Build genuine actual type front canonical age
+        run: lake build Kk.TrackFActualFrontCanonicalAge
+      - name: Strict two-theorem standard-only axiom gate
+        run: |
+          set -euo pipefail
+          lake env lean Kk/TrackFActualFrontCanonicalAgeAxiomAudit.lean | tee track-f-actual-front-age-axioms.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py Kk/TrackFActualFrontCanonicalAgeAxiomAudit.lean track-f-actual-front-age-axioms.log
