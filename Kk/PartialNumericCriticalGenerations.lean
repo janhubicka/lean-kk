@@ -45,7 +45,7 @@ genuine Henson original block. A support U contributes the unique
 candidate generation cap_E(P_U), if it is critical. Multiple
 supports can contribute the same generation. -/
 noncomputable def trackACriticalGenerations
-    {d ell : Nat} (E : Nat → Nat → Bool)
+    {d : Nat} (ell : Nat) (E : Nat → Nat → Bool)
     (b : Nat) (j : Fin d → Nat) : Finset Nat := by
   classical
   exact ((Finset.univ : Finset (IntegerGraphSupport d ell)).filter
@@ -58,7 +58,7 @@ genuine original common-neighbour capacity. -/
 theorem mem_trackACriticalGenerations_iff
     {d ell : Nat} (E : Nat → Nat → Bool)
     (b : Nat) (j : Fin d → Nat) (p : Nat) :
-    p ∈ trackACriticalGenerations E b j ↔
+    p ∈ trackACriticalGenerations ell E b j ↔
       ∃ U : IntegerGraphSupport d ell,
         trackACriticalSupport E b j U ∧
         trackAOldCapacity E b j U = p := by
@@ -85,21 +85,21 @@ theorem trackA_henson_raw_change_iff_critical_generation
     finiteNumericHPartialActualRawAt E ell k b h M j ≠
       finiteNumericHPartialActualRawAt E ell k b g M j ↔
     ∃ p : Nat,
-      p ∈ trackACriticalGenerations E b j ∧ g ≤ p ∧ p < h := by
+      p ∈ trackACriticalGenerations ell E b j ∧ g ≤ p ∧ p < h := by
   classical
   rw [trackA_henson_raw_function_change_iff_exists_support
     E ell hell hAvoid k b g h M hgh hh j hj]
   constructor
   · rintro ⟨U,hEligible,hCap,hCut,hLater⟩
     let p := trackAOldCapacity E b j U
-    refine ⟨p, (mem_trackACriticalGenerations_iff E b j p).2
+    refine ⟨p, (mem_trackACriticalGenerations_iff (ell := ell) E b j p).2
       ⟨U, ?_, rfl⟩, ?_, ?_⟩
     · exact ⟨hEligible,hCap⟩
     · exact hCut
     · exact hLater
   · rintro ⟨p,hMem,hCut,hLater⟩
     obtain ⟨U,hCrit,hEq⟩ :=
-      (mem_trackACriticalGenerations_iff E b j p).1 hMem
+      (mem_trackACriticalGenerations_iff (ell := ell) E b j p).1 hMem
     refine ⟨U,hCrit.1,hCrit.2,?_,?_⟩
     · change g ≤ trackAOldCapacity E b j U
       omega
@@ -118,11 +118,11 @@ theorem trackA_henson_critical_generation_lt_ell_sub_two
       bad.Avoids (normalizedGraphModel E))
     (b : Nat) (j : Fin d → Nat)
     (hj : ∀ t, b < j t)
-    (p : Nat) (hp : p ∈ trackACriticalGenerations E b j) :
+    (p : Nat) (hp : p ∈ trackACriticalGenerations ell E b j) :
     p < ell - 2 := by
   classical
   obtain ⟨U,hCrit,hEq⟩ :=
-    (mem_trackACriticalGenerations_iff E b j p).1 hp
+    (mem_trackACriticalGenerations_iff (ell := ell) E b j p).1 hp
   let P : Finset Nat :=
     oldSupportCommonNeighbourPool (Finset.range b)
       (fun i t => E i (j t)) U.1
@@ -162,9 +162,9 @@ theorem trackA_henson_critical_generation_card_le
       bad.Avoids (normalizedGraphModel E))
     (b : Nat) (j : Fin d → Nat)
     (hj : ∀ t, b < j t) :
-    (trackACriticalGenerations E b j).card ≤ ell - 2 := by
+    (trackACriticalGenerations ell E b j).card ≤ ell - 2 := by
   classical
-  have hSub : trackACriticalGenerations E b j ⊆
+  have hSub : trackACriticalGenerations ell E b j ⊆
       Finset.range (ell - 2) := by
     intro p hp
     exact Finset.mem_range.mpr
