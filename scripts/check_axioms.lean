@@ -2301,3 +2301,9 @@ import Kk
 #print axioms Kk.kpt_physical_no_stage_free_end_outside_final
 #check @Kk.finiteNumericH_constructed_odd_quiet_outside_finite_freeends
 #print axioms Kk.finiteNumericH_constructed_odd_quiet_outside_finite_freeends
+
+-- Track C: actual physical odd new-to-old I1 reflection without old-prefix or boring assumptions.
+#check @Kk.finiteNumericH_one_bare_odd_terminal_reflects_of_no_stage_end
+#print axioms Kk.finiteNumericH_one_bare_odd_terminal_reflects_of_no_stage_end
+#check @Kk.finiteNumericH_constructed_odd_terminal_reflects_outside_freeends
+#print axioms Kk.finiteNumericH_constructed_odd_terminal_reflects_outside_freeends
