@@ -1,0 +1,9 @@
+import Kk.TrackEIsolatedDummyOriginalMaxWholeRun
+
+#check @Kk.KptActualIsolatedDummyLowerCut
+
+#check @Kk.kpt_actual_isolated_dummy_cut_has_full_zero_original_stage
+#print axioms Kk.kpt_actual_isolated_dummy_cut_has_full_zero_original_stage
+
+#check @Kk.finiteNumericH_one_bare_root_run_of_isolated_dummy_original_max
+#print axioms Kk.finiteNumericH_one_bare_root_run_of_isolated_dummy_original_max
