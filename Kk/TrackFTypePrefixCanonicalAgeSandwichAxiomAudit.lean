@@ -1,0 +1,10 @@
+import Kk.TrackFTypePrefixCanonicalAgeSandwich
+
+#check @Kk.integerGraphAgeCanonical_mono_raw
+#print axioms Kk.integerGraphAgeCanonical_mono_raw
+#check @Kk.trackFActualFront_raw_antitone_of_extension
+#print axioms Kk.trackFActualFront_raw_antitone_of_extension
+#check @Kk.trackFActualFront_canonical_antitone_of_extension
+#print axioms Kk.trackFActualFront_canonical_antitone_of_extension
+#check @Kk.trackFActualFront_canonical_sandwich_eq
+#print axioms Kk.trackFActualFront_canonical_sandwich_eq
