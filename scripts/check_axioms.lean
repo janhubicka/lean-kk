@@ -2311,3 +2311,9 @@ import Kk
 #print axioms Kk.finiteNumericH_one_bare_odd_terminal_reflects_of_no_stage_end
 #check @Kk.finiteNumericH_constructed_odd_terminal_reflects_outside_freeends
 #print axioms Kk.finiteNumericH_constructed_odd_terminal_reflects_outside_freeends
+
+-- Track C: complete old numerical H+ partialTypeAt source-witness matching and maximal criterion.
+#check @Kk.kpt_original_old_socle_covered_of_seed_raw_type_eq
+#print axioms Kk.kpt_original_old_socle_covered_of_seed_raw_type_eq
+#check @Kk.kpt_original_max_old_socle_of_seed_raw_type_eq
+#print axioms Kk.kpt_original_max_old_socle_of_seed_raw_type_eq
