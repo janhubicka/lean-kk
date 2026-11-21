@@ -1,0 +1,10 @@
+import Kk.TrackETwoSafeClassesOriginalMaxWholeRun
+
+#check @Kk.KptActualOddNoStageFreeEndCut
+#check @Kk.KptActualTwoSafeSourceCut
+
+#check @Kk.finiteNumericH_old_boring_two_safe_cut_quiet_of_original_max
+#print axioms Kk.finiteNumericH_old_boring_two_safe_cut_quiet_of_original_max
+
+#check @Kk.finiteNumericH_one_bare_root_run_of_two_safe_classes_original_max
+#print axioms Kk.finiteNumericH_one_bare_root_run_of_two_safe_classes_original_max
