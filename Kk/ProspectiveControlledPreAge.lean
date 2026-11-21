@@ -97,7 +97,7 @@ theorem prospectivePivotRaw_eq_abstract_extension
   unfold protectedPivotRaw prospectivePivotRaw
   rw [hErase, oldSupportCommonNeighbourPool_mutual_pivot A
     (Finset.range b) c j b hColumn, hOldCapacity, hOldCapacity]
-  simpa only [decide_eq_true_eq]
+  simp only [decide_eq_true_eq, Finset.subset_iff]
 
 /-- Positive old pivot singleton age also proves that the abstract event
 is a legal one-point graph extension of the fixed Henson prefix. -/
