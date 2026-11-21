@@ -111,8 +111,7 @@ theorem trackA_linked_clique_capacity_two_vertex_budget
   have hCardD : D.card = C.card + 2 := by
     dsimp [D]
     rw [Finset.card_insert_of_notMem htNotInsert,
-        Finset.card_insert_of_notMem hbNot]
-    omega
+        Finset.card_insert_of_notMem hbNot] <;> omega
   have hCapacity :=
     directedClique_card_le_capacity E
       (insert t (insert b S)) D hSubD hCliqueD
