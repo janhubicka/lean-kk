@@ -1,0 +1,4 @@
+import Kk.TrackFZeroCodePreprofileRigidity
+
+#check @Kk.integerGraphAge_zeroCode_preprofile_rigidity
+#print axioms Kk.integerGraphAge_zeroCode_preprofile_rigidity
