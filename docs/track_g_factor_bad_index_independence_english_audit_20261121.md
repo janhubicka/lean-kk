@@ -1,3 +1,17 @@
+# Superseded Track G index-independence proof note (21 November 2026)
+
+**Status:** The theorem and finite-H+ application were independently verified in PR #426, but were accidentally duplicated under three already-existing fully-qualified declaration names from `Kk/TrackGIntrinsicExactFactorBad.lean` (earlier, also verified). The latter is the canonical source and is already cited in the manuscript. This file remains solely as the English adversarial development record of PR #426.
+
+**Canonical declarations (do not redefine):**
+- `Kk.KptPhysicalOldFactorCompatibleAt`
+- `Kk.kptIndexedOldFactorCompatibleAt_iff_physical`
+- `Kk.kptExactOldFactorBadCuts_index_independent`
+- `Kk.finiteNumericH_construct_target_exact_factor_Bad_iff_transport`
+
+The duplicate `Kk/TrackGFactorBadIndexIndependent.lean`, its axiom-audit file and its dedicated workflow are retired in the cleanup branch. The independent new physical-witness results from PR #432 remain in `Kk/TrackGExactFactorBadWitness.lean`; a combined-import smoke test now checks coherence.
+
+---
+
 # Track G — intrinsic exact factor Bad support, independent of finite target names
 
 21 November 2026. English proof and adversarial audit BEFORE Lean.
