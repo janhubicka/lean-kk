@@ -1,0 +1,48 @@
+name: KK Track E literal isolated-Q dummy all-eligible H+ zero stage
+
+on:
+  pull_request:
+    paths:
+      - 'Kk/TrackEIsolatedDummyFullZeroStage.lean'
+      - 'Kk/TrackEIsolatedDummyFullZeroStageAxiomAudit.lean'
+      - 'docs/track_e_isolated_dummy_zero_stage_transport_english_audit_20261121.md'
+      - '.github/workflows/kk-track-e-isolated-dummy-full-zero.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: kk-track-e-isoldummy-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  direct-build-and-axioms:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache Lean toolchain
+        uses: actions/cache@v4
+        with:
+          path: ~/.elan/toolchains
+          key: lean-toolchain-${{ runner.os }}-${{ hashFiles('lean-toolchain') }}
+      - name: Restore Lean workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve dependencies
+        run: lake update
+      - name: Obtain Mathlib build cache
+        run: lake exe cache get
+      - name: Compile full numerical-H+ eligible zero-L column for isolated Q base
+        run: lake build Kk.TrackEIsolatedDummyFullZeroStage
+      - name: Strict two-endpoint transitive-axiom gate
+        run: |
+          set -euo pipefail
+          lake env lean Kk/TrackEIsolatedDummyFullZeroStageAxiomAudit.lean | tee track-e-isoldummy-axioms.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py Kk/TrackEIsolatedDummyFullZeroStageAxiomAudit.lean track-e-isoldummy-axioms.log
