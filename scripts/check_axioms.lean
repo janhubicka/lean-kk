@@ -2285,7 +2285,10 @@ import Kk
 -- Track C: actual same-height total I/F transport from max source-zero prefixes and off-zero quietness.
 #check @Kk.finiteNumericH_constructed_sameHeight_run_of_max_zero_and_offzero
 #print axioms Kk.finiteNumericH_constructed_sameHeight_run_of_max_zero_and_offzero
-\n-- Track F: 12 exact-source, independently gated actual zero-code and full-age endpoints.\n-- Components only: not a global history, diary or BRD lower-bound proof.\n#check @Kk.HensonOneType.sourceCodingFibre_large_zeroPad_avoids_past
+
+-- Track F: 12 exact-source, independently gated actual zero-code and full-age endpoints.
+-- Components only: not a global history, diary or BRD lower-bound proof.
+#check @Kk.HensonOneType.sourceCodingFibre_large_zeroPad_avoids_past
 #print axioms Kk.HensonOneType.sourceCodingFibre_large_zeroPad_avoids_past
 #check @Kk.HensonOneType.sourceCodingFibre_large_actual_future_zero_past
 #print axioms Kk.HensonOneType.sourceCodingFibre_large_actual_future_zero_past
