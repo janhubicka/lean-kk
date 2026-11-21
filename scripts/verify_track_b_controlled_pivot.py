@@ -139,6 +139,19 @@ def run() -> dict:
                            if t.bit_count() < ell - 1):
                         continue
                     local["controlled_capacity_configurations"] += 1
+                    if positive:
+                        local["configurations_with_positive_children"] += 1
+                        if any((p, 3) in edges for p in range(3)):
+                            local["nonfree_pivot_with_positive_children"] += 1
+                    if ell >= 3 and old_age[1] == 1:
+                        defined_positive = sum(1 << t for t in (1, 2)
+                                               if old_age[(1 << t) | 1] == old_age[1 << t] + 1)
+                        if defined_positive == positive and all(
+                            old_age[t] == max(old_age.get(t & ~1, 0),
+                                              old_age.get(t & (positive | 1), 0))
+                            for t in old_domain
+                        ):
+                            local["full_manuscript_controlled_pairs"] += 1
                     fixture = (ell, graphmask, code, positive)
                     for t in positive_supports:
                         assert 1 + capacities[pool(t | 1)] + old_age[t] <= ell - 1, fixture

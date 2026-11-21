@@ -336,7 +336,12 @@ graph or reselect the pivot.
 For the literal controlled coding event, use the surviving sorts D minus {s}
 as new sorts, take pi to be their inclusion, and set beta positive precisely
 on E_s. The theorem gives exactly the restriction of F to those surviving
-sorts. Finite repeated-parent variants follow from the same statement.
+sorts. To identify this with the chronological event at the actual original
+v, take H=v+1, so P is exactly [0,v). For a later protected cutoff H, the
+theorem instead describes a finite continuation after accounting for every
+nonpivot original below H, including those later than v. Identifying that
+background age with an earlier diary state requires a separate history
+invariant. Finite repeated-parent variants follow from the same statement.
 
 ### Focused hostile checks
 

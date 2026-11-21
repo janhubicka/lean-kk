@@ -122,6 +122,41 @@ theorem protectedPivot_canonical_eq_of_controlled
   funext U
   exact Nat.le_antisymm (hUpper U) (hTarget U)
 
+/-- At the chronological coding cut v, the complete old pool is exactly
+range v. The next-prefix age is the expected pullback; no later protected
+original is silently included in this pre-age. Deleting the coded sort gives
+the literal survivor-restriction step of the manuscript. -/
+theorem controlledCoding_next_prefix_canonical_eq
+    (E : Nat → Nat → Bool) (d e ell v : Nat)
+    (hell : 2 ≤ ell)
+    (c : Nat → Fin d → Bool) (s : Fin d)
+    (hColumn : ∀ p, p < v → E p v = c p s ∧ E v p = c p s)
+    (F : IntegerGraphSupport d ell → Nat)
+    (hAge : IsIntegerGraphAge d ell F)
+    (hOld : integerGraphAgeCanonical d ell
+      (finiteOldColumnRawBound E ell d (Finset.range v) c) = F)
+    (X : Finset (Fin d))
+    (hCap : ∀ U : IntegerGraphSupport d ell, U.1 ⊆ X → F U ≤ ell - 2)
+    (hGrowth : ∀ U V : IntegerGraphSupport d ell,
+      U.1 ⊆ X → V.1 = insert s U.1 → F V = F U + 1)
+    (pi : Fin e → Fin d) (beta : Fin e → Bool)
+    (hPositive : ∀ u, beta u = true → pi u ∈ X) :
+    integerGraphAgeCanonical e ell
+      (finiteOldColumnRawBound E ell e (Finset.range (v + 1))
+        (protectedPivotColumn v (fun p u => c p (pi u)) beta)) =
+      fun U => F (integerGraphSupportImage pi U) := by
+  classical
+  have hErase : (Finset.range (v + 1)).erase v = Finset.range v := by
+    ext p
+    simp only [Finset.mem_erase, Finset.mem_range]
+    omega
+  apply protectedPivot_canonical_eq_of_controlled E d e ell v (v + 1)
+    hell (by omega) c s _ F hAge _ X hCap hGrowth pi beta hPositive
+  · intro p hp
+    rw [hErase] at hp
+    exact hColumn p (Finset.mem_range.mp hp)
+  · simpa only [hErase] using hOld
+
 /-- A controlled event has a complete finite numerical Henson stage with
 the same protected pivot. The actual canonical age equality, full stage,
 fixed prefix and every positive/negative original column share one f and M.
@@ -182,6 +217,8 @@ theorem henson_leftDense_realizes_controlledPivot_stage
     simpa only [C, protectedPivotColumn, if_neg hpv] using h
   · intro w hw
     have h := hActual v hvH w hw
-    simpa only [C, protectedPivotColumn, if_pos rfl] using h
+    have hBit : C v (tau w) = beta (tau w) := by
+      simp [C, protectedPivotColumn]
+    exact ⟨h.1.trans hBit, h.2.trans hBit⟩
 
 end Kk

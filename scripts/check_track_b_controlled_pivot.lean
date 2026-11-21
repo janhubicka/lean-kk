@@ -8,5 +8,7 @@ import Kk.PhysicalControlledCoding
 #print axioms Kk.controlledPivot_linked_budget
 #check @Kk.protectedPivot_canonical_eq_of_controlled
 #print axioms Kk.protectedPivot_canonical_eq_of_controlled
+#check @Kk.controlledCoding_next_prefix_canonical_eq
+#print axioms Kk.controlledCoding_next_prefix_canonical_eq
 #check @Kk.henson_leftDense_realizes_controlledPivot_stage
 #print axioms Kk.henson_leftDense_realizes_controlledPivot_stage
