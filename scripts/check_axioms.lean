@@ -2301,3 +2301,7 @@ import Kk
 #print axioms Kk.kpt_physical_no_stage_free_end_outside_final
 #check @Kk.finiteNumericH_constructed_odd_quiet_outside_finite_freeends
 #print axioms Kk.finiteNumericH_constructed_odd_quiet_outside_finite_freeends
+
+-- Track C: one maximal full old prefix covers unified real-zero and safe-odd physical cuts.
+#check @Kk.finiteNumericH_constructed_safe_real_odd_quiet_of_max_socle
+#print axioms Kk.finiteNumericH_constructed_safe_real_odd_quiet_of_max_socle
