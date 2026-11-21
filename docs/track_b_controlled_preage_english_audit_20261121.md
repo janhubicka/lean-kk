@@ -263,6 +263,41 @@ is again at most `B(T)`. Supports not containing `j` use
 Section 2 gives `C<=G_B=P`. This proof needs neither a general residual
 formalization nor a separate mixed-witness lifting theorem.
 
+### Explicit prospective raw formula and weaker algebraic hypotheses
+
+The abstract pivot need not even be added as a vertex in the algebraic module.
+On ambient admissible supports define
+
+    Bpros(U) = n - max(rho(N(U)), 1+rho(N(U union {j})))  if U subset X,
+    Bpros(U) = n - rho(N(U))                            otherwise.
+
+The common-neighbour pool `N(U union {j})` is defined for every finite set;
+this is not an evaluation of an age outside its support domain. In particular
+the formula remains legitimate when `|U|=n` and `j notin U`.
+
+It suffices to assume that `R` is a genuine relative age on `E`, that
+`R(U)<=Bpros(U)` for every survivor support, and that the old raw singleton
+bound at `j` is at least one. Positive old **canonical** singleton age implies
+this last condition. The cap `R(U)<=n-1` on `X` follows because the displayed
+maximum is at least one. For a nonempty positive `A`, positivity of `R(A)`
+and its inequality against the truncated subtraction imply
+
+    1 + rho(N(A union {j})) + R(A) <= n.
+
+Thus the same pool inclusion proves `C<=B` without any global freeness
+hypothesis in this purely numerical-capacity implication. Freeness of the
+old graph is restored when interpreting `Bpros` as a legal one-point event;
+the old singleton bound then certifies legality of that abstract pivot.
+
+The raw formula follows from the exact clique-capacity insertion identity:
+the new common-neighbour pool either omits the pivot, or contains it and
+has capacity equal to the maximum of the old pool capacity and one plus
+the old pool capacity linked to its full type. One may take `R` to be the
+prospective canonical age restricted to `E`, with positivity of its listed
+survivor sorts checked separately. The result derives `C<=B` and then
+`C<=G_B` by the greatest-age property; it does not assume a pointed-budget
+criterion or reverse the general inequality `G_B<=B`.
+
 Nothing here chooses a numerical `v`. The finite abstract event determines
 its own prospective `R`; after normalization to `C(R,X)`, a later numerical
 pivot with the resulting complete column can be selected. The verified
