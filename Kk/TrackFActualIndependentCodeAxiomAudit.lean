@@ -1,0 +1,8 @@
+import Kk.TrackFActualIndependentCode
+
+#check @Kk.HensonOneType.sourceCodingFibre_large_zeroPad_avoids_past
+#print axioms Kk.HensonOneType.sourceCodingFibre_large_zeroPad_avoids_past
+#check @Kk.HensonOneType.sourceCodingFibre_large_actual_future_zero_past
+#print axioms Kk.HensonOneType.sourceCodingFibre_large_actual_future_zero_past
+#check @Kk.HensonOneType.sourceCodingFibre_rank_zero_independent_code
+#print axioms Kk.HensonOneType.sourceCodingFibre_rank_zero_independent_code
