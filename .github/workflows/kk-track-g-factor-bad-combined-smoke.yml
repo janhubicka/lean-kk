@@ -1,16 +1,16 @@
-name: KK Track G physical exact factor Bad independent of target index, finite H+ application
+name: KK Track G combined canonical intrinsic factor Bad and physical-witness coherence
 
 on:
   pull_request:
     paths:
-      - 'Kk/TrackGFactorBadIndexIndependent.lean'
-      - 'Kk/TrackGFactorBadIndexIndependentAxiomAudit.lean'
+      - 'Kk/TrackGFactorBadCombinedSmoke.lean'
+      - 'Kk/TrackGFactorBadCombinedSmokeAxiomAudit.lean'
       - 'docs/track_g_factor_bad_index_independence_english_audit_20261121.md'
-      - '.github/workflows/kk-track-g-factor-bad-index-independent.yml'
+      - '.github/workflows/kk-track-g-factor-bad-combined-smoke.yml'
   workflow_dispatch:
 
 concurrency:
-  group: kk-track-g-factor-bad-index-independent-${{ github.event.pull_request.head.ref || github.ref_name }}
+  group: kk-track-g-factor-bad-combined-smoke-${{ github.event.pull_request.head.ref || github.ref_name }}
   cancel-in-progress: true
 
 jobs:
@@ -38,11 +38,11 @@ jobs:
         run: lake update
       - name: Obtain Mathlib build cache
         run: lake exe cache get
-      - name: Compile index-independent exact physical Kpt factor Bad support
-        run: lake build Kk.TrackGFactorBadIndexIndependent
-      - name: Strict three-name standard-only transitive axiom gate
+      - name: Compile combined source canonical intrinsic factor Bad and witness
+        run: lake build Kk.TrackGFactorBadCombinedSmoke
+      - name: Strict four-name standard-only transitive axiom gate
         run: |
           set -euo pipefail
-          lake env lean Kk/TrackGFactorBadIndexIndependentAxiomAudit.lean | tee track-g-factor-bad-index-independent-axioms.log
+          lake env lean Kk/TrackGFactorBadCombinedSmokeAxiomAudit.lean | tee track-g-factor-bad-combined-smoke-axioms.log
           python3 scripts/check_axiom_report.py --self-test
-          python3 scripts/check_axiom_report.py Kk/TrackGFactorBadIndexIndependentAxiomAudit.lean track-g-factor-bad-index-independent-axioms.log
+          python3 scripts/check_axiom_report.py Kk/TrackGFactorBadCombinedSmokeAxiomAudit.lean track-g-factor-bad-combined-smoke-axioms.log
