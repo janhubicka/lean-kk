@@ -2397,3 +2397,7 @@ import Kk
 #print axioms Kk.kpt_actual_original_old_socle_covered_of_seed_prefix
 #check @Kk.kpt_actual_original_max_socle_of_seed_prefix
 #print axioms Kk.kpt_actual_original_max_socle_of_seed_prefix
+
+-- Track B: full actual-original finite canonical cover chain (final cutoff and old columns).
+#check @Kk.henson_leftDense_realizes_finite_physical_cover_chain
+#print axioms Kk.henson_leftDense_realizes_finite_physical_cover_chain

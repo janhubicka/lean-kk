@@ -401,8 +401,11 @@ import Kk.TrackDPreCutStageSource
 import Kk.TrackDResolvedQBaseRoles
 
 
+-- Track B: arbitrary finite sequence of genuine physical canonical cover stages.
+import Kk.FinitePhysicalCoverChain
+
 -- Track A: genuine Henson finite raw/canonical critical-generation analysis.
--- No Kpt E/B3 or global BRD conclusions are inferred.
+-- Does not classify Kpt E/B3 events or global BRDs.
 import Kk.PartialNumericForbiddenSharpStability
 import Kk.PartialNumericCriticalGenerations
 import Kk.PartialNumericSingletonCanonical
