@@ -379,6 +379,15 @@ import Kk.TrackDPreCutStageSource
 -- Track D: finite chronological Q original base-neighbour separation.
 import Kk.TrackDResolvedQBaseRoles
 
+-- Track F: exact-head verified ACTUAL independent-code components.
+-- These discharge local geometry and all-support age algebra only;
+-- full cover/split/code histories and global BRD lower bound remain pending.
+import Kk.TrackFActualIndependentCode
+import Kk.TrackFZeroCodePreprofileRigidity
+import Kk.TrackFZeroCodeSurvivorSynchronization
+import Kk.TrackFActualFrontCanonicalAge
+import Kk.TrackFTypePrefixCanonicalAgeSandwich
+
 
 /-!
 The counting project imports the verified successor-tree library.
