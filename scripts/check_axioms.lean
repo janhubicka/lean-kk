@@ -2291,3 +2291,13 @@ import Kk
 #print axioms Kk.finiteNumericH_old_boring_one_bare_odd_noNovelty_general
 #check @Kk.finiteNumericH_constructed_bare_odd_quiet_of_stage_free_and_socle
 #print axioms Kk.finiteNumericH_constructed_bare_odd_quiet_of_stage_free_and_socle
+
+-- Track C: genuine finite original free-end exceptional set and chronological odd no-novelty.
+#check @Kk.kpt_physical_stage_originals_subset_final
+#print axioms Kk.kpt_physical_stage_originals_subset_final
+#check @Kk.kpt_physical_final_freeend_cuts_card_le_carrier
+#print axioms Kk.kpt_physical_final_freeend_cuts_card_le_carrier
+#check @Kk.kpt_physical_no_stage_free_end_outside_final
+#print axioms Kk.kpt_physical_no_stage_free_end_outside_final
+#check @Kk.finiteNumericH_constructed_odd_quiet_outside_finite_freeends
+#print axioms Kk.finiteNumericH_constructed_odd_quiet_outside_finite_freeends
