@@ -1,0 +1,18 @@
+import Kk.TrackEMaxOriginalOldTopBudget
+
+#check @Kk.kpt_originals_needing_max_old_socle_test
+
+#check @Kk.finiteNumericH_stageOriginals_mono_levels
+#print axioms Kk.finiteNumericH_stageOriginals_mono_levels
+
+#check @Kk.mem_kpt_originals_needing_max_old_socle_test
+#print axioms Kk.mem_kpt_originals_needing_max_old_socle_test
+
+#check @Kk.kpt_originals_needing_max_socle_subset_old_final_stage
+#print axioms Kk.kpt_originals_needing_max_socle_subset_old_final_stage
+
+#check @Kk.finiteNumericH_old_run_final_stage_originals_card_le_root_add_top
+#print axioms Kk.finiteNumericH_old_run_final_stage_originals_card_le_root_add_top
+
+#check @Kk.kpt_originals_needing_max_old_socle_test_card_le_root_add_top
+#print axioms Kk.kpt_originals_needing_max_old_socle_test_card_le_root_add_top
