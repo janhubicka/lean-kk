@@ -380,3 +380,9 @@ The counting project imports the verified successor-tree library.
 No local replacement of the Ramsey theorem is assumed.
 -/
 
+
+-- Track A: genuine Henson finite raw/canonical critical-generation analysis.
+-- All dependent Kpt and global BRD conclusions remain separate.
+import Kk.PartialNumericForbiddenSharpStability
+import Kk.PartialNumericCriticalGenerations
+import Kk.PartialNumericSingletonCanonical
