@@ -1,0 +1,18 @@
+import Kk.TrackEOldSocleOriginalMaxFrontier
+
+#check @Kk.KptActualOldSocleCoveredAt
+
+#check @Kk.kpt_actual_old_socle_covered_mono_down
+#print axioms Kk.kpt_actual_old_socle_covered_mono_down
+
+#check @Kk.kpt_actual_old_socle_all_cuts_iff_max
+#print axioms Kk.kpt_actual_old_socle_all_cuts_iff_max
+
+#check @Kk.mem_kpt_actual_original_socle_allowed_cuts
+#print axioms Kk.mem_kpt_actual_original_socle_allowed_cuts
+
+#check @Kk.kpt_actual_original_socle_allowed_cuts_iff_max
+#print axioms Kk.kpt_actual_original_socle_allowed_cuts_iff_max
+
+#check @Kk.kpt_actual_original_socle_covered_of_all_allowed_max
+#print axioms Kk.kpt_actual_original_socle_covered_of_all_allowed_max
