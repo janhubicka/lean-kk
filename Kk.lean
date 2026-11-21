@@ -1,3 +1,4 @@
+import Kk.TrackAGExceptionSelected
 -- Track B: complete protected-pivot columns and canonical split transport.
 -- Verified source and audit evidence: docs/audits/2026-11-20-track-b-canonical-splits.json.
 import Kk.ProtectedActivePivotCapacity
@@ -358,6 +359,10 @@ import Kk.PhysicalTwoClassResidual
 import Kk.TrackCOneBareEvenRealZeroQuiet
 -- Track C: constructed physical original support for all old-boring real-zero candidate cuts.
 import Kk.TrackCConstructedBareRealZeroQuiet
+-- Track C: one maximal full OLD Kpt prefix test per actual original at real-zero source stages.
+import Kk.TrackCMaxOriginalZeroCertificate
+-- Track C: actual same-height total I/F transport from maximal zero-stage socles plus off-zero quietness.
+import Kk.TrackCSameHeightRealZeroTransport
 
 -- Track D: actual finite-index no-I1/no-I2 and one physical boring lower-real cut.
 -- Marked full-B3 and represented complete source remain explicit assumptions.
@@ -374,11 +379,6 @@ import Kk.TrackDPreCutStageSource
 -- Track D: finite chronological Q original base-neighbour separation.
 import Kk.TrackDResolvedQBaseRoles
 
-
-
--- Track A/G: actual Kpt selected scans agree outside full-profile exceptions.
--- Conditional on complete dependent terminal and crossing equality.
-import Kk.TrackAGExceptionSelected
 
 /-!
 The counting project imports the verified successor-tree library.
