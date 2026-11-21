@@ -1,0 +1,10 @@
+import Kk.TrackFZeroCodeCutSurvivorAge
+
+#check @Kk.trackFRestrictPrefix_zero_cut_neighbours_eq
+#print axioms Kk.trackFRestrictPrefix_zero_cut_neighbours_eq
+#check @Kk.trackFCommonNeighbourPool_zero_cut_eq
+#print axioms Kk.trackFCommonNeighbourPool_zero_cut_eq
+#check @Kk.trackFActualFront_raw_eq_across_zero_cut
+#print axioms Kk.trackFActualFront_raw_eq_across_zero_cut
+#check @Kk.trackFActualFront_canonical_eq_across_zero_cut
+#print axioms Kk.trackFActualFront_canonical_eq_across_zero_cut
