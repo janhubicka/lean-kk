@@ -215,7 +215,7 @@ theorem actualAlgorithmRuns_selected_disagreement_card_le
         (SMTree.Envelope.closure S (RX.I (i+1)) X) i ↔
        SMTree.Envelope.IsInterestingAt H
         (SMTree.Envelope.closure S (RY.I (i+1)) Y) i)) :
-    ((RX.I 0 \\ RY.I 0) ∪ (RY.I 0 \\ RX.I 0)).ncard ≤
+    ((RX.I 0 \ RY.I 0) ∪ (RY.I 0 \ RX.I 0)).ncard ≤
       Exceptional.card := by
   have hSub := actualAlgorithmRuns_selected_diff_subset_exception
     H X Y top RX RY (Exceptional : Set Nat) hDecision
@@ -255,7 +255,7 @@ theorem kpt_actual_runs_selected_disagreement_card_le_of_full_profiles
       FullPhysicalClosureCrossing family
         (SMTree.Envelope.closure (admissibleKptSTree family)
           (RY.I (cut+1)) Y) cut) :
-    ((RX.I 0 \\ RY.I 0) ∪ (RY.I 0 \\ RX.I 0)).ncard ≤
+    ((RX.I 0 \ RY.I 0) ∪ (RY.I 0 \ RX.I 0)).ncard ≤
       Exceptional.card := by
   apply actualAlgorithmRuns_selected_disagreement_card_le
     (normalizedKptSMTree family) X Y top RX RY Exceptional
