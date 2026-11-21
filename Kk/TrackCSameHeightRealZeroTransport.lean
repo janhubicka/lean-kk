@@ -68,7 +68,7 @@ theorem finiteNumericH_constructed_sameHeight_run_of_max_zero_and_offzero
       ∃ W : Finset (Fin M),
         Y ⊆ ambientPrefixPool family
           (finiteNumericH L k M) hAvoidL (W : Set (Fin M)) ∧
-        (∀ (v : Fin M),
+        ((∀ (v : Fin M),
           ∀ (hNonempty :
             (kpt_actual_original_socle_allowed_cuts
               family L k M hAvoidL W X Y oldTop Rold
@@ -94,7 +94,7 @@ theorem finiteNumericH_constructed_sameHeight_run_of_max_zero_and_offzero
               (Rold.I (cut+1)) Y) cut) →
         ∃ RY : SMTree.Envelope.AlgorithmRun
             (normalizedKptSMTree family) Y oldTop,
-          RY.I = Rold.I ∧ RY.F = Rold.F := by
+          RY.I = Rold.I ∧ RY.F = Rold.F) := by
   classical
   let Y : Set (AdmissibleKptNode family) :=
     finiteNumericH_bareTopRootSeeds
