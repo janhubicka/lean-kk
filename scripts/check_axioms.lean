@@ -2305,3 +2305,9 @@ import Kk
 -- Track C: one maximal full old prefix covers unified real-zero and safe-odd physical cuts.
 #check @Kk.finiteNumericH_constructed_safe_real_odd_quiet_of_max_socle
 #print axioms Kk.finiteNumericH_constructed_safe_real_odd_quiet_of_max_socle
+
+-- Track C: complete OLD Kpt ancestor witnesses automatically from true seed prefixes.
+#check @Kk.kpt_actual_original_old_socle_covered_of_seed_prefix
+#print axioms Kk.kpt_actual_original_old_socle_covered_of_seed_prefix
+#check @Kk.kpt_actual_original_max_socle_of_seed_prefix
+#print axioms Kk.kpt_actual_original_max_socle_of_seed_prefix
