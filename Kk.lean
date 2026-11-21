@@ -401,6 +401,9 @@ import Kk.TrackDPreCutStageSource
 import Kk.TrackDResolvedQBaseRoles
 
 
+-- Track B: arbitrary finite sequence of genuine physical canonical cover stages.
+import Kk.FinitePhysicalCoverChain
+
 -- Track F: source-verified actual independent-code and canonical-age components.
 -- No complete history-realization or global BRD lower bound is asserted.
 import Kk.TrackFActualIndependentCode

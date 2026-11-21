@@ -2398,8 +2398,11 @@ import Kk
 #check @Kk.kpt_actual_original_max_socle_of_seed_prefix
 #print axioms Kk.kpt_actual_original_max_socle_of_seed_prefix
 
--- Track F: 12 independently gated actual zero-code and complete finite-age components.
--- No global independent-code diary occurrence or BRD conclusion.
+-- Track B: full actual-original finite canonical cover chain (final cutoff and old columns).
+#check @Kk.henson_leftDense_realizes_finite_physical_cover_chain
+#print axioms Kk.henson_leftDense_realizes_finite_physical_cover_chain
+
+-- Track F: 12 verified zero-code and finite canonical-age components.
 #check @Kk.HensonOneType.sourceCodingFibre_large_zeroPad_avoids_past
 #print axioms Kk.HensonOneType.sourceCodingFibre_large_zeroPad_avoids_past
 #check @Kk.HensonOneType.sourceCodingFibre_large_actual_future_zero_past
