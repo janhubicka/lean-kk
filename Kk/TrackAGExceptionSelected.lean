@@ -145,11 +145,9 @@ theorem actualAlgorithmRuns_selected_diff_subset_exception
   have hEq := actualAlgorithmRuns_selected_agree_off_exception
     H X Y top RX RY Exceptional hDecision 0
     (Nat.zero_le top) j hjOff
-  rcases Set.mem_union.mp hjDiff with hLeft | hRight
-  · have hPair := Set.mem_diff.mp hLeft
-    exact hPair.2 (hEq.mp hPair.1)
-  · have hPair := Set.mem_diff.mp hRight
-    exact hPair.2 (hEq.mpr hPair.1)
+  rcases hjDiff with ⟨hX,hNotY⟩ | ⟨hY,hNotX⟩
+  · exact hNotY (hEq.mp hX)
+  · exact hNotX (hEq.mpr hY)
 
 /-- Track G's actual full-profile criterion transfers the
 generic exception localization to DIFFERENT genuine Kpt seeds.
