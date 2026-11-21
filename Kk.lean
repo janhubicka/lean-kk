@@ -363,6 +363,8 @@ import Kk.TrackCConstructedBareRealZeroQuiet
 import Kk.TrackCMaxOriginalZeroCertificate
 -- Track C: actual same-height total I/F transport from maximal zero-stage socles plus off-zero quietness.
 import Kk.TrackCSameHeightRealZeroTransport
+-- Track C: genuinely chronological odd source quietness, preserving complete auxiliary E records.
+import Kk.TrackCChronologicalOddSourceQuiet
 
 -- Track D: actual finite-index no-I1/no-I2 and one physical boring lower-real cut.
 -- Marked full-B3 and represented complete source remain explicit assumptions.
