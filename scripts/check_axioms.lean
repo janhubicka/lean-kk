@@ -2305,3 +2305,9 @@ import Kk
 -- Track C: one maximal full old prefix covers unified real-zero and safe-odd physical cuts.
 #check @Kk.finiteNumericH_constructed_safe_real_odd_quiet_of_max_socle
 #print axioms Kk.finiteNumericH_constructed_safe_real_odd_quiet_of_max_socle
+
+-- Track C: exact full odd I1 candidate terminal reflection without old-prefix/boring hypotheses.
+#check @Kk.finiteNumericH_one_bare_odd_terminal_reflects_of_no_stage_end
+#print axioms Kk.finiteNumericH_one_bare_odd_terminal_reflects_of_no_stage_end
+#check @Kk.finiteNumericH_constructed_odd_terminal_reflects_outside_freeends
+#print axioms Kk.finiteNumericH_constructed_odd_terminal_reflects_outside_freeends
