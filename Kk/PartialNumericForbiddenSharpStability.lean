@@ -106,12 +106,13 @@ theorem trackA_linked_clique_capacity_two_vertex_budget
           · subst y
             exact hLinkB x (hSub hxC)
           · exact hClique x hxC y hyC hxy
+  have htNotInsert : t ∉ insert b C := by
+    simp [htNot, hBt.symm]
   have hCardD : D.card = C.card + 2 := by
     dsimp [D]
-    rw [Finset.card_insert_of_notMem]
-    · rw [Finset.card_insert_of_notMem hbNot]
-      omega
-    · simp [htNot, hBt.symm]
+    rw [Finset.card_insert_of_notMem htNotInsert,
+        Finset.card_insert_of_notMem hbNot]
+    omega
   have hCapacity :=
     directedClique_card_le_capacity E
       (insert t (insert b S)) D hSubD hCliqueD
@@ -422,6 +423,7 @@ a physical U-support whose linked original capacity is critical at
 a cut between g and h. Unlike the general raw-event theorem, there is
 NO independent Nat-subtraction saturation premise because genuine
 K_ell-freeness supplies p_U+2<ell. This is not a cover assertion. -/
+set_option maxHeartbeats 1000000 in
 theorem trackA_henson_canonical_change_iff_saturating_event
     {d : Nat} (E : Nat → Nat → Bool)
     (ell : Nat) (hell : 2 ≤ ell)
@@ -460,12 +462,12 @@ theorem trackA_henson_canonical_change_iff_saturating_event
     finiteNumericH_partial_canonical_change_iff_saturating_raw_event
       E hSym ell k b g h M hgh hh j hj
   constructor
-  · intro h
+  · intro hDifferent
     have hChange :
         integerGraphAgeCanonical d ell
           (finiteNumericHPhysicalPartialOldRaw E ell k b h M j) ≠
         integerGraphAgeCanonical d ell
-          (finiteNumericHPhysicalPartialOldRaw E ell k b g M j) := h
+          (finiteNumericHPhysicalPartialOldRaw E ell k b g M j) := hDifferent
     obtain ⟨w,U,hOld,hSat,hEligible,hCap,hCut,hLater,_⟩ :=
       hGeneral.mp hChange
     exact ⟨w,U,hOld,hSat,hEligible,hCap,hCut,hLater⟩
