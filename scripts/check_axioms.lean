@@ -2317,3 +2317,9 @@ import Kk
 #print axioms Kk.kpt_original_old_socle_covered_of_seed_raw_type_eq
 #check @Kk.kpt_original_max_old_socle_of_seed_raw_type_eq
 #print axioms Kk.kpt_original_max_old_socle_of_seed_raw_type_eq
+
+-- Track C: old literal seed automatically matches complete old Kpt ancestor of original at cut and max.
+#check @Kk.kpt_actual_original_old_socle_covered_of_seed_prefix
+#print axioms Kk.kpt_actual_original_old_socle_covered_of_seed_prefix
+#check @Kk.kpt_actual_original_max_socle_of_seed_prefix
+#print axioms Kk.kpt_actual_original_max_socle_of_seed_prefix
