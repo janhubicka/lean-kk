@@ -108,7 +108,8 @@ theorem henson_leftDense_realizes_late_positive_sort
   by_cases hpD : p < D
   · simpa only [if_pos hpD] using h
   · have hbp : b ≤ p := by omega
-    have hZero : C p s = false := delayedOldColumn_padding_zero b c p s hbp
+    have hZero : delayedOldColumn b c p s = false :=
+      delayedOldColumn_padding_zero b c p s hbp
     simpa only [if_neg hpD, hZero] using h
 
 /-- After finite preparation, a controlled age can be coded at one
