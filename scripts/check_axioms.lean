@@ -2291,3 +2291,7 @@ import Kk
 #print axioms Kk.finiteNumericH_old_boring_one_bare_odd_noNovelty_general
 #check @Kk.finiteNumericH_constructed_bare_odd_quiet_of_stage_free_and_socle
 #print axioms Kk.finiteNumericH_constructed_bare_odd_quiet_of_stage_free_and_socle
+
+-- Track C: one maximal complete OLD Kpt prefix per original for BOTH physical safe cut families.
+#check @Kk.finiteNumericH_constructed_safe_real_odd_quiet_of_max_socle
+#print axioms Kk.finiteNumericH_constructed_safe_real_odd_quiet_of_max_socle
