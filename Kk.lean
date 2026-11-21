@@ -412,6 +412,12 @@ import Kk.TrackFZeroCodeSurvivorSynchronization
 import Kk.TrackFActualFrontCanonicalAge
 import Kk.TrackFTypePrefixCanonicalAgeSandwich
 
+-- Track A: genuine Henson finite raw/canonical critical-generation analysis.
+-- These do not classify dependent Kpt E/B3 or global BRDs.
+import Kk.PartialNumericForbiddenSharpStability
+import Kk.PartialNumericCriticalGenerations
+import Kk.PartialNumericSingletonCanonical
+
 /-!
 The counting project imports the verified successor-tree library.
 No local replacement of the Ramsey theorem is assumed.
