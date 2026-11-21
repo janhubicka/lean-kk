@@ -369,6 +369,8 @@ import Kk.TrackCChronologicalOddSourceQuiet
 import Kk.TrackCOddFinalFreeEndSupport
 -- Track C: new-to-old full I1 terminal reflection at safe odd cuts without old prefix matches.
 import Kk.TrackCOddTerminalReflection
+-- Track C: automatic full OLD Kpt socle from initial seed below physical original.
+import Kk.TrackCSeedPrefixOldSocle
 -- Track C: one maximal full OLD Kpt prefix over real-zero and safe odd cuts.
 import Kk.TrackCUnifiedSafeRealOdd
 
