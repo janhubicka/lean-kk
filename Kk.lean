@@ -360,6 +360,8 @@ import Kk.TrackCOneBareEvenRealZeroQuiet
 import Kk.TrackCConstructedBareRealZeroQuiet
 -- Track C: one maximal full OLD Kpt prefix test per actual original at real-zero source stages.
 import Kk.TrackCMaxOriginalZeroCertificate
+-- Track C: actual same-height total I/F transport from maximal zero-stage socles plus off-zero quietness.
+import Kk.TrackCSameHeightRealZeroTransport
 
 -- Track D: actual finite-index no-I1/no-I2 and one physical boring lower-real cut.
 -- Marked full-B3 and represented complete source remain explicit assumptions.
