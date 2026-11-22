@@ -72,27 +72,37 @@ theorem integerCliqueWeights_exists_exact_nat_sorted_pool
       A.image Fin.val =
         (Finset.range N).filter (fun x => σ x ∈ T.1) := by
     ext x
-    simp only [Finset.mem_image, Finset.mem_filter,
-      Finset.mem_univ, true_and, Finset.mem_range]
     constructor
-    · rintro ⟨i, hi, hix⟩
+    · intro hx
+      obtain ⟨i, hi, hix⟩ := Finset.mem_image.mp hx
       subst x
-      exact ⟨i.isLt, by simpa only [hSort i] using hi⟩
-    · rintro ⟨hx, hxT⟩
-      let i : Fin N := ⟨x, hx⟩
-      refine ⟨i, ?_, rfl⟩
+      have hiT : (ι i).1 ∈ T.1 :=
+        (Finset.mem_filter.mp hi).2
+      exact Finset.mem_filter.mpr
+        ⟨Finset.mem_range.mpr i.isLt,
+          by simpa only [hSort i] using hiT⟩
+    · intro hx
+      obtain ⟨hxN, hxT⟩ := Finset.mem_filter.mp hx
+      let i : Fin N := ⟨x, Finset.mem_range.mp hxN⟩
+      refine Finset.mem_image.mpr ⟨i, ?_, rfl⟩
+      apply Finset.mem_filter.mpr
+      refine ⟨Finset.mem_univ i, ?_⟩
       simpa only [hSort i] using hxT
   have hBImage : A.image ι = B := by
     ext v
-    simp only [Finset.mem_image, Finset.mem_filter,
-      Finset.mem_univ, true_and]
     constructor
-    · rintro ⟨i, hi, hiv⟩
-      subst v
-      exact hi
     · intro hv
-      refine ⟨ι.symm v, ?_, by simp⟩
-      simpa only [Equiv.apply_symm_apply] using hv
+      obtain ⟨i, hi, hiv⟩ := Finset.mem_image.mp hv
+      subst v
+      exact Finset.mem_filter.mpr
+        ⟨Finset.mem_univ _, (Finset.mem_filter.mp hi).2⟩
+    · intro hv
+      let i : Fin N := ι.symm v
+      refine Finset.mem_image.mpr ⟨i, ?_, by simp [i]⟩
+      apply Finset.mem_filter.mpr
+      refine ⟨Finset.mem_univ i, ?_⟩
+      have hvT : v.1 ∈ T.1 := (Finset.mem_filter.mp hv).2
+      simpa only [i, Equiv.apply_symm_apply] using hvT
   have hCardA : (A.image Fin.val).card = A.card :=
     Finset.card_image_of_injective A Fin.val_injective
   have hCardB : (A.image ι).card = A.card :=
