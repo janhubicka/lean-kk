@@ -2478,3 +2478,9 @@ import Kk
 #print axioms Kk.onePointGraphEdge_old
 #print axioms Kk.onePointGraphEdge_right
 #print axioms Kk.onePointGraphEdge_left
+
+-- Verified Track B finite physical history under explicit old column and cover-chain inputs.
+#check @Kk.PhysicalCanonicalCoverHistory.terminal
+#print axioms Kk.PhysicalCanonicalCoverHistory.terminal
+#check @Kk.henson_leftDense_constructs_finite_physical_cover_history
+#print axioms Kk.henson_leftDense_constructs_finite_physical_cover_history

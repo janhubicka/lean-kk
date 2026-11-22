@@ -418,9 +418,11 @@ import Kk.PartialNumericForbiddenSharpStability
 import Kk.PartialNumericCriticalGenerations
 import Kk.PartialNumericSingletonCanonical
 
--- Whole-source audit: 56 previously standalone production modules.
--- Keep only after exact-head full build, registered axiom checks and hostile scope audit.
--- Dedicated *_AxiomAudit harness modules are still compiled by their own workflows.
+-- Track B: explicit chronological finite physical cover history and its stage witnesses.
+import Kk.FinitePhysicalCoverHistory
+
+-- Whole-source adversarial integration: 56 additional real Kk production modules.
+-- Separate *_AxiomAudit files retain standalone exact-head gates.
 import Kk.ActualRunNumericHPrefixStability
 import Kk.LocalClosedEventTraceBlindness
 import Kk.LocalEventTraceBlindness
