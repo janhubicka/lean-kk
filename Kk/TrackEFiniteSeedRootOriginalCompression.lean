@@ -83,7 +83,7 @@ theorem finite_kpt_seed_original_root_pool_compression
   let yy : Ytype := ⟨y,hy⟩
   have hIn : chosen yy ∈ U' := by
     apply Finset.mem_image.mpr
-    exact ⟨yy,Finset.mem_attach _,rfl⟩
+    exact ⟨yy,Finset.mem_attach yy,rfl⟩
   exact ⟨chosen yy,hIn,(hChosen yy).2⟩
 
 /-- For one TRUE finite numerical-H+ model and one genuine OLD Kpt
@@ -135,21 +135,53 @@ theorem finiteNumericH_candidate_finite_seed_original_budget
     intro y hy
     obtain ⟨o,⟨v,hv,rfl⟩,hBelow⟩ := hY hy
     exact ⟨v, Finset.mem_coe.mp hv, hBelow⟩
-  obtain ⟨U',hSub,hCard,hRep⟩ :=
-    finite_kpt_seed_original_root_pool_compression
-      family (finiteNumericH K k N) hAvoid Y U hSeeds
+  -- Keep the concrete physical Fin N representation explicit here.
+  -- Abstract Fin A.size instantiation is mathematically equivalent,
+  -- but can trigger a semireducible membership-instance mismatch
+  -- after specializing A := finiteNumericH K k N.
+  let Ytype := {y : AdmissibleKptNode family // y ∈ Y}
+  have hChoice : ∀ yy : Ytype,
+      ∃ v : Fin N,
+        v ∈ U ∧
+        yy.val ≤ (finiteNumericH K k N).kptOriginal
+          family hAvoid v := by
+    intro yy
+    exact hSeeds yy.val yy.property
+  let chosen : Ytype → Fin N :=
+    fun yy => Classical.choose (hChoice yy)
+  have hChosen (yy : Ytype) :
+      chosen yy ∈ U ∧
+      yy.val ≤ (finiteNumericH K k N).kptOriginal
+        family hAvoid (chosen yy) :=
+    Classical.choose_spec (hChoice yy)
+  let U' : Finset (Fin N) := Y.attach.image chosen
+  have hSub : U' ⊆ U := by
+    intro v hv
+    obtain ⟨yy,_hyy,rfl⟩ := Finset.mem_image.mp hv
+    exact (hChosen yy).1
+  have hCard : U'.card ≤ Y.card := by
+    calc
+      U'.card ≤ Y.attach.card := Finset.card_image_le
+      _ = Y.card := Finset.card_attach
   have hY' : (Y : Set (AdmissibleKptNode family)) ⊆
       ambientPrefixPool family (finiteNumericH K k N)
         hAvoid (U' : Set (Fin N)) := by
     intro y hy
-    obtain ⟨v,hv,hBelow⟩ := hRep y hy
-    exact ⟨(finiteNumericH K k N).kptOriginal family hAvoid v,
-      ⟨v,Finset.mem_coe.mpr hv,rfl⟩,hBelow⟩
+    let yy : Ytype := ⟨y,hy⟩
+    have hIn : chosen yy ∈ U' := by
+      apply Finset.mem_image.mpr
+      exact ⟨yy,Finset.mem_attach yy,rfl⟩
+    exact ⟨(finiteNumericH K k N).kptOriginal
+        family hAvoid (chosen yy),
+      ⟨chosen yy,Finset.mem_coe.mpr hIn,rfl⟩,
+      (hChosen yy).2⟩
   have hNeedBound :=
     kpt_originals_needing_max_old_socle_test_card_le_root_add_selected
       family K k N hAvoid U' X
       (Y : Set (AdmissibleKptNode family)) top R Allowed
   refine ⟨U',hSub,hCard,hY',?_⟩
-  omega
+  exact hNeedBound.trans
+    (Nat.add_le_add_right hCard
+      (kpt_old_actual_selected_levels family X top R).card)
 
 end Kk
