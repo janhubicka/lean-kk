@@ -2398,6 +2398,12 @@ import Kk
 #check @Kk.kpt_actual_original_max_socle_of_seed_prefix
 #print axioms Kk.kpt_actual_original_max_socle_of_seed_prefix
 
+-- Track C: finite dependent RAW seed representatives and genuine safe-union same-height run.
+#check @Kk.kpt_raw_old_seed_match_implies_actual_old_socle
+#print axioms Kk.kpt_raw_old_seed_match_implies_actual_old_socle
+#check @Kk.finiteNumericH_constructed_sameHeight_run_of_raw_seed_safe_and_offsafe
+#print axioms Kk.finiteNumericH_constructed_sameHeight_run_of_raw_seed_safe_and_offsafe
+
 -- Track B: full actual-original finite canonical cover chain (final cutoff and old columns).
 #check @Kk.henson_leftDense_realizes_finite_physical_cover_chain
 #print axioms Kk.henson_leftDense_realizes_finite_physical_cover_chain
