@@ -169,6 +169,76 @@ theorem kpt_odd_old_boring_no_missing_of_max_lower_socles
   obtain ⟨hz,w,hw,hwCross,hEq⟩ := hAtCut
   exact hNoOld ⟨w,hw,hwCross,by simpa using hEq⟩
 
+
+/-- True odd OLD-factor Bad cuts are confined to Q terminal levels
+and Q² pair-meet levels if every actual candidate source name has
+a complete OLD LOWER Kpt-ancestor witness at just its HIGHEST
+old-boring odd live crossing cut (when one exists).
+Even missing socles at OTHER, non-boring cuts are allowed:
+we eliminate the missing branch only WHERE the Bad test applies. -/
+theorem finiteNumericH_odd_bad_card_le_of_max_lower_socles
+    (family : List (NormalizedForbidden 1 0 1))
+    (K : AgeTestModel 1 0 1) (k N Q : Nat)
+    (hAvoid : ∀ bad, bad ∈ family →
+      bad.Avoids (finiteNumericH K k N).L)
+    (hSym : ∀ i j : Nat,
+      (finiteNumericH K k N).L.binary i j (0 : Fin 1) =
+        (finiteNumericH K k N).L.binary j i (0 : Fin 1))
+    (U : Finset (Fin N))
+    (X Y : Set (AdmissibleKptNode family))
+    (hXY : X ⊆ Y)
+    (hY : Y ⊆ ambientPrefixPool family
+      (finiteNumericH K k N) hAvoid (U : Set (Fin N)))
+    (top : Nat)
+    (R : SMTree.Envelope.AlgorithmRun
+      (normalizedKptSMTree family) X top)
+    (node : Fin Q → AdmissibleKptNode family)
+    (live : Nat → Fin Q → Bool)
+    (hExactY : ∀ cut : Nat, cut < top →
+      ∀ z : AdmissibleKptNode family,
+        z ∈ SMTree.Envelope.closure
+          (admissibleKptSTree family) (R.I (cut+1)) Y ↔
+        ∃ i : Fin Q, node i = z ∧ live cut i = true)
+    (hMax : ∀ j : Fin Q,
+      ∀ hNonempty : (kptOddOldBoringCandidateCrossingCuts
+        family X top R node live j).Nonempty,
+      kptOldLowerSocleCoveredAt family X top R (node j)
+        ((kptOddOldBoringCandidateCrossingCuts
+          family X top R node live j).max' hNonempty)) :
+    (kptOddExactBadCuts family X top R node live).card ≤
+      Q + Q*Q := by
+  classical
+  have hAll :=
+    finiteNumericH_odd_bad_subset_structural_union_missing
+      family K k N Q hAvoid hSym U X Y hXY hY
+      top R node live hExactY
+  have hSub : kptOddExactBadCuts family X top R node live ⊆
+      kptIndexedStructuralLevels family node := by
+    intro cut hBadOdd
+    rcases Finset.mem_union.mp (hAll hBadOdd) with hStruct | hMissing
+    · exact hStruct
+    · have hBad : cut ∈ kptExactOldFactorBadCuts
+          family X top R node live :=
+        (Finset.mem_filter.mp hBadOdd).2
+      obtain ⟨hCut,hBoring,_⟩ :=
+        (mem_kptExactOldFactorBadCuts
+          family X top R node live cut).mp hBad
+      have hMissingCuts : cut ∈
+          (Finset.range top).filter (fun cut =>
+            cut % 2 = 1 ∧
+              kptMissingOldSocleAt family X top R node live cut) :=
+        hMissing
+      obtain ⟨_,hOdd,hMissingWitness⟩ :=
+        (Finset.mem_filter.mp hMissingCuts)
+      exact False.elim
+        ((kpt_odd_old_boring_no_missing_of_max_lower_socles
+          family X top R node live hMax cut hCut hOdd hBoring)
+          hMissingWitness)
+  have hCard := Finset.card_le_card hSub
+  have hBound := kpt_indexed_structural_levels_card_le family node
+  omega
+
+#print axioms Kk.finiteNumericH_odd_bad_card_le_of_max_lower_socles
 #print axioms Kk.kpt_old_lower_socle_covered_mono_down
 #print axioms Kk.kpt_odd_old_boring_lower_socle_covered_all_iff_max
 #print axioms Kk.kpt_odd_old_boring_no_missing_of_max_lower_socles
