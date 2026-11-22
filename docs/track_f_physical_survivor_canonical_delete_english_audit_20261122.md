@@ -20,7 +20,7 @@ This is equality on EVERY admissible support, including triples. No witness axio
 
 ## Across the actual zero-code coordinate
 
-Let the full genuine pre-code front p indexed by Fin(d+1) have level c, where c is the actual target image of a coded source original. Let v_i, i∈Fin(d), be genuine synchronized surviving target types reaching at least c+1, and each having bit zero at c. Write f = Fin.succAboveEmb j.
+Assume explicitly ell>0, as normalized finite witness construction and its canonical reindexing require a positive clique threshold (the intended K₄ case has ell=4). Let the full genuine pre-code front p indexed by Fin(d+1) have level c, where c is the actual target image of a coded source original. Let v_i, i∈Fin(d), be genuine synchronized surviving target types reaching at least c+1, and each having bit zero at c. Write f = Fin.succAboveEmb j.
 
 Assume the true old-positive-neighbour sets match:
 
