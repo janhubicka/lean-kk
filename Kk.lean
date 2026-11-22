@@ -394,6 +394,8 @@ import Kk.TrackCSeedPrefixOldSocle
 import Kk.TrackCRawSeedSafeRun
 -- Track C: physical odd E-free exceptions cost roots plus genuine selected levels.
 import Kk.TrackCOddSelectedLevelExceptionBudget
+-- Track C: bare-root source needs only old original pool plus one physical new root.
+import Kk.TrackCSmallBareRootExceptionBudget
 
 -- Track D: actual finite-index no-I1/no-I2 and one physical boring lower-real cut.
 -- Marked full-B3 and represented complete source remain explicit assumptions.
