@@ -1,10 +1,4 @@
 import Kk.TrackGOriginalSocleThresholds
 
-#check @Kk.kpt_oldRun_lower_socle_cover_transfer_from_original
-#print axioms Kk.kpt_oldRun_lower_socle_cover_transfer_from_original
-
-#check @Kk.kpt_oldRun_missing_lower_socle_mono_up
-#print axioms Kk.kpt_oldRun_missing_lower_socle_mono_up
-
-#check @Kk.finiteNumericH_zero_stage_exact_bad_has_original_missing_old_socle
-#print axioms Kk.finiteNumericH_zero_stage_exact_bad_has_original_missing_old_socle
+#check @Kk.finiteNumericH_zero_stage_exact_Bad_charged_to_bounded_originals
+#print axioms Kk.finiteNumericH_zero_stage_exact_Bad_charged_to_bounded_originals
