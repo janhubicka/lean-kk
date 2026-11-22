@@ -2525,3 +2525,9 @@ import Kk
 #print axioms Kk.kpt_physical_final_freeend_cuts_card_le_min_selected_carrier
 #check @Kk.finiteNumericH_constructed_odd_quiet_outside_selected_budget
 #print axioms Kk.finiteNumericH_constructed_odd_quiet_outside_selected_budget
+
+-- Track C: no additional E-free endpoint below oldTop from the higher new root.
+#check @Kk.mem_KptPhysicalOldRangeStageFreeEnds_iff
+#print axioms Kk.mem_KptPhysicalOldRangeStageFreeEnds_iff
+#check @Kk.kpt_physical_oldrange_freeends_card_le_roots_add_selected
+#print axioms Kk.kpt_physical_oldrange_freeends_card_le_roots_add_selected
