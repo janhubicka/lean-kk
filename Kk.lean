@@ -1,5 +1,7 @@
--- Track A/G: odd real-H source Kpt factor-Bad physical trichotomy.
+-- Track A/G: true odd numerical cut exact factor Bad trichotomy.
 import Kk.TrackAOddBadSocleTrichotomy
+-- Track A: exact real/odd numerical-H cut raw age identities.
+import Kk.TrackANumericSingleCutRawEvent
 -- Track A/G: residual actual dependent Kpt profile defect budget.
 import Kk.TrackAKptResidualDefectBudget
 import Kk.TrackAGExceptionSelected
@@ -426,6 +428,11 @@ import Kk.PartialNumericSingletonCanonical
 
 -- Track B: explicit chronological finite physical cover history and its stage witnesses.
 import Kk.FinitePhysicalCoverHistory
+
+-- Track B: automatically refine a genuine lower age into finite saturated covers.
+import Kk.AutomaticAgeCoverChain
+import Kk.IntegerAgeCoverUnitDrop
+import Kk.AutomaticPhysicalCoverPath
 
 -- Whole-source adversarial integration: 56 additional real Kk production modules.
 -- Separate *_AxiomAudit files retain standalone exact-head gates.
