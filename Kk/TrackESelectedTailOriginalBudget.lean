@@ -119,7 +119,7 @@ theorem kpt_originals_needing_max_socle_subset_old_selected_tail_stage
     intro q hq
     rw [R.I_eq_final_tail_of_run (cut+1) (by omega)] at hq
     rw [R.I_eq_final_tail_of_run (floor+1) (by omega)]
-    exact ⟨hq.1,by omega⟩
+    exact ⟨hq.1, Nat.le_trans (Nat.succ_le_succ hLe) hq.2⟩
   exact finiteNumericH_stageOriginals_mono_levels
     K k N U (R.I (cut+1)) (R.I (floor+1)) hLevels hStage
 
