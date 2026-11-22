@@ -162,7 +162,8 @@ theorem finiteNumericH_bare_one_root_small_pool_selected_budget
     · obtain ⟨o,⟨v,hv,rfl⟩,hBelow⟩ := hOldRep0 hOld
       have hv' : v ∈ U' :=
         Finset.mem_insert_of_mem (Finset.mem_coe.mp hv)
-      exact ⟨o,⟨v,Finset.mem_coe.mpr hv',rfl⟩,hBelow⟩
+      exact ⟨(finiteNumericH K k N).kptOriginal family hAvoid v,
+        ⟨v,Finset.mem_coe.mpr hv',rfl⟩,hBelow⟩
     · have hEq :
           z = (finiteNumericH K k N).kptOriginal family hAvoid newV := by
         simpa only [Set.mem_singleton_iff] using hNew
