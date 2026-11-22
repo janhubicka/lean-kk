@@ -1,0 +1,51 @@
+name: KK Track A residual dependent Kpt profile defect budget
+
+on:
+  pull_request:
+    paths:
+      - 'Kk/TrackAKptResidualDefectBudget.lean'
+      - 'Kk/TrackAKptResidualDefectBudgetAxiomAudit.lean'
+      - 'Kk.lean'
+      - 'docs/track_a_g_residual_kpt_profile_defect_budget_english_audit_20261122.md'
+      - '.github/workflows/kk-track-a-kpt-defect-budget.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: kk-track-a-kpt-defect-budget-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  direct-build-axiom-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache Lean toolchain
+        uses: actions/cache@v4
+        with:
+          path: ~/.elan/toolchains
+          key: lean-toolchain-${{ runner.os }}-${{ hashFiles('lean-toolchain') }}
+      - name: Restore Lean workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve pinned dependencies
+        run: lake update
+      - name: Obtain Mathlib cache
+        run: lake exe cache get
+      - name: Directly compile residual dependent profile budget
+        run: lake build Kk.TrackAKptResidualDefectBudget
+      - name: Full library build
+        run: lake build
+      - name: Strict 3-name standard-only transitive axiom gate
+        run: |
+          set -euo pipefail
+          lake env lean Kk/TrackAKptResidualDefectBudgetAxiomAudit.lean | tee track-a-kpt-defect-budget.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py Kk/TrackAKptResidualDefectBudgetAxiomAudit.lean track-a-kpt-defect-budget.log
