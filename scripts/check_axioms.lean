@@ -2427,3 +2427,9 @@ import Kk
 #print axioms Kk.trackFActualFront_canonical_antitone_of_extension
 #check @Kk.trackFActualFront_canonical_sandwich_eq
 #print axioms Kk.trackFActualFront_canonical_sandwich_eq
+
+-- Track B: true finite chronological physical cover history, not a global Kpt diary.
+#check @Kk.PhysicalCanonicalCoverHistory.terminal
+#print axioms Kk.PhysicalCanonicalCoverHistory.terminal
+#check @Kk.henson_leftDense_constructs_finite_physical_cover_history
+#print axioms Kk.henson_leftDense_constructs_finite_physical_cover_history
