@@ -1,0 +1,50 @@
+name: KK all standalone scoped Lean axiom gates
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'scripts/check_scoped_axiom_gates.py'
+      - 'scripts/test_scoped_axiom_gates.py'
+      - '.github/workflows/kk-scoped-audit.yml'
+
+concurrency:
+  group: kk-scoped-audit-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  all-scoped:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache Lean toolchain
+        uses: actions/cache@v4
+        with:
+          path: ~/.elan/toolchains
+          key: lean-toolchain-${{ runner.os }}-${{ hashFiles('lean-toolchain') }}
+      - name: Restore pinned Lean workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve pinned Lean dependencies
+        run: lake update
+      - name: Obtain Mathlib cache
+        run: lake exe cache get
+      - name: Test hostile audit parser
+        run: python3 -m unittest -v scripts.test_scoped_axiom_gates
+      - name: Build and audit all scoped axiom modules
+        run: python3 -m scripts.check_scoped_axiom_gates --reports kk-scoped-audit-logs
+      - name: Preserve all named proof reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kk-scoped-axiom-gate-logs
+          path: kk-scoped-audit-logs
