@@ -1,4 +1,4 @@
--- Track A/C: actual raw seed matches complete OLD Kpt ancestor of any descendant.
+-- Track A/C: complete old Kpt ancestor of physical-original descendant from genuine raw seed.
 import Kk.TrackACandidateDescendantRawSocle
 -- Track A/G: genuine old lower-socle one-maximal-odd-cut frontier.
 import Kk.TrackAOddOldSocleFrontier
