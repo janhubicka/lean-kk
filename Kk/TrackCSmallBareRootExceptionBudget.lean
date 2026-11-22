@@ -107,8 +107,8 @@ theorem finiteNumericH_bare_root_small_original_pool
     ((fun v : Fin M => B.kptOriginal family hAvoidL v) ''
       ({w} : Set (Fin M))) at hz
   rcases hz with hzOld | hzNew
-  · obtain ⟨o,⟨v,hv,rfl⟩,hBelow⟩ := hOldLift hzOld
-    exact ⟨o, ⟨v,hRootSub hv,rfl⟩,hBelow⟩
+  · obtain ⟨o,⟨v,hv,ho⟩,hBelow⟩ := hOldLift hzOld
+    exact ⟨o, ⟨v,hRootSub hv,ho⟩,hBelow⟩
   · rw [Set.image_singleton] at hzNew
     have hzEq : z = B.kptOriginal family hAvoidL w :=
       Set.mem_singleton_iff.mp hzNew
