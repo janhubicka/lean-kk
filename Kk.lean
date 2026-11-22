@@ -418,6 +418,9 @@ import Kk.PartialNumericForbiddenSharpStability
 import Kk.PartialNumericCriticalGenerations
 import Kk.PartialNumericSingletonCanonical
 
+-- Track B: explicit finite sequence of real physical canonical-cover stages and witnesses.
+import Kk.FinitePhysicalCoverHistory
+
 /-!
 The counting project imports the verified successor-tree library.
 No local replacement of the Ramsey theorem is assumed.
