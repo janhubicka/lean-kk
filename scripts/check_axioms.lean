@@ -2404,6 +2404,14 @@ import Kk
 #check @Kk.finiteNumericH_constructed_sameHeight_run_of_raw_seed_safe_and_offsafe
 #print axioms Kk.finiteNumericH_constructed_sameHeight_run_of_raw_seed_safe_and_offsafe
 
+-- Track C: physical odd E-free exceptions bounded by true roots and selected old levels.
+#check @Kk.kpt_physical_final_freeend_cuts_card_le_root_add_selected
+#print axioms Kk.kpt_physical_final_freeend_cuts_card_le_root_add_selected
+#check @Kk.kpt_physical_final_freeend_cuts_card_le_min_selected_carrier
+#print axioms Kk.kpt_physical_final_freeend_cuts_card_le_min_selected_carrier
+#check @Kk.finiteNumericH_constructed_odd_quiet_outside_selected_budget
+#print axioms Kk.finiteNumericH_constructed_odd_quiet_outside_selected_budget
+
 -- Track B: full actual-original finite canonical cover chain (final cutoff and old columns).
 #check @Kk.henson_leftDense_realizes_finite_physical_cover_chain
 #print axioms Kk.henson_leftDense_realizes_finite_physical_cover_chain

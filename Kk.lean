@@ -386,6 +386,8 @@ import Kk.TrackCRawOriginalOldSocle
 import Kk.TrackCSeedPrefixOldSocle
 -- Track C: concrete complete RAW old-seed representatives yield safe real/odd same-height I/F transport.
 import Kk.TrackCRawSeedSafeRun
+-- Track C: concrete physical odd E-free support costs roots plus actual selected old levels.
+import Kk.TrackCOddSelectedLevelExceptionBudget
 
 -- Track D: actual finite-index no-I1/no-I2 and one physical boring lower-real cut.
 -- Marked full-B3 and represented complete source remain explicit assumptions.
