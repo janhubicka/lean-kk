@@ -100,7 +100,7 @@ theorem kpt_original_active_socle_novel_order_convex
     intro q hq
     rw [R.I_eq_final_tail_of_run (c+1) (by omega)] at hq
     rw [R.I_eq_final_tail_of_run (b+1) (by omega)]
-    exact ⟨hq.1,by omega⟩
+    exact ⟨hq.1,le_trans (Nat.add_le_add_right hbc 1) hq.2⟩
   have hStageB :
       v ∈ hStageOriginals K k N U (R.I (b+1)) :=
     (finiteNumericH_stageOriginals_mono_levels
