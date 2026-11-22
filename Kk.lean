@@ -418,7 +418,7 @@ import Kk.PartialNumericForbiddenSharpStability
 import Kk.PartialNumericCriticalGenerations
 import Kk.PartialNumericSingletonCanonical
 
--- Track B: explicit finite sequence of real physical canonical-cover stages and witnesses.
+-- Track B: explicit chronological finite physical cover history and its stage witnesses.
 import Kk.FinitePhysicalCoverHistory
 
 /-!
