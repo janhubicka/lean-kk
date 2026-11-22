@@ -1,0 +1,45 @@
+name: KK Track F physical survivor deletion
+on:
+  pull_request:
+    paths:
+      - 'Kk/TrackFPhysicalSurvivorDeletion.lean'
+      - 'Kk/TrackFPhysicalSurvivorDeletionAxiomAudit.lean'
+      - 'docs/track_f_physical_survivor_canonical_delete_english_audit_20261122.md'
+      - '.github/workflows/kk-track-f-physical-survivor-deletion.yml'
+  workflow_dispatch:
+concurrency:
+  group: kk-track-f-physical-survivor-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+jobs:
+  survivor-delete:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache Lean toolchain
+        uses: actions/cache@v4
+        with:
+          path: ~/.elan/toolchains
+          key: lean-toolchain-${{ runner.os }}-${{ hashFiles('lean-toolchain') }}
+      - name: Restore Lean workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve dependencies
+        run: lake update
+      - name: Obtain Mathlib build cache
+        run: lake exe cache get
+      - name: Build physical survivor canonical deletion
+        run: lake build Kk.TrackFPhysicalSurvivorDeletion
+      - name: Strict three-theorem standard-only axiom gate
+        run: |
+          set -euo pipefail
+          lake env lean Kk/TrackFPhysicalSurvivorDeletionAxiomAudit.lean | tee track-f-survivor-delete-axioms.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py Kk/TrackFPhysicalSurvivorDeletionAxiomAudit.lean track-f-survivor-delete-axioms.log

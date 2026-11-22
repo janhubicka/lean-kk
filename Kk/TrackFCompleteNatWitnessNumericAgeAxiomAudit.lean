@@ -1,0 +1,14 @@
+import Kk.TrackFCompleteNatWitnessNumericAge
+
+#check @Kk.integerCliqueWeights_exists_exact_nat_sorted_pool
+#print axioms Kk.integerCliqueWeights_exists_exact_nat_sorted_pool
+#check @Kk.trackFNatCompleteEdge_symmetric
+#print axioms Kk.trackFNatCompleteEdge_symmetric
+#check @Kk.trackFNatCompleteEdge_clique
+#print axioms Kk.trackFNatCompleteEdge_clique
+#check @Kk.trackFNatCompleteEdge_no_forbidden_clique
+#print axioms Kk.trackFNatCompleteEdge_no_forbidden_clique
+#check @Kk.trackFNatCompleteTest_iff_integerWitness_feasible
+#print axioms Kk.trackFNatCompleteTest_iff_integerWitness_feasible
+#check @Kk.trackF_numeric_integer_age_eq_of_all_finite_K4_tests
+#print axioms Kk.trackF_numeric_integer_age_eq_of_all_finite_K4_tests

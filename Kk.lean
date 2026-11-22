@@ -1,3 +1,9 @@
+-- Track A: exact individual physical critical cut spectrum (ordinary L only).
+import Kk.TrackAPhysicalCriticalSpectrum
+-- Track A: exact real/odd numerical-H cut raw age identities.
+import Kk.TrackANumericSingleCutRawEvent
+-- Track A/G: residual actual dependent Kpt profile defect budget.
+import Kk.TrackAKptResidualDefectBudget
 import Kk.TrackAGExceptionSelected
 import Kk.ControlledPivotBudget
 import Kk.PhysicalControlledCoding
@@ -386,7 +392,7 @@ import Kk.TrackCRawOriginalOldSocle
 import Kk.TrackCSeedPrefixOldSocle
 -- Track C: concrete complete RAW old-seed representatives yield safe real/odd same-height I/F transport.
 import Kk.TrackCRawSeedSafeRun
--- Track C: concrete physical odd E-free support costs roots plus actual selected old levels.
+-- Track C: physical odd E-free exceptions cost roots plus genuine selected levels.
 import Kk.TrackCOddSelectedLevelExceptionBudget
 
 -- Track D: actual finite-index no-I1/no-I2 and one physical boring lower-real cut.
@@ -424,6 +430,11 @@ import Kk.PartialNumericSingletonCanonical
 
 -- Track B: explicit chronological finite physical cover history and its stage witnesses.
 import Kk.FinitePhysicalCoverHistory
+
+-- Track B: automatically refine a genuine lower age into finite saturated covers.
+import Kk.AutomaticAgeCoverChain
+import Kk.IntegerAgeCoverUnitDrop
+import Kk.AutomaticPhysicalCoverPath
 
 -- Whole-source adversarial integration: 56 additional real Kk production modules.
 -- Separate *_AxiomAudit files retain standalone exact-head gates.
@@ -483,6 +494,8 @@ import Kk.TrackGUniqueBoringBlockFactor
 import Kk.TrackGZeroColumnFactorMismatchSocle
 import Kk.TrackGZeroColumnSocleRun
 import Kk.TrackGZeroStageExactBadTrichotomy
+import Kk.TrackGSocleNoveltyIntervals
+import Kk.TrackGOriginalSocleThresholds
 
 /-!
 The counting project imports the verified successor-tree library.
