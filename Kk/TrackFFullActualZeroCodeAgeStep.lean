@@ -244,7 +244,11 @@ theorem k4_full_actual_zero_code_ordinary_age_step
       omega
     refine ⟨⟨hLevel, ?_⟩, hBits⟩
     intro a _
-    exact congrArg (fun S : Finset Nat => a ∈ S) hBits
+    constructor
+    · intro ha
+      simpa only [hBits] using ha
+    · intro ha
+      simpa only [hBits] using ha
   have hPreMatch :
       ∀ i : Fin d,
         (pre (Fin.succAboveEmb j i)).neighbours =
