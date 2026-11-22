@@ -1,18 +1,22 @@
 import Kk.TrackAOddIndexedStructuralBudget
-import Kk.TrackGCrossingFrontier
+import Kk.TrackEOldSocleOriginalMaxFrontier
 import Mathlib.Tactic
 
 /-!
-# Track A/G: MAXIMAL odd old-boring lower-Kpt-socle witness per candidate
+# Track A/G: MAXIMAL old-Kpt-socle witness for odd old-boring candidate cuts
 
-English proof and 17 adversarial checks committed FIRST:
- docs/track_a_odd_old_lower_socle_frontier_english_audit_20261122.md
+English/adversarial proof: docs/track_a_odd_old_lower_socle_frontier_english_audit_20261122.md
 
-Coverage of the genuine COMPLETE OLD dependent Kpt ancestor at a
-higher cut persists at lower cuts of the SAME actual OLD AlgorithmRun.
-The maximal LIVE odd old-boring crossing for EACH candidate index
-therefore suffices for ALL its eligible cuts. This is weaker than
-old-UPPER covering; it does not assume a target Y run or prove BRDs.
+IMPORTANT duplicate-audit correction: generic COMPLETE OLD LOWER socle
+coverage, its downward monotonicity and the arbitrary finite maximal-cut
+iff were ALREADY verified in Track E E79
+(Kk.TrackEOldSocleOriginalMaxFrontier). This module reuses those named
+theorems, rather than duplicating them.
+
+NEW: apply E79 to precisely odd OLD-BORING and LIVE candidate crossings,
+then exclude missing complete OLD Kpt ancestors at every such cut and
+bound TRUE ODD old-factor Bad cuts by Q+Q². No target Y run,
+no upper source profile transfer, no global BRD assertion.
 -/
 
 namespace Kk
@@ -20,52 +24,6 @@ namespace Kk
 open SuccessorTree
 open SuccessorTree.SMTree
 open SuccessorTree.V10
-
-/-- An actual OLD live Kpt crossing w shares the full dependent
-LOWER ancestor with fixed candidate z at cut. This notion is
-strictly weaker than old-UPPER crossing pair coverage. -/
-def kptOldLowerSocleCoveredAt
-    {db du dd : Nat}
-    (family : List (NormalizedForbidden db du dd))
-    (X : Set (AdmissibleKptNode family))
-    (top : Nat)
-    (R : SMTree.Envelope.AlgorithmRun
-      (normalizedKptSMTree family) X top)
-    (z : AdmissibleKptNode family) (cut : Nat) : Prop :=
-  ∃ (hz : cut < LevelTree.lev z),
-    ∃ w : AdmissibleKptNode family,
-      w ∈ SMTree.Envelope.closure
-        (admissibleKptSTree family) (R.I (cut+1)) X ∧
-      ∃ (hw : cut < LevelTree.lev w),
-        LevelTree.ancestor z cut (Nat.le_of_lt hz) =
-          LevelTree.ancestor w cut (Nat.le_of_lt hw)
-
-/-- TRUE old-lower Kpt socle coverage is downward-monotone across
-physical cuts of one actual OLD AlgorithmRun. The old source
-closure grows downward, and equality of dependent high ancestors
-implies equality at every lower level. No candidate run needed. -/
-theorem kpt_old_lower_socle_covered_mono_down
-    {db du dd : Nat}
-    (family : List (NormalizedForbidden db du dd))
-    (X : Set (AdmissibleKptNode family))
-    (top : Nat)
-    (R : SMTree.Envelope.AlgorithmRun
-      (normalizedKptSMTree family) X top)
-    (z : AdmissibleKptNode family)
-    (low high : Nat) (hLowHigh : low ≤ high) (hHigh : high < top)
-    (hCovered : kptOldLowerSocleCoveredAt family X top R z high) :
-    kptOldLowerSocleCoveredAt family X top R z low := by
-  obtain ⟨hzHigh,w,hwLive,hwHigh,hEqHigh⟩ := hCovered
-  have hzLow : low < LevelTree.lev z := by omega
-  have hwLow : low < LevelTree.lev w := by omega
-  refine ⟨hzLow,w,?_,hwLow,?_⟩
-  · exact (kpt_actual_run_preCut_source_mono_down
-      family X top low high R hLowHigh hHigh) hwLive
-  · have hEqLow :=
-      kpt_LevelTree_lower_ancestors_eq_of_higher_eq
-        z w low high hLowHigh
-        (Nat.le_of_lt hzHigh) (Nat.le_of_lt hwHigh) hEqHigh
-    simpa using hEqLow
 
 /-- All genuinely ODD, OLD-BORING, LIVE and crossing source
 coordinates for one candidate Kpt node j. Different candidate
@@ -108,25 +66,17 @@ theorem kpt_odd_old_boring_lower_socle_covered_all_iff_max
     (∀ cut : Nat,
       cut ∈ kptOddOldBoringCandidateCrossingCuts
         family X top R node live j →
-      kptOldLowerSocleCoveredAt family X top R (node j) cut) ↔
-    kptOldLowerSocleCoveredAt family X top R (node j)
+      KptActualOldSocleCoveredAt family X top R (node j) cut) ↔
+    KptActualOldSocleCoveredAt family X top R (node j)
       ((kptOddOldBoringCandidateCrossingCuts
         family X top R node live j).max' hNonempty) := by
   classical
-  let C := kptOddOldBoringCandidateCrossingCuts
-    family X top R node live j
-  constructor
-  · intro hAll
-    exact hAll _ (Finset.max'_mem C hNonempty)
-  · intro hAtMax cut hCut
-    have hMaxCut : C.max' hNonempty < top := by
-      have hMem := Finset.max'_mem C hNonempty
-      exact Finset.mem_range.mp (Finset.mem_filter.mp hMem).1
-    have hLe : cut ≤ C.max' hNonempty :=
-      Finset.le_max' C cut hCut
-    exact kpt_old_lower_socle_covered_mono_down
-      family X top R (node j) cut (C.max' hNonempty)
-      hLe hMaxCut hAtMax
+  apply kpt_actual_old_socle_all_cuts_iff_max
+    family X top R (node j)
+    (kptOddOldBoringCandidateCrossingCuts
+      family X top R node live j) ?_ hNonempty
+  intro cut hCut
+  exact Finset.mem_range.mp (Finset.mem_filter.mp hCut).1
 
 /-- ONE maximal complete old-lower ancestor witness for EACH
 candidate source name removes ALL missing OLD lower-socle
@@ -144,7 +94,7 @@ theorem kpt_odd_old_boring_no_missing_of_max_lower_socles
     (hMax : ∀ j : Fin Q,
       ∀ hNonempty : (kptOddOldBoringCandidateCrossingCuts
         family X top R node live j).Nonempty,
-      kptOldLowerSocleCoveredAt family X top R (node j)
+      KptActualOldSocleCoveredAt family X top R (node j)
         ((kptOddOldBoringCandidateCrossingCuts
           family X top R node live j).max' hNonempty))
     (cut : Nat) (hCut : cut < top) (hOdd : cut % 2 = 1)
@@ -203,7 +153,7 @@ theorem finiteNumericH_odd_bad_card_le_of_max_lower_socles
     (hMax : ∀ j : Fin Q,
       ∀ hNonempty : (kptOddOldBoringCandidateCrossingCuts
         family X top R node live j).Nonempty,
-      kptOldLowerSocleCoveredAt family X top R (node j)
+      KptActualOldSocleCoveredAt family X top R (node j)
         ((kptOddOldBoringCandidateCrossingCuts
           family X top R node live j).max' hNonempty)) :
     (kptOddExactBadCuts family X top R node live).card ≤
@@ -240,7 +190,6 @@ theorem finiteNumericH_odd_bad_card_le_of_max_lower_socles
   omega
 
 #print axioms Kk.finiteNumericH_odd_bad_card_le_of_max_lower_socles
-#print axioms Kk.kpt_old_lower_socle_covered_mono_down
 #print axioms Kk.kpt_odd_old_boring_lower_socle_covered_all_iff_max
 #print axioms Kk.kpt_odd_old_boring_no_missing_of_max_lower_socles
 
