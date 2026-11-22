@@ -384,6 +384,8 @@ import Kk.TrackCUnifiedSafeRealOdd
 import Kk.TrackCRawOriginalOldSocle
 -- Track C: literal old seed above cut automatically witnesses complete Kpt old prefix.
 import Kk.TrackCSeedPrefixOldSocle
+-- Track C: concrete complete RAW old-seed representatives yield safe real/odd same-height I/F transport.
+import Kk.TrackCRawSeedSafeRun
 
 -- Track D: actual finite-index no-I1/no-I2 and one physical boring lower-real cut.
 -- Marked full-B3 and represented complete source remain explicit assumptions.
