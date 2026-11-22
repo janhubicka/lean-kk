@@ -62,8 +62,8 @@ map. This proves the full-poset comparison, not just one direction or a
 comparison restricted to reachable profiles.
 
 Finally, the generic canonicalizer fixes every mapped canonical profile
-by its existing fixed-point theorem. There is no independently defined
-canonicalizer in this bridge.
+by its existing upper-bound and greatest-admissible-age properties.
+There is no independently defined canonicalizer in this bridge.
 
 ## Adversarial checks
 
@@ -83,5 +83,26 @@ canonicalizer in this bridge.
 
 ## Validation status
 
-Lean implementation and compilation are the next step. Their actual
-results will be recorded after observation.
+`Kk/NonedgeProfileBridge.lean` compiled successfully with pinned
+Lean 4.35.0-rc3, using an explicit output path. The imported generic
+`IntegerWitnessCanonical.lean` also compiled successfully. No proof
+errors or changes to the existing generic age definitions were needed.
+
+The following ten exported results were checked with `#print axioms`:
+
+- `all_support_feasibility`
+- `weights_feasible_iff`
+- `feasible_iff_existing_weights`
+- `toAge_is_age_iff`
+- `toAge_boundsOfAge`
+- `toAge_injective`
+- `exists_unique_profile`
+- `below_iff_ageLe`
+- `covers_iff_ageCover`
+- `canonical_fixed`
+
+Every report contains only `propext`, `Classical.choice`, and
+`Quot.sound`. There is no `sorryAx`, custom axiom, or `native_decide`
+dependency. This closes the finite age-representation gap. Actual
+history realization and the two infinite Ramsey obligations remain
+outside this module.

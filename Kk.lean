@@ -1,3 +1,6 @@
+-- Nonedge semantics/model/count; the degree-24 interface is explicitly conditional.
+import Kk.NonedgeBRD24
+
 -- Track A: exact individual physical critical cut spectrum (ordinary L only).
 import Kk.TrackAPhysicalCriticalSpectrum
 -- Track A: exact real/odd numerical-H cut raw age identities.

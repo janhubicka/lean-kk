@@ -91,7 +91,7 @@ The independent review verified these distinctions before Lean coding:
 ## Status
 
 `lake build Kk.NonedgeBRD24` passed with the pinned Lean 4.35.0-rc3
-toolchain. The focused transitive axiom audit passed for 35 endpoints,
+toolchain. The final focused transitive axiom audit passed for 52 endpoints,
 including the ordinary graph model and conditional exactness theorem,
 using only `propext`, `Classical.choice`, and `Quot.sound`.
 

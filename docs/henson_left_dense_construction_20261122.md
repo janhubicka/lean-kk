@@ -82,6 +82,16 @@ assumptions in the intended nonedge theorem are not contradictory.
 
 ## Validation record
 
-Implementation and kernel validation are pending at the time of this
-English-first commit. Record actual results after compilation; do not
-interpret this document as a completed formal proof.
+The implementation in `Kk/HensonLeftDenseConstruction.lean` has compiled
+with the pinned Lean 4.35.0-rc3 toolchain. `edge_cliqueFree`,
+`edge_onePointLeftDense`, and `exists_leftDense_cliqueFree` are proved
+without graph or density hypotheses beyond `2 <= ell`.
+
+The final focused 52-endpoint transitive axiom audit, including the scheduler,
+coherence, clique-freeness, density, and existence endpoints, passed with
+only `propext`, `Classical.choice`, and `Quot.sound`. No custom axiom,
+`sorryAx`, or native-evaluation axiom occurs in these proof closures.
+
+`Kk/NonedgeBRD24.lean` converts the actual construction to an ordinary
+simple graph and proves `constructedHenson4_isHenson4` and `exists_henson4`.
+The final nonedge degree remains a separate open goal.

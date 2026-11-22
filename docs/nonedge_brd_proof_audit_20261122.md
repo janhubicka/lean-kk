@@ -190,6 +190,13 @@ construct/re-enumerate a suitable model and transport BRD by induced
 isomorphism, or derive the needed source construction by another route.
 K₄-freeness alone does not imply any density property.
 
+New work accompanying this audit now discharges this ambient-model
+issue: `HensonLeftDenseConstruction.lean` constructs a concrete
+clique-free left-dense presentation, and `HensonUniversality.lean`
+derives induced universality from the ordinary extension property and
+model-independence of the degree predicates. These additions do not
+discharge the actual-history induction.
+
 There is also a deliberate rank shift: the manuscript singleton ages
 are 1, 2, 3, while `HensonOneType.rank` is zero-based, hence 0, 1, 2.
 The code condition at manuscript rank 1 is a rank-zero condition in
@@ -327,3 +334,131 @@ start with the positive omitted auxiliary/nonselected-coded cuts under
 the exact stage role invariant, then prove the common complete source
 for each of the 24 records. No JEMS exactness theorem or general diary
 identification is needed as an input to formulate either task.
+
+## 7. Independent review of the new semantics and finite-count modules
+
+After the initial audit, both new modules were inspected independently
+of their authors. This is a mathematical definition review; compiler
+results remain the separate integration gate.
+
+### `NonedgeBRDSemantics.lean`
+
+No logical defect was found in the proposed definitions or transport
+interfaces:
+
+- `NonedgeCopy` is a finite **set** of cardinality two. Swapping its
+  endpoints gives the same copy. It contains no enumeration or labeling
+  parameter that could inadvertently double the counted objects.
+- `SimpleGraph` supplies irreflexivity and symmetry. The normalized
+  signature bridge explicitly deals with loop, both directed asymmetry,
+  and clique obstructions, and identifies clique exclusion with
+  `SimpleGraph.CliqueFree` using increasing enumerations of finite sets.
+- `HensonExtension` requests every finite disjoint positive/negative
+  adjacency pattern whose positive set is triangle-free, with the new
+  vertex outside both sets. It is not defined to include a desired BRD
+  value, a diary theorem, or a left-density assumption.
+- `DegreeLE` universally quantifies the number of colors and the entire
+  coloring before existentially choosing the induced self-copy and its
+  palette. Its embedding preserves and reflects adjacency and need not
+  preserve the order on `Nat`.
+- `exists_map_iff_inRange`, `degreeLE_iff_onRanges`, and
+  `degreeLE_iff_onSubcopies` verify that using preimage copies does not
+  accidentally omit some unordered nonedges inside the chosen range.
+- `DegreeEq` is a least-bound condition, and `Unavoidable` demands
+  surjectivity in every induced self-copy. The exactness theorem's upper
+  and lower premises are explicit; it is not a theorem asserting a
+  numeric answer from the definitions.
+- Quantification over `Fin 0` is harmless: when nonedge copies exist
+  there is no coloring into `Fin 0`. The extension property separately
+  proves existence of a nonedge, so the intended Henson application has
+  a nonempty copy domain.
+- `degreeLE_of_mutual_embeddings` uses the valid composition
+  `H -> G -> G -> H` to transport a coloring bound. Its isomorphism
+  corollaries legitimately remove dependence on the chosen enumeration.
+
+`IsHenson4` is the standard countable extension-property presentation.
+The new semantic module does not itself prove the back-and-forth
+uniqueness theorem for that presentation. The separate left-dense model
+construction now establishes nonvacuity concretely: a fair schedule
+tries every finite neighbor set cofinally, adds a vertex only when its
+neighbor set is triangle-free, and preserves all older edges. A final
+safe finite set is safe at its scheduled stage by this stabilization,
+so the full prescribed old column and intervening zeros are realized.
+The new ordinary-extension universality theorem gives induced embeddings
+between all `IsHenson4` models in both directions. This is sufficient for
+degree invariance, without a back-and-forth isomorphism theorem. Both
+actual source files were independently reviewed and no mathematical
+defect was found; their successful compilation was observed by their
+owning agents.
+
+### `NonedgeHistoryCount.lean`
+
+No overcount, undercount, or incorrect local transition was found in the
+machine under its stated interpretation:
+
+- Canonical capacities are derived from attainment by integer weight
+  pairs, not supplied as a list of 13 accepted triples.
+- Covers are tested against **all** 27 bounded triples and all 13 valid
+  profiles, rather than just the reachable states.
+- The split feasibility theorem exactly states
+  `x + y <= r` and `y <= 2`, including the compulsory right-child drop
+  when the parent capacity is three.
+- A left code requires `a = 1` and `c = b`; a right code requires
+  `b = 1` and `c = a`. At `(1,1,1)` both are allowed and remain
+  different event lists, correctly retaining the two coding orders.
+- The phase distinction forces one split before the two codes. Omitting
+  a unary code before the split removes only a dead path: an empty
+  active front cannot later split to produce two coded vertices.
+- Every accepted list has a proved measure bound. Membership in the
+  finite enumerator is equivalent to the unbounded recursive acceptance
+  predicate at that bound. The number 24 is not built into the state
+  definition or used as a fuel bound.
+
+A separate computational check represented each age by its **set of
+feasible integer weight pairs**, ordered these sets by actual inclusion,
+derived covers from that set order, and applied the code law. It again
+obtained 13 classes, and continuation counts 16, 6, 2. This is independent
+evidence for the finite calculation, not a replacement for Lean's
+kernel check.
+
+The local equivalence between coordinate order and feasible-class
+inclusion is now proved in the counting module. The additional
+`NonedgeProfileBridge.lean` closes its connection to the repository's
+general `IsIntegerGraphAge`; details follow below. The connection to
+actual selected graph-age records remains open. An abstract canonical
+profile need not be an actual **distinct** two-type front. For example
+`(3,3,3)` has two
+capacity-three sorts, both with empty old-neighbor set; they would be
+the same actual one-type. This profile is unreachable from the three
+split states and is harmless as an ambient poset element. The count of
+13 must therefore be described as abstract canonical profiles, not 13
+actual distinct-front configurations.
+
+The new files make the finite calculation and the degree's meaning
+reviewable. Their faithful local definitions do not supply the missing
+infinite unavoidability or common-source canonization theorem.
+
+## 8. The generic age-representation gap has now been closed
+
+`Kk/NonedgeProfileBridge.lean` maps the finite history triples to the
+existing `IntegerGraphSupport 2 4 -> Nat` functions. It handles the three
+nonempty supports explicitly and gives empty support value zero. Its
+`all_support_feasibility` and `feasible_iff_existing_weights` theorems
+show that the elementary inequalities are exactly the generic integer
+weight constraints, with no loss caused by the normalized total bound.
+The latter bound follows from feasibility itself.
+
+`toAge_is_age_iff` proves equivalence of the triple saturation predicate
+with the repository's actual `IsIntegerGraphAge 2 4`. The converse
+representation `exists_unique_profile` covers **every** generic
+two-sort canonical age function. Consequently `covers_iff_ageCover`
+compares covers against all generic intermediate ages, not merely a
+selected list or reachable profiles. `canonical_fixed` uses the
+existing generic canonicalizer's greatest-age and raw-bound properties.
+
+The new file compiled with pinned Lean 4.35.0-rc3. Ten principal theorem
+axiom reports contained only `propext`, `Classical.choice`, and
+`Quot.sound`. The finite count is therefore connected to the existing
+finite age formalization rather than a disconnected alternative
+definition. This does not identify histories with actual coding-tree
+events or complete successor-tree source orbits.

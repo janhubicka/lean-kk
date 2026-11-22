@@ -74,3 +74,24 @@ Planned implementation: `Kk/HensonUniversality.lean`, importing only the
 existing semantic module and its dependencies. No new axioms, `sorry`,
 left-density assumptions, or enumeration-preservation requirements are
 permitted. This English proof is recorded before the Lean implementation.
+
+## Verified implementation outcome
+
+The implementation now compiles with the repository's pinned Lean version.
+Both `lake env lean Kk/HensonUniversality.lean` and
+`lake build Kk.HensonUniversality` succeeded.
+
+The public endpoints are:
+
+- `Kk.HensonUniversality.inducedEmbedding`;
+- `Kk.HensonUniversality.exists_inducedEmbedding`;
+- `Kk.HensonUniversality.isHenson4_mutually_embeddable`;
+- `Kk.HensonUniversality.degreeLE_iff_of_isHenson4`;
+- `Kk.HensonUniversality.degreeEq_iff_of_isHenson4`.
+
+An axiom audit of those five endpoints and the crucial
+`PrefixEmbedding.next_vertex` lemma reports only `propext`,
+`Classical.choice`, and `Quot.sound`. There is no `sorryAx` or
+project-specific axiom dependency. The full back-and-forth uniqueness
+theorem remains outside this file's scope; the claimed degree invariance
+is nevertheless completely proved by mutual embeddability.
