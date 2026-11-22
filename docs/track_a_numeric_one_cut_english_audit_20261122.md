@@ -152,3 +152,31 @@ Implement and run standalone named standard-only axiom audit,
 `lake build Kk.TrackANumericSingleCutRawEvent`, full `lake build`,
 and the existing independent small graph raw-event regression.
 No frozen black manuscript edits or premature green marks.
+
+
+## Independent literal numbered-cut regression and Lean proof-script audit
+
+The new script `scripts/check_track_a_numeric_real_cut.py` reconstructs
+the actual generated numerical-H binary L table independently of
+Lean. It tests all simple 4-original graphs, heights k=1..3,
+all admissible b and ordered later top pairs (allowing repeated
+names), every nonempty support of width <=2, and ell=2..5.
+It compares the REAL numerical prefix cut c, c+1 and c+2 for
+every generation g<k, including full odd coordinates.
+
+**Independent local check:** 59,136 literal numerical cut/support/ell
+comparisons passed; 11,652 real-cut raw decreases and exactly
+ZERO odd-dummy raw decreases. On genuine original K_ell-free
+inputs it also checks that the raw saturation clause is automatic.
+The standalone CI runs this same independent test.
+
+First exact-head Lean CI found two LOCAL proof-engineering issues:
+a nonlinear-looking multiplication normalization needed `ring`,
+and `Finset.range_succ` is not available under that symbol name
+in the pinned Lean/Mathlib environment. The latter was replaced
+with direct extensional `Finset.mem_range`/`Finset.mem_insert`
+plus `omega`; neither issue changes the mathematics.
+
+These are submitted repairs, not a claim of passing exact-head Lean
+validation. All five named kernel and standard-axiom gates remain
+pending until a complete successful run.
