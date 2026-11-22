@@ -2,6 +2,7 @@ import Kk.TrackFTypePrefixCanonicalAgeSandwich
 import Kk.TrackFActualFrontCanonicalAge
 import Kk.TrackFZeroCodePreprofileRigidity
 import Kk.TrackFSingletonCapacity
+import Kk.TrackFCanonicalFullSupportBridge
 import Mathlib.Tactic
 
 /-!
