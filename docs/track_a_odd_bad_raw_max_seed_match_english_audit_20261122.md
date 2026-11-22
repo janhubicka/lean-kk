@@ -28,10 +28,17 @@ contained in the actual represented ambient prefix pool.
 Let R be a genuine old AlgorithmRun on X at scan top.
 
 Then there exists a finite set `params` of genuine dependent
-candidate Kpt nodes and an exact live mask
+candidate Kpt nodes **EQUAL TO the entire complete FINAL
+candidate closure**
+  params = closure(R.I(0),Y),
+together with an **injective** `Fin params.card` enumeration,
+and an exact live mask
 `live : Nat -> Fin params.card -> Bool`
 enumerating the TRUE closures `closure(R.I(c+1),Y)`
-at every actual source cut c<top.
+at every actual source cut c<top, with true membership flags
+at every cut, including non-scanned indices. Therefore Q=params.card
+is the ACTUAL size of the final complete candidate source, not
+an arbitrarily inflated number of redundant names.
 
 Let z_j denote the j-th actual candidate node and define C_j
 to be precisely its genuine ODD, OLD-BORING, LIVE CROSSING cuts.
@@ -59,8 +66,8 @@ Kpt crossing equality.
 
 ### English proof
 
-By E70 obtain params, live and exact candidate pre-cut
-coverage. For each name j with C_j nonempty, m_j∈C_j
+By E70 obtain params, live, exact candidate pre-cut
+coverage, **final closure equality and index injectivity**. For each name j with C_j nonempty, m_j∈C_j
 and hence m_j < lev(z_j).
 The stated physical raw witness provides v_j and the
 old-seed match at m_j. Apply the descendant raw-seed
@@ -100,7 +107,13 @@ though its truth from diary axioms is NOT established.
    names and may be nonunique.
 8. Every indexed candidate is a genuine admissible Kpt
    node; meet and parameter-generated auxiliary E nodes
-   are not silently discarded.
+   are not silently discarded. IMPORTANT: without the
+   output conditions `params=closure(R.I(0),Y)` and
+   injectivity, one could pad a candidate index with
+   redundant names and inflate Q until Q+Q² trivially
+   exceeds the number of cuts. This was caught by a
+   separate hostile audit BEFORE any merge, and both
+   conditions are now explicit theorem conclusions.
 9. At a cut with terminal z_j (lev(z_j)=cut), the
    crossing condition excludes it from C_j. Those
    terminal levels remain in the Q+Q² structural set.
