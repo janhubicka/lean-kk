@@ -1,3 +1,5 @@
+-- Track A/C: actual raw seed matches complete OLD Kpt ancestor of any descendant.
+import Kk.TrackACandidateDescendantRawSocle
 -- Track A/G: verified automatically indexed odd Kpt Bad bound.
 import Kk.TrackAOddAutomaticIndexBudget
 -- Track A/G: finite indexed structural and missing complete old Kpt socle budget.
