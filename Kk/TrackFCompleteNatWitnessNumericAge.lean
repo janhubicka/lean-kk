@@ -87,7 +87,9 @@ theorem integerCliqueWeights_exists_exact_nat_sorted_pool
       refine Finset.mem_image.mpr ⟨i, ?_, rfl⟩
       apply Finset.mem_filter.mpr
       refine ⟨Finset.mem_univ i, ?_⟩
-      simpa only [hSort i] using hxT
+      have hxVal : σ i.val ∈ T.1 := hxT
+      rw [hSort i] at hxVal
+      exact hxVal
   have hBImage : A.image ι = B := by
     ext v
     constructor
