@@ -117,7 +117,7 @@ theorem kpt_odd_old_boring_no_missing_of_max_lower_socles
     (kpt_odd_old_boring_lower_socle_covered_all_iff_max
       family X top R node live j hNonempty).mpr
         (hMax j hNonempty) cut hMember
-  obtain ⟨hz,w,hw,hwCross,hEq⟩ := hAtCut
+  obtain ⟨w,hw,hz,hwCross,hEq⟩ := hAtCut
   exact hNoOld ⟨w,hw,hwCross,by simpa using hEq⟩
 
 
