@@ -428,6 +428,7 @@ import Kk.FinitePhysicalCoverHistory
 -- Track B: automatically refine a genuine lower age into finite saturated covers.
 import Kk.AutomaticAgeCoverChain
 import Kk.IntegerAgeCoverUnitDrop
+import Kk.AutomaticPhysicalCoverPath
 
 -- Whole-source adversarial integration: 56 additional real Kk production modules.
 -- Separate *_AxiomAudit files retain standalone exact-head gates.

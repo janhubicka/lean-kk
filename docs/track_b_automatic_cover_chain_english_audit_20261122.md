@@ -109,3 +109,38 @@ cover has unit drop in the enumerated domains:
 Lean verification still needed for automatic cover-chain existence,
 the unit-drop witness-decrement argument, extraction of physical
 support/block sizes and composition with the existing finite history.
+
+## Explicit physical chronological certificate (stacked continuation)
+
+The composition need not discard its intermediate stages. Define a typed
+`PhysicalGeneratedCoverPath(E,d,ell,k)` with a stop constructor (the same
+complete column at the same cutoff) and an advance constructor containing:
+
+* one actual genuine age cover `middle ⋖ upper` and a changed support
+  `T`, with the now-derived unit drop and positive block-size identity;
+* one actual reserved clique `Q` and cutoff `mid`, all vertices of
+  `Q` in `[b,mid)`, and complete two-direction anticompleteness to
+  **every** original earlier than `b`;
+* the exact column `cmid = supportBlockGappedColumn b Q T c`, preserving
+  every already committed column, and the exact canonical next age;
+* a stage-local `HasUniformPositiveSupportStage` at fixed numeric
+  generation parameter `k`, with a recursive tail starting from exactly
+  `mid,cmid,middle` in the *same* original graph `E`.
+
+Induction on the automatically produced abstract `AgeCoverChain` inserts
+one real block per cover using the previously verified Henson one-cover
+constructor. A companion induction on the generated physical path derives
+monotone cutoffs, retention of the complete initial columns, and final age
+`target`. This is stronger as a *proof certificate* than merely producing
+an endpoint of the right age. There is no fixed supplied sequence of
+intermediate ages or changed supports.
+
+**Hostile boundaries:** All stage-local finite numerical-H witnesses remain
+existential and may use different embeddings. A previously chosen selected
+top witness is not protected unless its original address is already in the
+old cutoff with its positive future bits, whose neutrality must then be
+proved. The certificate concerns the ordinary canonical age at block
+cutoffs, not all numeric-H parameter/free cuts *inside* the blocks. The
+K4 auxiliary-B3 microcut obstruction still applies. Only a later true
+Kpt/I1–I3/B3 source theorem and common labelled inverse-source orbit can
+upgrade the finite cover path to a prescribed resolved diary.
