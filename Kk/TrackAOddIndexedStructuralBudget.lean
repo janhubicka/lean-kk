@@ -130,7 +130,7 @@ theorem finiteNumericH_odd_bad_off_indexed_structural_has_missing_socle
     apply Finset.mem_union.mpr
     left
     exact Finset.mem_image.mpr
-      ⟨i, Finset.mem_univ i, by simpa only [hi] using hLev.symm⟩
+      ⟨i, Finset.mem_univ i, by simpa only [hi] using hLev⟩
   · obtain ⟨z,hz,w,hw,_hSame,hLev⟩ := hMeet
     obtain ⟨i,hi,_⟩ := (hExactY z).mp hz
     obtain ⟨j,hj,_⟩ := (hExactY w).mp hw
@@ -145,7 +145,7 @@ theorem finiteNumericH_odd_bad_off_indexed_structural_has_missing_socle
     apply Finset.mem_union.mpr
     right
     exact Finset.mem_image.mpr
-      ⟨(i,j), Finset.mem_univ _, by simpa only [hi,hj] using hLev.symm⟩
+      ⟨(i,j), Finset.mem_univ _, by simpa only [hi,hj] using hLev⟩
   · obtain ⟨z,hz,hCross,hNoOld⟩ := hMissing
     obtain ⟨i,hi,hLive⟩ := (hExactY z).mp hz
     refine ⟨i,hLive,?_⟩
