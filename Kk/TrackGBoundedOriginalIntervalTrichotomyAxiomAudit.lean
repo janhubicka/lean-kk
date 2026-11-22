@@ -1,0 +1,7 @@
+import Kk.TrackGBoundedOriginalIntervalTrichotomy
+
+#check @Kk.finiteNumericH_zero_stage_exact_Bad_structural_or_original_interval
+#print axioms Kk.finiteNumericH_zero_stage_exact_Bad_structural_or_original_interval
+
+#check @Kk.finiteNumericH_odd_exact_Bad_structural_or_original_interval
+#print axioms Kk.finiteNumericH_odd_exact_Bad_structural_or_original_interval
