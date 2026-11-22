@@ -146,6 +146,46 @@ theorem kpt_actual_runs_selected_disagreement_le_exception_plus_defects
     Finset.card_union_le ordinary defects
   exact hSource.trans hCard
 
+/-- Physical NUMERICAL-H candidate cuts corresponding to the
+genuine ordinary-L critical GENERATIONS of one current original
+block. The map is hPosition(k,b,g), not the identity on g.
+Only g<k is retained: the top generation and other blocks are
+outside the partial current-original phase treated by Track A.
+No claim that the full Kpt interesting cuts equal this image. -/
+noncomputable def trackAPhysicalCriticalCuts
+    {d : Nat} (ell k : Nat) (E : Nat → Nat → Bool)
+    (b : Nat) (j : Fin d → Nat) : Finset Nat := by
+  classical
+  exact ((trackACriticalGenerations ell E b j).filter
+    (fun g => g < k)).image (fun g => hPosition k b g)
+
+/-- The PHYSICAL cut set has at most ell-2 distinct numerical
+positions. This follows from the genuine Henson critical-generation
+bound and that taking a finite filter and image cannot increase
+cardinality. It is NOT a bound for all Kpt I1/I2/I3 cuts. -/
+theorem trackA_henson_physical_critical_cuts_card_le
+    {d : Nat} (E : Nat → Nat → Bool)
+    (ell : Nat) (hell : 2 ≤ ell)
+    (hAvoid : ∀ bad, bad ∈ hensonForbiddenFamily ell hell →
+      bad.Avoids (normalizedGraphModel E))
+    (k b : Nat) (j : Fin d → Nat) (hj : ∀ t, b < j t) :
+    (trackAPhysicalCriticalCuts ell k E b j).card ≤ ell-2 := by
+  classical
+  have hImage :
+      (trackAPhysicalCriticalCuts ell k E b j).card ≤
+      ((trackACriticalGenerations ell E b j).filter
+        (fun g => g < k)).card := by
+    unfold trackAPhysicalCriticalCuts
+    exact Finset.card_image_le
+  have hFilter :
+      ((trackACriticalGenerations ell E b j).filter
+        (fun g => g < k)).card ≤
+      (trackACriticalGenerations ell E b j).card :=
+    Finset.card_le_card (Finset.filter_subset _ _)
+  have hBase := trackA_henson_critical_generation_card_le
+    E ell hell hAvoid b j hj
+  omega
+
 /-- SHARP HENSON ORDINARY-L PLUS EXACT DEPENDENT-KPT DEFECT BUDGET.
 The ordinary critical-generation set contributes at most ell-2.
 The residual term counts ACTUAL full source profile mismatches
@@ -157,7 +197,7 @@ theorem trackA_henson_kpt_selected_disagreement_le_sharp_plus_defects
     (ell : Nat) (hell : 2 ≤ ell)
     (hAvoid : ∀ bad, bad ∈ hensonForbiddenFamily ell hell →
       bad.Avoids (normalizedGraphModel E))
-    (b : Nat) (j : Fin d → Nat) (hj : ∀ t, b < j t)
+    (k b : Nat) (j : Fin d → Nat) (hj : ∀ t, b < j t)
     (X Y : Set (AdmissibleKptNode
       (hensonForbiddenFamily ell hell)))
     (top : Nat)
@@ -169,16 +209,17 @@ theorem trackA_henson_kpt_selected_disagreement_le_sharp_plus_defects
       ell-2 +
         (kptOffExceptionFullProfileDefects
           (hensonForbiddenFamily ell hell) X Y top RX RY
-          (trackACriticalGenerations ell E b j)).card := by
+          (trackAPhysicalCriticalCuts ell k E b j)).card := by
   have hGeneral :=
     kpt_actual_runs_selected_disagreement_le_exception_plus_defects
       (hensonForbiddenFamily ell hell) X Y top RX RY
-      (trackACriticalGenerations ell E b j)
+      (trackAPhysicalCriticalCuts ell k E b j)
   have hOrd :=
-    trackA_henson_critical_generation_card_le
-      E ell hell hAvoid b j hj
+    trackA_henson_physical_critical_cuts_card_le
+      E ell hell hAvoid k b j hj
   omega
 
+#print axioms Kk.trackA_henson_physical_critical_cuts_card_le
 #print axioms Kk.kpt_full_profiles_eq_of_not_mem_off_exception_defects
 #print axioms Kk.kpt_actual_runs_selected_disagreement_le_exception_plus_defects
 #print axioms Kk.trackA_henson_kpt_selected_disagreement_le_sharp_plus_defects
