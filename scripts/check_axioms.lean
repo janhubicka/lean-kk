@@ -2518,3 +2518,10 @@ import Kk
 #print axioms Kk.henson_leftDense_constructs_physical_age_cover_path
 #check @Kk.henson_leftDense_normalizes_genuine_age_by_covers
 #print axioms Kk.henson_leftDense_normalizes_genuine_age_by_covers
+-- Track C: sharpened physical odd free-end selected-level exception budget.
+#check @Kk.kpt_physical_final_freeend_cuts_card_le_root_add_selected
+#print axioms Kk.kpt_physical_final_freeend_cuts_card_le_root_add_selected
+#check @Kk.kpt_physical_final_freeend_cuts_card_le_min_selected_carrier
+#print axioms Kk.kpt_physical_final_freeend_cuts_card_le_min_selected_carrier
+#check @Kk.finiteNumericH_constructed_odd_quiet_outside_selected_budget
+#print axioms Kk.finiteNumericH_constructed_odd_quiet_outside_selected_budget
