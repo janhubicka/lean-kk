@@ -1,5 +1,5 @@
--- Track A/G: true odd numerical cut exact factor Bad trichotomy.
-import Kk.TrackAOddBadSocleTrichotomy
+-- Track A: exact individual physical critical cut spectrum (ordinary L only).
+import Kk.TrackAPhysicalCriticalSpectrum
 -- Track A: exact real/odd numerical-H cut raw age identities.
 import Kk.TrackANumericSingleCutRawEvent
 -- Track A/G: residual actual dependent Kpt profile defect budget.
@@ -494,6 +494,9 @@ import Kk.TrackGZeroColumnSocleRun
 import Kk.TrackGZeroStageExactBadTrichotomy
 import Kk.TrackGSocleNoveltyIntervals
 import Kk.TrackGOriginalSocleThresholds
+
+-- Track A/G: complete Kpt factor-Bad trichotomy for genuine odd numerical cuts.
+import Kk.TrackAOddBadSocleTrichotomy
 
 /-!
 The counting project imports the verified successor-tree library.
