@@ -148,9 +148,8 @@ theorem finiteNumericH_odd_bad_off_indexed_structural_has_missing_socle
       ⟨(i,j), Finset.mem_univ _, by simpa only [hi,hj] using hLev⟩
   · obtain ⟨z,hz,hCross,hNoOld⟩ := hMissing
     obtain ⟨i,hi,hLive⟩ := (hExactY z).mp hz
-    refine ⟨i,hLive,?_⟩
-    rw [hi]
-    exact ⟨hCross,hNoOld⟩
+    subst z
+    exact ⟨i,hLive,hCross,hNoOld⟩
 
 /-- Finite list of ODD actual factor-Bad cuts in the old run.
 The factor-Bad predicate itself enforces cut<top. -/
