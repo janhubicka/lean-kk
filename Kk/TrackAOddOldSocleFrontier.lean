@@ -112,6 +112,7 @@ theorem kpt_odd_old_boring_lower_socle_covered_all_iff_max
     kptOldLowerSocleCoveredAt family X top R (node j)
       ((kptOddOldBoringCandidateCrossingCuts
         family X top R node live j).max' hNonempty) := by
+  classical
   let C := kptOddOldBoringCandidateCrossingCuts
     family X top R node live j
   constructor
