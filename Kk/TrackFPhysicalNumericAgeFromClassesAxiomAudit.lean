@@ -1,0 +1,8 @@
+import Kk.TrackFPhysicalNumericAgeFromClasses
+
+#check @Kk.trackFPhysical_numeric_age_eq_of_full_K4_tests
+#print axioms Kk.trackFPhysical_numeric_age_eq_of_full_K4_tests
+#check @Kk.k4_sync_complete_tuple_numeric_canonical_age
+#print axioms Kk.k4_sync_complete_tuple_numeric_canonical_age
+#check @Kk.k4_survivor_sync_numeric_canonical_age_after_code
+#print axioms Kk.k4_survivor_sync_numeric_canonical_age_after_code
