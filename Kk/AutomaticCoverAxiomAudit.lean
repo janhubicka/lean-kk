@@ -1,5 +1,6 @@
 import Kk.AutomaticAgeCoverChain
 import Kk.IntegerAgeCoverUnitDrop
+import Kk.AutomaticPhysicalCoverPath
 
 #check @Kk.ageCoordinateGap_pos_of_strict
 #print axioms Kk.ageCoordinateGap_pos_of_strict
@@ -17,3 +18,10 @@ import Kk.IntegerAgeCoverUnitDrop
 #print axioms Kk.integerGraphAge_cover_changed_support_unit_drop
 #check @Kk.integerGraphAge_cover_changed_support_block_size
 #print axioms Kk.integerGraphAge_cover_changed_support_block_size
+
+#check @Kk.PhysicalGeneratedCoverPath.terminal
+#print axioms Kk.PhysicalGeneratedCoverPath.terminal
+#check @Kk.henson_leftDense_constructs_physical_age_cover_path
+#print axioms Kk.henson_leftDense_constructs_physical_age_cover_path
+#check @Kk.henson_leftDense_normalizes_genuine_age_by_covers
+#print axioms Kk.henson_leftDense_normalizes_genuine_age_by_covers

@@ -5,6 +5,7 @@ on:
     paths:
       - 'Kk/AutomaticAgeCoverChain.lean'
       - 'Kk/IntegerAgeCoverUnitDrop.lean'
+      - 'Kk/AutomaticPhysicalCoverPath.lean'
       - 'Kk/AutomaticCoverAxiomAudit.lean'
       - 'Kk.lean'
       - '.github/workflows/kk-track-b-auto-cover.yml'
@@ -35,7 +36,7 @@ jobs:
       - name: Obtain Mathlib build cache
         run: lake exe cache get
       - name: Compile both new Track B modules
-        run: lake build Kk.AutomaticAgeCoverChain Kk.IntegerAgeCoverUnitDrop
+        run: lake build Kk.AutomaticAgeCoverChain Kk.IntegerAgeCoverUnitDrop Kk.AutomaticPhysicalCoverPath
       - name: Exact standard-axiom gate
         run: |
           set -euo pipefail
