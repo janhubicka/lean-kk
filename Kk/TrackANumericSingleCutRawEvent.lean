@@ -106,13 +106,15 @@ theorem trackA_numeric_odd_dummy_raw_neutral
     intro t
     have hNumber : cut + 1 = 2*((k+1)*b+g)+1 := by
       dsimp [cut,hPosition]
-      omega
+      ring
     rw [hNumber]
     exact (finiteNumericH_odd_dummy_to_top_zero
       E k M ((k+1)*b+g) (j t)).1
   have hRange : Finset.range (cut+2) =
       insert (cut+1) (Finset.range (cut+1)) := by
-    simpa [Nat.add_assoc] using (Finset.range_succ (cut+1))
+    ext x
+    simp only [Finset.mem_range, Finset.mem_insert]
+    omega
   change trackANumericRawAt E ell k M (cut+2) j =
     trackANumericRawAt E ell k M (cut+1) j
   unfold trackANumericRawAt
@@ -144,7 +146,7 @@ theorem trackA_henson_numeric_real_cut_change_iff_critical
     g ∈ trackACriticalGenerations ell E b j := by
   have hNext : hPosition k b (g+1) = hPosition k b g + 2 := by
     dsimp [hPosition]
-    omega
+    ring
   have hNew :
       finiteNumericHPartialActualRawAt E ell k b (g+1) M j =
         trackANumericRawAt E ell k M (hPosition k b g + 1) j := by
