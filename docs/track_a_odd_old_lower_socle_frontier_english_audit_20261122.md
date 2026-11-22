@@ -32,7 +32,7 @@ For each name j in Fin Q, let C_j be the finite set of odd c<N with
 C_j is finite and may be disconnected by selected or non-boring
 levels; no interval assumption is made. If nonempty, let m_j=max C_j.
 
-## Lemma 1: complete OLD lower socle coverage is downward-monotone
+## Verified prerequisite (Track E E79): complete OLD lower socle coverage is downward-monotone
 
 If 0<=low<=high<N and old-lower-covered(z,high), then
 old-lower-covered(z,low).
@@ -49,7 +49,7 @@ Both crossing inequalities at low hold by low<=high. Thus the
 *same* old source w witnesses coverage at low. No new Y-run,
 source bijection, or L-only projection is used.
 
-## Lemma 2: a SINGLE maximal odd source check per named candidate
+## New specialization: a SINGLE maximal odd source check per named candidate
 
 For every nonempty C_j,
   [ old-lower-covered(node(j),m_j) ]
@@ -61,7 +61,7 @@ c<=m_j, with m_j<N because m_j belongs to C_j.
 The reverse implication simply instantiates c=m_j.
 Old boringness need not hold at intermediate levels.
 
-## Theorem 3: all OLD-BORING odd missing-socle cuts vanish
+## New theorem: all OLD-BORING odd missing-socle cuts vanish
 
 Assume for every j with C_j nonempty there is a complete old
 lower-ancestor witness at m_j. Then for any c<N such that c is ODD
@@ -75,7 +75,7 @@ Lemma 2, that node is old-lower-covered at c, contradiction.
 A candidate can be inactive at higher cuts; we only propagate
 from the maximum of its own *actually live and old-boring* cut set.
 
-## Theorem 4: bound genuine factor-Bad odd cuts by structural levels
+## New theorem: bound genuine factor-Bad odd cuts by structural levels
 
 With a true finite numerical-H+ graph source, family avoidance and
 symmetry, X subset Y, exact candidate-source index at each
@@ -146,22 +146,44 @@ monotonicity and the checked structural-level cardinal bound.
     earns no manuscript green mark.
 17. Black frozen TeX remains untouched.
 
-## Lean implementation
+## Duplicate-audit correction before merge
 
-`Kk/TrackAOddOldSocleFrontier.lean`:
-- `kptOldLowerSocleCoveredAt`
-- `kpt_old_lower_socle_covered_mono_down`
-- `kptOddOldBoringCandidateCrossingCuts`
-- `kpt_odd_old_boring_lower_socle_covered_all_iff_max`
-- `kpt_odd_old_boring_no_missing_of_max_lower_socles`
-- `finiteNumericH_odd_bad_card_le_of_max_lower_socles`
+The initial source draft introduced a second generic
+`kptOldLowerSocleCoveredAt` notion and duplicate downward/
+maximal-cut lemmas. An adversarial repository search found that
+`Kk.TrackEOldSocleOriginalMaxFrontier` (Track E E79) already
+defines the same mathematical predicate as
+`KptActualOldSocleCoveredAt`, and proves both
+`kpt_actual_old_socle_covered_mono_down` and
+`kpt_actual_old_socle_all_cuts_iff_max`, with strict
+standard-only axiom verification.
 
-Leverage the MERGED source helpers
-`kpt_actual_run_preCut_source_mono_down`,
-`kpt_LevelTree_lower_ancestors_eq_of_higher_eq`,
-`mem_kptExactOldFactorBadCuts`,
-`finiteNumericH_odd_bad_subset_structural_union_missing` and
-`kpt_indexed_structural_levels_card_le`.
+Those generic reimplementations have therefore been **removed**
+from this PR. The proof now composes E79 with a genuinely new
+candidate-index odd OLD-BORING live crossing filter and the
+verified #484 odd Bad source trichotomy. This avoids repeated
+mathematics, duplicate API concepts, and unnecessary proof risk.
 
-Do not merge prior to a successful named axiom parser and exact-head
-`lake build`. No dependence on a Y AlgorithmRun.
+Only THREE new named Lean endpoints are registered:
+- `kpt_odd_old_boring_lower_socle_covered_all_iff_max`:
+  specialize verified E79 max to actual odd live boring cuts.
+- `kpt_odd_old_boring_no_missing_of_max_lower_socles`:
+  show missing lower old-socle cuts are impossible on the
+  old-boring odd domain under one max certificate/name.
+- `finiteNumericH_odd_bad_card_le_of_max_lower_socles`:
+  genuine odd factor-Bad cut cardinal ≤ Q + Q² without
+  requiring global disappearance of missing socles on
+  non-boring cuts.
+
+## Lean acceptance
+
+Module: `Kk/TrackAOddOldSocleFrontier.lean`, importing
+verified `Kk.TrackEOldSocleOriginalMaxFrontier` and
+`Kk.TrackAOddIndexedStructuralBudget`.
+Use an exact-head direct and full `lake build` and strict
+THREE-name qualified standard-only axiom report.
+
+No assumption that the refined diary actually supplies these
+maximal complete old-prefix witnesses, no diary-uniform Q
+bound, no new Y-run, and no global BRD claim.
+Frozen black manuscript remains untouched until all gates pass.
