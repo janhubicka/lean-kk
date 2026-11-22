@@ -1,0 +1,10 @@
+import Kk.CanonicalCriticalSlack
+
+#check @Kk.integerGraphAgeCanonical_interval_eq_iff_critical_slack
+#print axioms Kk.integerGraphAgeCanonical_interval_eq_iff_critical_slack
+#check @Kk.integerGraphAgeCanonical_every_intermediate_eq_of_critical_slack
+#print axioms Kk.integerGraphAgeCanonical_every_intermediate_eq_of_critical_slack
+#check @Kk.originalCriticalCount_zero_of_canonical_interval_eq_tight
+#print axioms Kk.originalCriticalCount_zero_of_canonical_interval_eq_tight
+#check @Kk.integerGraphAgeCanonical_interval_ne_of_excess_critical_slack
+#print axioms Kk.integerGraphAgeCanonical_interval_ne_of_excess_critical_slack
