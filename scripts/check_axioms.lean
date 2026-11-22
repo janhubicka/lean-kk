@@ -2496,3 +2496,11 @@ import Kk
 #print axioms Kk.ageCoverChain_exists
 #check @Kk.integerGraphAge_exists_saturated_chain
 #print axioms Kk.integerGraphAge_exists_saturated_chain
+
+-- Track B: unit-drop on every changed cover support, witnessed by a real normalized vector.
+#check @Kk.integerGraphAgeCanonical_clip_pred_at
+#print axioms Kk.integerGraphAgeCanonical_clip_pred_at
+#check @Kk.integerGraphAge_cover_changed_support_unit_drop
+#print axioms Kk.integerGraphAge_cover_changed_support_unit_drop
+#check @Kk.integerGraphAge_cover_changed_support_block_size
+#print axioms Kk.integerGraphAge_cover_changed_support_block_size
