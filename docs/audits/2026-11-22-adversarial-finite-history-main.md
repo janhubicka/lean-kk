@@ -134,3 +134,89 @@ capacity witness for each prescribed active support.
 Until that lemma and the Kpt orbit comparison are proved, this
 finite history cannot be promoted to the bounded resolved copy,
 characterization, 24-orbit theorem, or exact big Ramsey degrees.
+
+
+
+## Cross-track source-to-manuscript audit matrix
+
+The whole proof was audited by following the **critical inter-track interfaces**
+and their actual theorem signatures, rather than treating the number of
+Lean files as a metric for a completed proof. The root has 315 distinct direct
+imports and the 1,017 central axiom reports are distinct and paired with
+`#check`; this does not imply every one of the 679 `.lean` files has
+an axiom-checked public theorem or that all unregistered code was audited.
+
+| Track | Checked theorem/signature | Adversarial scope boundary |
+| --- | --- | --- |
+| A | `PartialNumericForbiddenSharpStability`, `PartialNumericCriticalGenerations`, `PartialNumericSingletonCanonical` | Fixed actual original graph and given later top names; changes in ORDINARY binary-L canonical age, not full dependent Kpt event history |
+| B | `FinitePhysicalCoverChain`, `PhysicalProspectiveControlledCoding`, `PhysicalCanonicalCoverStage`, `HensonLeftDensityBridge` | Fixed Henson E; full literal old columns retained; finite stage top witnesses are separate; selected witness survival/neutrality and global scheduling are not conclusions |
+| C | `TrackCUnifiedSafeRealOdd`, `TrackCRawOriginalOldSocle` | Full OLD Kpt-prefix matching is required at maximal eligible safe cuts; the verified implication does NOT construct those matches in an unbounded resolved diary |
+| D | `TrackDZeroStageActualRunSkip`, `TrackDTopSeedConcreteLowerSkip` | Actual no-I1/I2/I3 finite skips have explicit no-seed, complete zero-stage/Plan roles or top-seed shape; cannot globally erase positive auxiliary (B3) microcuts |
+| E | `TrackEOldSocleOriginalMaxFrontier`, `TrackESelectedLevelOriginalBudget` | Number of original-prefix tests is bounded by roots plus ACTUAL selected old levels, not by a fixed diary: both the old selected-level count and existence of prefix witnesses remain open |
+| F | `TrackFK4CompleteTupleSynchronization`, `TrackFZeroCodeSurvivorSynchronization`, `TrackFZeroCodePreprofileRigidity` | Complete finite graph classes are synchronized under genuine rank-large target sourceCodingFibre hypotheses; no end-to-end realization of every specified cover/split/code history in every induced Henson self-copy |
+| G | `TrackGExactFactorBadCuts`, `TrackGIntrinsicExactFactorBad`, `TrackGZeroStageExactBadTrichotomy`, `TrackGBadCutCoordinateTransport` | Bad=empty iff one same-I/same-total-F target run exists under exact finite index; conditional coordinate/source transport DOES NOT build a common labelled inverse-source orbit or bound exceptional cuts uniformly |
+
+### Specific audited hazards
+
+1. **The left-dense enumeration is a separate, strong hypothesis.**
+   `OnePointLeftDense E ell` requires the realizing original to be
+   nonadjacent to *all intervening earlier indices*, not merely to
+   satisfy an extension property over a specified finite prefix.
+   This is faithful to the manuscript's explicitly chosen left-dense
+   enumeration, but the theorem has not constructed such an enumeration
+   from a generic countable Henson presentation. In particular one
+   must not silently replace `OnePointLeftDense` with K_ell-freeness
+   or ordinary age-universality.
+2. **An exact finite source index is not a labelled source orbit.**
+   The indexed-Bad criterion takes a complete list of genuinely live
+   target Kpt nodes; different indices may represent the same node.
+   `Bad=∅` gives a *single* synchronized run, not a canonical
+   cross-occurrence identification of the nodes in all diaries.
+3. **The K4 parameter-cut counterexample is real.** The numerical-H
+   gadget selects an extra auxiliary cut while the selected graph-age
+   shadow stays constant. Therefore any proposed induction that
+   counts only selected-front age covers and treats all other levels
+   as boring needs a new dependent-source proof. A bounded list of
+   abstract cover operations cannot by itself eliminate I2/B3.
+4. **Source-rank largeness is a hypothesis, not blanket diary
+   unavoidability.** The fully verified Track F tuple theorem assumes
+   all source coding fibres have rank-large compatible target fibres.
+   That condition is not derived for all synchronized complete
+   histories. In the manuscript, the longer frozen black induction
+   is not the Lean proof; the olive TODO correctly flags the difference.
+5. **The manuscript numerical recurrence is not the lower-bound proof.**
+   The small K4 independent-triple recurrence has a `leanpending`
+   marker, and the uploaded diary generator omits 5,904 of the
+   120,487 proposed abstract histories. Even if the recurrence is
+   independently confirmed arithmetically, one must prove that every
+   counted history is *realizable and unavoidable* under the intended
+   normalization, and that the generated diaries and chosen orbit
+   equivalence agree.
+6. **A verified conditional implication cannot be promoted by using
+   its conclusion as an invariant.** Repeatedly: the full-stage
+   zero-L or old-socle premise in Tracks C/D/E, and the complete
+   source-class equality in Track F, need independently constructed
+   witnesses for the selected resolved diary.
+
+### Recommendation for the critical path
+
+Priority 1 is a real **selected-witness-preserving extension**:
+simultaneously protect a finite set of actual earlier top-witness images,
+keep their possibly nonzero future columns, preserve all normalized
+clique support ages, and obtain the exact full parameter-closed Kpt
+source event comparison. Only THEN attempt a coherent infinite tower.
+
+Priority 2 is the direct independent-set diary occurrence theorem
+built from the verified source/target tuple equality and full coding
+step; independent-set degree counts should remain conditional until
+this is completed.
+
+Priority 3 is an explicit proof in Lean that the manuscript's
+left-dense, Fraisse and coding-tree enumeration interfaces match the
+Boolean hypotheses used by the physical constructors.
+
+**Do not interpret 1017/1019 checked theorems or 353 validation
+markers as a percentage of the final main theorem.** 142 green,
+175 conditional blue, six finite, three successor, and 27 pending
+is a useful bookkeeping census, not a measure of the complexity
+or completeness of the global proof.
