@@ -1,3 +1,5 @@
+-- Track A/G: genuine old lower-socle one-maximal-odd-cut frontier.
+import Kk.TrackAOddOldSocleFrontier
 -- Track A/G: verified automatically indexed odd Kpt Bad bound.
 import Kk.TrackAOddAutomaticIndexBudget
 -- Track A/G: finite indexed structural and missing complete old Kpt socle budget.
