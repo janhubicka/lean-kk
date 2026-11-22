@@ -1,3 +1,5 @@
+-- Track A/C/G: old raw seed type at one max odd candidate cut bounds bad source cuts.
+import Kk.TrackARawMaxOddBudget
 -- Track A/C: verified full old-Kpt ancestor of an arbitrary raw-matched physical descendant.
 import Kk.TrackACandidateDescendantRawSocle
 -- Track A/G: genuine old lower-socle one-maximal-odd-cut frontier.
