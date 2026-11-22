@@ -177,3 +177,27 @@ this English note were corrected to use C. The correction changes
 the theorem interface but does not prove the still-open
 parameter-closed diary-to-profile matching statement. Keep in DRAFT until
 the precise head passes.
+
+
+## Application-facing conditional special case
+
+Suppose at every **numerical** scan cut `q<N` outside the mapped
+physical candidate set `C`, the TRUE pre-cut I1 terminal flags
+and complete L+/E old/upper crossing relations of the two actual
+runs agree. Then the already verified five-theorem Track A/G
+exception comparison applies directly with
+`Exceptional = trackAPhysicalCriticalCuts ell k E b j`, giving
+
+  ncard(I_X(0) symmetric_difference I_Y(0))
+      <= |C| <= ell-2.
+
+This is precisely the `D=empty` case of the more general defect
+budget, but is useful as a separate theorem with explicit,
+testable full-source hypotheses. It does **not** assert that the
+diary construction supplies them.
+
+Lean target:
+`trackA_henson_kpt_selected_disagreement_le_sharp_of_full_profiles`.
+Its proof is one composition of
+`kpt_actual_runs_selected_disagreement_card_le_of_full_profiles`
+and `trackA_henson_physical_critical_cuts_card_le`.
