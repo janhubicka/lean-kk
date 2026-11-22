@@ -110,15 +110,15 @@ theorem integerGraphAgeCanonical_clip_pred_at
       have hOld := hRespectsUpper S
       have hNew : integerCliqueOnSupport wDown S ≤ upper S - 1 := by
         rw [hDownAt]
-      simpa only [D, integerAgeLowerAt, if_pos rfl] using
+      simpa [D, integerAgeLowerAt] using
         (le_min hOld hNew)
     · simpa only [D, integerAgeLowerAt, if_neg hUS] using
         hRespectsUpper U
   have hCanonBelow : integerGraphAgeCanonical d ell D S ≤ upper S - 1 := by
     have hRaw := integerGraphAgeCanonical_le_raw d ell D S
     have hAt : D S ≤ upper S - 1 := by
-      dsimp [D, integerAgeLowerAt]
-      exact Nat.min_le_right _ _
+      simpa [D, integerAgeLowerAt] using
+        (Nat.min_le_right (upper S) (upper S - 1))
     omega
   have hCanonAbove : upper S - 1 ≤ integerGraphAgeCanonical d ell D S := by
     rw [← hDownAt]
@@ -143,7 +143,7 @@ theorem integerGraphAge_cover_changed_support_unit_drop
     · subst U
       have hLe := hCover.le S
       have hPred : lower S ≤ upper S - 1 := by omega
-      simpa only [D, integerAgeLowerAt, if_pos rfl] using
+      simpa [D, integerAgeLowerAt] using
         (le_min hLe hPred)
     · simpa only [D, integerAgeLowerAt, if_neg hUS] using
         (hCover.le U)
@@ -162,8 +162,8 @@ theorem integerGraphAge_cover_changed_support_unit_drop
     have hRaw := integerGraphAgeCanonical_le_raw d ell D S
     rw [hEq] at hRaw
     have hD : D S ≤ upper S - 1 := by
-      dsimp [D, integerAgeLowerAt]
-      exact Nat.min_le_right _ _
+      simpa [D, integerAgeLowerAt] using
+        (Nat.min_le_right (upper S) (upper S - 1))
     omega
   have hEqualsLower : integerGraphAgeCanonical d ell D = lower := by
     rcases hCover.no_intermediate (integerGraphAgeCanonical d ell D)
