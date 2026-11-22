@@ -2427,3 +2427,54 @@ import Kk
 #print axioms Kk.trackFActualFront_canonical_antitone_of_extension
 #check @Kk.trackFActualFront_canonical_sandwich_eq
 #print axioms Kk.trackFActualFront_canonical_sandwich_eq
+
+-- Adversarial closure: previously #check-only imported and local source endpoints.
+-- This is NOT a new Kk-free characterization theorem; every dependency is now audited.
+#print axioms SuccessorTree.V10.normalizedKpt_typeRespectingRamsey
+#print axioms SuccessorTree.V10.TypeRespectingEmbedding.exists_extension
+#print axioms SuccessorTree.V10.TypeRespectingEmbedding.act_apply
+#print axioms SuccessorTree.V10.TypeRespectingEmbedding.act_comp
+#print axioms Kk.FiniteRepresentingPair.imageVertex_eq_of_vertex_eq
+#print axioms Kk.FiniteRepresentingPair.imageVertex_act
+#print axioms Kk.FiniteRepresentingPair.imageVertex_e
+#print axioms Kk.LabelledGPlusCopy.fromPairs_binary
+#print axioms Kk.LabelledGPlusCopy.fromPairs_e
+#print axioms Kk.FiniteRepresentingPair.fromCommonUpperFamily_injective
+#print axioms Kk.LabelledGOmegaCopy.toGPlus_map
+#print axioms Kk.LabelledGOmegaCopy.map_lt_of_prefix
+#print axioms Kk.forwardAsymPattern_irreducible
+#print axioms Kk.backwardAsymPattern_irreducible
+#print axioms Kk.cliquePattern_irreducible
+#print axioms Kk.strictMono_fin_nat_eq_of_same_range
+#print axioms Kk.labelled_codes_eq_of_same_range
+#print axioms Kk.fullBefore_valid
+#print axioms Kk.fullAfter_valid
+#print axioms Kk.labelled_prefix_chains_eq_of_common_top_and_sizes
+#print axioms Kk.hensonForbiddenFamily_patternCard_le
+#print axioms Kk.B3_no_new_asym_pair
+#print axioms Kk.afterK4_lt_beforeK4
+#print axioms Kk.uniformAfter_lt_before
+#print axioms Kk.fourCliqueCore_finite
+#print axioms Kk.fourCliqueCore_sameSocle
+#print axioms Kk.fourCliqueCore_upper_types
+#print axioms Kk.fourCliqueCore_realizesK4
+#print axioms Kk.k4Cut22_finite
+#print axioms Kk.k4Cut22_sameSocle
+#print axioms Kk.k4Cut22_upper_types
+#print axioms Kk.k4Cut22_realizesK4
+#print axioms Kk.k4FourOriginalEdge_symmetric
+#print axioms Kk.k4FourOriginalEdge_irreflexive
+#print axioms Kk.k4H_old_binary_true_iff
+#print axioms Kk.k4H_upper_edge_true_iff
+#print axioms Kk.k4H_all_diagonals_false
+#print axioms Kk.k4H_top_binary_loop_false
+#print axioms Kk.k4H_cut22_prescribed_socle
+#print axioms Kk.k4Cut10_finite
+#print axioms Kk.k4Cut10_sameSocle
+#print axioms Kk.k4Cut10_upper_types
+#print axioms Kk.k4Cut10_realizesK4
+#print axioms Kk.k4H_cut10_old_binary_false
+#print axioms Kk.k4H_cut10_prescribed_socle
+#print axioms Kk.onePointGraphEdge_old
+#print axioms Kk.onePointGraphEdge_right
+#print axioms Kk.onePointGraphEdge_left
