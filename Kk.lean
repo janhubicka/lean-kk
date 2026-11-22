@@ -1,4 +1,4 @@
--- Track A: exact real/odd numerical H cut raw age identities.
+-- Track A: exact real/odd numerical-H cut raw age identities.
 import Kk.TrackANumericSingleCutRawEvent
 -- Track A/G: residual actual dependent Kpt profile defect budget.
 import Kk.TrackAKptResidualDefectBudget
@@ -427,6 +427,11 @@ import Kk.PartialNumericSingletonCanonical
 -- Track B: explicit chronological finite physical cover history and its stage witnesses.
 import Kk.FinitePhysicalCoverHistory
 
+-- Track B: automatically refine a genuine lower age into finite saturated covers.
+import Kk.AutomaticAgeCoverChain
+import Kk.IntegerAgeCoverUnitDrop
+import Kk.AutomaticPhysicalCoverPath
+
 -- Whole-source adversarial integration: 56 additional real Kk production modules.
 -- Separate *_AxiomAudit files retain standalone exact-head gates.
 import Kk.ActualRunNumericHPrefixStability
@@ -485,6 +490,8 @@ import Kk.TrackGUniqueBoringBlockFactor
 import Kk.TrackGZeroColumnFactorMismatchSocle
 import Kk.TrackGZeroColumnSocleRun
 import Kk.TrackGZeroStageExactBadTrichotomy
+import Kk.TrackGSocleNoveltyIntervals
+import Kk.TrackGOriginalSocleThresholds
 
 /-!
 The counting project imports the verified successor-tree library.
