@@ -1,3 +1,5 @@
+-- Track A: exact individual physical critical cut spectrum (ordinary L only).
+import Kk.TrackAPhysicalCriticalSpectrum
 -- Track A: exact real/odd numerical-H cut raw age identities.
 import Kk.TrackANumericSingleCutRawEvent
 -- Track A/G: residual actual dependent Kpt profile defect budget.
