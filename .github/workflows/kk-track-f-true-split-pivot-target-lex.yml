@@ -1,0 +1,45 @@
+name: KK Track F true split target pivot lex block
+on:
+  pull_request:
+    paths:
+      - 'Kk/TrackFTrueTargetSplitPivotLex.lean'
+      - 'Kk/TrackFTrueTargetSplitPivotLexAxiomAudit.lean'
+      - 'docs/track_f_true_target_pivot_split_lex_english_audit_20261122.md'
+      - '.github/workflows/kk-track-f-true-split-pivot-target-lex.yml'
+  workflow_dispatch:
+concurrency:
+  group: kk-track-f-true-split-pivot-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+jobs:
+  split-pivot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache Lean toolchain
+        uses: actions/cache@v4
+        with:
+          path: ~/.elan/toolchains
+          key: lean-toolchain-${{ runner.os }}-${{ hashFiles('lean-toolchain') }}
+      - name: Restore Lean workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve dependencies
+        run: lake update
+      - name: Obtain Mathlib build cache
+        run: lake exe cache get
+      - name: Build genuine split daughter target lex block
+        run: lake build Kk.TrackFTrueTargetSplitPivotLex
+      - name: Strict four-theorem standard-only axiom gate
+        run: |
+          set -euo pipefail
+          lake env lean Kk/TrackFTrueTargetSplitPivotLexAxiomAudit.lean | tee track-f-pivot-lex-axioms.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py Kk/TrackFTrueTargetSplitPivotLexAxiomAudit.lean track-f-pivot-lex-axioms.log
