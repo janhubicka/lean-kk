@@ -259,7 +259,7 @@ theorem trackA_henson_kpt_selected_disagreement_le_sharp_of_full_profiles
         (SMTree.Envelope.closure
           (admissibleKptSTree (hensonForbiddenFamily ell hell))
           (RY.I (cut+1)) Y) cut) :
-    ((RX.I 0 \\ RY.I 0) ∪ (RY.I 0 \\ RX.I 0)).ncard ≤
+    ((RX.I 0 \ RY.I 0) ∪ (RY.I 0 \ RX.I 0)).ncard ≤
       ell-2 := by
   have hSource :=
     kpt_actual_runs_selected_disagreement_card_le_of_full_profiles
