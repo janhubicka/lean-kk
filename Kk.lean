@@ -1,3 +1,5 @@
+-- Track A/G: verified automatically indexed odd Kpt Bad bound.
+import Kk.TrackAOddAutomaticIndexBudget
 -- Track A/G: finite indexed structural and missing complete old Kpt socle budget.
 import Kk.TrackAOddIndexedStructuralBudget
 -- Track A: exact individual physical critical cut spectrum (ordinary L only).
