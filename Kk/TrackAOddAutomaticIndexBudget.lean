@@ -131,8 +131,8 @@ theorem finiteNumericH_odd_bad_budget_exists_of_full_old_socle
       obtain ⟨hRange,hOdd,hMissing⟩ := Finset.mem_filter.mp hFilter
       obtain ⟨i,hLive,hCross,hNoOld⟩ := hMissing
       have hz : node i ∈ SMTree.Envelope.closure
-        (admissibleKptSTree family) (R.I (cut+1)) Y :=
-      (hPresent cut i).mp hLive
+          (admissibleKptSTree family) (R.I (cut+1)) Y :=
+        (hPresent cut i).mp hLive
       exact hNoOld
         (hSocle cut (Finset.mem_range.mp hRange) hOdd
           (node i) hz hCross)
