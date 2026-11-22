@@ -1,5 +1,7 @@
 -- Track A/C: actual raw seed matches complete OLD Kpt ancestor of any descendant.
 import Kk.TrackACandidateDescendantRawSocle
+-- Track A/G: genuine old lower-socle one-maximal-odd-cut frontier.
+import Kk.TrackAOddOldSocleFrontier
 -- Track A/G: verified automatically indexed odd Kpt Bad bound.
 import Kk.TrackAOddAutomaticIndexBudget
 -- Track A/G: finite indexed structural and missing complete old Kpt socle budget.
@@ -509,6 +511,18 @@ import Kk.TrackGOriginalSocleThresholds
 
 -- Track A/G: complete Kpt factor-Bad trichotomy for genuine odd numerical cuts.
 import Kk.TrackAOddBadSocleTrichotomy
+
+-- Track F: nine independently strict-verified actual ordinary-L code-stage modules.
+-- This is NOT full Kpt/detailed diary history or a BRD lower-bound proof.
+import Kk.TrackFCompleteNatWitnessNumericAge
+import Kk.TrackFPhysicalNumericAgeFromClasses
+import Kk.TrackFPhysicalSurvivorDeletion
+import Kk.TrackFActualCodeAgeWithoutDummy
+import Kk.TrackFPrecodeFromRealSurvivors
+import Kk.TrackFRealTargetSurvivorNumericEndpoint
+import Kk.TrackFTargetLexOrderPersistence
+import Kk.TrackFFullActualZeroCodeAgeStep
+import Kk.TrackFActualZeroCodeTargetLex
 
 /-!
 The counting project imports the verified successor-tree library.
