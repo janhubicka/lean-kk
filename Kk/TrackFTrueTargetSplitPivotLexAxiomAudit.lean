@@ -1,0 +1,10 @@
+import Kk.TrackFTrueTargetSplitPivotLex
+
+#check @Kk.HensonOneType.splitDaughters_lexBefore_of_pivot_bits
+#print axioms Kk.HensonOneType.splitDaughters_lexBefore_of_pivot_bits
+#check @Kk.HensonOneType.oldBranch_left_of_both_splitDaughters
+#print axioms Kk.HensonOneType.oldBranch_left_of_both_splitDaughters
+#check @Kk.HensonOneType.oldBranch_right_of_both_splitDaughters
+#print axioms Kk.HensonOneType.oldBranch_right_of_both_splitDaughters
+#check @Kk.HensonOneType.splitDaughters_target_lex_block_no_old_interleaving
+#print axioms Kk.HensonOneType.splitDaughters_target_lex_block_no_old_interleaving
