@@ -97,7 +97,8 @@ theorem PhysicalCanonicalCoverHistory.terminal
           cfinal p t = cmid p t :=
             hKeep p (lt_of_lt_of_le hp hCut) t
           _ = c p t := hOld p hp t
-      · simpa [Nat.add_succ, Nat.add_assoc] using hFinal
+      · have hIndex : (i + 1) + n = i + (n + 1) := by omega
+        exact hIndex ▸ hFinal
 
 /-- All stages exist simultaneously as one physical history in the SAME
 actual Henson original graph, rather than only the final age.
