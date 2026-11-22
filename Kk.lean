@@ -1,3 +1,5 @@
+-- Track A/C: verified full old-Kpt ancestor of an arbitrary raw-matched physical descendant.
+import Kk.TrackACandidateDescendantRawSocle
 -- Track A/G: genuine old lower-socle one-maximal-odd-cut frontier.
 import Kk.TrackAOddOldSocleFrontier
 -- Track A/G: verified automatically indexed odd Kpt Bad bound.
