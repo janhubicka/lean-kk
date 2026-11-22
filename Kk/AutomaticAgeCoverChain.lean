@@ -36,13 +36,14 @@ theorem ageCoordinateGap_pos_of_strict
     exact Nat.le_antisymm (hLe i) (hNone i)
   obtain ⟨i, hi⟩ := hWitness
   have hTerm : 0 < upper i - lower i := by omega
-  have hSum : 0 <
-      (Finset.univ : Finset ι).sum (fun j => upper j - lower j) := by
-    apply Finset.sum_pos
+  have hTermLe :
+      upper i - lower i ≤
+        (Finset.univ : Finset ι).sum (fun j => upper j - lower j) := by
+    apply Finset.single_le_sum
     · intro j hj
       exact Nat.zero_le _
-    · exact ⟨i, Finset.mem_univ i, hTerm⟩
-  exact hSum
+    · exact Finset.mem_univ i
+  exact lt_of_lt_of_le hTerm hTermLe
 
 /-- Gap additivity across a pointwise intermediate age. -/
 theorem ageCoordinateGap_split
