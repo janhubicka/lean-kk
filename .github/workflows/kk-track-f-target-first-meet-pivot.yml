@@ -1,0 +1,45 @@
+name: KK Track F actual target first split meet
+on:
+  pull_request:
+    paths:
+      - 'Kk/TrackFActualTargetFirstMeetPivot.lean'
+      - 'Kk/TrackFActualTargetFirstMeetPivotAxiomAudit.lean'
+      - 'docs/track_f_actual_target_first_meet_pivot_english_audit_20261122.md'
+      - '.github/workflows/kk-track-f-target-first-meet-pivot.yml'
+  workflow_dispatch:
+concurrency:
+  group: kk-track-f-first-target-meet-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+jobs:
+  first-meet:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache Lean toolchain
+        uses: actions/cache@v4
+        with:
+          path: ~/.elan/toolchains
+          key: lean-toolchain-${{ runner.os }}-${{ hashFiles('lean-toolchain') }}
+      - name: Restore Lean workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve dependencies
+        run: lake update
+      - name: Obtain Mathlib build cache
+        run: lake exe cache get
+      - name: Build true first target split meeting pivot
+        run: lake build Kk.TrackFActualTargetFirstMeetPivot
+      - name: Strict three-theorem standard-only axiom gate
+        run: |
+          set -euo pipefail
+          lake env lean Kk/TrackFActualTargetFirstMeetPivotAxiomAudit.lean | tee target-first-meet-axioms.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py Kk/TrackFActualTargetFirstMeetPivotAxiomAudit.lean target-first-meet-axioms.log

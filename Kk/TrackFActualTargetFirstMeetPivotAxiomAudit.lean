@@ -1,0 +1,8 @@
+import Kk.TrackFActualTargetFirstMeetPivot
+
+#check @Kk.HensonOneType.exists_least_target_meet_pivot_of_distinct_daughters
+#print axioms Kk.HensonOneType.exists_least_target_meet_pivot_of_distinct_daughters
+#check @Kk.HensonOneType.target_split_daughters_lex_comparable
+#print axioms Kk.HensonOneType.target_split_daughters_lex_comparable
+#check @Kk.HensonOneType.target_split_meet_and_no_old_branch_interleaving
+#print axioms Kk.HensonOneType.target_split_meet_and_no_old_branch_interleaving
