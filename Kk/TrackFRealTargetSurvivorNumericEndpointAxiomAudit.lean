@@ -1,0 +1,4 @@
+import Kk.TrackFRealTargetSurvivorNumericEndpoint
+
+#check @Kk.k4_survivor_target_numeric_endpoint_of_full_checkpoint
+#print axioms Kk.k4_survivor_target_numeric_endpoint_of_full_checkpoint
