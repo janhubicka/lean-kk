@@ -132,7 +132,8 @@ the reindexed pre-code profile equality as a premise.
 The eventual equality to the prescribed old survivor age R and the
 full code-event diary remain independent obligations. -/
 theorem trackFActualFront_zero_code_survivor_canonical_reindex
-    (d ell c : Nat) (E : Nat → Nat → Bool)
+    (d ell c : Nat) (hell : 0 < ell)
+    (E : Nat → Nat → Bool)
     (j : Fin (d + 1))
     (p : Fin (d + 1) → HensonOneType ell E)
     (hPreLevel : ∀ i, (p i).level = c)
@@ -173,7 +174,7 @@ theorem trackFActualFront_zero_code_survivor_canonical_reindex
       fun i : Fin d => (v i).neighbours) hFrontEq
   have hReindex :=
     trackFActualFront_canonical_reindex f
-      (by omega) c E p U
+      hell c E p U
   have hZeroCut :=
     congrArg (fun a : IntegerGraphSupport d ell → Nat => a U)
       (trackFActualFront_canonical_eq_across_zero_cut
