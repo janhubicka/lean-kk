@@ -83,7 +83,7 @@ theorem finite_kpt_seed_original_root_pool_compression
   let yy : Ytype := ⟨y,hy⟩
   have hIn : chosen yy ∈ U' := by
     apply Finset.mem_image.mpr
-    exact ⟨yy,Finset.mem_attach yy,rfl⟩
+    exact ⟨yy,Finset.mem_attach Y yy,rfl⟩
   exact ⟨chosen yy,hIn,(hChosen yy).2⟩
 
 /-- For one TRUE finite numerical-H+ model and one genuine OLD Kpt
@@ -170,7 +170,7 @@ theorem finiteNumericH_candidate_finite_seed_original_budget
     let yy : Ytype := ⟨y,hy⟩
     have hIn : chosen yy ∈ U' := by
       apply Finset.mem_image.mpr
-      exact ⟨yy,Finset.mem_attach yy,rfl⟩
+      exact ⟨yy,Finset.mem_attach Y yy,rfl⟩
     exact ⟨(finiteNumericH K k N).kptOriginal
         family hAvoid (chosen yy),
       ⟨chosen yy,Finset.mem_coe.mpr hIn,rfl⟩,
