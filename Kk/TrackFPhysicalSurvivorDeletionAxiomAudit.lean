@@ -1,0 +1,8 @@
+import Kk.TrackFPhysicalSurvivorDeletion
+
+#check @Kk.trackFActualFront_raw_reindex
+#print axioms Kk.trackFActualFront_raw_reindex
+#check @Kk.trackFActualFront_canonical_reindex
+#print axioms Kk.trackFActualFront_canonical_reindex
+#check @Kk.trackFActualFront_zero_code_survivor_canonical_reindex
+#print axioms Kk.trackFActualFront_zero_code_survivor_canonical_reindex
