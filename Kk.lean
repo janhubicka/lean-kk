@@ -421,6 +421,9 @@ import Kk.PartialNumericSingletonCanonical
 -- Track B: explicit chronological finite physical cover history and its stage witnesses.
 import Kk.FinitePhysicalCoverHistory
 
+-- Track B: automatically refine a genuine lower age into finite saturated covers.
+import Kk.AutomaticAgeCoverChain
+
 -- Whole-source adversarial integration: 56 additional real Kk production modules.
 -- Separate *_AxiomAudit files retain standalone exact-head gates.
 import Kk.ActualRunNumericHPrefixStability

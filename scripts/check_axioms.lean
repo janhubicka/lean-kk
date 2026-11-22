@@ -2484,3 +2484,15 @@ import Kk
 #print axioms Kk.PhysicalCanonicalCoverHistory.terminal
 #check @Kk.henson_leftDense_constructs_finite_physical_cover_history
 #print axioms Kk.henson_leftDense_constructs_finite_physical_cover_history
+
+-- Track B: automatically generated finite saturated cover paths (not full Kpt diaries).
+#check @Kk.ageCoordinateGap_pos_of_strict
+#print axioms Kk.ageCoordinateGap_pos_of_strict
+#check @Kk.ageCoordinateGap_split
+#print axioms Kk.ageCoordinateGap_split
+#check @Kk.AgeCoverChain.trans
+#print axioms Kk.AgeCoverChain.trans
+#check @Kk.ageCoverChain_exists
+#print axioms Kk.ageCoverChain_exists
+#check @Kk.integerGraphAge_exists_saturated_chain
+#print axioms Kk.integerGraphAge_exists_saturated_chain
