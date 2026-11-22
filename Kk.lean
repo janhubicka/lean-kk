@@ -1,3 +1,5 @@
+-- Track A/G: odd real-H source Kpt factor-Bad physical trichotomy.
+import Kk.TrackAOddBadSocleTrichotomy
 -- Track A/G: residual actual dependent Kpt profile defect budget.
 import Kk.TrackAKptResidualDefectBudget
 import Kk.TrackAGExceptionSelected
