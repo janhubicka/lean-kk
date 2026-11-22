@@ -17,3 +17,6 @@ KK-free diary already bounds the residual profile defect set.
 
 #check @Kk.trackA_henson_kpt_selected_disagreement_le_sharp_plus_defects
 #print axioms Kk.trackA_henson_kpt_selected_disagreement_le_sharp_plus_defects
+
+#check @Kk.trackA_henson_kpt_selected_disagreement_le_sharp_of_full_profiles
+#print axioms Kk.trackA_henson_kpt_selected_disagreement_le_sharp_of_full_profiles
