@@ -43,7 +43,7 @@ jobs:
         run: lake build Kk.TrackAKptResidualDefectBudget
       - name: Full library build
         run: lake build
-      - name: Strict 3-name standard-only transitive axiom gate
+      - name: Strict 5-name standard-only transitive axiom gate
         run: |
           set -euo pipefail
           lake env lean Kk/TrackAKptResidualDefectBudgetAxiomAudit.lean | tee track-a-kpt-defect-budget.log
