@@ -1,29 +1,30 @@
 import Kk.TrackGSocleNoveltyIntervals
-import Kk.TrackEOriginalRepresentativeMaxFrontier
+import Kk.TrackEOriginalPrefixSocleIff
+import Kk.TrackESelectedLevelOriginalBudget
 import Mathlib.Tactic
 
 /-!
-# Track G: charge genuine zero-column exact factor-Bad witnesses to
-# ORIGINAL numerical-H+ Kpt nodes, not all auxiliary Kpt source names.
+# Track G: charge exact zero-column factor-Bad cuts to a bounded set
+# of ACTUAL numerical-H+ ORIGINAL Kpt prefix tests, not auxiliary names.
 
-English-first proof and fourteen hostile checks:
+English proof and 16 hostile checks committed FIRST:
 docs/track_g_original_socle_threshold_english_audit_20261122.md
 
-For one real old AlgorithmRun R, its full OLD lower-socle witnesses
-persist downward in the source scan. Hence for a fixed ORIGINAL
-node O, the raw cuts at which it has no old complete lower Kpt
-socle form an UPPER final segment (within cut<top and cut<lev O).
+Crucial adversarial simplification: Track E E78 already proved
+candidate-old-Kpt-socle matching IFF all genuinely active ORIGINAL
+representatives have old complete prefixes. E79 already proved
+downward persistence/maximal original cut tests, and E86 bounds
+their total number by |U| + |ACTUAL selected OLD levels|, independent
+of the physical new carrier size N.
 
-If a candidate meet/parameter node z is below an actual original
-O, a complete lower-socle mate of O also covers z. By contrapositive,
-a missing old socle for z implies one for its representing original.
+The genuinely NEW result here connects G469/G449's TRUE zero-column
+exact-factor-Bad missing-old-socle witness to that E86 bounded set
+of original-coordinate maximal tests, rather than adding duplicate
+monotonicity and ancestor-transfer proofs.
 
-G469 and E71 combine to charge every TRUE zero ordinary graph-L
-exact factor-Bad cut WITHOUT I1/I2 to a real stage original v : Fin N
-with missing old full Kpt lower socle. This replaces potentially
-huge auxiliary Kpt-node interval carriers by at most N ORIGINAL
-coordinate carriers, but N is the growing physical stage size:
-NO uniform diary event budget or BRD theorem is claimed.
+The number of bad cuts per original can still be large, selected
+old levels may depend on the diary resolution, and neither common
+labelled inverse-source orbit nor sharp Kk-free BRD is claimed.
 -/
 
 namespace Kk
@@ -32,78 +33,22 @@ open SuccessorTree
 open SuccessorTree.SMTree
 open SuccessorTree.V10
 
-/-- A full old LOWER Kpt socle mate of an original O also covers
-any candidate Kpt source node z below O, provided z crosses cut.
+/-- A TRUE zero ordinary-L finite numerical-H+ exact factor-Bad
+cut without new terminal I1 or actual same-component meet I2
+has a MISSING COMPLETE OLD Kpt prefix at some genuinely ACTIVE
+original v. That original is in the E85 finite maximal-prefix
+test support restricted to any Allowed cut mask containing cut.
 
-The real old witness is LIVE in the actual pre-cut Kpt closure.
-The original O itself need not be live there. -/
-theorem kpt_oldRun_lower_socle_cover_transfer_from_original
-    {db du dd : Nat}
-    (family : List (NormalizedForbidden db du dd))
-    (X : Set (AdmissibleKptNode family))
-    (top : Nat)
-    (R : SMTree.Envelope.AlgorithmRun
-      (normalizedKptSMTree family) X top)
-    (z original : AdmissibleKptNode family)
-    (hBelow : z ≤ original)
-    (cut : Nat) (hZCross : cut < LevelTree.lev z)
-    (hOriginalCovered : kpt_oldRun_node_lower_socle_covered
-      family X top R original cut) :
-    kpt_oldRun_node_lower_socle_covered
-      family X top R z cut := by
-  obtain ⟨w,hWLive,hOriginalCross,hWCross,hOldEq⟩ :=
-    hOriginalCovered
-  have hZCut : cut ≤ LevelTree.lev z :=
-    Nat.le_of_lt hZCross
-  have hOriginalCut : cut ≤ LevelTree.lev original :=
-    Nat.le_of_lt hOriginalCross
-  have hZOriginalOld :
-      LevelTree.ancestor z cut hZCut =
-        LevelTree.ancestor original cut hOriginalCut := by
-    exact LevelTree.eq_ancestor_of_le
-      ((LevelTree.ancestor_le z cut hZCut).trans hBelow)
-      (LevelTree.level_ancestor z cut hZCut)
-      hOriginalCut
-  exact ⟨w,hWLive,hZCross,hWCross,
-    hZOriginalOld.trans hOldEq⟩
+The number of original tests in that support is at most
+  |U| + |kpt_old_actual_selected_levels family X top R|,
+INDEPENDENT of the new numerical-H+ carrier N and the potentially
+much larger auxiliary complete Kpt candidate source index Q.
 
-/-- The set of raw cut coordinates where an original lacks an
-old complete lower Kpt socle is UPWARD CLOSED below its level
-and the old scan top. This follows by contraposition of the
-actual old source's downward persistence. No diary event bound. -/
-theorem kpt_oldRun_missing_lower_socle_mono_up
-    {db du dd : Nat}
-    (family : List (NormalizedForbidden db du dd))
-    (X : Set (AdmissibleKptNode family))
-    (top : Nat)
-    (R : SMTree.Envelope.AlgorithmRun
-      (normalizedKptSMTree family) X top)
-    (original : AdmissibleKptNode family)
-    (low high : Nat)
-    (hLowHigh : low ≤ high) (hHigh : high < top)
-    (hMissingLow : ¬ kpt_oldRun_node_lower_socle_covered
-      family X top R original low) :
-    ¬ kpt_oldRun_node_lower_socle_covered
-      family X top R original high := by
-  intro hCoveredHigh
-  exact hMissingLow
-    (kpt_oldRun_node_lower_socle_covered_mono_down
-      family X top R original low high hLowHigh
-      hHigh hCoveredHigh)
-
-/-- For an exact complete candidate Kpt source inside ONE actual
-finite numerical-H+ graph stage, every zero ordinary-L exact
-factor-Bad cut with separately excluded I1 and I2 is witnessed
-by an ACTUAL stage original v : Fin N having NO old complete
-LOWER Kpt ancestor mate at the cut.
-
-This is stronger than charging the cut to an auxiliary Kpt-node
-source index: the original need not itself be a live source node.
-Each original's missing-old-socle cuts have the upper-segment
-property above. At most N original-coordinate interval CARRIERS,
-not at most N Bad cuts, since each carrier can be arbitrarily long
-and the physical N is not diary-uniform. -/
-theorem finiteNumericH_zero_stage_exact_bad_has_original_missing_old_socle
+This bounds original test CARRIERS, NOT bad-cut cardinality,
+exceptional interval lengths, or the count of selected levels
+by a fixed diary. All dependent old L+/E ancestor data remain.
+-/
+theorem finiteNumericH_zero_stage_exact_Bad_charged_to_bounded_originals
     (family : List (NormalizedForbidden 1 0 1))
     (K : AgeTestModel 1 0 1) (k N Q : Nat)
     (hAvoid : ∀ bad, bad ∈ family →
@@ -121,7 +66,8 @@ theorem finiteNumericH_zero_stage_exact_bad_has_original_missing_old_socle
       (normalizedKptSMTree family) X top)
     (node : Fin Q → AdmissibleKptNode family)
     (live : Nat → Fin Q → Bool)
-    (cut : Nat)
+    (Allowed : Set Nat)
+    (cut : Nat) (hAllowed : cut ∈ Allowed)
     (hExactY : ∀ z : AdmissibleKptNode family,
       z ∈ SMTree.Envelope.closure
         (admissibleKptSTree family) (R.I (cut+1)) Y ↔
@@ -145,32 +91,109 @@ theorem finiteNumericH_zero_stage_exact_bad_has_original_missing_old_socle
         LevelTree.lev (LevelTree.meet z w) = cut)
     (hBad : cut ∈ kptExactOldFactorBadCuts
       family X top R node live) :
-    ∃ v : Fin N,
-      v ∈ hStageOriginals K k N U (R.I (cut+1)) ∧
-      cut < LevelTree.lev
-        ((finiteNumericH K k N).kptOriginal family hAvoid v) ∧
-      ¬ kpt_oldRun_node_lower_socle_covered
-        family X top R
-        ((finiteNumericH K k N).kptOriginal family hAvoid v)
-        cut := by
+    (∃ v : Fin N,
+      v ∈ kpt_originals_needing_max_old_socle_test
+        family K k N hAvoid U X Y top R Allowed ∧
+      ¬ KptActualOldSocleCoveredAt family X top R
+        ((finiteNumericH K k N).kptOriginal family hAvoid v) cut) ∧
+    (kpt_originals_needing_max_old_socle_test
+      family K k N hAvoid U X Y top R Allowed).card ≤
+      U.card +
+        (kpt_old_actual_selected_levels family X top R).card := by
+  classical
   obtain ⟨j,_hLive,hNovel⟩ :=
     finiteNumericH_zero_stage_exact_bad_without_structural_has_socle_novel_index
       family K k N Q hAvoid hSym U X Y hXY hY top
       R node live cut hExactY hZeroStage hNoI1 hNoI2 hBad
-  obtain ⟨hCross,hInY,hNoOldSocle⟩ := hNovel
-  obtain ⟨v,hStage,hBelow⟩ :=
-    finiteNumericH_stage_closure_represented_by_stage_originals
-      family K k N hAvoid U Y hY (R.I (cut+1))
-      (node j) hInY
-  have hOriginalCross : cut < LevelTree.lev
-      ((finiteNumericH K k N).kptOriginal family hAvoid v) :=
-    lt_of_lt_of_le hCross (LevelTree.level_le_of_le hBelow)
-  refine ⟨v,hStage,hOriginalCross,?_⟩
-  intro hOriginalCovered
-  exact hNoOldSocle
-    (kpt_oldRun_lower_socle_cover_transfer_from_original
-      family X top R (node j)
-      ((finiteNumericH K k N).kptOriginal family hAvoid v)
-      hBelow cut hCross hOriginalCovered)
+  obtain ⟨hCross,hInY,hMissing⟩ := hNovel
+  have hNotAllCandidate :
+      ¬ (∀ (z : AdmissibleKptNode family),
+        z ∈ SMTree.Envelope.closure
+          (admissibleKptSTree family) (R.I (cut+1)) Y →
+        ∀ (hZCross : cut < LevelTree.lev z),
+          ∃ w : AdmissibleKptNode family,
+            w ∈ SMTree.Envelope.closure
+              (admissibleKptSTree family) (R.I (cut+1)) X ∧
+            ∃ (hWCross : cut < LevelTree.lev w),
+              LevelTree.ancestor z cut (Nat.le_of_lt hZCross) =
+                LevelTree.ancestor w cut (Nat.le_of_lt hWCross)) := by
+    intro hAllCandidate
+    apply hMissing
+    obtain ⟨w,hw,hWCross,hEq⟩ :=
+      hAllCandidate (node j) hInY hCross
+    exact ⟨w,hw,hCross,hWCross,hEq⟩
+  let ActiveOriginal (v : Fin N) : Prop :=
+    ∃ z : AdmissibleKptNode family,
+      z ∈ SMTree.Envelope.closure
+        (admissibleKptSTree family) (R.I (cut+1)) Y ∧
+      cut < LevelTree.lev z ∧
+      z ≤ (finiteNumericH K k N).kptOriginal family hAvoid v
+  let OriginalCovered (v : Fin N) : Prop :=
+    KptActualOldSocleCoveredAt family X top R
+      ((finiteNumericH K k N).kptOriginal family hAvoid v) cut
+  have hNotAllOriginal :
+      ¬ (∀ v : Fin N,
+        v ∈ hStageOriginals K k N U (R.I (cut+1)) →
+        ActiveOriginal v → OriginalCovered v) := by
+    intro hAllOriginal
+    have hAllOriginal' :
+        (∀ v : Fin N,
+          v ∈ hStageOriginals K k N U (R.I (cut+1)) →
+          (∃ z : AdmissibleKptNode family,
+            z ∈ SMTree.Envelope.closure
+              (admissibleKptSTree family) (R.I (cut+1)) Y ∧
+            cut < LevelTree.lev z ∧
+            z ≤ (finiteNumericH K k N).kptOriginal family hAvoid v) →
+          ∃ w : AdmissibleKptNode family,
+            w ∈ SMTree.Envelope.closure
+              (admissibleKptSTree family) (R.I (cut+1)) X ∧
+            ∃ (hV : cut < LevelTree.lev
+              ((finiteNumericH K k N).kptOriginal family hAvoid v))
+              (hW : cut < LevelTree.lev w),
+              LevelTree.ancestor
+                ((finiteNumericH K k N).kptOriginal family hAvoid v)
+                cut (Nat.le_of_lt hV) =
+              LevelTree.ancestor w cut (Nat.le_of_lt hW)) := by
+      intro v hv hActive
+      exact hAllOriginal v hv hActive
+    have hAllCand :=
+      (finiteNumericH_candidate_old_socle_iff_active_original_prefixes
+        family K k N hAvoid U X Y hY top R cut).mpr hAllOriginal'
+    exact hNotAllCandidate hAllCand
+  have hExistsOriginal :
+      ∃ v : Fin N,
+        v ∈ hStageOriginals K k N U (R.I (cut+1)) ∧
+        ActiveOriginal v ∧ ¬ OriginalCovered v := by
+    by_contra hNone
+    apply hNotAllOriginal
+    intro v hStage hActive
+    by_contra hMissingOriginal
+    exact hNone ⟨v,hStage,hActive,hMissingOriginal⟩
+  obtain ⟨v,hStage,hActive,hMissingOriginal⟩ := hExistsOriginal
+  obtain ⟨hCut,hOldBoring,_hBadFactor⟩ :=
+    (mem_kptExactOldFactorBadCuts
+      family X top R node live cut).mp hBad
+  have hCandidateCut :
+      cut ∈ kpt_candidate_original_boring_crossing_cuts
+        family K k N hAvoid U X Y top R v :=
+    (mem_kpt_candidate_original_boring_crossing_cuts
+      family K k N hAvoid U X Y top R v cut).mpr
+      ⟨hCut,hOldBoring,hStage,hActive⟩
+  have hAllowedCut :
+      cut ∈ kpt_actual_original_socle_allowed_cuts
+        family K k N hAvoid U X Y top R Allowed v :=
+    (mem_kpt_actual_original_socle_allowed_cuts
+      family K k N hAvoid U X Y top R Allowed v cut).mpr
+      ⟨hCandidateCut,hAllowed⟩
+  have hSupport :
+      v ∈ kpt_originals_needing_max_old_socle_test
+        family K k N hAvoid U X Y top R Allowed :=
+    (mem_kpt_originals_needing_max_old_socle_test
+      family K k N hAvoid U X Y top R Allowed v).mpr
+        ⟨cut,hAllowedCut⟩
+  constructor
+  · exact ⟨v,hSupport,hMissingOriginal⟩
+  · exact kpt_originals_needing_max_old_socle_test_card_le_root_add_selected
+      family K k N hAvoid U X Y top R Allowed
 
 end Kk
