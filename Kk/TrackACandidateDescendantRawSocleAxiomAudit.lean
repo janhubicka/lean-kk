@@ -1,0 +1,7 @@
+import Kk.TrackACandidateDescendantRawSocle
+
+-- Two qualified standard-only transitive-axiom checks.
+#check @Kk.finiteNumericH_candidate_below_original_old_socle_of_seed_raw_type_eq
+#print axioms Kk.finiteNumericH_candidate_below_original_old_socle_of_seed_raw_type_eq
+#check @Kk.finiteNumericH_candidate_below_original_old_socle_of_raw_seed_match
+#print axioms Kk.finiteNumericH_candidate_below_original_old_socle_of_raw_seed_match
