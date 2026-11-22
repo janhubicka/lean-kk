@@ -1,0 +1,6 @@
+import Kk.TrackFActualPrecodeTargetFront
+
+#check @Kk.k4_actual_target_code_prefix_of_actual_fibre
+#print axioms Kk.k4_actual_target_code_prefix_of_actual_fibre
+#check @Kk.k4_construct_actual_precode_target_front
+#print axioms Kk.k4_construct_actual_precode_target_front
