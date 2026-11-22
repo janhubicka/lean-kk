@@ -1,0 +1,18 @@
+import Kk.TrackESelectedTailOriginalBudget
+
+#check @Kk.kpt_old_actual_selected_tail_levels
+
+#check @Kk.mem_kpt_old_actual_selected_tail_levels_iff
+#print axioms Kk.mem_kpt_old_actual_selected_tail_levels_iff
+
+#check @Kk.kpt_originals_needing_max_socle_subset_old_selected_tail_stage
+#print axioms Kk.kpt_originals_needing_max_socle_subset_old_selected_tail_stage
+
+#check @Kk.finiteNumericH_old_selected_tail_stage_card_le_root_add_selected_tail
+#print axioms Kk.finiteNumericH_old_selected_tail_stage_card_le_root_add_selected_tail
+
+#check @Kk.kpt_originals_needing_max_old_socle_test_card_le_root_add_selected_tail
+#print axioms Kk.kpt_originals_needing_max_old_socle_test_card_le_root_add_selected_tail
+
+#check @Kk.kpt_old_actual_selected_tail_subset_all_selected
+#print axioms Kk.kpt_old_actual_selected_tail_subset_all_selected
