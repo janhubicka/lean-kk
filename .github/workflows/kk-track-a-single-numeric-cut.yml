@@ -8,6 +8,7 @@ on:
       - 'Kk.lean'
       - 'docs/track_a_numeric_one_cut_english_audit_20261122.md'
       - '.github/workflows/kk-track-a-single-numeric-cut.yml'
+      - 'scripts/check_track_a_numeric_real_cut.py'
   workflow_dispatch:
 
 concurrency:
@@ -39,6 +40,8 @@ jobs:
         run: lake update
       - name: Obtain Mathlib build cache
         run: lake exe cache get
+      - name: Independent 59136-case literal numeric H real/odd referee
+        run: python3 scripts/check_track_a_numeric_real_cut.py
       - name: Compile exact numeric-cut module
         run: lake build Kk.TrackANumericSingleCutRawEvent
       - name: Full Lean library build
