@@ -39,10 +39,12 @@ theorem ageCoordinateGap_pos_of_strict
   have hTermLe :
       upper i - lower i ≤
         (Finset.univ : Finset ι).sum (fun j => upper j - lower j) := by
-    apply Finset.single_le_sum
-    · intro j hj
-      exact Nat.zero_le _
-    · exact Finset.mem_univ i
+    simpa using
+      (Finset.single_le_sum
+        (s := (Finset.univ : Finset ι))
+        (f := fun j : ι => upper j - lower j)
+        (fun j hj => Nat.zero_le _)
+        (Finset.mem_univ i))
   exact lt_of_lt_of_le hTerm hTermLe
 
 /-- Gap additivity across a pointwise intermediate age. -/
