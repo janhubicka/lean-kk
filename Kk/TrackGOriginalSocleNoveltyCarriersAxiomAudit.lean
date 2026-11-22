@@ -1,0 +1,10 @@
+import Kk.TrackGOriginalSocleNoveltyCarriers
+
+#check @Kk.kpt_original_active_socle_novel_order_convex
+#print axioms Kk.kpt_original_active_socle_novel_order_convex
+
+#check @Kk.finiteNumericH_missing_candidate_socle_has_active_original
+#print axioms Kk.finiteNumericH_missing_candidate_socle_has_active_original
+
+#check @Kk.finiteNumericH_zero_stage_exact_Bad_has_active_original_novel_carrier
+#print axioms Kk.finiteNumericH_zero_stage_exact_Bad_has_active_original_novel_carrier
