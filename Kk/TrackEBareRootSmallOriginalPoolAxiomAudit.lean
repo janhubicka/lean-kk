@@ -1,0 +1,7 @@
+import Kk.TrackEBareRootSmallOriginalPool
+
+#check @Kk.finite_kpt_old_seeds_plus_forced_bare_root_small_pool
+#print axioms Kk.finite_kpt_old_seeds_plus_forced_bare_root_small_pool
+
+#check @Kk.finiteNumericH_bare_one_root_small_pool_selected_budget
+#print axioms Kk.finiteNumericH_bare_one_root_small_pool_selected_budget
