@@ -43,7 +43,7 @@ jobs:
         run: lake build Kk.TrackAOddOldSocleFrontier
       - name: Full Lean library build
         run: lake build
-      - name: Strict four-name standard-only transitive axiom reports
+      - name: Strict three-name standard-only transitive axiom reports
         run: |
           set -euo pipefail
           lake env lean Kk/TrackAOddOldSocleFrontierAxiomAudit.lean | tee track-a-odd-old-socle-frontier-axioms.log
