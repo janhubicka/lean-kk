@@ -152,6 +152,185 @@ theorem finiteNumericH_odd_bad_off_indexed_structural_has_missing_socle
     rw [hi]
     exact ⟨hCross,hNoOld⟩
 
+/-- Finite list of ODD actual factor-Bad cuts in the old run.
+The factor-Bad predicate itself enforces cut<top. -/
+noncomputable def kptOddExactBadCuts
+    {db du dd Q : Nat}
+    (family : List (NormalizedForbidden db du dd))
+    (X : Set (AdmissibleKptNode family))
+    (top : Nat)
+    (R : SMTree.Envelope.AlgorithmRun
+      (normalizedKptSMTree family) X top)
+    (node : Fin Q → AdmissibleKptNode family)
+    (live : Nat → Fin Q → Bool) : Finset Nat := by
+  classical
+  exact ((Finset.range top).image (fun a => 2*a+1)).filter
+    (fun cut => cut ∈ kptExactOldFactorBadCuts
+      family X top R node live)
+
+/-- Conservative finite set of ODD cuts where a candidate crossing
+has no old complete Kpt lower-ancestor witness. Membership need NOT
+imply an actual factor-Bad event at the cut. -/
+noncomputable def kptOddMissingOldSocleCuts
+    {db du dd Q : Nat}
+    (family : List (NormalizedForbidden db du dd))
+    (X : Set (AdmissibleKptNode family))
+    (top : Nat)
+    (R : SMTree.Envelope.AlgorithmRun
+      (normalizedKptSMTree family) X top)
+    (node : Fin Q → AdmissibleKptNode family)
+    (live : Nat → Fin Q → Bool) : Finset Nat := by
+  classical
+  exact (Finset.range top).filter
+    (fun cut => cut % 2 = 1 ∧
+      kptMissingOldSocleAt family X top R node live cut)
+
+/-- ALL exact odd Bad cuts lie in the structural terminal/meet
+envelope or in the genuinely missing OLD complete-socle set.
+Candidate index is exact at every compared actual pre-cut closure. -/
+theorem finiteNumericH_odd_bad_subset_structural_union_missing
+    (family : List (NormalizedForbidden 1 0 1))
+    (K : AgeTestModel 1 0 1) (k N Q : Nat)
+    (hAvoid : ∀ bad, bad ∈ family →
+      bad.Avoids (finiteNumericH K k N).L)
+    (hSym : ∀ i j : Nat,
+      (finiteNumericH K k N).L.binary i j (0 : Fin 1) =
+        (finiteNumericH K k N).L.binary j i (0 : Fin 1))
+    (U : Finset (Fin N))
+    (X Y : Set (AdmissibleKptNode family))
+    (hXY : X ⊆ Y)
+    (hY : Y ⊆ ambientPrefixPool family
+      (finiteNumericH K k N) hAvoid (U : Set (Fin N)))
+    (top : Nat)
+    (R : SMTree.Envelope.AlgorithmRun
+      (normalizedKptSMTree family) X top)
+    (node : Fin Q → AdmissibleKptNode family)
+    (live : Nat → Fin Q → Bool)
+    (hExactY : ∀ cut : Nat, cut < top →
+      ∀ z : AdmissibleKptNode family,
+        z ∈ SMTree.Envelope.closure
+          (admissibleKptSTree family) (R.I (cut+1)) Y ↔
+        ∃ i : Fin Q, node i = z ∧ live cut i = true) :
+    kptOddExactBadCuts family X top R node live ⊆
+      kptIndexedStructuralLevels family node ∪
+      kptOddMissingOldSocleCuts family X top R node live := by
+  classical
+  intro cut hCut
+  have hSource :
+      cut ∈ ((Finset.range top).image (fun a => 2*a+1)) ∧
+      cut ∈ kptExactOldFactorBadCuts family X top R node live :=
+    Finset.mem_filter.mp hCut
+  obtain ⟨a,_ha,hEq⟩ := Finset.mem_image.mp hSource.1
+  have hCutTop : cut < top :=
+    ((mem_kptExactOldFactorBadCuts
+      family X top R node live cut).mp hSource.2).1
+  by_cases hStruct : cut ∈ kptIndexedStructuralLevels family node
+  · exact Finset.mem_union.mpr (Or.inl hStruct)
+  · have hBadOdd : (2*a+1) ∈
+        kptExactOldFactorBadCuts family X top R node live := by
+      simpa only [hEq] using hSource.2
+    have hOffOdd : (2*a+1) ∉
+        kptIndexedStructuralLevels family node := by
+      simpa only [hEq] using hStruct
+    have hExactOdd :
+        ∀ z : AdmissibleKptNode family,
+          z ∈ SMTree.Envelope.closure
+            (admissibleKptSTree family) (R.I ((2*a+1)+1)) Y ↔
+          ∃ i : Fin Q, node i = z ∧ live (2*a+1) i = true := by
+      simpa only [hEq] using hExactY cut hCutTop
+    have hMissingOdd :=
+      finiteNumericH_odd_bad_off_indexed_structural_has_missing_socle
+        family K k N Q hAvoid hSym U X Y hXY hY
+        top R node live a hExactOdd hBadOdd hOffOdd
+    have hMissing :
+        kptMissingOldSocleAt family X top R node live cut := by
+      simpa only [hEq] using hMissingOdd
+    apply Finset.mem_union.mpr
+    right
+    unfold kptOddMissingOldSocleCuts
+    apply Finset.mem_filter.mpr
+    refine ⟨Finset.mem_range.mpr hCutTop, ?_⟩
+    refine ⟨?_,hMissing⟩
+    omega
+
+/-- Quantitative finite-source result:
+bad ODD cuts ≤ Q + Q² + odd missing-complete-old-socle cuts.
+No bound on Q or the latter cardinality is assumed. -/
+theorem finiteNumericH_odd_bad_card_le_structural_plus_missing
+    (family : List (NormalizedForbidden 1 0 1))
+    (K : AgeTestModel 1 0 1) (k N Q : Nat)
+    (hAvoid : ∀ bad, bad ∈ family →
+      bad.Avoids (finiteNumericH K k N).L)
+    (hSym : ∀ i j : Nat,
+      (finiteNumericH K k N).L.binary i j (0 : Fin 1) =
+        (finiteNumericH K k N).L.binary j i (0 : Fin 1))
+    (U : Finset (Fin N))
+    (X Y : Set (AdmissibleKptNode family))
+    (hXY : X ⊆ Y)
+    (hY : Y ⊆ ambientPrefixPool family
+      (finiteNumericH K k N) hAvoid (U : Set (Fin N)))
+    (top : Nat)
+    (R : SMTree.Envelope.AlgorithmRun
+      (normalizedKptSMTree family) X top)
+    (node : Fin Q → AdmissibleKptNode family)
+    (live : Nat → Fin Q → Bool)
+    (hExactY : ∀ cut : Nat, cut < top →
+      ∀ z : AdmissibleKptNode family,
+        z ∈ SMTree.Envelope.closure
+          (admissibleKptSTree family) (R.I (cut+1)) Y ↔
+        ∃ i : Fin Q, node i = z ∧ live cut i = true) :
+    (kptOddExactBadCuts family X top R node live).card ≤
+      Q + Q*Q +
+      (kptOddMissingOldSocleCuts
+        family X top R node live).card := by
+  classical
+  have hSub := finiteNumericH_odd_bad_subset_structural_union_missing
+    family K k N Q hAvoid hSym U X Y hXY hY
+      top R node live hExactY
+  have hSubCard := Finset.card_le_card hSub
+  have hUnion := Finset.card_union_le
+    (kptIndexedStructuralLevels family node)
+    (kptOddMissingOldSocleCuts family X top R node live)
+  have hBound := kpt_indexed_structural_levels_card_le family node
+  omega
+
+/-- If no odd cut has a missing complete old Kpt socle, exact odd
+Bad cuts are confined to at most Q+Q² structural levels. -/
+theorem finiteNumericH_odd_bad_card_le_of_no_missing_old_socle
+    (family : List (NormalizedForbidden 1 0 1))
+    (K : AgeTestModel 1 0 1) (k N Q : Nat)
+    (hAvoid : ∀ bad, bad ∈ family →
+      bad.Avoids (finiteNumericH K k N).L)
+    (hSym : ∀ i j : Nat,
+      (finiteNumericH K k N).L.binary i j (0 : Fin 1) =
+        (finiteNumericH K k N).L.binary j i (0 : Fin 1))
+    (U : Finset (Fin N))
+    (X Y : Set (AdmissibleKptNode family))
+    (hXY : X ⊆ Y)
+    (hY : Y ⊆ ambientPrefixPool family
+      (finiteNumericH K k N) hAvoid (U : Set (Fin N)))
+    (top : Nat)
+    (R : SMTree.Envelope.AlgorithmRun
+      (normalizedKptSMTree family) X top)
+    (node : Fin Q → AdmissibleKptNode family)
+    (live : Nat → Fin Q → Bool)
+    (hExactY : ∀ cut : Nat, cut < top →
+      ∀ z : AdmissibleKptNode family,
+        z ∈ SMTree.Envelope.closure
+          (admissibleKptSTree family) (R.I (cut+1)) Y ↔
+        ∃ i : Fin Q, node i = z ∧ live cut i = true)
+    (hNoMissing : kptOddMissingOldSocleCuts
+      family X top R node live = ∅) :
+    (kptOddExactBadCuts family X top R node live).card ≤
+      Q + Q*Q := by
+  have h := finiteNumericH_odd_bad_card_le_structural_plus_missing
+    family K k N Q hAvoid hSym U X Y hXY hY
+      top R node live hExactY
+  simpa [hNoMissing] using h
+
+#print axioms Kk.finiteNumericH_odd_bad_card_le_of_no_missing_old_socle
+#print axioms Kk.finiteNumericH_odd_bad_card_le_structural_plus_missing
+#print axioms Kk.finiteNumericH_odd_bad_subset_structural_union_missing
 #print axioms Kk.kpt_indexed_structural_levels_card_le
 #print axioms Kk.finiteNumericH_odd_bad_off_indexed_structural_has_missing_socle
 
