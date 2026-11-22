@@ -483,6 +483,8 @@ import Kk.TrackGUniqueBoringBlockFactor
 import Kk.TrackGZeroColumnFactorMismatchSocle
 import Kk.TrackGZeroColumnSocleRun
 import Kk.TrackGZeroStageExactBadTrichotomy
+import Kk.TrackGSocleNoveltyIntervals
+import Kk.TrackGOriginalSocleThresholds
 
 /-!
 The counting project imports the verified successor-tree library.
