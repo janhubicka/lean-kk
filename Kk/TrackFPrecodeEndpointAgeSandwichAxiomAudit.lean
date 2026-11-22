@@ -1,0 +1,8 @@
+import Kk.TrackFPrecodeEndpointAgeSandwich
+
+#check @Kk.trackFPhysicalFront_singleton_one_of_rank_zero
+#print axioms Kk.trackFPhysicalFront_singleton_one_of_rank_zero
+#check @Kk.trackFActualFront_survivor_precode_age_eq_of_endpoint_eq
+#print axioms Kk.trackFActualFront_survivor_precode_age_eq_of_endpoint_eq
+#check @Kk.trackFActualFront_full_precode_age_eq_of_zero_code_endpoints
+#print axioms Kk.trackFActualFront_full_precode_age_eq_of_zero_code_endpoints
