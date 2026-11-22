@@ -151,6 +151,10 @@ theorem k4_full_actual_zero_code_ordinary_age_step
         Etgt v ∧
       (∀ i : Fin d,
         (post i).level = e x.level + 1 ∧ post i ≤ t i) ∧
+      (∀ i : Fin d,
+        pre (Fin.succAboveEmb j i) ≤ post i ∧
+        (pre (Fin.succAboveEmb j i)).neighbours =
+          (post i).neighbours) ∧
       (∀ U : IntegerGraphSupport d 4,
         trackFPhysicalFrontCanonicalAge (d + 1) 4 (e x.level)
           Etgt pre (trackFMapSupport (Fin.succAboveEmb j) U) =
@@ -224,6 +228,27 @@ theorem k4_full_actual_zero_code_ordinary_age_step
     intro i
     exact ⟨rfl, HensonOneType.restrictPrefix_le
       (t i) (e x.level + 1) (hFuture i)⟩
+  have hPrePost :
+      ∀ i : Fin d,
+        pre (Fin.succAboveEmb j i) ≤ post i ∧
+        (pre (Fin.succAboveEmb j i)).neighbours =
+          (post i).neighbours := by
+    intro i
+    have hBits :
+        (pre (Fin.succAboveEmb j i)).neighbours =
+          (post i).neighbours := by
+      exact (hPreRealSurvivors i).2
+    have hLevel :
+        (pre (Fin.succAboveEmb j i)).level ≤ (post i).level := by
+      rw [hPreLevel (Fin.succAboveEmb j i), (hPostValid i).1]
+      omega
+    refine ⟨⟨hLevel, ?_⟩, hBits⟩
+    intro a _
+    constructor
+    · intro ha
+      simpa only [hBits] using ha
+    · intro ha
+      simpa only [hBits] using ha
   have hPreMatch :
       ∀ i : Fin d,
         (pre (Fin.succAboveEmb j i)).neighbours =
@@ -249,6 +274,6 @@ theorem k4_full_actual_zero_code_ordinary_age_step
     hCut, hCodeCut, hWValid, hTValid,
     hTInj, hPreValid, hPreInj, hPreRank,
     hPreActualCode, hPreLater, hPreFullEq,
-    hPostValid, hPostAge⟩
+    hPostValid, hPrePost, hPostAge⟩
 
 end Kk
