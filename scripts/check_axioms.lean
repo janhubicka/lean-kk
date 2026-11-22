@@ -2525,3 +2525,15 @@ import Kk
 #print axioms Kk.kpt_physical_final_freeend_cuts_card_le_min_selected_carrier
 #check @Kk.finiteNumericH_constructed_odd_quiet_outside_selected_budget
 #print axioms Kk.finiteNumericH_constructed_odd_quiet_outside_selected_budget
+
+-- Track C: exact small bare-original prefix pool, filtered old-range free ends and chronological no-plus-one.
+#check @Kk.finiteNumericH_bare_root_small_original_pool
+#print axioms Kk.finiteNumericH_bare_root_small_original_pool
+#check @Kk.finiteNumericH_constructed_odd_quiet_outside_small_root_budget
+#print axioms Kk.finiteNumericH_constructed_odd_quiet_outside_small_root_budget
+#check @Kk.mem_KptPhysicalOldRangeStageFreeEnds_iff
+#print axioms Kk.mem_KptPhysicalOldRangeStageFreeEnds_iff
+#check @Kk.kpt_physical_oldrange_freeends_card_le_roots_add_selected
+#print axioms Kk.kpt_physical_oldrange_freeends_card_le_roots_add_selected
+#check @Kk.finiteNumericH_constructed_odd_quiet_outside_oldrange_root_budget
+#print axioms Kk.finiteNumericH_constructed_odd_quiet_outside_oldrange_root_budget
