@@ -495,6 +495,9 @@ import Kk.TrackGZeroStageExactBadTrichotomy
 import Kk.TrackGSocleNoveltyIntervals
 import Kk.TrackGOriginalSocleThresholds
 
+-- Track A/G: complete Kpt factor-Bad trichotomy for genuine odd numerical cuts.
+import Kk.TrackAOddBadSocleTrichotomy
+
 /-!
 The counting project imports the verified successor-tree library.
 No local replacement of the Ramsey theorem is assumed.
