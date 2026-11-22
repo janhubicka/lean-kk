@@ -9,7 +9,16 @@ This note follows two separately exact-head Lean-verified, merged results:
 
 Fix ell>=2, original Boolean graph E genuinely avoiding the normalized
 Henson forbidden family, original b, and GIVEN later originals j(t)>b.
-Set C=C(E,b,j), the finite set of ordinary-L critical generations. Separately
+Let C_gen=C(E,b,j) be the finite set of ordinary-L *generation indices*.
+Fix the numerical-H height k and define the distinct PHYSICAL candidate cuts
+
+  C = { hPosition(k,b,g) : g in C_gen and g<k },
+
+where hPosition(k,b,g)=2*((k+1)*b+g) is a true numerical-H
+vertex coordinate. This mapping is essential: using g itself as an
+Algorithm 5.4 cut would identify the WRONG source levels. Restrict
+to g<k since the Track A partial-block formula does not cover the
+top generation or subsequent original blocks. Separately
 fix TWO genuine AlgorithmRuns R_X,R_Y of the normalized Kpt successor tree
 for the same forbidden family, with possibly different seed sets X,Y,
 but the SAME scan top N and cut coordinates.
@@ -67,7 +76,9 @@ symmetric-difference inclusion.
 
 The verified finite cardinality corollary bounds the disagreement by
 |C union D| <= |C|+|D|. Finally the verified Track A Henson
-two-original-clique capacity argument gives |C|<=ell-2.
+two-original-clique capacity argument gives |C_gen|<=ell-2,
+and taking a filter and an image cannot increase cardinality:
+|C|<=|C_gen|<=ell-2.
 
 Nothing in this proof uses a hypothetical common selected shadow,
 a forbidden raw-to-canonical shortcut, or the unproved diary-to-profile
@@ -87,49 +98,58 @@ at levels neither run eventually selects.
 
 ## Crucial adversarial checks
 
-1. The original graph E and the two genuine Kpt runs are parameters
+1. **Coordinate safeguard:** the ordinary set C_gen contains
+   generation indices, NOT Kpt scan cuts. The numerical exceptional
+   set C is an hPosition(k,b,-) image restricted to g<k.
+   There is NO Lean theorem here asserting that every actual
+   per-coordinate ordinary raw event happens only at these cuts;
+   the mapped set serves as the intended candidate exceptions.
+   The previously verified Track A event iff is a comparison
+   of complete partial prefix boundaries, not automatically an
+   all-intermediate-numeric-cut localization.
+2. The original graph E and the two genuine Kpt runs are parameters
    of the same theorem, but **no theorem here constructs those runs
    from the finite original E**. This is a modular ledger, not a
    proven physical diary/source coupling. Any eventual application
    must separately identify E,b,j and the two actual run sources.
-2. C counts raw binary-L support-capacity changes, not all canonical
+3. C_gen counts raw binary-L support-capacity changes, not all canonical
    covers and not any auxiliary I1/I2/I3 event. D explicitly retains
    all full-source discrepancies outside C.
-3. D is defined on the FULL actual pre-cut closures, with
+4. D is defined on the FULL actual pre-cut closures, with
    R_X.I(q+1),R_Y.I(q+1) separately; substituting the initial
    seed sets or one common fictional selected tail is invalid.
-4. The terminal flag is required independently. Equal crossing
+5. The terminal flag is required independently. Equal crossing
    relations alone miss genuine terminal I1 differences.
-5. The full crossing relation includes auxiliary E records, I2 forks
+6. The full crossing relation includes auxiliary E records, I2 forks
    and the I3 skip-law transport. An ordinary-L-only restriction is
    insufficient to derive T_q/P_q.
-6. Two different seeds may have different actual Kpt index sizes;
+7. Two different seeds may have different actual Kpt index sizes;
    this theorem does not demand a bijection or reverse source map.
-7. q<N is essential. Defects outside the actual scan interval are
+8. q<N is essential. Defects outside the actual scan interval are
    deliberately not counted; the ordinal cut N itself is not scanned.
-8. D is disjoint from C by its definition. The upper bound
+9. D is disjoint from C by its definition. The upper bound
    |C|+|D| remains correct without exploiting that disjointness;
    it should not be described as a bound on either selected set's
    total cardinality.
-9. At ell=2, the genuine K_2-free graph has empty critical C.
+10. At ell=2, the genuine K_2-free graph has empty critical C.
    Disagreement can still be carried by D; no false free
    Kpt-boringness is claimed.
-10. If the two actual profile relations differ but the interesting
+11. If the two actual profile relations differ but the interesting
     decision is the same, q may belong to D needlessly; the
     bound is intentionally a sufficient (possibly nonminimal)
     source-profile discrepancy budget.
-11. The finite `Finset` D uses classical decidability of source-set
+12. The finite `Finset` D uses classical decidability of source-set
     equalities. It does NOT claim a uniform algorithm without
     complete finite Kpt source indices. The verified Track E/G
     indexed profile constructions provide the appropriate later
     executable comparison interface.
-12. The model-specific diary construction is still missing the
+13. The model-specific diary construction is still missing the
     implication `diary -> D=empty` (or a uniform bound on |D|).
     This is the real remaining source-comparison task.
-13. No global BRD theorem, common labelled inverse-source orbit,
+14. No global BRD theorem, common labelled inverse-source orbit,
     cross-top reindexing or arbitrary-dimensional finite microdiary
     degree is asserted.
-14. Black manuscript text and existing green verification marks
+15. Black manuscript text and existing green verification marks
     remain untouched until this source and all qualified axiom
     reports pass an exact-head Lean gate.
 
@@ -138,13 +158,22 @@ at levels neither run eventually selects.
 Implement in `Kk/TrackAKptResidualDefectBudget.lean`:
 - `kptOffExceptionFullProfileDefects` (finite set of genuine full
   profile mismatches outside any specified ordinary exception set);
-- `kpt_full_profiles_eq_of_not_mem_defects`;
+- `kpt_full_profiles_eq_of_not_mem_off_exception_defects`;
+- `trackAPhysicalCriticalCuts` (actual hPosition image with
+  g<k) and `trackA_henson_physical_critical_cuts_card_le`;
 - `kpt_actual_runs_selected_disagreement_le_exception_plus_defects`;
-- `trackA_henson_kpt_selected_disagreement_le_sharp_plus_defects`;
+- `trackA_henson_kpt_selected_disagreement_le_sharp_plus_defects` with the PHYSICAL numerical-H exceptional set (not C_gen);
 - optionally `kpt_off_exception_defects_empty_iff_profile_match`.
 
 Import only already merged `Kk.PartialNumericCriticalGenerations`
 and `Kk.TrackAGExceptionSelected`; avoid any dependency on stale
 PR #351/#431. Run direct module build, full Lake and exact qualified
-strictly standard-only `#print axioms` parser. Keep in DRAFT until
+strictly standard-only `#print axioms` parser.
+
+The provisional first source draft mistakenly used the generation set
+C_gen directly as the numerical cut set. This was identified in the
+adversarial source audit BEFORE any merge, and the Lean theorem and
+this English note were corrected to use C. The correction changes
+the theorem interface but does not prove the still-open
+parameter-closed diary-to-profile matching statement. Keep in DRAFT until
 the precise head passes.
