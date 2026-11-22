@@ -438,6 +438,7 @@ import Kk.AutomaticPhysicalCoverPath
 
 -- Track B: sharp all-support canonical slack for actual positive original intervals.
 import Kk.CanonicalCriticalSlack
+import Kk.PhysicalCanonicalSlackCover
 
 -- Whole-source adversarial integration: 56 additional real Kk production modules.
 -- Separate *_AxiomAudit files retain standalone exact-head gates.

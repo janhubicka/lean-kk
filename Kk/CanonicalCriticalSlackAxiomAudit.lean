@@ -1,4 +1,5 @@
 import Kk.CanonicalCriticalSlack
+import Kk.PhysicalCanonicalSlackCover
 
 #check @Kk.integerGraphAgeCanonical_interval_eq_iff_critical_slack
 #print axioms Kk.integerGraphAgeCanonical_interval_eq_iff_critical_slack
@@ -8,3 +9,8 @@ import Kk.CanonicalCriticalSlack
 #print axioms Kk.originalCriticalCount_zero_of_canonical_interval_eq_tight
 #check @Kk.integerGraphAgeCanonical_interval_ne_of_excess_critical_slack
 #print axioms Kk.integerGraphAgeCanonical_interval_ne_of_excess_critical_slack
+
+#check @Kk.henson_leftDense_physical_cover_after_canonical_slack_interval
+#print axioms Kk.henson_leftDense_physical_cover_after_canonical_slack_interval
+#check @Kk.henson_leftDense_second_cover_after_preserved_typed_slack_interval
+#print axioms Kk.henson_leftDense_second_cover_after_preserved_typed_slack_interval

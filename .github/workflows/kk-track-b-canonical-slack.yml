@@ -36,7 +36,7 @@ jobs:
       - name: Obtain Mathlib build cache
         run: lake exe cache get
       - name: Compile exact Track B modules
-        run: lake build Kk.CanonicalCriticalSlack
+        run: lake build Kk.CanonicalCriticalSlack Kk.PhysicalCanonicalSlackCover
       - name: Exact standard-only transitive axiom gate
         run: |
           set -euo pipefail
