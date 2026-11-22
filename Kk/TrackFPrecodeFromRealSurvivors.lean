@@ -1,4 +1,5 @@
 import Kk.TrackFActualPrecodeTargetFront
+import Kk.TrackFPrecodeEndpointAgeSandwich
 import Kk.TrackFPhysicalSurvivorDeletion
 import Mathlib.Tactic
 
@@ -102,7 +103,8 @@ theorem k4_precode_from_genuine_surviving_target_front
   have hcH : c + 1 ≤ H := Nat.succ_le_of_lt hCut
   have hFutureFull :
       ∀ k : Fin (d + 1), c + 1 ≤ (laterFull k).level := by
-    apply (Fin.forall_iff_succAbove j).2
+    apply (Fin.forall_iff_succAbove
+      (P := fun k : Fin (d + 1) => c + 1 ≤ (laterFull k).level) j).2
     constructor
     · simpa [laterFull, dummy, HensonOneType.zeroPad] using hcH
     · intro i
