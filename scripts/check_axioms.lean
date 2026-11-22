@@ -2541,3 +2541,42 @@ import Kk
 #print axioms Kk.henson_leftDense_physical_cover_after_canonical_slack_interval
 #check @Kk.henson_leftDense_second_cover_after_preserved_typed_slack_interval
 #print axioms Kk.henson_leftDense_second_cover_after_preserved_typed_slack_interval
+
+-- Track F: 18 exact existing ordinary-L code/numeric/target-lex endpoints.
+-- Do NOT read these as full diary history or a global BRD lower-bound proof.
+#check @Kk.integerCliqueWeights_exists_exact_nat_sorted_pool
+#print axioms Kk.integerCliqueWeights_exists_exact_nat_sorted_pool
+#check @Kk.trackF_numeric_integer_age_eq_of_all_finite_K4_tests
+#print axioms Kk.trackF_numeric_integer_age_eq_of_all_finite_K4_tests
+#check @Kk.trackFPhysical_numeric_age_eq_of_full_K4_tests
+#print axioms Kk.trackFPhysical_numeric_age_eq_of_full_K4_tests
+#check @Kk.k4_sync_complete_tuple_numeric_canonical_age
+#print axioms Kk.k4_sync_complete_tuple_numeric_canonical_age
+#check @Kk.k4_survivor_sync_numeric_canonical_age_after_code
+#print axioms Kk.k4_survivor_sync_numeric_canonical_age_after_code
+#check @Kk.trackFActualFront_raw_reindex
+#print axioms Kk.trackFActualFront_raw_reindex
+#check @Kk.trackFActualFront_canonical_reindex
+#print axioms Kk.trackFActualFront_canonical_reindex
+#check @Kk.trackFActualFront_zero_code_survivor_canonical_reindex
+#print axioms Kk.trackFActualFront_zero_code_survivor_canonical_reindex
+#check @Kk.trackFCodeSupport_exists_survivor_preimage
+#print axioms Kk.trackFCodeSupport_exists_survivor_preimage
+#check @Kk.k4ActualPrecode_full_age_eq_of_genuine_survivor_endpoints
+#print axioms Kk.k4ActualPrecode_full_age_eq_of_genuine_survivor_endpoints
+#check @Kk.k4ActualPrecode_full_age_eq_of_source_checkpoint
+#print axioms Kk.k4ActualPrecode_full_age_eq_of_source_checkpoint
+#check @Kk.k4_precode_from_genuine_surviving_target_front
+#print axioms Kk.k4_precode_from_genuine_surviving_target_front
+#check @Kk.k4_survivor_target_numeric_endpoint_of_full_checkpoint
+#print axioms Kk.k4_survivor_target_numeric_endpoint_of_full_checkpoint
+#check @Kk.HensonOneType.lexBefore_of_extensions
+#print axioms Kk.HensonOneType.lexBefore_of_extensions
+#check @Kk.HensonOneType.targetLexSorted_of_extensions
+#print axioms Kk.HensonOneType.targetLexSorted_of_extensions
+#check @Kk.HensonOneType.targetLexSorted_survivors_of_extensions
+#print axioms Kk.HensonOneType.targetLexSorted_survivors_of_extensions
+#check @Kk.k4_full_actual_zero_code_ordinary_age_step
+#print axioms Kk.k4_full_actual_zero_code_ordinary_age_step
+#check @Kk.trackFActualZeroCode_target_lex_sorted_invariant
+#print axioms Kk.trackFActualZeroCode_target_lex_sorted_invariant
