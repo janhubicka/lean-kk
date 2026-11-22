@@ -40,7 +40,7 @@ jobs:
         run: lake exe cache get
       - name: Compile original socle threshold and zero-stage exact Bad original-coordinate witness
         run: lake build Kk.TrackGOriginalSocleThresholds
-      - name: Strict three-name standard-only transitive axiom gate
+      - name: Strict one-name standard-only transitive axiom gate
         run: |
           set -euo pipefail
           lake env lean Kk/TrackGOriginalSocleThresholdsAxiomAudit.lean | tee track-g-original-socle-thresholds-axioms.log
