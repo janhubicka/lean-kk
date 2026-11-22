@@ -421,6 +421,65 @@ import Kk.PartialNumericSingletonCanonical
 -- Track B: explicit chronological finite physical cover history and its stage witnesses.
 import Kk.FinitePhysicalCoverHistory
 
+-- Whole-source adversarial integration: 56 additional real Kk production modules.
+-- Separate *_AxiomAudit files retain standalone exact-head gates.
+import Kk.ActualRunNumericHPrefixStability
+import Kk.LocalClosedEventTraceBlindness
+import Kk.LocalEventTraceBlindness
+import Kk.NoReverseCoherentKptIndex
+import Kk.PartialNumericRawAgeHeightStability
+import Kk.TrackDEmptyPhysicalCutStar
+import Kk.TrackDOddPlanFreeClosure
+import Kk.TrackDOddTopSeedPlanSkip
+import Kk.TrackDPlannedStageRoles
+import Kk.TrackDTopSeedConcreteLowerSkip
+import Kk.TrackDTopSeedNoLowerReal
+import Kk.TrackDZeroStageActualRunSkip
+import Kk.TrackECandidateSourceFiniteIndex
+import Kk.TrackECommonTopCutUsedRecipes
+import Kk.TrackEEarlyOldFinalActivationInterval
+import Kk.TrackEIsolatedDummyFullZeroStage
+import Kk.TrackEIsolatedDummyOriginalMaxWholeRun
+import Kk.TrackEMaxOriginalOldTopBudget
+import Kk.TrackENumericCompletePhysicalTrace
+import Kk.TrackEOddSafeSourceNoNovelty
+import Kk.TrackEOriginalPrefixSocleIff
+import Kk.TrackEPartitionedOriginalMaxWholeRun
+import Kk.TrackEPhysicalParameterTrace
+import Kk.TrackERawTypeVertexForgetting
+import Kk.TrackESelectedLevelOriginalBudget
+import Kk.TrackETwoSafeClassesOriginalMaxWholeRun
+import Kk.TrackEUsedRecipeEventReconstruction
+import Kk.TrackFCollapseMixedOccupancy
+import Kk.TrackFFiniteFrontMarkerFans
+import Kk.TrackFFiniteHistoryFan
+import Kk.TrackFLabelledHistoryFan
+import Kk.TrackFPhysicalCollapseFeasibility
+import Kk.TrackFRankOneDropToZero
+import Kk.TrackFRankTwoDropToOne
+import Kk.TrackFZeroCodeCutSurvivorAge
+import Kk.TrackGArbitraryBlockFactor
+import Kk.TrackGBadCutCoordinateTransport
+import Kk.TrackGBadCutIntervalCover
+import Kk.TrackGBoringAncestorOverlap
+import Kk.TrackGConstructTargetIndexWithoutRun
+import Kk.TrackGCrossheightBoringAction
+import Kk.TrackGEmptyCanonicalBadCutsRunTransfer
+import Kk.TrackGExactBadSubsetCanonical
+import Kk.TrackGExactBoringRunTransport
+import Kk.TrackGExactFactorBadCuts
+import Kk.TrackGExactFactorBadWitness
+import Kk.TrackGFactorBadCombinedSmoke
+import Kk.TrackGGenuineBoringBlockFactor
+import Kk.TrackGIndexedBoringAction
+import Kk.TrackGIntrinsicExactFactorBad
+import Kk.TrackGLocalProfileNotSourceIdentity
+import Kk.TrackGRunChoiceAncestor
+import Kk.TrackGUniqueBoringBlockFactor
+import Kk.TrackGZeroColumnFactorMismatchSocle
+import Kk.TrackGZeroColumnSocleRun
+import Kk.TrackGZeroStageExactBadTrichotomy
+
 /-!
 The counting project imports the verified successor-tree library.
 No local replacement of the Ramsey theorem is assumed.
