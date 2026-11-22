@@ -1,3 +1,9 @@
+-- Track A: exact individual physical critical cut spectrum (ordinary L only).
+import Kk.TrackAPhysicalCriticalSpectrum
+-- Track A: exact real/odd numerical-H cut raw age identities.
+import Kk.TrackANumericSingleCutRawEvent
+-- Track A/G: residual actual dependent Kpt profile defect budget.
+import Kk.TrackAKptResidualDefectBudget
 import Kk.TrackAGExceptionSelected
 import Kk.ControlledPivotBudget
 import Kk.PhysicalControlledCoding
@@ -384,6 +390,8 @@ import Kk.TrackCUnifiedSafeRealOdd
 import Kk.TrackCRawOriginalOldSocle
 -- Track C: literal old seed above cut automatically witnesses complete Kpt old prefix.
 import Kk.TrackCSeedPrefixOldSocle
+-- Track C: concrete complete RAW old-seed representatives yield safe real/odd same-height I/F transport.
+import Kk.TrackCRawSeedSafeRun
 
 -- Track D: actual finite-index no-I1/no-I2 and one physical boring lower-real cut.
 -- Marked full-B3 and represented complete source remain explicit assumptions.
@@ -420,6 +428,72 @@ import Kk.PartialNumericSingletonCanonical
 
 -- Track B: explicit chronological finite physical cover history and its stage witnesses.
 import Kk.FinitePhysicalCoverHistory
+
+-- Track B: automatically refine a genuine lower age into finite saturated covers.
+import Kk.AutomaticAgeCoverChain
+import Kk.IntegerAgeCoverUnitDrop
+import Kk.AutomaticPhysicalCoverPath
+
+-- Whole-source adversarial integration: 56 additional real Kk production modules.
+-- Separate *_AxiomAudit files retain standalone exact-head gates.
+import Kk.ActualRunNumericHPrefixStability
+import Kk.LocalClosedEventTraceBlindness
+import Kk.LocalEventTraceBlindness
+import Kk.NoReverseCoherentKptIndex
+import Kk.PartialNumericRawAgeHeightStability
+import Kk.TrackDEmptyPhysicalCutStar
+import Kk.TrackDOddPlanFreeClosure
+import Kk.TrackDOddTopSeedPlanSkip
+import Kk.TrackDPlannedStageRoles
+import Kk.TrackDTopSeedConcreteLowerSkip
+import Kk.TrackDTopSeedNoLowerReal
+import Kk.TrackDZeroStageActualRunSkip
+import Kk.TrackECandidateSourceFiniteIndex
+import Kk.TrackECommonTopCutUsedRecipes
+import Kk.TrackEEarlyOldFinalActivationInterval
+import Kk.TrackEIsolatedDummyFullZeroStage
+import Kk.TrackEIsolatedDummyOriginalMaxWholeRun
+import Kk.TrackEMaxOriginalOldTopBudget
+import Kk.TrackENumericCompletePhysicalTrace
+import Kk.TrackEOddSafeSourceNoNovelty
+import Kk.TrackEOriginalPrefixSocleIff
+import Kk.TrackEPartitionedOriginalMaxWholeRun
+import Kk.TrackEPhysicalParameterTrace
+import Kk.TrackERawTypeVertexForgetting
+import Kk.TrackESelectedLevelOriginalBudget
+import Kk.TrackETwoSafeClassesOriginalMaxWholeRun
+import Kk.TrackEUsedRecipeEventReconstruction
+import Kk.TrackFCollapseMixedOccupancy
+import Kk.TrackFFiniteFrontMarkerFans
+import Kk.TrackFFiniteHistoryFan
+import Kk.TrackFLabelledHistoryFan
+import Kk.TrackFPhysicalCollapseFeasibility
+import Kk.TrackFRankOneDropToZero
+import Kk.TrackFRankTwoDropToOne
+import Kk.TrackFZeroCodeCutSurvivorAge
+import Kk.TrackGArbitraryBlockFactor
+import Kk.TrackGBadCutCoordinateTransport
+import Kk.TrackGBadCutIntervalCover
+import Kk.TrackGBoringAncestorOverlap
+import Kk.TrackGConstructTargetIndexWithoutRun
+import Kk.TrackGCrossheightBoringAction
+import Kk.TrackGEmptyCanonicalBadCutsRunTransfer
+import Kk.TrackGExactBadSubsetCanonical
+import Kk.TrackGExactBoringRunTransport
+import Kk.TrackGExactFactorBadCuts
+import Kk.TrackGExactFactorBadWitness
+import Kk.TrackGFactorBadCombinedSmoke
+import Kk.TrackGGenuineBoringBlockFactor
+import Kk.TrackGIndexedBoringAction
+import Kk.TrackGIntrinsicExactFactorBad
+import Kk.TrackGLocalProfileNotSourceIdentity
+import Kk.TrackGRunChoiceAncestor
+import Kk.TrackGUniqueBoringBlockFactor
+import Kk.TrackGZeroColumnFactorMismatchSocle
+import Kk.TrackGZeroColumnSocleRun
+import Kk.TrackGZeroStageExactBadTrichotomy
+import Kk.TrackGSocleNoveltyIntervals
+import Kk.TrackGOriginalSocleThresholds
 
 /-!
 The counting project imports the verified successor-tree library.

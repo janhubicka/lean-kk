@@ -2398,6 +2398,12 @@ import Kk
 #check @Kk.kpt_actual_original_max_socle_of_seed_prefix
 #print axioms Kk.kpt_actual_original_max_socle_of_seed_prefix
 
+-- Track C: finite dependent RAW seed representatives and genuine safe-union same-height run.
+#check @Kk.kpt_raw_old_seed_match_implies_actual_old_socle
+#print axioms Kk.kpt_raw_old_seed_match_implies_actual_old_socle
+#check @Kk.finiteNumericH_constructed_sameHeight_run_of_raw_seed_safe_and_offsafe
+#print axioms Kk.finiteNumericH_constructed_sameHeight_run_of_raw_seed_safe_and_offsafe
+
 -- Track B: full actual-original finite canonical cover chain (final cutoff and old columns).
 #check @Kk.henson_leftDense_realizes_finite_physical_cover_chain
 #print axioms Kk.henson_leftDense_realizes_finite_physical_cover_chain
@@ -2484,3 +2490,31 @@ import Kk
 #print axioms Kk.PhysicalCanonicalCoverHistory.terminal
 #check @Kk.henson_leftDense_constructs_finite_physical_cover_history
 #print axioms Kk.henson_leftDense_constructs_finite_physical_cover_history
+
+-- Track B: automatically generated finite saturated cover paths (not full Kpt diaries).
+#check @Kk.ageCoordinateGap_pos_of_strict
+#print axioms Kk.ageCoordinateGap_pos_of_strict
+#check @Kk.ageCoordinateGap_split
+#print axioms Kk.ageCoordinateGap_split
+#check @Kk.AgeCoverChain.trans
+#print axioms Kk.AgeCoverChain.trans
+#check @Kk.ageCoverChain_exists
+#print axioms Kk.ageCoverChain_exists
+#check @Kk.integerGraphAge_exists_saturated_chain
+#print axioms Kk.integerGraphAge_exists_saturated_chain
+
+-- Track B: unit-drop on every changed cover support, witnessed by a real normalized vector.
+#check @Kk.integerGraphAgeCanonical_clip_pred_at
+#print axioms Kk.integerGraphAgeCanonical_clip_pred_at
+#check @Kk.integerGraphAge_cover_changed_support_unit_drop
+#print axioms Kk.integerGraphAge_cover_changed_support_unit_drop
+#check @Kk.integerGraphAge_cover_changed_support_block_size
+#print axioms Kk.integerGraphAge_cover_changed_support_block_size
+
+-- Track B: generated finite physical chronological covers (not full dependent diary).
+#check @Kk.PhysicalGeneratedCoverPath.terminal
+#print axioms Kk.PhysicalGeneratedCoverPath.terminal
+#check @Kk.henson_leftDense_constructs_physical_age_cover_path
+#print axioms Kk.henson_leftDense_constructs_physical_age_cover_path
+#check @Kk.henson_leftDense_normalizes_genuine_age_by_covers
+#print axioms Kk.henson_leftDense_normalizes_genuine_age_by_covers
