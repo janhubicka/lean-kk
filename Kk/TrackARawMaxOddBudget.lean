@@ -32,6 +32,10 @@ the genuine old-factor Bad odd-cut count to Q+Q², conditional
 only on ONE COMPLETE numerical RAW old-seed match per candidate
 at its highest ODD OLD-BORING LIVE CROSSING cut.
 
+The constructed Finset is EXACTLY the complete candidate final source
+and its indexing is injective, so Q cannot be inflated with
+redundant names merely to weaken the cardinal bound.
+
 The input is a concrete `KptRawOldSeedMatchAt` on physical
 originals O_u and O_v with candidate source node below O_v;
 the output is independent of any presumed new Y-run. -/
@@ -53,6 +57,17 @@ theorem finiteNumericH_odd_bad_budget_exists_of_raw_max_candidate_seed_matches
       (normalizedKptSMTree family) X top) :
     ∃ params : Finset (AdmissibleKptNode family),
       ∃ live : Nat → Fin params.card → Bool,
+      (∀ z : AdmissibleKptNode family,
+        z ∈ params ↔
+          z ∈ SMTree.Envelope.closure (admissibleKptSTree family)
+            (R.I 0) Y) ∧
+      Function.Injective
+        (fun j : Fin params.card => (params.equivFin.symm j).val) ∧
+      (∀ cut : Nat, ∀ j : Fin params.card,
+        live cut j = true ↔
+          (params.equivFin.symm j).val ∈
+            SMTree.Envelope.closure (admissibleKptSTree family)
+              (R.I (cut+1)) Y) ∧
       (∀ cut : Nat, cut < top →
         ∀ z : AdmissibleKptNode family,
           z ∈ SMTree.Envelope.closure
@@ -77,12 +92,12 @@ theorem finiteNumericH_odd_bad_budget_exists_of_raw_max_candidate_seed_matches
         (fun j : Fin params.card => (params.equivFin.symm j).val)
         live).card ≤ params.card + params.card*params.card) := by
   classical
-  obtain ⟨params,live,_hFinal,_hInjective,_hPresent,hExact⟩ :=
+  obtain ⟨params,live,hFinal,hInjective,hPresent,hExact⟩ :=
     finiteNumericH_oldRun_candidate_uniform_exhaustive_source_index
       family K k N hAvoid (U : Set (Fin N)) X Y hY top R
   let node : Fin params.card → AdmissibleKptNode family :=
     fun j => (params.equivFin.symm j).val
-  refine ⟨params,live,hExact,?_⟩
+  refine ⟨params,live,hFinal,hInjective,hPresent,hExact,?_⟩
   intro hRawMax
   have hMaxSocle : ∀ i : Fin params.card,
       ∀ hNonempty : (kptOddOldBoringCandidateCrossingCuts
