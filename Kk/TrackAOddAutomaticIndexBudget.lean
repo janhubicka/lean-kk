@@ -120,20 +120,23 @@ theorem finiteNumericH_odd_bad_budget_exists_of_full_old_socle
     fun i => (params.equivFin.symm i).val
   have hNoMissing :
       kptOddMissingOldSocleCuts family X top R node live = ∅ := by
-    apply Finset.eq_empty_iff_forall_not_mem.mpr
-    intro cut hc
-    have hFilter : cut ∈
+    ext cut
+    constructor
+    · intro hc
+      exfalso
+      have hFilter : cut ∈
         (Finset.range top).filter
           (fun cut => cut % 2 = 1 ∧
             kptMissingOldSocleAt family X top R node live cut) := hc
-    obtain ⟨hRange,hOdd,hMissing⟩ := Finset.mem_filter.mp hFilter
-    obtain ⟨i,hLive,hCross,hNoOld⟩ := hMissing
-    have hz : node i ∈ SMTree.Envelope.closure
+      obtain ⟨hRange,hOdd,hMissing⟩ := Finset.mem_filter.mp hFilter
+      obtain ⟨i,hLive,hCross,hNoOld⟩ := hMissing
+      have hz : node i ∈ SMTree.Envelope.closure
         (admissibleKptSTree family) (R.I (cut+1)) Y :=
       (hPresent cut i).mp hLive
-    exact hNoOld
-      (hSocle cut (Finset.mem_range.mp hRange) hOdd
-        (node i) hz hCross)
+      exact hNoOld
+        (hSocle cut (Finset.mem_range.mp hRange) hOdd
+          (node i) hz hCross)
+    · simp
   refine ⟨params,live,hExact,?_⟩
   have hBound :=
     finiteNumericH_odd_bad_card_le_of_no_missing_old_socle
