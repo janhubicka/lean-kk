@@ -3,6 +3,7 @@ import Kk.TrackFZeroCodeCutSurvivorAge
 import Kk.TrackFActualFrontCanonicalAge
 import Kk.TrackFTypePrefixCanonicalAgeSandwich
 import Kk.TrackFSingletonCapacity
+import Kk.TrackFCanonicalFullSupportBridge
 import Kk.TrackFPairwiseTargetSeparation
 import Mathlib.Tactic
 
@@ -164,7 +165,6 @@ theorem k4_construct_actual_precode_target_front
     · simp only [pre, dif_pos hij, hQLevel]
       rfl
     · simp only [pre, dif_neg hij, HensonOneType.restrictPrefix]
-      rfl
   have hOldP : ∀ i, old i ≤ pre i := by
     intro i
     by_cases hij : i = j
@@ -278,7 +278,6 @@ theorem k4_construct_actual_precode_target_front
     rw [trackFCommonNeighbourPool_singleton
       d c (fun i => (pre i).neighbours) hBelow j]
     rw [hCodeCapacity]
-    decide
   have hCanonSingleton :
       integerGraphAgeCanonical d 4 B
         (trackFSingletonSupport d 4 j (by decide)) = 1 :=
