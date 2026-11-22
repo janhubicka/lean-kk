@@ -1,3 +1,6 @@
+-- Nonedge semantics/model/count; the degree-24 interface is explicitly conditional.
+import Kk.NonedgeBRD24
+
 -- Track A/G: verified automatically indexed odd Kpt Bad bound.
 import Kk.TrackAOddAutomaticIndexBudget
 -- Track A/G: finite indexed structural and missing complete old Kpt socle budget.

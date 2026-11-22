@@ -10,6 +10,15 @@ The counterexample modules (`GraphAgeShadow`, `K4AuxiliaryShadow`, `UniformAuxil
 
 See [the current status and dated evidence](docs/validation.md) for the exact theorem interfaces, counterexamples, open obligations, and CI run links.
 
+**22 November nonedge audit:** the [new formalization checkpoint](docs/nonedge_formalization_status_20261122.md)
+checks ordinary BRD semantics, constructs a real left-dense Henson model,
+proves model independence, identifies the finite profiles with the existing
+integer-age poset, and kernel-checks exactly **24 complete finite histories**.
+The unconditional nonedge degree remains open in this independent route:
+the actual-record unavoidability and full-source upper comparison are not
+supplied by the count. The public `NonedgeDegree24Goal` is a proposition
+definition, and its proved history criterion retains both infinite premises.
+
 **21 November Track B continuation — verified:** [PR #422](https://github.com/janhubicka/lean-kk/pull/422)
 passed [hosted run 44920690130](https://github.com/janhubicka/lean-kk/actions/runs/44920690130):
 **9,738 Lean build jobs**, parser self-test, and **990 exact named axiom reports**,
