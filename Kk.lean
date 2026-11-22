@@ -1,3 +1,5 @@
+-- Track A/G: true finite candidate full-Kpt closure index along an OLD run.
+import Kk.TrackACandidateIndexOnOldRun
 -- Track A: exact individual physical critical cut spectrum (ordinary L only).
 import Kk.TrackAPhysicalCriticalSpectrum
 -- Track A: exact real/odd numerical-H cut raw age identities.
