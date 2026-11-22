@@ -2639,3 +2639,19 @@ import Kk
 #print axioms Kk.kpt_physical_final_freeend_cuts_card_le_min_selected_carrier
 #check @Kk.finiteNumericH_constructed_odd_quiet_outside_selected_budget
 #print axioms Kk.finiteNumericH_constructed_odd_quiet_outside_selected_budget
+
+-- Track B: canonical-slack iff, every intermediate age and tight-support obstruction.
+#check @Kk.integerGraphAgeCanonical_interval_eq_iff_critical_slack
+#print axioms Kk.integerGraphAgeCanonical_interval_eq_iff_critical_slack
+#check @Kk.integerGraphAgeCanonical_every_intermediate_eq_of_critical_slack
+#print axioms Kk.integerGraphAgeCanonical_every_intermediate_eq_of_critical_slack
+#check @Kk.originalCriticalCount_zero_of_canonical_interval_eq_tight
+#print axioms Kk.originalCriticalCount_zero_of_canonical_interval_eq_tight
+#check @Kk.integerGraphAgeCanonical_interval_ne_of_excess_critical_slack
+#print axioms Kk.integerGraphAgeCanonical_interval_ne_of_excess_critical_slack
+
+-- Track B: physical selected/parameter originals with nonzero positive slack.
+#check @Kk.henson_leftDense_physical_cover_after_canonical_slack_interval
+#print axioms Kk.henson_leftDense_physical_cover_after_canonical_slack_interval
+#check @Kk.henson_leftDense_second_cover_after_preserved_typed_slack_interval
+#print axioms Kk.henson_leftDense_second_cover_after_preserved_typed_slack_interval

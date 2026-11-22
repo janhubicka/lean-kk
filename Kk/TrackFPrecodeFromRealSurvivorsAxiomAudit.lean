@@ -1,0 +1,4 @@
+import Kk.TrackFPrecodeFromRealSurvivors
+
+#check @Kk.k4_precode_from_genuine_surviving_target_front
+#print axioms Kk.k4_precode_from_genuine_surviving_target_front

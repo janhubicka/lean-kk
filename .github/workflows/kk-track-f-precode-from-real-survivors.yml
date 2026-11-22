@@ -1,0 +1,45 @@
+name: KK Track F precode from real survivors
+on:
+  pull_request:
+    paths:
+      - 'Kk/TrackFPrecodeFromRealSurvivors.lean'
+      - 'Kk/TrackFPrecodeFromRealSurvivorsAxiomAudit.lean'
+      - 'docs/track_f_precode_from_real_survivors_english_audit_20261122.md'
+      - '.github/workflows/kk-track-f-precode-from-real-survivors.yml'
+  workflow_dispatch:
+concurrency:
+  group: kk-track-f-precode-real-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+jobs:
+  genuine-precode:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache Lean toolchain
+        uses: actions/cache@v4
+        with:
+          path: ~/.elan/toolchains
+          key: lean-toolchain-${{ runner.os }}-${{ hashFiles('lean-toolchain') }}
+      - name: Restore Lean workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve dependencies
+        run: lake update
+      - name: Obtain Mathlib build cache
+        run: lake exe cache get
+      - name: Build genuine precode target front from real survivors
+        run: lake build Kk.TrackFPrecodeFromRealSurvivors
+      - name: Strict named standard-only axiom gate
+        run: |
+          set -euo pipefail
+          lake env lean Kk/TrackFPrecodeFromRealSurvivorsAxiomAudit.lean | tee genuine-precode-axioms.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py Kk/TrackFPrecodeFromRealSurvivorsAxiomAudit.lean genuine-precode-axioms.log

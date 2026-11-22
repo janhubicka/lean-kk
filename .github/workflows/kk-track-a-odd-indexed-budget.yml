@@ -1,0 +1,51 @@
+name: KK Track A/G odd indexed structural and missing-old-socle budget
+
+on:
+  pull_request:
+    paths:
+      - 'Kk/TrackAOddIndexedStructuralBudget.lean'
+      - 'Kk/TrackAOddIndexedStructuralBudgetAxiomAudit.lean'
+      - 'Kk.lean'
+      - 'docs/track_a_odd_bad_indexed_structural_budget_english_audit_20261122.md'
+      - '.github/workflows/kk-track-a-odd-indexed-budget.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: kk-track-a-odd-indexed-budget-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  direct-full-and-axioms:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache Lean toolchain
+        uses: actions/cache@v4
+        with:
+          path: ~/.elan/toolchains
+          key: lean-toolchain-${{ runner.os }}-${{ hashFiles('lean-toolchain') }}
+      - name: Restore Lean workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve pinned dependencies
+        run: lake update
+      - name: Obtain Mathlib cache
+        run: lake exe cache get
+      - name: Direct compile finite indexed odd Kpt structural budget
+        run: lake build Kk.TrackAOddIndexedStructuralBudget
+      - name: Full Lean library build
+        run: lake build
+      - name: Strict qualified standard-only axiom gate
+        run: |
+          set -euo pipefail
+          lake env lean Kk/TrackAOddIndexedStructuralBudgetAxiomAudit.lean | tee track-a-odd-indexed-axioms.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py Kk/TrackAOddIndexedStructuralBudgetAxiomAudit.lean track-a-odd-indexed-axioms.log

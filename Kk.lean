@@ -1,6 +1,10 @@
 -- Nonedge semantics/model/count; the degree-24 interface is explicitly conditional.
 import Kk.NonedgeBRD24
 
+-- Track A/G: verified automatically indexed odd Kpt Bad bound.
+import Kk.TrackAOddAutomaticIndexBudget
+-- Track A/G: finite indexed structural and missing complete old Kpt socle budget.
+import Kk.TrackAOddIndexedStructuralBudget
 -- Track A: exact individual physical critical cut spectrum (ordinary L only).
 import Kk.TrackAPhysicalCriticalSpectrum
 -- Track A: exact real/odd numerical-H cut raw age identities.
@@ -438,6 +442,10 @@ import Kk.FinitePhysicalCoverHistory
 import Kk.AutomaticAgeCoverChain
 import Kk.IntegerAgeCoverUnitDrop
 import Kk.AutomaticPhysicalCoverPath
+
+-- Track B: sharp all-support canonical slack for actual positive original intervals.
+import Kk.CanonicalCriticalSlack
+import Kk.PhysicalCanonicalSlackCover
 
 -- Whole-source adversarial integration: 56 additional real Kk production modules.
 -- Separate *_AxiomAudit files retain standalone exact-head gates.

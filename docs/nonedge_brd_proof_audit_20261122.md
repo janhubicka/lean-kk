@@ -22,6 +22,20 @@ Sources inspected:
 - The local semantics/count modules being developed alongside this audit
   are new work, not results already present at the preceding commit.
 
+**Later integration update:** main advanced to
+`d8f81757ff0d993b7d6b161307ab57395ecbb061` during this work. That delta
+adds PR #500's `k4_full_actual_zero_code_ordinary_age_step` and PR #501's
+actual pre/post code chronology and target lex-order invariant. These
+close the ordinary zero-code stage assembly, not the complete prescribed
+history induction. The remaining lower work includes repeatable full
+checkpoints, cover/split chronology, newborn daughter target order, and
+the actual record/unavoidability theorem. New A/E/G finite index, root
+pool, test-carrier and obstruction bounds explicitly retain their
+non-global scope; the full upper source/orbit comparison remains open.
+Only `Kk.lean` and `scripts/check_axioms.lean` were modified among
+preexisting files in this main delta. None of the six new modules'
+existing imported definitions or pinned dependencies changed.
+
 This note is an adversarial source audit. It does not report a fresh
 successful compilation of every imported historical module. The build
 and axiom reports for the new formalization must be read separately.

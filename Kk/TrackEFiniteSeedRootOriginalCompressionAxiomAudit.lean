@@ -1,0 +1,7 @@
+import Kk.TrackEFiniteSeedRootOriginalCompression
+
+#check @Kk.finite_kpt_seed_original_root_pool_compression
+#print axioms Kk.finite_kpt_seed_original_root_pool_compression
+
+#check @Kk.finiteNumericH_candidate_finite_seed_original_budget
+#print axioms Kk.finiteNumericH_candidate_finite_seed_original_budget

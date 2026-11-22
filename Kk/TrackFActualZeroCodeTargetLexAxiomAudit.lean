@@ -1,0 +1,6 @@
+import Kk.TrackFActualZeroCodeTargetLex
+
+#check @Kk.k4_full_actual_zero_code_ordinary_age_step
+#print axioms Kk.k4_full_actual_zero_code_ordinary_age_step
+#check @Kk.trackFActualZeroCode_target_lex_sorted_invariant
+#print axioms Kk.trackFActualZeroCode_target_lex_sorted_invariant

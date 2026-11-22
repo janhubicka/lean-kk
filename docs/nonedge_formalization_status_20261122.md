@@ -13,6 +13,17 @@ This work began from `lean-kk` commit
 `a74c10761303a18649053f2af3a1a1697f032e13`, and Mathlib revision
 `5bd58ac291422a21f412ae354c91e7d172255a2c`.
 
+The change was subsequently integrated with main at
+`d8f81757ff0d993b7d6b161307ab57395ecbb061`. That update changes no existing
+leaf definitions or pinned dependencies used by the six new modules.
+It adds important finite lower-bound components: PRs #500 and #501
+assemble the actual ordinary zero-code age step and pre/post survivor
+chronology, including persistence of existing target lexicographic order.
+The remaining lower obligation is the complete cover/split/code history
+induction with a repeatable checkpoint, daughter order and actual record
+unavoidability. The full history conclusion is not supplied by those
+finite code-step results.
+
 The manuscript audit uses `kk.tex` blob
 `3bc9334ff2f9db1b5f3e36aeb12f1db93e33ff37`. Its direct upper theorem is
 stated unconditionally, but the proof of

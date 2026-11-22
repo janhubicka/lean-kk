@@ -1,0 +1,19 @@
+import Kk.TrackEFailedMaxPrefixObstruction
+
+#check @Kk.KptActualFailedMaxOldSocleOriginal
+#check @Kk.kpt_failed_max_old_socle_originals
+
+#check @Kk.mem_kpt_failed_max_old_socle_originals
+#print axioms Kk.mem_kpt_failed_max_old_socle_originals
+
+#check @Kk.kpt_failed_max_old_socle_originals_subset_needed
+#print axioms Kk.kpt_failed_max_old_socle_originals_subset_needed
+
+#check @Kk.kpt_failed_max_old_socle_originals_card_le_root_add_selected
+#print axioms Kk.kpt_failed_max_old_socle_originals_card_le_root_add_selected
+
+#check @Kk.finiteNumericH_no_same_run_implies_failed_original_or_other_cut
+#print axioms Kk.finiteNumericH_no_same_run_implies_failed_original_or_other_cut
+
+#check @Kk.finiteNumericH_no_same_run_of_other_quiet_has_failed_original
+#print axioms Kk.finiteNumericH_no_same_run_of_other_quiet_has_failed_original

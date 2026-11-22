@@ -1,0 +1,4 @@
+import Kk.TrackFFullActualZeroCodeAgeStep
+
+#check @Kk.k4_full_actual_zero_code_ordinary_age_step
+#print axioms Kk.k4_full_actual_zero_code_ordinary_age_step
