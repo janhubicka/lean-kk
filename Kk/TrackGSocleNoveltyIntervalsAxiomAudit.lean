@@ -1,0 +1,13 @@
+import Kk.TrackGSocleNoveltyIntervals
+
+#check @Kk.kpt_oldRun_candidate_preCut_source_mono_down
+#print axioms Kk.kpt_oldRun_candidate_preCut_source_mono_down
+
+#check @Kk.kpt_oldRun_node_lower_socle_covered_mono_down
+#print axioms Kk.kpt_oldRun_node_lower_socle_covered_mono_down
+
+#check @Kk.kpt_oldRun_candidate_node_socle_novel_order_convex
+#print axioms Kk.kpt_oldRun_candidate_node_socle_novel_order_convex
+
+#check @Kk.finiteNumericH_zero_stage_exact_bad_without_structural_has_socle_novel_index
+#print axioms Kk.finiteNumericH_zero_stage_exact_bad_without_structural_has_socle_novel_index

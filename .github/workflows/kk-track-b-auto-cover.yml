@@ -1,0 +1,45 @@
+name: KK Track B automatic age-cover kernel gate
+
+on:
+  pull_request:
+    paths:
+      - 'Kk/AutomaticAgeCoverChain.lean'
+      - 'Kk/IntegerAgeCoverUnitDrop.lean'
+      - 'Kk/AutomaticPhysicalCoverPath.lean'
+      - 'Kk/AutomaticCoverAxiomAudit.lean'
+      - 'Kk.lean'
+      - '.github/workflows/kk-track-b-auto-cover.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: kk-track-b-auto-cover-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore Lean workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve pinned dependencies
+        run: lake update
+      - name: Obtain Mathlib build cache
+        run: lake exe cache get
+      - name: Compile both new Track B modules
+        run: lake build Kk.AutomaticAgeCoverChain Kk.IntegerAgeCoverUnitDrop Kk.AutomaticPhysicalCoverPath
+      - name: Exact standard-axiom gate
+        run: |
+          set -euo pipefail
+          lake env lean Kk/AutomaticCoverAxiomAudit.lean | tee track-b-auto-axioms.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py Kk/AutomaticCoverAxiomAudit.lean track-b-auto-axioms.log
