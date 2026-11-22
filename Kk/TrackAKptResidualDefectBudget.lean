@@ -219,6 +219,58 @@ theorem trackA_henson_kpt_selected_disagreement_le_sharp_plus_defects
       E ell hell hAvoid k b j hj
   omega
 
+
+/-- DIRECT conditional sharp comparison of TWO genuine Henson Kpt
+runs on the same numerical cut coordinates. If their actual full
+I1 terminal and dependent L+/E crossing profiles agree outside
+the PHYSICALLY mapped ordinary critical cuts, then the number of
+different selected levels is at most ell-2.
+No diary-to-profile matching is asserted by this theorem. -/
+theorem trackA_henson_kpt_selected_disagreement_le_sharp_of_full_profiles
+    {d : Nat} (E : Nat → Nat → Bool)
+    (ell : Nat) (hell : 2 ≤ ell)
+    (hAvoid : ∀ bad, bad ∈ hensonForbiddenFamily ell hell →
+      bad.Avoids (normalizedGraphModel E))
+    (k b : Nat) (j : Fin d → Nat) (hj : ∀ t, b < j t)
+    (X Y : Set (AdmissibleKptNode
+      (hensonForbiddenFamily ell hell)))
+    (top : Nat)
+    (RX : SMTree.Envelope.AlgorithmRun
+      (normalizedKptSMTree (hensonForbiddenFamily ell hell)) X top)
+    (RY : SMTree.Envelope.AlgorithmRun
+      (normalizedKptSMTree (hensonForbiddenFamily ell hell)) Y top)
+    (hTerminal : ∀ cut : Nat, cut < top →
+      cut ∉ (trackAPhysicalCriticalCuts ell k E b j : Set Nat) →
+      (KptI1AtCut (hensonForbiddenFamily ell hell)
+        (SMTree.Envelope.closure
+          (admissibleKptSTree (hensonForbiddenFamily ell hell))
+          (RX.I (cut+1)) X) cut ↔
+       KptI1AtCut (hensonForbiddenFamily ell hell)
+        (SMTree.Envelope.closure
+          (admissibleKptSTree (hensonForbiddenFamily ell hell))
+          (RY.I (cut+1)) Y) cut))
+    (hCrossing : ∀ cut : Nat, cut < top →
+      cut ∉ (trackAPhysicalCriticalCuts ell k E b j : Set Nat) →
+      FullPhysicalClosureCrossing (hensonForbiddenFamily ell hell)
+        (SMTree.Envelope.closure
+          (admissibleKptSTree (hensonForbiddenFamily ell hell))
+          (RX.I (cut+1)) X) cut =
+      FullPhysicalClosureCrossing (hensonForbiddenFamily ell hell)
+        (SMTree.Envelope.closure
+          (admissibleKptSTree (hensonForbiddenFamily ell hell))
+          (RY.I (cut+1)) Y) cut) :
+    ((RX.I 0 \\ RY.I 0) ∪ (RY.I 0 \\ RX.I 0)).ncard ≤
+      ell-2 := by
+  have hSource :=
+    kpt_actual_runs_selected_disagreement_card_le_of_full_profiles
+      (hensonForbiddenFamily ell hell) X Y top RX RY
+      (trackAPhysicalCriticalCuts ell k E b j)
+      hTerminal hCrossing
+  exact hSource.trans
+    (trackA_henson_physical_critical_cuts_card_le
+      E ell hell hAvoid k b j hj)
+
+#print axioms Kk.trackA_henson_kpt_selected_disagreement_le_sharp_of_full_profiles
 #print axioms Kk.trackA_henson_physical_critical_cuts_card_le
 #print axioms Kk.kpt_full_profiles_eq_of_not_mem_off_exception_defects
 #print axioms Kk.kpt_actual_runs_selected_disagreement_le_exception_plus_defects
