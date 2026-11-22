@@ -1,0 +1,8 @@
+import Kk.TrackFActualCodeAgeWithoutDummy
+
+#check @Kk.trackFCodeSupport_exists_survivor_preimage
+#print axioms Kk.trackFCodeSupport_exists_survivor_preimage
+#check @Kk.k4ActualPrecode_full_age_eq_of_genuine_survivor_endpoints
+#print axioms Kk.k4ActualPrecode_full_age_eq_of_genuine_survivor_endpoints
+#check @Kk.k4ActualPrecode_full_age_eq_of_source_checkpoint
+#print axioms Kk.k4ActualPrecode_full_age_eq_of_source_checkpoint
