@@ -20,6 +20,10 @@ descending stage-Plan inclusion and selected independence.
 No global omission induction or general diary BRD theorem is asserted.
 -/
 
+/-! Canonical-generation role contracts repaired after the English audit in
+`docs/bounded_stage_roles_repair_english_20261123.md`. Every address tested
+against root or Plan roles now carries its genuine generation bound m ≤ k. -/
+
 namespace Kk
 
 open SuccessorTree
@@ -237,11 +241,11 @@ theorem henson_actualRun_selected_coded_lower_real_unselected
       role i = .coded true →
       role j = .coded true → E i j = false)
     (hRootDummy : ∀ v : Fin N, v ∈ U →
-      ∀ j m : Nat, v.val = hPosition k j m →
+      ∀ j m : Nat, m ≤ k → v.val = hPosition k j m →
         role j = .dummy)
     (hPlanShape : ∀ v : Fin N, v.val ∈ Plan →
       0 < (finiteNumericH (normalizedGraphModel E) k N).freeLevel v.val →
-      ∀ j m : Nat, v.val = hPosition k j m →
+      ∀ j m : Nat, m ≤ k → v.val = hPosition k j m →
         (role j = .coded true ∧ m = k) ∨
         (∃ block : Nat, role j = .auxiliary block true))
     (hSelectedBase : role idx = .coded true) :
@@ -264,7 +268,7 @@ theorem henson_actualRun_selected_coded_lower_real_unselected
       (normalizedGraphModel E) k N U
       (Run.I (cut+1)) Plan hAbove role E hQ hIndependent
       hRootDummy hPlanShape
-      idx j m hij hSelectedBase v hAddress
+      idx j m hm hij hSelectedBase v hAddress
   rw [hNo] at hBase
   cases hBase
 

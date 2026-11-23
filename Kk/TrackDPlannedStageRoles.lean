@@ -18,6 +18,10 @@ premise remains. The actually chosen marked corrected-B3 test and the
 complete no-I1/no-I2 conditions are still separate application obligations.
 -/
 
+/-! Canonical-generation role contracts repaired after the English audit in
+`docs/bounded_stage_roles_repair_english_20261123.md`. Every address tested
+against root or Plan roles now carries its genuine generation bound m ≤ k. -/
+
 namespace Kk
 
 open SuccessorTree
@@ -55,15 +59,15 @@ theorem resolvedQ_stage_name_shape_of_planned_levels
     (J Plan : Set Nat) (hJPlan : J ⊆ Plan)
     (role : Nat → ResolvedQBaseRole)
     (hRootDummy : ∀ v : Fin N, v ∈ U →
-      ∀ j m : Nat, v.val = hPosition k j m →
+      ∀ j m : Nat, m ≤ k → v.val = hPosition k j m →
         role j = .dummy)
     (hPlanShape : ∀ v : Fin N, v.val ∈ Plan →
       0 < (finiteNumericH K k N).freeLevel v.val →
-      ∀ j m : Nat, v.val = hPosition k j m →
+      ∀ j m : Nat, m ≤ k → v.val = hPosition k j m →
         (role j = .coded true ∧ m = k) ∨
         (∃ block : Nat, role j = .auxiliary block true))
     (v : Fin (hStageOriginals K k N U J).card)
-    (j m : Nat)
+    (j m : Nat) (hm : m ≤ k)
     (hAddr : (hOriginalName (hStageOriginals K k N U J) v).val =
       hPosition k j m) :
     role j = .dummy ∨
@@ -83,9 +87,9 @@ theorem resolvedQ_stage_name_shape_of_planned_levels
       using hMember
   rcases hMember' with hRoot | ⟨hSelected,hPositive⟩
   · exact Or.inl (hRootDummy (hOriginalName Stage v)
-      hRoot j m hAddr)
+      hRoot j m hm hAddr)
   · rcases hPlanShape (hOriginalName Stage v)
-      (hJPlan hSelected) hPositive j m hAddr with hCode | hAux
+      (hJPlan hSelected) hPositive j m hm hAddr with hCode | hAux
     · exact Or.inr (Or.inl hCode)
     · exact Or.inr (Or.inr hAux)
 
@@ -102,14 +106,14 @@ theorem resolvedQ_stage_omitted_positive_name_is_selected_top
     (E : Nat → Nat → Bool)
     (hQ : ResolvedQChronologicalAxioms role E)
     (hRootDummy : ∀ v : Fin N, v ∈ U →
-      ∀ j m : Nat, v.val = hPosition k j m →
+      ∀ j m : Nat, m ≤ k → v.val = hPosition k j m →
         role j = .dummy)
     (hPlanShape : ∀ v : Fin N, v.val ∈ Plan →
       0 < (finiteNumericH K k N).freeLevel v.val →
-      ∀ j m : Nat, v.val = hPosition k j m →
+      ∀ j m : Nat, m ≤ k → v.val = hPosition k j m →
         (role j = .coded true ∧ m = k) ∨
         (∃ block : Nat, role j = .auxiliary block true))
-    (idx j m : Nat) (hij : idx < j)
+    (idx j m : Nat) (hm : m ≤ k) (hij : idx < j)
     (hOmitted : ResolvedQOmittedBase (role idx))
     (v : Fin (hStageOriginals K k N U J).card)
     (hAddr : (hOriginalName (hStageOriginals K k N U J) v).val =
@@ -118,7 +122,7 @@ theorem resolvedQ_stage_omitted_positive_name_is_selected_top
     role j = .coded true ∧ m = k := by
   have hShape := resolvedQ_stage_name_shape_of_planned_levels
     K k N U J Plan hJPlan role hRootDummy hPlanShape
-    v j m hAddr
+    v j m hm hAddr
   have hRetained : ResolvedQRetainedBase (role j) := by
     rcases hShape with hDummy | hCode | ⟨block,hAux⟩
     · exact Or.inl hDummy
@@ -151,14 +155,14 @@ theorem resolvedQ_stage_selected_base_has_no_retained_neighbour
       role i = .coded true →
       role j = .coded true → E i j = false)
     (hRootDummy : ∀ v : Fin N, v ∈ U →
-      ∀ j m : Nat, v.val = hPosition k j m →
+      ∀ j m : Nat, m ≤ k → v.val = hPosition k j m →
         role j = .dummy)
     (hPlanShape : ∀ v : Fin N, v.val ∈ Plan →
       0 < (finiteNumericH K k N).freeLevel v.val →
-      ∀ j m : Nat, v.val = hPosition k j m →
+      ∀ j m : Nat, m ≤ k → v.val = hPosition k j m →
         (role j = .coded true ∧ m = k) ∨
         (∃ block : Nat, role j = .auxiliary block true))
-    (idx j m : Nat) (hij : idx < j)
+    (idx j m : Nat) (hm : m ≤ k) (hij : idx < j)
     (hSelected : role idx = .coded true)
     (v : Fin (hStageOriginals K k N U J).card)
     (hAddr : (hOriginalName (hStageOriginals K k N U J) v).val =
@@ -166,7 +170,7 @@ theorem resolvedQ_stage_selected_base_has_no_retained_neighbour
     E idx j = false := by
   have hShape := resolvedQ_stage_name_shape_of_planned_levels
     K k N U J Plan hJPlan role hRootDummy hPlanShape
-    v j m hAddr
+    v j m hm hAddr
   have hRetained : ResolvedQRetainedBase (role j) := by
     rcases hShape with hDummy | hCode | ⟨block,hAux⟩
     · exact Or.inl hDummy
@@ -203,11 +207,11 @@ theorem resolvedQ_stage_full_base_coverage_of_planned_levels
     (E : Nat → Nat → Bool)
     (hQ : ResolvedQChronologicalAxioms role E)
     (hRootDummy : ∀ v : Fin N, v ∈ U →
-      ∀ j m : Nat, v.val = hPosition k j m →
+      ∀ j m : Nat, m ≤ k → v.val = hPosition k j m →
         role j = .dummy)
     (hPlanShape : ∀ v : Fin N, v.val ∈ Plan →
       0 < (finiteNumericH K k N).freeLevel v.val →
-      ∀ j m : Nat, v.val = hPosition k j m →
+      ∀ j m : Nat, m ≤ k → v.val = hPosition k j m →
         (role j = .coded true ∧ m = k) ∨
         (∃ block : Nat, role j = .auxiliary block true))
     (idx : Nat) (hOmitted : ResolvedQOmittedBase (role idx))
@@ -215,18 +219,18 @@ theorem resolvedQ_stage_full_base_coverage_of_planned_levels
     (hStage : Stage = hStageOriginals K k N U J)
     (Full : Fin Stage.card → Prop)
     (v : Fin Stage.card) (hFull : Full v)
-    (j m : Nat) (hij : idx < j) (_hgm : 0 ≤ m) (_hm : m ≤ k)
+    (j m : Nat) (hij : idx < j) (_hgm : 0 ≤ m) (hm : m ≤ k)
     (hAddr : (hOriginalName Stage v).val = hPosition k j m)
     (hEdge : E idx j = true) :
     resolvedQStageSelectedTopMarked role k Stage Full v := by
   subst Stage
-  obtain ⟨hCode,hm⟩ :=
+  obtain ⟨hCode,hTop⟩ :=
     resolvedQ_stage_omitted_positive_name_is_selected_top
       K k N U J Plan hJPlan role E hQ
-      hRootDummy hPlanShape idx j m hij hOmitted
+      hRootDummy hPlanShape idx j m hm hij hOmitted
       v hAddr hEdge
   refine ⟨hFull,j,?_,hCode⟩
-  simpa only [hm] using hAddr
+  simpa only [hTop] using hAddr
 
 /-- True physical AlgorithmRun lower-real cut:
 the descending retained-role hypothesis and actual Q edge axioms
@@ -285,11 +289,11 @@ theorem henson_actualRun_lower_real_unselected_of_planned_stage_markedB3
     (role : Nat → ResolvedQBaseRole)
     (hQ : ResolvedQChronologicalAxioms role E)
     (hRootDummy : ∀ v : Fin N, v ∈ U →
-      ∀ j m : Nat, v.val = hPosition k j m →
+      ∀ j m : Nat, m ≤ k → v.val = hPosition k j m →
         role j = .dummy)
     (hPlanShape : ∀ v : Fin N, v.val ∈ Plan →
       0 < (finiteNumericH (normalizedGraphModel E) k N).freeLevel v.val →
-      ∀ j m : Nat, v.val = hPosition k j m →
+      ∀ j m : Nat, m ≤ k → v.val = hPosition k j m →
         (role j = .coded true ∧ m = k) ∨
         (∃ block : Nat, role j = .auxiliary block true))
     (hOmitted : ResolvedQOmittedBase (role idx)) :
