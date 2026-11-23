@@ -526,11 +526,6 @@ import Kk.TrackFTargetLexOrderPersistence
 import Kk.TrackFFullActualZeroCodeAgeStep
 import Kk.TrackFActualZeroCodeTargetLex
 
-/-!
-The counting project imports the verified successor-tree library.
-No local replacement of the Ramsey theorem is assumed.
--/
-
 
 -- Reviewed upper continuation: canonical roles and complete actual-stage coherence.
 import Kk.EqualCutFullType
@@ -539,3 +534,9 @@ import Kk.RealPositionGenerationAliases
 import Kk.PositiveGenerationStageCoherence
 import Kk.StageCoherenceStructural
 import Kk.PositiveGenerationStructural
+
+/-!
+The counting project imports the verified successor-tree library.
+No local replacement of the Ramsey theorem is assumed.
+-/
+
