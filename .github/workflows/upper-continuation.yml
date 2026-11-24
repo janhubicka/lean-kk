@@ -1,4 +1,4 @@
-name: KK upper continuation — bounded roles and complete stage coherence
+name: KK upper continuation — full-age B3 and retained plans
 
 on:
   pull_request:
@@ -13,6 +13,18 @@ on:
       - 'Kk/TrackDEmptyPhysicalCutStar.lean'
       - 'Kk/TrackDZeroStageActualRunSkip.lean'
       - 'Kk/TrackDTopSeedConcreteLowerSkip.lean'
+      - 'Kk/GenerationZeroStageCoherence.lean'
+      - 'Kk/GenerationZeroStructural.lean'
+      - 'Kk/NumericRetainedPlan.lean'
+      - 'Kk/NumericTopNeutralPrefixAge.lean'
+      - 'Kk/PlannedPrefixSeeds.lean'
+      - 'Kk/ResolvedQNeutralAgeB3.lean'
+      - 'Kk/RetainedPrefixSource.lean'
+      - 'Kk/SelectedTopAgeNeutralB3.lean'
+      - 'Kk/TopGenerationStageCoherence.lean'
+      - 'Kk/RetainedChunkTables.lean'
+      - 'Kk/NumericRetainedPlanExact.lean'
+      - 'Kk/RetainedLevelEnumeration.lean'
       - 'scripts/check_axioms_upper_continuation.lean'
       - 'scripts/check_axiom_report.py'
       - '.github/workflows/upper-continuation.yml'
@@ -47,13 +59,18 @@ jobs:
         run: lake update
       - name: Obtain Mathlib cache
         run: lake exe cache get
-      - name: Build repaired role interfaces and whole-stage continuation
+      - name: Build complete-age B3, structural gates and retained plans
         run: >-
           lake build Kk.EqualCutFullType Kk.ResolvedQBlockSeparation
           Kk.RealPositionGenerationAliases Kk.PositiveGenerationStageCoherence
           Kk.TrackDPlannedStageRoles Kk.TrackDEmptyPhysicalCutStar
           Kk.TrackDZeroStageActualRunSkip Kk.TrackDTopSeedConcreteLowerSkip
           Kk.StageCoherenceStructural Kk.PositiveGenerationStructural
+          Kk.GenerationZeroStageCoherence Kk.GenerationZeroStructural Kk.NumericRetainedPlan
+          Kk.NumericTopNeutralPrefixAge Kk.PlannedPrefixSeeds Kk.ResolvedQNeutralAgeB3
+          Kk.RetainedPrefixSource Kk.SelectedTopAgeNeutralB3 Kk.TopGenerationStageCoherence
+          Kk.RetainedChunkTables Kk.NumericRetainedPlanExact
+          Kk.RetainedLevelEnumeration
       - name: Strict named standard-only axiom gate
         run: |
           set -euo pipefail

@@ -90,3 +90,72 @@ retain the same old socle and unchanged future graph. Repeated labels and
 empty finite supports must be handled by the precise domains of the existing
 reference-age theorem. Off-plan construction, whole-stage Plan inclusion and
 the chosen-type application remain separate until actually instantiated.
+
+## Initial chosen-B3 implementation fidelity review
+
+The independent reviewer read the initial `Kk/SelectedTopAgeNeutralB3.lean`
+implementation against the proposal and its imported failure/reference-age
+theorems. Its finite-pool avoidance helper first derives zero diagonal from
+loop avoidance and then realizes the forbidden clique in sorted order. The
+finite future pool contains all bounded future carrier vertices, and its
+sort assignment permits repetitions while leaving future-future edges
+unchanged. Both old/future edge directions come from the genuine complete
+chosen type equality. The old raw-bound transports use equality on the
+same full before/through-cut physical socles. The empty sort case uses
+actual coverage to exclude eligible selected names and invokes the existing
+no-positive-neighbour B3 result. No source-level mathematical mismatch was
+found; this review does not claim compiler or axiom execution.
+
+
+## Cut-visible strengthening and whole-stage wrapper: source review
+
+The independent adversarial reviewer subsequently read the strengthened
+`Kk/SelectedTopAgeNeutralB3.lean` and the new
+`Kk/ResolvedQNeutralAgeB3.lean`, together with the exact existing
+`henson_failed_selectedB3_has_exact_full_cut_star_core` statement and proof,
+the lower-real physical decoder, and the bounded genuine-stage role theorem.
+The strengthened implementation matches the separately reviewed English
+checkpoint `cut_visible_neutral_age_full_b3_english_20261124.md`.
+
+The new `hCover` applies only to selected, genuinely eligible, positive
+physical cut-neighbours. This is sufficient because the extractor trims the
+future carrier to one forbidden clique core while retaining the entire old
+socle. Every future point of this same core has one physical label carrying
+all three facts and equality of its complete chosen next ordinary type.
+The implementation applies coverage to that exact label, not to a different
+old-equal representative. The finite future pool still includes every future
+carrier point of the extracted V. Both ordinary directions, all negative
+old/future bits, arbitrary future edges and repeated labels are unchanged.
+No extra no-I2 or marked-output-fibre premise is needed.
+
+For an empty target list, the source may still contain negative cap or
+auxiliary names. Coverage rules out precisely the positive eligible names,
+and the existing no-eligible-cut-neighbour theorem proves B3. This is the
+appropriate empty case for the stronger statement; it does not assume an
+empty selected stage.
+
+The resolved-Q wrapper uses the literal full stage
+`hStageOriginals(K,k,N,U,J)` and allows any selected predicate on that stage.
+The physical decoder provides a later base, a bounded real generation and
+the actual positive base edge. The corrected role theorem consumes these
+canonical bounded addresses and the genuine descending inclusion
+`J ⊆ Plan`, deriving the selected-coded TOP role. The target carrier bound
+is then obtained from the original `Fin N` name itself. Target coverage
+supplies a matching base, so the complete physical target type is unchanged.
+All Plan/root role contracts retain `m ≤ k`; the numerical address-alias
+vacuity repaired in the earlier audit is not reintroduced.
+
+The target coverage premise asks for every later selected-coded base whose
+TOP lies in the finite carrier. Such a list is finite; repeated entries and
+extra later targets are harmless but strengthen the neutrality premise.
+No source-equality, chosen-B3, structural exclusion or no-I2 verdict is used
+as an input. The full actual base-age equality and descending stage/Plan
+realization remain concrete construction obligations. The wrapper concludes
+B3 for genuine stage prescribed data, not the full AlgorithmRun boringness
+or global characterization theorem.
+
+No mathematical mismatch was found. This is a source-semantic audit only;
+the parent agent owns compilation and transitive-axiom checks. During this
+review, the two reserved `prefix` binders in
+`NumericTopNeutralPrefixAge.lean` were renamed to `prefixBound` with no
+change to the mathematical statements or capacity argument.

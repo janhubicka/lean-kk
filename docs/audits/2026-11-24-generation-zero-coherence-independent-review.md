@@ -120,3 +120,16 @@ It should derive the old witness and all structural conclusions rather than
 reintroduce them as new assumptions. Publication should retain the distinction
 between this checked local implication and the still-open construction,
 chosen-B3, odd-cut, common-source and global canonisation obligations.
+
+## Initial implementation fidelity review
+
+After the English checkpoint was committed, the independent reviewer read
+`Kk/GenerationZeroStageCoherence.lean` and `Kk/GenerationZeroStructural.lean`
+against this proposal. The implementation retains the explicit actual
+one-sort capacity, both bounded role contracts, whole-stage eligibility,
+the real old-coordinate witness, and the exact free-level exclusion of a
+same-base TOP. The structural theorem allows arbitrary represented seeds,
+retains the positive-cut and no-seed hypotheses, and derives both structural
+verdicts. The skip theorem retains the actual chosen marked-B3 input.
+No source-level change to the mathematical scope was found. Compiler and
+transitive-axiom execution remain separate validation steps.

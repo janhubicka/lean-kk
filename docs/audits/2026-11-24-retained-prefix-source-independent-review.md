@@ -128,3 +128,17 @@ atom must remain in the bridge. The output is a common **selected G+ prefix
 source**; it should not be labelled a proof that every compressed Kpt closure
 parameter is record-determined. Global upper canonisation follows only after
 the actual off-plan and construction hypotheses have been established.
+
+## Initial implementation fidelity review
+
+The independent reviewer subsequently read `Kk/PlannedPrefixSeeds.lean` and
+`Kk/RetainedPrefixSource.lean`. The former defines only planned ancestors,
+proves their physical singleton-root representation and off-plan seed
+absence, and derives both directions of exact final Plan equality from a
+genuine run. Its envelope/range statement uses E1. The latter recovers
+complete source codes from full physical target-table pullbacks at the
+actual level-map coordinates and derives a common outgoing labelled orbit;
+it assumes no equality of source values or inverse-image sets. The explicit
+table-equality premise still has to be supplied by the concrete record
+construction. No mathematical mismatch with the reviewed English was found.
+This source review does not assert a successful compiler or axiom run.

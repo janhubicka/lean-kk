@@ -77,3 +77,23 @@ application fact rather than an unnecessary assumption of the generic
 lemma. Different occurrences may have different physical slot coordinates;
 each level map is identified with its own increasing list before the
 common-tag table theorem compares them.
+
+## Source fidelity review
+
+Read `Kk/RetainedLevelEnumeration.lean` in full after the English checkpoint.
+All four public endpoints implement the approved statements. The first
+derives domain size from actual range cardinality. The second appends the
+endpoint on both sides, proves the exact bounded range of the actual strict
+level function, derives the length equality, and only then applies
+uniqueness of increasing finite enumerations. Its input is range equality
+through the represented endpoint, not an assumed coordinate map.
+
+The actual Kpt wrapper keeps both the genuine cap image equation and exact
+level range. It derives source length and all coordinates using the checked
+Kpt numerical level-map facts. The final endpoint uses the resulting length
+equality in the dependent finite-index cast, identifies coordinates by
+`Fin.ext`, and applies the complete ordinary-code recovery theorem. No
+source-size, retained-map identity or code-equality premise has been added.
+The empty list and zero endpoint remain admitted, with no positive-size G+
+claim. No mathematical discrepancy was found. This is a source semantic
+review, without an independent compilation claim.

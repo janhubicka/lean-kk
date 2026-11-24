@@ -535,6 +535,20 @@ import Kk.PositiveGenerationStageCoherence
 import Kk.StageCoherenceStructural
 import Kk.PositiveGenerationStructural
 
+-- Audited full-age B3, all real generations, and genuine retained-prefix plans.
+import Kk.GenerationZeroStageCoherence
+import Kk.GenerationZeroStructural
+import Kk.NumericRetainedPlan
+import Kk.NumericTopNeutralPrefixAge
+import Kk.PlannedPrefixSeeds
+import Kk.ResolvedQNeutralAgeB3
+import Kk.RetainedPrefixSource
+import Kk.SelectedTopAgeNeutralB3
+import Kk.TopGenerationStageCoherence
+import Kk.RetainedChunkTables
+import Kk.NumericRetainedPlanExact
+import Kk.RetainedLevelEnumeration
+
 /-!
 The counting project imports the verified successor-tree library.
 No local replacement of the Ramsey theorem is assumed.

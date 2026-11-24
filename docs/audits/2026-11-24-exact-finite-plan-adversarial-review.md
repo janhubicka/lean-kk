@@ -102,3 +102,32 @@ endpoint class maps, fixed-terminal pullback and monotonicity through a
 whole omitted block are required to turn those observations into
 hypothesis 6 at each physical member. The retained-record matrix and
 selected inverse-source identification remain separate conclusions.
+
+
+## Source-to-English fidelity review
+
+The independent reviewer subsequently read the complete implementation in
+`Kk/NumericRetainedPlanExact.lean` (source SHA-256 `a1c3a2657bf16e4fb601f05ee55d447c10f302e4567b227d84a648291ad6564d`).
+No mathematical statement mismatch or hidden algorithmic premise was found.
+
+`ResolvedQK4FinitePlanHypotheses` contains only the reviewed ordinary
+conditions: the K4 graph/height facts, chronological and block roles,
+selected independence, a bounded real dummy cap, and no-split/full actual
+reference neutrality at the specified unretained meaningful bases.
+`ResolvedQK4FullReferenceNeutralAt` retains exhaustive future-selected
+coverage and genuine TOP bounds. The one-sort pullback derives the exact
+existing singleton predicate.
+
+The implementation constructs the seed representation directly in the
+actual ambient-prefix pool. It derives positivity and finite carrier bounds
+at every omitted cut, keeps canonical generation bounds in all root/Plan
+role applications, and makes the parity/TOP/dummy/selected/remaining split
+exhaustive. It applies the B3 theorem to the same closure-selected predicate
+as the structural proof and uses the actual same-Z stage/final comparison.
+The nonselection-to-noninterestingness adapter uses the actual final tail,
+not Plan equality. The final exactness theorem supplies the proved local
+skip to `plannedPrefixSeeds_run_exact_plan`, and the existence endpoint
+derives avoidance and chooses the genuine canonical AlgorithmRun itself.
+
+No build was run by this reviewer. Kernel and transitive-axiom status belong
+to the parent agent's separate validation run.

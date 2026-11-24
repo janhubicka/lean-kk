@@ -79,3 +79,25 @@ has the required retained member list and directed table, that all desired
 real coordinates lie before its cap, or that AlgorithmRun selects exactly
 these coordinates and their free levels. Those are correctly retained as
 separate duties rather than hidden in a table-equality premise.
+
+## Source fidelity review
+
+Subsequently read `Kk/RetainedChunkTables.lean` in full, including all eleven
+public theorem statements and their proofs. Its numerical scope is height
+four, as permitted by the reviewed English. The physical free offsets are
+exactly `1,3,5,9`. The ordinary transfer keeps the actual directed base bit
+in the reverse crossing branch; the anchor's two-direction isolation is
+explicit. The E table retains odd outgoing entries and the strict boundary
+at the target's own free tag. The finite-E theorem requests the target's
+actual carrier bound; the finite-code theorem supplies this for every tag.
+
+The complete code equality derives all four tables from ordinary retained
+base equality and the physical slot formulas. It permits arbitrary common
+tag sequences, including repeated tags and empty sequences. This is a valid
+strengthening of the table statement; it does not claim such sequences are
+injective enumerations. Physical injectivity and source order are proved
+separately from rank and the dummy-separation hypothesis. The masks keeping
+all auxiliary slots or only the selected coded TOP pair, their cardinality,
+and their identification with the actual algorithm level map remain distinct
+application duties. No semantic defect or lost hypothesis was found. This
+source inspection makes no compilation or kernel-check claim.
