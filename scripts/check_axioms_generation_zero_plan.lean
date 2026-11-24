@@ -1,3 +1,5 @@
+import Kk.NeutralBlockB3
+import Kk.ResolvedQArbitraryStageStructural
 import Kk.ResolvedQConcretePlan
 import Kk.GenerationZeroStageCoherence
 
@@ -21,3 +23,18 @@ import Kk.GenerationZeroStageCoherence
 #print axioms Kk.k4_positive_old_neighbour_of_singleton_neutral
 #check @Kk.resolvedQ_generation_zero_stage_full_type_coherent
 #print axioms Kk.resolvedQ_generation_zero_stage_full_type_coherent
+
+#check @Kk.resolvedQ_arbitrary_stage_generation_zero_no_full_I1_I2
+#print axioms Kk.resolvedQ_arbitrary_stage_generation_zero_no_full_I1_I2
+#check @Kk.resolvedQ_arbitrary_stage_positive_generation_no_full_I1_I2
+#print axioms Kk.resolvedQ_arbitrary_stage_positive_generation_no_full_I1_I2
+#check @Kk.resolvedQNumericTopAge_antitone
+#print axioms Kk.resolvedQNumericTopAge_antitone
+#check @Kk.resolvedQNumericTopAge_constant_on_neutral_block
+#print axioms Kk.resolvedQNumericTopAge_constant_on_neutral_block
+#check @Kk.finitePoolCliqueCheck_false_of_model_avoidance
+#print axioms Kk.finitePoolCliqueCheck_false_of_model_avoidance
+#check @Kk.finiteOldColumnRawBound_eq_of_old_edge_eq
+#print axioms Kk.finiteOldColumnRawBound_eq_of_old_edge_eq
+#check @Kk.henson_selectedB3_of_neutral_original_block
+#print axioms Kk.henson_selectedB3_of_neutral_original_block

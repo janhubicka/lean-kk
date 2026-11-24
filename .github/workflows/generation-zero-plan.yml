@@ -4,6 +4,8 @@ on:
   pull_request:
     paths:
       - 'Kk/ResolvedQConcretePlan.lean'
+      - 'Kk/NeutralBlockB3.lean'
+      - 'Kk/ResolvedQArbitraryStageStructural.lean'
       - 'Kk/GenerationZeroStageCoherence.lean'
       - 'scripts/check_axioms_generation_zero_plan.lean'
       - '.github/workflows/generation-zero-plan.yml'
@@ -40,7 +42,7 @@ jobs:
         run: lake exe cache get
       - name: Build repaired role interfaces and whole-stage continuation
         run: >-
-          lake build Kk.ResolvedQConcretePlan Kk.GenerationZeroStageCoherence
+          lake build Kk.ResolvedQConcretePlan Kk.GenerationZeroStageCoherence Kk.NeutralBlockB3 Kk.ResolvedQArbitraryStageStructural
       - name: Strict named standard-only axiom gate
         run: |
           set -euo pipefail
