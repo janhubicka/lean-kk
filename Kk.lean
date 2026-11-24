@@ -535,6 +535,12 @@ import Kk.PositiveGenerationStageCoherence
 import Kk.StageCoherenceStructural
 import Kk.PositiveGenerationStructural
 
+import Kk.ResolvedQConcretePlan
+import Kk.GenerationZeroStageCoherence
+
+import Kk.NeutralBlockB3
+import Kk.ResolvedQArbitraryStageStructural
+
 /-!
 The counting project imports the verified successor-tree library.
 No local replacement of the Ramsey theorem is assumed.

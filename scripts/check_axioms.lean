@@ -2634,3 +2634,41 @@ import Kk
 #print axioms Kk.resolvedQ_topSeeds_positive_lower_generation_no_full_I1_I2
 #check @Kk.henson_actualRun_positive_lower_real_unselected_of_planned_stage_markedB3
 #print axioms Kk.henson_actualRun_positive_lower_real_unselected_of_planned_stage_markedB3
+
+-- Generation-zero structural and concrete Plan continuation.
+#check @Kk.resolvedQConcretePlan_top_mem
+#print axioms Kk.resolvedQConcretePlan_top_mem
+#check @Kk.resolvedQConcretePlan_positive_original_retained
+#print axioms Kk.resolvedQConcretePlan_positive_original_retained
+#check @Kk.resolvedQConcretePlan_role_contract
+#print axioms Kk.resolvedQConcretePlan_role_contract
+#check @Kk.resolvedQConcretePlan_free_closed
+#print axioms Kk.resolvedQConcretePlan_free_closed
+#check @Kk.resolvedQ_dummy_cap_bounded_role
+#print axioms Kk.resolvedQ_dummy_cap_bounded_role
+#check @Kk.actualRun_final_subset_plan_of_local_omissions
+#print axioms Kk.actualRun_final_subset_plan_of_local_omissions
+#check @Kk.finiteNumericH_eligible_base_zero_has_later_real
+#print axioms Kk.finiteNumericH_eligible_base_zero_has_later_real
+#check @Kk.full_old_type_eq_implies_ordinary_old_bit_eq
+#print axioms Kk.full_old_type_eq_implies_ordinary_old_bit_eq
+#check @Kk.k4_positive_old_neighbour_of_singleton_neutral
+#print axioms Kk.k4_positive_old_neighbour_of_singleton_neutral
+#check @Kk.resolvedQ_generation_zero_stage_full_type_coherent
+#print axioms Kk.resolvedQ_generation_zero_stage_full_type_coherent
+
+-- Neutral-block B3 and arbitrary-stage structural lift.
+#check @Kk.resolvedQ_arbitrary_stage_generation_zero_no_full_I1_I2
+#print axioms Kk.resolvedQ_arbitrary_stage_generation_zero_no_full_I1_I2
+#check @Kk.resolvedQ_arbitrary_stage_positive_generation_no_full_I1_I2
+#print axioms Kk.resolvedQ_arbitrary_stage_positive_generation_no_full_I1_I2
+#check @Kk.resolvedQNumericTopAge_antitone
+#print axioms Kk.resolvedQNumericTopAge_antitone
+#check @Kk.resolvedQNumericTopAge_constant_on_neutral_block
+#print axioms Kk.resolvedQNumericTopAge_constant_on_neutral_block
+#check @Kk.finitePoolCliqueCheck_false_of_model_avoidance
+#print axioms Kk.finitePoolCliqueCheck_false_of_model_avoidance
+#check @Kk.finiteOldColumnRawBound_eq_of_old_edge_eq
+#print axioms Kk.finiteOldColumnRawBound_eq_of_old_edge_eq
+#check @Kk.henson_selectedB3_of_neutral_original_block
+#print axioms Kk.henson_selectedB3_of_neutral_original_block
