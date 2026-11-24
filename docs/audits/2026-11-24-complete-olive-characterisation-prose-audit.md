@@ -222,3 +222,29 @@ construction is sound but optional for nonempty fibres.
    reasoning and its common retained-source graph.
 
 No new builds or numerical enumerations were run for this report.
+
+
+## Integrated-candidate final read
+
+The root integrated the independently approved replacement English into
+candidate SHA-256
+478e21a6e4fc8fb8cc88aec97c305d333b1b3d9f6df712abd108fe5d20c01a62.
+The event-invariant, finite-cap and descending-application snippets match
+the reviewed note exactly. The final common-source conclusion also matches;
+the root correctly integrated its first paragraph into the existing
+whole-node preimage and strictly increasing level-map recovery argument.
+No extraction error or mathematical defect was found. No unexpected control
+characters were introduced.
+
+The earlier conditional written-composition gap identified in this report
+is therefore closed in that integrated candidate. Three minor editorial
+clarifications were sent to the root: define retained blocks before their
+first use in the new event proof; scope the old indexed-interface OPEN note
+to its alternative/general or formalization role; and narrow the inverse-
+source TODO to the common selected prefix code/full L+E table rather than
+requiring all occurrence-specific parameter-name lists. These do not change
+the proved mathematical argument or its global Lean-pending boundary.
+
+The PDF at the earlier 106-page checkpoint is no longer a rendering of this
+expanded candidate. A fresh compilation and affected-page review is needed
+after final validation markers are added.
