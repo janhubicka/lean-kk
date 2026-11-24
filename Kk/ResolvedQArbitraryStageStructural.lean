@@ -58,7 +58,7 @@ theorem resolvedQ_arbitrary_stage_generation_zero_no_full_I1_I2
   intro cut Z
   apply finiteNumericH_even_real_no_full_I1_I2_of_coherent_stage
     family (normalizedGraphModel E) k N hAvoid U X hX
-    (J) b g hPositive hNoSeedAt
+    (J) b 0 hPositive hNoSeedAt
   intro v w hFreeV hFreeW hOld
   exact resolvedQ_generation_zero_stage_full_type_coherent
     E k N hk U J Plan hAbove role hQ hRootDummy hPlanShape hBlockInterval
