@@ -1,0 +1,23 @@
+import Kk.ResolvedQConcretePlan
+import Kk.GenerationZeroStageCoherence
+
+#check @Kk.resolvedQConcretePlan_top_mem
+#print axioms Kk.resolvedQConcretePlan_top_mem
+#check @Kk.resolvedQConcretePlan_positive_original_retained
+#print axioms Kk.resolvedQConcretePlan_positive_original_retained
+#check @Kk.resolvedQConcretePlan_role_contract
+#print axioms Kk.resolvedQConcretePlan_role_contract
+#check @Kk.resolvedQConcretePlan_free_closed
+#print axioms Kk.resolvedQConcretePlan_free_closed
+#check @Kk.resolvedQ_dummy_cap_bounded_role
+#print axioms Kk.resolvedQ_dummy_cap_bounded_role
+#check @Kk.actualRun_final_subset_plan_of_local_omissions
+#print axioms Kk.actualRun_final_subset_plan_of_local_omissions
+#check @Kk.finiteNumericH_eligible_base_zero_has_later_real
+#print axioms Kk.finiteNumericH_eligible_base_zero_has_later_real
+#check @Kk.full_old_type_eq_implies_ordinary_old_bit_eq
+#print axioms Kk.full_old_type_eq_implies_ordinary_old_bit_eq
+#check @Kk.k4_positive_old_neighbour_of_singleton_neutral
+#print axioms Kk.k4_positive_old_neighbour_of_singleton_neutral
+#check @Kk.resolvedQ_generation_zero_stage_full_type_coherent
+#print axioms Kk.resolvedQ_generation_zero_stage_full_type_coherent

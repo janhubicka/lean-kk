@@ -2634,3 +2634,25 @@ import Kk
 #print axioms Kk.resolvedQ_topSeeds_positive_lower_generation_no_full_I1_I2
 #check @Kk.henson_actualRun_positive_lower_real_unselected_of_planned_stage_markedB3
 #print axioms Kk.henson_actualRun_positive_lower_real_unselected_of_planned_stage_markedB3
+
+-- Generation-zero structural and concrete Plan continuation.
+#check @Kk.resolvedQConcretePlan_top_mem
+#print axioms Kk.resolvedQConcretePlan_top_mem
+#check @Kk.resolvedQConcretePlan_positive_original_retained
+#print axioms Kk.resolvedQConcretePlan_positive_original_retained
+#check @Kk.resolvedQConcretePlan_role_contract
+#print axioms Kk.resolvedQConcretePlan_role_contract
+#check @Kk.resolvedQConcretePlan_free_closed
+#print axioms Kk.resolvedQConcretePlan_free_closed
+#check @Kk.resolvedQ_dummy_cap_bounded_role
+#print axioms Kk.resolvedQ_dummy_cap_bounded_role
+#check @Kk.actualRun_final_subset_plan_of_local_omissions
+#print axioms Kk.actualRun_final_subset_plan_of_local_omissions
+#check @Kk.finiteNumericH_eligible_base_zero_has_later_real
+#print axioms Kk.finiteNumericH_eligible_base_zero_has_later_real
+#check @Kk.full_old_type_eq_implies_ordinary_old_bit_eq
+#print axioms Kk.full_old_type_eq_implies_ordinary_old_bit_eq
+#check @Kk.k4_positive_old_neighbour_of_singleton_neutral
+#print axioms Kk.k4_positive_old_neighbour_of_singleton_neutral
+#check @Kk.resolvedQ_generation_zero_stage_full_type_coherent
+#print axioms Kk.resolvedQ_generation_zero_stage_full_type_coherent
