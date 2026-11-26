@@ -2580,3 +2580,23 @@ import Kk
 #print axioms Kk.k4_full_actual_zero_code_ordinary_age_step
 #check @Kk.trackFActualZeroCode_target_lex_sorted_invariant
 #print axioms Kk.trackFActualZeroCode_target_lex_sorted_invariant
+
+-- One-gap ordinary partial structure: exact geometric prerequisites.
+#check @Kk.oneGapAddress_real
+#print axioms Kk.oneGapAddress_real
+#check @Kk.oneGapIndex_address
+#print axioms Kk.oneGapIndex_address
+#check @Kk.oneGapAddress_index
+#print axioms Kk.oneGapAddress_index
+#check @Kk.oneGapAddress_strictMono
+#print axioms Kk.oneGapAddress_strictMono
+#check @Kk.oneGapEdge_real
+#print axioms Kk.oneGapEdge_real
+#check @Kk.oneGapEdge_address
+#print axioms Kk.oneGapEdge_address
+#check @Kk.oneGapPartial_freeLevel
+#print axioms Kk.oneGapPartial_freeLevel
+#check @Kk.oneGapPartial_avoids
+#print axioms Kk.oneGapPartial_avoids
+#check @Kk.oneGap_continuation_of_equal_canonical_age
+#print axioms Kk.oneGap_continuation_of_equal_canonical_age
