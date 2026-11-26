@@ -25,6 +25,10 @@ on:
       - 'Kk/RetainedChunkTables.lean'
       - 'Kk/NumericRetainedPlanExact.lean'
       - 'Kk/RetainedLevelEnumeration.lean'
+      - 'Kk/ResolvedLiveFutureAge.lean'
+      - 'Kk/ResolvedLiveCoverNormalization.lean'
+      - 'Kk/ResolvedLiveCoding.lean'
+      - 'Kk/ResolvedLiveSelectedProjection.lean'
       - 'scripts/check_axioms_upper_continuation.lean'
       - 'scripts/check_axiom_report.py'
       - '.github/workflows/upper-continuation.yml'
@@ -70,7 +74,9 @@ jobs:
           Kk.NumericTopNeutralPrefixAge Kk.PlannedPrefixSeeds Kk.ResolvedQNeutralAgeB3
           Kk.RetainedPrefixSource Kk.SelectedTopAgeNeutralB3 Kk.TopGenerationStageCoherence
           Kk.RetainedChunkTables Kk.NumericRetainedPlanExact
-          Kk.RetainedLevelEnumeration
+          Kk.RetainedLevelEnumeration Kk.ResolvedLiveFutureAge
+          Kk.ResolvedLiveCoverNormalization Kk.ResolvedLiveCoding
+          Kk.ResolvedLiveSelectedProjection
       - name: Strict named standard-only axiom gate
         run: |
           set -euo pipefail

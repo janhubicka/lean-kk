@@ -2766,3 +2766,69 @@ import Kk
 #print axioms Kk.kpt_source_level_and_coordinates_of_exact_slot_range
 #check @Kk.kpt_source_ordinaryCode_eq_slots_of_exact_range
 #print axioms Kk.kpt_source_ordinaryCode_eq_slots_of_exact_range
+
+-- Actual live-future normalization and survivor coding (26 Nov 2026).
+#check @Kk.mem_resolvedActualVectors
+#print axioms Kk.mem_resolvedActualVectors
+#check @Kk.resolvedActualAge_count_le
+#print axioms Kk.resolvedActualAge_count_le
+#check @Kk.resolvedActualAge_attained
+#print axioms Kk.resolvedActualAge_attained
+#check @Kk.resolvedActualAge_attained_supported
+#print axioms Kk.resolvedActualAge_attained_supported
+#check @Kk.resolvedActualAge_is_age
+#print axioms Kk.resolvedActualAge_is_age
+#check @Kk.resolvedLiveFree_finite_union
+#print axioms Kk.resolvedLiveFree_finite_union
+#check @Kk.resolvedActualAge_le_oldCanonical
+#print axioms Kk.resolvedActualAge_le_oldCanonical
+#check @Kk.resolvedActualAge_congr
+#print axioms Kk.resolvedActualAge_congr
+#check @Kk.resolvedOldCanonical_antitone
+#print axioms Kk.resolvedOldCanonical_antitone
+#check @Kk.resolvedLive_survivor_neutral_of_saturation
+#print axioms Kk.resolvedLive_survivor_neutral_of_saturation
+#check @Kk.resolvedActualAge_survivor_reindex
+#print axioms Kk.resolvedActualAge_survivor_reindex
+#check @Kk.ResolvedLiveStage.future_le_old
+#print axioms Kk.ResolvedLiveStage.future_le_old
+#check @Kk.ResolvedLiveStage.blockEdge_off
+#print axioms Kk.ResolvedLiveStage.blockEdge_off
+#check @Kk.ResolvedLiveStage.blockEdge_live_free
+#print axioms Kk.ResolvedLiveStage.blockEdge_live_free
+#check @Kk.ResolvedLiveStage.insertBlock_preserves_live
+#print axioms Kk.ResolvedLiveStage.insertBlock_preserves_live
+#check @Kk.ResolvedLiveStage.insertBlock_futureAge
+#print axioms Kk.ResolvedLiveStage.insertBlock_futureAge
+#check @Kk.ResolvedLiveStage.oldCanonical_congr_edges
+#print axioms Kk.ResolvedLiveStage.oldCanonical_congr_edges
+#check @Kk.ResolvedLiveStage.insertBlock_cover_age
+#print axioms Kk.ResolvedLiveStage.insertBlock_cover_age
+#check @Kk.resolvedFreshOdd
+#print axioms Kk.resolvedFreshOdd
+#check @Kk.resolvedLive_normalizes_actual_future_by_covers
+#print axioms Kk.resolvedLive_normalizes_actual_future_by_covers
+#check @Kk.resolvedClassExact_refine
+#print axioms Kk.resolvedClassExact_refine
+#check @Kk.resolvedClassExact_insert_constant
+#print axioms Kk.resolvedClassExact_insert_constant
+#check @Kk.resolvedClassExact_restrict
+#print axioms Kk.resolvedClassExact_restrict
+#check @Kk.resolvedOldCanonical_congr_columns
+#print axioms Kk.resolvedOldCanonical_congr_columns
+#check @Kk.resolvedLive_code_normalized_survivors
+#print axioms Kk.resolvedLive_code_normalized_survivors
+
+-- Empty selected front and actual omitted-cover fixed-terminal projection.
+#check @Kk.resolvedZeroSortAge_eq
+#print axioms Kk.resolvedZeroSortAge_eq
+#check @Kk.ResolvedLiveStage.targetAge_pullback
+#print axioms Kk.ResolvedLiveStage.targetAge_pullback
+#check @Kk.resolvedSelectedSupport_image_subset
+#print axioms Kk.resolvedSelectedSupport_image_subset
+#check @Kk.ResolvedLiveStage.targetAge_neutral_of_omitted_cover
+#print axioms Kk.ResolvedLiveStage.targetAge_neutral_of_omitted_cover
+#check @Kk.ResolvedLiveStage.insertBlock_omitted_target_all_members
+#print axioms Kk.ResolvedLiveStage.insertBlock_omitted_target_all_members
+#check @Kk.ResolvedLiveStage.insertBlock_no_split
+#print axioms Kk.ResolvedLiveStage.insertBlock_no_split

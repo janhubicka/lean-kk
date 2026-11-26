@@ -13,7 +13,7 @@ set, take the finite set of normalized integer vectors realized by such
 cliques. The empty clique realizes the zero vector. A singleton in any
 sort in nonempty T gives positivity; normalized vectors bound A(T) by
 ell-1. A vector attaining A(T) respects every A(U). Hence A is a genuine
-integer graph age, including the vacuous zero-sort case.
+integer graph age, on its active nonempty global class set. A total map Nat → Fin d cannot exist for d=0; the zero-selected-sort case is handled independently by the absence of nonempty supports. The terminal list may be empty.
 
 For any actual old-to-W columns c, all actual clique vectors satisfy
 the raw common-old-neighbour bound: join the relevant part of the
@@ -85,7 +85,7 @@ to use their finite occupied ranges; empty classes are never active.
 
 ## Hostile checks and boundaries
 
-* Empty W/d=0: no nonempty support; zero vector still exists for ell>0.
+* Empty selected front: no nonempty support; do not postulate a total label map Nat → Fin 0. Global stages of the infinite V construction always have a nonempty active front.
 * Nonempty sorts necessary for positivity. Do not force a fictitious
   witness if a sort is empty.
 * The cap graph may have unused names; only the actual live union is
@@ -109,3 +109,7 @@ to use their finite occupied ranges; empty classes are never active.
   arbitrary-history occurrence and final degree statements are not
   implied by the finite normalization alone.
 
+
+## Fixed-terminal cover projection
+
+For any finite target list in W, even with repeated class labels, its complete canonical reference age is the pullback along the actual target-to-class map. For an omitted cover the full essential support is not contained in the image of that map. Each selected support image is a subset of the full image. The checked essential-support locality theorem therefore gives equality on each selected support. The old table and all future columns agree before and after graph insertion on the original domain. Over any intermediate member subset R of Q, with old pool P union R, the full reference age is squeezed between the equal before and after ages in the SAME graph; no assumption that these intermediate raw bounds are equal. The no-split test at any new block member follows from equality on the original P implying equality of the original active class, and new members having constant bits on that class.
