@@ -1,0 +1,13 @@
+import Kk.OneGapPrescribedPool
+
+#print axioms Kk.oneGapRetainedPoolData_source_original
+#print axioms Kk.oneGapRetainedPoolData_target_eq
+#print axioms Kk.oneGapRetainedPoolData_targets_admissible
+#print axioms Kk.oneGapRetainedPoolData_covers
+#print axioms Kk.oneGapRetainedPoolData_covers_planned_closure
+#print axioms Kk.oneGapRetainedPoolData_correctedB3
+#print axioms Kk.oneGap_no_new_clique_of_no_positive
+#print axioms Kk.oneGap_correctedB3_of_no_positive
+#print axioms Kk.oneGapRetainedPoolData_correctedB3_all
+#print axioms Kk.oneGap_retained_pool_skip
+#print axioms Kk.oneGap_retained_pool_skip_all

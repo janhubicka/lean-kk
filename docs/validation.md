@@ -1,3 +1,75 @@
+# One-gap local completion and actual countable construction (26 November 2026, locally verified)
+
+**The complete local integration gate passed:** normal default `lake build`
+completed **4,113 jobs**, and `scripts/check_axioms.lean` produced **1,283
+distinct exact named reports**, accepted by `scripts/check_axiom_report.py`.
+The parser self-test passed. Fourteen reports are axiom-free; the others use
+only `propext`, `Classical.choice`, and `Quot.sound`. All 1,131 previous names
+remain, in the same order, followed by 152 additions. No `sorryAx` or custom
+axiom is accepted.
+
+The [completion report](one_gap_local_completion_20261126.md) gives the
+precise statements and five remaining application obligations. The
+[machine-readable evidence](audits/2026-11-26-local-one-gap-completion.json)
+records the tested source hashes, all report names and axiom sets, dependency
+pins, build-log hashes, and import-closure audit. It identifies the tested
+working source over baseline `47307be2d4b4e3ac365409a9c063094f51823f79` without
+claiming a circular hash for the evidence file itself. This entry records
+completed local validation, not a future hosted run.
+
+## Newly assembled results
+
+- **Actual countable K4-free construction:** `resolvedFair_exists_graph`
+  constructs the coherent graph from an arbitrary symmetric, loop-free
+  K4-free graph on the naturals, preserving its edges on even original
+  names. Seven modules recovered from PR #512 supply 69 endpoints; their
+  original uncompiled proof details are repaired and checked locally.
+- **Round chronology and actual G+ source:** the new chronological modules
+  give exact old-prefix sets, disjoint positive round batches, increasing
+  coding positions, and a concrete one-gap embedding with the original
+  binary, diagonal and auxiliary atoms. Individual marker and cover-event
+  chronology inside each round is still a separate obligation.
+- **Complete local envelope from ordinary hypotheses:** structural
+  exclusion and the retained-pool prescription derive full corrected B3
+  and the planned Kpt envelope with exact retained-level range. Selected
+  fronts may be empty. Retained-pool coverage, positive-source
+  classification, old-column zero, no-split, endpoint and selected-age
+  conditions remain explicit inputs to be established for actual events.
+- **Exact finite compression:** finite increasing selections extend
+  explicitly, and equal finite ordinary tables determine the complete
+  retained code, including diagonal and auxiliary atoms. The result is
+  independent of the extension, also for an empty selection.
+
+The inventory is eight new modules with 83 endpoints and seven recovered
+modules with 69 endpoints. The existing block-convexity contract now permits
+the isolated dummy coordinates inserted between members of a kept block;
+its old-column conclusion is unchanged. Five other existing Kk files have
+import-only changes, with all non-import source lines preserved.
+
+## Exact build scope and dependencies
+
+The toolchain is Lean **4.35.0-rc3**. Successor tree remains at
+`a74c10761303a18649053f2af3a1a1697f032e13`, Mathlib remains at
+`5bd58ac291422a21f412ae354c91e7d172255a2c`, and Ramsey space is directly pinned
+at `f471b640f11e6b35fbbc3ad74dfa93df5ec3eadc`. This last pin includes the
+three-file import-only cleanup in
+[Ramsey-space PR #21](https://github.com/janhubicka/lean-ramsey-space-todorcevic/pull/21),
+which passed all 54 local source-module targets, all six existing axiom
+scripts (50 reports, 49 distinct names), and
+[hosted run 45888670277](https://github.com/janhubicka/lean-ramsey-space-todorcevic/actions/runs/45888670277).
+Its merge commit is `f4bdd0bfd9228817e15fe0b92d29b336bdd9160a`; both source
+and merged trees are `298b9be8a2dc6f1d0e8521566a06c01f35ed419b`.
+
+The root imports reach **534 of 712 Kk modules**, plus the root itself, with
+no missing local imports. All 15 modules added by this batch are reachable.
+The other 178 standalone or audit modules are outside the default target;
+the successful default build does not certify their separate targets.
+The source-token audit found no suspicious tokens, and `git diff --check`
+passed. These checks certify the implemented statements, not the remaining
+diary application or the final big Ramsey upper and lower bounds.
+
+---
+
 # Track B — constructed prospective pre-age and finite coding preparation (21 November 2026, verified)
 
 **The complete hosted gate passed:** [PR #422](https://github.com/janhubicka/lean-kk/pull/422),

@@ -2632,3 +2632,319 @@ import Kk
 #print axioms Kk.oneGap_skip_of_complete_prescribed_B3
 #check @Kk.oneGap_planned_Kpt_envelope
 #print axioms Kk.oneGap_planned_Kpt_envelope
+
+-- Local one-gap completion: exact structural, prescribed, compression and scheduling gates.
+#check @Kk.oneGapLift_zero
+#print axioms Kk.oneGapLift_zero
+#check @Kk.oneGapLift_gap
+#print axioms Kk.oneGapLift_gap
+#check @Kk.oneGapLift_address
+#print axioms Kk.oneGapLift_address
+#check @Kk.oneGapLift_strictMono
+#print axioms Kk.oneGapLift_strictMono
+#check @Kk.oneGapLift_real_iff
+#print axioms Kk.oneGapLift_real_iff
+#check @Kk.oneGapLift_preceding_gap
+#print axioms Kk.oneGapLift_preceding_gap
+#check @Kk.oneGapLift_edge
+#print axioms Kk.oneGapLift_edge
+#check @Kk.oneGapLift_aux
+#print axioms Kk.oneGapLift_aux
+#check @Kk.oneGapRetainedCode_eq_prefix
+#print axioms Kk.oneGapRetainedCode_eq_prefix
+#check @Kk.oneGapRetainedCode_eq_of_finite_graph
+#print axioms Kk.oneGapRetainedCode_eq_of_finite_graph
+#check @Kk.oneGap_originals_no_meet_of_full_fibre
+#print axioms Kk.oneGap_originals_no_meet_of_full_fibre
+#check @Kk.oneGap_planned_closure_structural_of_full_fibre
+#print axioms Kk.oneGap_planned_closure_structural_of_full_fibre
+#check @Kk.oneGap_full_fibre_of_pool_columns
+#print axioms Kk.oneGap_full_fibre_of_pool_columns
+#check @Kk.oneGap_planned_closure_structural_of_pool_columns
+#print axioms Kk.oneGap_planned_closure_structural_of_pool_columns
+#check @Kk.oneGap_old_neighbour_of_equal_selected_age
+#print axioms Kk.oneGap_old_neighbour_of_equal_selected_age
+#check @Kk.oneGap_pool_columns_of_selected_neutrality
+#print axioms Kk.oneGap_pool_columns_of_selected_neutrality
+#check @Kk.oneGap_full_fibre_of_selected_neutrality
+#print axioms Kk.oneGap_full_fibre_of_selected_neutrality
+#check @Kk.oneGapRetainedPoolData_source_original
+#print axioms Kk.oneGapRetainedPoolData_source_original
+#check @Kk.oneGapRetainedPoolData_target_eq
+#print axioms Kk.oneGapRetainedPoolData_target_eq
+#check @Kk.oneGapRetainedPoolData_targets_admissible
+#print axioms Kk.oneGapRetainedPoolData_targets_admissible
+#check @Kk.oneGapRetainedPoolData_covers
+#print axioms Kk.oneGapRetainedPoolData_covers
+#check @Kk.oneGapRetainedPoolData_covers_planned_closure
+#print axioms Kk.oneGapRetainedPoolData_covers_planned_closure
+#check @Kk.oneGapRetainedPoolData_correctedB3
+#print axioms Kk.oneGapRetainedPoolData_correctedB3
+#check @Kk.oneGap_retained_pool_skip
+#print axioms Kk.oneGap_retained_pool_skip
+#check @Kk.oneGapBatchBoundary_zero
+#print axioms Kk.oneGapBatchBoundary_zero
+#check @Kk.oneGapBatchBoundary_succ
+#print axioms Kk.oneGapBatchBoundary_succ
+#check @Kk.oneGapBatchBoundary_strictMono
+#print axioms Kk.oneGapBatchBoundary_strictMono
+#check @Kk.oneGapBatchBoundary_ge
+#print axioms Kk.oneGapBatchBoundary_ge
+#check @Kk.oneGapBatchBoundary_covers
+#print axioms Kk.oneGapBatchBoundary_covers
+#check @Kk.oneGapBatchIndex_bounds
+#print axioms Kk.oneGapBatchIndex_bounds
+#check @Kk.oneGapBatchIndex_eq_iff
+#print axioms Kk.oneGapBatchIndex_eq_iff
+#check @Kk.oneGapBatchPosition_location
+#print axioms Kk.oneGapBatchPosition_location
+#check @Kk.oneGapBatchPosition_bounds
+#print axioms Kk.oneGapBatchPosition_bounds
+#check @Kk.oneGapBatchPosition_injective
+#print axioms Kk.oneGapBatchPosition_injective
+#check @Kk.oneGapBatchLocation_position
+#print axioms Kk.oneGapBatchLocation_position
+#check @Kk.oneGapBatchLocation_batch_iff
+#print axioms Kk.oneGapBatchLocation_batch_iff
+#check @Kk.oneGapBatchLocation_convex
+#print axioms Kk.oneGapBatchLocation_convex
+#check @Kk.oneGapBatchLocation_before_boundary
+#print axioms Kk.oneGapBatchLocation_before_boundary
+#check @Kk.oneGapChronologicalVertex_at_position
+#print axioms Kk.oneGapChronologicalVertex_at_position
+#check @Kk.oneGapChronologicalVertex_mem
+#print axioms Kk.oneGapChronologicalVertex_mem
+#check @Kk.oneGapChronologicalVertex_range
+#print axioms Kk.oneGapChronologicalVertex_range
+#check @Kk.oneGapChronologicalVertex_prefix
+#print axioms Kk.oneGapChronologicalVertex_prefix
+#check @Kk.oneGapChronologicalVertex_injective
+#print axioms Kk.oneGapChronologicalVertex_injective
+#check @Kk.oneGap_planned_envelope_of_selected_neutrality
+#print axioms Kk.oneGap_planned_envelope_of_selected_neutrality
+
+-- one gap local completion: additional exact named endpoints.
+#check @Kk.oneGap_no_new_clique_of_no_positive
+#print axioms Kk.oneGap_no_new_clique_of_no_positive
+#check @Kk.oneGap_correctedB3_of_no_positive
+#print axioms Kk.oneGap_correctedB3_of_no_positive
+#check @Kk.oneGapRetainedPoolData_correctedB3_all
+#print axioms Kk.oneGapRetainedPoolData_correctedB3_all
+#check @Kk.oneGap_retained_pool_skip_all
+#print axioms Kk.oneGap_retained_pool_skip_all
+#check @Kk.oneGapFiniteSelectionExtend_apply
+#print axioms Kk.oneGapFiniteSelectionExtend_apply
+#check @Kk.oneGapFiniteSelectionExtend_tail
+#print axioms Kk.oneGapFiniteSelectionExtend_tail
+#check @Kk.oneGapFiniteSelectionExtend_strictMono
+#print axioms Kk.oneGapFiniteSelectionExtend_strictMono
+#check @Kk.oneGapFiniteSelection_exists_extension
+#print axioms Kk.oneGapFiniteSelection_exists_extension
+#check @Kk.oneGapFiniteRetainedCode_extension_independent
+#print axioms Kk.oneGapFiniteRetainedCode_extension_independent
+#check @Kk.oneGapFiniteRetainedCode_eq_of_graph
+#print axioms Kk.oneGapFiniteRetainedCode_eq_of_graph
+#check @Kk.oneGapFinsetSelectionExtend_strictMono
+#print axioms Kk.oneGapFinsetSelectionExtend_strictMono
+#check @Kk.oneGapFinsetSelectionExtend_prefix
+#print axioms Kk.oneGapFinsetSelectionExtend_prefix
+
+-- resolved countable local: additional exact named endpoints.
+#check @Kk.resolvedZeroSortAge_eq
+#print axioms Kk.resolvedZeroSortAge_eq
+#check @Kk.mem_resolvedActualVectors
+#print axioms Kk.mem_resolvedActualVectors
+#check @Kk.resolvedActualAge_count_le
+#print axioms Kk.resolvedActualAge_count_le
+#check @Kk.resolvedActualAge_attained
+#print axioms Kk.resolvedActualAge_attained
+#check @Kk.resolvedActualAge_attained_supported
+#print axioms Kk.resolvedActualAge_attained_supported
+#check @Kk.resolvedActualAge_is_age
+#print axioms Kk.resolvedActualAge_is_age
+#check @Kk.resolvedLiveFree_finite_union
+#print axioms Kk.resolvedLiveFree_finite_union
+#check @Kk.resolvedActualAge_le_oldCanonical
+#print axioms Kk.resolvedActualAge_le_oldCanonical
+#check @Kk.resolvedActualAge_congr
+#print axioms Kk.resolvedActualAge_congr
+#check @Kk.resolvedOldCanonical_antitone
+#print axioms Kk.resolvedOldCanonical_antitone
+#check @Kk.resolvedLive_survivor_neutral_of_saturation
+#print axioms Kk.resolvedLive_survivor_neutral_of_saturation
+#check @Kk.resolvedActualAge_survivor_reindex
+#print axioms Kk.resolvedActualAge_survivor_reindex
+#check @Kk.ResolvedLiveStage.future_le_old
+#print axioms Kk.ResolvedLiveStage.future_le_old
+#check @Kk.ResolvedLiveStage.blockEdge_off
+#print axioms Kk.ResolvedLiveStage.blockEdge_off
+#check @Kk.ResolvedLiveStage.blockEdge_live_free
+#print axioms Kk.ResolvedLiveStage.blockEdge_live_free
+#check @Kk.ResolvedLiveStage.insertBlock_preserves_live
+#print axioms Kk.ResolvedLiveStage.insertBlock_preserves_live
+#check @Kk.ResolvedLiveStage.insertBlock_futureAge
+#print axioms Kk.ResolvedLiveStage.insertBlock_futureAge
+#check @Kk.ResolvedLiveStage.oldCanonical_congr_edges
+#print axioms Kk.ResolvedLiveStage.oldCanonical_congr_edges
+#check @Kk.ResolvedLiveStage.insertBlock_cover_age
+#print axioms Kk.ResolvedLiveStage.insertBlock_cover_age
+#check @Kk.resolvedFreshOdd
+#print axioms Kk.resolvedFreshOdd
+#check @Kk.resolvedLive_normalizes_actual_future_by_covers
+#print axioms Kk.resolvedLive_normalizes_actual_future_by_covers
+#check @Kk.resolvedClassExact_refine
+#print axioms Kk.resolvedClassExact_refine
+#check @Kk.resolvedClassExact_insert_constant
+#print axioms Kk.resolvedClassExact_insert_constant
+#check @Kk.resolvedClassExact_restrict
+#print axioms Kk.resolvedClassExact_restrict
+#check @Kk.resolvedOldCanonical_congr_columns
+#print axioms Kk.resolvedOldCanonical_congr_columns
+#check @Kk.resolvedLive_code_normalized_survivors
+#print axioms Kk.resolvedLive_code_normalized_survivors
+#check @Kk.ResolvedLiveStage.targetAge_pullback
+#print axioms Kk.ResolvedLiveStage.targetAge_pullback
+#check @Kk.resolvedSelectedSupport_image_subset
+#print axioms Kk.resolvedSelectedSupport_image_subset
+#check @Kk.ResolvedLiveStage.targetAge_neutral_of_omitted_cover
+#print axioms Kk.ResolvedLiveStage.targetAge_neutral_of_omitted_cover
+#check @Kk.ResolvedLiveStage.insertBlock_omitted_target_all_members
+#print axioms Kk.ResolvedLiveStage.insertBlock_omitted_target_all_members
+#check @Kk.ResolvedLiveStage.insertBlock_no_split
+#print axioms Kk.ResolvedLiveStage.insertBlock_no_split
+#check @Kk.ResolvedBareStage.exists_exact_labels
+#print axioms Kk.ResolvedBareStage.exists_exact_labels
+#check @Kk.resolvedMarkerName_injective
+#print axioms Kk.resolvedMarkerName_injective
+#check @Kk.mem_resolvedMarkerNames
+#print axioms Kk.mem_resolvedMarkerNames
+#check @Kk.resolvedMarkerName_not_old
+#print axioms Kk.resolvedMarkerName_not_old
+#check @Kk.resolvedMarkerName_not_live
+#print axioms Kk.resolvedMarkerName_not_live
+#check @Kk.resolvedMarkerEdge_off
+#print axioms Kk.resolvedMarkerEdge_off
+#check @Kk.resolvedMarkerEdge_positive_iff
+#print axioms Kk.resolvedMarkerEdge_positive_iff
+#check @Kk.ResolvedBareStage.refineBatch_preserves
+#print axioms Kk.ResolvedBareStage.refineBatch_preserves
+#check @Kk.ResolvedBareStage.refineBatch_exact
+#print axioms Kk.ResolvedBareStage.refineBatch_exact
+#check @Kk.ResolvedBareStage.refineBatch_single_split
+#print axioms Kk.ResolvedBareStage.refineBatch_single_split
+#check @Kk.ResolvedBareStage.singleton_test_safe
+#print axioms Kk.ResolvedBareStage.singleton_test_safe
+#check @Kk.ResolvedBareStage.neighbour_test_safe
+#print axioms Kk.ResolvedBareStage.neighbour_test_safe
+#check @Kk.resolvedClassExact_of_live_extension
+#print axioms Kk.resolvedClassExact_of_live_extension
+#check @Kk.ResolvedLiveStage.saturatedCode_target_neutral
+#print axioms Kk.ResolvedLiveStage.saturatedCode_target_neutral
+#check @Kk.resolvedBare_exists_round
+#print axioms Kk.resolvedBare_exists_round
+#check @Kk.ResolvedRoundResult.coding_neutral
+#print axioms Kk.ResolvedRoundResult.coding_neutral
+#check @Kk.ResolvedRoundResult.coding_no_split
+#print axioms Kk.ResolvedRoundResult.coding_no_split
+#check @Kk.resolvedEvenTail_next
+#print axioms Kk.resolvedEvenTail_next
+#check @Kk.resolvedEvenTail_coding
+#print axioms Kk.resolvedEvenTail_coding
+#check @Kk.resolvedFairNext_result
+#print axioms Kk.resolvedFairNext_result
+#check @Kk.resolvedFairStages_step
+#print axioms Kk.resolvedFairStages_step
+#check @Kk.resolvedFairStages_old_mono
+#print axioms Kk.resolvedFairStages_old_mono
+#check @Kk.resolvedFairStages_live_mono_step
+#print axioms Kk.resolvedFairStages_live_mono_step
+#check @Kk.resolvedFairStages_live_mono
+#print axioms Kk.resolvedFairStages_live_mono
+#check @Kk.resolvedFairStages_preserve
+#print axioms Kk.resolvedFairStages_preserve
+#check @Kk.resolvedFairDomain_even
+#print axioms Kk.resolvedFairDomain_even
+#check @Kk.resolvedFairEdge_eq_at
+#print axioms Kk.resolvedFairEdge_eq_at
+#check @Kk.resolvedFairEdge_sym
+#print axioms Kk.resolvedFairEdge_sym
+#check @Kk.resolvedFairEdge_loops
+#print axioms Kk.resolvedFairEdge_loops
+#check @Kk.resolvedFairDomain_finite_stage
+#print axioms Kk.resolvedFairDomain_finite_stage
+#check @Kk.resolvedFairEdge_free
+#print axioms Kk.resolvedFairEdge_free
+#check @Kk.resolvedFairEdge_even_eq
+#print axioms Kk.resolvedFairEdge_even_eq
+#check @Kk.resolvedFair_exists_graph
+#print axioms Kk.resolvedFair_exists_graph
+#check @Kk.resolvedFair_live_eventually_old
+#print axioms Kk.resolvedFair_live_eventually_old
+#check @Kk.resolvedFairEdge_eq_live_at
+#print axioms Kk.resolvedFairEdge_eq_live_at
+#check @Kk.resolvedFair_referenceAge_eq_live
+#print axioms Kk.resolvedFair_referenceAge_eq_live
+#check @Kk.resolvedFair_coding_reference_neutral
+#print axioms Kk.resolvedFair_coding_reference_neutral
+#check @Kk.resolvedFair_coding_no_split
+#print axioms Kk.resolvedFair_coding_no_split
+
+-- Actual chronological fair rounds.
+#check @Kk.resolvedFairRoundNew_coded
+#print axioms Kk.resolvedFairRoundNew_coded
+#check @Kk.resolvedFairRoundList_mem
+#print axioms Kk.resolvedFairRoundList_mem
+#check @Kk.resolvedFairRoundList_positive
+#print axioms Kk.resolvedFairRoundList_positive
+#check @Kk.resolvedFairRoundList_nodup
+#print axioms Kk.resolvedFairRoundList_nodup
+#check @Kk.resolvedFairRoundList_disjoint
+#print axioms Kk.resolvedFairRoundList_disjoint
+#check @Kk.resolvedFairRoundNew_prefix
+#print axioms Kk.resolvedFairRoundNew_prefix
+#check @Kk.resolvedFairChronological_injective
+#print axioms Kk.resolvedFairChronological_injective
+#check @Kk.resolvedFairChronological_prefix
+#print axioms Kk.resolvedFairChronological_prefix
+#check @Kk.resolvedFairChronological_range
+#print axioms Kk.resolvedFairChronological_range
+#check @Kk.resolvedFairChronological_coded
+#print axioms Kk.resolvedFairChronological_coded
+#check @Kk.resolvedFairCodePosition_bounds
+#print axioms Kk.resolvedFairCodePosition_bounds
+#check @Kk.resolvedFairCodePosition_strictMono
+#print axioms Kk.resolvedFairCodePosition_strictMono
+#check @Kk.resolvedFairChronologicalEdge_sym
+#print axioms Kk.resolvedFairChronologicalEdge_sym
+#check @Kk.resolvedFairChronologicalEdge_loops
+#print axioms Kk.resolvedFairChronologicalEdge_loops
+#check @Kk.resolvedFairChronologicalEdge_free
+#print axioms Kk.resolvedFairChronologicalEdge_free
+#check @Kk.resolvedFairChronologicalEdge_originals
+#print axioms Kk.resolvedFairChronologicalEdge_originals
+#check @Kk.resolvedInitialChronological_originals
+#print axioms Kk.resolvedInitialChronological_originals
+
+-- Actual one-gap source embedding of the constructed chronological graph.
+#check @Kk.henson_avoids_of_finite_clique_bound
+#print axioms Kk.henson_avoids_of_finite_clique_bound
+#check @Kk.resolvedFairOneGapPartial_avoids
+#print axioms Kk.resolvedFairOneGapPartial_avoids
+#check @Kk.resolvedFairOneGapOriginal_size
+#print axioms Kk.resolvedFairOneGapOriginal_size
+#check @Kk.resolvedFairOneGapOriginal_strictMono_size
+#print axioms Kk.resolvedFairOneGapOriginal_strictMono_size
+#check @Kk.resolvedFairOneGapOriginal_injective
+#print axioms Kk.resolvedFairOneGapOriginal_injective
+#check @Kk.resolvedFairOneGapOriginal_binary
+#print axioms Kk.resolvedFairOneGapOriginal_binary
+#check @Kk.resolvedFairOneGapOriginal_E
+#print axioms Kk.resolvedFairOneGapOriginal_E
+#check @Kk.resolvedInitialOneGapOriginal_binary
+#print axioms Kk.resolvedInitialOneGapOriginal_binary
+
+#check @Kk.resolvedFairOneGapOriginal_diagonal
+#print axioms Kk.resolvedFairOneGapOriginal_diagonal
+
+#check @Kk.resolvedFairCodePosition_last
+#print axioms Kk.resolvedFairCodePosition_last

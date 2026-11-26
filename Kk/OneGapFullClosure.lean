@@ -7,7 +7,7 @@ import Mathlib.Tactic
 /-!
 # Full retained-pool geometry
 
-Whole-block retention and chronological convexity are distinct.
+Whole-block retention and chronological convexity modulo dummies are distinct.
 Convexity rules out a retained block straddling an omitted meaningful
 coordinate. All later nonselected retained originals must have zero
 old columns at such a cut. This is stronger than a selected-front
@@ -17,11 +17,13 @@ namespace Kk
 open SuccessorTree
 open SuccessorTree.V10
 
+/-- Blocks are convex after ignoring isolated dummy coordinates.
+The dummy alternative is necessary for literal one-gap padding. -/
 def OneGapBlockConvex (role : Nat → ResolvedQBaseRole) : Prop :=
   ∀ a b c block : Nat, a < b → b < c →
     role a = .auxiliary block true →
     role c = .auxiliary block true →
-    role b = .auxiliary block true
+    role b = .dummy ∨ role b = .auxiliary block true
 
 theorem oneGap_later_retained_aux_old_zero
     (role : Nat → ResolvedQBaseRole) (G : Nat → Nat → Bool)
@@ -48,8 +50,9 @@ theorem oneGap_later_retained_aux_old_zero
     · subst p
       have hFlag := hBlockFlag i j block keep true hI hJ
       subst keep
-      exact False.elim (hOmitted
-        (Or.inr (Or.inr ⟨block,hConvex i cut j block hi hj hI hJ⟩)))
+      rcases hConvex i cut j block hi hj hI hJ with hDummyCut | hSameBlock
+      · exact False.elim (hOmitted (Or.inl hDummyCut))
+      · exact False.elim (hOmitted (Or.inr (Or.inr ⟨block,hSameBlock⟩)))
     · exact hAuxDifferent i j p block keep true hSame hI hJ
 
 /-- All retained original names, including the cap, not only the

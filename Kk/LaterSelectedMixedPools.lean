@@ -1,7 +1,6 @@
 import Kk.MixedNeighbourhoodBlocks
 import Kk.NeighbourhoodCardinality
 import Kk.HensonLeftDensityAge
-import Kk.K4NeighbourCertificate
 import Mathlib.Tactic
 
 /-!
