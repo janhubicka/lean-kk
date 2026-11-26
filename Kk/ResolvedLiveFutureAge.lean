@@ -129,13 +129,27 @@ theorem resolvedActualAge_is_age {d ell : Nat}
       (by intro x hx; simpa only [Finset.mem_singleton.mp hx] using hv)
       hc T
     constructor
-    · simpa [hvi, hi] using hb
+    · have hFilter : ({v} : Finset Nat).filter (fun x => sort x ∈ T.1) = {v} := by
+        ext x
+        simp only [Finset.mem_filter, Finset.mem_singleton]
+        constructor
+        · exact And.left
+        · intro hx
+          subst x
+          exact ⟨rfl, by rw [hvi]; exact hi⟩
+      rw [hFilter, Finset.card_singleton] at hb
+      exact hb
     · unfold resolvedActualAge
       exact Finset.sup_le (fun w _ => integerCliqueOnSupport_le w T)
   · intro T
     obtain ⟨w, hw, hmax⟩ := resolvedActualAge_attained E W sort (by omega) T
-    exact ⟨w, (by intro U; exact Finset.le_sup
-      (f := fun z : IntegerCliqueWeights d ell => integerCliqueOnSupport z U) hw), hmax⟩
+    refine ⟨w, ?_, hmax⟩
+    intro U
+    change integerCliqueOnSupport w U ≤
+      (resolvedActualVectors E ell W sort).sup
+        (fun z => integerCliqueOnSupport z U)
+    exact Finset.le_sup (f := fun z : IntegerCliqueWeights d ell =>
+      integerCliqueOnSupport z U) hw
 
 theorem resolvedLiveFree_finite_union {ell : Nat}
     (E : Nat → Nat → Bool) (P s : Finset Nat) (W : Set Nat)
