@@ -63,7 +63,6 @@ theorem ResolvedBareStage.exists_exact_labels {ell : Nat} {W : Set Nat}
     have hBit : c p (sort v) = s.edge p v := by
       simp only [c, dif_pos hp, sort, Equiv.symm_apply_apply]
       rw [ha v hv]
-      rfl
     exact ⟨hBit.symm, (s.sym v p).trans hBit.symm⟩
   let t : ResolvedLiveStage d ell W sort :=
     ⟨s.edge, s.old, c, s.separated, hColumns, s.free, s.sym, s.loops⟩
