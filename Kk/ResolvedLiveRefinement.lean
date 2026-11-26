@@ -243,11 +243,15 @@ noncomputable def refineBatch (s : ResolvedBareStage 4 W)
         rw [resolvedMarkerEdge_off s.edge s.old W sort f (hNo x hx) (hNo y hy)] at hEdge
         exact hEdge
   · intro x y
-    by_cases hx : x ∈ Q <;> by_cases hy : y ∈ Q
-    · simp [E, resolvedMarkerEdge, Q, hx, hy, hQW x hx, hQW y hy]
-    · simp [E, resolvedMarkerEdge, Q, hx, hy]
-    · simp [E, resolvedMarkerEdge, Q, hx, hy]
-    · simp [E, resolvedMarkerEdge, Q, hx, hy, s.sym x y]
+    by_cases hx : x ∈ Q
+    · by_cases hy : y ∈ Q
+      · have hxW := hQW x hx
+        have hyW := hQW y hy
+        simp [E, resolvedMarkerEdge, Q, hx, hy, hxW, hyW]
+      · simp [E, resolvedMarkerEdge, Q, hx, hy]
+    · by_cases hy : y ∈ Q
+      · simp [E, resolvedMarkerEdge, Q, hx, hy]
+      · simp [E, resolvedMarkerEdge, Q, hx, hy, s.sym x y]
   · intro x
     by_cases hx : x ∈ Q
     · simp [E, resolvedMarkerEdge, Q, hx, hQW x hx]

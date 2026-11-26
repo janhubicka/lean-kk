@@ -1,3 +1,6 @@
+import Kk.ResolvedLiveRefinement
+import Kk.ResolvedLiveRound
+import Kk.ResolvedFairLimit
 import Kk.ResolvedLiveSelectedProjection
 import Kk.ResolvedLiveFutureAge
 import Kk.ResolvedLiveCoverNormalization
@@ -280,3 +283,81 @@ import Kk.RetainedLevelEnumeration
 #print axioms Kk.ResolvedLiveStage.insertBlock_omitted_target_all_members
 #check @Kk.ResolvedLiveStage.insertBlock_no_split
 #print axioms Kk.ResolvedLiveStage.insertBlock_no_split
+
+-- Actual private refinements, complete coding rounds and the fair infinite graph.
+#check @Kk.ResolvedBareStage.exists_exact_labels
+#print axioms Kk.ResolvedBareStage.exists_exact_labels
+#check @Kk.resolvedMarkerName_injective
+#print axioms Kk.resolvedMarkerName_injective
+#check @Kk.mem_resolvedMarkerNames
+#print axioms Kk.mem_resolvedMarkerNames
+#check @Kk.resolvedMarkerName_not_old
+#print axioms Kk.resolvedMarkerName_not_old
+#check @Kk.resolvedMarkerName_not_live
+#print axioms Kk.resolvedMarkerName_not_live
+#check @Kk.resolvedMarkerEdge_off
+#print axioms Kk.resolvedMarkerEdge_off
+#check @Kk.resolvedMarkerEdge_positive_iff
+#print axioms Kk.resolvedMarkerEdge_positive_iff
+#check @Kk.ResolvedBareStage.refineBatch_preserves
+#print axioms Kk.ResolvedBareStage.refineBatch_preserves
+#check @Kk.ResolvedBareStage.refineBatch_exact
+#print axioms Kk.ResolvedBareStage.refineBatch_exact
+#check @Kk.ResolvedBareStage.refineBatch_single_split
+#print axioms Kk.ResolvedBareStage.refineBatch_single_split
+#check @Kk.ResolvedBareStage.singleton_test_safe
+#print axioms Kk.ResolvedBareStage.singleton_test_safe
+#check @Kk.ResolvedBareStage.neighbour_test_safe
+#print axioms Kk.ResolvedBareStage.neighbour_test_safe
+#check @Kk.resolvedClassExact_of_live_extension
+#print axioms Kk.resolvedClassExact_of_live_extension
+#check @Kk.ResolvedLiveStage.saturatedCode_target_neutral
+#print axioms Kk.ResolvedLiveStage.saturatedCode_target_neutral
+#check @Kk.resolvedBare_exists_round
+#print axioms Kk.resolvedBare_exists_round
+#check @Kk.ResolvedRoundResult.coding_neutral
+#print axioms Kk.ResolvedRoundResult.coding_neutral
+#check @Kk.ResolvedRoundResult.coding_no_split
+#print axioms Kk.ResolvedRoundResult.coding_no_split
+#check @Kk.resolvedEvenTail_next
+#print axioms Kk.resolvedEvenTail_next
+#check @Kk.resolvedEvenTail_coding
+#print axioms Kk.resolvedEvenTail_coding
+#check @Kk.resolvedFairNext_result
+#print axioms Kk.resolvedFairNext_result
+#check @Kk.resolvedFairStages_step
+#print axioms Kk.resolvedFairStages_step
+#check @Kk.resolvedFairStages_old_mono
+#print axioms Kk.resolvedFairStages_old_mono
+#check @Kk.resolvedFairStages_live_mono_step
+#print axioms Kk.resolvedFairStages_live_mono_step
+#check @Kk.resolvedFairStages_live_mono
+#print axioms Kk.resolvedFairStages_live_mono
+#check @Kk.resolvedFairStages_preserve
+#print axioms Kk.resolvedFairStages_preserve
+#check @Kk.resolvedFairDomain_even
+#print axioms Kk.resolvedFairDomain_even
+#check @Kk.resolvedFairEdge_eq_at
+#print axioms Kk.resolvedFairEdge_eq_at
+#check @Kk.resolvedFairEdge_sym
+#print axioms Kk.resolvedFairEdge_sym
+#check @Kk.resolvedFairEdge_loops
+#print axioms Kk.resolvedFairEdge_loops
+#check @Kk.resolvedFairDomain_finite_stage
+#print axioms Kk.resolvedFairDomain_finite_stage
+#check @Kk.resolvedFairEdge_free
+#print axioms Kk.resolvedFairEdge_free
+#check @Kk.resolvedFairEdge_even_eq
+#print axioms Kk.resolvedFairEdge_even_eq
+#check @Kk.resolvedFair_exists_graph
+#print axioms Kk.resolvedFair_exists_graph
+#check @Kk.resolvedFair_live_eventually_old
+#print axioms Kk.resolvedFair_live_eventually_old
+#check @Kk.resolvedFairEdge_eq_live_at
+#print axioms Kk.resolvedFairEdge_eq_live_at
+#check @Kk.resolvedFair_referenceAge_eq_live
+#print axioms Kk.resolvedFair_referenceAge_eq_live
+#check @Kk.resolvedFair_coding_reference_neutral
+#print axioms Kk.resolvedFair_coding_reference_neutral
+#check @Kk.resolvedFair_coding_no_split
+#print axioms Kk.resolvedFair_coding_no_split

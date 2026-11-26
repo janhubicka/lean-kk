@@ -282,4 +282,56 @@ theorem resolvedBare_exists_round {W W' : Set Nat} (s : ResolvedBareStage 4 W)
       _ = s.edge x y := s.refineBatch_preserves sort0 f0 hEven
         (s.singleton_test_safe r) x y hx hy
 
+/-- The code checkpoint is exactly the terminal old pool with the coded
+name erased. This derives both ordinary certificates for the actual
+coding event, including every fixed surviving terminal list. -/
+theorem ResolvedRoundResult.coding_neutral {W W' : Set Nat}
+    {s : ResolvedBareStage 4 W} {r : Nat} {t : ResolvedBareStage 4 W'}
+    (h : ResolvedRoundResult s r t) (hr : r ∈ W)
+    {n : Nat} (target : Fin n → Nat) (hTarget : ∀ i, target i ∈ W') :
+    resolvedTargetAge t.edge 4 (t.old.erase r) target =
+      resolvedTargetAge t.edge 4 t.old target := by
+  classical
+  obtain ⟨s1,s2,d,sort,a,b,_hSplit0,_hSplit1,_hBare,_hPath,hSat,
+    _hExact,hIso,hConst,hNext,hEdge,hOld⟩ := h.trace
+  have hrNot : r ∉ b.old := fun hp => b.separated r hp hr
+  have hErase : (insert r b.old).erase r = b.old := by
+    ext p
+    simp only [Finset.mem_erase, Finset.mem_insert]
+    constructor
+    · rintro ⟨hne,he | hp⟩
+      · exact False.elim (hne he)
+      · exact hp
+    · intro hp
+      refine ⟨?_,Or.inr hp⟩
+      intro he
+      exact hrNot (he ▸ hp)
+  have hT : ∀ i, target i ∈ W ∧ target i ≠ r := by
+    intro i
+    have hMem := hTarget i
+    rw [hNext] at hMem
+    exact ⟨hMem.1, by simpa using hMem.2⟩
+  rw [hEdge,hOld,hErase]
+  exact (b.saturatedCode_target_neutral r hr (by decide) hIso hConst hSat target hT).symm
+
+theorem ResolvedRoundResult.coding_no_split {W W' : Set Nat}
+    {s : ResolvedBareStage 4 W} {r : Nat} {t : ResolvedBareStage 4 W'}
+    (h : ResolvedRoundResult s r t) (hr : r ∈ W)
+    (v w : Nat) (hv : v ∈ W') (hw : w ∈ W')
+    (hOldBits : ∀ p ∈ t.old.erase r, t.edge p v = t.edge p w) :
+    t.edge r v = t.edge r w := by
+  classical
+  obtain ⟨s1,s2,d,sort,a,b,_hSplit0,_hSplit1,_hBare,_hPath,_hSat,
+    hExact,_hIso,hConst,hNext,hEdge,hOld⟩ := h.trace
+  rw [hNext] at hv hw
+  rw [hEdge,hOld] at hOldBits
+  rw [hEdge]
+  apply hConst v hv.1 w hw.1
+  apply (hExact v hv.1 w hw.1).2
+  intro p hp
+  have hpr : p ≠ r := by
+    intro he
+    exact b.separated r (he ▸ hp) hr
+  exact hOldBits p (Finset.mem_erase.mpr ⟨hpr,Finset.mem_insert_of_mem hp⟩)
+
 end Kk

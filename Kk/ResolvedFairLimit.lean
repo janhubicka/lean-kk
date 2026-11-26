@@ -295,4 +295,95 @@ theorem resolvedFair_exists_graph (E : Nat → Nat → Bool)
   · intro n
     exact (resolvedFairStages_step s0 n).trace
 
+/-- Every name in a live domain eventually becomes an old name.
+This allows transfer of the full columns into the actual future,
+not merely equality of the currently old induced subgraph. -/
+theorem resolvedFair_live_eventually_old
+    (s0 : ResolvedBareStage 4 (resolvedEvenTail 0)) (n x : Nat)
+    (hx : x ∈ (resolvedFairStages s0 n).old ∨ x ∈ resolvedEvenTail n) :
+    ∃ m, n ≤ m ∧ x ∈ (resolvedFairStages s0 m).old := by
+  rcases hx with ho | hl
+  · exact ⟨n,le_rfl,ho⟩
+  · change x % 2 = 0 ∧ 2*n ≤ x at hl
+    have he : x = 2*(x/2) := by omega
+    have hN : n ≤ x/2+1 := by omega
+    refine ⟨x/2+1,hN,?_⟩
+    have hc := (resolvedFairStages_step s0 (x/2)).coded
+    rwa [← he] at hc
+
+theorem resolvedFairEdge_eq_live_at
+    (s0 : ResolvedBareStage 4 (resolvedEvenTail 0)) (n x y : Nat)
+    (hx : x ∈ (resolvedFairStages s0 n).old ∨ x ∈ resolvedEvenTail n)
+    (hy : y ∈ (resolvedFairStages s0 n).old ∨ y ∈ resolvedEvenTail n) :
+    resolvedFairEdge s0 x y = (resolvedFairStages s0 n).edge x y := by
+  obtain ⟨m,hnm,hxOld⟩ := resolvedFair_live_eventually_old s0 n x hx
+  obtain ⟨l,hnl,hyOld⟩ := resolvedFair_live_eventually_old s0 n y hy
+  let N := max m l
+  have hxN : x ∈ (resolvedFairStages s0 N).old :=
+    resolvedFairStages_old_mono s0 (le_max_left _ _) hxOld
+  have hyN : y ∈ (resolvedFairStages s0 N).old :=
+    resolvedFairStages_old_mono s0 (le_max_right _ _) hyOld
+  rw [resolvedFairEdge_eq_at s0 N x y hxN hyN]
+  exact resolvedFairStages_preserve s0 (hnm.trans (le_max_left _ _)) x y hx hy
+
+/-- Exact canonical reference ages over a subset of a genuine old pool
+agree between the round graph and its limit, including future columns. -/
+theorem resolvedFair_referenceAge_eq_live
+    (s0 : ResolvedBareStage 4 (resolvedEvenTail 0)) (n : Nat)
+    (P : Finset Nat) (hP : P ⊆ (resolvedFairStages s0 n).old)
+    {d : Nat} (target : Fin d → Nat)
+    (hTarget : ∀ i, target i ∈ resolvedEvenTail n) :
+    resolvedTargetAge (resolvedFairEdge s0) 4 P target =
+      resolvedTargetAge (resolvedFairStages s0 n).edge 4 P target := by
+  unfold resolvedTargetAge
+  have hCol : ∀ p ∈ P, ∀ i,
+      resolvedFairEdge s0 p (target i) =
+        (resolvedFairStages s0 n).edge p (target i) :=
+    fun p hp i => resolvedFairEdge_eq_live_at s0 n p (target i)
+      (Or.inl (hP hp)) (Or.inr (hTarget i))
+  rw [resolvedOldCanonical_congr_columns (ell := 4) (resolvedFairEdge s0) P
+    (fun p i => (resolvedFairStages s0 n).edge p (target i))
+    (fun p i => resolvedFairEdge s0 p (target i)) hCol]
+  exact ResolvedLiveStage.oldCanonical_congr_edges (ell := 4)
+    (resolvedFairStages s0 n).edge (resolvedFairEdge s0) P
+    (fun p i => (resolvedFairStages s0 n).edge p (target i))
+    (fun p hp q hq => resolvedFairEdge_eq_live_at s0 n p q
+      (Or.inl (hP hp)) (Or.inl (hP hq)))
+
+/-- In the single actual infinite graph, the completed coding round is
+age-neutral on every fixed list of surviving original terminals. -/
+theorem resolvedFair_coding_reference_neutral
+    (s0 : ResolvedBareStage 4 (resolvedEvenTail 0)) (n : Nat)
+    {d : Nat} (target : Fin d → Nat)
+    (hTarget : ∀ i, target i ∈ resolvedEvenTail (n+1)) :
+    resolvedTargetAge (resolvedFairEdge s0) 4
+      ((resolvedFairStages s0 (n+1)).old.erase (2*n)) target =
+    resolvedTargetAge (resolvedFairEdge s0) 4
+      (resolvedFairStages s0 (n+1)).old target := by
+  rw [resolvedFair_referenceAge_eq_live s0 (n+1) _
+    (Finset.erase_subset _ _) target hTarget,
+    resolvedFair_referenceAge_eq_live s0 (n+1) _
+    (Finset.Subset.refl _) target hTarget]
+  exact (resolvedFairStages_step s0 n).coding_neutral
+    (resolvedEvenTail_coding n) target hTarget
+
+/-- The code event in the actual limit creates no new split of two
+surviving vertices with identical complete pre-code columns. -/
+theorem resolvedFair_coding_no_split
+    (s0 : ResolvedBareStage 4 (resolvedEvenTail 0)) (n v w : Nat)
+    (hv : v ∈ resolvedEvenTail (n+1)) (hw : w ∈ resolvedEvenTail (n+1))
+    (hBits : ∀ p ∈ (resolvedFairStages s0 (n+1)).old.erase (2*n),
+      resolvedFairEdge s0 p v = resolvedFairEdge s0 p w) :
+    resolvedFairEdge s0 (2*n) v = resolvedFairEdge s0 (2*n) w := by
+  have hc := (resolvedFairStages_step s0 n).coded
+  rw [resolvedFairEdge_eq_live_at s0 (n+1) (2*n) v (Or.inl hc) (Or.inr hv),
+    resolvedFairEdge_eq_live_at s0 (n+1) (2*n) w (Or.inl hc) (Or.inr hw)]
+  apply (resolvedFairStages_step s0 n).coding_no_split
+    (resolvedEvenTail_coding n) v w hv hw
+  intro p hp
+  have hpOld := (Finset.mem_erase.mp hp).2
+  rw [← resolvedFairEdge_eq_live_at s0 (n+1) p v (Or.inl hpOld) (Or.inr hv),
+    ← resolvedFairEdge_eq_live_at s0 (n+1) p w (Or.inl hpOld) (Or.inr hw)]
+  exact hBits p hp
+
 end Kk
