@@ -2600,3 +2600,35 @@ import Kk
 #print axioms Kk.oneGapPartial_avoids
 #check @Kk.oneGap_continuation_of_equal_canonical_age
 #print axioms Kk.oneGap_continuation_of_equal_canonical_age
+
+-- One-gap full B3, retained pool and forced envelope.
+#check @Kk.oneGap_diag_false_of_avoid
+#print axioms Kk.oneGap_diag_false_of_avoid
+#check @Kk.oneGap_pool_free_of_avoid
+#print axioms Kk.oneGap_pool_free_of_avoid
+#check @Kk.oneGap_clique_copy_checker_true
+#print axioms Kk.oneGap_clique_copy_checker_true
+#check @Kk.oneGap_rawBound_congr_old
+#print axioms Kk.oneGap_rawBound_congr_old
+#check @Kk.oneGap_no_new_clique_of_equal_selected_age
+#print axioms Kk.oneGap_no_new_clique_of_equal_selected_age
+#check @Kk.oneGap_correctedB3_of_equal_selected_age
+#print axioms Kk.oneGap_correctedB3_of_equal_selected_age
+#check @Kk.oneGap_later_retained_aux_old_zero
+#print axioms Kk.oneGap_later_retained_aux_old_zero
+#check @Kk.oneGap_full_pool_column_fibre
+#print axioms Kk.oneGap_full_pool_column_fibre
+#check @Kk.oneGap_fullType_eq_of_column
+#print axioms Kk.oneGap_fullType_eq_of_column
+#check @Kk.oneGap_full_nextType_eq_of_no_column_fork
+#print axioms Kk.oneGap_full_nextType_eq_of_no_column_fork
+#check @Kk.oneGap_planned_pool_covers_closure
+#print axioms Kk.oneGap_planned_pool_covers_closure
+#check @Kk.oneGap_planned_closure_no_endpoint
+#print axioms Kk.oneGap_planned_closure_no_endpoint
+#check @Kk.planned_retained_envelope
+#print axioms Kk.planned_retained_envelope
+#check @Kk.oneGap_skip_of_complete_prescribed_B3
+#print axioms Kk.oneGap_skip_of_complete_prescribed_B3
+#check @Kk.oneGap_planned_Kpt_envelope
+#print axioms Kk.oneGap_planned_Kpt_envelope
