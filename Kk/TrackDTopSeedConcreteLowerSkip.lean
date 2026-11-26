@@ -21,6 +21,10 @@ lower real cut needs only an actual higher-stage Plan inclusion and
 the explicit chronological original-Q role/independence conditions.
 -/
 
+/-! Canonical-generation role contracts repaired after the English audit in
+`docs/bounded_stage_roles_repair_english_20261123.md`. Every address tested
+against root or Plan roles now carries its genuine generation bound m ≤ k. -/
+
 namespace Kk
 
 open SuccessorTree
@@ -128,11 +132,11 @@ theorem henson_topSeeds_selected_coded_lower_real_skip
     (hIndependent : ∀ i j,
       role i = .coded true →
       role j = .coded true → E i j = false)
-    (hRootDummy : ∀ j m : Nat,
+    (hRootDummy : ∀ j m : Nat, m ≤ k →
       cap.val = hPosition k j m → role j = .dummy)
     (hPlanShape : ∀ v : Fin N, v.val ∈ Plan →
       0 < (finiteNumericH (normalizedGraphModel E) k N).freeLevel v.val →
-      ∀ j m : Nat, v.val = hPosition k j m →
+      ∀ j m : Nat, m ≤ k → v.val = hPosition k j m →
         (role j = .coded true ∧ m = k) ∨
         (∃ block : Nat, role j = .auxiliary block true))
     (hSelectedBase : role idx = .coded true) :
@@ -163,12 +167,12 @@ theorem henson_topSeeds_selected_coded_lower_real_skip
       family K k N hAvoid cap blocks hWithin
       idx g hg hPos z hz) hLevel
   have hRootDummy' : ∀ v : Fin N, v ∈ U →
-      ∀ j m : Nat, v.val = hPosition k j m →
+      ∀ j m : Nat, m ≤ k → v.val = hPosition k j m →
         role j = .dummy := by
-    intro v hv j m hAddr
+    intro v hv j m hm hAddr
     have hvCap : v = cap := by simpa [U] using hv
     subst v
-    exact hRootDummy j m hAddr
+    exact hRootDummy j m hm hAddr
   exact henson_actualRun_selected_coded_lower_real_skip_of_no_seed
     ell hell k hK E hLoops hSym hClique
     N U hAvoid X hX top Run hTopSeed

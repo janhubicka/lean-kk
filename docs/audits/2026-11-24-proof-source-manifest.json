@@ -1,0 +1,36 @@
+{
+  "date": "2026-11-24",
+  "new_public_theorems": 63,
+  "root_build_jobs": 9951,
+  "focused_reports": 88,
+  "central_reports": 1195,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "source_sha256": {
+    "Kk/GenerationZeroStageCoherence.lean": "b68500199004ce0c4cfbfb1eebf58abddfe42e3dfd74eca27eef9158a9e0e160",
+    "Kk/GenerationZeroStructural.lean": "28c1206695dd05045466f24acae12b448e7f0f7eedd717396291de000cd10b99",
+    "Kk/NumericRetainedPlan.lean": "594c49adb77ad13564d8f3f8f93795fcfd862c73fe4892d2eb3ce55d1c44ed9c",
+    "Kk/NumericRetainedPlanExact.lean": "a1c3a2657bf16e4fb601f05ee55d447c10f302e4567b227d84a648291ad6564d",
+    "Kk/NumericTopNeutralPrefixAge.lean": "a8a4e2b0e7d44fdb0e8d42b45d009ae9a97e865936a90bb7e2358128189b0128",
+    "Kk/PlannedPrefixSeeds.lean": "97834ec899b9231e9107c6d1fd417fcfa96ab9f6bdb1fcd1869a88cc02a6bf89",
+    "Kk/ResolvedQNeutralAgeB3.lean": "3152e72a87712f0e966af486997af8f19ccfddf46241003f2803b5c008f94159",
+    "Kk/RetainedChunkTables.lean": "e554c30a8e9e8056a94469a74390c58edc17a696fe918ace5ea619fa1befba93",
+    "Kk/RetainedLevelEnumeration.lean": "cef404aacc6200ffeef7044f4457b3288686501bbf66adc8e027419486f6c9d0",
+    "Kk/RetainedPrefixSource.lean": "00d01160369a9c8a0478aaabd3c5aa35100194986d900a1aa99684fd768526c6",
+    "Kk/SelectedTopAgeNeutralB3.lean": "9a467cc63b2458f671a9b85d7e52d0c87041f40e8aa810ee935e3051422bdb6e",
+    "Kk/TopGenerationStageCoherence.lean": "931529df97d29ae4e543141ea72804bc9b2dd5d15b70668e21cb4b5ca5b72c01",
+    "Kk.lean": "9c2f6f3c63242718134485d3dcda77e569265a5907c63ea250d0cb83037dcb13",
+    "scripts/check_axioms.lean": "8a7002d35a95e235d56054eeadadf1392bd3d862ac516bc58437a98cb2646ffb",
+    "scripts/check_axioms_upper_continuation.lean": "0ae1976e33aa69239066ff1d81c4049cc12c94be4f4387556238d4e597044aa7",
+    ".github/workflows/upper-continuation.yml": "e643ddb7703d39b1655cbd7c31aa59fefd4ef9b3367ae78b2e94ff3b4fd15188",
+    "scripts/check_axiom_report.py": "1aca9c49e724a8c933f0b2b92ef89b8564ee250db4d98c8a25c9088545ad4492"
+  },
+  "local_log_sha256": {
+    "root_build": "f6657c161e4d8b1759ed55983b3e41ee9ea5aebecf95faa8ed656a2c0ca31937",
+    "focused_axioms": "cbf440e088e27c658df11162437df3f29ae55d27725313726df43de033fa49d1",
+    "central_axioms": "7b961b7fbc24c2ca575e27625c79d0fef49ed79afcf68aa2fa90832beb653efa"
+  }
+}

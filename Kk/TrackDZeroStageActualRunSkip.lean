@@ -22,6 +22,10 @@ the true descending stage-Plan hypothesis. No full diary/orbit/BRD
 conclusion is asserted.
 -/
 
+/-! Canonical-generation role contracts repaired after the English audit in
+`docs/bounded_stage_roles_repair_english_20261123.md`. Every address tested
+against root or Plan roles now carries its genuine generation bound m ≤ k. -/
+
 namespace Kk
 
 open SuccessorTree
@@ -236,11 +240,11 @@ theorem henson_actualRun_selected_coded_lower_real_skip_of_no_seed
       role i = .coded true →
       role j = .coded true → E i j = false)
     (hRootDummy : ∀ v : Fin N, v ∈ U →
-      ∀ j m : Nat, v.val = hPosition k j m →
+      ∀ j m : Nat, m ≤ k → v.val = hPosition k j m →
         role j = .dummy)
     (hPlanShape : ∀ v : Fin N, v.val ∈ Plan →
       0 < (finiteNumericH (normalizedGraphModel E) k N).freeLevel v.val →
-      ∀ j m : Nat, v.val = hPosition k j m →
+      ∀ j m : Nat, m ≤ k → v.val = hPosition k j m →
         (role j = .coded true ∧ m = k) ∨
         (∃ block : Nat, role j = .auxiliary block true))
     (hSelectedBase : role idx = .coded true) :
@@ -254,15 +258,15 @@ theorem henson_actualRun_selected_coded_lower_real_skip_of_no_seed
   let K : AgeTestModel 1 0 1 := normalizedGraphModel E
   by_cases hp :
       (finiteNumericH K k N).L.binary cut v.val (0 : Fin 1) = true
-  · obtain ⟨j,m,hij,_hgm,_hm,hAddr,hBase⟩ :=
+  · obtain ⟨j,m,hij,_hgm,hm,hAddr,hBase⟩ :=
       finiteNumericH_eligible_lower_cut_neighbour_is_higher
         E k N idx g hg hCut v hFree hp
     have hRetained : ResolvedQRetainedBase (role j) := by
       rcases hv with hRoot | ⟨hSelected,hPositive⟩
       · exact Or.inl
-          (hRootDummy v (Finset.mem_coe.mp hRoot) j m hAddr)
+          (hRootDummy v (Finset.mem_coe.mp hRoot) j m hm hAddr)
       · rcases hPlanShape v (hAbove hSelected) hPositive
-          j m hAddr with hCode | ⟨block,hAux⟩
+          j m hm hAddr with hCode | ⟨block,hAux⟩
         · exact Or.inr (Or.inl hCode.1)
         · exact Or.inr (Or.inr ⟨block,hAux⟩)
     have hNo : E idx j = false :=

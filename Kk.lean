@@ -1,3 +1,10 @@
+import Kk.ResolvedLiveRefinement
+import Kk.ResolvedLiveRound
+import Kk.ResolvedFairLimit
+import Kk.ResolvedLiveSelectedProjection
+import Kk.ResolvedLiveFutureAge
+import Kk.ResolvedLiveCoverNormalization
+import Kk.ResolvedLiveCoding
 -- Track A/C/G: exact raw max old-seed certificate for odd factor Bad source budget.
 import Kk.TrackARawMaxOddBudget
 -- Track A/C: verified full old-Kpt ancestor of an arbitrary raw-matched physical descendant.
@@ -525,6 +532,29 @@ import Kk.TrackFRealTargetSurvivorNumericEndpoint
 import Kk.TrackFTargetLexOrderPersistence
 import Kk.TrackFFullActualZeroCodeAgeStep
 import Kk.TrackFActualZeroCodeTargetLex
+
+
+-- Reviewed upper continuation: canonical roles and complete actual-stage coherence.
+import Kk.EqualCutFullType
+import Kk.ResolvedQBlockSeparation
+import Kk.RealPositionGenerationAliases
+import Kk.PositiveGenerationStageCoherence
+import Kk.StageCoherenceStructural
+import Kk.PositiveGenerationStructural
+
+-- Audited full-age B3, all real generations, and genuine retained-prefix plans.
+import Kk.GenerationZeroStageCoherence
+import Kk.GenerationZeroStructural
+import Kk.NumericRetainedPlan
+import Kk.NumericTopNeutralPrefixAge
+import Kk.PlannedPrefixSeeds
+import Kk.ResolvedQNeutralAgeB3
+import Kk.RetainedPrefixSource
+import Kk.SelectedTopAgeNeutralB3
+import Kk.TopGenerationStageCoherence
+import Kk.RetainedChunkTables
+import Kk.NumericRetainedPlanExact
+import Kk.RetainedLevelEnumeration
 
 /-!
 The counting project imports the verified successor-tree library.

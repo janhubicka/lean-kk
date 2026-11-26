@@ -1,0 +1,363 @@
+import Kk.ResolvedLiveRefinement
+import Kk.ResolvedLiveRound
+import Kk.ResolvedFairLimit
+import Kk.ResolvedLiveSelectedProjection
+import Kk.ResolvedLiveFutureAge
+import Kk.ResolvedLiveCoverNormalization
+import Kk.ResolvedLiveCoding
+import Kk.StageCoherenceStructural
+import Kk.PositiveGenerationStructural
+import Kk.EqualCutFullType
+import Kk.ResolvedQBlockSeparation
+import Kk.RealPositionGenerationAliases
+import Kk.PositiveGenerationStageCoherence
+import Kk.TrackDEmptyPhysicalCutStar
+import Kk.TrackDZeroStageActualRunSkip
+import Kk.TrackDTopSeedConcreteLowerSkip
+
+import Kk.GenerationZeroStageCoherence
+import Kk.GenerationZeroStructural
+import Kk.NumericRetainedPlan
+import Kk.NumericTopNeutralPrefixAge
+import Kk.PlannedPrefixSeeds
+import Kk.ResolvedQNeutralAgeB3
+import Kk.RetainedPrefixSource
+import Kk.SelectedTopAgeNeutralB3
+import Kk.TopGenerationStageCoherence
+import Kk.RetainedChunkTables
+import Kk.NumericRetainedPlanExact
+import Kk.RetainedLevelEnumeration
+
+-- New actual-source results and canonical-address regression witnesses.
+#check @Kk.full_equal_ordinary_cut_column_determines_next_type
+#print axioms Kk.full_equal_ordinary_cut_column_determines_next_type
+#check @Kk.ResolvedQBlockSeparation.omitted_nondummy_later_retained_aux_old_column_zero
+#print axioms Kk.ResolvedQBlockSeparation.omitted_nondummy_later_retained_aux_old_column_zero
+#check @Kk.hPosition_generation_overflow_alias
+#print axioms Kk.hPosition_generation_overflow_alias
+#check @Kk.hPosition_top_generation_overflow_alias
+#print axioms Kk.hPosition_top_generation_overflow_alias
+#check @Kk.resolvedQ_bounded_root_contract_alias_regression
+#print axioms Kk.resolvedQ_bounded_root_contract_alias_regression
+#check @Kk.resolvedQ_bounded_plan_contract_alias_regression
+#print axioms Kk.resolvedQ_bounded_plan_contract_alias_regression
+#check @Kk.resolvedQ_lower_generation_stage_cut_bit_eq_generation_zero
+#print axioms Kk.resolvedQ_lower_generation_stage_cut_bit_eq_generation_zero
+#check @Kk.resolvedQ_positive_lower_generation_stage_full_type_coherent
+#print axioms Kk.resolvedQ_positive_lower_generation_stage_full_type_coherent
+
+-- All eight repaired declarations, not merely unused bounded helpers.
+#check @Kk.resolvedQ_stage_name_shape_of_planned_levels
+#print axioms Kk.resolvedQ_stage_name_shape_of_planned_levels
+#check @Kk.resolvedQ_stage_omitted_positive_name_is_selected_top
+#print axioms Kk.resolvedQ_stage_omitted_positive_name_is_selected_top
+#check @Kk.resolvedQ_stage_selected_base_has_no_retained_neighbour
+#print axioms Kk.resolvedQ_stage_selected_base_has_no_retained_neighbour
+#check @Kk.resolvedQ_stage_full_base_coverage_of_planned_levels
+#print axioms Kk.resolvedQ_stage_full_base_coverage_of_planned_levels
+#check @Kk.henson_actualRun_lower_real_unselected_of_planned_stage_markedB3
+#print axioms Kk.henson_actualRun_lower_real_unselected_of_planned_stage_markedB3
+#check @Kk.henson_actualRun_selected_coded_lower_real_unselected
+#print axioms Kk.henson_actualRun_selected_coded_lower_real_unselected
+#check @Kk.henson_actualRun_selected_coded_lower_real_skip_of_no_seed
+#print axioms Kk.henson_actualRun_selected_coded_lower_real_skip_of_no_seed
+#check @Kk.henson_topSeeds_selected_coded_lower_real_skip
+#print axioms Kk.henson_topSeeds_selected_coded_lower_real_skip
+
+-- The unconditional dummy-seed endpoint used by the olive revision.
+#check @Kk.henson_topSeeds_isolated_dummy_lower_real_skip
+#print axioms Kk.henson_topSeeds_isolated_dummy_lower_real_skip
+
+-- Whole-stage closure: derived no-I1/no-I2 and conditional actual-run skip.
+#check @Kk.actual_coherent_cut_originals_meet_level_ne_cut
+#print axioms Kk.actual_coherent_cut_originals_meet_level_ne_cut
+#check @Kk.finiteNumericH_even_real_no_full_I1_of_coherent_stage
+#print axioms Kk.finiteNumericH_even_real_no_full_I1_of_coherent_stage
+#check @Kk.full_kpt_cut_fork_false_of_coherent_full_physical_pool
+#print axioms Kk.full_kpt_cut_fork_false_of_coherent_full_physical_pool
+#check @Kk.full_kpt_no_i2_of_no_i1_and_coherent_full_physical_pool
+#print axioms Kk.full_kpt_no_i2_of_no_i1_and_coherent_full_physical_pool
+#check @Kk.finiteNumericH_even_real_no_full_I1_I2_of_coherent_stage
+#print axioms Kk.finiteNumericH_even_real_no_full_I1_I2_of_coherent_stage
+#check @Kk.resolvedQ_actualRun_positive_lower_generation_no_full_I1_I2
+#print axioms Kk.resolvedQ_actualRun_positive_lower_generation_no_full_I1_I2
+#check @Kk.resolvedQ_topSeeds_positive_lower_generation_no_full_I1_I2
+#print axioms Kk.resolvedQ_topSeeds_positive_lower_generation_no_full_I1_I2
+#check @Kk.henson_actualRun_positive_lower_real_unselected_of_planned_stage_markedB3
+#print axioms Kk.henson_actualRun_positive_lower_real_unselected_of_planned_stage_markedB3
+
+-- Complete-age B3 and retained-plan continuation: all 42 public endpoints.
+#check @Kk.resolvedQK4_singleton_neutral_positive_has_old_neighbour
+#print axioms Kk.resolvedQK4_singleton_neutral_positive_has_old_neighbour
+#check @Kk.resolvedQ_zero_generation_stage_cut_bit_eq
+#print axioms Kk.resolvedQ_zero_generation_stage_cut_bit_eq
+#check @Kk.resolvedQ_zero_generation_stage_full_type_coherent
+#print axioms Kk.resolvedQ_zero_generation_stage_full_type_coherent
+#check @Kk.resolvedQ_actualRun_zero_generation_no_full_I1_I2
+#print axioms Kk.resolvedQ_actualRun_zero_generation_no_full_I1_I2
+#check @Kk.k4_actualRun_zero_generation_unselected_of_planned_stage_markedB3
+#print axioms Kk.k4_actualRun_zero_generation_unselected_of_planned_stage_markedB3
+#check @Kk.mem_numericRetainedOriginals_iff
+#print axioms Kk.mem_numericRetainedOriginals_iff
+#check @Kk.finiteNumericH_odd_target_freeLevel_zero
+#print axioms Kk.finiteNumericH_odd_target_freeLevel_zero
+#check @Kk.finiteNumericH_freeLevel_freeLevel_zero
+#print axioms Kk.finiteNumericH_freeLevel_freeLevel_zero
+#check @Kk.numericRetainedPlan_zero_mem
+#print axioms Kk.numericRetainedPlan_zero_mem
+#check @Kk.numericRetainedPlan_cap_end_mem
+#print axioms Kk.numericRetainedPlan_cap_end_mem
+#check @Kk.numericRetainedPlan_kept_position_mem
+#print axioms Kk.numericRetainedPlan_kept_position_mem
+#check @Kk.numericRetainedPlan_kept_free_mem
+#print axioms Kk.numericRetainedPlan_kept_free_mem
+#check @Kk.numericRetainedPlan_bounded
+#print axioms Kk.numericRetainedPlan_bounded
+#check @Kk.numericRetainedPlan_positive_member_kept
+#print axioms Kk.numericRetainedPlan_positive_member_kept
+#check @Kk.numericRetainedPlan_free_closed
+#print axioms Kk.numericRetainedPlan_free_closed
+#check @Kk.numericRetainedPlan_bounded_role_shape
+#print axioms Kk.numericRetainedPlan_bounded_role_shape
+#check @Kk.numericRetainedPlan_contains_real
+#print axioms Kk.numericRetainedPlan_contains_real
+#check @Kk.numericRetainedPlan_omitted_real_role
+#print axioms Kk.numericRetainedPlan_omitted_real_role
+#check @Kk.numericRetainedPlan_dummy_cap_root_role
+#print axioms Kk.numericRetainedPlan_dummy_cap_root_role
+#check @Kk.henson_numericRetainedPlan_odd_run_skip
+#print axioms Kk.henson_numericRetainedPlan_odd_run_skip
+#check @Kk.numericHTop_prefix_common_capacity_sandwich
+#print axioms Kk.numericHTop_prefix_common_capacity_sandwich
+#check @Kk.numericHTop_prefix_canonical_age_sandwich
+#print axioms Kk.numericHTop_prefix_canonical_age_sandwich
+#check @Kk.numericHTop_prefix_canonical_ages_eq_of_base_neutral
+#print axioms Kk.numericHTop_prefix_canonical_ages_eq_of_base_neutral
+#check @Kk.plannedPrefixSeeds_seed_at
+#print axioms Kk.plannedPrefixSeeds_seed_at
+#check @Kk.plannedPrefixSeeds_no_seed_outside
+#print axioms Kk.plannedPrefixSeeds_no_seed_outside
+#check @Kk.plannedPrefixSeeds_bounded
+#print axioms Kk.plannedPrefixSeeds_bounded
+#check @Kk.plannedPrefixSeeds_subset_singleton_original_pool
+#print axioms Kk.plannedPrefixSeeds_subset_singleton_original_pool
+#check @Kk.algorithmRun_final_levels_eq_plan_of_seed_levels
+#print axioms Kk.algorithmRun_final_levels_eq_plan_of_seed_levels
+#check @Kk.plannedPrefixSeeds_run_exact_plan
+#print axioms Kk.plannedPrefixSeeds_run_exact_plan
+#check @Kk.plannedPrefixSeeds_exists_exact_envelope
+#print axioms Kk.plannedPrefixSeeds_exists_exact_envelope
+#check @Kk.k4_resolvedQ_stage_B3_of_base_prefix_neutral
+#print axioms Kk.k4_resolvedQ_stage_B3_of_base_prefix_neutral
+#check @Kk.gPlus_source_code_eq_retained_target
+#print axioms Kk.gPlus_source_code_eq_retained_target
+#check @Kk.labelled_sources_eq_of_retained_target_tables
+#print axioms Kk.labelled_sources_eq_of_retained_target_tables
+#check @Kk.common_labelled_orbit_of_retained_target_tables
+#print axioms Kk.common_labelled_orbit_of_retained_target_tables
+#check @Kk.k4_selectedB3_of_complete_reference_age_eq
+#print axioms Kk.k4_selectedB3_of_complete_reference_age_eq
+#check @Kk.k4_selectedTop_B3_of_base_prefix_neutral
+#print axioms Kk.k4_selectedTop_B3_of_base_prefix_neutral
+#check @Kk.physical_top_real_cut_positive_generators
+#print axioms Kk.physical_top_real_cut_positive_generators
+#check @Kk.resolvedQ_top_generation_stage_cut_bit_eq_generation_zero
+#print axioms Kk.resolvedQ_top_generation_stage_cut_bit_eq_generation_zero
+#check @Kk.resolvedQ_top_generation_stage_full_type_coherent
+#print axioms Kk.resolvedQ_top_generation_stage_full_type_coherent
+#check @Kk.resolvedQ_positive_generation_stage_full_type_coherent
+#print axioms Kk.resolvedQ_positive_generation_stage_full_type_coherent
+#check @Kk.resolvedQ_actualRun_positive_generation_no_full_I1_I2
+#print axioms Kk.resolvedQ_actualRun_positive_generation_no_full_I1_I2
+#check @Kk.henson_actualRun_omitted_top_generation_skip
+#print axioms Kk.henson_actualRun_omitted_top_generation_skip
+
+-- Concrete all-cut Plan and full retained chunk tables: 17 public endpoints.
+#check @Kk.k4RetainedFreeCoordinate_odd
+#print axioms Kk.k4RetainedFreeCoordinate_odd
+#check @Kk.k4RetainedSlot_before_free_iff
+#print axioms Kk.k4RetainedSlot_before_free_iff
+#check @Kk.finiteNumericH_four_generation_zero_freeLevel
+#print axioms Kk.finiteNumericH_four_generation_zero_freeLevel
+#check @Kk.k4RetainedSlot_exactE_iff
+#print axioms Kk.k4RetainedSlot_exactE_iff
+#check @Kk.k4RetainedSlot_finiteE_iff
+#print axioms Kk.k4RetainedSlot_finiteE_iff
+#check @Kk.k4RetainedSlot_ordinary_eq
+#print axioms Kk.k4RetainedSlot_ordinary_eq
+#check @Kk.k4RetainedSlotCode_eq_of_base_table
+#print axioms Kk.k4RetainedSlotCode_eq_of_base_table
+#check @Kk.k4RetainedSlotRank_injective
+#print axioms Kk.k4RetainedSlotRank_injective
+#check @Kk.k4RetainedSlotPosition_lt_of_rank_lt
+#print axioms Kk.k4RetainedSlotPosition_lt_of_rank_lt
+#check @Kk.k4RetainedSlotPosition_injective
+#print axioms Kk.k4RetainedSlotPosition_injective
+#check @Kk.k4RetainedSlotPosition_strictMono_of_rank
+#print axioms Kk.k4RetainedSlotPosition_strictMono_of_rank
+#check @Kk.resolvedQK4_singletonNeutral_of_fullReferenceNeutral
+#print axioms Kk.resolvedQK4_singletonNeutral_of_fullReferenceNeutral
+#check @Kk.resolvedQK4FinitePlan_avoids
+#print axioms Kk.resolvedQK4FinitePlan_avoids
+#check @Kk.k4_actualRun_unselected_of_full_stage_B3
+#print axioms Kk.k4_actualRun_unselected_of_full_stage_B3
+#check @Kk.k4_numericRetainedPlan_offPlan_skip
+#print axioms Kk.k4_numericRetainedPlan_offPlan_skip
+#check @Kk.k4_numericRetainedPlan_run_exact
+#print axioms Kk.k4_numericRetainedPlan_run_exact
+#check @Kk.k4_numericRetainedPlan_exists_exact_envelope
+#print axioms Kk.k4_numericRetainedPlan_exists_exact_envelope
+
+-- Actual retained level-map enumeration and complete source-code recovery.
+#check @Kk.strictMono_fin_size_eq_of_range_eq
+#print axioms Kk.strictMono_fin_size_eq_of_range_eq
+#check @Kk.strictMono_levelMap_eq_slots_of_exact_range
+#print axioms Kk.strictMono_levelMap_eq_slots_of_exact_range
+#check @Kk.kpt_source_level_and_coordinates_of_exact_slot_range
+#print axioms Kk.kpt_source_level_and_coordinates_of_exact_slot_range
+#check @Kk.kpt_source_ordinaryCode_eq_slots_of_exact_range
+#print axioms Kk.kpt_source_ordinaryCode_eq_slots_of_exact_range
+
+-- Actual live-future normalization and survivor coding (26 Nov 2026).
+#check @Kk.mem_resolvedActualVectors
+#print axioms Kk.mem_resolvedActualVectors
+#check @Kk.resolvedActualAge_count_le
+#print axioms Kk.resolvedActualAge_count_le
+#check @Kk.resolvedActualAge_attained
+#print axioms Kk.resolvedActualAge_attained
+#check @Kk.resolvedActualAge_attained_supported
+#print axioms Kk.resolvedActualAge_attained_supported
+#check @Kk.resolvedActualAge_is_age
+#print axioms Kk.resolvedActualAge_is_age
+#check @Kk.resolvedLiveFree_finite_union
+#print axioms Kk.resolvedLiveFree_finite_union
+#check @Kk.resolvedActualAge_le_oldCanonical
+#print axioms Kk.resolvedActualAge_le_oldCanonical
+#check @Kk.resolvedActualAge_congr
+#print axioms Kk.resolvedActualAge_congr
+#check @Kk.resolvedOldCanonical_antitone
+#print axioms Kk.resolvedOldCanonical_antitone
+#check @Kk.resolvedLive_survivor_neutral_of_saturation
+#print axioms Kk.resolvedLive_survivor_neutral_of_saturation
+#check @Kk.resolvedActualAge_survivor_reindex
+#print axioms Kk.resolvedActualAge_survivor_reindex
+#check @Kk.ResolvedLiveStage.future_le_old
+#print axioms Kk.ResolvedLiveStage.future_le_old
+#check @Kk.ResolvedLiveStage.blockEdge_off
+#print axioms Kk.ResolvedLiveStage.blockEdge_off
+#check @Kk.ResolvedLiveStage.blockEdge_live_free
+#print axioms Kk.ResolvedLiveStage.blockEdge_live_free
+#check @Kk.ResolvedLiveStage.insertBlock_preserves_live
+#print axioms Kk.ResolvedLiveStage.insertBlock_preserves_live
+#check @Kk.ResolvedLiveStage.insertBlock_futureAge
+#print axioms Kk.ResolvedLiveStage.insertBlock_futureAge
+#check @Kk.ResolvedLiveStage.oldCanonical_congr_edges
+#print axioms Kk.ResolvedLiveStage.oldCanonical_congr_edges
+#check @Kk.ResolvedLiveStage.insertBlock_cover_age
+#print axioms Kk.ResolvedLiveStage.insertBlock_cover_age
+#check @Kk.resolvedFreshOdd
+#print axioms Kk.resolvedFreshOdd
+#check @Kk.resolvedLive_normalizes_actual_future_by_covers
+#print axioms Kk.resolvedLive_normalizes_actual_future_by_covers
+#check @Kk.resolvedClassExact_refine
+#print axioms Kk.resolvedClassExact_refine
+#check @Kk.resolvedClassExact_insert_constant
+#print axioms Kk.resolvedClassExact_insert_constant
+#check @Kk.resolvedClassExact_restrict
+#print axioms Kk.resolvedClassExact_restrict
+#check @Kk.resolvedOldCanonical_congr_columns
+#print axioms Kk.resolvedOldCanonical_congr_columns
+#check @Kk.resolvedLive_code_normalized_survivors
+#print axioms Kk.resolvedLive_code_normalized_survivors
+
+-- Empty selected front and actual omitted-cover fixed-terminal projection.
+#check @Kk.resolvedZeroSortAge_eq
+#print axioms Kk.resolvedZeroSortAge_eq
+#check @Kk.ResolvedLiveStage.targetAge_pullback
+#print axioms Kk.ResolvedLiveStage.targetAge_pullback
+#check @Kk.resolvedSelectedSupport_image_subset
+#print axioms Kk.resolvedSelectedSupport_image_subset
+#check @Kk.ResolvedLiveStage.targetAge_neutral_of_omitted_cover
+#print axioms Kk.ResolvedLiveStage.targetAge_neutral_of_omitted_cover
+#check @Kk.ResolvedLiveStage.insertBlock_omitted_target_all_members
+#print axioms Kk.ResolvedLiveStage.insertBlock_omitted_target_all_members
+#check @Kk.ResolvedLiveStage.insertBlock_no_split
+#print axioms Kk.ResolvedLiveStage.insertBlock_no_split
+
+-- Actual private refinements, complete coding rounds and the fair infinite graph.
+#check @Kk.ResolvedBareStage.exists_exact_labels
+#print axioms Kk.ResolvedBareStage.exists_exact_labels
+#check @Kk.resolvedMarkerName_injective
+#print axioms Kk.resolvedMarkerName_injective
+#check @Kk.mem_resolvedMarkerNames
+#print axioms Kk.mem_resolvedMarkerNames
+#check @Kk.resolvedMarkerName_not_old
+#print axioms Kk.resolvedMarkerName_not_old
+#check @Kk.resolvedMarkerName_not_live
+#print axioms Kk.resolvedMarkerName_not_live
+#check @Kk.resolvedMarkerEdge_off
+#print axioms Kk.resolvedMarkerEdge_off
+#check @Kk.resolvedMarkerEdge_positive_iff
+#print axioms Kk.resolvedMarkerEdge_positive_iff
+#check @Kk.ResolvedBareStage.refineBatch_preserves
+#print axioms Kk.ResolvedBareStage.refineBatch_preserves
+#check @Kk.ResolvedBareStage.refineBatch_exact
+#print axioms Kk.ResolvedBareStage.refineBatch_exact
+#check @Kk.ResolvedBareStage.refineBatch_single_split
+#print axioms Kk.ResolvedBareStage.refineBatch_single_split
+#check @Kk.ResolvedBareStage.singleton_test_safe
+#print axioms Kk.ResolvedBareStage.singleton_test_safe
+#check @Kk.ResolvedBareStage.neighbour_test_safe
+#print axioms Kk.ResolvedBareStage.neighbour_test_safe
+#check @Kk.resolvedClassExact_of_live_extension
+#print axioms Kk.resolvedClassExact_of_live_extension
+#check @Kk.ResolvedLiveStage.saturatedCode_target_neutral
+#print axioms Kk.ResolvedLiveStage.saturatedCode_target_neutral
+#check @Kk.resolvedBare_exists_round
+#print axioms Kk.resolvedBare_exists_round
+#check @Kk.ResolvedRoundResult.coding_neutral
+#print axioms Kk.ResolvedRoundResult.coding_neutral
+#check @Kk.ResolvedRoundResult.coding_no_split
+#print axioms Kk.ResolvedRoundResult.coding_no_split
+#check @Kk.resolvedEvenTail_next
+#print axioms Kk.resolvedEvenTail_next
+#check @Kk.resolvedEvenTail_coding
+#print axioms Kk.resolvedEvenTail_coding
+#check @Kk.resolvedFairNext_result
+#print axioms Kk.resolvedFairNext_result
+#check @Kk.resolvedFairStages_step
+#print axioms Kk.resolvedFairStages_step
+#check @Kk.resolvedFairStages_old_mono
+#print axioms Kk.resolvedFairStages_old_mono
+#check @Kk.resolvedFairStages_live_mono_step
+#print axioms Kk.resolvedFairStages_live_mono_step
+#check @Kk.resolvedFairStages_live_mono
+#print axioms Kk.resolvedFairStages_live_mono
+#check @Kk.resolvedFairStages_preserve
+#print axioms Kk.resolvedFairStages_preserve
+#check @Kk.resolvedFairDomain_even
+#print axioms Kk.resolvedFairDomain_even
+#check @Kk.resolvedFairEdge_eq_at
+#print axioms Kk.resolvedFairEdge_eq_at
+#check @Kk.resolvedFairEdge_sym
+#print axioms Kk.resolvedFairEdge_sym
+#check @Kk.resolvedFairEdge_loops
+#print axioms Kk.resolvedFairEdge_loops
+#check @Kk.resolvedFairDomain_finite_stage
+#print axioms Kk.resolvedFairDomain_finite_stage
+#check @Kk.resolvedFairEdge_free
+#print axioms Kk.resolvedFairEdge_free
+#check @Kk.resolvedFairEdge_even_eq
+#print axioms Kk.resolvedFairEdge_even_eq
+#check @Kk.resolvedFair_exists_graph
+#print axioms Kk.resolvedFair_exists_graph
+#check @Kk.resolvedFair_live_eventually_old
+#print axioms Kk.resolvedFair_live_eventually_old
+#check @Kk.resolvedFairEdge_eq_live_at
+#print axioms Kk.resolvedFairEdge_eq_live_at
+#check @Kk.resolvedFair_referenceAge_eq_live
+#print axioms Kk.resolvedFair_referenceAge_eq_live
+#check @Kk.resolvedFair_coding_reference_neutral
+#print axioms Kk.resolvedFair_coding_reference_neutral
+#check @Kk.resolvedFair_coding_no_split
+#print axioms Kk.resolvedFair_coding_no_split

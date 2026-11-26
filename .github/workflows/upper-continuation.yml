@@ -1,0 +1,89 @@
+name: KK upper continuation — full-age B3 and retained plans
+
+on:
+  pull_request:
+    paths:
+      - 'Kk/EqualCutFullType.lean'
+      - 'Kk/ResolvedQBlockSeparation.lean'
+      - 'Kk/RealPositionGenerationAliases.lean'
+      - 'Kk/PositiveGenerationStageCoherence.lean'
+      - 'Kk/StageCoherenceStructural.lean'
+      - 'Kk/PositiveGenerationStructural.lean'
+      - 'Kk/TrackDPlannedStageRoles.lean'
+      - 'Kk/TrackDEmptyPhysicalCutStar.lean'
+      - 'Kk/TrackDZeroStageActualRunSkip.lean'
+      - 'Kk/TrackDTopSeedConcreteLowerSkip.lean'
+      - 'Kk/GenerationZeroStageCoherence.lean'
+      - 'Kk/GenerationZeroStructural.lean'
+      - 'Kk/NumericRetainedPlan.lean'
+      - 'Kk/NumericTopNeutralPrefixAge.lean'
+      - 'Kk/PlannedPrefixSeeds.lean'
+      - 'Kk/ResolvedQNeutralAgeB3.lean'
+      - 'Kk/RetainedPrefixSource.lean'
+      - 'Kk/SelectedTopAgeNeutralB3.lean'
+      - 'Kk/TopGenerationStageCoherence.lean'
+      - 'Kk/RetainedChunkTables.lean'
+      - 'Kk/NumericRetainedPlanExact.lean'
+      - 'Kk/RetainedLevelEnumeration.lean'
+      - 'Kk/ResolvedLiveFutureAge.lean'
+      - 'Kk/ResolvedLiveCoverNormalization.lean'
+      - 'Kk/ResolvedLiveCoding.lean'
+      - 'Kk/ResolvedLiveSelectedProjection.lean'
+      - 'Kk/ResolvedLiveRefinement.lean'
+      - 'Kk/ResolvedLiveRound.lean'
+      - 'Kk/ResolvedFairLimit.lean'
+      - 'scripts/check_axioms_upper_continuation.lean'
+      - 'scripts/check_axiom_report.py'
+      - '.github/workflows/upper-continuation.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: kk-upper-continuation-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  upper-continuation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache Lean toolchain
+        uses: actions/cache@v4
+        with:
+          path: ~/.elan/toolchains
+          key: lean-toolchain-${{ runner.os }}-${{ hashFiles('lean-toolchain') }}
+      - name: Restore pinned Lake workspace
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake
+          key: lean-kk-${{ runner.os }}-${{ hashFiles('lakefile.toml', 'lean-toolchain', 'lake-manifest.json') }}
+          restore-keys: |
+            lean-kk-${{ runner.os }}-
+      - name: Install elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve pinned dependencies
+        run: lake update
+      - name: Obtain Mathlib cache
+        run: lake exe cache get
+      - name: Build complete-age B3, structural gates and retained plans
+        run: >-
+          lake build Kk.EqualCutFullType Kk.ResolvedQBlockSeparation
+          Kk.RealPositionGenerationAliases Kk.PositiveGenerationStageCoherence
+          Kk.TrackDPlannedStageRoles Kk.TrackDEmptyPhysicalCutStar
+          Kk.TrackDZeroStageActualRunSkip Kk.TrackDTopSeedConcreteLowerSkip
+          Kk.StageCoherenceStructural Kk.PositiveGenerationStructural
+          Kk.GenerationZeroStageCoherence Kk.GenerationZeroStructural Kk.NumericRetainedPlan
+          Kk.NumericTopNeutralPrefixAge Kk.PlannedPrefixSeeds Kk.ResolvedQNeutralAgeB3
+          Kk.RetainedPrefixSource Kk.SelectedTopAgeNeutralB3 Kk.TopGenerationStageCoherence
+          Kk.RetainedChunkTables Kk.NumericRetainedPlanExact
+          Kk.RetainedLevelEnumeration Kk.ResolvedLiveFutureAge
+          Kk.ResolvedLiveCoverNormalization Kk.ResolvedLiveCoding
+          Kk.ResolvedLiveSelectedProjection Kk.ResolvedLiveRefinement
+          Kk.ResolvedLiveRound Kk.ResolvedFairLimit
+      - name: Strict named standard-only axiom gate
+        run: |
+          set -euo pipefail
+          lake env lean scripts/check_axioms_upper_continuation.lean | tee upper_continuation.log
+          python3 scripts/check_axiom_report.py --self-test
+          python3 scripts/check_axiom_report.py scripts/check_axioms_upper_continuation.lean upper_continuation.log
