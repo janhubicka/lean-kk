@@ -40,3 +40,7 @@ New English argument should receive hostile review and kernel validation before 
 
 
 Manuscript proof commit: 469557f836ce00afcdae362436156ef06365d0ef.
+
+## Consolidated validation batch
+
+First exact-head f46a1a677ad6db578ab2beaa932c1ad05c7c15f2 passed full Lean workflow 45870552190 and source coverage audit 45870552294 (all 15 workflows successful). This batch adds 15 exact named endpoints in three modules. The full B3 proof labels the actual upper vertices of an arbitrary forbidden clique, with repeated labels, and transports complete canonical age equality on the actual socle. Loops and both asymmetric pairs are excluded explicitly. Convexity of the consecutive ordinary clique blocks is needed to rule out a retained block straddling an omitted meaningful vertex; whole-block retention alone is not enough. The full record fibre theorem retains all dependent L+/E atoms. Planned retention uses the full envelope invariant with the verified E1 theorem, not the stricter minimal AlgorithmRun. No new endpoint is called kernel-verified before CI. Remaining: construct the countable ordinary resolution and its exact projected event record, instantiate no-pool-meet and local gates, prove compressed inverse-source equality across occurrences, and finish the independent lower history induction.

@@ -3,6 +3,11 @@ version = "0.1.0"
 defaultTargets = ["Kk"]
 
 [[require]]
+name = "ramsey-space-todorcevic"
+git = "https://github.com/janhubicka/lean-ramsey-space-todorcevic"
+rev = "f471b640f11e6b35fbbc3ad74dfa93df5ec3eadc"
+
+[[require]]
 name = "successor-tree-lean"
 git = "https://github.com/janhubicka/lean-successors"
 rev = "a74c10761303a18649053f2af3a1a1697f032e13"

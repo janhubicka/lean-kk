@@ -2,6 +2,35 @@
 
 Lean 4 validation for the big Ramsey degree project on universal `K_k`-free graphs, using the pinned [`lean-successors`](https://github.com/janhubicka/lean-successors) type-respecting Ramsey theorem.
 
+**26 November local completion — verified:** the normal default `lake build`
+completed successfully (**4,113 jobs**), followed by the strict central audit
+of **1,283 distinct named transitive-axiom reports**. All 1,131 prior names are
+preserved; the 152 additions comprise eight new modules (83 endpoints) and
+seven recovered construction modules (69 endpoints). Fourteen reports are
+axiom-free; all remaining axioms are `propext`, `Classical.choice`, or
+`Quot.sound`. The parser self-test and source/import audit also passed.
+
+The batch constructs an actual countable K4-free graph containing the
+prescribed original graph, its exact round chronology and one-gap G+ source;
+proves exact finite retained-code compression; and derives the full planned
+Kpt envelope from explicit ordinary conditions, including an empty selected
+front. The **sharp big Ramsey characterization remains open**: individual
+event chronology, the projected diary and its local hypotheses, common
+labelled inverse sources, history occurrence/lower bounds, and the general
+K_ell construction still need their application proofs. See the
+[completion report](docs/one_gap_local_completion_20261126.md) and
+[source-hash evidence](docs/audits/2026-11-26-local-one-gap-completion.json).
+
+The verified pins are Lean **4.35.0-rc3**, successor tree
+`a74c10761303a18649053f2af3a1a1697f032e13`, Ramsey space
+`f471b640f11e6b35fbbc3ad74dfa93df5ec3eadc`, and Mathlib
+`5bd58ac291422a21f412ae354c91e7d172255a2c`. The Ramsey-space pin includes the
+import-only build fix merged in
+[upstream PR #21](https://github.com/janhubicka/lean-ramsey-space-todorcevic/pull/21);
+its source and merged trees are identical. The default Kk target reaches
+534 Kk modules plus its root; 178 other source modules remain outside that
+default closure and are not covered by this full-build claim.
+
 **Verified building blocks:** finite-family type-respecting Ramsey refinement and conditional labelled orbit transfer; normalized Henson graph-language encoding and integer-witness graph-age canonicalization; actual canonical cover-block arithmetic and **arbitrary-subfront cover-or-equality** by a zero-supported relative-age lift; selected-original and full AlgorithmRun I3 bounds under their precise hypotheses; genuine finite families of isolated reserved original clique blocks; one-step Henson selected extensions with explicitly certified complete mixed-neighbourhood tests; exact linked-clique-capacity insertion and nonmonotone live-pool update; safe deletion-only capacity transfer; and the **exact literal numerical-H binary L column** of a genuinely later top-generation selected original against EVERY earlier original at EVERY generation, plus all-generation old-to-new reserved nonedges and designated positive clique atoms in an actual one-step construction; and the **exact incoming auxiliary E-column and selected free level** of the same physical finite top original, including fake numeric sources. The concrete K4 seeded AlgorithmRun has already been proven to select BOTH auxiliary cuts 22 and 10, with the Kpt parameter at 22 in the real closure at cut 10. These are kernel-checked conditional statements with named transitive-axiom reports. None proves that the prescribed infinite resolved-copy diary satisfies all original-edge, full B3 and common-orbit requirements.
 
 **Not proved by this library:** the proposed resolved numerical-H copy's mixed-parameter extension admissibility, equality of full parameter-closed envelope records for two occurrences of the same macrodiary, a common labelled inverse-source orbit, or the unconditional upper and lower big Ramsey bounds. In particular, selected-only age preservation does **not** imply full corrected (B3) preservation.

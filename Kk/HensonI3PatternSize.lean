@@ -1,4 +1,4 @@
-import Kk.HensonAlgorithmRunHigherCapacity
+import Kk.HensonI3Generation
 import SuccessorTree.V10.I3ActualHigherSignature
 import Mathlib.Tactic
 
