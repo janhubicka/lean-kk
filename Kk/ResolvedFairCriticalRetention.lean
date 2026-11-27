@@ -203,10 +203,15 @@ theorem resolvedFairCriticalFront_age_neutral
   · exact resolvedFairFiniteFront_code_age_neutral s0 hEmpty S (resolvedFairCriticalAuxKeep s0 S) n
   · dsimp only
     unfold resolvedTargetAge
-    rw [fixedCritical_raw_neutral (oneGapEdge (resolvedFairEventEdge s0))
-      (resolvedFairFixedTerminals s0 S) _
-      (resolvedFairRetainedFront_mem_fixed s0 hEmpty S (resolvedFairCriticalAuxKeep s0 S) c)
-      c hRank]
+    have hRaw := fixedCritical_raw_neutral (oneGapEdge (resolvedFairEventEdge s0))
+      (resolvedFairFixedTerminals s0 S)
+      (resolvedFairRetainedFront s0 (resolvedFairCriticalKeep s0 S)
+        (resolvedFairSelectionCap S) c)
+      (fun i => resolvedFairRetainedFront_mem_fixed s0 hEmpty S
+        (resolvedFairCriticalAuxKeep s0 S) c i) c hRank
+    exact congrArg (integerGraphAgeCanonical
+      (resolvedFairRetainedFrontSize s0 (resolvedFairCriticalKeep s0 S)
+        (resolvedFairSelectionCap S) c) 4) hRaw
 
 /-- Every certified event has at most three ordinary vertices. -/
 theorem ResolvedEventCertificate.block_length_le_three {W : Set Nat}

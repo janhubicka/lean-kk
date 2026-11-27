@@ -547,4 +547,5 @@ import Kk.ResolvedFairCriticalRetention
 The counting project imports the verified successor-tree library.
 No local replacement of the Ramsey theorem is assumed.
 -/
-
+import Kk.NonedgeBRD24
+import Kk.ResolvedFairRetainedPalette
