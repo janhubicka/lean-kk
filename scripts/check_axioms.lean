@@ -2948,3 +2948,247 @@ import Kk
 
 #check @Kk.resolvedFairCodePosition_last
 #print axioms Kk.resolvedFairCodePosition_last
+
+-- Actual individual-event chronology, retained geometry, and dummy-cut completion.
+
+-- OneGapDummyCut (14 public theorem endpoints).
+#check @Kk.oneGapPairedLevels_zero
+#print axioms Kk.oneGapPairedLevels_zero
+#check @Kk.oneGapPairedLevels_preceding_gap
+#print axioms Kk.oneGapPairedLevels_preceding_gap
+#check @Kk.oneGap_freeLevel_mem_of_pair_retention
+#print axioms Kk.oneGap_freeLevel_mem_of_pair_retention
+#check @Kk.oneGapPairedLevels_freeLevel_mem
+#print axioms Kk.oneGapPairedLevels_freeLevel_mem
+#check @Kk.oneGap_freeLevel_eq_positive_iff
+#print axioms Kk.oneGap_freeLevel_eq_positive_iff
+#check @Kk.oneGap_dummy_binary_zero
+#print axioms Kk.oneGap_dummy_binary_zero
+#check @Kk.oneGap_finitePrefix_avoids
+#print axioms Kk.oneGap_finitePrefix_avoids
+#check @Kk.oneGap_full_fibre_of_zero_cut
+#print axioms Kk.oneGap_full_fibre_of_zero_cut
+#check @Kk.oneGapRetainedPoolData_correctedB3_of_zero_cut
+#print axioms Kk.oneGapRetainedPoolData_correctedB3_of_zero_cut
+#check @Kk.oneGap_retained_pool_skip_of_zero_cut
+#print axioms Kk.oneGap_retained_pool_skip_of_zero_cut
+#check @Kk.oneGap_dummy_full_fibre
+#print axioms Kk.oneGap_dummy_full_fibre
+#check @Kk.oneGap_dummy_originals_no_meet
+#print axioms Kk.oneGap_dummy_originals_no_meet
+#check @Kk.oneGap_dummy_retained_pool_skip
+#print axioms Kk.oneGap_dummy_retained_pool_skip
+#check @Kk.oneGap_planned_envelope_of_real_selected_neutrality
+#print axioms Kk.oneGap_planned_envelope_of_real_selected_neutrality
+
+-- OneGapEventRole (11 public theorem endpoints).
+#check @Kk.oneGapEventRole_of_not_real
+#print axioms Kk.oneGapEventRole_of_not_real
+#check @Kk.oneGapEventRole_zero
+#print axioms Kk.oneGapEventRole_zero
+#check @Kk.oneGapEventRole_gap
+#print axioms Kk.oneGapEventRole_gap
+#check @Kk.oneGapEventRole_address
+#print axioms Kk.oneGapEventRole_address
+#check @Kk.oneGapEventRole_batchPosition
+#print axioms Kk.oneGapEventRole_batchPosition
+#check @Kk.oneGapEventRole_dummy_iff
+#print axioms Kk.oneGapEventRole_dummy_iff
+#check @Kk.oneGapEventRole_auxiliary_iff
+#print axioms Kk.oneGapEventRole_auxiliary_iff
+#check @Kk.oneGapEventRole_retained_iff
+#print axioms Kk.oneGapEventRole_retained_iff
+#check @Kk.oneGapEventRole_retained_batchPosition
+#print axioms Kk.oneGapEventRole_retained_batchPosition
+#check @Kk.oneGapEventRole_block_flag
+#print axioms Kk.oneGapEventRole_block_flag
+#check @Kk.oneGapEventRole_block_convex
+#print axioms Kk.oneGapEventRole_block_convex
+
+-- OneGapEventScheduleOrder (3 public theorem endpoints).
+#check @Kk.oneGapBatchIndex_mono
+#print axioms Kk.oneGapBatchIndex_mono
+#check @Kk.oneGapBatchPosition_lt_iff
+#print axioms Kk.oneGapBatchPosition_lt_iff
+#check @Kk.oneGapChronologicalVertex_prefix_at_entry
+#print axioms Kk.oneGapChronologicalVertex_prefix_at_entry
+
+-- ResolvedEventBirthGeometry (10 public theorem endpoints).
+#check @Kk.ResolvedEventCertificate.edge_sym
+#print axioms Kk.ResolvedEventCertificate.edge_sym
+#check @Kk.ResolvedEventCertificate.edge_loop
+#print axioms Kk.ResolvedEventCertificate.edge_loop
+#check @Kk.ResolvedEventCertificate.marker_block_singleton
+#print axioms Kk.ResolvedEventCertificate.marker_block_singleton
+#check @Kk.ResolvedEventCertificate.code_block
+#print axioms Kk.ResolvedEventCertificate.code_block
+#check @Kk.ResolvedEventCertificate.auxiliary_block_not_live
+#print axioms Kk.ResolvedEventCertificate.auxiliary_block_not_live
+#check @Kk.ResolvedEventCertificate.auxiliary_old_zero
+#print axioms Kk.ResolvedEventCertificate.auxiliary_old_zero
+#check @Kk.ResolvedEventCertificate.block_clique
+#print axioms Kk.ResolvedEventCertificate.block_clique
+#check @Kk.ResolvedLiveStage.insertBlock_live_bits
+#print axioms Kk.ResolvedLiveStage.insertBlock_live_bits
+#check @Kk.ResolvedBareStage.refineBatch_marker_positive_iff
+#print axioms Kk.ResolvedBareStage.refineBatch_marker_positive_iff
+#check @Kk.ResolvedEventCertificate.block_live_uniform
+#print axioms Kk.ResolvedEventCertificate.block_live_uniform
+
+-- ResolvedEventChainOrder (7 public theorem endpoints).
+#check @Kk.ResolvedEventChain.event_certificate
+#print axioms Kk.ResolvedEventChain.event_certificate
+#check @Kk.ResolvedEventChain.event_postOld_subset
+#print axioms Kk.ResolvedEventChain.event_postOld_subset
+#check @Kk.ResolvedEventChain.event_agreement
+#print axioms Kk.ResolvedEventChain.event_agreement
+#check @Kk.ResolvedEventChain.vertices_mem
+#print axioms Kk.ResolvedEventChain.vertices_mem
+#check @Kk.ResolvedEventChain.vertices_nodup
+#print axioms Kk.ResolvedEventChain.vertices_nodup
+#check @Kk.ResolvedEventChain.preOld_iff
+#print axioms Kk.ResolvedEventChain.preOld_iff
+#check @Kk.ResolvedEventChain.blocks_disjoint
+#print axioms Kk.ResolvedEventChain.blocks_disjoint
+
+-- ResolvedEventTrace (10 public theorem endpoints).
+#check @Kk.ResolvedLiveStage.insertBlock_empty_oldAge
+#print axioms Kk.ResolvedLiveStage.insertBlock_empty_oldAge
+#check @Kk.resolvedCoverBlock_nonempty
+#print axioms Kk.resolvedCoverBlock_nonempty
+#check @Kk.ResolvedEventCertificate.block_pos
+#print axioms Kk.ResolvedEventCertificate.block_pos
+#check @Kk.ResolvedEventCertificate.block_nodup
+#print axioms Kk.ResolvedEventCertificate.block_nodup
+#check @Kk.ResolvedEventCertificate.block_fresh
+#print axioms Kk.ResolvedEventCertificate.block_fresh
+#check @Kk.ResolvedEventChain.old_mono
+#print axioms Kk.ResolvedEventChain.old_mono
+#check @Kk.ResolvedEventChain.append
+#print axioms Kk.ResolvedEventChain.append
+#check @Kk.ResolvedEventChain.transport
+#print axioms Kk.ResolvedEventChain.transport
+#check @Kk.ResolvedLiveCoverPath.old_mono
+#print axioms Kk.ResolvedLiveCoverPath.old_mono
+#check @Kk.ResolvedLiveCoverPath.preserves
+#print axioms Kk.ResolvedLiveCoverPath.preserves
+
+-- ResolvedFairEventGeometry (16 public theorem endpoints).
+#check @Kk.resolvedFairVertexEventIndex_mono
+#print axioms Kk.resolvedFairVertexEventIndex_mono
+#check @Kk.resolvedFairEventVertex_mem_block
+#print axioms Kk.resolvedFairEventVertex_mem_block
+#check @Kk.resolvedFairEvent_auxiliary_prior_zero
+#print axioms Kk.resolvedFairEvent_auxiliary_prior_zero
+#check @Kk.resolvedFairEventEdge_auxiliary_prior_zero
+#print axioms Kk.resolvedFairEventEdge_auxiliary_prior_zero
+#check @Kk.resolvedFairEventEdge_distinct_auxiliary_zero
+#print axioms Kk.resolvedFairEventEdge_distinct_auxiliary_zero
+#check @Kk.resolvedFairEventRole_dummy_iff
+#print axioms Kk.resolvedFairEventRole_dummy_iff
+#check @Kk.resolvedFairEventRole_auxiliary_iff
+#print axioms Kk.resolvedFairEventRole_auxiliary_iff
+#check @Kk.resolvedFairEventRole_coded_iff
+#print axioms Kk.resolvedFairEventRole_coded_iff
+#check @Kk.resolvedFairEventRole_block_flag
+#print axioms Kk.resolvedFairEventRole_block_flag
+#check @Kk.resolvedFairEventRole_block_convex
+#print axioms Kk.resolvedFairEventRole_block_convex
+#check @Kk.resolvedFairEvent_dummy_zero
+#print axioms Kk.resolvedFairEvent_dummy_zero
+#check @Kk.resolvedFairEvent_coded_aux_zero
+#print axioms Kk.resolvedFairEvent_coded_aux_zero
+#check @Kk.resolvedFairEvent_distinct_aux_zero
+#print axioms Kk.resolvedFairEvent_distinct_aux_zero
+#check @Kk.resolvedFairEvent_later_retained_aux_old_zero
+#print axioms Kk.resolvedFairEvent_later_retained_aux_old_zero
+#check @Kk.resolvedFairEvent_positive_retained_is_kept_coded
+#print axioms Kk.resolvedFairEvent_positive_retained_is_kept_coded
+#check @Kk.resolvedFairEvent_later_retained_noncode_old_zero
+#print axioms Kk.resolvedFairEvent_later_retained_noncode_old_zero
+
+-- ResolvedFairEventOneGap (8 public theorem endpoints).
+#check @Kk.resolvedFairEventOneGapPartial_avoids
+#print axioms Kk.resolvedFairEventOneGapPartial_avoids
+#check @Kk.resolvedFairEventOneGapOriginal_size
+#print axioms Kk.resolvedFairEventOneGapOriginal_size
+#check @Kk.resolvedFairEventOneGapOriginal_strictMono_size
+#print axioms Kk.resolvedFairEventOneGapOriginal_strictMono_size
+#check @Kk.resolvedFairEventOneGapOriginal_injective
+#print axioms Kk.resolvedFairEventOneGapOriginal_injective
+#check @Kk.resolvedFairEventOneGapOriginal_binary
+#print axioms Kk.resolvedFairEventOneGapOriginal_binary
+#check @Kk.resolvedFairEventOneGapOriginal_diagonal
+#print axioms Kk.resolvedFairEventOneGapOriginal_diagonal
+#check @Kk.resolvedFairEventOneGapOriginal_E
+#print axioms Kk.resolvedFairEventOneGapOriginal_E
+#check @Kk.resolvedInitialEventOneGapOriginal_binary
+#print axioms Kk.resolvedInitialEventOneGapOriginal_binary
+
+-- ResolvedFairEventSchedule (26 public theorem endpoints).
+#check @Kk.resolvedFairRound_exists_event_list
+#print axioms Kk.resolvedFairRound_exists_event_list
+#check @Kk.resolvedFairRoundEvents_chain
+#print axioms Kk.resolvedFairRoundEvents_chain
+#check @Kk.resolvedFairRoundEvents_last
+#print axioms Kk.resolvedFairRoundEvents_last
+#check @Kk.resolvedFairRoundEvents_positive
+#print axioms Kk.resolvedFairRoundEvents_positive
+#check @Kk.resolvedFairEvent_at_position
+#print axioms Kk.resolvedFairEvent_at_position
+#check @Kk.resolvedFairEvent_certificate
+#print axioms Kk.resolvedFairEvent_certificate
+#check @Kk.resolvedFairEvent_agreement
+#print axioms Kk.resolvedFairEvent_agreement
+#check @Kk.resolvedFairEvent_prior_blocks
+#print axioms Kk.resolvedFairEvent_prior_blocks
+#check @Kk.resolvedFairEvent_preOld_at_position
+#print axioms Kk.resolvedFairEvent_preOld_at_position
+#check @Kk.resolvedFairEvent_preOld_iff
+#print axioms Kk.resolvedFairEvent_preOld_iff
+#check @Kk.resolvedFairEventBlock_positive
+#print axioms Kk.resolvedFairEventBlock_positive
+#check @Kk.resolvedFairEventBlock_nodup
+#print axioms Kk.resolvedFairEventBlock_nodup
+#check @Kk.resolvedFairEventBlock_disjoint
+#print axioms Kk.resolvedFairEventBlock_disjoint
+#check @Kk.resolvedFairEventVertex_injective
+#print axioms Kk.resolvedFairEventVertex_injective
+#check @Kk.resolvedFairEventVertex_prefix
+#print axioms Kk.resolvedFairEventVertex_prefix
+#check @Kk.resolvedFairEventVertex_prefix_inside
+#print axioms Kk.resolvedFairEventVertex_prefix_inside
+#check @Kk.resolvedFairEventVertex_range
+#print axioms Kk.resolvedFairEventVertex_range
+#check @Kk.resolvedFairCodingEvent_spec
+#print axioms Kk.resolvedFairCodingEvent_spec
+#check @Kk.resolvedFairCodingEvent_strictMono
+#print axioms Kk.resolvedFairCodingEvent_strictMono
+#check @Kk.resolvedFairEventVertex_coded
+#print axioms Kk.resolvedFairEventVertex_coded
+#check @Kk.resolvedFairEventCodePosition_strictMono
+#print axioms Kk.resolvedFairEventCodePosition_strictMono
+#check @Kk.resolvedFairEventEdge_sym
+#print axioms Kk.resolvedFairEventEdge_sym
+#check @Kk.resolvedFairEventEdge_loops
+#print axioms Kk.resolvedFairEventEdge_loops
+#check @Kk.resolvedFairEventEdge_free
+#print axioms Kk.resolvedFairEventEdge_free
+#check @Kk.resolvedFairEventEdge_originals
+#print axioms Kk.resolvedFairEventEdge_originals
+#check @Kk.resolvedInitialEventGraph_originals
+#print axioms Kk.resolvedInitialEventGraph_originals
+
+-- ResolvedRoundEvents (6 public theorem endpoints).
+#check @Kk.ResolvedBareStage.refineBatch_exists_events
+#print axioms Kk.ResolvedBareStage.refineBatch_exists_events
+#check @Kk.ResolvedMarkerBatchStep.old_mono
+#print axioms Kk.ResolvedMarkerBatchStep.old_mono
+#check @Kk.ResolvedMarkerBatchStep.preserves
+#print axioms Kk.ResolvedMarkerBatchStep.preserves
+#check @Kk.ResolvedMarkerBatchStep.exists_events
+#print axioms Kk.ResolvedMarkerBatchStep.exists_events
+#check @Kk.ResolvedLiveCoverPath.exists_events
+#print axioms Kk.ResolvedLiveCoverPath.exists_events
+#check @Kk.ResolvedRoundResult.exists_events
+#print axioms Kk.ResolvedRoundResult.exists_events
