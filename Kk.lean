@@ -8,6 +8,7 @@ import Kk.ResolvedFairOneGap
 import Kk.OneGapDummyCut
 import Kk.ResolvedFairEventGeometry
 import Kk.ResolvedFairEventOneGap
+import Kk.ResolvedFairSelectedEnvelope
 import Kk.OneGapPlannedEnvelope
 import Kk.OneGapPartialStructure
 -- Track A/C/G: exact raw max old-seed certificate for odd factor Bad source budget.

@@ -3192,3 +3192,169 @@ import Kk
 #print axioms Kk.ResolvedLiveCoverPath.exists_events
 #check @Kk.ResolvedRoundResult.exists_events
 #print axioms Kk.ResolvedRoundResult.exists_events
+
+-- Constructed finite selected fronts, retained plan and actual conditional envelope.
+
+-- OneGapFiniteCodingFront (14 public theorem endpoints).
+#check @Kk.oneGapCodingFrontSet_mem
+#print axioms Kk.oneGapCodingFrontSet_mem
+#check @Kk.oneGapCodingFrontEntry_mem
+#print axioms Kk.oneGapCodingFrontEntry_mem
+#check @Kk.oneGapCodingFrontSelected_lt_size
+#print axioms Kk.oneGapCodingFrontSelected_lt_size
+#check @Kk.oneGapCodingFrontSelected_mem_pool
+#print axioms Kk.oneGapCodingFrontSelected_mem_pool
+#check @Kk.oneGapCodingFrontSelected_eligible
+#print axioms Kk.oneGapCodingFrontSelected_eligible
+#check @Kk.oneGapCodingFrontSelected_coded
+#print axioms Kk.oneGapCodingFrontSelected_coded
+#check @Kk.oneGapCodingFrontSelected_after_cut
+#print axioms Kk.oneGapCodingFrontSelected_after_cut
+#check @Kk.oneGapCodingFrontSelected_strictMono
+#print axioms Kk.oneGapCodingFrontSelected_strictMono
+#check @Kk.oneGapCodingFrontSelected_injective
+#print axioms Kk.oneGapCodingFrontSelected_injective
+#check @Kk.oneGapCodingFrontSelected_range
+#print axioms Kk.oneGapCodingFrontSelected_range
+#check @Kk.oneGapCodingFrontSize_le_size
+#print axioms Kk.oneGapCodingFrontSize_le_size
+#check @Kk.oneGapCodingFrontSize_zero_iff
+#print axioms Kk.oneGapCodingFrontSize_zero_iff
+#check @Kk.oneGapCodingFrontSet_antitone
+#print axioms Kk.oneGapCodingFrontSet_antitone
+#check @Kk.oneGapCodingFrontSize_antitone
+#print axioms Kk.oneGapCodingFrontSize_antitone
+
+-- ResolvedFairCodingSelection (11 public theorem endpoints).
+#check @Kk.resolvedFairOriginalAddress_strictMono
+#print axioms Kk.resolvedFairOriginalAddress_strictMono
+#check @Kk.resolvedFairVertexEventIndex_codePosition
+#print axioms Kk.resolvedFairVertexEventIndex_codePosition
+#check @Kk.resolvedFairEventRole_originalAddress
+#print axioms Kk.resolvedFairEventRole_originalAddress
+#check @Kk.resolvedFairEventRole_coded_iff_originalAddress
+#print axioms Kk.resolvedFairEventRole_coded_iff_originalAddress
+#check @Kk.resolvedFairEventRole_coded_unique_originalAddress
+#print axioms Kk.resolvedFairEventRole_coded_unique_originalAddress
+#check @Kk.resolvedFairSelectedKeep_code
+#print axioms Kk.resolvedFairSelectedKeep_code
+#check @Kk.resolvedFairSelectedKeep_auxiliary
+#print axioms Kk.resolvedFairSelectedKeep_auxiliary
+#check @Kk.resolvedFairSelectedRole_coded_iff
+#print axioms Kk.resolvedFairSelectedRole_coded_iff
+#check @Kk.resolvedFairSelectedRole_coded_bound
+#print axioms Kk.resolvedFairSelectedRole_coded_bound
+#check @Kk.resolvedFairOriginalAddress_edge
+#print axioms Kk.resolvedFairOriginalAddress_edge
+#check @Kk.resolvedInitialOriginalAddress_edge
+#print axioms Kk.resolvedInitialOriginalAddress_edge
+
+-- ResolvedFairRetainedPlan (21 public theorem endpoints).
+#check @Kk.oneGapPairedLevels_address_iff
+#print axioms Kk.oneGapPairedLevels_address_iff
+#check @Kk.resolvedFairRetainedTop_lt_size
+#print axioms Kk.resolvedFairRetainedTop_lt_size
+#check @Kk.resolvedFairRetainedPositions_mem_iff
+#print axioms Kk.resolvedFairRetainedPositions_mem_iff
+#check @Kk.resolvedFairRetainedLevels_finite
+#print axioms Kk.resolvedFairRetainedLevels_finite
+#check @Kk.resolvedFairRetainedPool_finite
+#print axioms Kk.resolvedFairRetainedPool_finite
+#check @Kk.resolvedFairRetainedLevels_zero
+#print axioms Kk.resolvedFairRetainedLevels_zero
+#check @Kk.resolvedFairRetainedLevels_bound
+#print axioms Kk.resolvedFairRetainedLevels_bound
+#check @Kk.resolvedFairRetainedLevels_real_iff
+#print axioms Kk.resolvedFairRetainedLevels_real_iff
+#check @Kk.resolvedFairRetainedLevels_of_retained_real
+#print axioms Kk.resolvedFairRetainedLevels_of_retained_real
+#check @Kk.resolvedFairRetainedLevels_omitted_real_not_retained
+#print axioms Kk.resolvedFairRetainedLevels_omitted_real_not_retained
+#check @Kk.resolvedFairRetainedPool_real_iff
+#print axioms Kk.resolvedFairRetainedPool_real_iff
+#check @Kk.resolvedFairRetainedPool_mem_iff
+#print axioms Kk.resolvedFairRetainedPool_mem_iff
+#check @Kk.resolvedFairRetainedPool_of_level
+#print axioms Kk.resolvedFairRetainedPool_of_level
+#check @Kk.resolvedFairRetainedPool_retained_parameters
+#print axioms Kk.resolvedFairRetainedPool_retained_parameters
+#check @Kk.resolvedFairRetainedPool_pair_retention
+#print axioms Kk.resolvedFairRetainedPool_pair_retention
+#check @Kk.resolvedFairRetainedPool_freeLevel_mem
+#print axioms Kk.resolvedFairRetainedPool_freeLevel_mem
+#check @Kk.resolvedFairRetainedPool_freeLevel_ne_of_omitted
+#print axioms Kk.resolvedFairRetainedPool_freeLevel_ne_of_omitted
+#check @Kk.resolvedFairRetainedPositions_cap
+#print axioms Kk.resolvedFairRetainedPositions_cap
+#check @Kk.resolvedFairRetainedLevels_top
+#print axioms Kk.resolvedFairRetainedLevels_top
+#check @Kk.resolvedFairRetainedCap_mem
+#print axioms Kk.resolvedFairRetainedCap_mem
+#check @Kk.resolvedFairRetainedLevels_cap_gap
+#print axioms Kk.resolvedFairRetainedLevels_cap_gap
+
+-- ResolvedFairSelectedFront (8 public theorem endpoints).
+#check @Kk.resolvedFairSelectedFront_lt_size
+#print axioms Kk.resolvedFairSelectedFront_lt_size
+#check @Kk.resolvedFairSelectedFront_strictMono
+#print axioms Kk.resolvedFairSelectedFront_strictMono
+#check @Kk.resolvedFairSelectedFront_range
+#print axioms Kk.resolvedFairSelectedFront_range
+#check @Kk.resolvedFairSelectedFront_positive
+#print axioms Kk.resolvedFairSelectedFront_positive
+#check @Kk.resolvedFairSelectedFront_other_zero
+#print axioms Kk.resolvedFairSelectedFront_other_zero
+#check @Kk.resolvedFairSelectedFront_range_iff_original
+#print axioms Kk.resolvedFairSelectedFront_range_iff_original
+#check @Kk.resolvedFairSelectedFront_original
+#print axioms Kk.resolvedFairSelectedFront_original
+#check @Kk.resolvedFairSelectedFrontSize_le_card
+#print axioms Kk.resolvedFairSelectedFrontSize_le_card
+
+-- ResolvedFairFiniteSelection (14 public theorem endpoints).
+#check @Kk.resolvedFairSelection_lt_cap
+#print axioms Kk.resolvedFairSelection_lt_cap
+#check @Kk.resolvedFairSelectionCap_not_mem
+#print axioms Kk.resolvedFairSelectionCap_not_mem
+#check @Kk.resolvedFairSelectionWithCap_card
+#print axioms Kk.resolvedFairSelectionWithCap_card
+#check @Kk.resolvedFairSelectionWithCap_le_cap
+#print axioms Kk.resolvedFairSelectionWithCap_le_cap
+#check @Kk.resolvedFairFiniteKeep_code
+#print axioms Kk.resolvedFairFiniteKeep_code
+#check @Kk.resolvedFairFiniteKeep_cap
+#print axioms Kk.resolvedFairFiniteKeep_cap
+#check @Kk.resolvedFairFiniteSelection_role
+#print axioms Kk.resolvedFairFiniteSelection_role
+#check @Kk.resolvedFairFiniteSelection_address_lt_top
+#print axioms Kk.resolvedFairFiniteSelection_address_lt_top
+#check @Kk.resolvedFairFiniteSelection_address_le_top
+#print axioms Kk.resolvedFairFiniteSelection_address_le_top
+#check @Kk.resolvedFairFiniteSelection_address_lt_size
+#print axioms Kk.resolvedFairFiniteSelection_address_lt_size
+#check @Kk.resolvedFairFiniteSelectionVertex_val
+#print axioms Kk.resolvedFairFiniteSelectionVertex_val
+#check @Kk.resolvedFairFiniteSelection_mem_levels
+#print axioms Kk.resolvedFairFiniteSelection_mem_levels
+#check @Kk.resolvedFairFiniteSelection_mem_pool
+#print axioms Kk.resolvedFairFiniteSelection_mem_pool
+#check @Kk.resolvedFairFiniteSelectedFrontSize_le_card
+#print axioms Kk.resolvedFairFiniteSelectedFrontSize_le_card
+
+-- ResolvedFairSelectedEnvelope (8 public theorem endpoints).
+#check @Kk.resolvedFairRetainedCap_eligible_of_omitted
+#print axioms Kk.resolvedFairRetainedCap_eligible_of_omitted
+#check @Kk.resolvedFairRetainedFront_cap
+#print axioms Kk.resolvedFairRetainedFront_cap
+#check @Kk.resolvedFairRetainedFrontSize_pos_of_omitted
+#print axioms Kk.resolvedFairRetainedFrontSize_pos_of_omitted
+#check @Kk.resolvedFairRetainedFront_positive
+#print axioms Kk.resolvedFairRetainedFront_positive
+#check @Kk.resolvedFairRetainedFront_other_zero
+#print axioms Kk.resolvedFairRetainedFront_other_zero
+#check @Kk.resolvedFairEventGraph_avoids
+#print axioms Kk.resolvedFairEventGraph_avoids
+#check @Kk.resolvedFairRetained_envelope
+#print axioms Kk.resolvedFairRetained_envelope
+#check @Kk.resolvedFairFiniteSelection_envelope
+#print axioms Kk.resolvedFairFiniteSelection_envelope
