@@ -3650,3 +3650,19 @@ import Kk
 #print axioms Kk.resolvedFairActualTuples_paletteCover
 #check @Kk.resolvedFairActualTuples_colour_bound
 #print axioms Kk.resolvedFairActualTuples_colour_bound
+
+-- Exact paired inverse-source code, independent of parameter histories.
+#check @Kk.oneGapPairedLevels_truncate
+#print axioms Kk.oneGapPairedLevels_truncate
+#check @Kk.oneGapLift_finset_range
+#print axioms Kk.oneGapLift_finset_range
+#check @Kk.strictMono_fin_same_range_cast
+#print axioms Kk.strictMono_fin_same_range_cast
+#check @Kk.gPlus_source_prefix_levelRange
+#print axioms Kk.gPlus_source_prefix_levelRange
+#check @Kk.oneGap_inverseSource_code
+#print axioms Kk.oneGap_inverseSource_code
+#check @Kk.resolvedFairEvent_inverseSource_code
+#print axioms Kk.resolvedFairEvent_inverseSource_code
+#check @Kk.oneGap_inverseSources_eq_of_graph
+#print axioms Kk.oneGap_inverseSources_eq_of_graph

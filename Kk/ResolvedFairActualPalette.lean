@@ -62,7 +62,7 @@ set: it is a retained ancestor of the covered cap. -/
 theorem resolvedFairSelection_actualPair
     (s0 : ResolvedBareStage 4 (resolvedEvenTail 0)) (hEmpty : s0.old = ∅)
     (S : Finset Nat) (auxKeep : Nat → Bool) (i : Nat) (hi : i ∈ S) :
-    ∃ P : GPlusRepresentingPair (hensonForbiddenFamily 4 (by omega)),
+    ∃ P : GPlusRepresentingPair (hensonForbiddenFamily 4 (Nat.le_trans (Nat.le_succ 2) (Nat.le_succ 3))),
       P.vertex = resolvedFairEventOneGapOriginal s0 hEmpty i ∧
       P.upper ∈ resolvedFairFiniteOriginalSeeds s0 hEmpty S ∧
       LevelTree.lev P.upper ≤ resolvedFairRetainedTop s0 (resolvedFairSelectionCap S) ∧
@@ -80,10 +80,11 @@ theorem resolvedFairSelection_actualPair
   have hFree : LevelTree.lev U = resolvedFairOriginalAddress s0 n - 1 := by
     change ((oneGapPartial (resolvedFairEventEdge s0)).finitePrefix N).freeLevel v.val = _
     rw [oneGapPartial_freeLevel _ _ _ v.isLt, hv]
-    rw [if_pos (oneGapAddress_real _)]
+    have hReal : oneGapReal (resolvedFairOriginalAddress s0 n) := oneGapAddress_real _
+    exact if_pos hReal
   have hOrd : RawPartialTypeNode.ordinaryCode U.1 =
       C.prefixCode (LevelTree.lev U) :=
-    countableOriginal_ordinaryCode (hensonForbiddenFamily 4 (by omega)) C N v
+    countableOriginal_ordinaryCode (hensonForbiddenFamily 4 (Nat.le_trans (Nat.le_succ 2) (Nat.le_succ 3))) C N v
       (oneGap_finitePrefix_avoids (resolvedFairEventEdge s0) 4 (by omega)
         (resolvedFairEventGraph_avoids s0 hEmpty) N)
   have hBefore : resolvedFairEventCodePosition s0 i <
@@ -129,7 +130,7 @@ without a bound on the original indices. -/
 def resolvedFairActualTuples
     (s0 : ResolvedBareStage 4 (resolvedEvenTail 0)) (hEmpty : s0.old = ∅)
     (q : Nat) :
-    Set (Fin q → FiniteGPlusVertex (hensonForbiddenFamily 4 (by omega))) :=
+    Set (Fin q → FiniteGPlusVertex (hensonForbiddenFamily 4 (Nat.le_trans (Nat.le_succ 2) (Nat.le_succ 3)))) :=
   Set.range (fun f : Fin q ↪ Nat => fun i =>
     resolvedFairEventOneGapOriginal s0 hEmpty (f i))
 
@@ -141,7 +142,7 @@ using the cap of its finite index set and ONE genuine envelope map. -/
 theorem resolvedFairActualTuples_paletteCover
     (s0 : ResolvedBareStage 4 (resolvedEvenTail 0)) (hEmpty : s0.old = ∅)
     (q : Nat) :
-    FiniteGPlusPaletteCovers (hensonForbiddenFamily 4 (by omega))
+    FiniteGPlusPaletteCovers (hensonForbiddenFamily 4 (Nat.le_trans (Nat.le_succ 2) (Nat.le_succ 3)))
       (resolvedFairPaletteBudget q) q (resolvedFairActualTuples s0 hEmpty q) := by
   classical
   intro t ht
@@ -161,7 +162,7 @@ theorem resolvedFairActualTuples_paletteCover
     rw [hS] at hCard
     exact hCard
   have hPairs : ∀ i : Fin q, ∃ P : GPlusRepresentingPair
-      (hensonForbiddenFamily 4 (by omega)),
+      (hensonForbiddenFamily 4 (Nat.le_trans (Nat.le_succ 2) (Nat.le_succ 3))),
       P.vertex = resolvedFairEventOneGapOriginal s0 hEmpty (f i) ∧
       P.upper ∈ resolvedFairFiniteOriginalSeeds s0 hEmpty S ∧
       LevelTree.lev P.upper ≤ resolvedFairRetainedTop s0 n ∧
@@ -174,7 +175,7 @@ theorem resolvedFairActualTuples_paletteCover
   have hUpper : ∀ i, (P i).upper ∈ Set.range F.map := by
     intro i
     exact hInv.1.1 (subset_closure
-      (admissibleKptSTree (hensonForbiddenFamily 4 (by omega)))
+      (admissibleKptSTree (hensonForbiddenFamily 4 (Nat.le_trans (Nat.le_succ 2) (Nat.le_succ 3))))
       (I : Set Nat) (resolvedFairFiniteOriginalSeeds s0 hEmpty S) (hP i).2.1)
   obtain ⟨e, a, hFact⟩ := retained_pairs_finiteApprox_cover F I
     (resolvedFairRetainedTop s0 n) (resolvedFairPaletteBudget q) q
@@ -191,17 +192,17 @@ theorem resolvedFairActualTuples_colour_bound
     {κ : Type*} [Fintype κ]
     (s0 : ResolvedBareStage 4 (resolvedEvenTail 0)) (hEmpty : s0.old = ∅)
     (q : Nat)
-    (χ : (Fin q → FiniteGPlusVertex (hensonForbiddenFamily 4 (by omega))) → κ) :
+    (χ : (Fin q → FiniteGPlusVertex (hensonForbiddenFamily 4 (Nat.le_trans (Nat.le_succ 2) (Nat.le_succ 3)))) → κ) :
     ∃ (W : SMTree.ShapeSubspace
-          (normalizedKptSMTree (hensonForbiddenFamily 4 (by omega))) 0)
+          (normalizedKptSMTree (hensonForbiddenFamily 4 (Nat.le_trans (Nat.le_succ 2) (Nat.le_succ 3)))) 0)
       (colours : Finset κ),
       colours.card ≤ Fintype.card
-        (boundedGPlusPaletteIndices (hensonForbiddenFamily 4 (by omega))
+        (boundedGPlusPaletteIndices (hensonForbiddenFamily 4 (Nat.le_trans (Nat.le_succ 2) (Nat.le_succ 3)))
           (resolvedFairPaletteBudget q) q) ∧
       ∀ t, t ∈ resolvedFairActualTuples s0 hEmpty q →
         χ (fun i : Fin q => gPlusShapeImage W.1.map (t i)) ∈ colours := by
   exact normalizedKpt_GPlus_finite_colour_bound_of_cover
-    (hensonForbiddenFamily 4 (by omega)) (resolvedFairPaletteBudget q) q
+    (hensonForbiddenFamily 4 (Nat.le_trans (Nat.le_succ 2) (Nat.le_succ 3))) (resolvedFairPaletteBudget q) q
     (resolvedFairActualTuples s0 hEmpty q) χ
     (resolvedFairActualTuples_paletteCover s0 hEmpty q)
 
