@@ -3640,3 +3640,13 @@ import Kk
 #print axioms Kk.retained_pair_bounded_lift
 #check @Kk.retained_pairs_finiteApprox_cover
 #print axioms Kk.retained_pairs_finiteApprox_cover
+
+-- Actual cap/prefix palette coverage and coarse successor-tree transfer.
+#check @Kk.countableOriginal_ordinaryCode
+#print axioms Kk.countableOriginal_ordinaryCode
+#check @Kk.resolvedFairSelection_actualPair
+#print axioms Kk.resolvedFairSelection_actualPair
+#check @Kk.resolvedFairActualTuples_paletteCover
+#print axioms Kk.resolvedFairActualTuples_paletteCover
+#check @Kk.resolvedFairActualTuples_colour_bound
+#print axioms Kk.resolvedFairActualTuples_colour_bound
