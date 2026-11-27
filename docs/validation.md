@@ -1,3 +1,67 @@
+# Actual individual-event chronology and one-gap geometry (27 November 2026, locally verified)
+
+**The complete local integration gate passed:** normal default `lake build`
+completed **4,123 jobs**, and the central Lean audit and strict parser
+accepted **1,394 exact named transitive-axiom reports**. All 1,283 previous
+names remain in their original order, the old script remains a literal
+prefix, and every inherited axiom set is unchanged. The 111 additions
+cover every public theorem in ten new modules. Fourteen reports are
+axiom-free; every other reported axiom is `propext`, `Classical.choice` or
+`Quot.sound`. No custom axiom or `sorryAx` is accepted.
+
+The [completion report](resolved_event_completion_20261127.md) explains the
+new statements and four remaining application obligations. The
+[machine-readable evidence](audits/2026-11-27-resolved-events-completion.json)
+contains the complete source-hash inventory, all report names and axiom
+sets, dependency pins, command outcomes, log hashes and module coverage.
+The tested source is identified over main baseline
+`141059fb223ceed0b1e53b5fb9d160f4938b2c53`; the evidence does not claim a
+circular hash of itself. This entry records completed local checks.
+
+## Newly discharged obligation and remaining application boundary
+
+The actual finite round witnesses now yield individual marker, cover and
+coding events. Countable event and vertex enumerations preserve their
+recorded order and identify every intermediate old pool exactly. Global
+event IDs give whole-block roles and convexity with intervening dummy
+coordinates. The first of the five obligations in the 26 November entry
+is therefore discharged.
+
+Actual birth certificates derive the required auxiliary nonedges, which
+transfer to the limit on their certified old/live domains. Later retained
+positive neighbours of an omitted base role are kept coding roles, and
+later retained non-coding roles have zero complete old columns. Dummy cuts
+receive a separate direct zero-row proof of full fibres and corrected B3;
+the full envelope theorem requires selected ordinary conditions only at
+omitted meaningful cuts. Canonical G+ originals use the new event order
+and have the exact original binary, diagonal and auxiliary atoms.
+
+The finite projected parser, retained pool/selected-list/cap correspondence,
+selected-age and no-split application, common labelled inverse source,
+upper transfer, history occurrence and lower bound still require proofs.
+The actual fair construction remains K4-specific. Neither the exact copy
+degrees 24 and 120,487 nor the general sharp characterization is claimed.
+
+## Exact validation scope
+
+The normal targets importing all ten additions pass with **3,614 jobs**.
+All five focused Lean audits and strict parsers pass: 14 dummy-cut names,
+10 birth-geometry names, 24 event/source names, 36 schedule names and 27
+role/limit-geometry names. These partition the 111 additions exactly, and
+all their axiom sets match the central audit. The axiom-parser self-test,
+all three module-coverage parser tests and `git diff --check` pass.
+
+The root reaches **544 of 722 Kk source modules**, plus the root itself;
+all ten new modules are reachable. The unchanged 178 standalone/audit
+modules are outside the default build claim. There are no missing local
+imports or suspicious source tokens. Existing Kk theorem files, the
+manuscript, Lean 4.35.0-rc3 and all eleven dependency pins are unchanged.
+Independent English, component-source and cross-module reviews found no
+remaining integration blocker. The seven component notes retain their
+earlier checkpoints and point to the completed integration evidence.
+
+---
+
 # One-gap local completion and actual countable construction (26 November 2026, locally verified)
 
 **The complete local integration gate passed:** normal default `lake build`

@@ -1,0 +1,30 @@
+import Kk.OneGapDummyCut
+
+#check Kk.oneGapPairedLevels_zero
+#print axioms Kk.oneGapPairedLevels_zero
+#check Kk.oneGapPairedLevels_preceding_gap
+#print axioms Kk.oneGapPairedLevels_preceding_gap
+#check Kk.oneGap_freeLevel_mem_of_pair_retention
+#print axioms Kk.oneGap_freeLevel_mem_of_pair_retention
+#check Kk.oneGapPairedLevels_freeLevel_mem
+#print axioms Kk.oneGapPairedLevels_freeLevel_mem
+#check Kk.oneGap_freeLevel_eq_positive_iff
+#print axioms Kk.oneGap_freeLevel_eq_positive_iff
+#check Kk.oneGap_dummy_binary_zero
+#print axioms Kk.oneGap_dummy_binary_zero
+#check Kk.oneGap_finitePrefix_avoids
+#print axioms Kk.oneGap_finitePrefix_avoids
+#check Kk.oneGap_full_fibre_of_zero_cut
+#print axioms Kk.oneGap_full_fibre_of_zero_cut
+#check Kk.oneGapRetainedPoolData_correctedB3_of_zero_cut
+#print axioms Kk.oneGapRetainedPoolData_correctedB3_of_zero_cut
+#check Kk.oneGap_retained_pool_skip_of_zero_cut
+#print axioms Kk.oneGap_retained_pool_skip_of_zero_cut
+#check Kk.oneGap_dummy_full_fibre
+#print axioms Kk.oneGap_dummy_full_fibre
+#check Kk.oneGap_dummy_originals_no_meet
+#print axioms Kk.oneGap_dummy_originals_no_meet
+#check Kk.oneGap_dummy_retained_pool_skip
+#print axioms Kk.oneGap_dummy_retained_pool_skip
+#check Kk.oneGap_planned_envelope_of_real_selected_neutrality
+#print axioms Kk.oneGap_planned_envelope_of_real_selected_neutrality

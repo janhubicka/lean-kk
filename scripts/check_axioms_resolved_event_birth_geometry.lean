@@ -1,0 +1,22 @@
+import Kk.ResolvedEventBirthGeometry
+
+#check Kk.ResolvedEventCertificate.edge_sym
+#print axioms Kk.ResolvedEventCertificate.edge_sym
+#check Kk.ResolvedEventCertificate.edge_loop
+#print axioms Kk.ResolvedEventCertificate.edge_loop
+#check Kk.ResolvedEventCertificate.marker_block_singleton
+#print axioms Kk.ResolvedEventCertificate.marker_block_singleton
+#check Kk.ResolvedEventCertificate.code_block
+#print axioms Kk.ResolvedEventCertificate.code_block
+#check Kk.ResolvedEventCertificate.auxiliary_block_not_live
+#print axioms Kk.ResolvedEventCertificate.auxiliary_block_not_live
+#check Kk.ResolvedEventCertificate.auxiliary_old_zero
+#print axioms Kk.ResolvedEventCertificate.auxiliary_old_zero
+#check Kk.ResolvedEventCertificate.block_clique
+#print axioms Kk.ResolvedEventCertificate.block_clique
+#check Kk.ResolvedLiveStage.insertBlock_live_bits
+#print axioms Kk.ResolvedLiveStage.insertBlock_live_bits
+#check Kk.ResolvedBareStage.refineBatch_marker_positive_iff
+#print axioms Kk.ResolvedBareStage.refineBatch_marker_positive_iff
+#check Kk.ResolvedEventCertificate.block_live_uniform
+#print axioms Kk.ResolvedEventCertificate.block_live_uniform

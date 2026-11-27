@@ -1,0 +1,58 @@
+import Kk.OneGapEventRole
+import Kk.ResolvedFairEventGeometry
+
+#check Kk.oneGapEventRole_of_not_real
+#print axioms Kk.oneGapEventRole_of_not_real
+#check Kk.oneGapEventRole_zero
+#print axioms Kk.oneGapEventRole_zero
+#check Kk.oneGapEventRole_gap
+#print axioms Kk.oneGapEventRole_gap
+#check Kk.oneGapEventRole_address
+#print axioms Kk.oneGapEventRole_address
+#check Kk.oneGapEventRole_batchPosition
+#print axioms Kk.oneGapEventRole_batchPosition
+#check Kk.oneGapEventRole_dummy_iff
+#print axioms Kk.oneGapEventRole_dummy_iff
+#check Kk.oneGapEventRole_auxiliary_iff
+#print axioms Kk.oneGapEventRole_auxiliary_iff
+#check Kk.oneGapEventRole_retained_iff
+#print axioms Kk.oneGapEventRole_retained_iff
+#check Kk.oneGapEventRole_retained_batchPosition
+#print axioms Kk.oneGapEventRole_retained_batchPosition
+#check Kk.oneGapEventRole_block_flag
+#print axioms Kk.oneGapEventRole_block_flag
+#check Kk.oneGapEventRole_block_convex
+#print axioms Kk.oneGapEventRole_block_convex
+
+#check Kk.resolvedFairVertexEventIndex_mono
+#print axioms Kk.resolvedFairVertexEventIndex_mono
+#check Kk.resolvedFairEventVertex_mem_block
+#print axioms Kk.resolvedFairEventVertex_mem_block
+#check Kk.resolvedFairEvent_auxiliary_prior_zero
+#print axioms Kk.resolvedFairEvent_auxiliary_prior_zero
+#check Kk.resolvedFairEventEdge_auxiliary_prior_zero
+#print axioms Kk.resolvedFairEventEdge_auxiliary_prior_zero
+#check Kk.resolvedFairEventEdge_distinct_auxiliary_zero
+#print axioms Kk.resolvedFairEventEdge_distinct_auxiliary_zero
+#check Kk.resolvedFairEventRole_dummy_iff
+#print axioms Kk.resolvedFairEventRole_dummy_iff
+#check Kk.resolvedFairEventRole_auxiliary_iff
+#print axioms Kk.resolvedFairEventRole_auxiliary_iff
+#check Kk.resolvedFairEventRole_coded_iff
+#print axioms Kk.resolvedFairEventRole_coded_iff
+#check Kk.resolvedFairEventRole_block_flag
+#print axioms Kk.resolvedFairEventRole_block_flag
+#check Kk.resolvedFairEventRole_block_convex
+#print axioms Kk.resolvedFairEventRole_block_convex
+#check Kk.resolvedFairEvent_dummy_zero
+#print axioms Kk.resolvedFairEvent_dummy_zero
+#check Kk.resolvedFairEvent_coded_aux_zero
+#print axioms Kk.resolvedFairEvent_coded_aux_zero
+#check Kk.resolvedFairEvent_distinct_aux_zero
+#print axioms Kk.resolvedFairEvent_distinct_aux_zero
+#check Kk.resolvedFairEvent_later_retained_aux_old_zero
+#print axioms Kk.resolvedFairEvent_later_retained_aux_old_zero
+#check Kk.resolvedFairEvent_positive_retained_is_kept_coded
+#print axioms Kk.resolvedFairEvent_positive_retained_is_kept_coded
+#check Kk.resolvedFairEvent_later_retained_noncode_old_zero
+#print axioms Kk.resolvedFairEvent_later_retained_noncode_old_zero
