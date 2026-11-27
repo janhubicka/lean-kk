@@ -3458,3 +3458,63 @@ import Kk
 #print axioms Kk.resolvedFairAllAuxOriginalSeeds_envelope
 #print axioms Kk.resolvedFairAllAuxFiniteSelection_envelope
 #print axioms Kk.resolvedInitialAllAuxFiniteSelection_envelope
+
+-- Fixed terminal critical retention
+#check @Kk.fixedCriticalCapacity_mono
+#print axioms Kk.fixedCriticalCapacity_mono
+#check @Kk.fixedCriticalPairs_mono
+#print axioms Kk.fixedCriticalPairs_mono
+#check @Kk.fixedCriticalThresholds_mono
+#print axioms Kk.fixedCriticalThresholds_mono
+#check @Kk.fixedCriticalRank_mono
+#print axioms Kk.fixedCriticalRank_mono
+#check @Kk.fixedCriticalRank_le
+#print axioms Kk.fixedCriticalRank_le
+#check @Kk.strictRankSteps_card_le
+#print axioms Kk.strictRankSteps_card_le
+#check @Kk.fixedCriticalCuts_card_le
+#print axioms Kk.fixedCriticalCuts_card_le
+#check @Kk.fixedCriticalRank_eq_of_not_mem
+#print axioms Kk.fixedCriticalRank_eq_of_not_mem
+#check @Kk.fixedCriticalWitnesses_eq
+#print axioms Kk.fixedCriticalWitnesses_eq
+#check @Kk.fixedCritical_no_split
+#print axioms Kk.fixedCritical_no_split
+#check @Kk.fixedCritical_truncated_eq
+#print axioms Kk.fixedCritical_truncated_eq
+#check @Kk.fixedCritical_raw_image
+#print axioms Kk.fixedCritical_raw_image
+#check @Kk.fixedCritical_raw_neutral
+#print axioms Kk.fixedCritical_raw_neutral
+#check @Kk.resolvedFairFixedTerminals_card
+#print axioms Kk.resolvedFairFixedTerminals_card
+#check @Kk.resolvedFairRetainedFront_mem_fixed
+#print axioms Kk.resolvedFairRetainedFront_mem_fixed
+#check @Kk.resolvedFairCriticalCut_code_or_neutral
+#print axioms Kk.resolvedFairCriticalCut_code_or_neutral
+#check @Kk.resolvedFairFiniteFront_code_no_split
+#print axioms Kk.resolvedFairFiniteFront_code_no_split
+#check @Kk.resolvedFairFiniteFront_code_age_neutral
+#print axioms Kk.resolvedFairFiniteFront_code_age_neutral
+#check @Kk.resolvedFairCriticalFront_no_split
+#print axioms Kk.resolvedFairCriticalFront_no_split
+#check @Kk.resolvedFairCriticalFront_age_neutral
+#print axioms Kk.resolvedFairCriticalFront_age_neutral
+#check @Kk.ResolvedEventCertificate.block_length_le_three
+#print axioms Kk.ResolvedEventCertificate.block_length_le_three
+#check @Kk.resolvedFairEventBlock_length_le_three
+#print axioms Kk.resolvedFairEventBlock_length_le_three
+#check @Kk.resolvedFairBoundedEvents_card_le
+#print axioms Kk.resolvedFairBoundedEvents_card_le
+#check @Kk.resolvedFairCriticalKeep_mem_events
+#print axioms Kk.resolvedFairCriticalKeep_mem_events
+#check @Kk.resolvedFairCriticalPositions_card_le
+#print axioms Kk.resolvedFairCriticalPositions_card_le
+#check @Kk.oneGapPairedLevels_card_le_twice
+#print axioms Kk.oneGapPairedLevels_card_le_twice
+#check @Kk.resolvedFairCriticalLevels_card_le
+#print axioms Kk.resolvedFairCriticalLevels_card_le
+#check @Kk.resolvedFairCriticalFiniteSelection_envelope
+#print axioms Kk.resolvedFairCriticalFiniteSelection_envelope
+#check @Kk.resolvedInitialCriticalFiniteSelection_envelope
+#print axioms Kk.resolvedInitialCriticalFiniteSelection_envelope
