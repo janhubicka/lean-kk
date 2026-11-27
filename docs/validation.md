@@ -1,3 +1,72 @@
+# Constructed finite selected fronts and actual retained envelopes (27 November 2026, locally verified)
+
+**The complete local integration gate passed:** normal default `lake build`
+completed **4,129 jobs** and the central Lean audit/strict parser accepted
+**1,470 exact named reports**. All 1,394 prior names and axiom sets are
+preserved; the old script remains a literal prefix. Six new modules supply
+76 public theorems. Fourteen central reports are axiom-free, and only
+`propext`, `Classical.choice` and `Quot.sound` appear in the others.
+
+The [completion report](finite_selected_front_completion_20261127.md) explains
+the exact statements and remaining application work. The
+[machine-readable evidence](audits/2026-11-27-finite-selected-front-completion.json)
+records 797 source/audit/configuration hashes, every axiom report, the
+unchanged eleven dependency pins and all sixteen execution outcomes/log
+hashes. The source is identified over main baseline
+`be958e2f83b9d962dc641fddc5b2ccca632af051`; this entry records completed local
+validation rather than a prospective hosted run.
+
+## Constructed data and discharged premises
+
+The actual coded-coordinate/original-index correspondence is derived from
+singleton event certificates and event-vertex injectivity. Coding flags
+are constructed from a finite original selection; auxiliary flags remain
+independent per event. Exact eligible coding fronts are finite increasing
+lists, including empty-front cases.
+
+The finite retained plan constructs paired levels I, complete retained-role
+pool V and an actual coding cap. Meaningful level membership agrees with
+role retention; dummy originals may belong to V even at omitted dummy
+levels. Pair/free-endpoint retention and retained-parameter coverage are
+proved. A fresh cap beyond the requested set is selected explicitly;
+all requested originals lie below it, and front size is at most
+`S.card + 1`, with the cap counted. Retention of the cap's preceding gap
+proves that the cap belongs to every omitted-cut front below the cap.
+
+Actual geometry and these exact lists derive positive-source coverage and
+nonselected complete-old-column zero. The final endpoint
+`resolvedFairFiniteSelection_envelope` constructs the full planned envelope
+and exact retained-level range from the remaining explicit seed/U data,
+selected no-split, and full canonical selected-age equality at omitted
+meaningful cuts. Dummy cuts use their already proved direct zero-row branch.
+
+## Remaining mathematical boundary
+
+The finite selection/front/cap and paired I/V data are now constructed.
+The first of the four remaining major application groups concerns legal
+auxiliary-retention and projected-parser rules, uniform complete-record
+bounds, the meaningful-cut selected-age/no-split proofs, and the actual
+seed/pool application. Common full labelled inverse sources and upper
+transfer, direct history/unavoidability/lower bounds, and the general
+K_ell construction remain open. Exact copy degrees 24 and 120,487 are not
+claimed. The `S.card + 1` front bound is not a complete diary-record bound.
+
+## Exact build scope
+
+The normal target importing all six new modules passed with **3,619 jobs**.
+Four focused Lean audits and strict parsers cover exactly the 76 additions
+in groups 30, 11, 21 and 14; every axiom set agrees with the central audit.
+The axiom-parser self-test, all three module-coverage tests and diff checks
+pass. Independent English, source, cross-module and report reviews pass.
+
+The root reaches **550 of 728 Kk modules**, plus the root itself. All six
+new modules are included; the unchanged 178 standalone/audit modules are
+outside the default target. There are no missing imports or suspicious
+source tokens. Existing Kk theorem files, manuscript text, the toolchain
+and all eleven dependency pins are unchanged.
+
+---
+
 # Actual individual-event chronology and one-gap geometry (27 November 2026, locally verified)
 
 **The complete local integration gate passed:** normal default `lake build`

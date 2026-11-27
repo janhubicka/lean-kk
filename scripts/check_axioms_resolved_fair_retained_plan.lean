@@ -1,0 +1,44 @@
+import Kk.ResolvedFairRetainedPlan
+
+#check Kk.oneGapPairedLevels_address_iff
+#print axioms Kk.oneGapPairedLevels_address_iff
+#check Kk.resolvedFairRetainedTop_lt_size
+#print axioms Kk.resolvedFairRetainedTop_lt_size
+#check Kk.resolvedFairRetainedPositions_mem_iff
+#print axioms Kk.resolvedFairRetainedPositions_mem_iff
+#check Kk.resolvedFairRetainedLevels_finite
+#print axioms Kk.resolvedFairRetainedLevels_finite
+#check Kk.resolvedFairRetainedPool_finite
+#print axioms Kk.resolvedFairRetainedPool_finite
+#check Kk.resolvedFairRetainedLevels_zero
+#print axioms Kk.resolvedFairRetainedLevels_zero
+#check Kk.resolvedFairRetainedLevels_bound
+#print axioms Kk.resolvedFairRetainedLevels_bound
+#check Kk.resolvedFairRetainedLevels_real_iff
+#print axioms Kk.resolvedFairRetainedLevels_real_iff
+#check Kk.resolvedFairRetainedLevels_of_retained_real
+#print axioms Kk.resolvedFairRetainedLevels_of_retained_real
+#check Kk.resolvedFairRetainedLevels_omitted_real_not_retained
+#print axioms Kk.resolvedFairRetainedLevels_omitted_real_not_retained
+#check Kk.resolvedFairRetainedPool_real_iff
+#print axioms Kk.resolvedFairRetainedPool_real_iff
+#check Kk.resolvedFairRetainedPool_mem_iff
+#print axioms Kk.resolvedFairRetainedPool_mem_iff
+#check Kk.resolvedFairRetainedPool_of_level
+#print axioms Kk.resolvedFairRetainedPool_of_level
+#check Kk.resolvedFairRetainedPool_retained_parameters
+#print axioms Kk.resolvedFairRetainedPool_retained_parameters
+#check Kk.resolvedFairRetainedPool_pair_retention
+#print axioms Kk.resolvedFairRetainedPool_pair_retention
+#check Kk.resolvedFairRetainedPool_freeLevel_mem
+#print axioms Kk.resolvedFairRetainedPool_freeLevel_mem
+#check Kk.resolvedFairRetainedPool_freeLevel_ne_of_omitted
+#print axioms Kk.resolvedFairRetainedPool_freeLevel_ne_of_omitted
+#check Kk.resolvedFairRetainedPositions_cap
+#print axioms Kk.resolvedFairRetainedPositions_cap
+#check Kk.resolvedFairRetainedLevels_top
+#print axioms Kk.resolvedFairRetainedLevels_top
+#check Kk.resolvedFairRetainedCap_mem
+#print axioms Kk.resolvedFairRetainedCap_mem
+#check Kk.resolvedFairRetainedLevels_cap_gap
+#print axioms Kk.resolvedFairRetainedLevels_cap_gap

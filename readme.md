@@ -2,34 +2,39 @@
 
 Lean 4 validation for the big Ramsey degree project on universal `K_k`-free graphs, using the pinned [`lean-successors`](https://github.com/janhubicka/lean-successors) type-respecting Ramsey theorem.
 
-**27 November individual-event completion — locally verified:** the normal
-default `lake build` completed successfully (**4,123 jobs**), followed by
-**1,394 exact named transitive-axiom reports**. All 1,283 previous names and
-their axiom sets are preserved. Ten new modules supply 111 endpoints;
-all five focused audits also pass. Fourteen central reports are axiom-free;
-all other reported axioms are `propext`, `Classical.choice`, or `Quot.sound`.
-Both audit-parser test suites and the source/import scan pass.
+**27 November finite selected-front completion — locally verified:** the
+normal default `lake build` completed **4,129 jobs**, and the strict central
+Lean audit accepted **1,470 exact named transitive-axiom reports**. All 1,394
+previous names and axiom sets are preserved. Six new modules supply 76
+public theorems; all four focused audits pass. Fourteen central names are
+axiom-free; all other reported axioms are `propext`, `Classical.choice` or
+`Quot.sound`. Parser tests and source/import checks pass.
 
-The actual countable K4 construction now has **individual marker, cover and
-coding events**, exact prefixes before every event and every entry inside
-it, and whole-block convexity after paired dummy insertion. Actual birth
-certificates derive the auxiliary nonedges. At an omitted base role,
-positive later retained neighbours are kept coding roles, and later
-retained non-coding roles have zero old columns. A new canonical G+ source
-follows this individual-event order.
-The full planned-envelope theorem now requires its selected ordinary
-hypotheses only at omitted meaningful cuts; dummy cuts are proved directly.
+The actual event graph now has constructed finite selected terminal lists,
+an exact coding-role/original-index correspondence, paired retained levels
+and a complete finite retained-role pool. A fresh coding cap is constructed
+beyond any requested finite selection, included explicitly, and counted in
+the front bound `S.card + 1`. At every omitted cut below the cap, the cap
+belongs to the front. At omitted meaningful cuts below it, actual geometry
+derives positive-source coverage and nonselected complete-old-column zero.
 
-The **sharp big Ramsey characterization remains open** at four application
-obligations: the projected diary and its remaining finite-selection/local
-hypotheses, common labelled inverse sources and upper-bound transfer,
-history occurrence/lower bounds, and the general K_ell construction.
-The previous individual-event chronology obligation is discharged. See the
-[current completion report](docs/resolved_event_completion_20261127.md) and
-[source-hash evidence](docs/audits/2026-11-27-resolved-events-completion.json).
-The [26 November report](docs/one_gap_local_completion_20261126.md) records
-the preceding countable construction, finite code compression and local
-envelope results.
+`resolvedFairFiniteSelection_envelope` assembles the full planned envelope
+for these constructed data, with its seed/pool, full selected-age and
+no-split inputs explicit. The **sharp big Ramsey characterization remains
+open**: legal projected-diary retention/parser rules and record bounds,
+the remaining age/no-split and seed application, common labelled inverse
+sources and upper transfer, direct history/lower bounds, and the general
+K_ell construction still need proofs. Arbitrary whole-event auxiliary
+flags are not yet a legal projected diary, and the terminal-front bound
+is not a bound on a complete diary record.
+
+See the [current completion report](docs/finite_selected_front_completion_20261127.md)
+and [source-hash evidence](docs/audits/2026-11-27-finite-selected-front-completion.json).
+The [preceding individual-event report](docs/resolved_event_completion_20261127.md)
+records actual marker/cover/code chronology, exact intermediate prefixes,
+block convexity, event-ordered G+ originals and the dummy-cut envelope
+branch. The [26 November report](docs/one_gap_local_completion_20261126.md)
+records the earlier countable construction and exact finite code compression.
 
 The verified pins are Lean **4.35.0-rc3**, successor tree
 `a74c10761303a18649053f2af3a1a1697f032e13`, Ramsey space
@@ -38,7 +43,7 @@ The verified pins are Lean **4.35.0-rc3**, successor tree
 import-only build fix merged in
 [upstream PR #21](https://github.com/janhubicka/lean-ramsey-space-todorcevic/pull/21);
 its source and merged trees are identical. The default Kk target reaches
-544 Kk modules plus its root; 178 other source modules remain outside that
+550 Kk modules plus its root; 178 other source modules remain outside that
 default closure and are not covered by this full-build claim.
 
 **Verified building blocks:** finite-family type-respecting Ramsey refinement and conditional labelled orbit transfer; normalized Henson graph-language encoding and integer-witness graph-age canonicalization; actual canonical cover-block arithmetic and **arbitrary-subfront cover-or-equality** by a zero-supported relative-age lift; selected-original and full AlgorithmRun I3 bounds under their precise hypotheses; genuine finite families of isolated reserved original clique blocks; one-step Henson selected extensions with explicitly certified complete mixed-neighbourhood tests; exact linked-clique-capacity insertion and nonmonotone live-pool update; safe deletion-only capacity transfer; and the **exact literal numerical-H binary L column** of a genuinely later top-generation selected original against EVERY earlier original at EVERY generation, plus all-generation old-to-new reserved nonedges and designated positive clique atoms in an actual one-step construction; and the **exact incoming auxiliary E-column and selected free level** of the same physical finite top original, including fake numeric sources. The concrete K4 seeded AlgorithmRun has already been proven to select BOTH auxiliary cuts 22 and 10, with the Kpt parameter at 22 in the real closure at cut 10. These are kernel-checked conditional statements with named transitive-axiom reports. None proves that the prescribed infinite resolved-copy diary satisfies all original-edge, full B3 and common-orbit requirements.
