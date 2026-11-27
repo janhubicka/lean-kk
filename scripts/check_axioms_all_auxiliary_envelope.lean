@@ -1,0 +1,47 @@
+import Kk.ResolvedFairAuxiliaryEnvelope
+
+-- Full original seeds and all-auxiliary actual finite envelopes.
+
+#check @Kk.resolvedFairAllAuxRole_omitted_coded
+#check @Kk.resolvedFairAllAuxRole_omitted_original
+#check @Kk.resolvedFairAllAux_omitted_real
+#check @Kk.resolvedFairSelectedFrontIndex_mem
+#check @Kk.resolvedFairSelectedFrontIndex_address
+#check @Kk.resolvedFairSelectedFront_after_cut
+#check @Kk.resolvedFairSelectedFrontIndex_later
+#check @Kk.resolvedFairOriginalType_level
+#check @Kk.resolvedFairOriginalSeeds_pool
+#check @Kk.resolvedFairOriginalSeeds_bounded
+#check @Kk.resolvedFairOriginalSeeds_retained
+#check @Kk.resolvedFairOriginalSeeds_finite
+#check @Kk.resolvedFairFiniteOriginalPool_retained
+#check @Kk.resolvedFairFiniteSelectionType_mem_seeds
+#check @Kk.resolvedFairOriginalCoding_no_split
+#check @Kk.resolvedFairOriginalCoding_targetAge_neutral
+#check @Kk.resolvedFairAllAuxRetainedFront_no_split
+#check @Kk.resolvedFairAllAuxRetainedFront_targetAge_neutral
+#check @Kk.resolvedFairAllAuxOriginalSeeds_envelope
+#check @Kk.resolvedFairAllAuxFiniteSelection_envelope
+#check @Kk.resolvedInitialAllAuxFiniteSelection_envelope
+
+#print axioms Kk.resolvedFairAllAuxRole_omitted_coded
+#print axioms Kk.resolvedFairAllAuxRole_omitted_original
+#print axioms Kk.resolvedFairAllAux_omitted_real
+#print axioms Kk.resolvedFairSelectedFrontIndex_mem
+#print axioms Kk.resolvedFairSelectedFrontIndex_address
+#print axioms Kk.resolvedFairSelectedFront_after_cut
+#print axioms Kk.resolvedFairSelectedFrontIndex_later
+#print axioms Kk.resolvedFairOriginalType_level
+#print axioms Kk.resolvedFairOriginalSeeds_pool
+#print axioms Kk.resolvedFairOriginalSeeds_bounded
+#print axioms Kk.resolvedFairOriginalSeeds_retained
+#print axioms Kk.resolvedFairOriginalSeeds_finite
+#print axioms Kk.resolvedFairFiniteOriginalPool_retained
+#print axioms Kk.resolvedFairFiniteSelectionType_mem_seeds
+#print axioms Kk.resolvedFairOriginalCoding_no_split
+#print axioms Kk.resolvedFairOriginalCoding_targetAge_neutral
+#print axioms Kk.resolvedFairAllAuxRetainedFront_no_split
+#print axioms Kk.resolvedFairAllAuxRetainedFront_targetAge_neutral
+#print axioms Kk.resolvedFairAllAuxOriginalSeeds_envelope
+#print axioms Kk.resolvedFairAllAuxFiniteSelection_envelope
+#print axioms Kk.resolvedInitialAllAuxFiniteSelection_envelope
