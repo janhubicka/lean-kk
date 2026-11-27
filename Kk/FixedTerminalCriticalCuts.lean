@@ -145,8 +145,8 @@ theorem fixedCriticalWitnesses_eq (E : Nat → Nat → Bool)
       fixedCriticalThresholds E A c = fixedCriticalThresholds E A (c+1) := by
   have hp := fixedCriticalPairs_mono E A (Nat.le_succ c)
   have ht := fixedCriticalThresholds_mono E A (Nat.le_succ c)
-  have hpc := Finset.card_le_card hp
-  have htc := Finset.card_le_card ht
+  have hpc : (fixedCriticalPairs E A c).card ≤ (fixedCriticalPairs E A (c+1)).card := Finset.card_le_card hp
+  have htc : (fixedCriticalThresholds E A c).card ≤ (fixedCriticalThresholds E A (c+1)).card := Finset.card_le_card ht
   unfold fixedCriticalRank at h
   exact ⟨Finset.eq_of_subset_of_card_le hp (by omega),
     Finset.eq_of_subset_of_card_le ht (by omega)⟩
@@ -174,7 +174,8 @@ theorem fixedCritical_truncated_eq (E : Nat → Nat → Bool)
     (h : fixedCriticalRank E A c = fixedCriticalRank E A (c+1)) :
     3 - fixedCriticalCapacity E T c = 3 - fixedCriticalCapacity E T (c+1) := by
   classical
-  have hLe := fixedCriticalCapacity_mono E T (Nat.le_succ c)
+  have hLe : fixedCriticalCapacity E T c ≤ fixedCriticalCapacity E T (c+1) :=
+    fixedCriticalCapacity_mono E T (Nat.le_succ c)
   by_contra hNe
   let k := fixedCriticalCapacity E T c
   have hk : k < 3 := by dsimp [k]; omega
