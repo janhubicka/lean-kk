@@ -1,3 +1,68 @@
+# Actual finite envelopes retaining every auxiliary event (27 November 2026, locally verified)
+
+**The complete local integration gate passed:** normal default `lake build`
+completed **4,134 jobs**, the new-module target completed **3,624 jobs**,
+and the central Lean audit/strict parser accepted **1,511 exact reports**.
+All 1,470 preceding names and axiom sets are unchanged; the old script is
+a literal prefix. Five new modules add 41 public endpoints, covered exactly
+by the three focused audits in groups 12, 8 and 21. Fourteen central names
+are axiom-free; all other axioms are `propext`, `Classical.choice` or
+`Quot.sound`. Parser tests, source/import audit and diff checks pass.
+
+The [completion report](all_auxiliary_envelope_completion_20261127.md)
+explains the theorem and proof boundary. The
+[machine-readable evidence](audits/2026-11-27-all-auxiliary-envelope-completion.json)
+contains all 805 source/audit/configuration hashes, all named reports,
+the fourteen final command outcomes/log hashes and the unchanged eleven
+dependency pins. The baseline is
+`ce360818a01188c810d221c2271c9c61f294b235`. This entry records completed local
+checks; the consolidated PR supplies subsequent hosted evidence.
+
+## Stronger actual finite-envelope conclusion
+
+The endpoint `resolvedInitialAllAuxFiniteSelection_envelope` starts from
+a symmetric loopless K4-free Boolean graph and a finite original selection
+S. It constructs the actual stage, fresh cap, finite prefix, retained levels
+and pool, and the full original seed types of S plus the cap. Every auxiliary
+event is retained. Age/no-split, seed coverage, retained seed levels and cap
+choice are all derived for this specialization.
+
+Omitted meaningful cuts below the cap must be unselected coding addresses.
+The actual eligible front decodes to strictly later original indices.
+The chosen coding-event certificate supplies canonical-age neutrality and
+no-split. Exact chronological prefix images and localized graph/column
+agreement transport those results to the actual graph, and dummy zero-row
+removal transports them through one-gap padding. The padding cutoff after
+a meaningful coordinate is address(p)+1. Full canonical-age equality is
+proved; raw coding-age neutrality is not assumed or asserted.
+
+Full original seeds have their actual free levels. The retained-pool free
+endpoint theorem supplies seed-level retention, while original reflexivity
+supplies source-pool coverage. This argument does not extend retained-level
+membership to arbitrary proper prefixes.
+
+## Remaining mathematical boundary
+
+The first application group now concerns controlled/legal auxiliary
+retention with uniform complete-record bounds and a projected parser,
+including neutrality and seed compatibility for reduced retention choices.
+Retaining every auxiliary can depend on the selected indices and gives no
+complete-record bound in terms of |S|. Common full labelled inverse sources
+and upper transfer, direct history/unavoidability/matching lower bounds,
+and the actual general-K_ell construction remain open. Exact degrees 24
+and 120,487 are not claimed.
+
+## Exact scope and review
+
+The root reaches **555 of 733 Kk modules**, plus the root. All five new
+modules are included; the same 178 standalone/audit modules are outside
+the default build. There are no missing local imports or suspicious source
+tokens. English-first, completed-source, cross-module assembly and static
+integration reviews pass. Existing Kk theorem files, manuscript text,
+toolchain and dependency pins are unchanged.
+
+---
+
 # Constructed finite selected fronts and actual retained envelopes (27 November 2026, locally verified)
 
 **The complete local integration gate passed:** normal default `lake build`

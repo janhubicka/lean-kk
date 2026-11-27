@@ -3358,3 +3358,103 @@ import Kk
 #print axioms Kk.resolvedFairRetained_envelope
 #check @Kk.resolvedFairFiniteSelection_envelope
 #print axioms Kk.resolvedFairFiniteSelection_envelope
+
+
+-- All-auxiliary finite envelopes: actual chronological/padded transport and concrete original seeds.
+
+-- OneGapAgeTransport
+#check @Kk.oldSupportCommonNeighbourPool_image_eq
+#check @Kk.finiteOldColumnRawBound_induced_image_eq
+#check @Kk.integerGraphAgeCanonical_induced_image_eq
+#check @Kk.oneGap_commonNeighbourPool_eq_image
+#check @Kk.oneGap_rawBound_eq_of_positions
+#check @Kk.oneGap_rawBound_before_eq
+#check @Kk.oneGap_rawBound_after_eq
+#check @Kk.oneGap_canonicalAge_before_eq
+#check @Kk.oneGap_canonicalAge_after_eq
+#check @Kk.oneGap_canonicalAge_neutral_of_unpadded
+#check @Kk.oneGap_oldColumns_before_iff
+#check @Kk.oneGap_noSplit_of_unpadded
+
+#print axioms Kk.oldSupportCommonNeighbourPool_image_eq
+#print axioms Kk.finiteOldColumnRawBound_induced_image_eq
+#print axioms Kk.integerGraphAgeCanonical_induced_image_eq
+#print axioms Kk.oneGap_commonNeighbourPool_eq_image
+#print axioms Kk.oneGap_rawBound_eq_of_positions
+#print axioms Kk.oneGap_rawBound_before_eq
+#print axioms Kk.oneGap_rawBound_after_eq
+#print axioms Kk.oneGap_canonicalAge_before_eq
+#print axioms Kk.oneGap_canonicalAge_after_eq
+#print axioms Kk.oneGap_canonicalAge_neutral_of_unpadded
+#print axioms Kk.oneGap_oldColumns_before_iff
+#print axioms Kk.oneGap_noSplit_of_unpadded
+
+-- ResolvedFairCodingNeutrality
+#check @Kk.ResolvedEventCertificate.code_targetAge_neutral
+#check @Kk.ResolvedEventCertificate.code_no_split
+#check @Kk.resolvedFairCodingEvent_location
+#check @Kk.resolvedFairCodingEvent_certificate
+#check @Kk.resolvedFairEventCoding_prefix_image
+#check @Kk.resolvedFairEventCoding_prefix_succ_image
+#check @Kk.resolvedFairEventCoding_targetAge_neutral
+#check @Kk.resolvedFairEventCoding_no_split
+
+#print axioms Kk.ResolvedEventCertificate.code_targetAge_neutral
+#print axioms Kk.ResolvedEventCertificate.code_no_split
+#print axioms Kk.resolvedFairCodingEvent_location
+#print axioms Kk.resolvedFairCodingEvent_certificate
+#print axioms Kk.resolvedFairEventCoding_prefix_image
+#print axioms Kk.resolvedFairEventCoding_prefix_succ_image
+#print axioms Kk.resolvedFairEventCoding_targetAge_neutral
+#print axioms Kk.resolvedFairEventCoding_no_split
+
+-- ResolvedFairAuxiliarySelection
+#check @Kk.resolvedFairAllAuxRole_omitted_coded
+#check @Kk.resolvedFairAllAuxRole_omitted_original
+#check @Kk.resolvedFairAllAux_omitted_real
+#check @Kk.resolvedFairSelectedFrontIndex_mem
+#check @Kk.resolvedFairSelectedFrontIndex_address
+#check @Kk.resolvedFairSelectedFront_after_cut
+#check @Kk.resolvedFairSelectedFrontIndex_later
+
+#print axioms Kk.resolvedFairAllAuxRole_omitted_coded
+#print axioms Kk.resolvedFairAllAuxRole_omitted_original
+#print axioms Kk.resolvedFairAllAux_omitted_real
+#print axioms Kk.resolvedFairSelectedFrontIndex_mem
+#print axioms Kk.resolvedFairSelectedFrontIndex_address
+#print axioms Kk.resolvedFairSelectedFront_after_cut
+#print axioms Kk.resolvedFairSelectedFrontIndex_later
+
+-- ResolvedFairOriginalSeeds
+#check @Kk.resolvedFairOriginalType_level
+#check @Kk.resolvedFairOriginalSeeds_pool
+#check @Kk.resolvedFairOriginalSeeds_bounded
+#check @Kk.resolvedFairOriginalSeeds_retained
+#check @Kk.resolvedFairOriginalSeeds_finite
+#check @Kk.resolvedFairFiniteOriginalPool_retained
+#check @Kk.resolvedFairFiniteSelectionType_mem_seeds
+
+#print axioms Kk.resolvedFairOriginalType_level
+#print axioms Kk.resolvedFairOriginalSeeds_pool
+#print axioms Kk.resolvedFairOriginalSeeds_bounded
+#print axioms Kk.resolvedFairOriginalSeeds_retained
+#print axioms Kk.resolvedFairOriginalSeeds_finite
+#print axioms Kk.resolvedFairFiniteOriginalPool_retained
+#print axioms Kk.resolvedFairFiniteSelectionType_mem_seeds
+
+-- ResolvedFairAuxiliaryEnvelope
+#check @Kk.resolvedFairOriginalCoding_no_split
+#check @Kk.resolvedFairOriginalCoding_targetAge_neutral
+#check @Kk.resolvedFairAllAuxRetainedFront_no_split
+#check @Kk.resolvedFairAllAuxRetainedFront_targetAge_neutral
+#check @Kk.resolvedFairAllAuxOriginalSeeds_envelope
+#check @Kk.resolvedFairAllAuxFiniteSelection_envelope
+#check @Kk.resolvedInitialAllAuxFiniteSelection_envelope
+
+#print axioms Kk.resolvedFairOriginalCoding_no_split
+#print axioms Kk.resolvedFairOriginalCoding_targetAge_neutral
+#print axioms Kk.resolvedFairAllAuxRetainedFront_no_split
+#print axioms Kk.resolvedFairAllAuxRetainedFront_targetAge_neutral
+#print axioms Kk.resolvedFairAllAuxOriginalSeeds_envelope
+#print axioms Kk.resolvedFairAllAuxFiniteSelection_envelope
+#print axioms Kk.resolvedInitialAllAuxFiniteSelection_envelope

@@ -1,0 +1,26 @@
+import Kk.OneGapAgeTransport
+
+#check Kk.oldSupportCommonNeighbourPool_image_eq
+#print axioms Kk.oldSupportCommonNeighbourPool_image_eq
+#check Kk.finiteOldColumnRawBound_induced_image_eq
+#print axioms Kk.finiteOldColumnRawBound_induced_image_eq
+#check Kk.integerGraphAgeCanonical_induced_image_eq
+#print axioms Kk.integerGraphAgeCanonical_induced_image_eq
+#check Kk.oneGap_commonNeighbourPool_eq_image
+#print axioms Kk.oneGap_commonNeighbourPool_eq_image
+#check Kk.oneGap_rawBound_eq_of_positions
+#print axioms Kk.oneGap_rawBound_eq_of_positions
+#check Kk.oneGap_rawBound_before_eq
+#print axioms Kk.oneGap_rawBound_before_eq
+#check Kk.oneGap_rawBound_after_eq
+#print axioms Kk.oneGap_rawBound_after_eq
+#check Kk.oneGap_canonicalAge_before_eq
+#print axioms Kk.oneGap_canonicalAge_before_eq
+#check Kk.oneGap_canonicalAge_after_eq
+#print axioms Kk.oneGap_canonicalAge_after_eq
+#check Kk.oneGap_canonicalAge_neutral_of_unpadded
+#print axioms Kk.oneGap_canonicalAge_neutral_of_unpadded
+#check Kk.oneGap_oldColumns_before_iff
+#print axioms Kk.oneGap_oldColumns_before_iff
+#check Kk.oneGap_noSplit_of_unpadded
+#print axioms Kk.oneGap_noSplit_of_unpadded
