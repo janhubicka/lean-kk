@@ -80,6 +80,7 @@ theorem ResolvedEventCertificate.cover_targetAge_cover_or_eq {W : Set Nat} {r n 
   | marker => simp at hKind
   | code => simp at hKind
   | cover s Q T hPQ hQW hBudget hCover hChanged hMinimal hSize hExact =>
+      rename_i d sort
       let t := s.insertBlock Q T hPQ hQW hBudget
       let pi := fun i => sort (target i)
       have hKeep := s.insertBlock_preserves_live Q T hPQ hQW hBudget

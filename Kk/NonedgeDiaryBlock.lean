@@ -86,9 +86,8 @@ theorem markerPairClip_feasible (p : Bounds) (right : Bool) (x y : Nat) :
     Feasible (markerPairClip p right) x y ↔
       Feasible p x y ∧ (if right then y ≤ 2 else x ≤ 2) := by
   cases right <;>
-    simp only [markerPairClip, Bool.false_eq_true, if_false, if_true,
-      Feasible, leftCapacity, rightCapacity, jointCapacity, rank_capacity_clip_two,
-      le_min_iff] <;> omega
+    simp [markerPairClip, Feasible, leftCapacity, rightCapacity, jointCapacity,
+      rank_capacity_clip_two, le_min_iff] <;> omega
 
 theorem markerUnaryClip_cover_or_eq :
     ∀ r : Rank, min r 1 = r ∨ capacity (min r 1) + 1 = capacity r := by

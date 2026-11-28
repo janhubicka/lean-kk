@@ -555,6 +555,8 @@ import Kk.IntegerAgeCoverRestriction
 import Kk.ResolvedEventProjection
 import Kk.NonedgeDiaryBlock
 
+import Kk.ResolvedDiaryRetention
+
 /-!
 The counting project imports the verified successor-tree library.
 No local replacement of the Ramsey theorem is assumed.

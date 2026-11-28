@@ -3744,3 +3744,33 @@ import Kk
 #print axioms Kk.NonedgeHistory.markerPairClip_feasible
 #check @Kk.NonedgeHistory.markerUnaryClip_cover_or_eq
 #print axioms Kk.NonedgeHistory.markerUnaryClip_cover_or_eq
+
+-- Chronological selected-only retention and actual inverse sources.
+#check @Kk.resolvedTargetAge_reindex
+#print axioms Kk.resolvedTargetAge_reindex
+#check @Kk.resolvedFairEventBoundary_bounds
+#print axioms Kk.resolvedFairEventBoundary_bounds
+#check @Kk.resolvedFairEvent_postOld_eq_next
+#print axioms Kk.resolvedFairEvent_postOld_eq_next
+#check @Kk.resolvedFairEventBoundary_pre_image
+#print axioms Kk.resolvedFairEventBoundary_pre_image
+#check @Kk.resolvedFairEventBoundary_post_image
+#print axioms Kk.resolvedFairEventBoundary_post_image
+#check @Kk.resolvedFairEvent_later_original_live
+#print axioms Kk.resolvedFairEvent_later_original_live
+#check @Kk.resolvedFairEvent_targetAge_transport
+#print axioms Kk.resolvedFairEvent_targetAge_transport
+#check @Kk.resolvedFairEvent_cover_projection
+#print axioms Kk.resolvedFairEvent_cover_projection
+#check @Kk.resolvedFairEvent_cover_no_split
+#print axioms Kk.resolvedFairEvent_cover_no_split
+#check @Kk.resolvedDiaryAuxNeutral_member
+#print axioms Kk.resolvedDiaryAuxNeutral_member
+#check @Kk.resolvedDiaryKeep_selected_address
+#print axioms Kk.resolvedDiaryKeep_selected_address
+#check @Kk.resolvedDiaryKeep_local_tests
+#print axioms Kk.resolvedDiaryKeep_local_tests
+#check @Kk.resolvedDiarySelection_envelope
+#print axioms Kk.resolvedDiarySelection_envelope
+#check @Kk.resolvedDiarySelection_sources
+#print axioms Kk.resolvedDiarySelection_sources
