@@ -25,7 +25,7 @@ requested size. Controlled/legal auxiliary retention, a projected-diary
 parser and the corresponding reduced-choice neutrality/seed application
 remain, followed by common full labelled inverse sources and upper
 transfer, direct history/unavoidability/lower bounds, and the actual
-general-K_ell construction. Exact copy degrees 24 and 120,487 are not claimed.
+general-K_ell construction. Exact copy degrees 24 and 120,487 are not claimed. Separately, the unbounded accepted nonedge-history type has already been proved to have cardinality 24 (split-rank subtotals 16, 6, 2) in PR #504. Its proof modules are carried forward unchanged in the current integration branch; the characterization and unavoidability bridges, not this enumeration, remain open. The exact integration head requires its own Lean audit. The previous CI compiled the critical-retention module successfully but failed at an import placed after the root module docstring. The continuation fixes that placement and adds the actual selected-prefix pair and finite-palette coverage candidates; see docs/actual_cap_palette_20261127.md. These remain pending integrated validation.
 
 See the [current completion report](docs/all_auxiliary_envelope_completion_20261127.md)
 and [source-hash evidence](docs/audits/2026-11-27-all-auxiliary-envelope-completion.json).

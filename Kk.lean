@@ -540,8 +540,16 @@ import Kk.TrackFTargetLexOrderPersistence
 import Kk.TrackFFullActualZeroCodeAgeStep
 import Kk.TrackFActualZeroCodeTargetLex
 
+-- Coarse uniform actual one-gap envelope; sharp diary comparison remains open.
+import Kk.ResolvedFairCriticalRetention
+
+import Kk.NonedgeBRD24
+import Kk.ResolvedFairRetainedPalette
+import Kk.ResolvedFairActualPalette
+
+import Kk.OneGapInverseSource
+
 /-!
 The counting project imports the verified successor-tree library.
 No local replacement of the Ramsey theorem is assumed.
 -/
-
