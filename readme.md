@@ -1,5 +1,7 @@
 # lean-kk
 
+**Verified 27 November continuation:** [PR #518](https://github.com/janhubicka/lean-kk/pull/518) passed all 15 workflows, including [4,293 build jobs and 1,607 strict named axiom reports](https://github.com/janhubicka/lean-kk/actions/runs/46080147388). Its merged source includes the complete inverse-source recovery, actual bounded-palette upper transfer, and the independently verified exact finite count of 24 nonedge histories. The exact BRD itself still needs the sharp characterization and unavoidability. The neutral-cap continuation is pending exact-head checking; see [the English proof and audit](docs/neutral_cap_diary_retention_20261128.md).
+
 Lean 4 validation for the big Ramsey degree project on universal `K_k`-free graphs, using the pinned [`lean-successors`](https://github.com/janhubicka/lean-successors) type-respecting Ramsey theorem.
 
 **27 November all-auxiliary finite-envelope completion — locally verified:**

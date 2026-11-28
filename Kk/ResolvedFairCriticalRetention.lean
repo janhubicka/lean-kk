@@ -219,7 +219,7 @@ theorem ResolvedEventCertificate.block_length_le_three {W : Set Nat}
     e.block.length ≤ 3 := by
   cases h with
   | marker => simp
-  | cover s Q T hPQ hQW hBudget hCover hChanged hMinimal hSize =>
+  | cover s Q T hPQ hQW hBudget hCover hChanged hMinimal hSize _hExact =>
       simpa only [Finset.length_sort] using (show Q.card ≤ 3 by omega)
   | code => simp
 

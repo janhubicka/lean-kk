@@ -3666,3 +3666,111 @@ import Kk
 #print axioms Kk.resolvedFairEvent_inverseSource_code
 #check @Kk.oneGap_inverseSources_eq_of_graph
 #print axioms Kk.oneGap_inverseSources_eq_of_graph
+
+-- Neutral finite cap, actual selected-only envelope and original pairs.
+#check @Kk.neutralPrefixGraph_positive
+#print axioms Kk.neutralPrefixGraph_positive
+#check @Kk.neutralPrefixGraph_avoids
+#print axioms Kk.neutralPrefixGraph_avoids
+#check @Kk.neutralPrefixGraph_padded_agree
+#print axioms Kk.neutralPrefixGraph_padded_agree
+#check @Kk.neutralPrefixGraph_padded_zero_right
+#print axioms Kk.neutralPrefixGraph_padded_zero_right
+#check @Kk.neutralPrefixGraph_prefixCode_eq
+#print axioms Kk.neutralPrefixGraph_prefixCode_eq
+#check @Kk.resolvedNeutralCapPlan_old_iff
+#print axioms Kk.resolvedNeutralCapPlan_old_iff
+#check @Kk.resolvedNeutralCapPlan_bound
+#print axioms Kk.resolvedNeutralCapPlan_bound
+#check @Kk.resolvedNeutralCapPlan_top
+#print axioms Kk.resolvedNeutralCapPlan_top
+#check @Kk.resolvedNeutralCapOldPool_role
+#print axioms Kk.resolvedNeutralCapOldPool_role
+#check @Kk.resolvedNeutralCapFront_bound
+#print axioms Kk.resolvedNeutralCapFront_bound
+#check @Kk.resolvedNeutralCapGraph_avoids
+#print axioms Kk.resolvedNeutralCapGraph_avoids
+#check @Kk.resolvedNeutralCapType_level
+#print axioms Kk.resolvedNeutralCapType_level
+#check @Kk.resolvedNeutralCap_envelope
+#print axioms Kk.resolvedNeutralCap_envelope
+#check @Kk.resolvedNeutralCap_actualPair
+#print axioms Kk.resolvedNeutralCap_actualPair
+
+-- Actual event projection and finite profile block descriptors.
+#check @Kk.integerGraphSupportImage_injective
+#print axioms Kk.integerGraphSupportImage_injective
+#check @Kk.integerGraphSupportImage_exists_of_subset
+#print axioms Kk.integerGraphSupportImage_exists_of_subset
+#check @Kk.integerCliquePushforward_image_mass_eq
+#print axioms Kk.integerCliquePushforward_image_mass_eq
+#check @Kk.integerAgeRestrictionExtensionRaw_image
+#print axioms Kk.integerAgeRestrictionExtensionRaw_image
+#check @Kk.integerGraphAge_restriction_lift_between
+#print axioms Kk.integerGraphAge_restriction_lift_between
+#check @Kk.integerGraphAge_cover_injective_pullback
+#print axioms Kk.integerGraphAge_cover_injective_pullback
+#check @Kk.integerGraphAge_cover_restriction_strict_iff
+#print axioms Kk.integerGraphAge_cover_restriction_strict_iff
+#check @Kk.resolvedTargetAge_congr_on
+#print axioms Kk.resolvedTargetAge_congr_on
+#check @Kk.ResolvedEventCertificate.cover_no_split
+#print axioms Kk.ResolvedEventCertificate.cover_no_split
+#check @Kk.ResolvedEventCertificate.marker_positive_same_old
+#print axioms Kk.ResolvedEventCertificate.marker_positive_same_old
+#check @Kk.ResolvedEventCertificate.cover_targetAge_cover_or_eq
+#print axioms Kk.ResolvedEventCertificate.cover_targetAge_cover_or_eq
+#check @Kk.resolvedTargetAge_neutral_between
+#print axioms Kk.resolvedTargetAge_neutral_between
+#check @Kk.ResolvedEventCertificate.aux_targetAge_clip
+#print axioms Kk.ResolvedEventCertificate.aux_targetAge_clip
+#check @Kk.ResolvedLiveStage.saturatedCode_singleton_capacity
+#print axioms Kk.ResolvedLiveStage.saturatedCode_singleton_capacity
+#check @Kk.resolvedNeutralCapFront_code_neutral
+#print axioms Kk.resolvedNeutralCapFront_code_neutral
+#check @Kk.NonedgeHistory.essentialPairSupport_minimal_unique
+#print axioms Kk.NonedgeHistory.essentialPairSupport_minimal_unique
+#check @Kk.NonedgeHistory.essentialPairSupport_unit
+#print axioms Kk.NonedgeHistory.essentialPairSupport_unit
+#check @Kk.NonedgeHistory.pairCoverBlockSize_bounds
+#print axioms Kk.NonedgeHistory.pairCoverBlockSize_bounds
+#check @Kk.NonedgeHistory.markerPairClip_profile
+#print axioms Kk.NonedgeHistory.markerPairClip_profile
+#check @Kk.NonedgeHistory.markerPairClip_cover_or_eq
+#print axioms Kk.NonedgeHistory.markerPairClip_cover_or_eq
+#check @Kk.NonedgeHistory.rank_capacity_clip_two
+#print axioms Kk.NonedgeHistory.rank_capacity_clip_two
+#check @Kk.NonedgeHistory.markerPairClip_feasible
+#print axioms Kk.NonedgeHistory.markerPairClip_feasible
+#check @Kk.NonedgeHistory.markerUnaryClip_cover_or_eq
+#print axioms Kk.NonedgeHistory.markerUnaryClip_cover_or_eq
+
+-- Chronological selected-only retention and actual inverse sources.
+#check @Kk.resolvedTargetAge_reindex
+#print axioms Kk.resolvedTargetAge_reindex
+#check @Kk.resolvedFairEventBoundary_bounds
+#print axioms Kk.resolvedFairEventBoundary_bounds
+#check @Kk.resolvedFairEvent_postOld_eq_next
+#print axioms Kk.resolvedFairEvent_postOld_eq_next
+#check @Kk.resolvedFairEventBoundary_pre_image
+#print axioms Kk.resolvedFairEventBoundary_pre_image
+#check @Kk.resolvedFairEventBoundary_post_image
+#print axioms Kk.resolvedFairEventBoundary_post_image
+#check @Kk.resolvedFairEvent_later_original_live
+#print axioms Kk.resolvedFairEvent_later_original_live
+#check @Kk.resolvedFairEvent_targetAge_transport
+#print axioms Kk.resolvedFairEvent_targetAge_transport
+#check @Kk.resolvedFairEvent_cover_projection
+#print axioms Kk.resolvedFairEvent_cover_projection
+#check @Kk.resolvedFairEvent_cover_no_split
+#print axioms Kk.resolvedFairEvent_cover_no_split
+#check @Kk.resolvedDiaryAuxNeutral_member
+#print axioms Kk.resolvedDiaryAuxNeutral_member
+#check @Kk.resolvedDiaryKeep_selected_address
+#print axioms Kk.resolvedDiaryKeep_selected_address
+#check @Kk.resolvedDiaryKeep_local_tests
+#print axioms Kk.resolvedDiaryKeep_local_tests
+#check @Kk.resolvedDiarySelection_envelope
+#print axioms Kk.resolvedDiarySelection_envelope
+#check @Kk.resolvedDiarySelection_sources
+#print axioms Kk.resolvedDiarySelection_sources
