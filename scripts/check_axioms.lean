@@ -3666,3 +3666,33 @@ import Kk
 #print axioms Kk.resolvedFairEvent_inverseSource_code
 #check @Kk.oneGap_inverseSources_eq_of_graph
 #print axioms Kk.oneGap_inverseSources_eq_of_graph
+
+-- Neutral finite cap, actual selected-only envelope and original pairs.
+#check @Kk.neutralPrefixGraph_positive
+#print axioms Kk.neutralPrefixGraph_positive
+#check @Kk.neutralPrefixGraph_avoids
+#print axioms Kk.neutralPrefixGraph_avoids
+#check @Kk.neutralPrefixGraph_padded_agree
+#print axioms Kk.neutralPrefixGraph_padded_agree
+#check @Kk.neutralPrefixGraph_padded_zero_right
+#print axioms Kk.neutralPrefixGraph_padded_zero_right
+#check @Kk.neutralPrefixGraph_prefixCode_eq
+#print axioms Kk.neutralPrefixGraph_prefixCode_eq
+#check @Kk.resolvedNeutralCapPlan_old_iff
+#print axioms Kk.resolvedNeutralCapPlan_old_iff
+#check @Kk.resolvedNeutralCapPlan_bound
+#print axioms Kk.resolvedNeutralCapPlan_bound
+#check @Kk.resolvedNeutralCapPlan_top
+#print axioms Kk.resolvedNeutralCapPlan_top
+#check @Kk.resolvedNeutralCapOldPool_role
+#print axioms Kk.resolvedNeutralCapOldPool_role
+#check @Kk.resolvedNeutralCapFront_bound
+#print axioms Kk.resolvedNeutralCapFront_bound
+#check @Kk.resolvedNeutralCapGraph_avoids
+#print axioms Kk.resolvedNeutralCapGraph_avoids
+#check @Kk.resolvedNeutralCapType_level
+#print axioms Kk.resolvedNeutralCapType_level
+#check @Kk.resolvedNeutralCap_envelope
+#print axioms Kk.resolvedNeutralCap_envelope
+#check @Kk.resolvedNeutralCap_actualPair
+#print axioms Kk.resolvedNeutralCap_actualPair

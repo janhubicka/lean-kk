@@ -549,6 +549,8 @@ import Kk.ResolvedFairActualPalette
 
 import Kk.OneGapInverseSource
 
+import Kk.ResolvedNeutralCap
+
 /-!
 The counting project imports the verified successor-tree library.
 No local replacement of the Ramsey theorem is assumed.
