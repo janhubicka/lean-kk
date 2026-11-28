@@ -551,6 +551,10 @@ import Kk.OneGapInverseSource
 
 import Kk.ResolvedNeutralCap
 
+import Kk.IntegerAgeCoverRestriction
+import Kk.ResolvedEventProjection
+import Kk.NonedgeDiaryBlock
+
 /-!
 The counting project imports the verified successor-tree library.
 No local replacement of the Ramsey theorem is assumed.

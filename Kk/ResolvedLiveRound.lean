@@ -159,6 +159,7 @@ def ResolvedRoundTrace {W W' : Set Nat} (s : ResolvedBareStage 4 W)
     ResolvedMarkerBatchStep s1 s2 (fun v => s1.edge r v) ∧
     a.toBare = s2 ∧
     ResolvedLiveCoverPath W sort a b ∧
+    ResolvedClassExact a.edge a.old W sort ∧
     b.oldAge = b.futureAge ∧
     ResolvedClassExact b.edge b.old W sort ∧
     (∀ v ∈ W, sort v = sort r → v = r) ∧
@@ -264,7 +265,7 @@ theorem resolvedBare_exists_round {W W' : Set Nat} (s : ResolvedBareStage 4 W)
     exact (congrArg ResolvedBareStage.old hBare2).symm
   have h2B : s2.old ⊆ b.old := by rw [h2A]; exact hOldAB
   refine ⟨t,⟨?_,?_,Finset.mem_insert_self r b.old,?_⟩⟩
-  · exact ⟨s1,s2,d,sort,a,b,hSplit0,hSplit1,hBare2,hPath,hSat,
+  · exact ⟨s1,s2,d,sort,a,b,hSplit0,hSplit1,hBare2,hPath,hExA,hSat,
       hExactB,hIsoB,hConstB,hNext,rfl,rfl⟩
   · exact h01.trans (h12.trans (h2B.trans (by
       intro x hx; exact Finset.mem_insert_of_mem hx)))
@@ -294,7 +295,7 @@ theorem ResolvedRoundResult.coding_neutral {W W' : Set Nat}
     resolvedTargetAge t.edge 4 (t.old.erase r) target =
       resolvedTargetAge t.edge 4 t.old target := by
   classical
-  obtain ⟨s1,s2,d,sort,a,b,_hSplit0,_hSplit1,_hBare,_hPath,hSat,
+  obtain ⟨s1,s2,d,sort,a,b,_hSplit0,_hSplit1,_hBare,_hPath,_hExactA,hSat,
     _hExact,hIso,hConst,hNext,hEdge,hOld⟩ := h.trace
   have hrNot : r ∉ b.old := fun hp => b.separated r hp hr
   have hErase : (insert r b.old).erase r = b.old := by
@@ -323,7 +324,7 @@ theorem ResolvedRoundResult.coding_no_split {W W' : Set Nat}
     (hOldBits : ∀ p ∈ t.old.erase r, t.edge p v = t.edge p w) :
     t.edge r v = t.edge r w := by
   classical
-  obtain ⟨s1,s2,d,sort,a,b,_hSplit0,_hSplit1,_hBare,_hPath,_hSat,
+  obtain ⟨s1,s2,d,sort,a,b,_hSplit0,_hSplit1,_hBare,_hPath,_hExactA,_hSat,
     hExact,_hIso,hConst,hNext,hEdge,hOld⟩ := h.trace
   rw [hNext] at hv hw
   rw [hEdge,hOld] at hOldBits

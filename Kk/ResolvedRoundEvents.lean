@@ -115,14 +115,26 @@ theorem ResolvedMarkerBatchStep.exists_events {W : Set Nat} {r : Nat}
 theorem ResolvedLiveCoverPath.exists_events {d r : Nat}
     {W : Set Nat} {sort : Nat → Fin d}
     {s t : ResolvedLiveStage d 4 W sort}
-    (h : ResolvedLiveCoverPath W sort s t) :
+    (h : ResolvedLiveCoverPath W sort s t)
+    (hExact : ResolvedClassExact s.edge s.old W sort) :
     ∃ events : List ResolvedEvent,
       ResolvedEventChain W r t.edge s.old events t.old ∧
       ∀ e ∈ events, e.kind = .cover := by
+  revert hExact
   induction h with
-  | stop s => exact ⟨[], .nil _, by simp⟩
+  | stop s =>
+      intro _
+      exact ⟨[], .nil _, by simp⟩
   | advance s Q T hPQ hQW hBudget hCover hChanged hMinimal hSize tail ih =>
-      obtain ⟨events, hChain, hKinds⟩ := ih
+      intro hExact
+      have hExact' : ResolvedClassExact
+          (s.insertBlock Q T hPQ hQW hBudget).edge
+          (s.insertBlock Q T hPQ hQW hBudget).old W sort :=
+        resolvedClassExact_of_live_extension s
+          (s.insertBlock Q T hPQ hQW hBudget) hExact
+          Finset.subset_union_left
+          (s.insertBlock_preserves_live Q T hPQ hQW hBudget)
+      obtain ⟨events, hChain, hKinds⟩ := ih hExact'
       let e : ResolvedEvent :=
         ⟨.cover, s.old, Q.sort, (s.insertBlock Q T hPQ hQW hBudget).edge⟩
       have hPost : e.postOld = (s.insertBlock Q T hPQ hQW hBudget).old := by
@@ -130,7 +142,7 @@ theorem ResolvedLiveCoverPath.exists_events {d r : Nat}
       have hTail := hChain
       rw [← hPost] at hTail
       refine ⟨e :: events, .cons
-        (.cover s Q T hPQ hQW hBudget hCover hChanged hMinimal hSize) ?_ hTail, ?_⟩
+        (.cover s Q T hPQ hQW hBudget hCover hChanged hMinimal hSize hExact) ?_ hTail, ?_⟩
       · intro x y hx hy
         apply tail.preserves x y
         · simpa only [ResolvedEvent.postOld, Finset.sort_toFinset,
@@ -154,10 +166,10 @@ theorem ResolvedRoundResult.exists_events {W W' : Set Nat}
       (∀ e ∈ aux, e.kind ≠ .code) ∧ code.kind = .code ∧ code.block = [r] := by
   classical
   obtain ⟨s1, s2, d, sort, a, b, hSplit0, hSplit1, hBare,
-    hPath, hSat, hExact, hSingleton, hConst, _hNext, hEdge, hOld⟩ := h.trace
+    hPath, hExactA, hSat, hExact, hSingleton, hConst, _hNext, hEdge, hOld⟩ := h.trace
   obtain ⟨events0, hEvents0, hKinds0⟩ := hSplit0.exists_events (r := r)
   obtain ⟨events1, hEvents1, hKinds1⟩ := hSplit1.exists_events (r := r)
-  obtain ⟨covers, hCovers, hKindsC⟩ := hPath.exists_events (r := r)
+  obtain ⟨covers, hCovers, hKindsC⟩ := hPath.exists_events (r := r) hExactA
   have hOldA : a.old = s2.old := congrArg ResolvedBareStage.old hBare
   have hEdgeA : a.edge = s2.edge := congrArg ResolvedBareStage.edge hBare
   have hKeep2 : ∀ x y : Nat, (x ∈ s2.old ∨ x ∈ W) →

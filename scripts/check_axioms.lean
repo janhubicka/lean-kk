@@ -3696,3 +3696,51 @@ import Kk
 #print axioms Kk.resolvedNeutralCap_envelope
 #check @Kk.resolvedNeutralCap_actualPair
 #print axioms Kk.resolvedNeutralCap_actualPair
+
+-- Actual event projection and finite profile block descriptors.
+#check @Kk.integerGraphSupportImage_injective
+#print axioms Kk.integerGraphSupportImage_injective
+#check @Kk.integerGraphSupportImage_exists_of_subset
+#print axioms Kk.integerGraphSupportImage_exists_of_subset
+#check @Kk.integerCliquePushforward_image_mass_eq
+#print axioms Kk.integerCliquePushforward_image_mass_eq
+#check @Kk.integerAgeRestrictionExtensionRaw_image
+#print axioms Kk.integerAgeRestrictionExtensionRaw_image
+#check @Kk.integerGraphAge_restriction_lift_between
+#print axioms Kk.integerGraphAge_restriction_lift_between
+#check @Kk.integerGraphAge_cover_injective_pullback
+#print axioms Kk.integerGraphAge_cover_injective_pullback
+#check @Kk.integerGraphAge_cover_restriction_strict_iff
+#print axioms Kk.integerGraphAge_cover_restriction_strict_iff
+#check @Kk.resolvedTargetAge_congr_on
+#print axioms Kk.resolvedTargetAge_congr_on
+#check @Kk.ResolvedEventCertificate.cover_no_split
+#print axioms Kk.ResolvedEventCertificate.cover_no_split
+#check @Kk.ResolvedEventCertificate.marker_positive_same_old
+#print axioms Kk.ResolvedEventCertificate.marker_positive_same_old
+#check @Kk.ResolvedEventCertificate.cover_targetAge_cover_or_eq
+#print axioms Kk.ResolvedEventCertificate.cover_targetAge_cover_or_eq
+#check @Kk.resolvedTargetAge_neutral_between
+#print axioms Kk.resolvedTargetAge_neutral_between
+#check @Kk.ResolvedEventCertificate.aux_targetAge_clip
+#print axioms Kk.ResolvedEventCertificate.aux_targetAge_clip
+#check @Kk.ResolvedLiveStage.saturatedCode_singleton_capacity
+#print axioms Kk.ResolvedLiveStage.saturatedCode_singleton_capacity
+#check @Kk.resolvedNeutralCapFront_code_neutral
+#print axioms Kk.resolvedNeutralCapFront_code_neutral
+#check @Kk.NonedgeHistory.essentialPairSupport_minimal_unique
+#print axioms Kk.NonedgeHistory.essentialPairSupport_minimal_unique
+#check @Kk.NonedgeHistory.essentialPairSupport_unit
+#print axioms Kk.NonedgeHistory.essentialPairSupport_unit
+#check @Kk.NonedgeHistory.pairCoverBlockSize_bounds
+#print axioms Kk.NonedgeHistory.pairCoverBlockSize_bounds
+#check @Kk.NonedgeHistory.markerPairClip_profile
+#print axioms Kk.NonedgeHistory.markerPairClip_profile
+#check @Kk.NonedgeHistory.markerPairClip_cover_or_eq
+#print axioms Kk.NonedgeHistory.markerPairClip_cover_or_eq
+#check @Kk.NonedgeHistory.rank_capacity_clip_two
+#print axioms Kk.NonedgeHistory.rank_capacity_clip_two
+#check @Kk.NonedgeHistory.markerPairClip_feasible
+#print axioms Kk.NonedgeHistory.markerPairClip_feasible
+#check @Kk.NonedgeHistory.markerUnaryClip_cover_or_eq
+#print axioms Kk.NonedgeHistory.markerUnaryClip_cover_or_eq

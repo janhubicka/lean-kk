@@ -53,7 +53,8 @@ inductive ResolvedEventCertificate (W : Set Nat) (r : Nat) :
       (hChanged : (s.insertBlock Q T hPQ hQW hBudget).oldAge T < s.oldAge T)
       (hMinimal : ∀ U : IntegerGraphSupport d 4, U.1 ⊆ T.1 → U.1 ≠ T.1 →
         (s.insertBlock Q T hPQ hQW hBudget).oldAge U = s.oldAge U)
-      (hSize : 4 = (s.insertBlock Q T hPQ hQW hBudget).oldAge T + Q.card + 1) :
+      (hSize : 4 = (s.insertBlock Q T hPQ hQW hBudget).oldAge T + Q.card + 1)
+      (hExact : ResolvedClassExact s.edge s.old W sort) :
       ResolvedEventCertificate W r
         ⟨.cover, s.old, Q.sort, (s.insertBlock Q T hPQ hQW hBudget).edge⟩
   | code {d : Nat} {sort : Nat → Fin d} (s : ResolvedLiveStage d 4 W sort)
@@ -97,7 +98,7 @@ theorem ResolvedEventCertificate.block_pos {W : Set Nat} {r : Nat}
     0 < e.block.length := by
   cases h with
   | marker => simp
-  | cover s Q T hPQ hQW hBudget _hCover hChanged _hMinimal _hSize =>
+  | cover s Q T hPQ hQW hBudget _hCover hChanged _hMinimal _hSize _hExact =>
       simpa only [Finset.length_sort] using
         Finset.card_pos.mpr (resolvedCoverBlock_nonempty s Q T hPQ hQW hBudget hChanged)
   | code => simp

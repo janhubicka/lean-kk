@@ -219,7 +219,9 @@ theorem resolvedNeutralCapType_level
       resolvedNeutralCapTop s0 n - 1 := by
   change ((oneGapPartial (resolvedNeutralCapGraph s0 n)).finitePrefix
     (resolvedNeutralCapSize s0 n)).freeLevel (resolvedNeutralCapTop s0 n) = _
-  rw [oneGapPartial_freeLevel _ _ _ (Nat.lt_succ_self _)]
+  rw [oneGapPartial_freeLevel (resolvedNeutralCapGraph s0 n)
+    (resolvedNeutralCapSize s0 n) (resolvedNeutralCapTop s0 n)
+    (show resolvedNeutralCapTop s0 n < resolvedNeutralCapSize s0 n from Nat.lt_succ_self _)]
   exact if_pos (show oneGapReal (resolvedNeutralCapTop s0 n) from oneGapAddress_real _)
 
 /-- Actual neutral cap envelope from the old selected-only local tests.
